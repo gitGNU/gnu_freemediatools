@@ -213,16 +213,16 @@ dnl AC_CONFIG_SUBDIRS([jahshaka/plugins
 dnl                    openlibraries/trunk])
 
 # boost filesystem support
-AX_BOOST_FILESYSTEM 
+#AX_BOOST_FILESYSTEM 
 
-AX_BOOST_PYTHON
+# removed this for now... who needs python?
+#AX_BOOST_PYTHON
 
-AX_BOOST_IOSTREAMS
+#AX_BOOST_IOSTREAMS
 
+#AX_BOOST_REGEX
 
-AX_BOOST_REGEX
-
-AX_BOOST_THREAD
+#AX_BOOST_THREAD
 
 
 AM_PATH_XML2(2.5.0,,AC_MSG_ERROR([
