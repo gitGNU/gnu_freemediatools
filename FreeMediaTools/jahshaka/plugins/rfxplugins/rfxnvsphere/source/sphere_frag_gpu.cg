@@ -1,0 +1,49 @@
+
+half4 main(
+	float2 pos           					: TEXCOORD0,
+	uniform float xcenter 					: register (c0),
+	uniform float ycenter 					: register (c1),
+	uniform float xrotation 				: register (c2),
+	uniform float yrotation 				: register (c3),
+	uniform float sphere_radius 			: register (c4),
+    uniform sampler2D texture) : COLOR
+{
+	float4 					Color;
+	float2					uv;
+	float					PI = 3.14159;
+	float2					position;
+	float2					sphere_position;
+	float4					black = {0.0, 0.0, 0.0, 0.0};
+
+	position.x = (pos.x * 2.0) - 1.0;
+	position.y = (pos.y * 2.0) - 1.0;
+
+	sphere_position = position;
+
+// 	float dx = position.x - xcenter + 0.0000001f;
+// 	float dy = position.y - ycenter + 0.0000001f;
+	float dx = position.x + 0.0000001f;
+	float dy = position.y + 0.0000001f;
+
+	float radius = sqrt((dx * dx) + (dy * dy));
+
+	if (radius <= sphere_radius)
+	{
+		uv.y = (acos(-position.y / sphere_radius) / PI);
+
+		float phicalc = asin((position.x / sphere_radius) / -sin(acos(-position.y / sphere_radius)));
+		uv.x = 0.5 - (phicalc / (2 * PI)) - xrotation;
+		Color = (half4)tex2D(texture, uv);
+	}
+	else
+	{
+		Color = black;
+	}
+
+// 	Color.x = -xcenter;
+// 	Color.y = 0.0;
+// 	Color.z = 0.0;
+
+    // Always set the alpha value to 1.
+    return half4(Color.xyz, 1);
+}

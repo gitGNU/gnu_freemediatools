@@ -1,0 +1,7 @@
+##########################################
+## how to create source .cpp and .h
+## code from ui files
+
+uic -o source.h source.ui
+uic -i source.h -o source.cpp source.ui
+

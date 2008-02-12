@@ -1,0 +1,6 @@
+label=FFmpeg PNG Sequence
+0=label=Square 4:3,consumer=avformat,profile=square,extension=%05d.png,vcodec=png
+1=label=Square 16:9,consumer=avformat,profile=square_wide,extension=%05d.png,vcodec=png
+2=label=DV 4:3,consumer=avformat,profile=dv,extension=%05d.png,vcodec=png,pix_fmt=rgba32
+3=label=DV 16:9,consumer=avformat,profile=dv_wide,extension=%05d.png,vcodec=png,pix_fmt=rgba32
+4=label=VCD,consumer=avformat,profile=vcd,extension=%05d.png,vcodec=png

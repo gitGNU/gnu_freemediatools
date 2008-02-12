@@ -1,0 +1,18 @@
+
+half4 main(
+	float4 wpos								: WPOS,
+	float2 position           				: TEXCOORD0,
+	float4 noise_position           		: TEXCOORD1,
+	float4 ColorIn       					: COLOR0,
+    uniform sampler2D texture) : COLOR
+{
+	float4 					Color;
+
+	float4 red = ( 0.0, 0.0, 0.0, 1.0 ) ;
+
+	Color = (half4)tex2D(texture, position);
+//	Color = ColorIn;
+//	Color = noise_position;
+// 	Color = red;
+    return (half4)Color;
+}

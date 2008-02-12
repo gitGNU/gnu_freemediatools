@@ -1,0 +1,59 @@
+
+half4 main(
+	float2 position           				: TEXCOORD0,
+	float2 position2           				: TEXCOORD1,
+    uniform sampler2D texture				: register (s0),
+    uniform sampler2D texture2				: register (s1)
+		   ) : COLOR
+{
+	float4 					Color1;
+	float4 					Color2;
+	float4 					Color3;
+	float4 					Color;
+
+	float2					pos;
+
+	float					offset = 0.001f;
+
+	pos = (position2 + 1.0) / 4.0;
+
+	Color1 = (half4)tex2D(texture, position);
+	Color2 = (half4)tex2D(texture2, pos);
+
+	pos += offset;
+	Color3 = (half4)tex2D(texture2, pos);
+
+	pos += offset;
+	float4 Color4 = (half4)tex2D(texture2, pos);
+
+	pos += offset;
+	float4 Color5 = (half4)tex2D(texture2, pos);
+
+	pos += offset;
+	float4 Color6 = (half4)tex2D(texture2, pos);
+
+	pos += offset;
+	float4 Color7 = (half4)tex2D(texture2, pos);
+
+	pos += offset;
+	float4 Color8 = (half4)tex2D(texture2, pos);
+
+	pos = (position2 + 1.0) / 4.0;
+	pos -= offset;
+	float4 Color9 = (half4)tex2D(texture2, pos);
+
+	pos -= offset;
+	float4 Color10 = (half4)tex2D(texture2, pos);
+
+	pos -= offset;
+	float4 Color11 = (half4)tex2D(texture2, pos);
+
+	pos -= offset;
+	float4 Color12 = (half4)tex2D(texture2, pos);
+
+	Color = (Color1 + Color2 + Color3 + Color4 + 
+			 Color5 + Color6 + Color7 + Color8 +
+			 Color9 + Color10 + Color11 + Color12) / 12.0;
+
+    return (half4)Color;
+}

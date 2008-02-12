@@ -1,0 +1,172 @@
+/*
+
+© 2004 by Esther Kremslehner and Markus Weilguny
+
+original code © 2002 NVidia Corporation
+
+this CG program implements a vertex shader based on an algorithm synthesizing 3D Perlin noise.
+
+
+this CG program implements a vertex shader based on an algorithm synthesizing 3D Perlin noise.
+
+parameters:
+- a gradient and a permutation table are generated in openGL
+(see void initVertexNoiseConstants(int table_size))
+- displacement: magnite of the noise-offset
+
+*/
+
+#define B  32      // table size
+#define B2 66      // B*2 + 2
+#define BR 0.03125 // 1 / B
+
+// this is the smoothstep function f(t) = 3t^2 - 2t^3, without the normalization
+float3 s_curve(float3 t)
+{
+	return t*t*( float3(3.0f, 3.0f, 3.0f) - float3(2.0f, 2.0f, 2.0f)*t);
+}
+
+// 3D version
+float noise(float3 v, const uniform float4 pg[B2])
+{
+	v = v + float3(10000.0f, 10000.0f, 10000.0f);   // hack to avoid negative numbers
+
+	float3 vector = sin(v);
+	vector = v;
+
+	float3 i = frac(vector * BR) * B;   // index between 0 and B-1
+	float3 f = frac(vector);            // fractional position
+
+	// lookup in permutation table
+	float2 p;
+	p.x = pg[ i[0]     ].w;
+	p.y = pg[ i[0] + 1 ].w;
+	p = p + i[1];
+
+	float4 b;
+	b.x = pg[ p[0] ].w;
+	b.y = pg[ p[1] ].w;
+	b.z = pg[ p[0] + 1 ].w;
+	b.w = pg[ p[1] + 1 ].w;
+	b = b + i[2];
+
+	// compute dot products between gradients and vectors
+	float4 r;
+	r[0] = dot( pg[ b[0] ].xyz, f );
+	r[1] = dot( pg[ b[1] ].xyz, f - float3(1.0f, 0.0f, 0.0f) );
+	r[2] = dot( pg[ b[2] ].xyz, f - float3(0.0f, 1.0f, 0.0f) );
+	r[3] = dot( pg[ b[3] ].xyz, f - float3(1.0f, 1.0f, 0.0f) );
+
+	float4 r1;
+	r1[0] = dot( pg[ b[0] + 1 ].xyz, f - float3(0.0f, 0.0f, 1.0f) );
+	r1[1] = dot( pg[ b[1] + 1 ].xyz, f - float3(1.0f, 0.0f, 1.0f) );
+	r1[2] = dot( pg[ b[2] + 1 ].xyz, f - float3(0.0f, 1.0f, 1.0f) );
+	r1[3] = dot( pg[ b[3] + 1 ].xyz, f - float3(1.0f, 1.0f, 1.0f) );
+
+	// interpolate
+	f = s_curve(f);
+	r = lerp( r, r1, f[2] );
+	r = lerp( r.xyyy, r.zwww, f[1] );
+	return lerp( r.x, r.y, f[0] );
+}
+
+
+struct application2vertex 
+{
+    float4 Position     : POSITION;
+    float4 Normal       : NORMAL;
+    float2 TexCoord0    : TEXCOORD0;
+};
+
+// define outputs from vertex shader
+struct vertex2fragment
+{
+    float4 HPosition    : POSITION;
+    float4 Color0       : COLOR0;
+    float2 TexCoord0 : TEXCOORD0;
+};
+
+vertex2fragment main(application2vertex IN,
+	uniform float4x4 ModelViewProj,
+	uniform float4x4 NoiseMatrix,
+	uniform float4 pg[B2],       // permutation/gradient table
+    uniform float  height,
+    uniform float  half_height,
+	uniform float  no_distortion_radius,
+	uniform float4 Displacement
+	)
+{
+	vertex2fragment OUT;
+
+	float4 noisePos = mul(NoiseMatrix, IN.Position);
+
+	float4 Position = IN.Position;
+  
+ 	float4 displacement = -Displacement;
+
+//	displacement.y *= (height - (IN.Position.y + half_height)) / height;
+   
+	float i;
+
+	float noise_value = noise(noisePos.xyz, pg);
+
+
+	OUT.Color0 = noise_value;
+
+  
+// 	float	turbfreq = 50;
+// 	float	sfreq = 3;
+// 	float	tfreq = 3;
+// 	float	sphase = 1;
+// 	float	tphase = 1;
+
+// 	float ii, ss, tt;
+// 	float turb = 0;
+
+// 	ss = IN.Position.x * sfreq + sphase;
+// 	tt = IN.Position.y * tfreq + tphase; 
+
+// 	for (ii = 1; ii < turbfreq; ii *= 2.1)
+// 	{
+// 		noisePos.x = ss * ii;
+// 		noisePos.y = tt * ii;
+// 		noisePos.z = ii;
+// 		turb += (noise(noisePos.xyz, pg)) / ii;
+// 	}
+
+// 	OUT.Color0 = turb;
+// 	OUT.Color0.w = 1.0;
+
+	OUT.TexCoord0 = IN.TexCoord0;
+
+	
+	float3 Distortion;
+	
+   	Distortion = noise_value * Displacement.xyz;
+
+	// displacement along normal
+	float4 position;
+
+	position.xyz = IN.Position.xyz + Distortion;
+	position.w = 1.0f;
+
+	float4 distorted_position = mul(ModelViewProj, position);
+	float4 non_distorted_position = mul(ModelViewProj, IN.Position);
+
+	float2 offset = 2.0 * displacement.xy - non_distorted_position.xy;
+ 	offset.y /= 2.0;
+	float radius = sqrt(dot(offset, offset));
+
+	
+ 	if (radius < no_distortion_radius)
+	{
+		OUT.HPosition = non_distorted_position;
+	}
+	else
+	{
+		OUT.HPosition = distorted_position;
+	}
+	
+
+	return OUT;
+}

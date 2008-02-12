@@ -1,0 +1,1376 @@
+Index: Jahshaka/JahCore/jahworld/glworld.h
+===================================================================
+RCS file: /cvsroot/jahshakafx/jahshaka/source/Jahshaka/JahCore/jahworld/glworld.h,v
+retrieving revision 1.214
+diff -r1.214 glworld.h
+66a67,81
+> 
+> typedef struct TAGChromaKeyerRange
+> {
+>   int         red_low;
+>         int         red_high;
+>         int         green_low;
+>         int         green_high;
+>         int         blue_low;
+>         int         blue_high;
+>         int         alpha_low;
+>         int         alpha_high;
+>         int         soften_value;
+> } TChromaKeyerRange;
+> 
+> //TAGChromaKeyerRange m_ChromaKeyerRange;
+138,146c153
+< 	void activate( )
+< 	{
+< 		if ( !m_started )
+< 		{
+< 			lazy( );
+< 			start( );
+< 			m_started = true;
+< 		}
+< 	}
+---
+>     void activate( );
+158c165
+< protected:
+---
+>  protected: // DATA
+162,171c169,178
+< 	virtual void headRender( int width = 0, int height = 0 );
+< 	int getCurrentWidth( ) const { return curr_width_; }
+< 	int getCurrentHeight( ) const { return curr_height_; }
+< 
+<     std::vector<std::string>* getFramesPerSecondNameVector() { return &m_frames_per_second_name_vector; }
+<     std::string getFramesPerSecondName(FRAMES_PER_SECOND index) { return getFramesPerSecondNameVector()->at(index); }
+< 
+< 	// Shoulf be called in the start by any module that needs plugins
+< 	void initializePlugins( );
+< 
+---
+>     virtual void headRender( int width = 0, int height = 0 );
+>     int getCurrentWidth( ) const;
+>     int getCurrentHeight( ) const;
+>     
+>     std::vector<std::string>* getFramesPerSecondNameVector();
+>     std::string getFramesPerSecondName(FRAMES_PER_SECOND index);
+>     
+>     // Should be called in the start by any module that needs plugins
+>     void initializePlugins( );
+>     
+173c180
+<     //gl commands to be sorted out later
+---
+>     //gl commands to be sorted out later? when is later?
+190a198
+>  protected: // DATA
+193c201
+<     JahTrace            * jtrace;
+---
+>     JahTrace            * m_pJTrace;
+197c205
+<     JahTranslate        * jt;
+---
+>     JahTranslate        * m_pJt;
+199,200c207,214
+<     template < typename T > QCheckListItem* addCheckListItem(T* parent, bool status = TRUE, bool headtail = FALSE, 
+< 							     QCheckListItem* (*fn)(T*, QListViewItem*, const QString& ) = &factory );
+---
+>  public:
+>     template < typename T > QCheckListItem* 
+>       addCheckListItem(T* parent,
+> 		       bool status = TRUE,
+> 		       bool headtail = FALSE,
+> 		       QCheckListItem* (*fn)
+> 		       (T*, QListViewItem*, 
+> 			const QString& ) = &factory );
+203c217,218
+<     bool        gpusupport,nv_gpusupport;
+---
+>     bool        m_bGPUSupport, // referece copy from prefs 
+>       m_bNV_GPUSupport;
+204a220
+>  public:
+227c243
+<     virtual void keyReleaseEvent( QKeyEvent * ) { }
+---
+>     virtual void keyReleaseEvent( QKeyEvent * );
+231c247
+<     virtual void createMenuItem(QPopupMenu * ) { }
+---
+>     virtual void createMenuItem(QPopupMenu * );
+236d251
+<     bool stats_showStats;
+237a253,256
+>  protected: // DATA
+>     bool m_bStatsShowStats;
+> 
+>  public:
+275,278c294,297
+<     void            sceneIncreaseIndent() { m_scene_save_indentation_depth++; }
+<     void            sceneDecreaseIndent() { m_scene_save_indentation_depth--; }
+<     int             getSceneSaveIndentationDepth() { return m_scene_save_indentation_depth; }
+<     void            setSceneSaveIndentationDepth(int depth) { m_scene_save_indentation_depth = depth; }
+---
+>     void            sceneIncreaseIndent() ;
+>     void            sceneDecreaseIndent() ;
+>     int             getSceneSaveIndentationDepth() ;
+>     void            setSceneSaveIndentationDepth(int depth) ;
+295,300c314,319
+<     bool getRenderOnlyToSelectedEffect() { return m_render_only_to_selected_effect; }
+<     void setRenderOnlyToSelectedEffect(bool flag) { m_render_only_to_selected_effect = flag; }
+<     std::string& getJahGlBlendModeStringVector(int index) { return m_jah_gl_blend_mode_string_vector[index]; }
+<     GLuint getJahGlBlendModeValueVector(int index) { return m_jah_gl_blend_mode_value_vector[index]; }
+<     bool getSceneSaveExport() { return m_scene_save_export; }
+<     void setSceneSaveExport(bool flag) { m_scene_save_export = flag; }
+---
+>     bool getRenderOnlyToSelectedEffect();
+>     void setRenderOnlyToSelectedEffect(bool flag) ;
+>     std::string& getJahGlBlendModeStringVector(int index) ;
+>     GLuint getJahGlBlendModeValueVector(int index) ;
+>     bool getSceneSaveExport();
+>     void setSceneSaveExport(bool flag);
+355,356c374,375
+<     std::vector<std::string> m_jah_gl_blend_mode_string_vector;
+<     std::vector<GLuint> m_jah_gl_blend_mode_value_vector;
+---
+>     std::vector<std::string> m_vJahGLBlendModeStringVector;
+>     std::vector<GLuint> m_vJahGLBlendModeValueVector;
+358c377
+< protected:
+---
+>  protected: // members
+360c379,389
+< 	virtual void start( ) { }
+---
+>     virtual void start( );
+> 
+>  protected: // DATA
+>     int   m_nSceneSaveIndentationDepth;
+> 
+>     bool  m_bDontTrack;
+>     bool  m_bRenderOnlyToSelectedEffect;
+>     bool  m_bSceneSaveExport;
+>     bool  m_bStopRequested;
+> 
+>     JahLayer*       m_pBaseLayer;
+362,371c391,395
+<     int             m_scene_save_indentation_depth;
+<     bool            m_dont_track;
+<     bool            m_render_only_to_selected_effect;
+<     bool            m_scene_save_export;
+<     bool            m_stop_requested;
+<     JahLayer*       m_base_layer;
+<     JahLayer*		m_point_layer[MAX_TRACKING_POINTS];
+<     bool            m_show_lights;
+<     bool            m_animation_updated;
+<     bool            m_dont_paint;
+---
+>     JahLayer*	    m_aPointLayers[MAX_TRACKING_POINTS];
+> 
+>     bool            m_bShowLights;
+>     bool            m_bAnimationUpdated;
+>     bool            m_bDontPaint;
+374,375c398,399
+<     bool            getAnimationUpdated() { return m_animation_updated; }
+<     void            setAnimationUpdated(bool flag) { m_animation_updated = flag; }
+---
+>     bool            getAnimationUpdated() ;
+>     void            setAnimationUpdated(bool flag) ;
+377,379c401,403
+<     JahLayer*       getBaseLayer() { return m_base_layer; }
+<     bool            getStopRequested() { return m_stop_requested; }
+<     void            setStopRequested(bool flag) { m_stop_requested = flag; }
+---
+>     JahLayer*       getBaseLayer() ;
+>     bool            getStopRequested();
+>     void            setStopRequested(bool flag);
+386,387c410,411
+<     bool            getDontPaint() { return m_dont_paint; }
+<     void            setDontPaint(bool flag) { m_dont_paint = flag; }
+---
+>     bool            getDontPaint() ;
+>     void            setDontPaint(bool flag) ;
+396,397c420,421
+<     bool            getDontTrack() { return m_dont_track; }
+<     void            setDontTrack(bool flag) { m_dont_track = flag; }
+---
+>     bool            getDontTrack() ;
+>     void            setDontTrack(bool flag);
+410a435,436
+>  protected: // DATA
+> 
+415c441
+<     /////////////////////////////////////////
+---
+>  /////////////////////////////////////////
+417c443
+<     GLCore          *core;
+---
+>     GLCore          *m_pCore;
+419,421c445,447
+<     int             X_RESOLUTION;
+<     int             Y_RESOLUTION;
+<     double          PIXEL_RATIO;
+---
+>     int             m_nX_RESOLUTION; // from the project
+>     int             m_nY_RESOLUTION; // from the project
+>     double          m_fPIXEL_RATIO;  // from the project
+425,426c451,452
+<     QPtrList<LayerListEntry>*       m_layerlist;
+<     QPtrList<JahLayer>*             m_layer_list;
+---
+>     QPtrList<LayerListEntry>*       m_pLayerListEntryList;
+>     //    QPtrList<JahLayer>*             m_pJahLayerList;
+428,429c454,456
+<     QPtrList<LayerListEntry>*   getLayerList() { return m_layerlist; }
+<     GLCore*                     getCore() { return core; }
+---
+>  public:
+>     QPtrList<LayerListEntry>*   getLayerList() ;
+>     GLCore*                     getCore() ;
+437c464,466
+<     
+---
+> 
+> 
+>  protected: // DATA
+439c468,469
+<     QPtrList<worldSort> *newworldorder;
+---
+>     // haha NWO new world order!
+>     QPtrList<worldSort> * m_pNewworldorder;
+440a471
+>  public:
+446a478
+>     public :
+448,465c480,483
+<     //default module variables
+<     QString    ModuleName;
+< 	QHBox* m_controller;
+<     JahLayer  *thegrid;
+<     JahLayer  *titlesafe;
+<     JahLayer  *textsafe;
+<     JahLayer  *camera;
+< 
+<     QCheckBox*              m_show_lights_checkbox;
+<     QCheckBox*              getShowLightsCheckbox() { return m_show_lights_checkbox; }
+<     QCheckBox*              m_use_auto_key_checkbox;
+<     QCheckBox*              getUseAutoKeyCheckbox() { return m_use_auto_key_checkbox; }
+< 
+<     QCheckBox*              m_use_opengl_key_layer_checkbox;
+<     QCheckBox*              m_use_fast_shader_key_layer_checkbox;
+<     bool                    useOpenGLKey();
+<     bool                    useFastShaderKey();
+<     bool                    getLockKeyAndClip();
+---
+>       // new access methods
+>     JahLayer  *getCamera();
+>     int getX_RESOLUTION();
+>     int getY_RESOLUTION();
+466a485
+>     virtual QString    getModuleName();
+467a487,499
+>  protected: // DATA
+>     //default module variables
+>     QString    m_qsModuleName; // Paint|"Effects"|"Animation"
+> 	QHBox* m_pController;
+>     JahLayer  *m_pGrid;
+>     JahLayer  *m_pTitleSafe;
+>     JahLayer  *m_pTextSafe;
+>     JahLayer  *m_pCamera;
+> 
+>     QCheckBox*              m_pShowLightsCheckBox;
+>     QCheckBox*              m_pUseAutoKeyCheckBox;
+>     QCheckBox*              m_pUseOpenGLKeyLayerCheckBox;
+>     QCheckBox*              m_pUseFastShaderKeyLayerCheckBox;
+469c501
+<     ActiveLayerList  *activeLayers;
+---
+>     ActiveLayerList  *m_pActiveLayers;
+471c503
+<     bool m_sliders_have_changed;
+---
+>     bool m_bSlidersHaveChanged;
+474c506,507
+<     int numberOfLights;
+---
+>     int m_nNumberOfLights;
+> 
+476,486c509,526
+<     QTimer*     getAutoSaveTimer() { return m_auto_save_timer; }
+<     bool        getAutoSaveInProgress() { return m_auto_save_in_progress; }
+<     void        setAutoSaveInProgress(bool flag) { m_auto_save_in_progress = flag; }
+<     static const char*      getTrackerFragmentShader() { return m_tracker_fragment_shader; }
+< 
+<     bool        getModuleUsesLighting() { return m_module_uses_lighting; }
+<     void        setModuleUsesLighting(bool flag) { m_module_uses_lighting = flag; }
+< 
+<     QSlider*    getLightingSliderPtr(int slider_number) { return m_lighting_slider[slider_number]; }
+<     InputLCD*   getLightingLcdPtr(int slider_number) { return m_lighting_lcd[slider_number]; }
+<     QLabel*     getLightingSliderLabelPtr(int slider_number) { return m_lighting_slider_label[slider_number]; }
+---
+>  public:
+>     QCheckBox*              getShowLightsCheckBox() ;
+>     QCheckBox*              getUseAutoKeyCheckBox() ;
+>     bool                    useOpenGLKey();
+>     bool                    useFastShaderKey();
+>     bool                    getLockKeyAndClip();
+> 
+>     QTimer*     getAutoSaveTimer() ;
+>     bool        getAutoSaveInProgress();
+>     void        setAutoSaveInProgress(bool flag);
+>     static const char*      getTrackerFragmentShader();
+> 
+>     bool        getModuleUsesLighting() ;
+>     void        setModuleUsesLighting(bool flag);
+> 
+>     QSlider*    getLightingSliderPtr(int slider_number) ;
+>     InputLCD*   getLightingLcdPtr(int slider_number) ;
+>     QLabel*     getLightingSliderLabelPtr(int slider_number);
+491,494c531,534
+<     bool            getSlidersHaveChanged() { return m_sliders_have_changed; }
+<     void            setSlidersHaveChanged(bool flag) { m_sliders_have_changed = flag; }
+<     JahLayer*       getImageLayer() { return m_image_layer; }
+<     void            setImageLayer(JahLayer* layer) { m_image_layer = layer; }
+---
+>     bool            getSlidersHaveChanged() ;
+>     void            setSlidersHaveChanged(bool flag);
+>     JahLayer*       getImageLayer() ;
+>     void            setImageLayer(JahLayer* layer) ;
+496,500c536,539
+<     int             getFramesPerSecond() { return m_frames_per_second; }
+<     void            setFramesPerSecond(int value) { m_frames_per_second = value; }
+<     QCheckBox*      getUseLightingCheckbox() { return m_use_lighting_checkbox; }
+<     QCheckBox*      getTranslateFirstCheckbox() { return m_translate_first_checkbox; }
+< 
+---
+>     int             getFramesPerSecond() ;
+>     void            setFramesPerSecond(int value);
+>     QCheckBox*      getUseLightingCheckBox() ;
+>     QCheckBox*      getTranslateFirstCheckBox() ;
+502d540
+< 
+505,512d542
+< protected:
+<     QTimer*                 m_auto_save_timer;
+<     bool                    m_auto_save_in_progress;
+<     static const char*      m_tracker_fragment_shader;
+<     QCheckBox*              m_use_lighting_checkbox;
+<     QCheckBox*              m_translate_first_checkbox;
+<     JahLayer*               m_image_layer;
+<     int                     m_frames_per_second;
+515c545,556
+< public:
+---
+>  protected: // STATIC DATA
+> 
+>     static const char*      sm_sTrackerFragmentShader;
+> 
+>  protected: // DATA
+>     QTimer*                 m_pAutoSaveTimer;
+>     bool                    m_bAutoSaveInProgress;
+> 
+>     QCheckBox*              m_pUseLightingCheckBox;
+>     QCheckBox*              m_pTranslateFirstCheckBox;
+>     JahLayer*               m_pImageLayer;
+>     int                     m_nFramesPerSecond;
+518c559
+<     JahRender* renderSpace;
+---
+>     JahRender* m_pRenderSpace;
+521,522c562,563
+<     QTimer* timer;
+<     double jahfps;
+---
+>     QTimer* m_pTimer;
+>     double m_fJahFPS;
+524,525c565,566
+<     //The core timer object for fps
+<     JahTimer    *coretimer;
+---
+>     //The core timer object for FPS
+>     JahTimer    *m_pCoreTimer;
+528,529c569,570
+<     QString renderpath;
+<     QString scenepath;
+---
+>     QString m_qsRenderPath;
+>     QString m_qsScenePath;
+532,533c573,574
+<     QString JahBasePath;
+<     QString JahMediaPath;
+---
+>     QString m_qsJahBasePath;
+>     QString m_qsJahMediaPath;
+535,536c576
+<     int gridval;
+<     bool polySmooth, select;
+---
+>     bool m_bGridVal; 
+538c578,579
+<     int             *clipnumber;            //used to track global clipnumber
+---
+>     bool m_bPolySmooth, 
+>          m_bSelect;
+540,548c581,592
+<     JahLayer*       m_active_layer;
+<     int             m_currentFrame; 
+<     int             m_lastLayer;
+< 
+<     int                 getCurrentFrame() { return m_currentFrame; }
+<     void                setCurrentFrame(int frame_number) { m_currentFrame = frame_number; }
+<     void                incrementCurrentFrame(int step) { m_currentFrame += step; }
+<     JahLayer*           getActiveJahLayer() { return m_active_layer; }
+<     void                setActiveJahLayer(JahLayer* layer) { m_active_layer = layer; }
+---
+>     int             * m_pClipNumber;            //used to track global clipnumber
+> 
+>     JahLayer*       m_pActiveLayer;
+>     int             m_nCurrentFrame; 
+>     int             m_nLastLayer;
+> 
+>  public:
+>     int                 getCurrentFrame() ;
+>     void                setCurrentFrame(int frame_number);
+>     void                incrementCurrentFrame(int step);
+>     JahLayer*           getActiveJahLayer();
+>     void                setActiveJahLayer(JahLayer* layer);
+553c597,598
+<     void                drawAllLayers(int number_of_base_layers, bool draw_only_to_selected_effect = false);
+---
+>     void                drawAllLayers(int number_of_base_layers, 
+> 			  bool draw_only_to_selected_effect = false);
+555c600,601
+<     void                buildEffects(JahLayer* image_layer, bool draw_only_to_selected_effect = false);
+---
+>     void                buildEffects(JahLayer* image_layer,
+> 			 bool draw_only_to_selected_effect = false);
+562,610c608,672
+<     void                saveEffects(std::string& file_name, JahLayer* jah_layer);
+<     bool                getAnimating() { return m_animation; }
+<     void                setAnimating(bool flag) { m_animation = flag; }
+<     std::string&        getRenderOutputFileNameString() { return m_render_output_file_name_string; }
+<     void                setRenderOutputFileNameString(std::string name) { m_render_output_file_name_string = name; }
+<     bool                getStopScript() { return m_stop_script; }
+< 	void                setStopScript(bool flag) { m_stop_script = flag; }
+<     void                set (bool flag) { m_stop_script = flag; }
+<     int                 getRedrawDelay() { return m_redraw_delay; }
+<     void                setRedrawDelay(int delay) { m_redraw_delay = delay; }
+< 
+< 
+<     std::string         m_render_output_file_name_string;
+<     bool                m_stop_script;
+< 
+<     int             minFrame, maxFrame;
+<     bool            m_animation;
+<     bool            m_animsliderselected;
+<     int             m_redraw_delay;
+<     int             lastx,lasty;
+<     
+<     QString         renderext; 
+<     QString         renderformat; 
+<     int             renderquality;
+<     int             JahRenderer;
+<     
+<     int             JahResolutionValue;
+<     QLabel          *jahreslabel;
+<     QComboBox       *JahresCombo;
+<     bool            hasResMenu;
+< 
+<     MouseMode       mmode;                  //mouse selection mode
+< 
+<     bool            HWFOG;                  //for hardware fog support
+<     bool            HWALIASING;             //for hardware antialiasing support
+<     
+<     int             numUiOptions;           //for ui options
+<     bool            forceplay;              //for realtime videlayer playback
+<     bool            hwaliasing;             //for hardware anti aliasing
+< 
+<     bool            updateEffect;           //for effects
+<     bool            oldJahLoadfile;         //for old file loading support
+<     bool            mousePressed;           //for mouse tracking
+< 
+<     
+<     bool            haskeyframer;           //interface widgets
+<     JahKeyframer    *thekeyframer;          //the keyframer
+<     bool            hasnodeframer;
+<     bool            haswireup;
+---
+>     void                saveEffects(std::string& file_name,
+> 				    JahLayer* jah_layer);
+>     bool                getAnimating() ;
+>     void                setAnimating(bool flag);
+>     std::string&        getRenderOutputFileNameString();
+>     void                setRenderOutputFileNameString(std::string name);
+>     bool                getStopScript() ;
+>     void                setStopScript(bool flag) ;
+>     void                set (bool flag) ;
+>     int                 getRedrawDelay() ;
+>     void                setRedrawDelay(int delay) ;
+> 
+>  protected: // DATA
+> 
+>     std::string         m_sRenderOutputFilename;
+> 
+>     bool                m_bStopScript;
+> 
+>     int             m_nMinFrame,
+>                     m_nMaxFrame;
+> 
+>     bool            m_bAnimation;
+>     bool            m_bAnimSliderSelected;
+>     int             m_nRedrawDelay;
+> 
+>     int             m_nLastX,
+>                     m_nLastY;
+> 
+>     QString         m_qsRenderExt;
+>     QString         m_qsRenderFormat;
+>     int             m_nRenderQuality;
+>     int             m_nJahRenderer;
+>     int             m_nJahResolutionValue;
+> 
+> 
+> #ifndef HIDE_GUI
+>     QLabel          *m_pJahResLabel;
+> 
+>     // TODO : pair of (widget and bool)
+>     QComboBox       *m_pJahResCombo; //controlled by  m_bHasResMenu
+>     bool            m_bHasResMenu; // alway false, read once. never updated
+> 
+> #endif
+> 
+>     MouseMode       m_MMode;                  //mouse selection mode
+> 
+>     bool            m_bHWFOG;                  //for hardware fog support,
+>     //from the pref
+>     bool            m_bHWALIASING;             //for hardware antialiasing
+>     //support. from the prefs
+>     
+>     int             m_nNumUiOptions;           //for ui options
+>     bool            m_bForcePlay;              //for realtime videlayer playback
+>     bool            m_bHWAliasing;             //for hardware anti aliasing
+> 
+>     bool            m_bUpdateEffect;           //for effects
+>     bool            m_bOldJahLoadfile;         //for old file loading support
+>     bool            m_bMousePressed;           //for mouse tracking
+> 
+>     
+>     bool            m_bHasKeyFramer;           //interface widgets
+>     JahKeyframer   * m_pKeyFramer;          //the keyframer
+>     bool            m_bHasNodeFramer;
+>     bool            m_bHasWireUp;
+> 
+612c674
+<     WireWidget      *thewireup;         //the v3 test nodeframer
+---
+>     WireWidget      *m_pWireUp;         //the v3 test nodeframer
+614c676,677
+<     JahNodes        *thenodeframer;         //the nodeframer
+---
+>     // what I am compiling: MIKE 
+>     JahNodes        *m_pNodeFramer;         //the nodeframer
+617c680
+<     JahDesktopSideTable *mediatable;
+---
+>     JahDesktopSideTable *m_pMediatable;
+620c683
+<     static JahPluginLib*   jplugin;
+---
+>     static JahPluginLib*   m_pJPlugIn;
+623c686
+<     GLfloat hfog, vfog;
+---
+>     GLfloat m_fHFog, m_fVFog;
+627,643d689
+<     
+<     QWidget         *page;
+<     QCheckBox       *forceplaycheckbox;
+<     QPushButton     *controllerpreviousbutton;
+<     QPushButton     *controllerstopbutton;
+<     QPushButton     *controllerplaybutton;
+<     QPushButton     *controllerffworardbutton;
+<     QPushButton     *controllernextbutton;
+<     QPushButton     *controllerrewindbutton;
+<     TimelineSlider  *controllerslider;
+<     SupergRangeControl* controllerStartFrameControl;
+<     SupergRangeControl* controllerEndFrameControl;
+<     QPushButton     *keyframebutton;
+<     QLCDNumber      *timecodedisplay;
+<     QFrame          *imagingframe;
+<     QPushButton     *imagingphotobutton;
+<     QPushButton     *imagingrenderbutton;
+645,646c691,729
+<     //protected:
+<     QHBoxLayout     *pageLayout;
+---
+> #ifndef HIDE_GUI    
+>     QWidget         *m_pPage;
+> 
+>     //
+>     QCheckBox       *m_pForcePlayCheckBox;
+> 
+>     // god, why do we not put this in its own class?
+>     QPushButton     *m_pControllerPreviousButton;
+>     QPushButton     *m_pControllerStopButton;
+>     QPushButton     *m_pControllerPlayButton;
+>     QPushButton     *m_pControllerFFWardButton;
+>     QPushButton     *m_pControllerNextButton;
+>     QPushButton     *m_pControllerRewindButton;
+> 
+> #endif
+>     /// the main slider/timeline controller
+>     /*
+>       is informed about the FPS
+>        in set resolution and in lazy
+>        not really slider but the main controller slider
+> 
+>        see updateTimeSlider is called from outside!
+> 
+> void GLWorld::sliderValueChanged(int)
+> 
+>     */
+> #ifndef HIDE_GUI
+>     TimelineSlider  *m_pControllerSlider;
+> 
+>     SupergRangeControl* m_pControllerStartFrameControl;
+>     SupergRangeControl* m_pControllerEndFrameControl;
+> 
+>     QPushButton     *m_pKeyFrameButton;
+>     QLCDNumber      *m_pTimeCodeDisplay;
+>     QFrame          *m_pImagingFrame;
+>     QPushButton     *m_pImagingPhotoButton;
+>     QPushButton     *m_pImagingRenderButton;
+> 
+>     QHBoxLayout     *m_pPageLayout;
+649c732
+<     QPushButton*   GetButton;
+---
+>     QPushButton*   m_pGetButton;
+653,665c736,745
+<     bool hasLabels;
+<     QLabel          *JahModuleLabel[5];
+<     QString         JahModuleLabelText[5];
+< 
+<     bool hasSliders;
+< 
+< #if 0
+<     SliderButton    *JahSliders[NUMBER_OF_AXIS_SLIDERS];
+<     SliderButton*   m_text_extrude_slider;
+< #else
+<     QSlider         *JahSliders[NUMBER_OF_AXIS_SLIDERS];
+<     QSlider*        m_text_extrude_slider;
+< #endif
+---
+>     bool m_bHasLabels;
+>     QLabel          * m_aJahModuleLabels[5];
+>     QString         m_aJahModuleLabelTexts[5];
+> 
+>     bool m_bHasSliders; // never used, alsway falsee
+> 
+>     //SliderButton
+>     QSlider         *m_aJahSliders[NUMBER_OF_AXIS_SLIDERS];
+>     //SliderButton
+>     QSlider     *   m_pTextExtrudeSlider;
+667,668c747,748
+<     QLabel*         m_text_extrude_label;
+<     InputLCD*       m_text_extrude_lcd;
+---
+>     QLabel*         m_pTextExtrudeLabel;
+>     InputLCD*       m_pTextExtrudeLCD;
+670,671c750,751
+<     InputLCD        *JahSlidersLCD[NUMBER_OF_AXIS_SLIDERS];
+<     QLabel          *JahSlidersLabel[NUMBER_OF_AXIS_SLIDERS];
+---
+>     InputLCD        * m_aJahSliderLCDs[NUMBER_OF_AXIS_SLIDERS];
+>     QLabel          * m_aJahSliderLabels[NUMBER_OF_AXIS_SLIDERS];
+673c753
+<     QString         JahSlidersLabelText[NUMBER_OF_AXIS_SLIDERS];
+---
+>     QString         m_aJahSliderLabelTexts[NUMBER_OF_AXIS_SLIDERS];
+675,686c755,757
+<     bool hasButtons;
+<     QCheckBox       *JahModuleOption[10];
+<     QMultiLineEdit     *textEd;
+<     QCheckBox*      m_select_colors_individually_qcheckbox;
+<     QCheckBox*      m_pbuffer_select_checkbox;
+< 
+<     InputLCD          *m_slip_frames_lcd;     
+<     InputLCD          *m_in_frames_lcd;   
+<     InputLCD          *m_out_frames_lcd;
+<     InputLCD          *m_key_slip_frames_lcd;  
+<     InputLCD          *m_key_in_frames_lcd;    
+<     InputLCD          *m_key_out_frames_lcd;
+---
+>     bool m_bHasButtons; // always false
+>     QCheckBox       *m_aJahModuleOptions[10];
+>     QMultiLineEdit     * m_pTextEd;
+688c759
+<     QCheckBox*        m_lock_key_and_clip_checkbox;
+---
+>     QCheckBox*      m_pSelectColorsIndividuallyQCheckBox;
+689a761
+>     QCheckBox*      m_pBufferSelectCheckBox;
+690a763,769
+>     // are these ever used?
+>     InputLCD          *m_pSlipFramesLCD;
+>     InputLCD          *m_pInFramesLCD;
+>     InputLCD          *m_pOutFramesLCD;
+>     InputLCD          *m_pKeySlipFramesLCD;
+>     InputLCD          *m_pKeyInFramesLCD;
+>     InputLCD          *m_pKeyOutFramesLCD;
+691a771,774
+>     QCheckBox*        m_pLockKeyAndClipCheckBox;
+> #endif
+> 
+>  public:
+695c778,780
+<     JahToolButton* getStopButton() { return m_stop_button; }
+---
+> 
+> 
+>     JahToolButton* getStopButton() ;
+696a782,783
+> 
+>  protected: // DATA
+700d786
+<     int    Astartframe, Aendframe, Aanimframe; 
+702d787
+<     QListView*      m_layer_listview;
+704,707c789,799
+<     QHBox           *MiddleFrame;       QSlider *     Slider2;
+<     SupergRangeControl*    m_animframe_lcd;   
+<     SupergRangeControl*    startFrameControl;
+<     SupergRangeControl*    endFrameControl;
+---
+>     int    m_nAStartFrame,
+>       m_nAEndFrame, 
+>       m_nAAnimFrame;
+> 
+> 
+> #ifndef HIDE_GUI
+> 
+>     QListView*      m_pLayerListView;
+>     QHBox           *m_pMiddleFrame;  
+>     QSlider *     m_pSlider2;
+>     SupergRangeControl*    m_pAnimFrameLCD;   
+709c801,802
+<     QCheckBox       *forcedplay;
+---
+>     // display the minium frame
+>     SupergRangeControl*    m_pStartFrameControl;
+711c804,814
+<     JahToolButton   *scrubfirst, * scrubprevious,  * scrubstop, * scrubplay, * scrubnext, * scrublast;
+---
+>     // the last frame
+>     SupergRangeControl*    m_pEndFrameControl;
+> 
+>     QCheckBox       *m_pForcedPlay;
+> 
+>     JahToolButton   *m_pScrubFirst, 
+>       * m_pScrubPrevious, 
+>       * m_pScrubStop, 
+>       * m_pScrubPlay, 
+>       * m_pScrubNext, 
+>       * m_pScrubLast;
+713,714c816,819
+<     JahToolButton   *keyback, *keyadd,  *keyremove, *keynext;
+<     JahToolButton*  m_stop_button;
+---
+>     JahToolButton   *m_pKeyBack, 
+>       *m_pKeyAdd, 
+>       *m_pKeyRemove, 
+>       *m_pKeyNext;
+716,717c821
+<     QPushButton     *scrubkey, * scrubrenderSlides;
+<     JahToolButton   * scrubrender, * scrubrenderAll;
+---
+>     JahToolButton*  m_pStopButton;
+719,722c823,831
+<     QPushButton*    m_delete_keyframe_button;
+<     QPushButton*    m_add_keyframe_button;
+<     QPushButton*    m_prev_keyframe_button;
+<     QPushButton*    m_next_keyframe_button;
+---
+>     QPushButton     *m_pScrubKey, 
+>       * m_pScrubRenderSlides;
+>     JahToolButton   * m_pScrubRender, 
+>       * m_pScrubRenderAll;
+> 
+>     QPushButton*    m_pDeleteKeyFrameButton;
+>     QPushButton*    m_pAddKeyFrameButton;
+>     QPushButton*    m_pPrevKeyFrameButton;
+>     QPushButton*    m_pNnextKeyFrameButton;
+725,735c834,849
+<     QPushButton     *AddButton, *AddFxButton, *DelButton, *SceneButton;
+<     QPushButton*    m_refresh_button;
+<     QPushButton*    m_undo_button;
+<     QPushButton*    m_redo_button;
+<     QPushButton*    m_delete_button;
+<     QPushButton*    m_copy_one_button;
+<     QPushButton*    m_copy_all_button;
+<     QPushButton*    m_paste_button;
+<     QPushButton     *NameButton;
+<     QPushButton     *MoveupButton, *MovedownButton;
+<     FancyPopup      *namepopup;
+---
+>     QPushButton     *m_pAddButton, 
+>       *m_pAddFxButton,
+>       *m_pDelButton, 
+>       *m_pSceneButton;
+> 
+>     QPushButton*    m_pRefreshButton;
+>     QPushButton*    m_pUndoButton;
+>     QPushButton*    m_pRedoButton;
+>     QPushButton*    m_pDeleteButton;
+>     QPushButton*    m_pCopyOneButton;
+>     QPushButton*    m_pCopyAllButton;
+>     QPushButton*    m_pPasteButton;
+>     QPushButton     *m_pNameButton;
+>     QPushButton     *m_pMoveUpButton, 
+>       *m_pMoveDownButton;
+>     FancyPopup      *m_pNamePopUp;
+738,740c852,854
+<     QWidgetStack    *controlpanel;
+<     QFrame          *scene_controls;
+<     QFrame          *object_controls;
+---
+>     QWidgetStack    *m_pControlpanel;
+>     QFrame          *m_pScene_controls;
+>     QFrame          *m_pObject_controls;
+744,745c858,873
+<     QWidgetStack    *objectControlStack;
+<     QHBox           *objectControl[10];
+---
+>     QWidgetStack    *m_pObjectControlStack;
+>     QHBox           *m_aObjectControls[10];
+> 
+>     QCheckBox*      m_pGPUSelect;
+>     QPushButton*    m_pSelectFPSPushbutton;
+>     QLabel*         m_pSelectFPSLabel;
+> 
+>     QToolButton*    m_pSrcBlendModeSelectButton;
+>     QToolButton*    m_pDstBlendModeSelectButton;
+> 
+>     QToolButton*    m_pResetBlendModeButton;
+> 
+>     QLabel*         m_pSrcBlendModeSelectLabel;
+>     QLabel*         m_pDstBlendModeSelectLabel;
+>     QLabel*         m_pResetBlendModeLabel;
+> 
+747,768c875,888
+<     QCheckBox*      GpuSelect;
+<     QPushButton*    m_select_fps_pushbutton;
+<     QLabel*         m_select_fps_label;
+< 
+<     QToolButton*    m_src_blend_mode_select_button;
+<     QToolButton*    m_dst_blend_mode_select_button;
+<     QToolButton*    m_reset_blend_mode_button;
+< 
+<     QLabel*         m_src_blend_mode_select_label;
+<     QLabel*         m_dst_blend_mode_select_label;
+<     QLabel*         m_reset_blend_mode_label;
+< 
+<     QPushButton*    m_compositing_mode_select_button;
+<     QLabel*         m_compositing_mode_select_label;
+<     QLabel*         m_compositing_mode_label;
+< 
+<     bool            m_module_uses_lighting;
+<     QSlider*        m_lighting_slider[12];
+<     InputLCD*       m_lighting_lcd[12];
+<     QLabel*         m_lighting_slider_label[12];
+<     QPushButton*    m_run_script_button;
+<     QPushButton*    m_save_as_export_button;
+---
+>     QPushButton*    m_pCompositingModeSelectButton;
+>     //    QLabel*         m_pCompositingModeSelectLabel; // not used!
+>     QLabel*         m_pCompositingModeLabel;
+> 
+>     bool            m_bModuleUsesLighting;
+> 
+>     QSlider*        m_aLightingSliders[12];
+>     InputLCD*       m_aLightingLCDs[12];
+>     QLabel*         m_aLightingSliderLabels[12];
+> 
+>     QPushButton*    m_pRunScriptButton;
+>     QPushButton*    m_pSaveAsExportButton;
+> 
+> #endif 
+771,773c891,893
+<     QPushButton*                getRunScriptButton() { return m_run_script_button; }
+<     virtual void                chooseNewCpuEffect(LayerListEntry* parent, QWidget* thebutton, int x_offset = 0, int y_offset = 0);
+<     virtual void                addCpuEffectLayer(int effect_id, JahLayer* parent_jah_layer, const char* effect_name);
+---
+>     QPushButton*                getRunScriptButton();
+>     virtual void                chooseNewCPUEffect(LayerListEntry* parent, QWidget* thebutton, int x_offset = 0, int y_offset = 0);
+>     virtual void                addCPUEffectLayer(int effect_id, JahLayer* parent_jah_layer, const char* effect_name);
+776,777c896,897
+<     virtual void                chooseNewGpuEffect(LayerListEntry* parent, QWidget* thebutton, int x_offset = 0, int y_offset = 0);
+<     virtual void                addGpuEffectLayer(int effect_id, JahLayer* parent_jah_layer, const char* effect_name);
+---
+>     virtual void                chooseNewGPUEffect(LayerListEntry* parent, QWidget* thebutton, int x_offset = 0, int y_offset = 0);
+>     virtual void                addGPUEffectLayer(int effect_id, JahLayer* parent_jah_layer, const char* effect_name);
+815c935
+<     void                cpuChromaKeyer(JahLayer* key_layer, int buffer_width, int buffer_height, GLuint key_texture_id);
+---
+>     void                CPUChromaKeyer(JahLayer* key_layer, int buffer_width, int buffer_height, GLuint key_texture_id);
+868a989
+>  protected: // DATA
+869a991,992
+>     bool        m_bNoiseMatrixInitialized; // was noiseMatrixInitialized
+>     int*        m_pPermutationTable;
+871,872c994
+<     bool        noiseMatrixInitialized;
+<     int*        permutation_table;
+---
+>     float4*     m_pGradientTable;
+874c996,1006
+<     float4*     gradient_table;
+---
+>     bool        m_bFireTextureInitialized;
+>     bool        m_bRandomTextureInitialized;
+>     bool        m_bContrastTextureInitialized;
+> 
+>     GLuint      m_hGradientTexture;
+>     GLuint      m_hPermutationTexture;
+>     GLuint      m_hTurbulenceTexture;
+>     GLuint      m_hRandomTexture;
+>     GLuint      m_hContrastTexture;
+>     float       m_fZOffset;
+>  public:
+876,888c1008
+<     bool        fireTextureInitialized;
+<     bool        randomTextureInitialized;
+<     bool        contrastTextureInitialized;
+< 
+<     GLuint      gradient_texture;
+<     GLuint      permutation_texture;
+<     GLuint      turbulence_texture;
+<     GLuint      random_texture;
+<     GLuint      contrast_texture;
+<     float       z_offset;
+< 
+< 
+<     typedef void (GLWorld::*CpuEffectFunction)(JahLayer* base_layer, QImage&);
+---
+>     typedef void (GLWorld::*CPUEffectFunction)(JahLayer* base_layer, QImage&);
+890c1010
+<     typedef void (GLWorld::*GpuEffectFunction)(JahLayer* base_layer);
+---
+>     typedef void (GLWorld::*GPUEffectFunction)(JahLayer* base_layer);
+892,902c1012,1022
+<     static int getNumberEmbeddedCpuEffects() { return m_number_embedded_cpu_effects; }
+<     static int getNumberEmbeddedMeshEffects() { return m_number_embedded_mesh_effects; }
+<     static int getNumberEmbeddedGpuEffects() { return m_number_embedded_gpu_effects; }
+< 
+<     std::vector<EffectInfo*>*   getCpuEffectsSelectionVector() { return &m_cpu_effects_selection_vector; }
+<     std::vector<EffectInfo*>*   getMeshEffectsSelectionVector() { return &m_mesh_effects_selection_vector; }
+<     std::vector<EffectInfo*>*   getGpuEffectsSelectionVector() { return &m_gpu_effects_selection_vector; }
+< 
+<     CpuEffectFunction   getCpuEffectFunction(int i) { return m_cpu_effects_dispatch_table[i]; }
+<     MeshEffectFunction  getMeshEffectFunction(int i) { return m_mesh_effects_dispatch_table[i]; }
+<     GpuEffectFunction   getGpuEffectFunction(int i) { return m_gpu_effects_dispatch_table[i]; }
+---
+>     static int getNumberEmbeddedCPUEffects() ;
+>     static int getNumberEmbeddedMeshEffects() ;
+>     static int getNumberEmbeddedGPUEffects() ;
+> 
+>     std::vector<EffectInfo*>*   getCPUEffectsSelectionVector() ;
+>     std::vector<EffectInfo*>*   getMeshEffectsSelectionVector() ;
+>     std::vector<EffectInfo*>*   getGPUEffectsSelectionVector() ;
+> 
+>     CPUEffectFunction   getCPUEffectFunction(int i) ;
+>     MeshEffectFunction  getMeshEffectFunction(int i) ;
+>     GPUEffectFunction   getGPUEffectFunction(int i) ;
+907,917c1027,1037
+<     JahLayer*   getCurrentEffectLayer() { return m_current_effect_layer; }
+<     void        setCurrentEffectLayer(JahLayer* layer) { m_current_effect_layer = layer; }
+<     float       getCameraDistance() { return m_camera_distance; }
+< 
+<     GlslShader*                 getFragmentShader() { return m_fragment_shader; }
+<     GlslShader*                 getVertexShader() { return m_vertex_shader; }
+<     GlslProgram*                getShaderProgram() { return m_shader_program; }
+<     std::vector<GlslShader*>    getShaderVector() { return m_shader_vector; }
+<     GLhandleARB                 getShaderProgramHandle() { return m_shader_program_handle; }
+<     bool                        getGpuActive() { return m_gpuactive; }
+<     void                        setGpuActive(bool flag) { m_gpuactive = flag; }
+---
+>     JahLayer*   getCurrentEffectLayer() ;
+>     void        setCurrentEffectLayer(JahLayer* layer);
+>     float       getCameraDistance();
+> 
+>     GlslShader*                 getFragmentShader() ;
+>     GlslShader*                 getVertexShader() ;
+>     GlslProgram*                getShaderProgram() ;
+>     std::vector<GlslShader*>    getShaderVector() ;
+>     GLhandleARB                 getShaderProgramHandle() ;
+>     bool                        getGPUActive() ;
+>     void                        setGPUActive(bool flag) ;
+923,926c1043,1046
+<     GLuint*     getCompositeTextureIdPtr() { return &m_composite_texture_id; } 
+<     GLuint      getCompositeTextureId() { return m_composite_texture_id; } 
+<     void        setCompositeTextureId(GLuint id) { m_composite_texture_id = id; }
+<     float4*     getCompositeSizeRatioPtr() { return &m_composite_size_ratio; }
+---
+>     GLuint*     getCompositeTextureIdPtr() ;
+>     GLuint      getCompositeTextureId() ;
+>     void        setCompositeTextureId(GLuint id) ;
+>     float4*     getCompositeSizeRatioPtr() ;
+933,935c1053,1055
+< protected:
+<     GLuint          m_src_blend_factor;
+<     GLuint          m_dst_blend_factor;
+---
+>  protected: // DATA
+>     GLuint          m_nSrcBlendFactor;
+>     GLuint          m_nDstBlendFactor;
+938,939c1058,1059
+<     GLuint          getSrcBlendFactor() { return m_src_blend_factor; }
+<     GLuint          getDstBlendFactor() { return m_dst_blend_factor; }
+---
+>     GLuint          getSrcBlendFactor() ;
+>     GLuint          getDstBlendFactor() ;
+942,943c1062,1063
+<     JahControl*     getJahControl() { return m_jah_control; }
+<     void            setJahControl(JahControl* jah_control) { m_jah_control = jah_control; }
+---
+>     JahControl*     getJahControl();
+>     void            setJahControl(JahControl* jah_control) ;
+950,1034c1070,1156
+< protected:
+<     static int          m_number_embedded_cpu_effects;
+<     static int          m_number_embedded_mesh_effects;
+<     static int          m_number_embedded_gpu_effects;
+< 
+<     static const char*  m_color_correction_fragment_shader;
+< 
+<     std::vector<CpuEffectFunction>      m_cpu_effects_dispatch_table;
+<     std::vector<MeshEffectFunction>     m_mesh_effects_dispatch_table;
+<     std::vector<GpuEffectFunction>      m_gpu_effects_dispatch_table;
+< 
+<     std::vector<EffectInfo*>        m_cpu_effects_selection_vector;
+<     std::vector<EffectInfo*>        m_mesh_effects_selection_vector;
+<     std::vector<EffectInfo*>        m_gpu_effects_selection_vector;
+< 
+<     static bool         m_noise_matrix_initialized;
+<     static bool         m_contrast_texture_initialized;
+<     static bool         m_random_texture_initialized;
+<     static int*         m_permutation_table;
+<     static float4*      m_gradient_table;
+< 
+<     static GLuint       m_gradient_texture;
+<     static GLuint       m_permutation_texture;
+<     static GLuint       m_turbulence_texture;
+<     static GLuint       m_random_texture;
+<     static GLuint       m_contrast_texture;
+< 
+<     JahLayer*           m_current_effect_layer;
+<     float               m_camera_distance;
+<     bool                m_gpuactive;
+<     
+<     GLuint              m_composite_texture_id;
+<     float4              m_composite_size_ratio;
+< 
+<     bool                    m_select_colors_individually;
+<     bool                    m_gpu_select;
+<     GLuint                  m_base_texture_id;
+<     GLuint                  m_key_texture_id;
+<     bool                    m_textures_initialized;
+<     bool                    m_use_textures_for_readback;
+<     GLint                   m_red_limits_handle;
+<     GLint                   m_green_limits_handle;
+<     GLint                   m_blue_limits_handle;
+<     GLint                   m_select_colors_individually_handle;
+<     GLint                   m_create_chroma_alpha_mask_handle;
+<     GLint                   m_clear_color_handle;
+<     GLint                   m_soften_value_handle;
+<     float                   m_red_low;
+<     float                   m_red_high;
+<     float                   m_green_low;
+<     float                   m_green_high;
+<     float                   m_blue_low;
+<     float                   m_blue_high;
+<     float                   m_alpha_low;
+<     float                   m_alpha_high;
+<     float                   m_soften_value;
+<     float4                  m_clear_color;
+<     JahLayer*               m_chroma_base_layer;
+<     JahLayer*               m_chroma_key_layer;
+<     JahLayer*               m_chroma_settings_layer;
+<     JahControl*             m_jah_control;
+< 
+<     struct 
+<     {
+<         int         red_low;
+<         int         red_high;
+<         int         green_low;
+<         int         green_high;
+<         int         blue_low;
+<         int         blue_high;
+<         int         alpha_low;
+<         int         alpha_high;
+<         int         soften_value;
+<     } m_chroma_keyer_range;
+< 
+< 
+< 
+<     std::vector<GlslShader*>    m_shader_vector;
+<     GlslShader*                 m_vertex_shader;
+<     GlslShader*                 m_fragment_shader;
+<     GlslProgram*                m_shader_program;
+<     GLhandleARB                 m_shader_program_handle;
+< 
+< 	int curr_width_;
+< 	int curr_height_;
+---
+>  protected: // DATA:
+>     static int          m_nNumberEmbeddedCPUEffects;
+>     static int          m_nNumberEmbeddedMeshEffects;
+>     static int          m_nNumberEmbeddedGPUEffects;
+> 
+>     static const char*  m_szColorCorrectionFragmentShader;
+> 
+>     std::vector<CPUEffectFunction>      m_aCPUEffectsDispatchTable;
+>     std::vector<MeshEffectFunction>     m_aMeshEffectsDispatchTable;
+>     std::vector<GPUEffectFunction>      m_aGPUEffectsDispatchTable;
+> 
+>     std::vector<EffectInfo*>        m_aCPUEffectsSelectionVector;
+>     std::vector<EffectInfo*>        m_aMeshEffectsSelectionVector;
+>     std::vector<EffectInfo*>        m_aGPUEffectsSelectionVector;
+> 
+>     static bool         sm_bNoiseMatrixInitialized;
+>     static bool         sm_bContrastTextureInitialized;
+>     static bool         sm_bRandomTextureInitialized;
+>     static int*         sm_pPermutationTable;
+>     static float4*      sm_pGradientTable;
+> 
+>     static GLuint       sm_nGradientTexture;
+>     static GLuint       sm_nPermutationTexture;
+>     static GLuint       sm_nTurbulenceTexture;
+>     static GLuint       sm_nRandomTexture;
+>     static GLuint       sm_nContrastTexture;
+> 
+>     JahLayer*           m_pCurrentEffectLayer;
+>     float               m_fCameraDistance;
+>     bool                m_bGPUActive;
+>     
+>     GLuint              m_hCompositeTextureID;
+>     float4              m_fCompositeSizeRatio;
+> 
+>     bool                    m_bSelectColorsIndividually;
+>     bool                    m_bGPUSelect;
+>     GLuint                  m_hBaseTextureID;
+>     GLuint                  m_hKeyTextureID;
+>     bool                    m_bTexturesInitialized;
+>     bool                    m_bUseTexturesForReadback;
+> 
+>     // struct
+>     GLint                   m_hRedLimitsHandle;
+>     GLint                   m_hGreenLimitsHandle;
+>     GLint                   m_hBlueLimitsHandle;
+> 
+>     //                        hSelectColorsIndividuallyHandle
+>     GLint                   m_hSelectColorsIndividuallyHandle; // used in glworldgpueffects
+>     GLint                   m_hCreateChromaAlphaMaskHandle;
+>     GLint                   m_hClearColorHandle;
+>     GLint                   m_hCsoftenValueHandle;
+> 
+>     // struct color red,green,blue,alpha TAGChromaKeyerRange 
+>     float                   m_fRedLow; // range
+>     float                   m_fRedHigh;
+> 
+>     float                   m_fGreenLow; // range
+>     float                   m_fGreenHigh;
+> 
+>     float                   m_fBlueLow; // range
+>     float                   m_fBlueHigh;
+> 
+>     float                   m_fAlphaLow; // range TAGChromaKeyerRange 
+>     float                   m_fAlphaHigh;
+> 
+>     float                   m_fSoftenValue; // parrt of TAGChromaKeyerRange 
+> 
+>     float4                  m_f4ClearColor;
+> 
+>     JahLayer*               m_pChromaBaseLayer;
+>     JahLayer*               m_pChromaKeyLayer;
+>     JahLayer*               m_pChromaSettingsLayer;
+>     JahControl*             m_pJahControl;
+> 
+>     // was unnamed. that is bad
+>     TChromaKeyerRange m_ChromaKeyerRange;
+> 
+>     std::vector<GlslShader*>    m_aShaderVector;
+>     GlslShader*                 m_pVertexShader;
+>     GlslShader*                 m_pFragmentShader;
+>     GlslProgram*                m_pShaderProgram;
+>     GLhandleARB                 m_hShaderProgramHandle;
+>     
+>     int m_nCurrWidth;
+>     int m_nCurrHeight;
+>     
+>     bool m_bRenderAtImageResolution;
+1036a1159,1161
+>     
+>     bool getRenderAtImageResolution();
+> 
+1038d1162
+<     bool m_render_at_image_resolution;
+1042c1166
+< 	virtual bool usesVideoHead( ) { return true; }
+---
+> 	virtual bool usesVideoHead( );
+1045,1046c1169,1170
+<     virtual void setPointLayer(int index, JahLayer* layer) { m_point_layer[index] = layer; }
+<     virtual JahLayer* getPointLayer(int index) { return m_point_layer[index]; }
+---
+>     virtual void setPointLayer(int index, JahLayer* layer);
+>     virtual JahLayer* getPointLayer(int index);
+1049,1050c1173,1174
+< protected:
+< 	virtual bool usesKeyFrames( ) { return true; }
+---
+>  protected: // functions
+>     virtual bool usesKeyFrames( );
+1057,1108c1181,1211
+<    	virtual void scheduleUpdate( );
+< 
+<     void slotUpdateAnimation();
+<     void slotSetUseOpenGlKeyer();
+<     void slotSetUseFastShaderKeyer();
+< 
+< 	void slotSetSrcBlendFactor();
+<     void slotSetDstBlendFactor();
+<     void slotResetBlendFactor();
+<     void slotSetCompositingMode();
+< 
+<     void slotLightColorAmbientRed();
+<     void slotLightColorAmbientGreen();
+<     void slotLightColorAmbientBlue();
+< 
+<     void slotLightColorDiffuseRed();
+<     void slotLightColorDiffuseGreen();
+<     void slotLightColorDiffuseBlue();
+< 
+<     void slotLightColorSpecularRed();
+<     void slotLightColorSpecularGreen();
+<     void slotLightColorSpecularBlue();
+< 
+<     void slotLightPosition();
+< 
+<     virtual void slotLightColorAmbient(QColor color);
+<     virtual void slotLightColorDiffuse(QColor color);
+<     virtual void slotLightColorSpecular(QColor color);
+< 
+<     void slotChooseFramesPerSecond();
+<     void slotSetShowLights();
+< 
+< 
+<     //used to get assets from the desktop
+<     void grabDesktop(void)      { emit GrabDesktop();      };
+< 
+<     //opengl routine
+<     virtual void paintGL();
+< 
+<     virtual void    layerClicked(QListViewItem* item);
+<     virtual void    effectNodeClicked( int layernumber );
+<     
+<     virtual void    mousePressEvent( QMouseEvent *e);
+<     virtual void    mouseReleaseEvent( QMouseEvent *e );
+<     virtual void    mouseMoveEvent( QMouseEvent  *e );
+<     virtual void    setSelectColorsIndividually(void);
+< 
+<     virtual void connectKeyframer( void ) ;
+<     virtual void addKeyframer( QWidget* parentwidget ) ;
+< 
+<     virtual void setResolution(int renval);
+<     virtual void updateResMenu(int renval);
+---
+>   virtual void scheduleUpdate( );
+>  
+>  void slotUpdateAnimation();
+>  void slotSetUseOpenGlKeyer();
+>  void slotSetUseFastShaderKeyer();
+>  
+>  void slotSetSrcBlendFactor();
+>  void slotSetDstBlendFactor();
+>  void slotResetBlendFactor();
+>  void slotSetCompositingMode();
+>  
+>  void slotLightColorAmbientRed();
+>  void slotLightColorAmbientGreen();
+>  void slotLightColorAmbientBlue();
+>  
+>  void slotLightColorDiffuseRed();
+>  void slotLightColorDiffuseGreen();
+>  void slotLightColorDiffuseBlue();
+>  
+>  void slotLightColorSpecularRed();
+>  void slotLightColorSpecularGreen();
+>  void slotLightColorSpecularBlue();
+>  
+>  void slotLightPosition();
+>  
+>  virtual void slotLightColorAmbient(QColor color);
+>  virtual void slotLightColorDiffuse(QColor color);
+>  virtual void slotLightColorSpecular(QColor color);
+>  
+>  void slotChooseFramesPerSecond();
+>  void slotSetShowLights();
+1109a1213,1232
+>  //used to get assets from the desktop
+>  void grabDesktop(void)      ;
+>  
+>  //opengl routine
+>  virtual void paintGL();
+>  
+>  virtual void    layerClicked(QListViewItem* item);
+>  virtual void    effectNodeClicked( int layernumber );
+>  
+>  virtual void    mousePressEvent( QMouseEvent *e);
+>  virtual void    mouseReleaseEvent( QMouseEvent *e );
+>  virtual void    mouseMoveEvent( QMouseEvent  *e );
+>  virtual void    setSelectColorsIndividually(void);
+>  
+>  virtual void connectKeyframer( void ) ;
+>  virtual void addKeyframer( QWidget* parentwidget ) ;
+>  
+>  virtual void setResolution(int renval);
+>  virtual void updateResMenu(int renval);
+>  
+1155c1278
+< 	virtual GLfloat setZoom( GLfloat value ) { return value; }
+---
+>     virtual GLfloat setZoom( GLfloat value );
+1161c1284
+<     virtual void SetGpuSelect(void);
+---
+>     virtual void SetGPUSelect(void);
+1187c1310
+<     virtual void  slotUpdateListviewCheckboxes(); 
+---
+>     virtual void  slotUpdateListViewCheckBoxes(); 
+1372,1374c1495,1498
+<     bool        flipColorData;
+<     GLenum      texture_format;
+<     int         texture_mode;
+---
+>     bool        m_bFlipColorData;
+>     GLenum      m_hTexture_format;
+>     int         m_nTexture_mode;
+>     QString m_qsJahLoadfilename;
+1376,1379c1500,1501
+<     QString jahLoadfilename;
+< 
+< 	// Indicator for module started
+< 	bool m_started;
+---
+>     // Indicator for module started
+>     bool m_bStarted;
+1390,1391c1512,1514
+<     static void qt_lock( ) { qApp->lock( ); }
+<     static void qt_unlock( ) { qApp->unlock( ); }
+---
+>     static void qt_lock( ) ;
+>     
+>     static void qt_unlock( ) ;

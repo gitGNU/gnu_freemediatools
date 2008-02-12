@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- Jahshaka Scene File -->
+
+<JAHSHAKA jah_version = '2.0RC1' xml_file_version = '0.01'>
+    <SCENE_FILE name = 'animtest' />
+    <MODULE name = 'Animation' />
+    <FRAMES resolution = 'NTSC D1' code = '3' number = '100' />
+    <LAYER name = 'World' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'BACKDROP' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <BACKDROP grid_setting = '0' aliasing = '0' text_safe = '0'>
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'beck' clipnumber = '5'
+             location = './media/images/'
+             filename = 'beck' extension = '.bmp'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '0' ypos = '0' />
+        <KEYFRAMES count = '0'>
+            <KEYFRAME TC = '0' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+        </BACKDROP>
+    </LAYER>
+    <LAYER name = 'earth' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'SPHERE' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '1' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'earthtex' clipnumber = '6'
+             location = './media/images/'
+             filename = 'earthtex' extension = '.jpg'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '0' ypos = '0' />
+        <KEYFRAMES count = '2'>
+            <KEYFRAME TC = '1' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '0' RX = '-76' RY = '-9' RZ = '-23' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '100' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '0' RX = '-76' RY = '-9' RZ = '437' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'text' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'font' clipnumber = '7'
+             location = './media/images/'
+             filename = 'font' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '0' ypos = '0' />
+        <KEYFRAMES count = '2'>
+            <KEYFRAME TC = '1' SX = '1' SY = '1' SZ = '1' TX = '-52' TY = '0' TZ = '936' RX = '0' RY = '0' RZ = '0' AL = '13' extrude = '5' />
+            <KEYFRAME TC = '100' SX = '1' SY = '1' SZ = '1' TX = '52' TY = '0' TZ = '936' RX = '0' RY = '0' RZ = '0' AL = '13' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = '3DText' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'TEXT' objtype = 'JAHTEXT' />
+        <PROPERTIES blend = '0' depth = '1' cull = '0' lighting = '1' foreground = '0' smooth = '1' reflect = '1' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'sky' clipnumber = '8'
+             location = './media/images/'
+             filename = 'sky' extension = '.bmp'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '0' ypos = '0' />
+        <COLOR red = '1' green = '1' blue = '1' />
+        <TEXT text = 'jahshaka' font = './fonts/arial.ttf' style = 'FEXTRUDE' extrude_depth = '20' />
+        <KEYFRAMES count = '3'>
+            <KEYFRAME TC = '1' SX = '0.83' SY = '0.63' SZ = '1' TX = '-199' TY = '-56' TZ = '925' RX = '199' RY = '0' RZ = '0' AL = '100' extrude = '20' />
+            <KEYFRAME TC = '21' SX = '0.83' SY = '0.63' SZ = '1' TX = '-155' TY = '-21' TZ = '625.488' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '20' />
+            <KEYFRAME TC = '42' SX = '0.83' SY = '0.63' SZ = '1' TX = '-155' TY = '-19' TZ = '311' RX = '1' RY = '0' RZ = '0' AL = '100' extrude = '20' />
+        </KEYFRAMES>
+    </LAYER>
+</JAHSHAKA>

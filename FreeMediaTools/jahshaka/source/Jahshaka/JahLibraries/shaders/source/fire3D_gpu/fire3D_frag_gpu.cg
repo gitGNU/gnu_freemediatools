@@ -1,0 +1,48 @@
+
+half4 main(
+	float2 position           				: TEXCOORD0,
+	float2 noise_position           		: TEXCOORD1,
+	uniform float2 scale_factor				: register (c0),
+	uniform float2 distortion				: register (c1),
+	uniform float time						: register (c2),
+	uniform float timescale					: register (c3),
+	uniform float gradient					: register (c4),
+	uniform float cosine_factor				: register (c5),
+	uniform float2 base_scale_factor		: register (c6),
+    uniform sampler2D turbulence_texture	: register (s0),
+    uniform sampler2D base_texture			: register (s1)
+		  ) : COLOR
+{
+	float4 					Color;
+	float4					Turbulence;
+	float2					cosine_term;
+
+	cosine_term = (cosine_factor == 0.0) ? 1.0 :
+				   abs( cos(noise_position - (time / timescale * cosine_factor) ));
+
+// 	float2 turbulence_position = (0.1 + abs( sin((noise_position - ((time) / timescale))) * frac(1.0 - (cosine_factor * cos(noise_position))) )) * scale_factor * 0.9;
+ 	float2 turbulence_position = (0.1 + abs( sin(noise_position - (time / timescale)) * cosine_term )) * scale_factor * 0.9;
+
+	Turbulence = (half4)tex2D(turbulence_texture, turbulence_position);
+
+	float2 uv = position + ((Turbulence.xx * distortion / 20.0) * (gradient + ((1.0 - gradient) * position.y)));
+// 	float2 uv = position + ((Turbulence.xx * distortion / 20.0) * 1.0);
+// 	uv.y /= frac(time / timescale);
+
+	if (uv.x > base_scale_factor.x || uv.y > base_scale_factor.y) 
+	{
+		uv.x = base_scale_factor.x;
+		uv.y = base_scale_factor.y;
+	}
+
+	if (uv.x <= 0.0 || uv.y <= 0.0) 
+	{
+		uv.x = 0.002;
+		uv.y = 0.002;
+	}
+
+ 	Color = (half4)tex2D(base_texture, uv);
+//   	Color = Turbulence;
+
+    return (half4)Color;
+}

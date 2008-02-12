@@ -1,0 +1,38 @@
+
+void main(float4 object_position      	: POSITION, 
+	float2 TexUV        				: TEXCOORD0,
+	float2 TexUVturbulence        		: TEXCOORD1,
+	uniform float4x4 ModelViewProj		: register (c0),
+	uniform float4x4 ModelView			: register (c4),
+	uniform float4x4 ModelViewIT		: register (c8),
+
+	uniform float4 texture_width		: register (c12),
+	uniform float4 texture_height		: register (c13),
+	uniform float camera_distance		: register (c14),
+
+	out float4 homogeneous_position   	: POSITION,
+	out float4 normalized_position		: TEXCOORD3,
+	out float4 homogeneous_position_out : TEXCOORD4,
+	out float3 eye_position         	: TEXCOORD5,
+	out float3 eye_normal         		: TEXCOORD2,
+	out float2 uv_turbulence         	: TEXCOORD1,
+	out float2 uv           			: TEXCOORD0)
+{
+	// Normalize xyz to range (0,1)
+	normalized_position.x = (object_position.x / (texture_width.x / 2.0));
+	normalized_position.y = (object_position.y / (texture_height.x / 2.0));
+	//normalized_position.z = (object_position.z / 256.0);
+	normalized_position.z = ((object_position.z + camera_distance) / camera_distance);
+	normalized_position.w = object_position.w;
+
+    // compute homogeneous position of vertex for rasterizer
+    homogeneous_position = mul(ModelViewProj, object_position);
+    // transform position and normal from model-space to view-space
+	homogeneous_position_out = homogeneous_position;
+
+    eye_position = mul(ModelView, normalized_position).xyz;
+    eye_normal = mul(ModelViewIT, float4(normalized_position.xyz, 0)).xyz;
+
+    uv = TexUV;
+	uv_turbulence = TexUVturbulence;
+}

@@ -1,0 +1,147 @@
+half4
+rgb_to_hsv(half4 rgb)
+{
+	half maximum = ( max( max(rgb.x, rgb.y), rgb.z) );
+	half minimum = ( min( min(rgb.x, rgb.y), rgb.z) );
+	half4 hsv;
+	hsv.z = maximum;
+	half delta = maximum - minimum;
+
+	if (delta > 0.0001)
+	{
+		hsv.y = delta / maximum;
+	
+		if (rgb.x == maximum)
+		{
+			hsv.x = (rgb.y - rgb.z) / delta;
+
+			if (hsv.x < 0)
+			{
+				hsv.x += 6;
+			}
+		}
+		else if (rgb.y == maximum)
+		{
+			hsv.x = 2 + (rgb.z - rgb.x) / delta;
+		}
+		else if (rgb.z == maximum)
+		{
+			hsv.x = 4 + (rgb.x - rgb.y) / delta;
+		}
+
+		hsv.x /= 6;
+	}
+	else
+	{
+		hsv.x = 0;
+		hsv.y = 0;
+	}
+
+	hsv.w = rgb.w;
+	return hsv;
+}
+
+half4
+hsv_to_rgb(half4 hsv)
+{
+	half4 rgb;
+	if (hsv.y == 0)
+	{
+		rgb = hsv.z;
+	}
+	else
+	{
+		half hue = hsv.x;
+
+		if (hue == 1)
+		{
+			hue = 0;
+		}
+
+		hue *= 6;
+		int i = floor(hue);
+		float f = hue - i;
+		float w = hsv.z * (1 - hsv.y);
+		float q = hsv.z * ( 1 - (hsv.y * f) );
+		float t = hsv.z * ( 1 - (hsv.y * (1 - f) ) );
+
+		if (i == 0)
+		{
+			rgb.x = hsv.z;
+			rgb.y = t;
+			rgb.z = w;
+		}
+		else if (i == 1)
+		{
+			rgb.x = q;
+			rgb.y = hsv.z;
+			rgb.z = w;
+		}
+		else if (i == 2)
+		{
+			rgb.x = w;
+			rgb.y = hsv.z;
+			rgb.z = t;
+		}
+		else if (i == 3)
+		{
+			rgb.x = w;
+			rgb.y = q;
+			rgb.z = hsv.z;
+		}
+		else if (i == 4)
+		{
+			rgb.x = t;
+			rgb.y = w;
+			rgb.z = hsv.z;
+		}
+		else if (i == 5)
+		{
+			rgb.x = hsv.z;
+			rgb.y = w;
+			rgb.z = q;
+		}
+	}
+
+	rgb.w = hsv.w;
+	return rgb;
+}
+half4 
+color_enhance(half4 rgb, half2 enhance, half3 hsv_in)
+{
+	half4 cmy = 255 - rgb;
+	half k = min( min(cmy.x, cmy.y), cmy.z);
+	cmy -= k;
+	half4 hsv;
+	hsv = rgb_to_hsv(cmy);
+
+	if (enhance.x != enhance.y)
+	{
+		hsv.z = (hsv.z - enhance.x) / (enhance.y - enhance.x);
+	}
+
+	hsv += hsv_in.xyzz;
+	cmy = hsv_to_rgb(hsv);
+	cmy += k;
+	cmy.x = min(255, cmy.x);
+	cmy.y = min(255, cmy.y);
+	cmy.z = min(255, cmy.z);
+	rgb = 255 - cmy;
+
+	return rgb;
+}
+half4 main(
+	float2 position           				: TEXCOORD0,
+	uniform half4 color_scale 				: register (c0),
+	uniform half brightness 				: register (c1),
+	uniform half2 enhance 					: register (c2),
+	uniform half3 hsv						: register (c3),
+    uniform sampler2D texture) : COLOR
+{
+	float4 					Color;
+	Color = (half4)tex2D(texture, position);
+	Color += brightness;
+	Color += color_scale;
+	Color = color_enhance(Color * 255, enhance, hsv) / 255;
+    return (half4)Color;
+}

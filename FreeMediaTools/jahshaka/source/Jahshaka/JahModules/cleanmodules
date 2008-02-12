@@ -1,0 +1,10 @@
+cd animate;
+make clean;
+cd ../color;
+make clean;
+cd ../edit;
+make clean;
+cd ../effect;
+make clean;
+cd ../text;
+make clean;

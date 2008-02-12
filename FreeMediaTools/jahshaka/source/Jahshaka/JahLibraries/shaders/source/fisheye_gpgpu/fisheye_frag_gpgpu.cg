@@ -1,0 +1,62 @@
+float4 main (   
+	float4 position : TEXCOORD0,
+	uniform float  fish_eye_radius : register (c0),
+	uniform float  xcenter : register (c1),
+	uniform float  ycenter : register (c2),
+	uniform float  gamma : register (c3)) : COLOR0
+{
+	float4 						_OUT;
+	float4  					new_position;
+	float2  					radius;
+	float2  					u;
+	float2  					angle;
+	float2  					p[2];
+	float2  					dx;
+	float2  					dy;
+	float2						dx_squared;
+	float2						dy_squared;
+	float  						PI = 3.141590f;
+
+	dx.x = (position.x * 2.0) - xcenter + 0.00001f;
+	dx.y = (position.x * 2.0) + 1.0 - xcenter + 0.00001f;
+
+	dy = position.y - ycenter + 0.00001;
+
+	dx_squared = dx * dx;
+	dy_squared = dy * dy;
+
+	radius = sqrt(dx_squared + dy_squared);
+	u = pow(radius, gamma) / (fish_eye_radius + 0.00010f);
+	angle = atan(dy / dx);
+
+	if (dx.x < 0.000000f && dy.x > 0.000000f)
+	{
+		angle.x += PI;
+	}
+	else if (dx.x < 0.000000f && dy.x < 0.000000f)
+	{
+		angle.x -= PI;
+	}
+
+	if (dx.y < 0.000000f && dy.y > 0.000000f)
+	{
+		angle.y += PI;
+	}
+	else if (dx.y < 0.000000f && dy.y < 0.000000f)
+	{
+		angle.y -= PI;
+	}
+
+	p[0] = u * cos(angle);
+	p[1] = u * sin(angle);
+
+	new_position.x = p[0].x + xcenter;
+	new_position.y = p[1].x + ycenter;
+	new_position.z = p[0].y + xcenter;
+	new_position.w = p[1].y + ycenter;
+
+ 	_OUT = new_position;
+//	_OUT = dy.xyxy;
+
+	return _OUT;
+}

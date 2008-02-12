@@ -1,0 +1,42 @@
+
+float2 
+modulus(float2 number, float2 base) 
+{
+	return( frac(number / base) * base );
+}
+
+float2
+round(float2 number, float2 base)
+{
+	return( floor(number / base) * base );
+}
+
+half4 main(
+	float2 wpos								: WPOS,
+	uniform float2 rectangle_size			: register (c0),
+	uniform float transparency				: register (c1),
+	uniform float2 screen_offset			: register (c2),
+	uniform float2 image_size				: register (c3),
+	uniform float2 texture_ratio			: register (c4),
+    uniform sampler2D texture				: register (s0)
+		   ) : COLOR
+{
+	half4 					Color;
+	float2 					image_coordinates;
+	
+	float2 pixel_offset = wpos - screen_offset;
+
+	image_coordinates = pixel_offset / image_size;
+
+	float4 base_color = (half4)tex2D(texture, image_coordinates * texture_ratio );
+	Color = base_color;
+
+	float2 center_pixel = round(pixel_offset, rectangle_size) + (rectangle_size / 2.0);
+
+	float2 center_position = center_pixel / image_size;
+
+	Color = (half4)tex2D(texture, center_position * texture_ratio );
+	Color = (base_color * transparency) + ( Color * (1.0 - transparency) );
+	
+    return (half4)Color;
+}

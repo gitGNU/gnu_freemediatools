@@ -1,0 +1,81 @@
+
+half4 main(
+	float2 wpos								: WPOS,
+	uniform float horizontal 				: register (c0),
+	uniform float vertical 					: register (c1),
+	uniform float stretch 					: register (c2),
+	uniform float2 weight					: register (c3),
+	uniform float counter					: register (c4),
+	uniform float ratio						: register (c5),
+	uniform float transparency				: register (c6),
+	uniform float2 screen_offset			: register (c7),
+	uniform float2 image_size				: register (c8),
+	uniform float2 texture_ratio			: register (c9),
+    uniform sampler2D texture				: register (s0)
+		   ) : COLOR
+{
+	half4 					Color;
+	float2					right_position;
+	float2					left_position;
+	float2					up_position;
+	float2					down_position;
+
+	float2 					image_coordinates;
+
+	float sharpness = 1.01 + (transparency / 2);
+
+	image_coordinates = (wpos - screen_offset) / image_size;
+
+	float4 base_color = (half4)tex2D(texture, (image_coordinates * texture_ratio) );
+	Color = base_color;
+
+	right_position = image_coordinates;
+	left_position = image_coordinates;
+	up_position = image_coordinates;
+	down_position = image_coordinates;
+
+	weight.y = 1.0 - weight.x;
+
+	float2 offset;
+	offset.x = horizontal * ratio;
+	offset.y = vertical * ratio;
+
+	float image_size_times_2 = image_size.x * 2;
+	float image_size_times_4 = image_size.x * 4;
+
+	right_position.x = right_position.x + (counter * horizontal / image_size_times_2 );
+
+	if (right_position.x < 0.99)
+	{
+		Color *= weight.x;
+		Color += (half4)tex2D(texture, (right_position * texture_ratio) ) * weight.y;
+	}
+
+	left_position.x = left_position.x - (counter * horizontal / image_size_times_4 );
+
+	if (left_position.x > 0.01)
+	{
+		Color *= weight.x;
+		Color += (half4)tex2D(texture, (left_position * texture_ratio) ) * weight.y;
+	}
+
+	up_position.y = up_position.y + (counter * vertical / image_size_times_2 );
+
+	if (up_position.y < 0.99)
+	{
+		Color *= weight.x;
+		Color += (half4)tex2D(texture, (up_position * texture_ratio) ) * weight.y;
+	}
+
+	down_position.y = down_position.y - (counter * vertical / image_size_times_4 );
+
+	if (down_position.y > 0.01)
+	{
+		Color *= weight.x;
+		Color += (half4)tex2D(texture, (down_position * texture_ratio) ) * weight.y;
+	}
+
+	Color = (base_color * sharpness) + ( Color * (1.0 - sharpness) );
+	
+    return (half4)Color;
+}

@@ -1,0 +1,38 @@
+
+/*-*-CopyLeft-*-
+  Copyright (C) 2008 James Michael DuPont
+   This file is part of the FreeMediaTools Project.
+   FreeMediaTools goal is to give you an pure free software alternative for video editing.
+
+   This code is based on the openlibraries.sf.net and jahshakafx.sf.net/jahshaka.sf.net projects.
+   All of the code has been downloaded from the CVS and SVN of respective projects from sourceforge.
+
+   The license has been changed in accordance with the LGPL/GPL to GPLv3
+
+   Originally the code from the projects was copyrighted to one of the following: 
+     Copyright (C) 2005-2006 Editopia Inc.
+     Copyright (C) 2005-2006 Visual Media Fx Inc.
+     Copyright (C) 2005-2006 VM Inc.
+     Copyright (C) 2005-2006 Jahshaka project
+     
+   The original copyright and license statements have been preserved in the files.
+   If there were no original statements, then my copyright applies of course to my 
+   changes to those files,
+   and the files will be removed from the project if there are any issues with 
+   the distribution of the original sources.
+
+   The FreeMediaTools is free/libre software; you can redistribute it and/or
+   modify it under the terms of the GNU Library General Public License as
+   published by the Free Software Foundation; either version 3 of the
+   License, or (at your option) any later version.
+
+   The FreeMediaTools is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Library General Public License for more details.
+
+   You should have received a copy of the GNU Library General Public
+   License along with the FreeMediaTools; see the file COPYING.  If not,
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
+ -*-CopyLeft-*-*/

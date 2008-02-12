@@ -1,0 +1,506 @@
+# these are sourcse removed from the Makefile.am
+# to be processed later
+
+./jahshaka/source/Jahshaka/JahWidgets/wireup/Gadget.cpp							\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/Gadget.h							\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/GadgetGroup.cpp						\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/GadgetGroup.h						\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/Socket.cpp							\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/Socket.h							\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/Wire.cpp							\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/Wire.h							\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/Wireup.cpp							\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/Wireup.h							\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/WireupCanvas.cpp						\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/WireupCanvas.h						\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/WireupOverview.cpp						\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/WireupOverview.h						\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/WireupWidget.cpp						\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/WireupWidget.h						\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/simpleobserver.h						\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/simplesubject.cpp						\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/simplesubject.h						\
+./jahshaka/source/Jahshaka/JahWidgets/wireup/wireup-embedded-images.h					\
+
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/tclsqlite.c			\
+
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/testClient/stdafx.cpp			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/testClient/stdafx.h			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/testClient/testClient.cpp			\
+
+
+# only win32
+./jahshaka/source/OpenLibraries/openmedialib/codecs/aviutils/avi_utils.cpp				\
+./jahshaka/source/OpenLibraries/openmedialib/codecs/aviutils/avi_utils.h				\
+
+
+IGNORE_jahplayercreate=./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayercreate.cpp			\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayercreate.h			\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayerdesktopinterface.cpp		\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayerdesktoproutines.cpp		\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayerdesktoptraffic.cpp		\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayerevents.cpp			\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayerglsupport.cpp			\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayerinitialize.cpp			\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayerinterface.cpp			\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayermenubar.cpp			\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayermodes.cpp			\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayermodules.cpp			\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayerprefs.cpp			\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayerroutines.cpp			\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayerstyle.cpp			\
+./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate/jahplayerui.cpp				
+
+
+./openlibraries/trunk/src/openassetlib/plugins/sqlite/config.hpp					\
+./openlibraries/trunk/src/openassetlib/plugins/sqlite/database.cpp					\
+./openlibraries/trunk/src/openassetlib/plugins/sqlite/database.hpp					\
+./openlibraries/trunk/src/openassetlib/plugins/sqlite/sqlite3.h						\
+./openlibraries/trunk/src/openassetlib/plugins/sqlite/sqlite3_metadata.cpp				\
+./openlibraries/trunk/src/openassetlib/plugins/sqlite/sqlite3_metadata_plugin.cpp			\
+./openlibraries/trunk/src/openassetlib/plugins/sqlite/sqlite3_metadata_plugin.hpp			\
+./openlibraries/trunk/src/openimagelib/il/basic_image.hpp						\
+
+./openlibraries/trunk/src/openmedialib/plugins/avformat/avformat_plugin.cpp				\
+./openlibraries/trunk/src/openmedialib/plugins/directshow/config.hpp					\
+./openlibraries/trunk/src/openmedialib/plugins/directshow/directshow_plugin.cpp				\
+./openlibraries/trunk/src/openmedialib/plugins/directshow/directshow_plugin.hpp				\
+./openlibraries/trunk/src/openmedialib/plugins/gensys/gensys_plugin.cpp					\
+./openlibraries/trunk/src/openmedialib/plugins/glew/glew_plugin.cpp					\
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp					\
+./openlibraries/trunk/src/openmedialib/plugins/oil/oil_plugin.cpp					\
+./openlibraries/trunk/src/openmedialib/plugins/openal/openal_plugin.cpp					\
+./openlibraries/trunk/src/openmedialib/plugins/quicktime/quicktime_audiotrack.cpp			\
+./openlibraries/trunk/src/openmedialib/plugins/quicktime/quicktime_audiotrack.h				\
+./openlibraries/trunk/src/openmedialib/plugins/quicktime/quicktime_input.cpp				\
+./openlibraries/trunk/src/openmedialib/plugins/quicktime/quicktime_input.h				\
+./openlibraries/trunk/src/openmedialib/plugins/quicktime/quicktime_plugin.cpp				\
+./openlibraries/trunk/src/openmedialib/plugins/quicktime/quicktime_store.cpp				\
+./openlibraries/trunk/src/openmedialib/plugins/quicktime/quicktime_store.h				\
+./openlibraries/trunk/src/openmedialib/plugins/quicktime/quicktime_track.cpp				\
+./openlibraries/trunk/src/openmedialib/plugins/quicktime/quicktime_track.h				\
+./openlibraries/trunk/src/openmedialib/plugins/quicktime/quicktime_videotrack.cpp			\
+./openlibraries/trunk/src/openmedialib/plugins/quicktime/quicktime_videotrack.h				\
+./openlibraries/trunk/src/openmedialib/plugins/sdl/sdl_plugin.cpp					\
+./openlibraries/trunk/src/openmedialib/plugins/template/template_plugin.h				\
+./openlibraries/trunk/src/openmedialib/plugins/template/template_plugin.hpp				\
+./openlibraries/trunk/src/openobjectlib/plugins/3ds/config.hpp						\
+./openlibraries/trunk/src/openobjectlib/plugins/3ds/3ds.cpp
+./jahshaka/plugins/csplugins/csfisheye/csfisheye.cpp							\
+./jahshaka/plugins/csplugins/csfisheye/csfisheye.h							\
+./jahshaka/plugins/csplugins/csmandelbrot/csmandelbrot.cpp						\
+./jahshaka/plugins/csplugins/csmandelbrot/csmandelbrot.h						\
+./jahshaka/plugins/csplugins/csmandelbrot/mandelcolor.h							\
+./jahshaka/plugins/csplugins/csmandelbrotcolor/csmandelbrotcolor.cpp					\
+./jahshaka/plugins/csplugins/csmandelbrotcolor/csmandelbrotcolor.h					\
+./jahshaka/plugins/csplugins/csmandelbrotcolor/mandelcolor.h						\
+
+## 
+##./jahshaka/source/OpenLibraries/openobjectlib/linker.cpp						
+
+./jahshaka/source/Jahshaka/JahDesktop/network/giftnetworking.cpp					\
+./jahshaka/source/Jahshaka/JahDesktop/network/moc_networking.cpp					\
+./jahshaka/source/Jahshaka/JahDesktop/network/networking.cpp						\
+./jahshaka/source/Jahshaka/JahDesktop/network/networking.h						\
+./jahshaka/source/Jahshaka/JahLibraries/jahplayer/diskplayer/diskplayer.cpp				\
+./jahshaka/source/Jahshaka/JahLibraries/jahplayer/diskplayer/diskplayer.h				\
+./jahshaka/source/Jahshaka/JahLibraries/jahplayer/diskplayer/videohead.cpp				\
+./jahshaka/source/Jahshaka/JahLibraries/jahplayer/diskplayer/videohead.h				\
+./jahshaka/source/Jahshaka/JahLibraries/jahplugins/jahpluginlib.cpp					\
+./jahshaka/source/Jahshaka/JahWidgets/advancedtimeline/ruler.cpp					\
+./jahshaka/source/Jahshaka/JahWidgets/advancedtimeline/ruler.h						\
+./jahshaka/source/Jahshaka/JahWidgets/interfaceobjs/slickslider.cpp					\
+./jahshaka/source/Jahshaka/JahWidgets/interfaceobjs/slickslider.h					\
+./jahshaka/source/Jahshaka/JahWidgets/interfaceobjs/sliderbutton.cpp					\
+./jahshaka/source/Jahshaka/JahWidgets/interfaceobjs/sliderbutton.h					\
+./jahshaka/source/Jahshaka/JahWidgets/slider/slider.cpp							\
+./jahshaka/source/Jahshaka/JahWidgets/slider/slider.h							\
+
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/common/include/sqlite3.h			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/alter.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/analyze.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/attach.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/auth.c				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/btree.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/btree.h			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/build.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/callback.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/complete.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/date.c				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/delete.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/expr.c				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/func.c				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/hash.c				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/hash.h				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/insert.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/keywordhash.h			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/legacy.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/opcodes.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/opcodes.h			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/os.h				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/os_common.h			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/os_unix.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/os_unix.h			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/os_win.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/os_win.h			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/pager.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/pager.h			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/parse.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/parse.h			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/pragma.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/prepare.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/printf.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/random.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/select.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/sqlite3.h			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/sqliteInt.h			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/table.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/tokenize.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/trigger.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/update.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/utf.c				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/util.c				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/vacuum.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/vdbe.c				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/vdbe.h				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/vdbeInt.h			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/vdbeapi.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/vdbeaux.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/vdbefifo.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/vdbemem.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/where.c			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/src/Asset.cpp				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/src/Asset.h				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/src/AssetManager.cpp			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/src/AssetManager.h				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/src/DataSource.cpp				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/src/DataSource.h				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/src/Database.cpp				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/src/Database.h				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/src/DesktopAsset.cpp			\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/src/DesktopAsset.h				\
+./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/src/StringConversions.h			\
+
+
+# contains main
+#./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/shell.c			
+#./jahshaka/source/Jahshaka/JahWidgets/nodes/makeimg.cpp							
+
+
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/3ds/l3ds.cpp					
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/3ds/l3ds.h					
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/3ds/openobject_3ds.cpp				
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/3ds/openobject_3ds.h				
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/dxf/dxf.cpp					
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/dxf/dxf.h					
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/obj/dirent32.h					
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/obj/glm.c					
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/obj/glm.h					
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/openobject_plugincore.h				
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/openobjectplugintemplate.h			
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/stl/openobject_stl.cpp				
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/stl/openobject_stl.h				
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/stl/stl.cpp					
+# ./jahshaka/source/OpenLibraries/openobjectlib/plugins/stl/stl.h						
+#./jahshaka/source/OpenLibraries/openobjectlib/plugins/obj/openobject_obj.cpp				
+#./jahshaka/source/OpenLibraries/openobjectlib/plugins/obj/openobject_obj.h				
+
+# /usr/include/qt3/qglist.h:150: multiple definition of `OpenObjectPlugin::findObjectLayer(int)'
+#./jahshaka/source/OpenLibraries/openobjectlib/plugins/dxf/openobject_dxf.cpp				
+#./jahshaka/source/OpenLibraries/openobjectlib/plugins/dxf/openobject_dxf.h				
+
+#broken
+#./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/windowsiconprovider.cpp				
+#./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/windowsiconprovider.h				
+
+
+#: multiple definition of `openplugin_init'
+#
+# ./openlibraries/trunk/src/openeffectslib/plugins/tonemap/tonemap_plugin.cpp				
+# ./openlibraries/trunk/src/openimagelib/plugins/3D_lightmap/3D_lightmap_plugin.cpp
+# ./openlibraries/trunk/src/openimagelib/plugins/bmp/bmp_plugin.cpp					
+# ./openlibraries/trunk/src/openimagelib/plugins/dds/dds_plugin.cpp					
+# ./openlibraries/trunk/src/openimagelib/plugins/dpx/dpx_plugin.cpp					
+# ./openlibraries/trunk/src/openimagelib/plugins/exr/exr_plugin.cpp					
+# ./openlibraries/trunk/src/openimagelib/plugins/gdi+/gdi+_plugin.cpp					
+# ./openlibraries/trunk/src/openimagelib/plugins/hdr/hdr_plugin.cpp					
+# ./openlibraries/trunk/src/openimagelib/plugins/jpg/jpg_plugin.cpp
+# ./openlibraries/trunk/src/openimagelib/plugins/png/png_plugin.cpp					
+# ./openlibraries/trunk/src/openimagelib/plugins/psd/psd_plugin.cpp
+# ./openlibraries/trunk/src/openimagelib/plugins/sgi/sgi_plugin.cpp					
+# ./openlibraries/trunk/src/openimagelib/plugins/tga/tga_plugin.cpp					
+# ./openlibraries/trunk/src/openimagelib/plugins/tiff/tiff_plugin.cpp
+# ./openlibraries/trunk/src/openmedialib/ml/audio.hpp							
+# ./openlibraries/trunk/src/openobjectlib/plugins/3ds/3ds.cpp
+# ./openlibraries/trunk/src/openobjectlib/plugins/3ds/3ds_plugin.cpp					
+# ./openlibraries/trunk/src/openobjectlib/plugins/3ds/3ds_plugin.hpp					
+# ./openlibraries/trunk/src/openobjectlib/plugins/Collada/actions/dae_parser_action.cpp			
+# ./openlibraries/trunk/src/openobjectlib/plugins/Collada/actions/dae_parser_action.hpp			
+# ./openlibraries/trunk/src/openobjectlib/plugins/Collada/config.hpp					
+# ./openlibraries/trunk/src/openobjectlib/plugins/Collada/dae.cpp
+# ./openlibraries/trunk/src/openobjectlib/plugins/Collada/dae.cpp					
+# ./openlibraries/trunk/src/openobjectlib/plugins/Collada/dae_content_handler_libxml.cpp		
+# ./openlibraries/trunk/src/openobjectlib/plugins/Collada/dae_content_handler_libxml.hpp		
+# ./openlibraries/trunk/src/openobjectlib/plugins/Collada/dae_content_handler_msxml.cpp			
+# ./openlibraries/trunk/src/openobjectlib/plugins/Collada/dae_content_handler_msxml.hpp			
+# ./openlibraries/trunk/src/openobjectlib/plugins/Collada/dae_plugin.cpp				
+# ./openlibraries/trunk/src/openobjectlib/plugins/Collada/dae_plugin.hpp				
+# ./openlibraries/trunk/src/openobjectlib/plugins/Collada/xml_value_tokenizer.hpp			
+# ./openlibraries/trunk/src/openobjectlib/plugins/X3D/actions/x3d_parser_action.cpp			
+# ./openlibraries/trunk/src/openobjectlib/plugins/X3D/actions/x3d_parser_action.hpp			
+# ./openlibraries/trunk/src/openobjectlib/plugins/X3D/config.hpp					
+# ./openlibraries/trunk/src/openobjectlib/plugins/X3D/x3d.cpp
+# ./openlibraries/trunk/src/openobjectlib/plugins/X3D/x3d.cpp						
+# ./openlibraries/trunk/src/openobjectlib/plugins/X3D/x3d_content_handler_libxml.cpp			
+# ./openlibraries/trunk/src/openobjectlib/plugins/X3D/x3d_content_handler_libxml.hpp			
+# ./openlibraries/trunk/src/openobjectlib/plugins/X3D/x3d_content_handler_msxml.cpp			
+# ./openlibraries/trunk/src/openobjectlib/plugins/X3D/x3d_content_handler_msxml.hpp			
+# ./openlibraries/trunk/src/openobjectlib/plugins/X3D/x3d_plugin.cpp					
+# ./openlibraries/trunk/src/openobjectlib/plugins/X3D/x3d_plugin.hpp					
+# ./openlibraries/trunk/src/openobjectlib/plugins/X3D/xml_value_tokenizer.hpp				
+# ./openlibraries/trunk/src/openobjectlib/plugins/wavefront/config.hpp					
+# ./openlibraries/trunk/src/openobjectlib/plugins/wavefront/obj.cpp
+# ./openlibraries/trunk/src/openobjectlib/plugins/wavefront/obj.cpp					
+# ./openlibraries/trunk/src/openobjectlib/plugins/wavefront/obj_plugin.cpp				
+# ./openlibraries/trunk/src/openobjectlib/plugins/wavefront/obj_plugin.hpp				
+# ./openlibraries/trunk/src/openobjectlib/plugins/wavefront/spirit.hpp					
+
+
+#./jahshaka/source/Jahshaka/JahModules/editing/old.cpp							
+
+# needs non free shader
+#http://packages.debian.org/de/lenny/nvidia-cg-toolkit
+#./jahshaka/source/Jahshaka/JahLibraries/shaders/source/jahshaka_basic/jahshaka_basic.cpp		
+
+
+# remove these for now
+#./jahshaka/source/Jahshaka/JahLibraries/jahfontmanager/jahfontmanager.cpp				
+#./jahshaka/source/Jahshaka/JahLibraries/jahfontmanager/jahfontmanager.h					
+
+## there will need new projects 
+# ./jahshaka/plugins/jfxplugins/vfxbathroom/config.h							\
+# ./jahshaka/plugins/jfxplugins/vfxbathroom/vfxbathroom.cpp						\
+# ./jahshaka/plugins/jfxplugins/vfxbathroom/vfxbathroom.h							\
+# ./jahshaka/plugins/jfxplugins/vfxfisheye/config.h							\
+# ./jahshaka/plugins/jfxplugins/vfxfisheye/vfxfisheye.cpp							\
+# ./jahshaka/plugins/jfxplugins/vfxfisheye/vfxfisheye.h							\
+# ./jahshaka/plugins/jfxplugins/vfxgrey/config.h								\
+# ./jahshaka/plugins/jfxplugins/vfxgrey/vfxgrey.cpp							\
+# ./jahshaka/plugins/jfxplugins/vfxgrey/vfxgrey.h								\
+# ./jahshaka/plugins/jfxplugins/vfxmandelbrot/config.h							\
+# ./jahshaka/plugins/jfxplugins/vfxmandelbrot/mandelcolor.h						\
+# ./jahshaka/plugins/jfxplugins/vfxmandelbrot/vfxmandelbrot.cpp						\
+# ./jahshaka/plugins/jfxplugins/vfxmandelbrot/vfxmandelbrot.h						\
+# ./jahshaka/plugins/jfxplugins/vfxmosaic/config.h							\
+# ./jahshaka/plugins/jfxplugins/vfxmosaic/vfxmosaic.cpp							\
+# ./jahshaka/plugins/jfxplugins/vfxmosaic/vfxmosaic.h							\
+# ./jahshaka/plugins/jfxplugins/vfxoil/config.h								\
+# ./jahshaka/plugins/jfxplugins/vfxoil/vfxoil.cpp								\
+# ./jahshaka/plugins/jfxplugins/vfxoil/vfxoil.h								\
+# ./jahshaka/plugins/jfxplugins/vfxpolarnoise/config.h							\
+# ./jahshaka/plugins/jfxplugins/vfxpolarnoise/vfxpolarnoise.cpp						\
+# ./jahshaka/plugins/jfxplugins/vfxpolarnoise/vfxpolarnoise.h						\
+# ./jahshaka/plugins/jfxplugins/vfxpolarwarp/config.h							\
+# ./jahshaka/plugins/jfxplugins/vfxpolarwarp/vfxpolarwarp.cpp						\
+# ./jahshaka/plugins/jfxplugins/vfxpolarwarp/vfxpolarwarp.h						\
+# ./jahshaka/plugins/jfxplugins/vfxrelief/config.h							\
+# ./jahshaka/plugins/jfxplugins/vfxrelief/vfxrelief.cpp							\
+# ./jahshaka/plugins/jfxplugins/vfxrelief/vfxrelief.h							\
+# ./jahshaka/plugins/jfxplugins/vfxswirl/config.h								\
+# ./jahshaka/plugins/jfxplugins/vfxswirl/vfxswirl.cpp							\
+# ./jahshaka/plugins/jfxplugins/vfxswirl/vfxswirl.h							\
+# ./jahshaka/plugins/jitplugins/jitaverage/config.h							\
+# ./jahshaka/plugins/jitplugins/jitaverage/jitaverage.cpp							\
+# ./jahshaka/plugins/jitplugins/jitaverage/jitaverage.h							\
+# ./jahshaka/plugins/jitplugins/jitfftfilter/blurlib.cpp							\
+# ./jahshaka/plugins/jitplugins/jitfftfilter/blurlib.h							\
+# ./jahshaka/plugins/jitplugins/jitfftfilter/config.h							\
+# ./jahshaka/plugins/jitplugins/jitfftfilter/fftlib.cpp							\
+# ./jahshaka/plugins/jitplugins/jitfftfilter/fftlib.h							\
+# ./jahshaka/plugins/jitplugins/jitfftfilter/jitfftfilter.cpp						\
+# ./jahshaka/plugins/jitplugins/jitfftfilter/jitfftfilter.h						\
+# ./jahshaka/plugins/jitplugins/jitgaussnoise/config.h							\
+# ./jahshaka/plugins/jitplugins/jitgaussnoise/jitgaussnoise.cpp						\
+# ./jahshaka/plugins/jitplugins/jitgaussnoise/jitgaussnoise.h						\
+# ./jahshaka/plugins/jitplugins/jitgeommeanfilter/config.h						\
+# ./jahshaka/plugins/jitplugins/jitgeommeanfilter/jitgeommeanfilter.cpp					\
+# ./jahshaka/plugins/jitplugins/jitgeommeanfilter/jitgeommeanfilter.h					\
+# ./jahshaka/plugins/jitplugins/jitmedianfilter/config.h							\
+# ./jahshaka/plugins/jitplugins/jitmedianfilter/jitmedianfilter.cpp					\
+# ./jahshaka/plugins/jitplugins/jitmedianfilter/jitmedianfilter.h						\
+# ./jahshaka/plugins/jitplugins/jitminmaxfilter/config.h							\
+# ./jahshaka/plugins/jitplugins/jitminmaxfilter/jitminmaxfilter.cpp					\
+# ./jahshaka/plugins/jitplugins/jitminmaxfilter/jitminmaxfilter.h						\
+# ./jahshaka/plugins/jitplugins/jitmmsefilter/config.h							\
+# ./jahshaka/plugins/jitplugins/jitmmsefilter/jitmmsefilter.cpp						\
+# ./jahshaka/plugins/jitplugins/jitmmsefilter/jitmmsefilter.h						\
+# ./jahshaka/plugins/jitplugins/jitnegexnoise/config.h							\
+# ./jahshaka/plugins/jitplugins/jitnegexnoise/jitnegexnoise.cpp						\
+# ./jahshaka/plugins/jitplugins/jitnegexnoise/jitnegexnoise.h						\
+# ./jahshaka/plugins/jitplugins/jitpseudocolor/config.h							\
+# ./jahshaka/plugins/jitplugins/jitpseudocolor/jitpseudocolor.cpp						\
+# ./jahshaka/plugins/jitplugins/jitpseudocolor/jitpseudocolor.h						\
+# ./jahshaka/plugins/jitplugins/jitrangefilter/config.h							\
+# ./jahshaka/plugins/jitplugins/jitrangefilter/jitrangefilter.cpp						\
+# ./jahshaka/plugins/jitplugins/jitrangefilter/jitrangefilter.h						\
+# ./jahshaka/plugins/jitplugins/jitrgbvary/config.h							\
+# ./jahshaka/plugins/jitplugins/jitrgbvary/jitrgbvary.cpp							\
+# ./jahshaka/plugins/jitplugins/jitrgbvary/jitrgbvary.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvblur/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvblur/rfxarbblur.cpp							\
+# ./jahshaka/plugins/rfxplugins/rfxnvblur/rfxnvblur.cpp							\
+# ./jahshaka/plugins/rfxplugins/rfxnvblur/rfxnvblur.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvchannelblur/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvchannelblur/rfxarbchannelblur.cpp					\
+# ./jahshaka/plugins/rfxplugins/rfxnvchannelblur/rfxnvchannelblur.cpp					\
+# ./jahshaka/plugins/rfxplugins/rfxnvchannelblur/rfxnvchannelblur.h					\
+# ./jahshaka/plugins/rfxplugins/rfxnvcharcoal/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvcharcoal/mesh.cpp							\
+# ./jahshaka/plugins/rfxplugins/rfxnvcharcoal/rfxnvcharcoal.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvcharcoal/rfxnvcharcoal.h						\
+# ./jahshaka/plugins/rfxplugins/rfxnvcolor/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvcolor/rfxarbcolor.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvcolor/rfxnvcolor.cpp							\
+# ./jahshaka/plugins/rfxplugins/rfxnvcolor/rfxnvcolor.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvcompoundeye/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvcompoundeye/rfxarbcompoundeye.cpp					\
+# ./jahshaka/plugins/rfxplugins/rfxnvcompoundeye/rfxnvcompoundeye.cpp					\
+# ./jahshaka/plugins/rfxplugins/rfxnvcompoundeye/rfxnvcompoundeye.h					\
+# ./jahshaka/plugins/rfxplugins/rfxnvdiffusion/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvdiffusion/rfxnvdiffusion.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvdiffusion/rfxnvdiffusion.h						\
+# ./jahshaka/plugins/rfxplugins/rfxnvdiffusion/turbulence.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvdistortion/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvdistortion/rfxarbdistortion.cpp					\
+# ./jahshaka/plugins/rfxplugins/rfxnvdistortion/rfxnvdistortion.cpp					\
+# ./jahshaka/plugins/rfxplugins/rfxnvdistortion/rfxnvdistortion.h						\
+# ./jahshaka/plugins/rfxplugins/rfxnvedgedetect/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvedgedetect/rfxarbedgedetect.cpp					\
+# ./jahshaka/plugins/rfxplugins/rfxnvedgedetect/rfxnvedgedetect.cpp					\
+# ./jahshaka/plugins/rfxplugins/rfxnvedgedetect/rfxnvedgedetect.h						\
+# ./jahshaka/plugins/rfxplugins/rfxnvfire/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvfire/rfxnvfire.cpp							\
+# ./jahshaka/plugins/rfxplugins/rfxnvfire/rfxnvfire.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvfire/turbulence.cpp							\
+# ./jahshaka/plugins/rfxplugins/rfxnvfisheye/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvfisheye/rfxarbfisheye.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvfisheye/rfxnvfisheye.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvfisheye/rfxnvfisheye.h						\
+# ./jahshaka/plugins/rfxplugins/rfxnvflame/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvflame/rfxnvflame.cpp							\
+# ./jahshaka/plugins/rfxplugins/rfxnvflame/rfxnvflame.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvfog/config.h								\
+# ./jahshaka/plugins/rfxplugins/rfxnvfog/rfxnvfog.cpp							\
+# ./jahshaka/plugins/rfxplugins/rfxnvfog/rfxnvfog.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvfog/turbulence.cpp							\
+# ./jahshaka/plugins/rfxplugins/rfxnvlighting/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvlighting/mesh.cpp							\
+# ./jahshaka/plugins/rfxplugins/rfxnvlighting/rfxnvlighting.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvlighting/rfxnvlighting.h						\
+# ./jahshaka/plugins/rfxplugins/rfxnvlighting/rfxripple.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvmosaic/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvmosaic/rfxarbmosaic.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvmosaic/rfxnvmosaic.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvmosaic/rfxnvmosaic.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvnorthernlights/config.h						\
+# ./jahshaka/plugins/rfxplugins/rfxnvnorthernlights/rfxnvnorthernlights.cpp				\
+# ./jahshaka/plugins/rfxplugins/rfxnvnorthernlights/rfxnvnorthernlights.h					\
+# ./jahshaka/plugins/rfxplugins/rfxnvpan/config.h								\
+# ./jahshaka/plugins/rfxplugins/rfxnvpan/rfxarbpan.cpp							\
+# ./jahshaka/plugins/rfxplugins/rfxnvpan/rfxnvpan.cpp							\
+# ./jahshaka/plugins/rfxplugins/rfxnvpan/rfxnvpan.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvreflection/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvreflection/rfxnvreflection.cpp					\
+# ./jahshaka/plugins/rfxplugins/rfxnvreflection/rfxnvreflection.h						\
+# ./jahshaka/plugins/rfxplugins/rfxnvreflection/turbulence.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvsharpen/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvsharpen/rfxarbsharpen.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvsharpen/rfxnvsharpen.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvsharpen/rfxnvsharpen.h						\
+# ./jahshaka/plugins/rfxplugins/rfxnvsphere/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvsphere/rfxarbsphere.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvsphere/rfxnvsphere.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvsphere/rfxnvsphere.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvswirl/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvswirl/rfxarbswirl.cpp						\
+# ./jahshaka/plugins/rfxplugins/rfxnvswirl/rfxnvswirl.cpp							\
+# ./jahshaka/plugins/rfxplugins/rfxnvswirl/rfxnvswirl.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvturbulence/config.h							\
+# ./jahshaka/plugins/rfxplugins/rfxnvturbulence/rfxnvturbulence.cpp					\
+# ./jahshaka/plugins/rfxplugins/rfxnvturbulence/rfxnvturbulence.h						\
+# ./jahshaka/plugins/rtplugins/rtripple/config.h								\
+# ./jahshaka/plugins/rtplugins/rtripple/rtripple.cpp							\
+# ./jahshaka/plugins/rtplugins/rtripple/rtripple.h							\
+# ./openlibraries/trunk/src/openassetlib/py/asset.cpp							\
+# ./openlibraries/trunk/src/openassetlib/py/guid.cpp							\
+# ./openlibraries/trunk/src/openassetlib/py/openassetlib.cpp						\
+# ./openlibraries/trunk/src/openassetlib/py/plugin.cpp							\
+# ./openlibraries/trunk/src/openassetlib/py/py.cpp							\
+# ./openlibraries/trunk/src/openassetlib/py/py.hpp							\
+# ./openlibraries/trunk/src/openassetlib/py/python.hpp							\
+# ./openlibraries/trunk/src/openassetlib/py/set.cpp							\
+# #./openlibraries/trunk/src/openpluginlib/py/geometry.cpp							\
+# #./openlibraries/trunk/src/openpluginlib/py/openpluginlib.cpp						\
+# #./openlibraries/trunk/src/openpluginlib/py/pcos/any.cpp							\
+# #./openlibraries/trunk/src/openpluginlib/py/pcos/key.cpp							\
+# #./openlibraries/trunk/src/openpluginlib/py/pcos/observer.cpp						\
+# #./openlibraries/trunk/src/openpluginlib/py/pcos/property.cpp						\
+# #./openlibraries/trunk/src/openpluginlib/py/pcos/property_container.cpp					\
+# #./openlibraries/trunk/src/openpluginlib/py/pcos/subject.cpp						\
+# #./openlibraries/trunk/src/openpluginlib/py/pcos/visitor.cpp						\
+# #./openlibraries/trunk/src/openpluginlib/py/py.cpp							\
+# #./openlibraries/trunk/src/openpluginlib/py/py.hpp							\
+# #./openlibraries/trunk/src/openpluginlib/py/python.hpp							\
+# #./openlibraries/trunk/src/openpluginlib/py/string.cpp							\
+# ./openlibraries/trunk/src/openimagelib/py/il.cpp							\
+# ./openlibraries/trunk/src/openimagelib/py/py.cpp							\
+# ./openlibraries/trunk/src/openimagelib/py/py.hpp							\
+# ./openlibraries/trunk/src/openmedialib/py/ml.cpp							\
+# ./openlibraries/trunk/src/openmedialib/py/py.cpp							\
+# ./openlibraries/trunk/src/openmedialib/py/py.hpp							\
+
+./jahshaka/source/AuxiliaryLibraries/gift/config.h							\
+./jahshaka/source/AuxiliaryLibraries/gift/giftconnection.cpp						\
+./jahshaka/source/AuxiliaryLibraries/gift/giftconnection.h						\
+./jahshaka/source/AuxiliaryLibraries/gift/giftconnection_lin.h						\
+./jahshaka/source/AuxiliaryLibraries/gift/giftconnection_win.h						\
+./jahshaka/source/AuxiliaryLibraries/gift/giftparse.cpp							\
+./jahshaka/source/AuxiliaryLibraries/gift/giftparse.h							\
+./jahshaka/source/AuxiliaryLibraries/gift/giftsocket.cpp						\
+./jahshaka/source/AuxiliaryLibraries/gift/giftsocket.h							\
+./jahshaka/source/AuxiliaryLibraries/gift/libapollon.cpp						\
+./jahshaka/source/AuxiliaryLibraries/gift/libapollon.h							\
+./jahshaka/source/AuxiliaryLibraries/gift/moc_giftconnection_lin.cpp					\
+./jahshaka/source/AuxiliaryLibraries/gift/moc_giftsocket.cpp						\
+./jahshaka/source/AuxiliaryLibraries/glew/glew.c							\
+./jahshaka/source/AuxiliaryLibraries/glew/glew.h							\
+./jahshaka/source/AuxiliaryLibraries/glew/glxew.h							\
+./jahshaka/source/AuxiliaryLibraries/glew/wglew.h							\
+./jahshaka/source/AuxiliaryLibraries/spaceball/xdrvlib.c						\
+./jahshaka/source/AuxiliaryLibraries/spaceball/xdrvlib.h						\
+./jahshaka/source/Jahshaka/JahCore/jahobjects/coreeffects.cpp						\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollonlistview.cpp					\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollonlistview.h						\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollonqueryview.cpp					\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollonqueryview.h						\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollonsearchlistview.cpp					\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollonsearchlistview.h					\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollonsearchviewitem.cpp					\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollonsearchviewitem.h					\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollontab.cpp						\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollontab.h						\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollontransfertab.cpp					\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollontransfertab.h					\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollontransferviewitem.cpp				\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollontransferviewitem.h					\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollonutils.cpp						\
+./jahshaka/source/AuxiliaryLibraries/apollon/apollonutils.h						\
+./jahshaka/source/AuxiliaryLibraries/apollon/moc_apollonqueryview.cpp					\
+./jahshaka/source/AuxiliaryLibraries/apollon/moc_apollonsearchlistview.cpp				\
+./jahshaka/source/AuxiliaryLibraries/apollon/moc_apollontab.cpp						\
+./jahshaka/source/AuxiliaryLibraries/apollon/moc_apollontransfertab.cpp					\
+
+
+INCLUDES=											\
+-I$(srcdir)/jahshaka/source/AuxiliaryLibraries/apollon						\
+-I$(srcdir)/jahshaka/source/AuxiliaryLibraries/gift/						\

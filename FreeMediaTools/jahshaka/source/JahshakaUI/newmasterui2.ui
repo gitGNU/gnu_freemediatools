@@ -1,0 +1,1603 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>Jahshaka</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>Jahshaka</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1009</width>
+            <height>805</height>
+        </rect>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>1009</width>
+            <height>805</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>Jahshaka</string>
+    </property>
+    <property name="icon">
+        <pixmap>image0</pixmap>
+    </property>
+    <property name="acceptDrops">
+        <bool>true</bool>
+    </property>
+    <property name="opaqueMoving">
+        <bool>true</bool>
+    </property>
+    <property name="whatsThis" stdset="0">
+        <string>Jahshaka</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <property name="spacing">
+            <number>0</number>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>masterlayout</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>0</number>
+                </property>
+                <widget class="QFrame">
+                    <property name="name">
+                        <cstring>header</cstring>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>0</width>
+                            <height>0</height>
+                        </size>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>32767</width>
+                            <height>25</height>
+                        </size>
+                    </property>
+                    <property name="paletteBackgroundColor">
+                        <color>
+                            <red>236</red>
+                            <green>233</green>
+                            <blue>216</blue>
+                        </color>
+                    </property>
+                    <property name="frameShape">
+                        <enum>StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Raised</enum>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>0</number>
+                        </property>
+                        <widget class="QFrame">
+                            <property name="name">
+                                <cstring>menubox</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>5</hsizetype>
+                                    <vsizetype>5</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>250</width>
+                                    <height>25</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>250</width>
+                                    <height>25</height>
+                                </size>
+                            </property>
+                            <property name="frameShape">
+                                <enum>StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Raised</enum>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>menuspacer1</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Fixed</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>50</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QFrame">
+                            <property name="name">
+                                <cstring>modebox</cstring>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>400</width>
+                                    <height>25</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>32767</width>
+                                    <height>25</height>
+                                </size>
+                            </property>
+                            <property name="frameShape">
+                                <enum>StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Raised</enum>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>menuspacer2</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Fixed</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>50</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QFrame">
+                            <property name="name">
+                                <cstring>statusbox</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>5</hsizetype>
+                                    <vsizetype>5</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>250</width>
+                                    <height>25</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>250</width>
+                                    <height>25</height>
+                                </size>
+                            </property>
+                            <property name="frameShape">
+                                <enum>StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Raised</enum>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QSplitter">
+                    <property name="name">
+                        <cstring>core</cstring>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>1005</width>
+                            <height>730</height>
+                        </size>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <widget class="QFrame">
+                        <property name="name">
+                            <cstring>masterworldspace</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Raised</enum>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <property name="margin">
+                                <number>0</number>
+                            </property>
+                            <property name="spacing">
+                                <number>0</number>
+                            </property>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>worldlayout</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <property name="margin">
+                                        <number>0</number>
+                                    </property>
+                                    <property name="spacing">
+                                        <number>0</number>
+                                    </property>
+                                    <widget class="QFrame">
+                                        <property name="name">
+                                            <cstring>lefttoolbar</cstring>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>25</width>
+                                                <height>0</height>
+                                            </size>
+                                        </property>
+                                        <property name="frameShape">
+                                            <enum>StyledPanel</enum>
+                                        </property>
+                                        <property name="frameShadow">
+                                            <enum>Raised</enum>
+                                        </property>
+                                        <property name="lineWidth">
+                                            <number>0</number>
+                                        </property>
+                                    </widget>
+                                    <widget class="QFrame">
+                                        <property name="name">
+                                            <cstring>worldspace</cstring>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>720</width>
+                                                <height>486</height>
+                                            </size>
+                                        </property>
+                                        <property name="frameShape">
+                                            <enum>StyledPanel</enum>
+                                        </property>
+                                        <property name="frameShadow">
+                                            <enum>Raised</enum>
+                                        </property>
+                                        <property name="lineWidth">
+                                            <number>0</number>
+                                        </property>
+                                        <grid>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <property name="margin">
+                                                <number>0</number>
+                                            </property>
+                                            <property name="spacing">
+                                                <number>0</number>
+                                            </property>
+                                            <widget class="QSplitter" row="0" column="0">
+                                                <property name="name">
+                                                    <cstring>worldsplitter</cstring>
+                                                </property>
+                                                <property name="orientation">
+                                                    <enum>Horizontal</enum>
+                                                </property>
+                                                <widget class="QFrame">
+                                                    <property name="name">
+                                                        <cstring>leftmenu</cstring>
+                                                    </property>
+                                                    <property name="sizePolicy">
+                                                        <sizepolicy>
+                                                            <hsizetype>5</hsizetype>
+                                                            <vsizetype>5</vsizetype>
+                                                            <horstretch>0</horstretch>
+                                                            <verstretch>0</verstretch>
+                                                        </sizepolicy>
+                                                    </property>
+                                                    <property name="minimumSize">
+                                                        <size>
+                                                            <width>0</width>
+                                                            <height>0</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="maximumSize">
+                                                        <size>
+                                                            <width>32767</width>
+                                                            <height>32767</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="cursor">
+                                                        <cursor>2</cursor>
+                                                    </property>
+                                                    <property name="frameShape">
+                                                        <enum>StyledPanel</enum>
+                                                    </property>
+                                                    <property name="frameShadow">
+                                                        <enum>Raised</enum>
+                                                    </property>
+                                                </widget>
+                                                <widget class="QFrame">
+                                                    <property name="name">
+                                                        <cstring>world</cstring>
+                                                    </property>
+                                                    <property name="cursor">
+                                                        <cursor>2</cursor>
+                                                    </property>
+                                                    <property name="frameShape">
+                                                        <enum>StyledPanel</enum>
+                                                    </property>
+                                                    <property name="frameShadow">
+                                                        <enum>Raised</enum>
+                                                    </property>
+                                                </widget>
+                                                <widget class="QFrame">
+                                                    <property name="name">
+                                                        <cstring>rightmenu</cstring>
+                                                    </property>
+                                                    <property name="cursor">
+                                                        <cursor>2</cursor>
+                                                    </property>
+                                                    <property name="frameShape">
+                                                        <enum>StyledPanel</enum>
+                                                    </property>
+                                                    <property name="frameShadow">
+                                                        <enum>Raised</enum>
+                                                    </property>
+                                                </widget>
+                                            </widget>
+                                        </grid>
+                                    </widget>
+                                    <widget class="QFrame">
+                                        <property name="name">
+                                            <cstring>righttoolbar</cstring>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>25</width>
+                                                <height>0</height>
+                                            </size>
+                                        </property>
+                                        <property name="paletteBackgroundColor">
+                                            <color>
+                                                <red>236</red>
+                                                <green>233</green>
+                                                <blue>216</blue>
+                                            </color>
+                                        </property>
+                                        <property name="cursor">
+                                            <cursor>2</cursor>
+                                        </property>
+                                        <property name="frameShape">
+                                            <enum>StyledPanel</enum>
+                                        </property>
+                                        <property name="frameShadow">
+                                            <enum>Raised</enum>
+                                        </property>
+                                        <property name="lineWidth">
+                                            <number>0</number>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                            <widget class="QWidgetStack">
+                                <property name="name">
+                                    <cstring>controller</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>7</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>0</width>
+                                        <height>35</height>
+                                    </size>
+                                </property>
+                                <property name="maximumSize">
+                                    <size>
+                                        <width>32767</width>
+                                        <height>35</height>
+                                    </size>
+                                </property>
+                                <property name="lineWidth">
+                                    <number>0</number>
+                                </property>
+                                <property name="midLineWidth">
+                                    <number>0</number>
+                                </property>
+                                <widget class="QWidget">
+                                    <property name="name">
+                                        <cstring>modulesstack</cstring>
+                                    </property>
+                                    <attribute name="id">
+                                        <number>0</number>
+                                    </attribute>
+                                    <hbox>
+                                        <property name="name">
+                                            <cstring>unnamed</cstring>
+                                        </property>
+                                        <property name="margin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="spacing">
+                                            <number>0</number>
+                                        </property>
+                                        <widget class="QLayoutWidget">
+                                            <property name="name">
+                                                <cstring>layout3</cstring>
+                                            </property>
+                                            <hbox>
+                                                <property name="name">
+                                                    <cstring>unnamed</cstring>
+                                                </property>
+                                                <spacer>
+                                                    <property name="name">
+                                                        <cstring>spacer1_3</cstring>
+                                                    </property>
+                                                    <property name="orientation">
+                                                        <enum>Horizontal</enum>
+                                                    </property>
+                                                    <property name="sizeType">
+                                                        <enum>Expanding</enum>
+                                                    </property>
+                                                    <property name="sizeHint">
+                                                        <size>
+                                                            <width>1</width>
+                                                            <height>16</height>
+                                                        </size>
+                                                    </property>
+                                                </spacer>
+                                                <widget class="QFrame">
+                                                    <property name="name">
+                                                        <cstring>forceplayframe</cstring>
+                                                    </property>
+                                                    <property name="sizePolicy">
+                                                        <sizepolicy>
+                                                            <hsizetype>0</hsizetype>
+                                                            <vsizetype>0</vsizetype>
+                                                            <horstretch>0</horstretch>
+                                                            <verstretch>0</verstretch>
+                                                        </sizepolicy>
+                                                    </property>
+                                                    <property name="minimumSize">
+                                                        <size>
+                                                            <width>90</width>
+                                                            <height>20</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="maximumSize">
+                                                        <size>
+                                                            <width>90</width>
+                                                            <height>20</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="frameShape">
+                                                        <enum>StyledPanel</enum>
+                                                    </property>
+                                                    <property name="frameShadow">
+                                                        <enum>Raised</enum>
+                                                    </property>
+                                                    <property name="margin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <widget class="QCheckBox">
+                                                        <property name="name">
+                                                            <cstring>forceplaycheckbox</cstring>
+                                                        </property>
+                                                        <property name="geometry">
+                                                            <rect>
+                                                                <x>0</x>
+                                                                <y>0</y>
+                                                                <width>91</width>
+                                                                <height>21</height>
+                                                            </rect>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>ForcePlay</string>
+                                                        </property>
+                                                    </widget>
+                                                </widget>
+                                                <spacer>
+                                                    <property name="name">
+                                                        <cstring>spacer2_3</cstring>
+                                                    </property>
+                                                    <property name="orientation">
+                                                        <enum>Horizontal</enum>
+                                                    </property>
+                                                    <property name="sizeType">
+                                                        <enum>Expanding</enum>
+                                                    </property>
+                                                    <property name="sizeHint">
+                                                        <size>
+                                                            <width>1</width>
+                                                            <height>16</height>
+                                                        </size>
+                                                    </property>
+                                                </spacer>
+                                                <spacer>
+                                                    <property name="name">
+                                                        <cstring>spacer3_3</cstring>
+                                                    </property>
+                                                    <property name="orientation">
+                                                        <enum>Horizontal</enum>
+                                                    </property>
+                                                    <property name="sizeType">
+                                                        <enum>Expanding</enum>
+                                                    </property>
+                                                    <property name="sizeHint">
+                                                        <size>
+                                                            <width>1</width>
+                                                            <height>16</height>
+                                                        </size>
+                                                    </property>
+                                                </spacer>
+                                                <widget class="QFrame">
+                                                    <property name="name">
+                                                        <cstring>controllerframe</cstring>
+                                                    </property>
+                                                    <property name="sizePolicy">
+                                                        <sizepolicy>
+                                                            <hsizetype>0</hsizetype>
+                                                            <vsizetype>0</vsizetype>
+                                                            <horstretch>0</horstretch>
+                                                            <verstretch>0</verstretch>
+                                                        </sizepolicy>
+                                                    </property>
+                                                    <property name="minimumSize">
+                                                        <size>
+                                                            <width>170</width>
+                                                            <height>30</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="maximumSize">
+                                                        <size>
+                                                            <width>170</width>
+                                                            <height>30</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="frameShape">
+                                                        <enum>NoFrame</enum>
+                                                    </property>
+                                                    <property name="frameShadow">
+                                                        <enum>Plain</enum>
+                                                    </property>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>controllerpreviousbutton</cstring>
+                                                        </property>
+                                                        <property name="geometry">
+                                                            <rect>
+                                                                <x>25</x>
+                                                                <y>2</y>
+                                                                <width>25</width>
+                                                                <height>28</height>
+                                                            </rect>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>25</width>
+                                                                <height>0</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>25</width>
+                                                                <height>32767</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&lt;</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>controllerstopbutton</cstring>
+                                                        </property>
+                                                        <property name="geometry">
+                                                            <rect>
+                                                                <x>50</x>
+                                                                <y>2</y>
+                                                                <width>30</width>
+                                                                <height>28</height>
+                                                            </rect>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>30</width>
+                                                                <height>0</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>30</width>
+                                                                <height>32767</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>stop</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>controllerplaybutton</cstring>
+                                                        </property>
+                                                        <property name="geometry">
+                                                            <rect>
+                                                                <x>80</x>
+                                                                <y>2</y>
+                                                                <width>30</width>
+                                                                <height>28</height>
+                                                            </rect>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>30</width>
+                                                                <height>0</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>30</width>
+                                                                <height>32767</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>play</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>controllerffworardbutton</cstring>
+                                                        </property>
+                                                        <property name="geometry">
+                                                            <rect>
+                                                                <x>135</x>
+                                                                <y>2</y>
+                                                                <width>25</width>
+                                                                <height>28</height>
+                                                            </rect>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>25</width>
+                                                                <height>0</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>25</width>
+                                                                <height>32767</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&gt;&gt;</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>controllernextbutton</cstring>
+                                                        </property>
+                                                        <property name="geometry">
+                                                            <rect>
+                                                                <x>110</x>
+                                                                <y>2</y>
+                                                                <width>25</width>
+                                                                <height>28</height>
+                                                            </rect>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>25</width>
+                                                                <height>0</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>25</width>
+                                                                <height>32767</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&gt;</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>controllerrewindbutton</cstring>
+                                                        </property>
+                                                        <property name="geometry">
+                                                            <rect>
+                                                                <x>0</x>
+                                                                <y>2</y>
+                                                                <width>25</width>
+                                                                <height>28</height>
+                                                            </rect>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>25</width>
+                                                                <height>0</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>25</width>
+                                                                <height>32767</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&lt;&lt;</string>
+                                                        </property>
+                                                    </widget>
+                                                </widget>
+                                                <widget class="QSlider">
+                                                    <property name="name">
+                                                        <cstring>controllerslider</cstring>
+                                                    </property>
+                                                    <property name="sizePolicy">
+                                                        <sizepolicy>
+                                                            <hsizetype>7</hsizetype>
+                                                            <vsizetype>0</vsizetype>
+                                                            <horstretch>0</horstretch>
+                                                            <verstretch>0</verstretch>
+                                                        </sizepolicy>
+                                                    </property>
+                                                    <property name="minimumSize">
+                                                        <size>
+                                                            <width>450</width>
+                                                            <height>0</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="maximumSize">
+                                                        <size>
+                                                            <width>500</width>
+                                                            <height>32767</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="orientation">
+                                                        <enum>Horizontal</enum>
+                                                    </property>
+                                                    <property name="tickmarks">
+                                                        <enum>Below</enum>
+                                                    </property>
+                                                    <property name="tickInterval">
+                                                        <number>10</number>
+                                                    </property>
+                                                </widget>
+                                                <widget class="QFrame">
+                                                    <property name="name">
+                                                        <cstring>timecodeframe</cstring>
+                                                    </property>
+                                                    <property name="sizePolicy">
+                                                        <sizepolicy>
+                                                            <hsizetype>0</hsizetype>
+                                                            <vsizetype>0</vsizetype>
+                                                            <horstretch>0</horstretch>
+                                                            <verstretch>0</verstretch>
+                                                        </sizepolicy>
+                                                    </property>
+                                                    <property name="minimumSize">
+                                                        <size>
+                                                            <width>125</width>
+                                                            <height>30</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="maximumSize">
+                                                        <size>
+                                                            <width>125</width>
+                                                            <height>30</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="frameShape">
+                                                        <enum>NoFrame</enum>
+                                                    </property>
+                                                    <property name="frameShadow">
+                                                        <enum>Raised</enum>
+                                                    </property>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>keyframebutton</cstring>
+                                                        </property>
+                                                        <property name="geometry">
+                                                            <rect>
+                                                                <x>95</x>
+                                                                <y>0</y>
+                                                                <width>25</width>
+                                                                <height>28</height>
+                                                            </rect>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>25</width>
+                                                                <height>0</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>25</width>
+                                                                <height>32767</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>key</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QLCDNumber">
+                                                        <property name="name">
+                                                            <cstring>timecodedisplay</cstring>
+                                                        </property>
+                                                        <property name="geometry">
+                                                            <rect>
+                                                                <x>5</x>
+                                                                <y>0</y>
+                                                                <width>90</width>
+                                                                <height>31</height>
+                                                            </rect>
+                                                        </property>
+                                                    </widget>
+                                                </widget>
+                                                <spacer>
+                                                    <property name="name">
+                                                        <cstring>spacer4_3</cstring>
+                                                    </property>
+                                                    <property name="orientation">
+                                                        <enum>Horizontal</enum>
+                                                    </property>
+                                                    <property name="sizeType">
+                                                        <enum>Expanding</enum>
+                                                    </property>
+                                                    <property name="sizeHint">
+                                                        <size>
+                                                            <width>1</width>
+                                                            <height>20</height>
+                                                        </size>
+                                                    </property>
+                                                </spacer>
+                                                <widget class="QFrame">
+                                                    <property name="name">
+                                                        <cstring>imagingframe</cstring>
+                                                    </property>
+                                                    <property name="sizePolicy">
+                                                        <sizepolicy>
+                                                            <hsizetype>0</hsizetype>
+                                                            <vsizetype>0</vsizetype>
+                                                            <horstretch>0</horstretch>
+                                                            <verstretch>0</verstretch>
+                                                        </sizepolicy>
+                                                    </property>
+                                                    <property name="minimumSize">
+                                                        <size>
+                                                            <width>105</width>
+                                                            <height>20</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="maximumSize">
+                                                        <size>
+                                                            <width>105</width>
+                                                            <height>20</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="frameShape">
+                                                        <enum>NoFrame</enum>
+                                                    </property>
+                                                    <property name="frameShadow">
+                                                        <enum>Raised</enum>
+                                                    </property>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>imagingphotobutton</cstring>
+                                                        </property>
+                                                        <property name="geometry">
+                                                            <rect>
+                                                                <x>0</x>
+                                                                <y>0</y>
+                                                                <width>50</width>
+                                                                <height>20</height>
+                                                            </rect>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>50</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>50</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Photo</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>imagingrenderbutton</cstring>
+                                                        </property>
+                                                        <property name="geometry">
+                                                            <rect>
+                                                                <x>55</x>
+                                                                <y>0</y>
+                                                                <width>50</width>
+                                                                <height>20</height>
+                                                            </rect>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>50</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>50</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Render</string>
+                                                        </property>
+                                                    </widget>
+                                                </widget>
+                                                <spacer>
+                                                    <property name="name">
+                                                        <cstring>spacer5</cstring>
+                                                    </property>
+                                                    <property name="orientation">
+                                                        <enum>Horizontal</enum>
+                                                    </property>
+                                                    <property name="sizeType">
+                                                        <enum>Expanding</enum>
+                                                    </property>
+                                                    <property name="sizeHint">
+                                                        <size>
+                                                            <width>1</width>
+                                                            <height>20</height>
+                                                        </size>
+                                                    </property>
+                                                </spacer>
+                                            </hbox>
+                                        </widget>
+                                    </hbox>
+                                </widget>
+                                <widget class="QWidget">
+                                    <property name="name">
+                                        <cstring>desktopstack</cstring>
+                                    </property>
+                                    <attribute name="id">
+                                        <number>1</number>
+                                    </attribute>
+                                    <hbox>
+                                        <property name="name">
+                                            <cstring>unnamed</cstring>
+                                        </property>
+                                        <property name="margin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="spacing">
+                                            <number>0</number>
+                                        </property>
+                                        <widget class="QLayoutWidget">
+                                            <property name="name">
+                                                <cstring>layout2</cstring>
+                                            </property>
+                                            <hbox>
+                                                <property name="name">
+                                                    <cstring>unnamed</cstring>
+                                                </property>
+                                                <spacer>
+                                                    <property name="name">
+                                                        <cstring>spacer1_2</cstring>
+                                                    </property>
+                                                    <property name="orientation">
+                                                        <enum>Horizontal</enum>
+                                                    </property>
+                                                    <property name="sizeType">
+                                                        <enum>Expanding</enum>
+                                                    </property>
+                                                    <property name="sizeHint">
+                                                        <size>
+                                                            <width>50</width>
+                                                            <height>20</height>
+                                                        </size>
+                                                    </property>
+                                                </spacer>
+                                                <widget class="QFrame">
+                                                    <property name="name">
+                                                        <cstring>modeselectframe_2</cstring>
+                                                    </property>
+                                                    <property name="sizePolicy">
+                                                        <sizepolicy>
+                                                            <hsizetype>0</hsizetype>
+                                                            <vsizetype>0</vsizetype>
+                                                            <horstretch>0</horstretch>
+                                                            <verstretch>0</verstretch>
+                                                        </sizepolicy>
+                                                    </property>
+                                                    <property name="minimumSize">
+                                                        <size>
+                                                            <width>100</width>
+                                                            <height>20</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="maximumSize">
+                                                        <size>
+                                                            <width>100</width>
+                                                            <height>20</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="frameShape">
+                                                        <enum>StyledPanel</enum>
+                                                    </property>
+                                                    <property name="frameShadow">
+                                                        <enum>Raised</enum>
+                                                    </property>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>modeselectbutton_2</cstring>
+                                                        </property>
+                                                        <property name="geometry">
+                                                            <rect>
+                                                                <x>0</x>
+                                                                <y>0</y>
+                                                                <width>100</width>
+                                                                <height>20</height>
+                                                            </rect>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>100</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>100</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Mode</string>
+                                                        </property>
+                                                    </widget>
+                                                </widget>
+                                                <spacer>
+                                                    <property name="name">
+                                                        <cstring>spacer2_2</cstring>
+                                                    </property>
+                                                    <property name="orientation">
+                                                        <enum>Horizontal</enum>
+                                                    </property>
+                                                    <property name="sizeType">
+                                                        <enum>Expanding</enum>
+                                                    </property>
+                                                    <property name="sizeHint">
+                                                        <size>
+                                                            <width>49</width>
+                                                            <height>20</height>
+                                                        </size>
+                                                    </property>
+                                                </spacer>
+                                                <widget class="QFrame">
+                                                    <property name="name">
+                                                        <cstring>buttonframe_2</cstring>
+                                                    </property>
+                                                    <property name="minimumSize">
+                                                        <size>
+                                                            <width>400</width>
+                                                            <height>30</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="maximumSize">
+                                                        <size>
+                                                            <width>400</width>
+                                                            <height>30</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="frameShape">
+                                                        <enum>NoFrame</enum>
+                                                    </property>
+                                                    <property name="frameShadow">
+                                                        <enum>Plain</enum>
+                                                    </property>
+                                                    <hbox>
+                                                        <property name="name">
+                                                            <cstring>unnamed</cstring>
+                                                        </property>
+                                                        <property name="margin">
+                                                            <number>0</number>
+                                                        </property>
+                                                        <property name="spacing">
+                                                            <number>0</number>
+                                                        </property>
+                                                        <widget class="QPushButton">
+                                                            <property name="name">
+                                                                <cstring>DesktopName_2</cstring>
+                                                            </property>
+                                                            <property name="minimumSize">
+                                                                <size>
+                                                                    <width>100</width>
+                                                                    <height>0</height>
+                                                                </size>
+                                                            </property>
+                                                            <property name="maximumSize">
+                                                                <size>
+                                                                    <width>100</width>
+                                                                    <height>32767</height>
+                                                                </size>
+                                                            </property>
+                                                            <property name="text">
+                                                                <string>Name</string>
+                                                            </property>
+                                                        </widget>
+                                                        <widget class="QPushButton">
+                                                            <property name="name">
+                                                                <cstring>DesktopLoad_2</cstring>
+                                                            </property>
+                                                            <property name="minimumSize">
+                                                                <size>
+                                                                    <width>100</width>
+                                                                    <height>0</height>
+                                                                </size>
+                                                            </property>
+                                                            <property name="maximumSize">
+                                                                <size>
+                                                                    <width>100</width>
+                                                                    <height>32767</height>
+                                                                </size>
+                                                            </property>
+                                                            <property name="text">
+                                                                <string>Load Clip</string>
+                                                            </property>
+                                                        </widget>
+                                                        <widget class="QPushButton">
+                                                            <property name="name">
+                                                                <cstring>DesktopPlay_2</cstring>
+                                                            </property>
+                                                            <property name="minimumSize">
+                                                                <size>
+                                                                    <width>100</width>
+                                                                    <height>0</height>
+                                                                </size>
+                                                            </property>
+                                                            <property name="maximumSize">
+                                                                <size>
+                                                                    <width>100</width>
+                                                                    <height>32767</height>
+                                                                </size>
+                                                            </property>
+                                                            <property name="text">
+                                                                <string>Play Clip</string>
+                                                            </property>
+                                                        </widget>
+                                                        <widget class="QPushButton">
+                                                            <property name="name">
+                                                                <cstring>DeleteButton_2</cstring>
+                                                            </property>
+                                                            <property name="minimumSize">
+                                                                <size>
+                                                                    <width>100</width>
+                                                                    <height>0</height>
+                                                                </size>
+                                                            </property>
+                                                            <property name="maximumSize">
+                                                                <size>
+                                                                    <width>100</width>
+                                                                    <height>32767</height>
+                                                                </size>
+                                                            </property>
+                                                            <property name="text">
+                                                                <string>Delete</string>
+                                                            </property>
+                                                        </widget>
+                                                    </hbox>
+                                                </widget>
+                                                <spacer>
+                                                    <property name="name">
+                                                        <cstring>spacer3_2</cstring>
+                                                    </property>
+                                                    <property name="orientation">
+                                                        <enum>Horizontal</enum>
+                                                    </property>
+                                                    <property name="sizeType">
+                                                        <enum>Expanding</enum>
+                                                    </property>
+                                                    <property name="sizeHint">
+                                                        <size>
+                                                            <width>50</width>
+                                                            <height>20</height>
+                                                        </size>
+                                                    </property>
+                                                </spacer>
+                                                <widget class="QFrame">
+                                                    <property name="name">
+                                                        <cstring>desktopselectframe_2</cstring>
+                                                    </property>
+                                                    <property name="sizePolicy">
+                                                        <sizepolicy>
+                                                            <hsizetype>0</hsizetype>
+                                                            <vsizetype>0</vsizetype>
+                                                            <horstretch>0</horstretch>
+                                                            <verstretch>0</verstretch>
+                                                        </sizepolicy>
+                                                    </property>
+                                                    <property name="minimumSize">
+                                                        <size>
+                                                            <width>100</width>
+                                                            <height>20</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="maximumSize">
+                                                        <size>
+                                                            <width>100</width>
+                                                            <height>20</height>
+                                                        </size>
+                                                    </property>
+                                                    <property name="frameShape">
+                                                        <enum>StyledPanel</enum>
+                                                    </property>
+                                                    <property name="frameShadow">
+                                                        <enum>Raised</enum>
+                                                    </property>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>desktopselectbutton_2</cstring>
+                                                        </property>
+                                                        <property name="geometry">
+                                                            <rect>
+                                                                <x>0</x>
+                                                                <y>0</y>
+                                                                <width>100</width>
+                                                                <height>20</height>
+                                                            </rect>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>100</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>100</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Desktop</string>
+                                                        </property>
+                                                    </widget>
+                                                </widget>
+                                                <spacer>
+                                                    <property name="name">
+                                                        <cstring>spacer4_2</cstring>
+                                                    </property>
+                                                    <property name="orientation">
+                                                        <enum>Horizontal</enum>
+                                                    </property>
+                                                    <property name="sizeType">
+                                                        <enum>Expanding</enum>
+                                                    </property>
+                                                    <property name="sizeHint">
+                                                        <size>
+                                                            <width>49</width>
+                                                            <height>20</height>
+                                                        </size>
+                                                    </property>
+                                                </spacer>
+                                            </hbox>
+                                        </widget>
+                                    </hbox>
+                                </widget>
+                            </widget>
+                        </vbox>
+                    </widget>
+                    <widget class="QFrame">
+                        <property name="name">
+                            <cstring>modules</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>5</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>0</width>
+                                <height>200</height>
+                            </size>
+                        </property>
+                        <property name="maximumSize">
+                            <size>
+                                <width>32767</width>
+                                <height>32767</height>
+                            </size>
+                        </property>
+                        <property name="frameShape">
+                            <enum>StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Raised</enum>
+                        </property>
+                        <property name="lineWidth">
+                            <number>0</number>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <property name="margin">
+                                <number>0</number>
+                            </property>
+                            <property name="spacing">
+                                <number>0</number>
+                            </property>
+                            <widget class="QLayoutWidget" row="0" column="0">
+                                <property name="name">
+                                    <cstring>layout4</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <property name="margin">
+                                        <number>0</number>
+                                    </property>
+                                    <property name="spacing">
+                                        <number>0</number>
+                                    </property>
+                                    <widget class="QFrame">
+                                        <property name="name">
+                                            <cstring>frame70</cstring>
+                                        </property>
+                                        <property name="maximumSize">
+                                            <size>
+                                                <width>150</width>
+                                                <height>32767</height>
+                                            </size>
+                                        </property>
+                                        <property name="frameShape">
+                                            <enum>StyledPanel</enum>
+                                        </property>
+                                        <property name="frameShadow">
+                                            <enum>Raised</enum>
+                                        </property>
+                                    </widget>
+                                    <widget class="QFrame">
+                                        <property name="name">
+                                            <cstring>frame71</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>5</hsizetype>
+                                                <vsizetype>5</vsizetype>
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>0</width>
+                                                <height>0</height>
+                                            </size>
+                                        </property>
+                                        <property name="maximumSize">
+                                            <size>
+                                                <width>32767</width>
+                                                <height>32767</height>
+                                            </size>
+                                        </property>
+                                        <property name="frameShape">
+                                            <enum>StyledPanel</enum>
+                                        </property>
+                                        <property name="frameShadow">
+                                            <enum>Raised</enum>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                        </grid>
+                    </widget>
+                </widget>
+                <widget class="QFrame">
+                    <property name="name">
+                        <cstring>footer</cstring>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>32767</width>
+                            <height>25</height>
+                        </size>
+                    </property>
+                    <property name="frameShape">
+                        <enum>ToolBarPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="lineWidth">
+                        <number>1</number>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>0</number>
+                        </property>
+                        <widget class="QFrame">
+                            <property name="name">
+                                <cstring>menubox_2</cstring>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>500</width>
+                                    <height>25</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>32767</width>
+                                    <height>25</height>
+                                </size>
+                            </property>
+                            <property name="frameShape">
+                                <enum>StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Raised</enum>
+                            </property>
+                            <property name="lineWidth">
+                                <number>1</number>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>menuspacer1_2</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Fixed</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>50</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QFrame">
+                            <property name="name">
+                                <cstring>modebox_2</cstring>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>200</width>
+                                    <height>25</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>200</width>
+                                    <height>25</height>
+                                </size>
+                            </property>
+                            <property name="frameShape">
+                                <enum>StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Raised</enum>
+                            </property>
+                            <property name="lineWidth">
+                                <number>1</number>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>menuspacer2_2</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Fixed</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>50</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QFrame">
+                            <property name="name">
+                                <cstring>statusbox_2</cstring>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>200</width>
+                                    <height>25</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>200</width>
+                                    <height>25</height>
+                                </size>
+                            </property>
+                            <property name="frameShape">
+                                <enum>StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Raised</enum>
+                            </property>
+                            <property name="lineWidth">
+                                <number>1</number>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </vbox>
+        </widget>
+    </grid>
+</widget>
+<toolbars>
+</toolbars>
+<images>
+    <image name="image0">
+        <data format="PNG" length="16596">89504e470d0a1a0a0000000d4948445200000100000000800806000000e4b5b70a0000200049444154789ced7d779c1c479defb73a4c4fd8ddd9a4cdbb9256b29265cb9265cbc6181c30061b6cc0d8f788c7f1001fc6f01ef7e10877efe0f4eedde308f700838f6c8333c6c6d8182b595a252baed22aac76b59236e7bc3bb9bbebfdd161aac3ccae64c99676fbfbf94833535d5d553d3bbf6ffd5255114a293ccc1cac5dbb96dbbf7f7fb8b5b5b528288a0529c8f982200463b1545855d5b2643c5e220502a523232345aaaa8653a984148b257c8220f81445e11545e165592600080088a2284b92341e2e28e80f4852532010685214a5cbeff78f2493c9dee5cb97f73ef5d453e36ff3637b384f108f002e2f2c5fbedc97979797e3f7fbab8787876b2727278b01cc5514e58ab1b1b1129ee7f393c9645132992c906539a8280a7731fec61cc74114c5682010e8e378ae4f14c4fefcfcfc931cc79d9224a927180c9e2484f4efdcb973e28277eee182c123804b181fb8f9e682b824550f0e0e5e3d3e3ebe4896e5459393934b93c964612a952a4d2693e2f9b44b0801c7f3e078011c2f80701c08e1400840080718af00e4441cf1e8e439f7e1f7fb2724491af4f97c6d3939390d8140e0747e7efee1fcfcfce6d75e7bad8f7a3fbc4b021e015c22b8f5d65b8568345a4b08b96a6868e8ba6834ba727c7c7c592291284da552530abae093e00fe54194fc10fd4104f2f211cc2b8414cc812805100a1782e338f8024188fe20449f04c1278117047084680400028e2380fe990320a792981c1dc4e8403722a34318ea6ec7d8400f629363981c1d3aa767e4791e3e9f6f281c0e9ff6f97c074b4b4b0fa552a97df9f9f9ad757575a3e7fbdd79387f7804f036e2ce3bef9c3f3c3cbc666464e4b6d19191559391c9a589443298a93e2ffa100c1721182e4428bf18e1924a840a8ae10fe622985f84404e1e04d1a709b52080e705c8c924f6bcf4188aab6bb1ec9def03210472320182f4df9d8002aa66f413a295407f4f380e1ccf83e778701c074a5528a92412f128c6067a31393288a19e360c76b5617cb81fe383bd48c663d3fe0e0481977372723b82c1e091b2b2b26d7979797b7c3edfd10d1b3644cef77bf5307d7804f01662f9f2e5be70387c6d341abdada7a7e73d636363abe2f1789e5b5dd11f44de9c0ae41497a3a0bc06e1d26a04720b10ca2f82e893d2aa3b2828a500550155d16e2686080382cf8feea623d8f8eb7f47e5a215b8f96ffe1e3985259013314dd80901a82efcccbd447f4308319ad43403001ca76908bc2082e335f381aa0a145d5b981819c460571b063ace62a4bf0b43bd9d484cd38ce0791eb9b9392d4545c5bb0b0b0b374a92b46bc78e1d67cefb4bf790151e015c64ac5dbb96dbb56bd7759d9d9df7f6f5f67e606c7cfc4a5996397b3d7f5e010a2ae6a3b0aa1605550b905b5486405e01449f0442014a5550550555154dd8a109a73163130270ba4013a4051700fcc11cec7ff5691c79fd4584e794e3f6cf7c0dc555f3918c47b536f47a44ff29a4851fe9eb442f37ea92743d00ba1941c00b0278ddbf0000722a81c8e830c68707d0db760a835d6de86d6bc1f850dfb4348540203056100e1f2c2e2959170e87ffba7dfbf613e7f617f0900d1e015c24dc7cf3cdb5030303f78d8d8d7db4bfbfff3a5555097b5df487102eabc19cda6528aa5984bc922af873f2c0f1bc26e88a024a1580524635d7848eb0820efdbd3173734e02e0381e2004eb1efd0e06da4f21142ec47b3ff72dcca95980543c966e9b5a677a30426ee801665d837c689a284ced412f07d17c0a1ccf83d71d8e0045221645746214fd1d67d1df71065d2d2730dcdb858991c1acdfa9288a89a2a2a23d25c5c52ff983c157f6eedd7bf63cff3c1e7478047001b176ed5aaeaeaeeef6eeeeeecf767575dd158d462deabd2f988ba2b98b51b678258a6a1621142e06e793004586aac8a050d3428db450c3287399915981255cfa3a6bcb83023e7f00831d2df8eba3df81924a22945f84bbbef86d1494552365680214168d426bda6902a4055dbf4635e2b11000e347d04882d11674bf82208ae0381e722a89e8e438063a5bd1d7da828ee663e8eb3893d5c9e8f7fbc74b4b4b372e5ebcf8896432b9a9aeae2e7e6e7f2d0f8047001704f7dc734fb0bbbbfbfeeeeeee2ff4f7f7bf435114f31aef93503c6f19ca975e87e2f9cb100817801002aac8a08a0c505dd075c937858a55cd61154cb3dc6602b02a3bab0118c22b057370e0b5677068c31f0100e1920adcfdd077100a174149269cf7d97c00aed70cad8163888731172c9a0349df9b7e0aaa451c78dda7c0f1a0aa82c9f1510c75b5a1bde9283a9a8fa3a7f51452097793a1b0b0e0d8c285573c595454f4cc6bafbdd639c59fcb03038f00de041e78e0819cb6b6b64f9c3973e6cb83838357b2d7724baa50be6c0dca965c8b9ce20acd83aea4a02a3238435d36664e585579edad0b01b0b33bcd4e000e2124041cc7830078f567ff82c18ed30080d2f94b70f717bfad991eb26c9bbd99f1c04e00ce6bcc6586c8d8f6607905432e76703c0f4110c1f102e45412a303bde86a69446be321b49f3cea6a2e8442a1bef9f3e73f595959f9cbf5ebd7b7b834ebc1068f00ce030f3ef8a078f0e0c18f9d3d7bf61f878686961be584e35054bb1c552bde8de2f9cb20fa83a04a0a54916d763bd1d4758af4cc09586c79b004a09385a9f65becf0b470599c804621ac76bce80fa0f77423d6fd7c2d544506005cb1faddb8ed93ff034a320e509a91882c638295bc4c02200484d274df0c4958ca084ced672a68894b020451044010191b46d7e9933875782fce1e3be0208360283436bfa6e6f1eab9737fb26eddbad6a97b98bdf008e01cf1def7bef7f6c6c6c6ef747575de6c7c751c2fa074e975a85a790bc295b5e0080f359500404def785a6098d9da2000435e326900a6daef620268c5a600bafa00ccfbb4cffe600e76ffe9b738baed2fe673dd70cfa7b1ea8efb90884eda667756486d046513ee8c2600f34ce9576ab677aee0381e82cf07420826c746d07eb2018dfbb6e3ecf1834825d2ae809c9c9cc1458b16fd68c182058f3efffcf363e7ded3cc874700d3c47d9ffc64d5913d7bfeadb5b5f56f1545d17ff31c4a96ae46f575ef45b8623ea02a50532953d80c8f3c67174e63e6344c80a908c07825b67293006c26004318daff690d00d04275722a8197ffdf37313ed8034023b1bbbef04fa859ba0ac978247d8f9b0fc0783eb30ba67fe63a3b76ebb3a5bf57723e0cc080e37988a2040018ec69c7f13d5b71624f1d46077acd3a252525c7afbefaea7fdeb469d3cb6faab319088f00a6811b6eb8e1534d4d4dff777474b4ca282b9cb70c3537dc8dfc9a2b004a4195243843c1675475430380f11e7055f509609a035ab19b13d036eb9b3368f630a0b53dadae1408e2cca15d78fd773f34ebe41695e0c3fff3bb0884f2a0c829a79a9f6611ab6960f46bd35498ea0e07224b12170a82e88320fa10191fc189bddb50fffa2b18e9eb32fbbfeaaaab7e3b6fdebc7f7ef9e597fb2e68c797313c02c8822f7de94b655bb66cf9615353d3278cefc91f2e46cd3b3e8892a5d781100e544e822344cf8e8366d742171043030001388d000066a6a669c1706800e60c0c6b7cde6e023004c05966638b7832ea797a7c3e7f00af3ff6439c39b2cbac59bbe206dcf9d9af43492640412d1a8045cd074b443049ce4e3e168dc0a601b06517121ccfc3e70f2032368a039b5fc1def52f9aa641717171f3ead5abbfb26eddba0d17bee7cb0f1e0164c05d77dd755b7d7dfdcf07060616196565d7bc1bd56bee869413869ad27e501c21daccce21ad01c0104e560b480b86250a908900ce47036088856d8bd5105821167c12c6fabbf1e7fff74d4b88ede68f7e1e2b6ef9001231c61460ee65cd09877f82d8ae3363b51300ccb19ec71fc80ea219251ccf69d10e8e032f08f0f983e86a69c45f1ffb11ba5ab4244241109465cb967d7fd5aa55fffbf1c71f9fd5f9031e01b8e0c61b6ffcf2c18307bf9f4c26fd00e00fcfc1dc777f1445575c033595045445f34c43537d8dd99fd3a76c83064c02d0f47fadbe4104060158c2802c21181a45060260eb30efddf2002cf7b1c441017f4e2ef6bdf2240e6e7cc1ac2b4a017ce4abff81c2f26a333f00ec388de7b09b042e2a7f9a389c9101d354384768da15af2d7ae2788000aa2c6b0945e363181f1940647c1493234318eeed42221ec1504f277a5b4f59daa9aeaedebe68d1a22fbffefaeb0de73e8a99018f0018ac5dbb5678f6d9677fd2d4d4f490515678c54acc7df703f0e7e64349c62dea3dc7d8f91c67fce8dd09c030070c2137557b46753e370d80f11db06dba1080db2c6e680e3ccf434e26f0e71f7d1363033de63de50b96e1de87d782aa0aa84a1d6685f99932fddbc6698c9ded3b7d8d218429fe2ec66ccef322008a643c86d8e404867a3a3132d083a19e0e0c75b72332368289d121c423935afbd380dfef4fae5cb9f2ebbb76edfac9b46e986110deee015c2af8ca57be92b779f3e6c79a9a9aee0300423854dcf801945f7b2708146df59c6ecb03d055d7b4fe4ab3b9b4b2fdc27559387735d87693f9517b335593c675555110cccbc735b77f18db9efb2ff37acfe91368d8fa2aae7def47cd957c4c783fddba2edc96be88edbd6e92587bcf3e3e5e1020883e8010c47561ef3ed384818e33e83a7d1293a343884e4c1dd9238480e3b818216494e7f908c791419e17ba0541e8526579081c37d6d1d1da31654333141e0100f8f8c73f5ebc6fdfbee74f9f3e7d2b00f05200736fff240aafb8164a2a060e54937b664ab6081823784c8113997ef1596e3326cbcc15dc1b987256650438118be08ad5ef42e3ae4de86f4fabc9fb373c8f9a65ab50545eaded21c0daf0061b4cf5d8992662fbbdd085de274155148cf4f7a0aba511ed271bd075ba11a3fd3d5055254353041cc745799eef1204614014c5268ee34e1142fa01b4fbfdfe0e4551868b55357aacbfffdcb7379ac198f526c0830f3e58fceaabaffea9bbbbfb6600f0e51662de9d7f879c8a05509331edc7a54ffc693b9798e5da8f8fa4b3f0d828005307c41a05e00c37994b1e00abaa03ac09e0eecc33cb1daa78ba85acf701f0f983387b7837363cf67dcbf753bd6425ee79e85f20a79216c2232096cf86a393edcf1c81ab0f406336c271da9267c26174a007678f1f42cba13de86c398e442ceaf87b11422008fca02008a704416cf6f97cfb55556d0d0683a76459eeeaededf536123907cc6a0de01bdff846eece9d3b9f37845f0acfc1fcbb1e84bfa80c8abe420e807366b3cff814a0ba53d062f4daee63273c4a326bffece4cae995acea375c0a32f7351dbd20158f61fe55d7a37cc132f49c4e2fb9ef3879088dbb3763f9cdef43221a611c7dd6fead1a11f3c9d416acfd711c079fdf8f54328133470fe0d8eecd387bec20e211eb1ea28410f03cdf2f4952bd288abb2549da2d8ae2c98e8e8eae8c0fe361da98b504b076ed5adf8b2fbef884a1f64bf92598fffe072115ccd1677e2e931c3b6d5a8779aba7b9da1c5d6e82485805cc26b1aca6ade502d0347310b6b2d19ffb906c8333af5af984021c8715b7de63210000d8b7ee39d42c5b85606ed85c3f603647d2edd8dc10d62e8d3e0981140822118be0c88e4d38bcf5afe83ed364e98f23043e9fefb84f9236493cbf118270a8bfbfbf171e2e38662d01ac5fbffe47a74f9ffe1000f8720a30f77d9f872f3c076a32a1abe5ba33cd69aa6600230dd42871710c32aabd36c5a7eb67edc83e9d9b6a827576cd648613970f941d21015289386a96ae4449cd42f4b7a717d34d8e0ea17efdf3b8fd130f231193d3e3e5dc9fd33dbd97c2e70f4055141c7d6313f66d7809039dd6fd3c44513c2949d28ba150e8d5402070f8ecd9b3b33a46ff56605612c09d77def9e53d7bf63c0400bc1444cd1d9f81945f0a351537e3f226dc7ecb04563fbba11150e73d0e99360596b84c9719ba64db35aa670ba0db48cb52d3729fdd46a1e04509cbdf7517b63cf588e5d2893d9bb1e4fa5b51b160299289585ac8d96888f992a6040a6d9f3fc91f40fba963d8f1d213e8683aca0c8750499236f8fdfe5f4992b4d1b3e1df5acc3a02f8d297bef48e6ddbb67d1f8016ea7bf77f43a0b4166a320a632f7c00699d3dc3ac4cad6e30ad8cb8f345babeed3d9d227c88345798f7b9fa23d2c20618e642262783aed9647021c8c938e62fbf1e7945a5181f4aa7ccab8a8c3d7f7d06f73efcaf201ca7ed4b687f608be34febca27f921a792d8fac2e3d8bfe92528724aab43080281c08ba150e827fdfdfd3bb27c051e2e221c9b53ce647ceb5bdf2a78f1c5177f9b4824fc0030e7daf721af762594441416dddd40d60009b555a0da44682bb6bac99cef89b913675a98d8c08ce152a0d47a9fdbe0ac333d752974a94badfda98a027f28170b57bdd3714f6773034e1dd8019f1448130b6381b004070a488110867a3bf0c28fbf8d3deb9e37855f14c5ad858585b74722918f7ac2fff6625611c0d6ad5bbfd7d7d7b7040072e75e89a29577404d4eb1332dc9c40276b59d388b892e0c848218ce84f4050dd429f5ac766d2f33e136ac7388e85a4c04568209a0c8292cb8e61de004a782b86ffd1f108f4c80e3f9f43d8eee29fcc11c9c3d76007ff8cf7f4267cb710080288a43151515ff585e5efe91a1a1a1ed73e6ccc95dbe7c79cef2e5cb7dd31fb9870b895963027ce10b5f78ffdebd7b3f0f0042288cd29bee83aaaa20945a0500000c6fbb25fbc70e360bd0aa7e9b6d517d86a7c4ea7063ae5bb468ab29cd84d55cba77b8deb39b20f61b9dcf6c8c97409153282cab4671c53c8b33100046fbba7162f7eb587dc747908845d26d30e64620988be3bbb760fd133f81924a9af7f23c9f8ac5621f88c7e39fe338ce37323282482422fb7cbee89c39738652a9d4602010182ecacf3f9e52d5c6aaaaaad62d5bb69cf18e11bb78981504b076edda9c75ebd6fdd0f81d95acb907426e1168229676de19de78d6e806ac53250356981d826a30022bef8c443b2278b62e1d30eb6432b8cf05699671270c0a4a01519230ffaaeb1d040000075eff1316adbe19819c3c3d2c98662d7f3007c7776fc6badffdd81a3204108fc7cbe2f178195b168bc5108ba5b5b0b1b131f4f6f6821082f6f6f6c9c2c2c293f3e7cfdf2f08c296d2d2d25d3b77eeec3ed727f69019b38200f6ecd9f3e5cecece6500903bef2ae42d580535114bdbafa6f0db24364b584eab6e9d3e499629d8121a371c7014206c18d0e8daad018709e0f4e2b1f93734d37e7bfa184d052703545545d9fc2570f38d44c747716ce706bce3de4f2111990485962aed0fe6e074c33e57e1f7f903107c12247f10a2e4072f68c71daa720ac96402c97814722a8944340a8d8428e2f1784e3c1e5f3d3c3cbc1ac0177b7a7afa2b2b2beb2a2a4a9e15c5c0c65dbb764dff0c320fae98f104f08d6f7ca36ac78e1dff00009c28a168f5fbb5d3750cb878c89def6133c8f5029d34ccb41f43fe6dfabba160b8118a9d77cc325b928deb986cea3be5ec4e47626d8cb98764d4003428720ae139e5f087721cd97900d0b0631d96dff45e0473c350141982e4476fdb69bcf28bff0b559151585a89f2daa528ada94551450dc24525dac1a592044110f563cda09d3528cb48a5125092494c8e8d62b8b70323fd3de8693d85c1ce564c8e0d0300229148492412f99b9e9e9ebf29282838bc66cd9a5f0683c1df7967029c3f663c011c3b76ecab9148a418000a96bd13526105683206182135236947975c17c5de29fc2eeabd29f32e44410c41e49862fd8dc567e002d7ec3ac745769c9a66e06ae34f0bba5f435521054208e6e6bb12406c620c4777aec74df7fe2d683c8ad8e41876bffa0cae7cc77bb064f5bb5052530b291802cf1128b2a22d2bd66776804255151881545e14b54d3e7308c2c5a5a85e74250821905349c426c7d1d77e1aad278ee0ccb17a0c76b581528ae1e1e16bf6eddbf7f339c5c55fb8f5d65bbf5d5757f7eab93ea907ccecc5405ffde217e7fdea89270e45a3d17c2190879a0f7f15823fa41fa2995eb4632cf401b3ae9f00fa1a7eadccb2188868e584b03b02d9f601d0ef67b7e9e2f429ddb2790621e95d81ed5b846bb73227f6a4c7a635e5b2c780eb6220e63e58772762a28fe9c8a1de96204a78f517ff071d270fb97ebf81dc303efecd1f21142ec0c4f0000821282cab802a2b509414a8aa3a1605312fe967cc046d959f793e403c1a41e7a9e368d8b111cd87769b66062ff05850bbe067f3e6cdfba677aaf0b9614687011b9a9b3f178d46f30120bce446883905a0cca93dd474df1b5240d3e58e99d509a77a0e4b3ba094c9d44d4b9ac3eab09552567033f1b3457370da109636dccc0683f829acaffaf80d1f87e893320c40d3021af7d641107d08850b915b508444348254320eaaaa199f6fdaa014aaa2209988231e9d04e1086aaf5a8d0f3df42d7cf25b3fc092ebde05d1274191153437373f7ce8d0a1d73ff4a10f5d75ee1dcd5ecc580258bb766d7e4343c3a7012ddd376fd175da765e8cda6f2ca1b54bb816ba834d28e01416eb5de9998d8926a435719a397587f529b01d90e986f6991c02fdbf29c58d18de09b71169ba05a514c90cc7711938f6c60644c7474008812acbce0afa97624961cafa3d660655557d5f020e354baec6adf7ff1d4a6a1698d70706066e78fdf5d777af59b3e6e1071e78c0cb2d980666ac0fe0f0e1c31f1a1c1cac0680dcda9510f38ab4557e8c74d87f7f16fb9fb84891c5ae668c7ae3a3ddee26e9620ae264db0cf9b86609cd5cd54a3669b1cd12b8b03a1328407555df6c82a6a3078410a412714c0cf7676a0d00303ed48f53877663c5bbdeaf1d376eb46512ad0bc99c877f42107de04511d1f151341fda8de37bead07eb2c17210080044a3d1584343c30d9d9d9dcf01c87edcb087994b00274e9cf83400108e47ee15aba132aabf2103167970c862665132edf44c5103ca7080e9ff631387d24941a62392e9cac1252e5c644d59d03e59938d32841c401c094e1625488f18f08280f1c15e4c4e716437001cdbb51157de783bb38a1256b9cf984b9135d20ac271f0497ea8aa8afef6d338b1773b9a0eecb41cfa01008490499fcfb7dde7f33deff7fb37784b87a78f1949005ffbdad796b5b5b5dd0800d29c1a488595a04aca662e1b42c30ab43b1cc2e716a2b3c95d7ae6b7aef8cdd6979d7f8c2c6167c88e64b86b1a53aa31d323bde7bfe5b21e3614441fce1cdd67e6ef67437f5b0bbacf34a266f1554825134ea1ce6092645a90c40b02449f8458641227f7efc4d1375ec7d9e3072d63d1370aa91745f14541555f1a8fc79b9c2d79980a3392008e1e3d7a97b1e02767de0a105e004dc9fa8fdff8d51197187c8669d80e978955b399b3dfe22ac0d4fa9630554c759a75241a3559bddd65d6b70edff930aeab0af5367951c4d8d0008e6d7f2dc3d3584129c5c97ddb3077e93599a5dade19638619b5059f76b2cf485f0f1af76ec3d15daf63a8c7ba5f27c771fda228be2c8ae2339393936fa452a9a919ca4346cc48023875ead4dd00c0893e84aa16812aec6f243d3db3268006f7ec18cb6fda9ccaadf6b6bbf56d5d17ef100b4653700e46d75032918aeb949a2e2776367154ca20a48480e745ec79e509442746ddebb8e0ccd17d181fea4730374fdfbc93957037a2d25e34355f0228416f5b0b8eeedc84c6fddb2d3bfe1242208a623dcff34f0178311a8d764e7b601eb262c611c0430f3d54dbdbdbbb1a00a4e26a08b9c5a08a6c33aa6d7068d11430f706b07bdf9c6f4d553fcbc4e7268296720a9b4a6e6d4c23a1ac2ebe695a036921748bc24b81100e6e7a11cdf5db32f7e382e8f8283a9b8f62d98db721198bda1ed04d0321fa0e412a5a4f34e050ddab6839b2170a1349204044f4f9d60982f078341add4429f566fb0b8c194700030303d7c762b11c0008545c012288ba06e0d4395d2727c052c1720866b6c9935a67737b228e2b282ce9bbacf261be1a26809bfa607b9e4cd733d9fbe6adfa84ec0fe5e2c4ae8dd8f3ca93d9c79d01678eeec7b21b6e731990ae1f510ac2f3900201a412719cac7f0387ea5e455be3114b6d8ee33a0441781ac0ef1389c4c9f31a8c876961c611404b4bcbad00004210289d0faaca0edb5a83bea74f26a1a614e0983d015d4c6dd6d1c71ee5659281254a98b6e2ed76beb521ed825964117ed677a05f601ab0e90c4c07d941a12de469aedf8e6d7ff8052855a7bec9055d2d2710191f811408a61381f4b1128e83140822198fe1d81b5b7060f32be8396bdb0c94e31a44517c4c14c567272626b2c71f3d5c10cc280258bb76ad303232b20200787f0ec4bc39a0b26c9d3ded213763b6cee06937d37059c9259a881aabffb44b8e15ff965401d64760e1126a2504b353ca2c2e728409497a2721e6466b35b777e95aecec2f0543683dba0f754fffd4b18aef5c30393684e19e0e542f5a8e5422a16b42043e5df01b766ec2c12dafa0afedb465403ccfefe479fee7c964f24ff1783c71de03f070ce985104d0d6d6563e3030b00400a4c20af0fe50dafe7718dd5621704c96242d2856479d0623a4ee10334677271c01e105f01c0f8ee72c6b04d25d50405141a90a0a237d9638c763f6ea423266d7999c7d2c595887294a7ef4b7b5a0eee94720a7dea4ec51a0b7f514e62e5d01c201a23f082595c4f13d75a8dff412fada2c7b0b44013c2708c263b22cef9665f9fcd40e0f6f0a338a00262727e72612893c00f0e59702bc0028cc36d6aef63e73cd80bd0eaba23375598b40730272e0451f784e00556428c9041263c3884f0c23158b4049c535420205c76b67df89811082e16204c385108339e005016a2a0555954129751daa45a02d56016bebdbec15c743021ccf23198f62eb333f755df1773e181dec8528f9a1aa0a5a0eeec6de0d2fa0e78cc58c9fe479fe6945517e4a293d7e413af570de985104d0d6d6768da22804007c85e566565a36994f5be6b60b6e72639f6da9369b0b3e091cc7418e4e60b4bd09e3dd6731da751af1b141c42746a14c31b3728288406e3e728aca31a776294a6aaf447ef95cf0a20825190754ea740432a4445c370f70cb0f60188c6ab3ffbe8d2f60b8bb2debf8ce05932343e8683a869d2f3f81b3c70eb097a2009e05f02359963dc1bf4430a308201e8fcf35de8b7973ac8ea80cce3053d1cfb0c53553c9aa51f31c78c90f3519c7504b03069a0f62b8ad11898991731eb72aa7101919406464007d2d0de0781e45358b30ffda5b51bdfc7a089268e6bc67f2e9d97d0599fc01063841c0685f178e6f5f77cee3cd868ee6063cf3bd436cd65e8ae3b8a783c1e07f4e4c4c1cbba09d7978d3985104904824e6030027f8c0490118339e25d46773a473aefe01b6be75ea258440900290a393e83eba13bdc7dec064ff85cd4b51150503671b3170b611a7f76ec455773cb086afdb000020004944415480b22bae829c889bcfc48e99c94d728edf01ad50f049387b783792f10bbb7cde242a42129224bd120c067f3c3434b46bf5ead5e2adb7de5adcdada2a504a496565a5e2f3f99213131391fafa7a2fbeff36614611c0e8e8f03c00e08379e0fdb980ae015833f9d21f08019b19ec1e8867a48813441002f436ec40d7fe8d888d5cfc48d550470bb6fdee3fb0fcf6fbb0ecd60f414da500364c672633c0a2e1bb1fcf05d36c519249b49f3878d1c62d08be715114394551fe57381c2e5314259f521a4aa5523ca594ebebeb53789e8f711c37525050302a49525f201038e0f7fb0fe7e5e5d5efddbb77e8a20dce8389194500b1586c0e0008815c70a204aacaae217e0d367d198075574da34c7be1a52062031d68ddfe22c6dadfdadc14aaaa38bae98f48c5635879d727dc3581e9820084e3108f4c606ce0e21db09b4a25e6a45289fb325d97d3197fd54cf1fd1cc721100874d4d4d46caaaaaa7a4692a46d757575e71f9bf49015338a001485860080f8fc00c7010a40781e9c206ab3a42a03c6b2607d9dae31fbdbe4dd02410a60b0710f5aeb9e879c709e59ff56e1e48e5791575c8e856b6e472a1e659c957a783033dba54129388e47747c04c9e8c5dd3d4b9402f08742104409a24f822805c00b3c006db39154328e543c86643c86c8d808545581aaaa884422d59148e4b35d5d5d9f2d2c2cdc7be595573e539893b37ee7be7da7bc33022e2c661801280100e0781f4008389f04797c10b19e160014c1f205900aca41e5843534ee9a07a0dbfbbe00baf6ae43e7ae57dec227c98c239bfe80f2c52b1008e98b6eec090a3aec0774a62d1aa26b00e350de44d24f26542c588695b7dc8d50381f39f9c5f08742e07911bc208017046d37607d30aaa240915350e414c6870630d8dd86beb6d368dcbf5d2704158383836b060707d7545656fe04c03fc02da9c1c37963a6118004004414c18b7e8c37edc6e0de97a1c42601009ccf8fa215b7a370c56da08a0caa523365d7613253025ef2a37bdf6be8dafd97b7f849322331398eb6865db8f25df7588f35b30532d81d8fad11023d34aa5e9cbc9bf2f98b70cd2d77211e9980aaaa9abf429fb455450618050c44db7844104494cd5b88dae5d7a271df76341fdc65b6270a42b2b2aaea3badadad3fa0e79ba3ec212366140100e001400886111f6847ff8ee72d4b81d5641c03fbff0aaaa450bcfa2ea8c9787a66b44c9314bc14c07073fd2525fc06fa4f9fc0d29beece96e383f4998370443f0080e32fce9f9e1082443c8a5432a17f0693c36075be6ae3d316081142b0f9b95f61c79f9f32d722e4e6e69cacad5df0d0e1c387eb2eca603dccac4d41557d5623bc88d1239b6dfb00a431786813221d8de00409d465892de10424c706d1befd8f177bc8e785c9a15ea49271ed98ee8cc8e024a4daec2f05431785047841749a57608a6cc94abc2080108275bfff29b6bff48429fc25c5c5cf2e5ab4f8664ff82f2e669a06000090278711eb759e696782520c1edc8850f9150038cba21d502d8fa0ebc046c8d10b931e7ba1a1a8aa6dc59edb6ac00cde4002a8aa027f4e18be4010f1c9f10b3a3651f2eb2148bb63c599a124083e28720a7ff9cd0f71eae06e0000c7716a6565f9b7dbdb3bfffd820ecc832b669406602035d86edafd9910eb6f45acefac162130d6ef828008021263fd18397520ebfd6f2782e142083e3f930f9076f6197077966bb600a5143e7f10fe60ee051f9b3f940bcb06e8c642091b0451442a99c04b8ffebb29fc82284ccc9b37ef539ef0bf759851046024bf2446fbade7ffb981524c76368170ec39f714841730d9754acbc1bf445158311f8228c221e3ec1a21d744a0b403d01708a2b062ae4b9d37879cfc42ddc1685d31c58e86e705a88a8a577ef97d9c3dae252389a238ba6ce9b20f9d3e7dfa990b3e280f19312309409da6873b31d4a12f1726a612404010e96dbd78837cd320a8bef27aeb36e7ae8e40eaf28eb98570289dbff8828e8ce378e4840bade46b4bb0e0380ee078bcf6f88f71e6e87e0080dfe71b59b162c5878f1c39b2e5820ec8c394986904903c97fac9f14128a9384cef3434d5597db3ebe22f222a165f83e2798ba1a4f447a5d0560b4e130647287212958bae368fe9be1010441f7c812054763cec022a68c7846f7be17134eedb060010057172f1d2a5ff6dfffefd5b2fd8403c4c1b338a00388e3b27c955e594b65f80990d48b444998b14227bb3107c12ae7eef030054ab9d6d9c3ee2e27d07b52a06c67d8a2ca3a0ac1a958baebe60e30be4861108e65a1d94ba6f8582c21fcac1e16debb07fe39f00001cc729b50b6a3f7bf8f0e18d176c101ece09338a000441880380945f0a5e0a4d7d8323038882102038a7ea228df0cd61e5dd9f4641e57cc80946d131927b741233d73c1117e39b85be4fdf921befb860e32b2cab8214ca712ec3a6143e2980ae96466cf9c3aff57282b9d5d5df3c79f2e4a5196b9d25985104c0113209005c20175251c594f5c5601e389f1fa01454d57eabaa9c426ef5123d3a70e9e0aaf7dc8f85d7df8e543c66c9f2d3909672cbba265b995957cfc24b25e2a859b60ae50baebc20632c282907c7f18e1e3981473211c386271e4132ae652f9694cef9dd99d6d61f5e908e3d9c37661401f80381010050135184e64daddafae75481f03e6d3634c2d48a0c7f61390a97acb9a8633d175cf3fe4fe2cadb3f82543c0647824f26f39f610056094867035350aa82f03caeffe0272e882fa062e1326d6f43db98445f003b5e7a12fd1d670100b9b9b9070ac2055f79d31d7a78d3985104909797d70e00a9892104ca17c25f3a2f6bfddc9ae530a77e06aa9c42f99abb11282cbb58439d16027905b8e9135fc592777d00a9782cbd696846b0c94099164133a97984404ec651b1601956ddf9d13735565f208892aa5a2872ca6255f9fc01b49e38884375af020044519ca8aeaefefcc993272fcd2cab5986194500a150a80d00d4540254915172d3fde07d41d7ba39d54b11ac5c0caae8f63493ab4e1519422007b5efff1ca470f15b3174076aae7e076e7bf05f5175e5f548c622704ef5868d6fdde2283dfbba6f1c6a29d3ab246331ac7acf7d58b8eae6f31e6fe5c22b915f520e4596cd9e398e432a11c7d6171e331d83555555ff76fcf8f143e7dd91870b8a1945008410f358e8e4d800a4e21a94bfe73310f3ac42ec9f5383b277de6fdafe960d01f457359980545086c51ffe0ac2d517365e9e0dc5f396e09d9ffe3aae7fe04b08e416201967f71fc894dcc398052eb9ffaed101e3030554aa425114dcf2b12fa176c50de735eea5d7df02629c8442a139fe02411cdeb61efdedda3900797979fb799e7fe4bc3af070517069c6bbce139595958d478e1cd1369b18ed852a27e12fab45d55d0f21d2760c726404624e21f2165c03ce1700956570c699f6ecb235fdc41d554e40cc29c0a27bbe8881e3bbd073703312e3177ea72a5e1051b2e02accbbf6dd28bbe26af0a20f32bb5211b06cfc714e20cefd00d2ed11d327a82a32785ec07b3ef555ec29780a0d5ba7bf0ab2a4662116ac5863ee070800bc28627c68201df22344a9a8a8f87a6363e3a59b64310b31a308a0b0b0f08c288af16432e94f4d8e0094429513e0a420c257be1304da893a544e812a2910e6845f37d132a20284e750b6f256142fbe1643cd0730d47c0093bd6d6fea141dd11f44b86c2ee6d45e898a25ab90575a0dc211a8a904e444ccb9414126357eea8bee70b9acc8327881c7cdf7fd7794d72ec5fe75cf61b8a73d6b33824fc22df77f5e23ad44dc1cb6e893b07beb73888c0d03008a8a8bffd8d8d8b835fba03cbcd5985104303a3a3a1008048692c964656ab44f5b0eac4d6fdada7f3302a62f8a41c60d7500a4498152154a3c06dee747c5aadb51bee2dd880df720d2db8af1ee33dafeff638390e351a88a6c2ec4218480703c04c90f7f6e21027905c82d2e4741d542e495542254500a5e14a0ca296ded8171be60c62159ed7d67a2bd35a781cd70743e144c8d823d665055552462515cb1ea26542f5e8196433bd1bc7f1bfadb5b20a7ac89967945a5b8f56f1e44e5c2654826a2e0f4c1f3828891fe6e1cdef6570080200891f2f2f27f75ff963dbc9d20336d8bb5dadada4d67cf9e7d0f2f855075ef57c1077200aa5a849fe8eaaff199d3f5608e403bce4b1744e3282f8e23e08c7b897602102708e07951fbd153056a3206391e81a2efda4b004df84511be4008be400882e83397ca5255015514ed500f9adecfcf58cf601e23a63f974154e669c5e6f8b50be678d3617ea40920adeac3bc1fba46c4f441d9b6b4f1fb243f94541263033d18ec6ec3485f2752f1288a2ae662fef2d5c8091720158f6b39557a27fe500e76fce977d8f3daf30080cacaf25f7576763f7871fee21ede0c66940600008140a005c07bd4641472640442284fdb08d4d82fcba6ebeb7e7fb89fab079b971dba4d4da1ca32a0c85009d108c227c1ef0f80100e041aa910e3e86faac5dce5a4b967be2660ec96de195411879662d9daeb1cfd010c88cdf63149c070115000aa8a642c0a4208f24b2b515c314f27486dcd849c4a2269aafd3a89f202264786716cd7660080c0f3b19292b29f9cf7403d5c54cca8280000d4d6d6ee06b41f6862b0138413b26e23a94f7a2e609c65b622b746a8aa82cab276ae9f9c84a224a1a49250e594b63a8ed1b41c2ab9f94addbb7164f264321028335e97f103e971b0aa05b50d03061150936c945412c94414895804f16804c97854db9494b98f52409424341fd889c951cd595a5854f4e783070f9e701db087b71d338e0052a9d4319ee71500480c7783497db10899f59d9bfb2f7bc69ddb1d0e25621a33b4b5da746774f7d99f5a8a336c0966d17e285bd37d04d4c92199fc14846871ff63bb36699f394e9d939fff5f191ec2c3258019470073e7ce3d59545474160012fd6dbaf3cff653b5cfb6d9fc20f619d39e836f4fbc99860c533bf550fb75c70d6e8d5886a735e6d27956ed879891cf6cb51c25767501da7388920f5d2dc7d1a7c7fdc37979bb8e3737ef7234e0e192c18c23805ffef297d1a2a2a24300909a1c416a7c10e07457877d9a369364dc08c280ed1aa332b3b7520b19b84d910e3d3ecd1f8e2ea621c8c4cd5ca00e05c0d194dde4b0111bb577449ca3c9c43384e3d1b8779b59565a5cfcb8b795f7a58d19470000505652b21500a8924262b0ddb9bedff09c67b89f92b484b35e72f376537e331b115a432e2978595472a7f4b263b297b8ebe1760e72b467773a66336da8e5259b32019ee7313ed48f3347eb01009224f5e584c397c6692a1e32624612404555d57e4110640088756ba70299b00b1ce30c4b4f9ae94a94b58175527013884c7e0647b1ed26626f84095166f73fb2d2c9aa246e537f161ddfde113bb64cda83ad590afdb4e1e307109b1c0300141616be545f5f3f98b9630f9702662401141616361414149c0680d8403bd444c4750f7d6a0a9cf6dea1b1bbcdd68e1022cc309a394bbb4ec324939c39249d529ac1cd67335fd822736ce7101acc16fd2076b3862104abed030202555170eac04ebd1e518b8a8afe30fd817878bb302309e091471e49cc9d3b771b00c893235a3890d7d7bbdb7fd0ba172ea3d864b8406cd1050a9a8ead135688d2758ce3b032ba069822f76e336832aeb5b329ec70aa17863cdbcd966cee08fd0d2f8a18eaed40578b16ed0b854227e2f1f8eeec03f07029604612000054555599fbcc45bb9a01923ef9c3a1ba67b5756de4c078ff085bc7622ad81a04b48c3ff69ad684d504700d516680d9c5349c0096f024e38b70b361b2a8fdf6efc5a82b883e9c3dbadf4c152e2828f8f3a953a7bc453f9701662c019494946ccbcdcded0780686713682aae93405a703398b43057095000d4a6ba3376af010a026ae4f1534b43aeb2676a0b19a4dcd554c83058a23312b195b337b8453969869e5ca3086e8e42e378754edb5aec947ea027cff1a9bcbcbc175c1ec1c32588194b00bffce52f07abaaaab6014062a41789a12e2d1a906162b442ffd5db7571cb2c992102c0dae119049c80a4fd056e264006b3c0154e6543fb9ce9066309b061c767bd91b8bd584881177de8ef3883fe76ed28b6dcbcdc7dc78f1f3f9a69b81e2e2dcc58020080254b9668fb508122d271423b05c83e1d66d4b50d0d20939e60bf9ff5c4a7cbdc3cf90ecddb1430863832756bb7533238fea619037054a2864dc2f4e7e89a211d5e1070eae01ba6ef203f3fff792ff67ff9604613407979f9c6502834040091f613a049c30c4823e3095a6658c0ae32b81bcbc64ab8740366a9ed7e9b70bad8d854d73c5c15745373c8a0654ce53c30e29ac6b3646507ea7c7ce695e338c426c6d0725853ff45519cc8cdcd7d758a1178b88430a309e0d1471fed9d376fde4600488cf421d6df0a62ee7eab5bc1fa14ecd07c33c5c7edb00b7d86fb1c0e34f67ebb8d6d9b848d715abc11f61465c7785c3bb611879bc6c1904c26f342ef5f9402683b7108e343fd0080c2c2c2f50d0d0d67e0e1b2c18c26000058bc78f173c61afc89d387d3fbd619e2648401dd84dd66eb9ba086dcba84fb9c55b52a9699deb88f6438c5d77d2853d5b412868bbac10e28c367c2663e65b0768cbd075445c6b13736ea6504e170f8f12986e8e112c38c2780850b17d61515159d0180c9f6e3902323807122f0b4642fb3478e9dfc2df6bb9ba331a3ad61ccb8ac0941acc3734b0cc8be8207ee69474c3b196ea76e1a82fd160a083e3fba5a8ea3f3d43100404e4e4e83aaaadee19e9719663c017cef7bdf9b58ba74e90b00a0c42731d97e029ce0d32e3aa655c6f197254c0773929c82419869df70073ae496952ad6a1a85fb29e02e4169270b9dd5ed55ed156cfeaa8649e8ca6c761b99568bb261ddcfcb2790c584569e92fbcd8ffe587194f0000b078f1e2a705414802c0f8a97a7343500b58a7d814b3ab1d86c838264d4a1c6d59528e295c8986daea6775d45166dce7eefbd76aba5565fc2016e724a0d9fe8d87d07a4c3bde3b180cb6e684c3cf4cbb430f970c660501fcfad7bf6eb8e28a2bb60240bcbf0db15ecd1968ca0c8175d10f53ee0ad33740cc8fee724a9db3a8ad1db728815b33b637b67b8c71b86b249660e4144a0b659ec96d4c847050e42476ffe529d37f515151f183fafafab1ec2d7bb814312b080000aebefaeadf0000a514634d7b00c239a261d39d338969f3dba2fc53cce68eb20c0e39cb3c9e696053461a32144ed5963d8dd9f24c14522084c3757f415fdb290040381c3e505555f5985bd71e2e7dcc1a02a8aeae7eadacacac0900265a8f2239d20b8e13dd37039a22592873961d1cea4026ed3a5b29ab4db82c2b706fc44e3e4c98d07a62a0d30b4833b21fb130a34f0aa0b7ad19fbd669bbfd721ca7565555fd635d5d5ddced6e0f973e660d01fce0073f88ac5cb9f23700a0ca498c36ed05114567d0dd1e1fcf201c8e9d73cc7bc1381759a166556b36d466cb09b03565fd90a982739c169272698c0d3f9a160dcb3cb667e67801c9780c5b9e7914a98476c4774559c5cf8e1d3b56070f972d660d0100c09a356b9e3016088d37ef873c31aced1a0ca465d23e8b5b6655588491d5922d5933596c76d32360120e494ba0bd2f06994d944cf13ce6ad251ae1eaa9303b20ce2b2020102509db5ff84d3ae73f37b7a1b2baf25fdc3bf770b9605611c077bef39dfe952b563c0600727c12a34d7bd32141c0324767d4dd0971154ecb7d8c5b3dab0fc0a8efd69eab5cbb680bacb9e2a64cb8c4f3611da22db8481ccd4ac110ea37bc80c63dda5effa22846172c58f0b93d7bf68cbb8dd2c3e58359450000505553f30b4992c60060a4f10dc89151109e67e2e15379cc697aa6b4abd68630b3eab5c90bce32471f19d46f6705e63e5690d941316d65756e52b8fa418c31fa833968dcb319bb5f79522f27a8adad7df8d0a143fbb335ebe1f2c0ac2380a79f7ebaedc61b6f7c1200e4e838469bf68088922ebfc421c0ae30648c91648bd9ef1a43cbae15b017322f409c8eebdf3983bb3b2d6d85a63d933665fca15c9c3ab0135b9e79d4f41954cfadfeeec993271fcff4081e2e2fcc3a0200801b6eb8e147a150681c00868eef446a6218e079a4e381193d681aec0249ecb67516671d6ca2e762dc3be4d594c90c7abb4b578449e9756c3c6abed16d7ce2bc4f0ae5e2f4e1ddd8f4e48fa1c82900407575f56fdb5bdbffd9d9b387cb15b39200befbddef9e59b264d1af014d0b183eb6c3e20bb07ac49d363f5bc5fc6088a79bc7dd7e6f06bbdd4da8ad5c93497770b1072ce4645c26b6ac3fc63e60cafda15c34efdf860d8fff107252cbeeadaaaa7ab6a4a4e48b74a69d263bcb312b090000d6acb9f12739393943003074e20d2446fad21b87b2214162fb3c1d5046204d1963bdfc59ad72f76080630cacb3d27043ba0f304d22341dbe74b5fb39f88221346cfb2b5e7fe24750f43dfecacaca5e2c2d2dfd5c7d7d7d2aebc03d5c7698b504f0e8a38f76dc78e38d8f00809a8c61f0d02670e65e010cdc92825c677c37f59c3a6d710267ee3db5bd66021ba7cf18629c064c524b93012f0810441ff6bcfc04b63fff0bf3e0cf9a9a9adf5756567eacbebe3e3adde63d5c3e98b504000037dd74d323c5c5c5670060e4d47e4c76378313255857ecd804db6eb3bbf8035852b02b139ad7dd453d9f0e329efd676617b80dccde0833366d00a23f80542c8e8dbfff4f1cdcf4a25973d1a2453f5ab366cd7ff766fe990b32db4dbafbefbfffef5e78e185c7002054be000beffd32a8aa808082709a00731c0107cd41666c864140c0114d8c384efba72ddd25ba1f9198f539e32c00a2dfa33b1a090508a709a1596668f6c49ab44bf4be2c66bb595fef934bdf67949bff336330398ce3e00f84d0dfd68c6dcffc0c43dd6d0000411094b973e77ea3a5a5e53f2fceb7eee152c1acd60000e08e3bee786ac182da370020d2731a438dbbc14b81740597c41f2043a4cfe573ba9e73f910602b2096174bb966796421eb0c513dfb45e31d2ffa204a7e1cdbfe57fce5a7df36853f10080c5c73cd35f779c23f3b30eb09e00b5ff842eade7b3ff47541105200d057bf0ec9f1c1f4de8116bb5b834390edee7ffb1e00967a9637ae70230987e97f0e8e49fb587d81106213a3d8fcbb1f62e71f7f65e6f6cf993367cf35cb96ddbe7ffffe97a76ed5c34cc0ac37010cdc74d34d8fecdab5ebcb0050b8e83accbbf3335053715dc507630210f3c4604effcc1102c269eabddd04e00c9381a463ec693322ed25988e09e028b7d767c64690be49331d2844510227886839b01dfbfff21422a3dad99d1cc761eedcb9ff555151f1cd9d3b774e5c8cefd7c3a50961ea2ab3032b57ae5cdbdcdcfc81c1c1c1f9c3cdfb11aebd0a858b56434dc6e036639b5983594d005b0536b740ff4c39265127bb6290a51fa33d6a0a3dbbc688f01c7cfe20c6fa3a7160dd733873f80df3cedcdcdcce85f3e7ffe3c123479e3b87de3dcc10cc7a13c0c0cf7ef6b3a17befbdf71f8c59ba73c79f909a18d142832ec93d761023e4974da172117037999f160f64c9df37db2004be400894521cd9fc125ef9c93f5984bfbabafad9356bd6dce409ffec856702d870d34d373dbe6bd7aecf0040c1826bb0e0aecf036a128452f728006b0200bab32fed89e758d55c97508e399ecb2d0a60f1da630a1300cc7d8c69214a7e80021d270ee0f0c63f62a8ebacf98c79797967162e5cf8ed03070e3c7d51bf4c0f973c3c13c086952b577eada9a9e99d4343430b474e1f46ff91ad285f7d3bd4b8350f8609b0d90bad051942f76e1afcf923dda220fac0f102facf9e44c3e697d0d978d0ac250842aaa6a6e657353535ffa7aeaeaef7cdf6eae1f287a701b8e0effffeef6fffcd6f7eb35e511481137d58f2e12f23af7221d4444ccb0d306679ddc967e40070865b4f8fd95bf200cc325d13206912b1c4f8a7ed044ccffa80b66107cff318ec6841e3f6d770f6c86e503d9b8f1082b2b2b24d4b962c5cbb65cbf6b40de061d6c323800cb8f9e69bbfb373e7ce7f05007f410996ddf73fe10be6695b8a73049c21e0d01385b43001081b05301289743300448f2670ba08db4d00cea9dea73fbb98061c07d127811082a1ce3368deb51ead47769babf700a0a0a0e0685555d57f1c3d7af4596f218f073b3c02c880071e78806f686878a9a9a9e9830010ae5e82251ffe120828a0aae9599d185980ac0fc03adbb375f52a9a8053a6fe5404a0ffa7f5c74194fc506505fd674fa079f72674361e30677c00c8cfcf3f3db7bafac7a5e5e58f6fd8b021f2167c651e2e43780490055ffffad7cb9e7cf2c96dbdbdbd8b00a0f4ea7762c17b3e012aa700aa82239ca9e29ba9c0609d809a6660900118c7a1610258f2003846e85962d035045ef041f0f990888ca3a7e9084eefaf43df99e39631e7e5e59daeaaaafac5fcf985bf7df5d51d236fcd37e5e17285470053e0e1871f5ef5fbdfff7ed3e4e4642100545dff3ecc7bd747a026e320a04c1440f7ee1b0460d8fc48fb080ca1e65813c0d00a38961498ba3c0f419440a88ad1fe4e7434ec417bc32e4c0cf559c6999f9f7fa2b2b2f2e7555555cfac5fbf7ef82dfa7a3c5ce6f008601af8e0073ff8c1d75e7bed4faaaa0a0030f7a67b5173e3dd7aa6a0ee036017e6503d2b9071020269c137afb9850101703c075e94c01182f8c428fa4f1f43fbd1dde83b7ddc5ca3afb5c7211c0e6f2d2929f9cddcb973ffeca9fa1ece151e014c139ffad4a7feeee9a79f7eccf8bee6bee383987bd33da07212a00a787d991f01316776360a00925e15689a0034fd9ee77970a20f1cc7211919c750c729749d3880bee623884d5835794992c68a8b8bff525e5efedbfafafa6d9e73cfc3f9c2238073c02db7dcf2c56ddbb63d0a5d4baf58f16e2cb8ed7ef0a2089a4aea333c4300e63262e8da00e31be07908bc008e17405505b1f1218c749f45dfa923e83f7d1c513d4fdf00c771c8cbcbab2f2828782e1c0ebf78e8d0a1d6b7f8f13dcc407804708e78dffbdef7b92d5bb6fc3c954a0900905fb3188beff838724b6ba0a612fa5e02bafdaf9b061ce1c0093c785e00c771a054452a3a8989a16e0cb7b760a8ad11235d67908c4eda7a23c8c9099dc9c9c979adbc7cce1f0f1d3aba9352aabef54fed61a6c22380f3c06db7ddf691fafafa5f4d4c4c140180200550b3e64e542cbf11febc22701c0f42294055502505554e213e3684e8e8002607bb30da7d069303dd888e0d39da2684202727a72d3f3f7f736161e14b7ebf7fbb770087878b058f00ce131ffbd8c7566edbb6ed573d3d3dab8d325f301779e5f3e1cfc9872227918c8e231919871c8f213e396a89d3b3104531969b9b7b22140a6d2d2c2cdc949b9bbb6fc70e2f84e7e1e2c323803781071e7820a7b9b9f9eb4d4dcd0fc7e3b182e9de2749d298cfe76b0b06837b0900eab10000008349444154f2f3f3f7f8fdfe370a0a0aced4d5d5c91773bc1e3cd8e111c005c00d37dc70457f7fffdf4e4c4cdc353939b95855d5202124c5f3fc98288a03a2280e0882d01a0a851afc7e7f7330183caeaa6a87b7d9a687b71b1e015c40dc71c71db55d5d5def8fc562d500460a0b0bcf12421a7373737beaeaea06a76cc08387b718ff1fa43fcf0503e340500000000049454e44ae426082</data>
+    </image>
+</images>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

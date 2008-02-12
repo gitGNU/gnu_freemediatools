@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- Jahshaka Scene File -->
+
+<JAHSHAKA jah_version = '2.0RC1' xml_file_version = '0.01'>
+    <SCENE_FILE name = 'pluginz' />
+    <MODULE name = 'Animation' />
+    <FRAMES resolution = 'NTSC D1' code = '3' number = '231' />
+    <LAYER name = 'World' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'BACKDROP' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <BACKDROP grid_setting = '0' aliasing = '0' text_safe = '0'>
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'plugback' clipnumber = '97'
+             location = '/jahstorage/media/comps/pluginz/'
+             filename = 'plugback' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '10' ypos = '10' />
+        <KEYFRAMES count = '0'>
+            <KEYFRAME TC = '0' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+        </BACKDROP>
+    </LAYER>
+    <LAYER name = 'plugimation' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'CLIP' type = 'SEQUENCE' clipname = 'clean_rotate.' clipnumber = '96'
+             location = '/jahstorage/media/comps/pluginz/plug/'
+             filename = 'clean_rotate.' extension = '.jpg'
+             startframe = '1' endframe = '150' clipinframe = '1' clipoutframe = '150' videoext = '0001' videotex = '1'
+             inframe = '1' outframe = '150' toggleends = '1' loop = '0' ping = '0' xpos = '314' ypos = '359' />
+        <KEYFRAMES count = '2'>
+            <KEYFRAME TC = '117' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '149' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '1' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'pluginz' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'pluginztext' clipnumber = '98'
+             location = '/jahstorage/media/comps/pluginz/'
+             filename = 'pluginztext' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '11' ypos = '10' />
+        <KEYFRAMES count = '3'>
+            <KEYFRAME TC = '79' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '2' TZ = '589' RX = '-81' RY = '0' RZ = '0' AL = '1' extrude = '5' />
+            <KEYFRAME TC = '90' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '42.8158' TZ = '432.105' RX = '-57.5526' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '117' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '114' TZ = '78' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'Layer' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'fuzz' clipnumber = '101'
+             location = '/jahstorage/media/comps/pluginz/'
+             filename = 'fuzz' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '10' ypos = '10' />
+        <KEYFRAMES count = '3'>
+            <KEYFRAME TC = '1' SX = '0.7' SY = '0.7' SZ = '1' TX = '0' TY = '10' TZ = '56' RX = '0' RY = '0' RZ = '0' AL = '1' extrude = '5' />
+            <KEYFRAME TC = '140' SX = '0.7' SY = '0.7' SZ = '1' TX = '0' TY = '10' TZ = '56' RX = '0' RY = '0' RZ = '0' AL = '1' extrude = '5' />
+            <KEYFRAME TC = '165' SX = '0.7' SY = '0.7' SZ = '1' TX = '0' TY = '10' TZ = '56' RX = '0' RY = '0' RZ = '179' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'plug' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'logo' clipnumber = '99'
+             location = '/jahstorage/media/comps/pluginz/'
+             filename = 'logo' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '255' ypos = '37' />
+        <KEYFRAMES count = '4'>
+            <KEYFRAME TC = '1' SX = '0.5' SY = '0.5' SZ = '1' TX = '0' TY = '-11' TZ = '812' RX = '0' RY = '0' RZ = '0' AL = '0' extrude = '5' />
+            <KEYFRAME TC = '102' SX = '0.5' SY = '0.5' SZ = '1' TX = '0' TY = '-11' TZ = '812' RX = '0' RY = '0' RZ = '0' AL = '0' extrude = '5' />
+            <KEYFRAME TC = '119' SX = '0.5' SY = '0.5' SZ = '1' TX = '0' TY = '-11' TZ = '812' RX = '0' RY = '0' RZ = '0' AL = '1' extrude = '5' />
+            <KEYFRAME TC = '165' SX = '0.5' SY = '0.5' SZ = '1' TX = '0' TY = '-11' TZ = '160' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'line' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'line' clipnumber = '87'
+             location = '/jahstorage/media/comps/pluginz/'
+             filename = 'line' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '299' ypos = '277' />
+        <KEYFRAMES count = '3'>
+            <KEYFRAME TC = '164' SX = '0' SY = '1' SZ = '1' TX = '0' TY = '-10' TZ = '137' RX = '0' RY = '0' RZ = '0' AL = '1' extrude = '5' />
+            <KEYFRAME TC = '165' SX = '0' SY = '1' SZ = '1' TX = '0' TY = '-10' TZ = '137' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '181' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '-10' TZ = '137' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'digitaltools' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'digitaltools' clipnumber = '106'
+             location = '/jahstorage/media/comps/pluginz/'
+             filename = 'digitaltools' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '10' ypos = '10' />
+        <KEYFRAMES count = '2'>
+            <KEYFRAME TC = '163' SX = '0.88' SY = '0.88' SZ = '1' TX = '-498' TY = '12' TZ = '228' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '181' SX = '0.88' SY = '0.88' SZ = '1' TX = '-3' TY = '12' TZ = '228' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'Layer' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'genres' clipnumber = '107'
+             location = '/jahstorage/media/comps/pluginz/'
+             filename = 'genres' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '10' ypos = '10' />
+        <KEYFRAMES count = '3'>
+            <KEYFRAME TC = '162' SX = '0.89' SY = '0.84' SZ = '1' TX = '603' TY = '-31' TZ = '219' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '173' SX = '0.89' SY = '0.84' SZ = '1' TX = '603' TY = '-31' TZ = '219' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '181' SX = '0.89' SY = '0.84' SZ = '1' TX = '0' TY = '-31' TZ = '219' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = '3DText' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'TEXT' objtype = 'TITLEGRID' />
+        <PROPERTIES blend = '0' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '1' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'sky' clipnumber = '6'
+             location = '/jahstorage/media/images/nature/'
+             filename = 'sky' extension = '.bmp'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '617' ypos = '160' />
+        <COLOR red = '1' green = '1' blue = '1' />
+        <TEXT text = '.com' font = '/root/jahshaka/fonts/impact.ttf' style = 'FEXTRUDE' extrude_depth = '5' />
+        <KEYFRAMES count = '3'>
+            <KEYFRAME TC = '205' SX = '0.19' SY = '0.19' SZ = '1' TX = '264' TY = '59' TZ = '424' RX = '179' RY = '-356' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '206' SX = '0.19' SY = '0.19' SZ = '1' TX = '147' TY = '59' TZ = '424' RX = '179' RY = '-356' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '222' SX = '0.19' SY = '0.19' SZ = '1' TX = '147' TY = '59' TZ = '424' RX = '3' RY = '-374' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'Layer' activation = '0'>
+        <KEY invert = '1' draw = '1' status = '1' keyinframe = '0' keyoutframe = '89' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'CLIP' type = 'SEQUENCE' clipname = 'flame_' clipnumber = '8'
+             location = '/jahstorage/media/clips/nature/flame/'
+             filename = 'flame_' extension = '.BMP'
+             startframe = '0' endframe = '89' clipinframe = '0' clipoutframe = '89' videoext = '0000' videotex = '1'
+             inframe = '0' outframe = '89' toggleends = '1' loop = '0' ping = '0' xpos = '956' ypos = '408' />
+        <KEYASSET category = 'CLIP' type = 'SEQUENCE' clipname = 'flamekey_' clipnumber = '9'
+             location = '/jahstorage/media/clips/nature/flamekey/'n             filename = 'flamekey_' extension = '.BMP'
+             startframe = '0' endframe = '89' videoext = '0000' videotex = '1' blendmode = 'GL_ZERO' inframe = '0' outframe = '89' xpos = '859' ypos = '476' />
+        <KEYFRAMES count = '0'>
+            <KEYFRAME TC = '0' SX = '1' SY = '1' SZ = '1' TX = '-58' TY = '143' TZ = '30' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'flame' activation = '1'>
+        <KEY invert = '0' draw = '1' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '0' smooth = '0' reflect = '0' />
+        <ASSET layer_status = '1' category = 'CLIP' type = 'SEQUENCE' clipname = 'flame_' clipnumber = '8'
+             location = '/jahstorage/media/clips/nature/flame/'
+             filename = 'flame_' extension = '.BMP'
+             startframe = '0' endframe = '89' clipinframe = '140' clipoutframe = '229' videoext = '0000' videotex = '1'
+             inframe = '140' outframe = '229' toggleends = '0' loop = '0' ping = '0' xpos = '956' ypos = '408' />
+        <KEYFRAMES count = '0'>
+            <KEYFRAME TC = '0' SX = '0.73' SY = '0.74' SZ = '1' TX = '-3' TY = '-46' TZ = '248' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+</JAHSHAKA>

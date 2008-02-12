@@ -1,0 +1,597 @@
+? Makefile
+? cvs.diff
+? edit.ii
+? edit.s
+? editinterface.ii
+? editinterface.s
+? editselections.ii
+? editselections.s
+? err.txt
+? moc_edit.cpp
+? moc_edit.ii
+? moc_edit.s
+? old.cpp
+Index: edit.cpp
+===================================================================
+RCS file: /cvsroot/jahshakafx/jahshaka/source/Jahshaka/JahModules/editing/edit.cpp,v
+retrieving revision 1.11
+diff -r1.11 edit.cpp
+10a11,13
+> #include <InputLCD.h>
+> #include <coreobject.h>
+> //./source/Jahshaka/
+15c18
+<     jtrace->info( "Initializing GLEdit Class");
+---
+>     m_pJTrace->info( "Initializing GLEdit Class");
+25c28,31
+<     buildLayer("Background", LayerCategory::LAYER, ObjectCategory::BACKDROP );
+---
+>     buildLayer(
+> 
+> 	       GetLayer(), // new parameter !
+> 	       "Background", LayerCategory::LAYER, ObjectCategory::BACKDROP );
+31,32c37,39
+<     setObjectTab(m_number_of_layers); 
+< 	updateSliders();
+---
+>     setObjectTab(GetLayer()); 
+>     
+>     updateSliders();
+43,44c50,57
+<     mediatable = new JahDesktopSideTable( 0, parentbox );
+<     //connect ( mediatable, SIGNAL(currentChanged ( int, int )), this, SLOT( selectSideTableRow(int,int)) );
+---
+> 
+>     mediatable = 0;
+> 
+>     // the constructor does not work! new JahDesktopSideTable( 0, parentbox );
+> 
+> 
+> 
+>     //connect ( mediatable, SIGNAL(currentChanged ( int, int )), this, SLOT( m_bSelectSideTableRow(int,int)) );
+71,72c84,85
+<     GridSelect->setChecked(gridval);
+<     TextSelect->setChecked(textsafe->layerStatus);
+---
+>     GridSelect->setChecked(m_bGridVal);
+>     TextSelect->setChecked(m_pTextSafe->layerStatus);
+81a95
+> /// edit 
+83a98,102
+> /*
+>   adding the linking function
+> */
+> void GLEdit::glworldUpdate()
+> {
+84a104
+>   m_pJTrace->info( "GLEdit::glworldUpdate" );
+85a106,117
+> }
+> 
+> JahLayer* GLEdit::GetLayer()
+> {  
+>   return 0;
+> };
+> 
+> void GLEdit::addListViewItem(bool, bool)
+> {  };
+> 
+> void GLEdit::updateanimframe(int)
+> {  };
+87a120,122
+> void 
+> GLEdit::updateEditanimframe(int)
+> {  };
+88a124,126
+> void 
+> GLEdit::updateSetinFrames(int, int)
+> {  };
+92a131,148
+> GLEdit::GLEdit( 
+> 	       GLCore* m_pCore, 
+> 	       QHBox*, 
+> 	       QHBox*, 
+> 	       const char* name,
+> 	       QHBox* controls, 
+> 	       QHBox* controller, 
+> 	       QHBox* leftcontroller,
+> 	       QHBox* rightcontroller,
+> 	       int* globalm_nClipnumber )
+>         :  GLWorld(m_pCore,name,controller,globalm_nClipnumber ) 
+> {
+>     buildInterface(controls);
+>     buildInterfaceMenus(leftcontroller,rightcontroller);
+> 
+>     initializeObjects();
+> };
+> 
+93a150,154
+> /*
+>   moved out from the 
+> */
+> GLEdit::~GLEdit() 
+> { 
+94a156
+>  }
+Index: edit.h
+===================================================================
+RCS file: /cvsroot/jahshakafx/jahshaka/source/Jahshaka/JahModules/editing/edit.h,v
+retrieving revision 1.11
+diff -r1.11 edit.h
+27a28
+>   // remove functions from the header! DOH?
+30,34c31
+<         int* globalclipnumber )
+<         :  GLWorld(core,name,controller,globalclipnumber ) 
+< {
+<     buildInterface(controls);
+<     buildInterfaceMenus(leftcontroller,rightcontroller);
+---
+> 	int* globalclipnumber );
+36,37d32
+<     initializeObjects();
+< };
+39c34,35
+< GLEdit::~GLEdit() {  }
+---
+>   // you dont need the function name in the class decl, doh! GLEdit::
+>   ~GLEdit();
+77,78c73,86
+<     void updateEditanimframe(int frame)          { updateanimframe(frame); updateTimeSlider(frame); }
+<     void updateSetinFrames(int frame, int layer) { m_active_layer = layer; setinFrames(frame); }
+---
+>     void updateanimframe(int frame);//          {       // TODO     }
+> 
+>     void glworldUpdate();//TODO: empty function
+> 
+> 
+>     JahLayer* m_layers; // missing member, did they ever compile this?
+>     int m_number_of_layers; // missing member, did they ever compile this?
+> 
+>     JahLayer* GetLayer(); // new function
+>     void addListViewItem(bool, bool); // new function
+> 
+> 
+>     void updateEditanimframe(int frame); //MOVE OUT OF LINE         { updateanimframe(frame); updateTimeSlider(frame); }
+>     void updateSetinFrames(int frame, int layer); //MOVE OUT OF LINE { m_active_layer = layer; setinFrames(frame); }
+92a101,105
+> 
+>     QLabel* sframetext; InputLCD * lcdstartframe;
+>     QLabel* eframetext; InputLCD * lcdendframe;
+> 
+> 
+Index: editinterface.cpp
+===================================================================
+RCS file: /cvsroot/jahshakafx/jahshaka/source/Jahshaka/JahModules/editing/editinterface.cpp,v
+retrieving revision 1.17
+diff -r1.17 editinterface.cpp
+10a11,24
+> #include <jahformatter.h>
+> #include <qslider.h>
+> #include <qpopupmenu.h>
+> #include <jahtranslate.h>
+> #include <jahpreferences.h>
+> #include <InputLCD.h>
+> #include <dialogs.h>
+> #include <qlistview.h>
+> #include <qwidgetstack.h>
+> #include <qhbox.h>
+> #include <qlayout.h>
+> #include <valueFormatters.h>
+> 
+> #include <qmultilineedit.h>
+16c30
+<     glworldRight =  new QFrame (rightcontroller, "gl right" );
+---
+>     glworldRight =  new QFrame ((QWidget*)rightcontroller, (const char*)"gl right",0 );
+21c35
+<         JahBasePath+"Pixmaps/desktop/zoomin.png", JahBasePath+"Pixmaps/desktop/zoomin.png" );
+---
+>         m_qsJahBasePath+"Pixmaps/desktop/zoomin.png", m_qsJahBasePath+"Pixmaps/desktop/zoomin.png" );
+31c45
+<         JahBasePath+"Pixmaps/desktop/zoomout.png", JahBasePath+"Pixmaps/desktop/zoomout.png" );
+---
+>         m_qsJahBasePath+"Pixmaps/desktop/zoomout.png", m_qsJahBasePath+"Pixmaps/desktop/zoomout.png" );
+38c52
+<         JahBasePath+"Pixmaps/desktop/transtool.png", JahBasePath+"Pixmaps/desktop/transtool.png" );
+---
+>         m_qsJahBasePath+"Pixmaps/desktop/transtool.png", m_qsJahBasePath+"Pixmaps/desktop/transtool.png" );
+43c57
+<         JahBasePath+"Pixmaps/desktop/rotatetool.png", JahBasePath+"Pixmaps/desktop/rotatetool.png" );
+---
+>         m_qsJahBasePath+"Pixmaps/desktop/rotatetool.png", m_qsJahBasePath+"Pixmaps/desktop/rotatetool.png" );
+47c61
+<         JahBasePath+"Pixmaps/desktop/scaletool.png", JahBasePath+"Pixmaps/desktop/scaletool.png" );
+---
+>         m_qsJahBasePath+"Pixmaps/desktop/scaletool.png", m_qsJahBasePath+"Pixmaps/desktop/scaletool.png" );
+49,57c63,71
+<     scrubrender = new JahToolButton( glworldRight, "controllerrewindbutton" );
+< 	JahFormatter::addJahPlayerButton( scrubrender, 0, 400, 27, 29,   28, 30, 
+< 		JahBasePath+"Pixmaps/desktop/phototool.png", JahBasePath+"Pixmaps/desktop/phototool.png" );
+<     connect( scrubrender,  SIGNAL(clicked()), SLOT(Render())  );
+< 
+<     scrubrenderAll = new JahToolButton( glworldRight, "controllerpreviousbutton" );
+<     JahFormatter::addJahPlayerButton( scrubrenderAll, 0, 435, 27, 29,  24, 28, 
+< 		JahBasePath+"Pixmaps/desktop/rendertool.png", JahBasePath+"Pixmaps/desktop/rendertool.png" );
+<     connect( scrubrenderAll,  SIGNAL(clicked()), SLOT(RenderScene())  );
+---
+>     m_pScrubRender = new JahToolButton( glworldRight, "controllerrewindbutton" );
+> 	JahFormatter::addJahPlayerButton( m_pScrubRender, 0, 400, 27, 29,   28, 30, 
+> 		m_qsJahBasePath+"Pixmaps/desktop/phototool.png", m_qsJahBasePath+"Pixmaps/desktop/phototool.png" );
+>     connect( m_pScrubRender,  SIGNAL(clicked()), SLOT(Render())  );
+> 
+>     m_pScrubRenderAll = new JahToolButton( glworldRight, "controllerpreviousbutton" );
+>     JahFormatter::addJahPlayerButton( m_pScrubRenderAll, 0, 435, 27, 29,  24, 28, 
+> 		m_qsJahBasePath+"Pixmaps/desktop/rendertool.png", m_qsJahBasePath+"Pixmaps/desktop/rendertool.png" );
+>     connect( m_pScrubRenderAll,  SIGNAL(clicked()), SLOT(RenderScene())  );
+74c88
+<     //JahTranslate& jt = JahTranslate::getInstance();
+---
+>     //JahTranslate& m_pJt = JahTranslate::getInstance();
+79c93
+<     LayersFrame = new QFrame( qtinterface, "EffectsFrame" );
+---
+>     LayersFrame = new QFrame( (QWidget*)qtinterface, (const char *)"EffectsFrame",0 );
+87,100c101,114
+<     AddButton = new QPushButton( LayersFrame, "AddButton" );
+<     JahFormatter::addButton( AddButton,  0, 5, 72, 25,  jt->tr("Add") );
+<     connect  ( AddButton,  SIGNAL(clicked()), this, SLOT( addLayer())  );
+< 
+< 	NameButton = new QPushButton( LayersFrame, "NameButton" );
+< 	JahFormatter::addButton( NameButton, 0, 30, 72, 25, jt->tr("Name") );
+< 	connect  ( NameButton,  SIGNAL(clicked()), this, SLOT( nameLayer())  );
+< 
+< 	namepopup = new FancyPopup( this, "Enter Layer Name",250,150 );  //send size and position as well
+< 	connect ( namepopup,      SIGNAL( returnText(QString)), SLOT( setlayerName(QString)) );
+< 
+< 	DelButton = new QPushButton( LayersFrame, "Delete Button" );
+< 	JahFormatter::addButton( DelButton, 0, 60, 72, 25 , jt->tr("Del") );
+< 	connect  ( DelButton,  SIGNAL(clicked()), this, SLOT( delLayer())  );
+---
+>     m_pAddButton = new QPushButton( LayersFrame, "m_pAddButton" );
+>     JahFormatter::addButton( m_pAddButton,  0, 5, 72, 25,  m_pJt->tr("Add") );
+>     connect  ( m_pAddButton,  SIGNAL(clicked()), this, SLOT( addLayer())  );
+> 
+> 	m_pNameButton = new QPushButton( LayersFrame, "m_pNameButton" );
+> 	JahFormatter::addButton( m_pNameButton, 0, 30, 72, 25, m_pJt->tr("Name") );
+> 	connect  ( m_pNameButton,  SIGNAL(clicked()), this, SLOT( nameLayer())  );
+> 
+> 	m_pNamePopUp = new FancyPopup( this, "Enter Layer Name",250,150 );  //send size and position as well
+> 	connect ( m_pNamePopUp,      SIGNAL( returnText(QString)), SLOT( setlayerName(QString)) );
+> 
+> 	m_pDelButton = new QPushButton( LayersFrame, "Delete Button" );
+> 	JahFormatter::addButton( m_pDelButton, 0, 60, 72, 25 , m_pJt->tr("Del") );
+> 	connect  ( m_pDelButton,  SIGNAL(clicked()), this, SLOT( delLayer())  );
+105c119
+< 	EffectsFrame = new QFrame(qtinterface);
+---
+> 	EffectsFrame = new QFrame((QWidget*)qtinterface,"",0);
+110,111c124,125
+<     m_layer_listview = new QListView( EffectsFrame );
+<     m_layer_listview->setRootIsDecorated(true);
+---
+>     m_pLayerListView = new QListView( EffectsFrame );
+>     m_pLayerListView->setRootIsDecorated(true);
+113c127
+<     connect( m_layer_listview, SIGNAL( clicked( QListViewItem* ) ), this, SLOT( layerClicked( QListViewItem* ) ) );
+---
+>     connect( m_pLayerListView, SIGNAL( clicked( QListViewItem* ) ), this, SLOT( layerClicked( QListViewItem* ) ) );
+115,120c129,134
+<     m_layer_listview->setGeometry( QRect( 1, 1, 166, 190 ) );
+<     m_layer_listview->addColumn( (jt->tr("LAYERS")), -1 );
+<     m_layer_listview->setColumnWidth ( 0,140 );
+<     m_layer_listview->setSorting( -1,1 );   // disables the autosort
+<     m_layer_listview->setVScrollBarMode (QScrollView::AlwaysOn);
+<     m_layer_listview->setHScrollBarMode (QScrollView::AlwaysOff);
+---
+>     m_pLayerListView->setGeometry( QRect( 1, 1, 166, 190 ) );
+>     m_pLayerListView->addColumn( (m_pJt->tr("LAYERS")), -1 );
+>     m_pLayerListView->setColumnWidth ( 0,140 );
+>     m_pLayerListView->setSorting( -1,1 );   // disables the autosort
+>     m_pLayerListView->setVScrollBarMode (QScrollView::AlwaysOn);
+>     m_pLayerListView->setHScrollBarMode (QScrollView::AlwaysOff);
+122,123c136,137
+<     //allow for multiple selections
+<     //m_layer_listview->setSelectionMode (QListView::Extended );
+---
+>     //allow for multiple m_bSelections
+>     //m_pLayerListView->setSelectionMode (QListView::Extended );
+139c153
+<     tabframe->insertTab( moduleOptionsUI[0], tr( "  "+jt->tr("SCENE")+"  " ) );
+---
+>     tabframe->insertTab( moduleOptionsUI[0], tr( "  "+m_pJt->tr("SCENE")+"  " ) );
+142c156
+<     tabframe->insertTab( moduleOptionsUI[1], tr( "  "+jt->tr("OBJECT")+"  " ) );
+---
+>     tabframe->insertTab( moduleOptionsUI[1], tr( "  "+m_pJt->tr("OBJECT")+"  " ) );
+145c159
+<     tabframe->insertTab( moduleOptionsUI[2], tr( "  "+jt->tr("CONTROLS")+"  " ) );
+---
+>     tabframe->insertTab( moduleOptionsUI[2], tr( "  "+m_pJt->tr("CONTROLS")+"  " ) );
+148c162
+<     tabframe->insertTab( moduleOptionsUI[3], tr( "    "+jt->tr("CLIP")+"    " ) );
+---
+>     tabframe->insertTab( moduleOptionsUI[3], tr( "    "+m_pJt->tr("CLIP")+"    " ) );
+151c165
+<     //tabframe->insertTab( moduleOptionsUI[4], tr( "  "+jt->tr("EFFECTS")+"  " ) );
+---
+>     //tabframe->insertTab( moduleOptionsUI[4], tr( "  "+m_pJt->tr("EFFECTS")+"  " ) );
+155c169
+<     tabframe->insertTab( moduleOptionsUI[4], tr( "  "+jt->tr("TIMELINE")+"  " ) );
+---
+>     tabframe->insertTab( moduleOptionsUI[4], tr( "  "+m_pJt->tr("TIMELINE")+"  " ) );
+165c179
+<     objectControlStack = new QWidgetStack(moduleOptionsUI[1]); //objectcontrols
+---
+>     m_pObjectControlStack = new QWidgetStack(moduleOptionsUI[1]); //objectcontrols
+170,171c184,185
+<         objectControl[i]  = new QHBox(objectControlStack);          
+<         objectControlStack->addWidget(objectControl[i], i); //fxobject_clip
+---
+>         m_aObjectControls[i]  = new QHBox(m_pObjectControlStack);          
+>         m_pObjectControlStack->addWidget(m_aObjectControls[i], i); //fxobject_clip
+174c188
+<     objectControlStack->setGeometry( QRect( 0, 0, 660, 190));   // was 635
+---
+>     m_pObjectControlStack->setGeometry( QRect( 0, 0, 660, 190));   // was 635
+188c202
+<     JahFormatter::addButton( LoadButton, 10, 10, 86, 25 , jt->tr("Load") );
+---
+>     JahFormatter::addButton( LoadButton, 10, 10, 86, 25 , m_pJt->tr("Load") );
+192c206
+<     JahFormatter::addButton( SaveButton, 10, 45, 86, 25, jt->tr("Save") );
+---
+>     JahFormatter::addButton( SaveButton, 10, 45, 86, 25, m_pJt->tr("Save") );
+196c210
+<     JahFormatter::addButton( ResetButton, 10, 80, 86, 25, jt->tr("Reset All") );
+---
+>     JahFormatter::addButton( ResetButton, 10, 80, 86, 25, m_pJt->tr("Reset All") );
+200c214
+<     JahFormatter::addButton( ClearButton, 10, 115, 86, 25, jt->tr("Clear Scene") );
+---
+>     JahFormatter::addButton( ClearButton, 10, 115, 86, 25, m_pJt->tr("Clear Scene") );
+212c226
+<     sframetext->setText( tr( jt->tr("STARTFRAME") ) );
+---
+>     sframetext->setText( tr( m_pJt->tr("STARTFRAME") ) );
+220,222c234,236
+<     JahFormatter::addSliderLcd(lcdstartframe, 500, 5, 90, 21, Astartframe);
+<     lcdstartframe->setMinInt(Astartframe);
+<     lcdstartframe->setValue(Astartframe);
+---
+>     JahFormatter::addSliderLcd(lcdstartframe, 500, 5, 90, 21, m_nAStartFrame);
+>     lcdstartframe->setMinInt(m_nAStartFrame);
+>     lcdstartframe->setValue(m_nAStartFrame);
+227c241
+<     eframetext->setText( tr( jt->tr("ENDFRAME")  ) );
+---
+>     eframetext->setText( tr( m_pJt->tr("ENDFRAME")  ) );
+235,237c249,251
+<     JahFormatter::addSliderLcd(lcdendframe, 500, 34, 90, 21, Aendframe);
+<     lcdendframe->setMinInt( Astartframe+1 );
+<     lcdendframe->setValue(Aendframe);
+---
+>     JahFormatter::addSliderLcd(lcdendframe, 500, 34, 90, 21, m_nAEndFrame);
+>     lcdendframe->setMinInt( m_nAStartFrame+1 );
+>     lcdendframe->setValue(m_nAEndFrame);
+240,247c254,261
+<     jahreslabel = new QLabel( ControlFrameUI[0][0], "languagelabel" );
+<     jahreslabel->setGeometry( QRect( 450, 75, 120, 21 ) );
+<     jahreslabel->setAlignment( int( QLabel::AlignCenter ) );
+<     jahreslabel->setText( jt->tr( "Resolution" ) );
+< 
+<     JahresCombo = new QComboBox( FALSE, ControlFrameUI[0][0], "JahresCombo" );
+<     JahresCombo->setGeometry( QRect( 450, 100, 170, 21 ) );
+< 	hasResMenu = true;
+---
+>     m_pJahResLabel = new QLabel( ControlFrameUI[0][0], "languagelabel" );
+>     m_pJahResLabel->setGeometry( QRect( 450, 75, 120, 21 ) );
+>     m_pJahResLabel->setAlignment( int( QLabel::AlignCenter ) );
+>     m_pJahResLabel->setText( m_pJt->tr( "Resolution" ) );
+> 
+>     m_pJahResCombo = new QComboBox( FALSE, ControlFrameUI[0][0], "m_pJahResCombo" );
+>     m_pJahResCombo->setGeometry( QRect( 450, 100, 170, 21 ) );
+> 	m_bHasResMenu = true;
+250c264
+< 	thedata.buildComboBox(JahresCombo);
+---
+> 	thedata.buildComboBox(m_pJahResCombo);
+252,253c266,267
+< 	JahresCombo->setCurrentItem(defaultRes); //should be set to appdefault
+<     connect( JahresCombo,  SIGNAL(activated(int)), this, SLOT(setResolution(int))  );
+---
+> 	m_pJahResCombo->setCurrentItem(defaultRes); //should be set to appdefault
+>     connect( m_pJahResCombo,  SIGNAL(activated(int)), this, SLOT(setResolution(int))  );
+263c277
+< 	ControlFrameUI[1][0] = new QFrame( objectControl[2], "ControlFrame3" ); //was ControlFrame3
+---
+> 	ControlFrameUI[1][0] = new QFrame( m_aObjectControls[2], "ControlFrame3" ); //was ControlFrame3
+268c282
+<     JahFormatter::addCheckButton( TextSelect, 300, 80, 110, 21, jt->tr("title safe") );
+---
+>     JahFormatter::addCheckButton( TextSelect, 300, 80, 110, 21, m_pJt->tr("title safe") );
+272c286
+<     JahFormatter::addCheckButton( GridSelect, 300, 40, 110, 21, jt->tr("grid") );
+---
+>     JahFormatter::addCheckButton( GridSelect, 300, 40, 110, 21, m_pJt->tr("grid") );
+276c290
+<     JahFormatter::addCheckButton( SmoothSelect, 300, 10, 110, 21, jt->tr("aliasing") );
+---
+>     JahFormatter::addCheckButton( SmoothSelect, 300, 10, 110, 21, m_pJt->tr("aliasing") );
+280c294
+<     JahFormatter::addButton( ResetWorldButton, 410, 10, 86, 25, jt->tr("Reset") );
+---
+>     JahFormatter::addButton( ResetWorldButton, 410, 10, 86, 25, m_pJt->tr("Reset") );
+290c304
+<         JahFormatter::addCheckButton( FogSelect, 500, 70, 110, 21, jt->tr("fog") );
+---
+>         JahFormatter::addCheckButton( FogSelect, 500, 70, 110, 21, m_pJt->tr("fog") );
+314c328
+< 	ControlFrameUI[1][1] = new QFrame( objectControl[0], "ControlFrame5" ); //ControlFrame5
+---
+> 	ControlFrameUI[1][1] = new QFrame( m_aObjectControls[0], "ControlFrame5" ); //ControlFrame5
+320c334
+<     JahFormatter::addButton( ObjectLayer, 10, 10, 86, 25 , jt->tr("Layer") );
+---
+>     JahFormatter::addButton( ObjectLayer, 10, 10, 86, 25 , m_pJt->tr("Layer") );
+324c338
+<     JahFormatter::addButton( ObjectCube, 10, 45, 86, 25, jt->tr("Cube") );
+---
+>     JahFormatter::addButton( ObjectCube, 10, 45, 86, 25, m_pJt->tr("Cube") );
+328c342
+<     JahFormatter::addButton( ObjectCylinder, 10, 80, 86, 25, jt->tr("Cylinder") );
+---
+>     JahFormatter::addButton( ObjectCylinder, 10, 80, 86, 25, m_pJt->tr("Cylinder") );
+332c346
+<     JahFormatter::addButton( ObjectSphere, 110, 10, 86, 25, jt->tr("Sphere") );
+---
+>     JahFormatter::addButton( ObjectSphere, 110, 10, 86, 25, m_pJt->tr("Sphere") );
+336c350
+<     JahFormatter::addButton( ObjectBezier, 110, 45, 86, 25, jt->tr("Bezier") );
+---
+>     JahFormatter::addButton( ObjectBezier, 110, 45, 86, 25, m_pJt->tr("Bezier") );
+340c354
+<     JahFormatter::addButton( ObjectMesh, 110, 80, 86, 25, jt->tr("Mesh") );
+---
+>     JahFormatter::addButton( ObjectMesh, 110, 80, 86, 25, m_pJt->tr("Mesh") );
+344c358
+<     JahFormatter::addButton( ResetLayerButton, 410, 10, 86, 25, jt->tr("Reset") );
+---
+>     JahFormatter::addButton( ResetLayerButton, 410, 10, 86, 25, m_pJt->tr("Reset") );
+352c366
+< 	ControlFrameUI[1][2] = new QFrame( objectControl[1], "ControlFrame6" ); //was ControlFrame6
+---
+> 	ControlFrameUI[1][2] = new QFrame( m_aObjectControls[1], "ControlFrame6" ); //was ControlFrame6
+369,372c383,386
+<     textEd	= new QLineEdit( ControlFrameUI[1][2], "text" );
+<     textEd->setGeometry( QRect( 0, 60, 150, 21 ) );
+<     textEd->setText( "jahshaka" );
+<     connect( textEd, SIGNAL(textChanged(const QString&)), this, SLOT(setText(const QString&)) );
+---
+>     m_pTextEd	= new QMultiLineEdit( ControlFrameUI[1][2], "text" );
+>     m_pTextEd->setGeometry( QRect( 0, 60, 150, 21 ) );
+>     m_pTextEd->setText( "jahshaka" );
+>     connect( m_pTextEd, SIGNAL(textChanged(const QString&)), this, SLOT(setText(const QString&)) );
+387c401
+< 	ControlFrameUI[1][3] = new QFrame( objectControl[4], "ControlFrame7" ); //was ControlFrame7
+---
+> 	ControlFrameUI[1][3] = new QFrame( m_aObjectControls[4], "ControlFrame7" ); //was ControlFrame7
+405c419
+<     ControlFrameUI[1][4] = new QFrame( objectControl[5], "ControlFrame9" ); //ControlFrame9
+---
+>     ControlFrameUI[1][4] = new QFrame( m_aObjectControls[5], "ControlFrame9" ); //ControlFrame9
+426c440
+<     ControlFrameUI[1][4] = new QFrame( objectControl[6], "ControlFrame10" ); // was ControlFrame10
+---
+>     ControlFrameUI[1][4] = new QFrame( m_aObjectControls[6], "ControlFrame10" ); // was ControlFrame10
+450,452c464,466
+<     JahModuleOption[0] = new QCheckBox( ControlFrameUI[2][0], "PathSelect" );
+<     JahFormatter::addCheckButton( JahModuleOption[0], 520, 30, 145, 25, "Show Path" );
+<     connect( JahModuleOption[0],  SIGNAL(clicked()), this, SLOT(setKeyframeDrawStatus())  ); //for clip
+---
+>     m_aJahModuleOptions[0] = new QCheckBox( ControlFrameUI[2][0], "PathSelect" );
+>     JahFormatter::addCheckButton( m_aJahModuleOptions[0], 520, 30, 145, 25, "Show Path" );
+>     connect( m_aJahModuleOptions[0],  SIGNAL(clicked()), this, SLOT(setKeyframeDrawStatus())  ); //for clip
+458c472
+< 	numUiOptions +=1;
+---
+> 	m_nNumUiOptions +=1;
+460c474
+< 	hasButtons = true;
+---
+> 	m_bHasButtons = true;
+553c567
+<     objectControlStack->raiseWidget(0);
+---
+>     m_pObjectControlStack->raiseWidget(0);
+562,564c576,578
+< 	themenu->insertItem("&"+jt->tr("Add Object"),this, SLOT(addLayer()) );
+<     themenu->insertItem("&"+jt->tr("Name Object"),this,SLOT(nameLayer()) );
+<     themenu->insertItem("&"+jt->tr("Delete Object"),this,SLOT(delLayer()) );
+---
+> 	themenu->insertItem("&"+m_pJt->tr("Add Object"),this, SLOT(addLayer()) );
+>     themenu->insertItem("&"+m_pJt->tr("Name Object"),this,SLOT(nameLayer()) );
+>     themenu->insertItem("&"+m_pJt->tr("Delete Object"),this,SLOT(delLayer()) );
+567,568c581,582
+<     themenu->insertItem("&"+jt->tr("Move Up"),this, SLOT(moveLayerUp()) );
+<     themenu->insertItem("&"+jt->tr("Move Down"),this, SLOT(moveLayerDown()) ); 
+---
+>     themenu->insertItem("&"+m_pJt->tr("Move Up"),this, SLOT(moveLayerUp()) );
+>     themenu->insertItem("&"+m_pJt->tr("Move Down"),this, SLOT(moveLayerDown()) ); 
+Index: editselections.cpp
+===================================================================
+RCS file: /cvsroot/jahshakafx/jahshaka/source/Jahshaka/JahModules/editing/editselections.cpp,v
+retrieving revision 1.14
+diff -r1.14 editselections.cpp
+3c3
+< ** The source file for the Jahshaka editing selections module
+---
+> ** The source file for the Jahshaka editing m_bSelections module
+12a13,31
+> #include <jahformatter.h>
+> #include <qslider.h>
+> #include <qpopupmenu.h>
+> #include <jahtranslate.h>
+> #include <jahpreferences.h>
+> #include <InputLCD.h>
+> #include <dialogs.h>
+> #include <qlistview.h>
+> #include <qwidgetstack.h>
+> #include <qhbox.h>
+> #include <qlayout.h>
+> #include <valueFormatters.h>
+> //LayerListEntry
+> //JahLayer
+> #include <coreobject.h>
+> #include <glworldlists.h>
+> 
+> #include <openobject.h>
+> 
+29c48
+<     int id = menu->exec( AddButton->mapToGlobal( QPoint( 0, AddButton->height() + 1 ) ) );
+---
+>     int id = menu->exec( m_pAddButton->mapToGlobal( QPoint( 0, m_pAddButton->height() + 1 ) ) );
+42c61,64
+<                     getLayerList()->append( new LayerListEntry(m_number_of_layers, "VidLayer") );
+---
+>                     getLayerList()->append( 
+> 					   new LayerListEntry(
+> 							      m_number_of_layers, 
+> 							      "VidLayer") );
+45c67
+<                     getLayerList()->at(m_number_of_layers)->thelayer->asset.filename = JahBasePath+"Pixmaps/jahlayer"; 
+---
+>                     getLayerList()->at(m_number_of_layers)->thelayer->asset.filename = m_qsJahBasePath+"Pixmaps/jahlayer"; 
+47c69
+<                     buildLayer("VidLayer", LayerCategory::LAYER, ObjectCategory::JAHLAYER );
+---
+>                     buildLayer(GetLayer(),"VidLayer", LayerCategory::LAYER, ObjectCategory::JAHLAYER );
+61c83
+<                     getLayerList()->at(m_number_of_layers)->thelayer->text->font = JahBasePath+"fonts/arial.ttf";
+---
+>                     getLayerList()->at(m_number_of_layers)->thelayer->text->font = m_qsJahBasePath+"fonts/arial.ttf";
+71c93
+<                     buildLayer("3DText", LayerCategory::TEXT, ObjectCategory::JAHTEXT);
+---
+>                     buildLayer(GetLayer(),"3DText", LayerCategory::TEXT, ObjectCategory::JAHTEXT);
+78c100
+<                     getLayerList()->at(m_number_of_layers)->thelayer->asset.filename = JahBasePath+"Pixmaps/jahlayer"; 
+---
+>                     getLayerList()->at(m_number_of_layers)->thelayer->asset.filename = m_qsJahBasePath+"Pixmaps/jahlayer"; 
+80c102
+<                     buildLayer("Layer", LayerCategory::LAYER, ObjectCategory::JAHLAYER );
+---
+>                     buildLayer(GetLayer(),"Layer", LayerCategory::LAYER, ObjectCategory::JAHLAYER );
+85c107
+<         //not functional yet, switches to desktop for a clip selection and returns
+---
+>         //not functional yet, switches to desktop for a clip m_bSelection and returns
+100c122
+<         setObjectTab(m_number_of_layers); 
+---
+>         setObjectTab(GetLayer()); 
+110c132
+<             //debug("in the selection");
+---
+>             //debug("in the m_bSelection");

@@ -1,0 +1,20 @@
+ Quicktime/imagecodec.h
+ Quicktime/MediaHandlers.h
+ Quicktime/movies.h
+ Quicktime/qtml.h
+ Quicktime/QuickTimeComponents.h
+ AL/alc.h
+ AL/al.h
+ avifile-0.7/avifile.h
+ avifile-0.7/default.h
+ avifile-0.7/image.h
+ avifile-0.7/StreamInfo.h
+ avifile-0.7/version.h
+
+ Cg/cgGL.h
+ Cg/cg.h
+ GL/glut.h
+ GLUT/glut.h
+
+ charcoal.xpm
+ stone1.xpm

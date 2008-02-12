@@ -1,0 +1,578 @@
+<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<class>Form1</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>Form1</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>911</width>
+            <height>334</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Form1</string>
+    </property>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>prefframe1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>40</y>
+                <width>860</width>
+                <height>200</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>Pref6</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>139</x>
+                    <y>71</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Blue</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>StorageLocation</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>449</x>
+                    <y>40</y>
+                    <width>31</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Dir</string>
+            </property>
+        </widget>
+        <widget class="QFrame">
+            <property name="name">
+                <cstring>uiframe1</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>229</x>
+                    <y>10</y>
+                    <width>2</width>
+                    <height>180</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>Pref5</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>139</x>
+                    <y>41</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Grey</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>DualHead</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>500</x>
+                    <y>80</y>
+                    <width>140</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Dual Head</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>uisettingslabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>510</x>
+                    <y>20</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>User Interface</string>
+            </property>
+            <property name="alignment">
+                <set>AlignCenter</set>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>MenuOption</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>500</x>
+                    <y>50</y>
+                    <width>140</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Use Menus</string>
+            </property>
+        </widget>
+        <widget class="QFrame">
+            <property name="name">
+                <cstring>uiframe2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>250</x>
+                    <y>110</y>
+                    <width>230</width>
+                    <height>2</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+        </widget>
+        <widget class="QSlider">
+            <property name="name">
+                <cstring>renderqualityslider</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>330</x>
+                    <y>130</y>
+                    <width>140</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>Pref3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>59</x>
+                    <y>131</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Brush Metal</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>StorageBox</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>249</x>
+                    <y>40</y>
+                    <width>181</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>PositionPrefs</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>500</x>
+                    <y>140</y>
+                    <width>140</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Remember UI Geometry</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>Pref4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>59</x>
+                    <y>101</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Charcoal</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>Pref2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>59</x>
+                    <y>71</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>SGI</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>StorageButton</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>249</x>
+                    <y>71</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Set Path</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>Pref10</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>99</x>
+                    <y>160</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Reset</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>storagelabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>289</x>
+                    <y>11</y>
+                    <width>151</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Media Storage</string>
+            </property>
+            <property name="alignment">
+                <set>AlignCenter</set>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>Pref8</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>139</x>
+                    <y>131</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>White</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>Pref1</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>59</x>
+                    <y>41</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Platinum</string>
+            </property>
+        </widget>
+        <widget class="QComboBox">
+            <property name="name">
+                <cstring>renderercombo</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>330</x>
+                    <y>169</y>
+                    <width>141</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>Pref7</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>139</x>
+                    <y>101</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Green</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>interfacelabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>59</x>
+                    <y>10</y>
+                    <width>151</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Interface Skins</string>
+            </property>
+            <property name="alignment">
+                <set>AlignCenter</set>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>VideoHead</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>500</x>
+                    <y>110</y>
+                    <width>140</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Video Head</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>rendererlabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>250</x>
+                    <y>169</y>
+                    <width>75</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Renderer</string>
+            </property>
+            <property name="alignment">
+                <set>AlignVCenter|AlignLeft</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>renderqualitylabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>250</x>
+                    <y>139</y>
+                    <width>75</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Quality</string>
+            </property>
+            <property name="alignment">
+                <set>AlignVCenter|AlignLeft</set>
+            </property>
+        </widget>
+        <widget class="QFrame">
+            <property name="name">
+                <cstring>uiframe3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>490</x>
+                    <y>9</y>
+                    <width>2</width>
+                    <height>180</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>renderlabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>289</x>
+                    <y>111</y>
+                    <width>151</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Render Settings</string>
+            </property>
+            <property name="alignment">
+                <set>AlignCenter</set>
+            </property>
+        </widget>
+        <widget class="QFrame">
+            <property name="name">
+                <cstring>uiframe6</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>700</x>
+                    <y>110</y>
+                    <width>130</width>
+                    <height>2</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+        </widget>
+        <widget class="QComboBox">
+            <property name="name">
+                <cstring>LanguageCombo</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>700</x>
+                    <y>50</y>
+                    <width>130</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>PrefExit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>730</x>
+                    <y>150</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>RETURN</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>languagelabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>710</x>
+                    <y>20</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Language</string>
+            </property>
+            <property name="alignment">
+                <set>AlignCenter</set>
+            </property>
+        </widget>
+        <widget class="QFrame">
+            <property name="name">
+                <cstring>uiframe4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>670</x>
+                    <y>9</y>
+                    <width>2</width>
+                    <height>180</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+        </widget>
+    </widget>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

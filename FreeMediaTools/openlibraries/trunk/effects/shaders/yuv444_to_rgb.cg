@@ -1,0 +1,24 @@
+
+// fx - A compositing library representation.
+
+// Copyright (C) 2005-2006 VM Inc.
+// Released under the LGPL.
+// For more information, see http://www.openlibraries.org.
+
+half4 main( in half2 v_tex, uniform half alpha, uniform half2 offsets, uniform half4x4 channel_selector, uniform samplerRECT inColor0 ) : COLOR
+{
+	half4 OUT;
+
+	const half4 shift = half4( 0.0625, 0.5, 0.5, 0.0 );
+
+	half4x4 RGB = half4x4( half4( 1.164,  0.00000,  1.59580, 0.0 ),
+						   half4( 1.164, -0.39173, -0.81290, 0.0 ),
+						   half4( 1.164,  2.01700,  0.00000, 0.0 ),
+						   half4( 0.0, 0.0, 0.0, 1.0 ) );
+
+	half4 color = mul( RGB, h4texRECT( inColor0, v_tex ) - shift );
+
+	OUT = mul( channel_selector, color );
+
+	return OUT;
+}

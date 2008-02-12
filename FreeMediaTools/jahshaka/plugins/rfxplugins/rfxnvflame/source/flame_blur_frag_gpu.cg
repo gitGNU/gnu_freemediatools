@@ -1,0 +1,86 @@
+
+half4 main(
+	float2 position           				: TEXCOORD0,
+	uniform float horizontal 				: register (c0),
+	uniform float vertical 					: register (c1),
+	uniform float stretch 					: register (c2),
+	uniform float2 scale_factor				: register (c3),
+	uniform float intensity					: register (c4),
+	uniform float blend						: register (c5),
+	uniform float transparency				: register (c6),
+    uniform sampler2D base_texture			: register (s0),
+    uniform sampler2D fire_texture				: register (s1)
+		   ) : COLOR
+{
+	half4 					Flame;
+	half4 					Color;
+	float2					right_position;
+	float2					left_position;
+	float2					up_position;
+	float2					down_position;
+	float					counter;
+	float					actual_counter = 0.0;
+
+
+	float2 position2 = position * scale_factor;
+
+
+	// Horizontal first
+	Color = (half4)tex2D(base_texture, position);
+	Flame = (half4)tex2D(fire_texture, position2);
+
+	right_position = position2;
+	left_position = position2;
+	up_position = position2;
+	down_position = position2;
+
+	for (counter = 0; counter < 3.0; counter += 1.0)
+	{
+		if ((counter < horizontal) || (counter < vertical))
+		{
+			if (counter < horizontal)
+			{
+				right_position.x = right_position.x + stretch;
+				Flame += (half4)tex2D(fire_texture, right_position);
+				left_position.x = left_position.x - stretch;
+				Flame += (half4)tex2D(fire_texture, left_position);
+				actual_counter += 1.0;
+			}
+
+			if (counter < vertical)
+			{
+				up_position.y = up_position.y + stretch;
+				Flame += (half4)tex2D(fire_texture, up_position);
+				down_position.y = down_position.y - stretch;
+				Flame += (half4)tex2D(fire_texture, down_position);
+				actual_counter += 1.0;
+			}
+		}
+	}
+
+	if (actual_counter > 0.0)
+	{
+		Flame /= ((actual_counter * 2.0) + 1.0);
+	}
+
+// 	new_position = position;
+// 	actual_counter = 0.0;
+
+// 	for (counter = 0; counter < 10.0; counter += 1.0)
+// 	{
+// 		if (counter < vertical)
+// 		{
+// 			new_position.y = new_position.y + stretch;
+// 			Flame += (half4)tex2D(fire_texture, new_position);
+// 			actual_counter += 1.0;
+// 		}
+// 	}
+
+// 	Flame /= actual_counter;
+
+	float4 blend_factor = blend + ((1.0 - blend) * Color);
+	Color = (transparency * Flame * blend_factor) + ((1.0 - transparency) * Color);
+
+
+    return (half4)Color;
+}

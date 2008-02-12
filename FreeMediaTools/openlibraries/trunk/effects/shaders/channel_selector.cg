@@ -1,0 +1,11 @@
+
+// fx - A compositing library representation.
+
+// Copyright (C) 2005-2006 VM Inc.
+// Released under the LGPL.
+// For more information, see http://www.openlibraries.org.
+
+half4 main( in half2 v_tex, uniform half4x4 channel_selector, uniform samplerRECT inColor0 ) : COLOR
+{
+	return mul( channel_selector, h4texRECT( inColor0, v_tex ) );
+}

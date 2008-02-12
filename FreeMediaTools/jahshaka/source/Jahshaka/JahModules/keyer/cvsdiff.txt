@@ -1,0 +1,424 @@
+? 1
+? Makefile
+? cvsdiff.txt
+? moc_keyer.cpp
+? t
+? test.cpp
+Index: keyer.cpp
+===================================================================
+RCS file: /cvsroot/jahshakafx/jahshaka/source/Jahshaka/JahModules/keyer/keyer.cpp,v
+retrieving revision 1.54
+diff -r1.54 keyer.cpp
+24a25,26
+> 
+> 
+37c39
+<     jtrace->info( "Initializing GLKeyer");
+---
+>     m_pJTrace->info( "Initializing GLKeyer");
+47c49
+<     QCheckListItem* new_q_check_list_item = new QCheckListItem(m_layer_listview, "World");
+---
+>     QCheckListItem* new_q_check_list_item = new QCheckListItem(m_pLayerListView, "World");
+53c55
+<     m_chroma_base_layer = getLayerList()->getLast()->getJahLayer();
+---
+>     m_pChromaBaseLayer = getLayerList()->getLast()->getJahLayer();
+55c57
+<     initializeListview(m_chroma_base_layer, true);
+---
+>     initializeListview(m_pChromaBaseLayer, true);
+59c61
+<     m_chroma_key_layer = getLayerList()->getLast()->getJahLayer();
+---
+>     m_pChromaKeyLayer = getLayerList()->getLast()->getJahLayer();
+61c63
+<     initializeListview(m_chroma_key_layer, true);
+---
+>     initializeListview(m_pChromaKeyLayer, true);
+79c81
+<     //sets up the core functionality
+---
+>     //sets up the m_pCore functionality
+89c91
+< 	m_render_at_image_resolution = true;
+---
+> 	m_bRenderAtImageResolution = true;
+94c96
+<         JahSlidersLabel[x]->hide();
+---
+>         m_aJahSliderLabels[x]->hide();
+96c98
+<         JahSlidersLCD[x]->hide();
+---
+>         m_aJahSliderLCDs[x]->hide();
+98c100
+<         JahSliders[x]->hide();
+---
+>         m_aJahSliders[x]->hide();
+102,108c104,110
+<     JahSlidersLabel[7]->hide();
+< 	JahSlidersLCD[7]->hide();
+< 	JahSliders[7]->hide();
+< 
+<     JahSlidersLabel[8]->hide();
+< 	JahSlidersLCD[8]->hide();
+< 	JahSliders[8]->hide();
+---
+>     m_aJahSliderLabels[7]->hide();
+> 	m_aJahSliderLCDs[7]->hide();
+> 	m_aJahSliders[7]->hide();
+> 
+>     m_aJahSliderLabels[8]->hide();
+> 	m_aJahSliderLCDs[8]->hide();
+> 	m_aJahSliders[8]->hide();
+112c114
+<     m_soften_value = 0.0f;
+---
+>     m_fSoftenValue = 0.0f;
+126c128
+<         m_camera_distance = ((float)Y_RESOLUTION / 2.0) / tan(VIEW_ANGLE_RADIANS / 2.0);
+---
+>         m_fCameraDistance = ((float)m_nY_RESOLUTION / 2.0) / tan(VIEW_ANGLE_RADIANS / 2.0);
+128c130
+<         m_select_colors_individually = false;
+---
+>         m_bSelectColorsIndividually = false;
+134,136c136,138
+<     m_textures_initialized = false;
+<     m_use_textures_for_readback = false;
+<     m_gpu_select = false;
+---
+>     m_bTexturesInitialized = false;
+>     m_bUseTexturesForReadback = false;
+>     m_pGPUSelect = false;
+139c141
+< //this routine is used to configure the modules engine and core functionality
+---
+> //this routine is used to configure the modules engine and m_pCore functionality
+147c149
+< 	//if (!( gpusupport && nv_gpusupport) )
+---
+> 	//if (!( m_bGPUSupport && nv_m_bGPUSupport) )
+150,158c152,160
+<         m_gpu_select = true;
+< 		QString title = "GPU Keyer";
+<         std::string guid = "";
+<         new_effect_layer = addEffectLayer(m_chroma_key_layer->getLayerListEntry(), title, EffectInfo::CHROMA_KEYER_GLSL_SEPARATE_ALPHA_TYPE, -1, guid); 
+< 
+< 		if ( m_use_gpu_qcheckbox->isChecked() )
+< 		{
+< 		}
+< 		else
+---
+> 	  m_bGPUSelect = true;
+> 	  QString title = "GPU Keyer";
+> 	  std::string guid = "";
+> 	  new_effect_layer = addEffectLayer(m_pChromaKeyLayer->getLayerListEntry(), title, EffectInfo::CHROMA_KEYER_GLSL_SEPARATE_ALPHA_TYPE, -1, guid);
+> 	  
+> 	  if ( m_use_gpu_qcheckbox->isChecked() )
+> 	    {
+> 	    }
+> 	  else
+165c167
+<         m_gpu_select = false;
+---
+>         m_pGPUSelect = false;
+179,182c181,184
+<     m_chroma_settings_layer = new_effect_layer->getJahLayer();
+<     setCurrentEffectLayer(m_chroma_settings_layer);
+<     m_chroma_settings_layer->setEffectsSlidersHaveChanged(true);
+<     m_sliders_have_changed = true;
+---
+>     m_pChromaSettingsLayer = new_effect_layer->getJahLayer();
+>     setCurrentEffectLayer(m_pChromaSettingsLayer);
+>     m_pChromaSettingsLayer->setEffectsSlidersHaveChanged(true);
+>     m_bSlidersHaveChanged = true;
+200c202
+<     if (getActiveJahLayer() == m_chroma_key_layer || getActiveJahLayer() == m_chroma_settings_layer)
+---
+>     if (getActiveJahLayer() == m_pChromaKeyLayer || getActiveJahLayer() == m_pChromaSettingsLayer)
+202,204c204,206
+<         m_chroma_key_layer->assignAsset(clip, VideoCategory::IMAGE);
+<         m_chroma_key_layer->LoadLayerAsset(VideoCategory::IMAGE);
+<         m_chroma_key_layer->makeTexture();
+---
+>         m_pChromaKeyLayer->assignAsset(clip, VideoCategory::IMAGE);
+>         m_pChromaKeyLayer->LoadLayerAsset(VideoCategory::IMAGE);
+>         m_pChromaKeyLayer->makeTexture();
+207,208c209,210
+<         core->imagewidth  = m_chroma_key_layer->getImageWidth();
+<         core->imageheight = m_chroma_key_layer->getImageHeight();
+---
+>         m_pCore->imagewidth  = m_pChromaKeyLayer->getImageWidth();
+>         m_pCore->imageheight = m_pChromaKeyLayer->getImageHeight();
+210c212
+<     else if (getActiveJahLayer() == m_chroma_base_layer)
+---
+>     else if (getActiveJahLayer() == m_pChromaBaseLayer)
+212,214c214,216
+<         m_chroma_base_layer->assignAsset(clip, VideoCategory::IMAGE);
+<         m_chroma_base_layer->LoadLayerAsset(VideoCategory::IMAGE);
+<         m_chroma_base_layer->makeTexture();
+---
+>         m_pChromaBaseLayer->assignAsset(clip, VideoCategory::IMAGE);
+>         m_pChromaBaseLayer->LoadLayerAsset(VideoCategory::IMAGE);
+>         m_pChromaBaseLayer->makeTexture();
+221c223
+<     if (clip.endframe > maxFrame)
+---
+>     if (clip.endframe > m_nMaxFrame)
+223,225c225,227
+<         maxFrame = clip.endframe;
+<         updatesliderEndframe(maxFrame);
+<         endFrameControl->setValue(maxFrame);
+---
+>         m_nMaxFrame = clip.endframe;
+>         updatesliderEndframe(m_nMaxFrame);
+>         m_pEndFrameControl->setValue(m_nMaxFrame);
+240,242c242,244
+<     m_chroma_base_layer->assignAsset(clip, VideoCategory::IMAGE);
+<     m_chroma_base_layer->LoadLayerAsset(VideoCategory::IMAGE);
+<     m_chroma_base_layer->makeTexture();
+---
+>     m_pChromaBaseLayer->assignAsset(clip, VideoCategory::IMAGE);
+>     m_pChromaBaseLayer->LoadLayerAsset(VideoCategory::IMAGE);
+>     m_pChromaBaseLayer->makeTexture();
+260,261c262,263
+<     startFrameControl->setRange( clip.startframe, clip.endframe-1 );
+<     startFrameControl->setValue(clip.startframe);
+---
+>     m_pStartFrameControl->setRange( clip.startframe, clip.endframe-1 );
+>     m_pStartFrameControl->setValue(clip.startframe);
+263,264c265,266
+<     endFrameControl->setRange( clip.startframe+1, clip.endframe );
+<     endFrameControl->setValue(clip.endframe);
+---
+>     m_pEndFrameControl->setRange( clip.startframe+1, clip.endframe );
+>     m_pEndFrameControl->setValue(clip.endframe);
+299c301
+<     if (jah_layer == m_chroma_key_layer)
+---
+>     if (jah_layer == m_pChromaKeyLayer)
+304c306
+<     else if (jah_layer == m_chroma_settings_layer)
+---
+>     else if (jah_layer == m_pChromaSettingsLayer)
+310c312
+<     else if (jah_layer == m_chroma_base_layer)
+---
+>     else if (jah_layer == m_pChromaBaseLayer)
+336,338c338,340
+<      m_hsv_base.x = float(h) / 359.0f;
+<      m_hsv_base.y = float(s) / 255.0f;
+<      m_hsv_base.z = float(v) / 255.0f;
+---
+>      m_fHSVBase.x = float(h) / 359.0f;
+>      m_fHSVBase.y = float(s) / 255.0f;
+>      m_fHSVBase.z = float(v) / 255.0f;
+345c347
+<     m_hsv_base.x = float(value) / 359.0f;
+---
+>     m_fHSVBase.x = float(value) / 359.0f;
+352c354
+<     m_hsv_base.y = float(value) / 255.0f;
+---
+>     m_fHSVBase.y = float(value) / 255.0f;
+359c361
+<     m_hsv_base.z = float(value) / 255.0f;
+---
+>     m_fHSVBase.z = float(value) / 255.0f;
+366c368
+<     m_hsv_range.x = float(value);
+---
+>     m_fHSBRange.x = float(value);
+373c375
+<     m_hsv_range.y = float(value);
+---
+>     m_fHSBRange.y = float(value);
+380,381c382,383
+<     m_soften_value = float(value) / 255.0f;
+<     JahSlidersLCD[6]->setValue(value);
+---
+>     m_fSoftenValue = float(value) / 255.0f;
+>     m_aJahSliderLCDs[6]->setValue(value);
+388c390
+<     m_hsv_range.z = float(value);
+---
+>     m_fHSBRange.z = float(value);
+469,476c471,478
+<     JahSlidersLabel[0]->setText("Red Low");
+<     JahSlidersLabel[1]->setText("Green Low");
+<     JahSlidersLabel[2]->setText("Blue Low");
+< 
+<     JahSlidersLabel[3]->setText("Red High");
+<     JahSlidersLabel[4]->setText("Green High");
+<     JahSlidersLabel[5]->setText("Blue High");
+<     JahSlidersLabel[6]->setText("Soften");
+---
+>     m_aJahSliderLabels[0]->setText("Red Low");
+>     m_aJahSliderLabels[1]->setText("Green Low");
+>     m_aJahSliderLabels[2]->setText("Blue Low");
+> 
+>     m_aJahSliderLabels[3]->setText("Red High");
+>     m_aJahSliderLabels[4]->setText("Green High");
+>     m_aJahSliderLabels[5]->setText("Blue High");
+>     m_aJahSliderLabels[6]->setText("Soften");
+482c484
+<     layerClicked( m_chroma_settings_layer->getCheckListItem() );
+---
+>     layerClicked( m_pChromaSettingsLayer->getCheckListItem() );
+484,485c486,487
+<     m_select_colors_individually = getKeyerColorWidget()->selectColorsIndividuallyCheckBox->isChecked();
+<     active_layer->setSelectColorsIndividually(m_select_colors_individually);
+---
+>     m_bSelectColorsIndividually = getKeyerColorWidget()->selectColorsIndividuallyCheckBox->isChecked();
+>     active_layer->setSelectColorsIndividually(m_bSelectColorsIndividually);
+497a500,552
+> 
+> 
+> 
+> float4&         GLKeyer::getRgbaLow() { return m_fRGBALow; }
+>     float4&         GLKeyer::getRgbaHigh() { return m_fRGBAHigh; }
+>     void            GLKeyer::setRgbaLow(float4& value) { m_fRGBALow = value; }
+>     void            GLKeyer::setRgbaHigh(float4& value) { m_fRGBAHigh = value; }
+>     float4&         GLKeyer::getHsvBase() { return m_fHSVBase; }
+>     void            GLKeyer::setHsvBase(float4& value) { m_fHSVBase = value; }
+>     float4&         GLKeyer::getHsvRange() { return m_fHSBRange; }
+>     void            GLKeyer::setHsvRange(float4& value) { m_fHSBRange = value; }
+>     float4&         GLKeyer::getRgbaRange() { return m_fRGBARange; }
+>     void            GLKeyer::setRgbaRange(float4& value) { m_fRGBARange = value; }
+>     void            GLKeyer::setRgbaValues();
+> 
+>     KeyerColorWidget*   GLKeyer::getKeyerColorWidget() { return m_keyer_color_widget; }
+>     void                GLKeyer::setKeyerColorWidget(KeyerColorWidget* widget) { m_keyer_color_widget = widget; }
+> 
+> 
+> 	GLKeyer::GLKeyer( GLCore* m_pCore, const char* name, QHBox* controls,
+>             QHBox* controller,QHBox* leftcontroller, QHBox* rightcontroller,
+>             int* globalm_nClipnumber )
+> 		: GLWorld(m_pCore, name, controller, globalm_nClipnumber )
+> 		, m_controls( controls )
+> 		, m_leftcontroller( leftcontroller )
+> 		, m_rightcontroller( rightcontroller )
+> 	{
+> 	}
+> 
+> GLKeyer::~GLKeyer() 
+> {  
+> 
+> }
+> 
+> void GLKeyer::grabDesktop(void)      { emit GrabClip();      };
+> 
+> void GLKeyer::setDefaultAxisSliderLabels()
+> {
+> 
+> }
+>     void GLKeyer::grabDesktopBaselayer(void)   { emit GrabBaseClip();   };
+> 
+>     JahLayer*               GLKeyer::getChromaWorldLayer() { return m_chroma_world_layer; }
+>     JahLayer*               GLKeyer::getChromaBaseLayer() { return m_pChromaBaseLayer; }
+>     JahLayer*               GLKeyer::getChromaKeyLayer() { return m_pChromaKeyLayer; }
+>     JahLayer*               GLKeyer::getChromaSettingsLayer() { return m_pChromaSettingsLayer; }
+>     bool                    GLKeyer::getSelectColorsIndividually() { return m_bSelectColorsIndividually; }
+>     bool                    GLKeyer::getGpuSelect() { return m_pGPUSelect; }
+>     GLuint*                 GLKeyer::getBaseTextureIDPtr() { return &m_hBaseTextureID; }
+>     GLuint                  GLKeyer::getBaseTextureID() { return m_hBaseTextureID; }
+>     GLuint*                 GLKeyer::getKeyTextureIDPtr() { return &m_hKeyTextureID; }
+>     GLuint                  GLKeyer::getKeyTextureID() { return m_hKeyTextureID; }
+>     bool                    GLKeyer::getTexturesInitialized() { return m_bTexturesInitialized; }
+Index: keyer.h
+===================================================================
+RCS file: /cvsroot/jahshakafx/jahshaka/source/Jahshaka/JahModules/keyer/keyer.h,v
+retrieving revision 1.32
+diff -r1.32 keyer.h
+38,42c38,42
+<     float4          m_rgba_low;
+<     float4          m_rgba_high;
+<     float4          m_hsv_base;
+<     float4          m_hsv_range;
+<     float4          m_rgba_range;
+---
+>     float4          m_fRGBALow;
+>     float4          m_fRGBAHigh;
+>     float4          m_fHSVBase;
+>     float4          m_fHSBRange;
+>     float4          m_fRGBARange;
+45,54c45,54
+<     float4&         getRgbaLow() { return m_rgba_low; }
+<     float4&         getRgbaHigh() { return m_rgba_high; }
+<     void            setRgbaLow(float4& value) { m_rgba_low = value; }
+<     void            setRgbaHigh(float4& value) { m_rgba_high = value; }
+<     float4&         getHsvBase() { return m_hsv_base; }
+<     void            setHsvBase(float4& value) { m_hsv_base = value; }
+<     float4&         getHsvRange() { return m_hsv_range; }
+<     void            setHsvRange(float4& value) { m_hsv_range = value; }
+<     float4&         getRgbaRange() { return m_rgba_range; }
+<     void            setRgbaRange(float4& value) { m_rgba_range = value; }
+---
+>     float4&         getRgbaLow() ;
+>     float4&         getRgbaHigh() ;
+>     void            setRgbaLow(float4& value) ;
+>     void            setRgbaHigh(float4& value);
+>     float4&         getHsvBase() ;
+>     void            setHsvBase(float4& value);
+>     float4&         getHsvRange() ;
+>     void            setHsvRange(float4& value) ;
+>     float4&         getRgbaRange() ;
+>     void            setRgbaRange(float4& value);
+57,58c57,58
+<     KeyerColorWidget*   getKeyerColorWidget() { return m_keyer_color_widget; }
+<     void                setKeyerColorWidget(KeyerColorWidget* widget) { m_keyer_color_widget = widget; }
+---
+>     KeyerColorWidget*   getKeyerColorWidget();
+>     void                setKeyerColorWidget(KeyerColorWidget* widget);
+70,78c70,71
+<             int* globalclipnumber )
+< 		: GLWorld(core, name, controller, globalclipnumber )
+< 		, m_controls( controls )
+< 		, m_leftcontroller( leftcontroller )
+< 		, m_rightcontroller( rightcontroller )
+< 	{
+< 	}
+< 
+< 	~GLKeyer() {  }
+---
+> 		 int* globalclipnumber );
+> 	~GLKeyer();
+105c98
+<     void grabDesktop(void)      { emit GrabClip();      };
+---
+>     void grabDesktop(void)      ;
+108c101
+<     void setDefaultAxisSliderLabels() { }
+---
+>     void setDefaultAxisSliderLabels();
+130c123
+<     void grabDesktopBaselayer(void)   { emit GrabBaseClip();   };
+---
+>     void grabDesktopBaselayer(void) ;
+139,149c132,142
+<     JahLayer*               getChromaWorldLayer() { return m_chroma_world_layer; }
+<     JahLayer*               getChromaBaseLayer() { return m_chroma_base_layer; }
+<     JahLayer*               getChromaKeyLayer() { return m_chroma_key_layer; }
+<     JahLayer*               getChromaSettingsLayer() { return m_chroma_settings_layer; }
+<     bool                    getSelectColorsIndividually() { return m_select_colors_individually; }
+<     bool                    getGpuSelect() { return m_gpu_select; }
+<     GLuint*                 getBaseTextureIDPtr() { return &m_base_texture_id; }
+<     GLuint                  getBaseTextureID() { return m_base_texture_id; }
+<     GLuint*                 getKeyTextureIDPtr() { return &m_key_texture_id; }
+<     GLuint                  getKeyTextureID() { return m_key_texture_id; }
+<     bool                    getTexturesInitialized() { return m_textures_initialized; }
+---
+>     JahLayer*               getChromaWorldLayer() ;
+>     JahLayer*               getChromaBaseLayer() ;
+>     JahLayer*               getChromaKeyLayer() ;
+>     JahLayer*               getChromaSettingsLayer() ;
+>     bool                    getSelectColorsIndividually() ;
+>     bool                    getGpuSelect() ;
+>     GLuint*                 getBaseTextureIDPtr();
+>     GLuint                  getBaseTextureID() ;
+>     GLuint*                 getKeyTextureIDPtr();
+>     GLuint                  getKeyTextureID();
+>     bool                    getTexturesInitialized() ;

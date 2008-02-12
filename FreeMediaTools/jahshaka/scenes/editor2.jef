@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<westley title="Anonymous Submission">
+  <producer id="producer0" in="0" out="55">
+    <property name="mlt_type">producer</property>
+    <property name="fps">25.000000</property>
+    <property name="frame_rate_num">25</property>
+    <property name="frame_rate_den">1</property>
+    <property name="aspect_ratio">1.092593</property>
+    <property name="length">56</property>
+    <property name="eof">pause</property>
+    <property name="resource">0x00000000</property>
+    <property name="mlt_service">colour</property>
+  </producer>
+  <playlist id="playlist0">
+    <property name="jah_background">1</property>
+    <property name="jah_volume">0</property>
+    <entry producer="producer0" in="0" out="55"/>
+  </playlist>
+  <producer id="producer1" title="Noise" in="0" out="49">
+    <property name="mlt_type">producer</property>
+    <property name="fps">25.000000</property>
+    <property name="frame_rate_num">25</property>
+    <property name="frame_rate_den">1</property>
+    <property name="aspect_ratio">1.092593</property>
+    <property name="length">15000</property>
+    <property name="eof">pause</property>
+    <property name="resource">&lt;producer&gt;</property>
+    <property name="mlt_service">noise</property>
+    <property name="jah_title">noise</property>
+  </producer>
+  <playlist id="playlist1">
+    <property name="jah_volume">1.000000</property>
+    <entry producer="producer1" in="0" out="55"/>
+    <filter id="filter0">
+      <property name="track">0</property>
+      <property name="transition">composite</property>
+      <property name="mlt_type">filter</property>
+      <property name="mlt_service">transition</property>
+      <property name="transition.aligned">1</property>
+      <property name="transition.operator">none</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.progressive">1</property>
+      <property name="transition.valign">centre</property>
+      <property name="transition.halign">centre</property>
+      <property name="transition.geometry">0,0:100%x100%</property>
+    </filter>
+    <filter id="filter1">
+      <property name="track">0</property>
+      <property name="transition">mix</property>
+      <property name="mlt_type">filter</property>
+      <property name="mlt_service">transition</property>
+      <property name="transition.combine">1</property>
+      <property name="transition.start">0.500000</property>
+    </filter>
+  </playlist>
+  <producer id="producer2" title="Colour" in="0" out="155">
+    <property name="mlt_type">producer</property>
+    <property name="fps">25.000000</property>
+    <property name="frame_rate_num">25</property>
+    <property name="frame_rate_den">1</property>
+    <property name="aspect_ratio">0.000000</property>
+    <property name="length">156</property>
+    <property name="eof">pause</property>
+    <property name="resource">0xff0000ff</property>
+    <property name="mlt_service">colour</property>
+    <property name="jah_image">1</property>
+    <property name="jah_p_resource">Color:rgba</property>
+    <property name="jah_title">colour_red</property>
+  </producer>
+  <playlist id="playlist2">
+    <property name="jah_volume">1.000000</property>
+    <entry producer="producer2" in="0" out="49">
+      <filter id="filter2">
+        <property name="track">0</property>
+        <property name="factory">fezzik</property>
+        <property name="mlt_type">filter</property>
+        <property name="mlt_service">watermark</property>
+        <property name="jah_title">fly in</property>
+        <property name="composite.geometry">45%,45%,10%,10%;24=0,0,100%,100%</property>
+        <property name="composite.fill">1</property>
+        <property name="composite.distort">1</property>
+        <property name="composite.aligned">1</property>
+        <property name="composite.repeat_off">1</property>
+        <property name="composite.mirror_off">1</property>
+        <property name="composite.always_active">1</property>
+        <property name="composite.valign">centre</property>
+        <property name="composite.halign">centre</property>
+        <property name="resource">colour:0x00000000</property>
+        <property name="reverse">1</property>
+      </filter>
+      <filter id="filter3">
+        <property name="track">0</property>
+        <property name="factory">fezzik</property>
+        <property name="mlt_type">filter</property>
+        <property name="mlt_service">watermark</property>
+        <property name="jah_title">fly out</property>
+        <property name="composite.geometry">0%,0%,100%,100%;-24=0,0,100%,100%;-1=45%,45%,10%,10%</property>
+        <property name="composite.fill">1</property>
+        <property name="composite.distort">1</property>
+        <property name="composite.aligned">1</property>
+        <property name="composite.repeat_off">1</property>
+        <property name="composite.mirror_off">1</property>
+        <property name="composite.always_active">1</property>
+        <property name="resource">colour:0x00000000</property>
+        <property name="reverse">1</property>
+      </filter>
+      <filter id="filter4">
+        <property name="track">0</property>
+        <property name="factory">fezzik</property>
+        <property name="mlt_type">filter</property>
+        <property name="mlt_service">watermark</property>
+        <property name="jah_title">fly out</property>
+        <property name="composite.geometry">0%,0%,100%,100%;-24=0,0,100%,100%;-1=45%,45%,10%,10%</property>
+        <property name="composite.fill">1</property>
+        <property name="composite.distort">1</property>
+        <property name="composite.aligned">1</property>
+        <property name="composite.repeat_off">1</property>
+        <property name="composite.mirror_off">1</property>
+        <property name="composite.always_active">1</property>
+        <property name="resource">colour:0x00000000</property>
+        <property name="reverse">1</property>
+      </filter>
+    </entry>
+    <blank length="6"/>
+    <filter id="filter5">
+      <property name="track">0</property>
+      <property name="transition">composite</property>
+      <property name="mlt_type">filter</property>
+      <property name="mlt_service">transition</property>
+      <property name="transition.aligned">1</property>
+      <property name="transition.operator">none</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.progressive">1</property>
+      <property name="transition.valign">centre</property>
+      <property name="transition.halign">centre</property>
+      <property name="transition.geometry">0,0:100%x100%:50</property>
+    </filter>
+    <filter id="filter6">
+      <property name="track">0</property>
+      <property name="transition">mix</property>
+      <property name="mlt_type">filter</property>
+      <property name="mlt_service">transition</property>
+      <property name="transition.combine">1</property>
+      <property name="transition.start">0.500000</property>
+    </filter>
+  </playlist>
+  <producer id="producer3" title="Colour" in="0" out="149">
+    <property name="mlt_type">producer</property>
+    <property name="fps">25.000000</property>
+    <property name="frame_rate_num">25</property>
+    <property name="frame_rate_den">1</property>
+    <property name="aspect_ratio">0.000000</property>
+    <property name="length">150</property>
+    <property name="eof">pause</property>
+    <property name="resource">0x0000ffff</property>
+    <property name="mlt_service">colour</property>
+    <property name="jah_image">1</property>
+    <property name="jah_p_resource">Color:rgba</property>
+    <property name="jah_title">colour_blue</property>
+  </producer>
+  <playlist id="playlist3">
+    <property name="jah_volume">1.000000</property>
+    <blank length="6"/>
+    <entry producer="producer3" in="0" out="49">
+      <filter id="filter7">
+        <property name="track">0</property>
+        <property name="factory">fezzik</property>
+        <property name="mlt_type">filter</property>
+        <property name="mlt_service">watermark</property>
+        <property name="jah_title">fly in</property>
+        <property name="composite.geometry">45%,45%,10%,10%;24=0,0,100%,100%</property>
+        <property name="composite.fill">1</property>
+        <property name="composite.distort">1</property>
+        <property name="composite.aligned">1</property>
+        <property name="composite.repeat_off">1</property>
+        <property name="composite.mirror_off">1</property>
+        <property name="composite.always_active">1</property>
+        <property name="composite.valign">centre</property>
+        <property name="composite.halign">centre</property>
+        <property name="resource">colour:0x00000000</property>
+        <property name="reverse">1</property>
+      </filter>
+      <filter id="filter8">
+        <property name="track">0</property>
+        <property name="factory">fezzik</property>
+        <property name="mlt_type">filter</property>
+        <property name="mlt_service">watermark</property>
+        <property name="jah_title">fly out</property>
+        <property name="composite.geometry">0%,0%,100%,100%;-24=0,0,100%,100%;-1=45%,45%,10%,10%</property>
+        <property name="composite.fill">1</property>
+        <property name="composite.distort">1</property>
+        <property name="composite.aligned">1</property>
+        <property name="composite.repeat_off">1</property>
+        <property name="composite.mirror_off">1</property>
+        <property name="composite.always_active">1</property>
+        <property name="resource">colour:0x00000000</property>
+        <property name="reverse">1</property>
+      </filter>
+      <filter id="filter9">
+        <property name="track">0</property>
+        <property name="factory">fezzik</property>
+        <property name="mlt_type">filter</property>
+        <property name="mlt_service">watermark</property>
+        <property name="jah_title">drop in</property>
+        <property name="composite.geometry">0,-80%,100%,100%;12=,200;24=,-100;36=,100;49=0,0,100%,100%</property>
+        <property name="composite.fill">1</property>
+        <property name="composite.distort">1</property>
+        <property name="composite.aligned">1</property>
+        <property name="composite.repeat_off">1</property>
+        <property name="composite.mirror_off">1</property>
+        <property name="composite.valign">centre</property>
+        <property name="composite.halign">centre</property>
+        <property name="composite.always_active">1</property>
+        <property name="resource">colour:0x00000000</property>
+        <property name="reverse">1</property>
+      </filter>
+    </entry>
+    <filter id="filter10">
+      <property name="track">0</property>
+      <property name="transition">composite</property>
+      <property name="mlt_type">filter</property>
+      <property name="mlt_service">transition</property>
+      <property name="transition.aligned">1</property>
+      <property name="transition.operator">none</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.progressive">1</property>
+      <property name="transition.valign">centre</property>
+      <property name="transition.halign">centre</property>
+      <property name="transition.geometry">0,0:100%x100%:50</property>
+    </filter>
+    <filter id="filter11">
+      <property name="track">0</property>
+      <property name="transition">mix</property>
+      <property name="mlt_type">filter</property>
+      <property name="mlt_service">transition</property>
+      <property name="transition.combine">1</property>
+      <property name="transition.start">0.500000</property>
+    </filter>
+  </playlist>
+  <producer id="producer4" title="Colour" in="0" out="152">
+    <property name="mlt_type">producer</property>
+    <property name="fps">25.000000</property>
+    <property name="frame_rate_num">25</property>
+    <property name="frame_rate_den">1</property>
+    <property name="aspect_ratio">0.000000</property>
+    <property name="length">153</property>
+    <property name="eof">pause</property>
+    <property name="resource">0x00ff00ff</property>
+    <property name="mlt_service">colour</property>
+    <property name="jah_image">1</property>
+    <property name="jah_p_resource">Color:rgba</property>
+    <property name="jah_title">colour_green</property>
+  </producer>
+  <playlist id="playlist4">
+    <property name="jah_volume">1.000000</property>
+    <blank length="3"/>
+    <entry producer="producer4" in="0" out="49">
+      <filter id="filter12">
+        <property name="track">0</property>
+        <property name="factory">fezzik</property>
+        <property name="mlt_type">filter</property>
+        <property name="mlt_service">watermark</property>
+        <property name="jah_title">fly in</property>
+        <property name="composite.geometry">45%,45%,10%,10%;24=0,0,100%,100%</property>
+        <property name="composite.fill">1</property>
+        <property name="composite.distort">1</property>
+        <property name="composite.aligned">1</property>
+        <property name="composite.repeat_off">1</property>
+        <property name="composite.mirror_off">1</property>
+        <property name="composite.always_active">1</property>
+        <property name="composite.valign">centre</property>
+        <property name="composite.halign">centre</property>
+        <property name="resource">colour:0x00000000</property>
+        <property name="reverse">1</property>
+      </filter>
+      <filter id="filter13">
+        <property name="track">0</property>
+        <property name="factory">fezzik</property>
+        <property name="mlt_type">filter</property>
+        <property name="mlt_service">watermark</property>
+        <property name="jah_title">fly out</property>
+        <property name="composite.geometry">0%,0%,100%,100%;-24=0,0,100%,100%;-1=45%,45%,10%,10%</property>
+        <property name="composite.fill">1</property>
+        <property name="composite.distort">1</property>
+        <property name="composite.aligned">1</property>
+        <property name="composite.repeat_off">1</property>
+        <property name="composite.mirror_off">1</property>
+        <property name="composite.always_active">1</property>
+        <property name="resource">colour:0x00000000</property>
+        <property name="reverse">1</property>
+      </filter>
+    </entry>
+    <blank length="3"/>
+    <filter id="filter14">
+      <property name="track">0</property>
+      <property name="transition">composite</property>
+      <property name="mlt_type">filter</property>
+      <property name="mlt_service">transition</property>
+      <property name="transition.aligned">1</property>
+      <property name="transition.operator">none</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.progressive">1</property>
+      <property name="transition.valign">centre</property>
+      <property name="transition.halign">centre</property>
+      <property name="transition.geometry">0,0:100%x100%:50</property>
+    </filter>
+    <filter id="filter15">
+      <property name="track">0</property>
+      <property name="transition">mix</property>
+      <property name="mlt_type">filter</property>
+      <property name="mlt_service">transition</property>
+      <property name="transition.combine">1</property>
+      <property name="transition.start">0.500000</property>
+    </filter>
+  </playlist>
+  <playlist id="playlist5">
+    <property name="jah_volume">1.000000</property>
+    <blank length="56"/>
+    <filter id="filter16">
+      <property name="track">0</property>
+      <property name="transition">composite</property>
+      <property name="mlt_type">filter</property>
+      <property name="mlt_service">transition</property>
+      <property name="transition.aligned">1</property>
+      <property name="transition.operator">none</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.progressive">1</property>
+      <property name="transition.valign">centre</property>
+      <property name="transition.halign">centre</property>
+      <property name="transition.geometry">0,0:100%x100%</property>
+    </filter>
+    <filter id="filter17">
+      <property name="track">0</property>
+      <property name="transition">mix</property>
+      <property name="mlt_type">filter</property>
+      <property name="mlt_service">transition</property>
+      <property name="transition.combine">1</property>
+      <property name="transition.start">0.500000</property>
+    </filter>
+  </playlist>
+  <tractor id="tractor0" title="Anonymous Submission" global_feed="1" in="0" out="55">
+    <property name="jah_project">1</property>
+    <property name="jah_deinterlace_method">linearblend</property>
+    <property name="jah_consumer_deinterlace">1</property>
+    <property name="jah_rescale.interp">bilinear</property>
+    <property name="jah_consumer_aspect_ratio">1.092593</property>
+    <property name="jah_display_ratio">1.333333</property>
+    <property name="jah_display_width">720</property>
+    <property name="jah_display_height">576</property>
+    <property name="jah_audio_frequency">44100</property>
+    <track producer="playlist0"/>
+    <track producer="playlist1"/>
+    <track producer="playlist2"/>
+    <track producer="playlist3"/>
+    <track producer="playlist4"/>
+    <track producer="playlist5"/>
+  </tractor>
+</westley>

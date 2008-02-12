@@ -1,0 +1,221 @@
+Free Media Tools :
+James Michael DuPont <mdupont@users.sourceforge.net>
+
+The Main Component: jahshaka 
+
+	Copyright (C) 2000-2006 VM Inc.
+	Copyright (C) 2005-2006 Visual Media Fx Inc.
+	Copyright (C) 2005-2006 VM Inc
+	Copyright (C) 2005 Visual Media Fx Inc.
+		Plugin Stores, inc. was originally formed as Visual Media FX, Inc. on January 11, 2005.
+		Pluginz Inc., a Florida corporation
+		Plugin Stores, Inc., a Delaware corporation
+		Pluginz, LLC, a California limited liability company,
+		Owned now by http://www.dncmultimedia.com/
+	Authors:
+	http://sourceforge.net/users/audioman/
+	http://sourceforge.net/users/jahshaka/
+	http://sourceforge.net/users/ok_computer/
+	http://sourceforge.net/users/timdewhirst/	
+
+	Originally Listed in the Authors File, No EMails:
+ 	Goncalo (Goncalo de Carvalho)
+	Tony
+	Barry
+	Julian
+	Alex
+	Mark
+	Fillipo
+	The Frenchman
+	Almost Flat
+
+
+The Secondary Component : Openlibraries
+	http://sourceforge.net/projects/openlibraries/
+	Authors :
+	http://sourceforge.net/users/audioman/
+	http://sourceforge.net/users/glslang/
+	http://sourceforge.net/users/timdewhirst/	
+	http://sourceforge.net/users/lilo_booter/
+	http://sourceforge.net/users/jahshaka/
+
+Contains Code from Third Parties :
+
+Copyright (C) 1994 X Consortium:
+	openlibraries/trunk/install-sh-
+	 This originates from X11R5 (mit/util/scripts/install.sh), which was
+	 later released in X11R6 (xc/config/util/install.sh) with the
+
+Copyright (C) 1999 Mark B. Allan (mba@reptilelabour.com) :
+	jahshaka/source/Jahshaka/JahLibraries/jahplayer/diskplayer/videohead.h
+	Based on * flip - pageflipper for TIFF animations	
+	Released under the GNU General Public License
+
+Copyright (C) 2002-2005, Marcelo E. Magallon <mmagallo[]debian org>
+	The OpenGL Extension Wrangler Library
+	jahshaka/source/AuxiliaryLibraries/glew/glew.c
+	Copyright (C) 2002-2005, Marcelo E. Magallon <mmagallo[]debian org>
+
+Copyright (C) 2002-2005, Milan Ikits <milan ikits[]ieee org>
+	The OpenGL Extension Wrangler Library
+	jahshaka/source/AuxiliaryLibraries/glew/glew.c
+	Copyright (C) 2002-2005, Milan Ikits <milan ikits[]ieee org>
+
+Copyright (c) 2003 Daniel W. Howard :
+	jahshaka/source/Jahshaka/JahLibraries/jahxml/bxmlnode.h
+
+	Permission is hereby granted, free of charge, to any
+	person obtaining a copy of this software and associated
+	documentation files (the "Software"), to deal in the
+	Software without restriction, including without
+	limitation the rights to use, copy, modify, merge,
+	publish, distribute, sublicense, and/or sell copies of the
+	Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+	The above copyright notice and this permission notice shall be
+	 included in all copies or substantial portions of the Software.
+
+
+Copyright (C) 2003 Roman Kaljakin :
+jahshaka/source/Jahshaka/JahLibraries/jahplayer/audioplayer/Lock.h
+	Copyright (C) 2003 Roman Kaljakin
+	GPL License
+
+Copyright (C) 2003 by David Sansome
+jahshaka/source/AuxiliaryLibraries/apollon/
+	copyright            : (C) 2003 by David Sansome
+	email                : me@davidsansome.com
+
+
+jahshaka/source/Jahshaka/JahLibraries/shaders/source/jahshaka_basic/jahshaka_basic.cpp:
+	NVMH3
+	Copyright NVIDIA Corporation 2002
+	TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
+	*AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
+	OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS FOR A PARTICULAR PURPOSE.  IN NO EVENT SHALL NVIDIA OR ITS SUPPLIERS
+	BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES
+	WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS,
+	BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS)
+	ARISING OUT OF THE USE OF OR INABILITY TO USE THIS SOFTWARE, EVEN IF NVIDIA HAS
+	BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+	Basic example of the use of the Cg runtime in a simple OpenGL program
+
+
+
+jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src/ :
+	http://www.sqlite.org/
+
+	All of the deliverable code in SQLite has been dedicated to the public domain by the authors. All code authors, and representatives of the companies they work for, have signed affidavits dedicating their contributions to the public domain and originals of those signed affidavits are stored in a firesafe at the main offices of Hwaci. Anyone is free to copy, modify, publish, use, compile, sell, or distribute the original SQLite code, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.
+
+    The author disclaims copyright to this source code.  In place of a legal notice, here is a blessing:
+    May you do good and not evil.
+    May you find forgiveness for yourself and forgive others.
+    May you share freely, never taking more than you give.
+
+
+Copyright (C) 1992-2002 Trolltech AS.:
+	jahshaka/source/Jahshaka/JahLibraries/jahthemes/charcoal.cpp
+	This file is part of an example program for Qt.  This example
+	program may be used, distributed and modified without limitation.
+
+
+Copyright © 2004 Scott James Remnant <scott@netsplit.com>
+	(GPL)
+	openlibraries/trunk/m4/pkg.m4
+
+openlibraries/trunk/src/umbrella_framework/openlibraries.hpp:
+	svn co https://hdrflow.svn.sourceforge.net/svnroot/hdrflow hdrflow
+	Copyright (C) 2007 Goncalo N. M. de Carvalho
+	http://www.cryogenicgraphics.com/
+	HDRFlow is a open source framework and application to process and capture high-dynamic range (HDR) and RAW images. It is written in C++, and is both cross-platform and hardware accelerated on modern GPUs.
+
+openlibraries/trunk/media/shaders/:
+	There is code in here that contains only a copyright and no license. 
+	This could be an issue, the opengl shader code does not generally contain any license.
+	 (c) Nathaniel Hoffman 2003                                      
+
+
+The OpenGL Extension Wrangler Library : 
+	Copyright (c) 1991-2000 Silicon Graphics, Inc.
+	Copyright (C) 2002-2005, Milan Ikits <milan ikits[]ieee org>
+	Copyright (C) 2002-2005, Marcelo E. Magallon <mmagallo[]debian org>
+	Copyright (C) 2002, Lev Povalahev
+
+	Redistribution and use in source and binary forms, with or without
+	modification, are permitted provided that the following conditions are met:
+
+	Redistributions of source code must retain the above copyright notice,
+	this list of conditions and the following disclaimer.
+	Redistributions in binary form must reproduce the above copyright notice,
+	this list of conditions and the following disclaimer in the documentation
+	and/or other materials provided with the distribution.
+	The name of the author may be used to endorse or promote products
+	derived from this software without specific prior written permission.
+
+	Location :	jahshaka/source/AuxiliaryLibraries/glew
+
+
+Apollon Code from : http://apollon.sourceforge.net/
+Copyright (C) 2003 by Arend van Beelen jr. <arend@auton.nl>
+Copyright (C) 2002 by Bastiaan Naber 	<bastiaan@ricardis.tudelft.nl>
+Copyright (C) 2002 by Robert Wittams 
+	jahshaka/source/AuxiliaryLibraries/apollon/*
+	jahshaka/source/AuxiliaryLibraries/gift/*
+
+
+FTGL : FreeType2 Open GL Lib 
+	No Copyright Named, No License Named :
+	jahshaka/source/AuxiliaryLibraries/FTGL:
+
+	The Package is available from sourceforge
+
+	https://ftgl.svn.sourceforge.net/svnroot/ftgl
+
+	http://homepages.paradise.net.nz/henryj/code/index.html#FTGL
+	Henry Maddocks <ftgl@opengl.geek.nz>
+
+	Copyright (C) 2001-3 Henry Maddocks
+
+	Permission is hereby granted, free of charge, to any person obtaining
+	a copy of this software and associated documentation files (the
+	"Software"), to deal in the Software without restriction, including
+	without limitation the rights to use, copy, modify, merge, publish,
+	distribute, sublicense, and/or sell copies of the Software, and to
+	permit persons to whom the Software is furnished to do so, subject to
+	the following conditions:
+
+SPACEMOUSE CODE : 
+	Copyright Named, No License Provided :
+
+	SpaceMouse (Magellan) interface for an C++ application 
+	Magellan X-Window Driver Header xdrvlib.h
+
+	Source :
+		jahshaka/source/AuxiliaryLibraries/spaceball:
+
+	available from :
+		http://xray.bmc.uu.se/markh/notes/joy/spaceball.html
+		http://eugen.leitl.org/3dconnexion/xdevelop/
+
+	MAGELLAN X-Window Driver Header                        Version 4.00 09.06.97
+	Copyright (C) 1984, 2002 3Dconnexion GmbH / Inc.
+	An der Hartmuehle 8
+	D - 82229 Seefeld
+	mailto:development@3dconnexion.com
+
+
+particlesystems library 
+	Copyright 1998 by David K. McAllister :
+	http://www.particlesystems.org/
+	jahshaka/source/AuxiliaryLibraries/particle/
+
+	Copyright 1997 by Jonathan P. Leech :
+	http://www.particlesystems.org/Distrib/ParticleHelp_220.html
+	Code for some of the particle actions and several concepts regarding the structure of the API are thanks to Jonathan P. Leech, ljp@sgi.com. See also:
+	 Jonathan Leech and Russell M. Taylor II, "Interactive Modeling Using Particle Systems", Proceedings of the 2nd Conference on Discrete Element Methods, MIT, spring 1993, pp. 105-116.
+	No License Named. 
+	jahshaka/source/AuxiliaryLibraries/particle/p_vector.h:
+	jahshaka/source/AuxiliaryLibraries/particle/actions.cpp
+
+	Could be an issue.

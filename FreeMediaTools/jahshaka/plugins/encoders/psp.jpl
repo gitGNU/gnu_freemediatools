@@ -1,0 +1,5 @@
+label=FFmpeg PSP
+0=label=200kbs video,consumer=libdv,extension=.mp4,dvpipe=ffmpeg -v -1 -y -i %s -f psp -r 30000:1001 -s 320x240 -b 200 -acodec aac -ac 2 -ar 24000 -ab 64 %s &,profile=dv
+1=label=500kbs video,consumer=libdv,extension=.mp4,dvpipe=ffmpeg -v -1 -y -i %s -f psp -r 30000:1001 -s 320x240 -b 500 -acodec aac -ac 2 -ar 24000 -ab 64 %s &,profile=dv
+2=label=1000kbs video,consumer=libdv,extension=.mp4,dvpipe=ffmpeg -v -1 -y -i %s -f psp -r 30000:1001 -s 320x240 -b 1000 -acodec aac -ac 2 -ar 24000 -ab 64 %s &,profile=dv
+3=label=1500kbs video,consumer=libdv,extension=.mp4,dvpipe=ffmpeg -v -1 -y -i %s -f psp -r 30000:1001 -s 320x240 -b 1500 -acodec aac -ac 2 -ar 24000 -ab 64 %s &,profile=dv

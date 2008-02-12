@@ -1,0 +1,53 @@
+g++ -c -save-temps -I/usr/share/qt3/mkspecs/default -I. -I. -I../../../AuxiliaryLibraries/apollon -I../../../AuxiliaryLibraries/blur -I../../../AuxiliaryLibraries/FTGL -I../../../AuxiliaryLibraries/gift -I../../../AuxiliaryLibraries/glew -I../../../AuxiliaryLibraries/particle -I../../../AuxiliaryLibraries/spaceball -I../../../AuxiliaryLibraries/sqlite -I../../../OpenLibraries/opencore -I../../../OpenLibraries/openassetlib -I../../../OpenLibraries/openobjectlib -I../../../OpenLibraries/openobjectlib/surface3d -I../../../OpenLibraries/openmedialib -I../../../OpenLibraries/openmedialib/mediaobject -I../../../OpenLibraries/opengpulib -I../../../OpenLibraries/openimagelib -I../../../OpenLibraries/opennetworklib -I../../JahCore/jahobjects -I../../JahCore/jahrender -I../../JahCore/jahworld -I../../JahModules/text -I../../JahWidgets/colortri -I../../JahWidgets/interfaceobjs -I../../JahWidgets/calc -I../../JahWidgets/jahfileloader -I../../JahWidgets/keyframes -I../../JahWidgets/nodes -I../../JahWidgets/wireup -I../../JahWidgets/timeline -I../../JahWidgets/mediatable -I../../JahDesktop/desktop -I../../JahModules/animation -I../../JahSource/jahcreate -I../../JahLibraries -I../../JahLibraries/jahdatabase -I../../JahLibraries/jahdataio -I../../JahLibraries/jahformatter -I../../JahLibraries/jahglcore -I../../JahLibraries/jahkeyframes -I../../JahLibraries/jahplayer -I../../JahLibraries/jahplayer/audioplayer -I../../JahLibraries/jahplayer/diskplayer -I../../JahLibraries/jahplayer/ramplayer -I../../JahLibraries/jahplugins -I../../JahLibraries/jahpreferences -I../../JahLibraries/jahthemes -I../../JahLibraries/jahtimer -I../../JahLibraries/jahtracer -I../../JahLibraries/jahtranslate -I/usr/include/freetype2 -I/usr/local/include -I/usr/include -I../../../../../openlibraries/trunk/src -I/usr/include/qt3 -I/usr/X11R6/include -I/usr/X11R6/include -o characterinterface.o characterinterface.cpp
+virtual void GLChar::buildInterface(QHBox*)
+AddButton
+jt
+NameButton
+namepopup
+DelButton
+MoveupButton
+MovedownButton
+m_layer_listview
+objectControlStack
+objectControl
+m_run_script_button
+forcedplay
+m_show_lights_checkbox
+m_use_auto_key_checkbox
+startFrameControl
+Astartframe
+endFrameControl
+Aendframe
+m_select_fps_label
+m_select_fps_pushbutton
+jahreslabel
+JahresCombo
+hasResMenu
+objectControl
+m_compositing_mode_select_button
+m_compositing_mode_label
+m_pbuffer_select_checkbox
+m_text_extrude_label
+m_text_extrude_lcd
+textEd
+m_lighting_slider
+m_lighting_lcd
+m_lighting_slider_label
+JahSliders
+JahModuleOption
+m_use_lighting_checkbox
+numUiOptions
+m_translate_first_checkbox
+hasButtons
+m_use_opengl_key_layer_checkbox
+m_use_fast_shader_key_layer_checkbox
+m_slip_frames_lcd
+m_in_frames_lcd
+m_out_frames_lcd
+m_key_slip_frames_lcd
+m_key_in_frames_lcd
+m_key_out_frames_lcd
+m_lock_key_and_clip_checkbox
+virtual void GLChar::createMenuItem(QPopupMenu*)
+jt
+make: *** [characterinterface.o] Fehler 1

@@ -1,0 +1,23 @@
+
+half4 main(
+	float2 position           				: TEXCOORD0,
+	uniform float horizontal 				: register (c0),
+	uniform float vertical 					: register (c1),
+	uniform float width 					: register (c2),
+	uniform float height 					: register (c3),
+	uniform float2 scale_factor				: register (c4),
+    uniform sampler2D texture				: register (s0)
+		  ) : COLOR
+{
+	float4 					Color;
+	float2					new_position;
+
+	new_position.x = frac(position.x + (horizontal / 100.0));
+	new_position.y = frac(position.y + (vertical / 100.0));
+
+	new_position = frac(new_position) * scale_factor;
+
+	Color = (half4)tex2D(texture, new_position);
+
+    return (half4)Color;
+}

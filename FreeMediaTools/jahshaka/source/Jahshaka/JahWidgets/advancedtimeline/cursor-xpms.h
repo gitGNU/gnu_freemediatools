@@ -1,0 +1,22 @@
+
+static const char *hand_cursor_xpm[]={
+"16 16 3 1",
+"# c #000000",
+". c None",
+"a c #ffffff",
+".......##.......",
+"...##.#aa###....",
+"..#aa##aa#aa#...",
+"..#aa##aa#aa#.#.",
+"...#aa#aa#aa##a#",
+"...#aa#aa#aa#aa#",
+".##.#aaaaaaa#aa#",
+"#aa##aaaaaaaaaa#",
+"#aaa#aaaaaaaaa#.",
+".#aaaaaaaaaaaa#.",
+"..#aaaaaaaaaaa#.",
+"..#aaaaaaaaaa#..",
+"...#aaaaaaaaa#..",
+"....#aaaaaaa#...",
+".....#aaaaaa#...",
+".....#aaaaaa#..."};

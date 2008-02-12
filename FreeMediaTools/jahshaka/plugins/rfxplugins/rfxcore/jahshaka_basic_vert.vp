@@ -1,0 +1,62 @@
+!!VP2.0
+# cgc version 1.3.0001, build date Aug  4 2004 10:01:10
+# command line args: -profile vp30
+# source file: jahshaka_basic_vert.cg
+#vendor NVIDIA Corporation
+#version 1.0.02
+#profile vp30
+#program main
+#semantic main.ModelViewProj : C0
+#semantic main.ModelView : C4
+#semantic main.ModelViewIT : C8
+#semantic main.texture_width : C12
+#semantic main.texture_height : C13
+#semantic main.camera_distance : C14
+#var float4 object_position : $vin.ATTR0 : ATTR0 : 0 : 1
+#var float2 TexUV : $vin.ATTR8 : ATTR8 : 1 : 1
+#var float4x4 ModelViewProj : C0 : c[0], 4 : 2 : 1
+#var float4x4 ModelView : C4 : c[4], 4 : 3 : 1
+#var float4x4 ModelViewIT : C8 : c[8], 4 : 4 : 1
+#var float4 texture_width : C12 : c[12] : 5 : 1
+#var float4 texture_height : C13 : c[13] : 6 : 1
+#var float camera_distance : C14 : c[14] : 7 : 1
+#var float4 homogeneous_position : $vout.HPOS : HPOS : 8 : 1
+#var float4 normalized_position : $vout.TEX3 : TEX3 : 9 : 1
+#var float4 homogeneous_position_out : $vout.TEX4 : TEX4 : 10 : 1
+#var float3 eye_position : $vout.TEX1 : TEX1 : 11 : 1
+#var float3 eye_normal : $vout.TEX2 : TEX2 : 12 : 1
+#var float2 uv : $vout.TEX0 : TEX0 : 13 : 1
+#const c[15] = 2 0
+BB1:
+MOV   o[TEX0].xy, v[8];
+MOV   R1.w, c[15].y;
+MOV   R0.w, v[0];
+RCP   R0.z, c[15].x;
+DP4   R2.w, v[0], c[3];
+DP4   R2.z, v[0], c[2];
+DP4   R2.y, v[0], c[1];
+DP4   R2.x, v[0], c[0];
+ADD   R0.x, v[0].z, c[14];
+RCP   R0.y, c[14].x;
+MOV   o[HPOS], R2;
+MOV   o[TEX4], R2;
+MUL   R1.x, R0, R0.y;
+MUL   R0.x, R0.z, c[12];
+MUL   R0.y, R0.z, c[13].x;
+RCP   R0.x, R0.x;
+RCP   R0.y, R0.y;
+MUL   R0.z, R1.x, c[15].x;
+MOV   R1.z, R0;
+MUL   R0.y, v[0], R0;
+MUL   R0.x, v[0], R0;
+MOV   R1.x, R0;
+MOV   R1.y, R0;
+MOV   o[TEX3], R0;
+DP4   o[TEX1].z, R0, c[6];
+DP4   o[TEX1].y, R0, c[5];
+DP4   o[TEX1].x, R0, c[4];
+DP4   o[TEX2].z, R1, c[10];
+DP4   o[TEX2].y, R1, c[9];
+DP4   o[TEX2].x, R1, c[8];
+END
+# 30 instructions, 3 R-regs

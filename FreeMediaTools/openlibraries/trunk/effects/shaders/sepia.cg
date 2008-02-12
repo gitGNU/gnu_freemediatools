@@ -1,0 +1,30 @@
+
+// fx - A compositing library representation.
+
+// Copyright (C) 2005-2006 VM Inc.
+// Released under the LGPL.
+// For more information, see http://www.openlibraries.org.
+
+fragout_float main( in float2 v_tex, uniform samplerRECT inColor0 )
+{
+	fragout_float OUT;
+
+	float4x4 YIQ = float4x4( float4( 0.299,  0.587,  0.114, 0 ),
+							 float4( 0.596, -0.275, -0.321, 0 ),
+							 float4( 0.212, -0.523,  0.311, 0 ),
+							 float4( 0, 0, 0, 0 ) );
+
+	float4x4 YIQ_inverse = float4x4( float4( 1.0000000000000000000,  0.95568806036115671171,  0.61985809445637075388, 0 ),
+									 float4( 1.0000000000000000000, -0.27158179694405859326, -0.64687381613840131330, 0 ),
+									 float4( 1.0000000000000000000, -1.1081773266826619523,   1.7050645599191817149,  0 ),
+									 float4( 0, 0, 0, 0 ) );
+
+	float4 color = mul( YIQ, texRECT( inColor0, v_tex ) );
+	color.y = 0.2;
+	color.z = 0.0;
+	color = mul( YIQ_inverse, color );
+
+	OUT.col = color;
+
+	return OUT;
+}

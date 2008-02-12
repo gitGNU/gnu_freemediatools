@@ -1,0 +1,97 @@
+
+half4 main(
+	float2 position           				: TEXCOORD0,
+	float2 noise_position           		: TEXCOORD1,
+	uniform float2 scale_factor				: register (c0),
+	uniform float2 fire_scale_factor		: register (c1),
+	uniform float2 base_scale_factor		: register (c2),
+	uniform float2 distortion				: register (c3),
+	uniform float time						: register (c4),
+	uniform float transparency				: register (c5),
+	uniform float blend						: register (c6),
+	uniform float timescale					: register (c7),
+	uniform float2 displacement				: register (c8),
+	uniform float2 size						: register (c9),
+	uniform float aspect_ratio				: register (c10),
+    uniform sampler2D base_texture			: register (s0),
+    uniform sampler2D turbulence_texture	: register (s1),
+    uniform sampler2D fire_texture			: register (s2)
+		  ) : COLOR
+{
+	float4 					Color;
+	float4					Turbulence;
+
+	float2					lower_left;
+	float2					upper_right;
+
+	float2					shape;
+
+	// Make the flame skinnier
+	shape.x = aspect_ratio / 2.0;
+	shape.y = 1.0;
+
+	lower_left.x = displacement.x + (base_scale_factor.x / 2.0) - (base_scale_factor.x * shape.x * size.x / 4.0);
+	lower_left.y = displacement.y + (base_scale_factor.y / 2.0) - (base_scale_factor.y * shape.y / 4.0);
+	upper_right = lower_left + (base_scale_factor * shape * size / 2.0);
+
+	float2					moving_position;
+	float2 					turbulence_position;
+	float2 					uv;
+	half4					fire_color;
+
+	if (position.x > lower_left.x && position.x < upper_right.x &&
+		position.y > lower_left.y && position.y < upper_right.y)
+	{
+		moving_position = (position - lower_left) / (upper_right - lower_left);
+
+		turbulence_position = 0.01 + (abs( sin(moving_position - (time / timescale)) ) * scale_factor * 0.9);
+
+		Turbulence = (half4)tex2D(turbulence_texture, turbulence_position);
+
+		uv = 	(moving_position * fire_scale_factor) + 
+				((Turbulence.xx * distortion / 20.0) * 
+				((moving_position.y / scale_factor) + 0.01));
+
+		if (uv.y > fire_scale_factor.y || uv.x > fire_scale_factor.x) 
+		{
+			uv.x = 0.0;
+			uv.y = 0.0;
+		}
+
+		fire_color = (half4)tex2D(fire_texture, uv);
+//  		fire_color = Turbulence;
+	}
+	else
+	{
+		fire_color = (0.0, 0.0, 0.0, 0.0);
+	}
+
+// 	float2 turbulence_position = (0.1 + abs(sin((noise_position - ((time) / timescale))))) * scale_factor * 0.9;
+// 	Turbulence = (half4)tex2D(turbulence_texture, turbulence_position);
+	
+
+// 	float2 uv = (moving_position * fire_scale_factor) + ((Turbulence.xx * distortion / 20.0) * position.y);
+
+// 	float2 uv = position + ((Turbulence.xx * distortion / 20.0) * 1.0);
+
+// 	uv.y /= frac(time / timescale);
+
+
+//  	Color = (half4)tex2D(fire_texture, uv);
+
+	half4 base_image = (half4)tex2D(base_texture, position);
+
+	Color = base_image;
+
+	float4 blend_factor = blend * fire_color;
+
+	
+
+	Color = (2.5 * (transparency * (fire_color * blend_factor))) + ((1.0 - transparency) * Color * 1.0);
+//   	Color *= 1.3;
+
+//	Color = Turbulence;
+	Color.w = 1.0;
+
+    return (half4)Color;
+}

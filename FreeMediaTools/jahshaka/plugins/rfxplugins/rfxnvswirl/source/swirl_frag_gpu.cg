@@ -1,0 +1,43 @@
+
+half4 main(float2 uv           			: TEXCOORD0,
+	uniform float xcenter 				: register (c0),
+	uniform float ycenter 				: register (c1),
+	uniform float swirl_radius 			: register (c2),
+	uniform float twist_effect 			: register (c3),
+           uniform sampler2D texture) 	: COLOR
+{
+	float3 Color;
+	float2 position = (uv * 1.0) + 0.0000;
+
+	float dx = position.x - xcenter + 0.0000001f;
+	float dy = position.y - ycenter + 0.0000001f;
+
+	float dx_squared = dx * dx;
+	float dy_squared = dy * dy;
+
+	float radius = sqrt(dx_squared + dy_squared);
+
+	float twisted_angle;
+	float original_angle;
+	float2 original_position;
+	float4 _OUT;
+
+	if (radius < swirl_radius)
+	{
+		twisted_angle = atan2(dy, dx);
+		original_angle = twisted_angle - ((swirl_radius - radius) * twist_effect);
+
+		original_position.x = xcenter + (radius * (cos(original_angle)));
+		original_position.y = ycenter + (radius * (sin(original_angle)));
+		_OUT = tex2D(texture, original_position);
+	}
+	else
+	{
+		_OUT = tex2D(texture, position.xy);
+	}
+
+	Color = _OUT.xyz;
+
+    // Always set the alpha value to 1.
+    return half4(Color, 1);
+}

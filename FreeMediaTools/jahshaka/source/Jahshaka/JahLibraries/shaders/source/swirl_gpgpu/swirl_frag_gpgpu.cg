@@ -1,0 +1,72 @@
+float atan2(float y, float x)
+{
+	float  						PI = 3.141590f;
+	float 						angle = atan(y / x);
+
+	if (x < 0.000000f && y > 0.000000f)
+	{
+		angle += PI;
+	}
+	else if (x < 0.000000f && y < 0.000000f)
+	{
+		angle -= PI;
+	}
+
+	return angle;
+}
+
+float4 main (   
+	float4 position : TEXCOORD0,
+	uniform float  swirl_radius : register (c0),
+	uniform float  xcenter : register (c1),
+	uniform float  ycenter : register (c2),
+	uniform float  twist_effect : register (c3)) : COLOR0
+{
+	float4 						_OUT;
+	float4  					new_position;
+	float2  					radius;
+	float  						original_angle;
+	float  						twisted_angle;
+	float2  					dx;
+	float2  					dy;
+	float2						dx_squared;
+	float2						dy_squared;
+
+	// Handles a pair of horizonatlly sequential pixels offset by (dx.x, dy.x) (dx.y, dy.y)
+	dx.x = (position.x * 2.0) - xcenter + 0.0000001f;
+	dx.y = (position.x * 2.0) + 1.0 - xcenter + 0.0000001f;
+
+	// Both delta y's are equal
+	dy = (position.y - ycenter) + 0.000001f;
+
+	dx_squared = dx * dx;
+	dy_squared = dy * dy;
+
+	radius = sqrt(dx_squared + dy_squared);
+
+	new_position.x = (position.x * 2.0f);
+	new_position.y = position.y;
+	new_position.z = (position.x * 2.0f) + 1.0f;
+	new_position.w = position.y;
+
+	if (radius.x < swirl_radius)
+	{
+		original_angle = atan2(dy.x, dx.x);
+		twisted_angle = original_angle + ((swirl_radius - radius.x) / 100.0 * twist_effect);
+
+		new_position.x = xcenter + (radius.x * (cos(twisted_angle)));
+		new_position.y = ycenter + (radius.x * (sin(twisted_angle)));
+	}
+
+	if (radius.y < swirl_radius)
+	{
+		original_angle = atan2(dy.y, dx.y);
+		twisted_angle = original_angle + ((swirl_radius - radius.y) / 100.0 * twist_effect);
+
+		new_position.z = xcenter + (radius.y * (cos(twisted_angle)));
+		new_position.w = ycenter + (radius.y * (sin(twisted_angle)));
+	}
+
+ 	_OUT = new_position;
+	return _OUT;
+}

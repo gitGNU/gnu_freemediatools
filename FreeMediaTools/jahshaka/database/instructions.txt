@@ -1,0 +1,44 @@
+
+From the command prompt:
+> sqlite JahDesktopDB
+sqlite> .headers ON;
+sqlite> .mode column videodata
+sqlite> .schema
+sqlite> drop table desktop;
+sqlite> drop table videodata;
+sqlite> .schema
+sqlite> create table desktop(name varchar(55), numclips int);
+sqlite> .schema
+sqlite> create table videodata(Category varchar(12), Cliptype varchar(12), Videoext varchar(9), MediaName varchar(128), MediaNumber int, FileLocation varchar(255), FileName varchar(255), FileExtension varchar(12), StartFrame int, EndFrame int, xpos int, ypos int, xsize int, ysize int);
+sqlite> .schema
+sqlite> insert into desktop values('desktop', 2);
+sqlite> select * from desktop;
+sqlite> select * from videodata;
+
+
+
+
+
+Other useful commands....
+
+delete from videodata;
+delete from desktop;
+delete from desktop where numclips=7;
+
+insert into desktop values('desktop',2);
+why isnt this 1?
+
+select * from videodata;
+select * from videodata where MediaNumber = 2;
+
+.mode column;
+.headers ON;
+
+.schema
+.tables
+
+create index DesktopID on videodata (MediaName);
+
+
+
+

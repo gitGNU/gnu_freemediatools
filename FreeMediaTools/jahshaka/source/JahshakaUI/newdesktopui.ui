@@ -1,0 +1,665 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>Form1</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>Form1</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>880</width>
+            <height>202</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Form1</string>
+    </property>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>frame14</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>850</width>
+                <height>190</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <widget class="QFrame">
+            <property name="name">
+                <cstring>divider3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>720</x>
+                    <y>20</y>
+                    <width>2</width>
+                    <height>141</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+        </widget>
+        <widget class="QFrame">
+            <property name="name">
+                <cstring>divider2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>600</x>
+                    <y>20</y>
+                    <width>2</width>
+                    <height>141</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+        </widget>
+        <widget class="QFrame">
+            <property name="name">
+                <cstring>divider1</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>360</x>
+                    <y>20</y>
+                    <width>2</width>
+                    <height>141</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>library</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>110</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Library</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>findclip</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>140</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Find Clip</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>findeditbox</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>110</x>
+                    <y>140</y>
+                    <width>240</width>
+                    <height>25</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>lockall</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>130</x>
+                    <y>20</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Lock All</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>unlockall</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>130</x>
+                    <y>50</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Unlock All</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>expandall</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>250</x>
+                    <y>20</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Expand All</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>collapseall</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>250</x>
+                    <y>50</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Collapse All</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>colorize</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>370</x>
+                    <y>20</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Colorize</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>gpufx</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>370</x>
+                    <y>50</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>GpuFx</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tracker</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>370</x>
+                    <y>110</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Tracker</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>keyer</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>370</x>
+                    <y>140</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Keyer</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>network</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>490</x>
+                    <y>20</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Network</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>encoder</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>490</x>
+                    <y>50</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Encoder</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>broadcaster</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>490</x>
+                    <y>110</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Broadcaster</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>videoio</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>490</x>
+                    <y>140</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Video IO</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>loaddesktop</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>610</x>
+                    <y>20</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Load Desktop</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>importclip</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Import Clip</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>exportclip</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>50</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Export Clip</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>savedesktop</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>610</x>
+                    <y>50</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Save Desktop</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tidydesktop</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>610</x>
+                    <y>110</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Tidy Desktop</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>cleardesktop</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>610</x>
+                    <y>140</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Clear Desktop</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>desktopundo</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>740</x>
+                    <y>20</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Undo</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>desktopredo</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>740</x>
+                    <y>50</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Redo</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>Preferences</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>740</x>
+                    <y>110</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Preferences</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>Quit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>740</x>
+                    <y>140</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Quit</string>
+            </property>
+        </widget>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>importclip</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahdesktopImportclip()</slot>
+    </connection>
+    <connection>
+        <sender>exportclip</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahdesktopExportclip()</slot>
+    </connection>
+    <connection>
+        <sender>library</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahChangemodeLibrary()</slot>
+    </connection>
+    <connection>
+        <sender>findeditbox</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>Form1</receiver>
+        <slot>JahlibraryFindclip()</slot>
+    </connection>
+    <connection>
+        <sender>lockall</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahdesktopLockall()</slot>
+    </connection>
+    <connection>
+        <sender>unlockall</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahdesktopUnlockall()</slot>
+    </connection>
+    <connection>
+        <sender>expandall</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahdesktopExpandall()</slot>
+    </connection>
+    <connection>
+        <sender>collapseall</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahdesktopUnlockall()</slot>
+    </connection>
+    <connection>
+        <sender>colorize</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahChangemodeColorize()</slot>
+    </connection>
+    <connection>
+        <sender>gpufx</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahChangemodeGpufx()</slot>
+    </connection>
+    <connection>
+        <sender>tracker</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahChangemodeTracker()</slot>
+    </connection>
+    <connection>
+        <sender>keyer</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahChangemodeKeyer()</slot>
+    </connection>
+    <connection>
+        <sender>network</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahChangemodeNetwork()</slot>
+    </connection>
+    <connection>
+        <sender>encoder</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahChangemodeEncoder()</slot>
+    </connection>
+    <connection>
+        <sender>broadcaster</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahChangemodeBroadcaster()</slot>
+    </connection>
+    <connection>
+        <sender>videoio</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahChangemodeVideoio()</slot>
+    </connection>
+    <connection>
+        <sender>loaddesktop</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahdesktopLoaddesktop()</slot>
+    </connection>
+    <connection>
+        <sender>savedesktop</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahdesktopSavedesktop()</slot>
+    </connection>
+    <connection>
+        <sender>tidydesktop</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahdesktopTidydesktop()</slot>
+    </connection>
+    <connection>
+        <sender>cleardesktop</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahdesktopCleardesktop()</slot>
+    </connection>
+    <connection>
+        <sender>desktopundo</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahdesktopUndo()</slot>
+    </connection>
+    <connection>
+        <sender>desktopredo</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahdesktopRedo()</slot>
+    </connection>
+    <connection>
+        <sender>Preferences</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahChangemodePreferences()</slot>
+    </connection>
+    <connection>
+        <sender>Quit</sender>
+        <signal>clicked()</signal>
+        <receiver>Form1</receiver>
+        <slot>JahChangemodeQuit()</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>JahdesktopImportclip()</slot>
+    <slot>JahdesktopExportclip()</slot>
+    <slot>JahChangemodeLibrary()</slot>
+    <slot>JahlibraryFindclip()</slot>
+    <slot>JahdesktopLockall()</slot>
+    <slot>JahdesktopUnlockall()</slot>
+    <slot>JahdesktopExpandall()</slot>
+    <slot>JahdesktopCollapseall()</slot>
+    <slot>JahChangemodeColorize()</slot>
+    <slot>JahChangemodeGpufx()</slot>
+    <slot>JahChangemodeTracker()</slot>
+    <slot>JahChangemodeKeyer()</slot>
+    <slot>JahChangemodeNetwork()</slot>
+    <slot>JahChangemodeEncoder()</slot>
+    <slot>JahChangemodeBroadcaster()</slot>
+    <slot>JahChangemodeVideoio()</slot>
+    <slot>JahdesktopLoaddesktop()</slot>
+    <slot>JahdesktopSavedesktop()</slot>
+    <slot>JahdesktopTidydesktop()</slot>
+    <slot>JahdesktopCleardesktop()</slot>
+    <slot>JahdesktopUndo()</slot>
+    <slot>JahdesktopRedo()</slot>
+    <slot>JahChangemodePreferences()</slot>
+    <slot>JahChangemodeQuit()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

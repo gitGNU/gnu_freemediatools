@@ -1,0 +1,7 @@
+label=FFmpeg MPEG
+0=label=VCD,consumer=avformat,extension=.mpg,profile=vcd,video_bit_rate=1150000,video_rc_max_rate=1150000,video_rc_min_rate=1150000,video_rc_buffer_size=327680,frequency=44100,audio_bit_rate=224000,b_frames=2
+1=label=SVCD High,consumer=avformat,extension=.mpg,profile=svcd,video_bit_rate=2500000,audio_bit_rate=224000,vcodec=mpeg2video
+2=label=SVCD Medium,consumer=avformat,extension=.mpg,profile=svcd,video_bit_rate=1500000,audio_bit_rate=196000,vcodec=mpeg2video
+3=label=SVCD Low,consumer=avformat,extension=.mpg,profile=svcd,video_bit_rate=1150000,audio_bit_rate=128000,vcodec=mpeg2video
+4=label=CVD,consumer=avformat,extension=.mpg,profile=cvd,video_bit_rate=1500000,audio_bit_rate=224000,vcodec=mpeg2video
+5=label=DVD,consumer=avformat,extension=.mpg,profile=dv,format=dvd,video_bit_rate=6000000,video_rc_max_rate=9000000,video_rc_min_rate=0,audio_bit_rate=224000,video_rc_buffer_size=1835008,gop_size=18,vcodec=mpeg2video

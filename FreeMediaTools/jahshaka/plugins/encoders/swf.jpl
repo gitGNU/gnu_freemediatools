@@ -1,0 +1,10 @@
+label=FFmpeg Flash
+0=label=100kbs 160x120,consumer=avformat,extension=.swf,video_bit_rate=100000,width=160,height=120,frequency=44100
+1=label=50kbs 160x120,consumer=avformat,extension=.swf,video_bit_rate=50000,width=160,height=120,frequency=44100,aspect_ratio_num=1,aspect_ratio_den=1
+2=label=VCD 200kbs,consumer=avformat,extension=.swf,video_bit_rate=200000,frequency=22050,profile=vcd,audio_bit_rate=64000
+3=label=VCD 100kbs,consumer=avformat,extension=.swf,video_bit_rate=100000,frequency=22050,profile=vcd,audio_bit_rate=64000
+4=label=VCD 50kbs,consumer=avformat,extension=.swf,video_bit_rate=50000,frequency=22050,profile=vcd,audio_bit_rate=64000
+5=label=VCD 500kbs,consumer=avformat,extension=.swf,video_bit_rate=500000,frequency=22050,profile=vcd,audio_bit_rate=64000
+6=label=VCD 1000kbs,consumer=avformat,extension=.swf,video_bit_rate=1000000,frequency=22050,profile=vcd,audio_bit_rate=64000
+7=label=2000kbs 320x240,consumer=avformat,extension=.swf,video_bit_rate=2000000,width=320,height=240,frequency=44100
+8=label=2000kbs 640x480,consumer=avformat,extension=.swf,video_bit_rate=2000000,width=640,height=480,frequency=44100

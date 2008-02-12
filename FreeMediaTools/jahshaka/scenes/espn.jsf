@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- Jahshaka Scene File -->
+
+<JAHSHAKA jah_version = '2.0RC1' xml_file_version = '0.01'>
+    <SCENE_FILE name = 'espn' />
+    <MODULE name = 'Animation' />
+    <FRAMES resolution = 'NTSC D1' code = '3' number = '89' />
+    <LAYER name = 'World' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'BACKDROP' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <BACKDROP grid_setting = '0' aliasing = '0' text_safe = '0'>
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'starfield' clipnumber = '8'
+             location = './media/images/'
+             filename = 'starfield' extension = '.jpg'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '639' ypos = '96' />
+        <KEYFRAMES count = '0'>
+            <KEYFRAME TC = '0' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+        </BACKDROP>
+    </LAYER>
+    <LAYER name = 'interface' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'espninterface' clipnumber = '2'
+             location = './media/images/'
+             filename = 'espninterface' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '317' ypos = '429' />
+        <KEYFRAMES count = '3'>
+            <KEYFRAME TC = '1' SX = '1.14' SY = '1' SZ = '1' TX = '0' TY = '-7' TZ = '-243' RX = '0' RY = '90' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '11' SX = '1.14' SY = '1' SZ = '1' TX = '0' TY = '-7' TZ = '-243' RX = '0' RY = '90' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '31' SX = '1.14' SY = '1' SZ = '1' TX = '0' TY = '-7' TZ = '-243' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'earth' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'SPHERE' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '1' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'earthtex' clipnumber = '3'
+             location = './media/images/'
+             filename = 'earthtex' extension = '.jpg'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '563' ypos = '425' />
+        <KEYFRAMES count = '2'>
+            <KEYFRAME TC = '1' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '-22' TZ = '-3' RX = '-71' RY = '-7' RZ = '-17' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '100' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '-22' TZ = '-3' RX = '-71' RY = '-7' RZ = '440' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'espnlogo' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '1' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'espn' clipnumber = '1'
+             location = './media/images/'
+             filename = 'espn' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '64' ypos = '445' />
+        <KEYFRAMES count = '3'>
+            <KEYFRAME TC = '1' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '465' RX = '0' RY = '-34' RZ = '0' AL = '0' extrude = '5' />
+            <KEYFRAME TC = '12' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '465' RX = '0' RY = '-41' RZ = '0' AL = '0' extrude = '5' />
+            <KEYFRAME TC = '31' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '-32' TZ = '-750' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'jahlogo' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'jahlogo' clipnumber = '17'
+             location = './media/images/'
+             filename = 'jahlogo' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '10' ypos = '10' />
+        <KEYFRAMES count = '4'>
+            <KEYFRAME TC = '1' SX = '0.4' SY = '0.4' SZ = '1' TX = '300' TY = '-174' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '1' extrude = '5' />
+            <KEYFRAME TC = '29' SX = '0.4' SY = '0.4' SZ = '1' TX = '300' TY = '-174' TZ = '0' RX = '0' RY = '114.545' RZ = '0' AL = '1' extrude = '5' />
+            <KEYFRAME TC = '45' SX = '0.4' SY = '0.4' SZ = '1' TX = '300' TY = '-174' TZ = '0' RX = '0' RY = '180' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '89' SX = '0.4' SY = '0.4' SZ = '1' TX = '300' TY = '-174' TZ = '0' RX = '0' RY = '360' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'rules' activation = '0'>
+        <KEY invert = '0' draw = '1' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'rules' clipnumber = '27'
+             location = './media/images/'
+             filename = 'rules' extension = '.jpg'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '66' ypos = '143' />
+        <KEYFRAMES count = '0'>
+            <KEYFRAME TC = '0' SX = '0.69' SY = '0.54' SZ = '1' TX = '0' TY = '-176' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+</JAHSHAKA>

@@ -1,0 +1,7 @@
+test.cpp: In member function 'virtual void GLKeyer::paintGL()':
+test.cpp:39: warning: the address of 'int select(int, fd_set*, fd_set*, fd_set*, timeval*)', will always evaluate as 'true'
+test.cpp:176: error: 'class JahLayer' has no member named 'obm_pJtype'
+test.cpp:300: error: 'class JahLayer' has no member named 'obm_pJtype'
+test.cpp: In member function 'void GLKeyer::setGpuSelect()':
+test.cpp:325: error: cannot convert 'bool' to 'QCheckBox*' in assignment
+make: *** [test.o] Fehler 1

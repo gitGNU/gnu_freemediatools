@@ -1,0 +1,54 @@
+
+// Utility functions that return the appropriate components from the vector
+// of lighting coefficients returned by the standard library lighting
+// funciton, lit().
+
+float diffuse(float4 l) { return l.y; }
+float specular(float4 l) { return l.z; }
+
+// Main shader.
+
+half4 main(
+		   float3 eye_position        	: TEXCOORD1,
+           float3 eye_normal         	: TEXCOORD2,
+	       float4 normalized_position   : TEXCOORD3,
+		   float4 homogeneous_position  : TEXCOORD4,
+           float2 uv           			: TEXCOORD0,
+		   uniform float3 light_position,
+		   uniform float3 light_color,
+           uniform sampler2D texture) 	: COLOR
+{
+
+ 	float3 lightPosition = light_position;
+ 	float3 lightColor = { 1.0, 1.0, 1.0 };
+	float  shininess = 500.0;
+
+    // Normalize surface normal, vector to light source, and vector
+    // to the viewer
+    half3 N = normalize(eye_normal);
+	half3 E = normalize(eye_position);
+    half3 L = normalize(lightPosition - eye_position);
+    half3 V = normalize(-eye_position);
+
+	half3 K_diffuse = {1.2, 1.2, 1.2 };
+//	half3 K_specular = { 1.0, 0.2, 0.0 };
+	half3 K_specular = light_color;
+
+    // Compute float-angle vector for specular lighting
+    half3 H = normalize(L + V);
+
+    // Compute lighting values.  lit() returns the diffuse coefficient
+    // in y (or zero, if NdotL < 0), and the specular coefficient in z
+    // (or zero, also if NdotL < 0).
+    half NdotL = dot(N, L), NdotH = dot(N, H);
+    half4 lighting = lit(NdotL, NdotH, shininess);
+
+    // Compute overall color for the fragment.  Scale sum of diffuse
+    // and specular contributions together and by the light color.
+    half3 Color = lightColor * 
+	(diffuse(lighting) * K_diffuse * (float3)tex2D(texture, uv).xyz +
+	 specular(lighting) * K_specular);
+
+    // Always set the alpha value to 1.
+    return half4(Color, 1);
+}

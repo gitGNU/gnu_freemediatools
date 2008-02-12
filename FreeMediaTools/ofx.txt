@@ -1,0 +1,794 @@
+make  all-am
+make[1]: Entering directory `/mnt/sda10/mdupont/experiments/video/js/test2/FreeMediaTools'
+if g++ -DHAVE_CONFIG_H -I. -I. -I. -I./jahshaka/source/AuxiliaryLibraries -I./jahshaka/source/AuxiliaryLibraries/FTGL/ -I./jahshaka/source/AuxiliaryLibraries/apollon -I./jahshaka/source/AuxiliaryLibraries/gift/ -I./jahshaka/source/AuxiliaryLibraries/glew -I./jahshaka/source/AuxiliaryLibraries/particle -I./jahshaka/source/AuxiliaryLibraries/sndfile -I./jahshaka/source/Jahshaka -I./jahshaka/source/Jahshaka/JahCore/jahobjects -I./jahshaka/source/Jahshaka/JahCore/jahrender -I./jahshaka/source/AuxiliaryLibraries/blur/ -I./jahshaka/source/Jahshaka/JahCore/jahworld -I./jahshaka/source/Jahshaka/JahDesktop/desktop -I./jahshaka/source/Jahshaka/JahDesktop/library -I./jahshaka/source/Jahshaka/JahDesktop/player -I./jahshaka/source/Jahshaka/JahLibraries -I./jahshaka/source/Jahshaka/JahLibraries/ -I./jahshaka/source/Jahshaka/JahLibraries/jahdatabase -I./jahshaka/source/Jahshaka/JahLibraries/jahdatabase/ -I./jahshaka/source/Jahshaka/JahLibraries/jahdataio -I./jahshaka/source/Jahshaka/JahLibraries/jahdataio -I./jahshaka/source/Jahshaka/JahLibraries/jahfontmanager -I./jahshaka/source/Jahshaka/JahLibraries/jahformatter -I./jahshaka/source/Jahshaka/JahLibraries/jahformatter -I./jahshaka/source/Jahshaka/JahLibraries/jahglcore -I./jahshaka/source/Jahshaka/JahLibraries/jahglcore -I./jahshaka/source/Jahshaka/JahLibraries/jahkeyframes -I./jahshaka/source/Jahshaka/JahLibraries/jahkeyframes -I./jahshaka/source/Jahshaka/JahLibraries/jahplayer -I./jahshaka/source/Jahshaka/JahLibraries/jahplayer/audioplayer -I./jahshaka/source/Jahshaka/JahLibraries/jahplayer/diskplayer -I./jahshaka/source/Jahshaka/JahLibraries/jahplugins -I./jahshaka/source/Jahshaka/JahLibraries/jahplugins -I./jahshaka/source/Jahshaka/JahLibraries/jahpreferences -I./jahshaka/source/Jahshaka/JahLibraries/jahpreferences -I./jahshaka/source/Jahshaka/JahLibraries/jahpreferences -I./jahshaka/source/Jahshaka/JahLibraries/jahthemes -I./jahshaka/source/Jahshaka/JahLibraries/jahthemes/superggraphics -I./jahshaka/source/Jahshaka/JahLibraries/jahtimer -I./jahshaka/source/Jahshaka/JahLibraries/jahtracer -I./jahshaka/source/Jahshaka/JahLibraries/jahtracer -I./jahshaka/source/Jahshaka/JahLibraries/jahtranslate -I./jahshaka/source/Jahshaka/JahLibraries/jahxml -I./jahshaka/source/Jahshaka/JahLibraries/jahxml -I./jahshaka/source/Jahshaka/JahLibraries/shaders -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/create_turbulence_texture_gpu -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/earthquake_gpu -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/explosion_gpu -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/fire3D_gpu -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/fisheye_gpgpu -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/fisheye_gpu -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/jahshaka_basic -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/swirl_gpgpu -I./jahshaka/source/Jahshaka/JahModules/animation -I./jahshaka/source/Jahshaka/JahModules/colorize -I./jahshaka/source/Jahshaka/JahModules/editing -I./jahshaka/source/Jahshaka/JahModules/editing_mlt -I./jahshaka/source/Jahshaka/JahModules/effect -I./jahshaka/source/Jahshaka/JahModules/keyer -I./jahshaka/source/Jahshaka/JahModules/painter -I./jahshaka/source/Jahshaka/JahModules/text -I./jahshaka/source/Jahshaka/JahModules/tracker -I./jahshaka/source/Jahshaka/JahSource/jahcreate -I./jahshaka/source/Jahshaka/JahSource/jahmain -I./jahshaka/source/Jahshaka/JahWidgets/advancedtimeline -I./jahshaka/source/Jahshaka/JahWidgets/colordropper -I./jahshaka/source/Jahshaka/JahWidgets/colortri -I./jahshaka/source/Jahshaka/JahWidgets/interfaceobjs -I./jahshaka/source/Jahshaka/JahWidgets/jahcalc -I./jahshaka/source/Jahshaka/JahWidgets/jahfileloader -I./jahshaka/source/Jahshaka/JahWidgets/keyframes -I./jahshaka/source/Jahshaka/JahWidgets/mediatable -I./jahshaka/source/Jahshaka/JahWidgets/multitrack -I./jahshaka/source/Jahshaka/JahWidgets/nodes -I./jahshaka/source/Jahshaka/JahWidgets/slider -I./jahshaka/source/Jahshaka/JahWidgets/timeline -I./jahshaka/source/Jahshaka/JahWidgets/waveform -I./jahshaka/source/Jahshaka/JahWidgets/wireup -I./jahshaka/source/OpenLibraries -I./jahshaka/source/OpenLibraries/openassetlib -I./jahshaka/source/OpenLibraries/openassetlib -I./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib -I./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/common -I./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/common/include -I./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3 -I./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src -I./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/src -I./jahshaka/source/OpenLibraries/opencore -I./jahshaka/source/OpenLibraries/opengpulib -I./jahshaka/source/OpenLibraries/openimagelib -I./jahshaka/source/OpenLibraries/openmedialib -I./jahshaka/source/OpenLibraries/openmedialib -I./jahshaka/source/OpenLibraries/openmedialib/codecs -I./jahshaka/source/OpenLibraries/openmedialib/codecs/aviutils -I./jahshaka/source/OpenLibraries/openmedialib/codecs/mpegdec -I./jahshaka/source/OpenLibraries/openmedialib/codecs/mpegenc -I./jahshaka/source/OpenLibraries/openmedialib/formats -I./jahshaka/source/OpenLibraries/openmedialib/mediaobject -I./jahshaka/source/OpenLibraries/opennetworklib -I./jahshaka/source/OpenLibraries/openobjectlib -I./jahshaka/source/OpenLibraries/openobjectlib/plugins -I./jahshaka/source/OpenLibraries/openobjectlib/plugins/3ds -I./jahshaka/source/OpenLibraries/openobjectlib/plugins/dxf -I./jahshaka/source/OpenLibraries/openobjectlib/plugins/obj -I./jahshaka/source/OpenLibraries/openobjectlib/plugins/stl -I./openlibraries/install/include -I./openlibraries/trunk/ -I./openlibraries/trunk/src -I./openlibraries/trunk/src/openassetlib -I./openlibraries/trunk/src/openassetlib -I./openlibraries/trunk/src/openassetlib/al -I./openlibraries/trunk/src/openassetlib/plugins -I./openlibraries/trunk/src/openassetlib/plugins/sqlite -I./openlibraries/trunk/src/openassetlib/py -I./openlibraries/trunk/src/openeffectslib -I./openlibraries/trunk/src/openeffectslib/plugins -I./openlibraries/trunk/src/openeffectslib/plugins/tonemap -I./openlibraries/trunk/src/openimagelib -I./openlibraries/trunk/src/openimagelib/il -I./openlibraries/trunk/src/openimagelib/plugins -I./openlibraries/trunk/src/openimagelib/plugins/3D_lightmap -I./openlibraries/trunk/src/openimagelib/plugins/bmp -I./openlibraries/trunk/src/openimagelib/plugins/dds -I./openlibraries/trunk/src/openimagelib/plugins/dpx -I./openlibraries/trunk/src/openimagelib/plugins/exr -I./openlibraries/trunk/src/openimagelib/plugins/gdi+ -I./openlibraries/trunk/src/openimagelib/plugins/hdr -I./openlibraries/trunk/src/openimagelib/plugins/jpg -I./openlibraries/trunk/src/openimagelib/plugins/png -I./openlibraries/trunk/src/openimagelib/plugins/psd -I./openlibraries/trunk/src/openimagelib/plugins/quicktime -I./openlibraries/trunk/src/openimagelib/plugins/sgi -I./openlibraries/trunk/src/openimagelib/plugins/tga -I./openlibraries/trunk/src/openimagelib/plugins/tiff -I./openlibraries/trunk/src/openimagelib/py -I./openlibraries/trunk/src/openmedialib -I./openlibraries/trunk/src/openmedialib/ml -I./openlibraries/trunk/src/openmedialib/plugins -I./openlibraries/trunk/src/openmedialib/plugins/avformat -I./openlibraries/trunk/src/openmedialib/plugins/directshow -I./openlibraries/trunk/src/openmedialib/plugins/gensys -I./openlibraries/trunk/src/openmedialib/plugins/glew -I./openlibraries/trunk/src/openmedialib/plugins/ofx -I./openlibraries/trunk/src/openmedialib/plugins/oil -I./openlibraries/trunk/src/openmedialib/plugins/openal -I./openlibraries/trunk/src/openmedialib/plugins/quicktime -I./openlibraries/trunk/src/openmedialib/plugins/sdl -I./openlibraries/trunk/src/openmedialib/plugins/template -I./jahshaka/source/Jahshaka/JahSource/jahsplash -I./jahshaka/source/Jahshaka/JahSource/jahmain/jahplayermain -I./jahshaka/source/Jahshaka/JahDesktop/network -I./jahshaka/source/Jahshaka/JahDesktop/encoder -I./openlibraries/trunk/src/openmedialib/py -I./openlibraries/trunk/src/openobjectlib -I./openlibraries/trunk/src/openobjectlib/plugins -I./openlibraries/trunk/src/openobjectlib/plugins/3ds -I./openlibraries/trunk/src/openobjectlib/plugins/Collada -I./openlibraries/trunk/src/openobjectlib/plugins/Collada/actions -I./openlibraries/trunk/src/openobjectlib/plugins/X3D -I./openlibraries/trunk/src/openobjectlib/plugins/X3D/actions -I./openlibraries/trunk/src/openobjectlib/plugins/wavefront -I./openlibraries/trunk/src/openobjectlib/sg -I./openlibraries/trunk/src/openpluginlib -I./openlibraries/trunk/src/openpluginlib/pl -I./openlibraries/trunk/src/openpluginlib/py/pcos -I./openlibraries/trunk/src/umbrella_framework -I./jahshaka/Pixmaps/interface -I./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate -I/usr/include/qt3 -I/usr/include/freetype2 -I/usr/include/libxml2/libxml -I/usr/include/libxml2 -I/usr/include/OpenEXR -I/usr/include/lpkit -I/usr/include/GL -I/usr/include/python2.4 -I/usr/include/mlt/ -I/usr/include/mlt++/ -I/usr/include/ffmpeg   --verbose -D_REENTRANT -DJAHPREFIX=\"./openlibraries/install\" -D_THREAD_SAFE=true -DHAVE_GL_GLEW_H -DHAVE_GL_GLUT_H -DNEWOPENOBJECTLIB -DJAHTHEMES -DJAHGIFT -DNVIDIA_GPU -DOPENIMAGELIB_PLUGINS=\".openlibraries/trunk/src/openimagelib/\" -DOPENMEDIALIB_PLUGINS=\".openlibraries/trunk/src/openmedialib/\" -DOPENEFFECTSLIB_PLUGINS=\".openlibraries/trunk/src/openeffectslib/\" -DOPENOBJECTLIB_PLUGINS=\".openlibraries/trunk/src/openobjectlib/\" -DJAHSCRIPT -DJAHLINUX -DQT_THREAD_SUPPORT -DQT_SHARED -DQT_TABLET_SUPPORT -I/usr/share/qt3/mkspecs/default -I/usr/X11R6/include								 -g -O2 -MT ofx_plugin.o -MD -MP -MF ".deps/ofx_plugin.Tpo" -c -o ofx_plugin.o `test -f './openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp' || echo './'`./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp; \
+	then mv -f ".deps/ofx_plugin.Tpo" ".deps/ofx_plugin.Po"; else rm -f ".deps/ofx_plugin.Tpo"; exit 1; fi
+Using built-in specs.
+Target: i486-linux-gnu
+Configured with: ../src/configure -v --enable-languages=c,c++,fortran,objc,obj-c++,treelang --prefix=/usr --enable-shared --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --enable-nls --with-gxx-include-dir=/usr/include/c++/4.2 --program-suffix=-4.2 --enable-clocale=gnu --enable-libstdcxx-debug --enable-mpfr --disable-libmudflap --enable-targets=all --enable-checking=release --build=i486-linux-gnu --host=i486-linux-gnu --target=i486-linux-gnu
+Thread model: posix
+gcc version 4.2.3 20080114 (prerelease) (Debian 4.2.2-7)
+ /usr/lib/gcc/i486-linux-gnu/4.2.3/cc1plus -quiet -v -I. -I. -I. -I./jahshaka/source/AuxiliaryLibraries -I./jahshaka/source/AuxiliaryLibraries/FTGL/ -I./jahshaka/source/AuxiliaryLibraries/apollon -I./jahshaka/source/AuxiliaryLibraries/gift/ -I./jahshaka/source/AuxiliaryLibraries/glew -I./jahshaka/source/AuxiliaryLibraries/particle -I./jahshaka/source/AuxiliaryLibraries/sndfile -I./jahshaka/source/Jahshaka -I./jahshaka/source/Jahshaka/JahCore/jahobjects -I./jahshaka/source/Jahshaka/JahCore/jahrender -I./jahshaka/source/AuxiliaryLibraries/blur/ -I./jahshaka/source/Jahshaka/JahCore/jahworld -I./jahshaka/source/Jahshaka/JahDesktop/desktop -I./jahshaka/source/Jahshaka/JahDesktop/library -I./jahshaka/source/Jahshaka/JahDesktop/player -I./jahshaka/source/Jahshaka/JahLibraries -I./jahshaka/source/Jahshaka/JahLibraries/ -I./jahshaka/source/Jahshaka/JahLibraries/jahdatabase -I./jahshaka/source/Jahshaka/JahLibraries/jahdatabase/ -I./jahshaka/source/Jahshaka/JahLibraries/jahdataio -I./jahshaka/source/Jahshaka/JahLibraries/jahdataio -I./jahshaka/source/Jahshaka/JahLibraries/jahfontmanager -I./jahshaka/source/Jahshaka/JahLibraries/jahformatter -I./jahshaka/source/Jahshaka/JahLibraries/jahformatter -I./jahshaka/source/Jahshaka/JahLibraries/jahglcore -I./jahshaka/source/Jahshaka/JahLibraries/jahglcore -I./jahshaka/source/Jahshaka/JahLibraries/jahkeyframes -I./jahshaka/source/Jahshaka/JahLibraries/jahkeyframes -I./jahshaka/source/Jahshaka/JahLibraries/jahplayer -I./jahshaka/source/Jahshaka/JahLibraries/jahplayer/audioplayer -I./jahshaka/source/Jahshaka/JahLibraries/jahplayer/diskplayer -I./jahshaka/source/Jahshaka/JahLibraries/jahplugins -I./jahshaka/source/Jahshaka/JahLibraries/jahplugins -I./jahshaka/source/Jahshaka/JahLibraries/jahpreferences -I./jahshaka/source/Jahshaka/JahLibraries/jahpreferences -I./jahshaka/source/Jahshaka/JahLibraries/jahpreferences -I./jahshaka/source/Jahshaka/JahLibraries/jahthemes -I./jahshaka/source/Jahshaka/JahLibraries/jahthemes/superggraphics -I./jahshaka/source/Jahshaka/JahLibraries/jahtimer -I./jahshaka/source/Jahshaka/JahLibraries/jahtracer -I./jahshaka/source/Jahshaka/JahLibraries/jahtracer -I./jahshaka/source/Jahshaka/JahLibraries/jahtranslate -I./jahshaka/source/Jahshaka/JahLibraries/jahxml -I./jahshaka/source/Jahshaka/JahLibraries/jahxml -I./jahshaka/source/Jahshaka/JahLibraries/shaders -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/create_turbulence_texture_gpu -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/earthquake_gpu -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/explosion_gpu -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/fire3D_gpu -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/fisheye_gpgpu -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/fisheye_gpu -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/jahshaka_basic -I./jahshaka/source/Jahshaka/JahLibraries/shaders/source/swirl_gpgpu -I./jahshaka/source/Jahshaka/JahModules/animation -I./jahshaka/source/Jahshaka/JahModules/colorize -I./jahshaka/source/Jahshaka/JahModules/editing -I./jahshaka/source/Jahshaka/JahModules/editing_mlt -I./jahshaka/source/Jahshaka/JahModules/effect -I./jahshaka/source/Jahshaka/JahModules/keyer -I./jahshaka/source/Jahshaka/JahModules/painter -I./jahshaka/source/Jahshaka/JahModules/text -I./jahshaka/source/Jahshaka/JahModules/tracker -I./jahshaka/source/Jahshaka/JahSource/jahcreate -I./jahshaka/source/Jahshaka/JahSource/jahmain -I./jahshaka/source/Jahshaka/JahWidgets/advancedtimeline -I./jahshaka/source/Jahshaka/JahWidgets/colordropper -I./jahshaka/source/Jahshaka/JahWidgets/colortri -I./jahshaka/source/Jahshaka/JahWidgets/interfaceobjs -I./jahshaka/source/Jahshaka/JahWidgets/jahcalc -I./jahshaka/source/Jahshaka/JahWidgets/jahfileloader -I./jahshaka/source/Jahshaka/JahWidgets/keyframes -I./jahshaka/source/Jahshaka/JahWidgets/mediatable -I./jahshaka/source/Jahshaka/JahWidgets/multitrack -I./jahshaka/source/Jahshaka/JahWidgets/nodes -I./jahshaka/source/Jahshaka/JahWidgets/slider -I./jahshaka/source/Jahshaka/JahWidgets/timeline -I./jahshaka/source/Jahshaka/JahWidgets/waveform -I./jahshaka/source/Jahshaka/JahWidgets/wireup -I./jahshaka/source/OpenLibraries -I./jahshaka/source/OpenLibraries/openassetlib -I./jahshaka/source/OpenLibraries/openassetlib -I./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib -I./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/common -I./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/common/include -I./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3 -I./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src -I./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/src -I./jahshaka/source/OpenLibraries/opencore -I./jahshaka/source/OpenLibraries/opengpulib -I./jahshaka/source/OpenLibraries/openimagelib -I./jahshaka/source/OpenLibraries/openmedialib -I./jahshaka/source/OpenLibraries/openmedialib -I./jahshaka/source/OpenLibraries/openmedialib/codecs -I./jahshaka/source/OpenLibraries/openmedialib/codecs/aviutils -I./jahshaka/source/OpenLibraries/openmedialib/codecs/mpegdec -I./jahshaka/source/OpenLibraries/openmedialib/codecs/mpegenc -I./jahshaka/source/OpenLibraries/openmedialib/formats -I./jahshaka/source/OpenLibraries/openmedialib/mediaobject -I./jahshaka/source/OpenLibraries/opennetworklib -I./jahshaka/source/OpenLibraries/openobjectlib -I./jahshaka/source/OpenLibraries/openobjectlib/plugins -I./jahshaka/source/OpenLibraries/openobjectlib/plugins/3ds -I./jahshaka/source/OpenLibraries/openobjectlib/plugins/dxf -I./jahshaka/source/OpenLibraries/openobjectlib/plugins/obj -I./jahshaka/source/OpenLibraries/openobjectlib/plugins/stl -I./openlibraries/install/include -I./openlibraries/trunk/ -I./openlibraries/trunk/src -I./openlibraries/trunk/src/openassetlib -I./openlibraries/trunk/src/openassetlib -I./openlibraries/trunk/src/openassetlib/al -I./openlibraries/trunk/src/openassetlib/plugins -I./openlibraries/trunk/src/openassetlib/plugins/sqlite -I./openlibraries/trunk/src/openassetlib/py -I./openlibraries/trunk/src/openeffectslib -I./openlibraries/trunk/src/openeffectslib/plugins -I./openlibraries/trunk/src/openeffectslib/plugins/tonemap -I./openlibraries/trunk/src/openimagelib -I./openlibraries/trunk/src/openimagelib/il -I./openlibraries/trunk/src/openimagelib/plugins -I./openlibraries/trunk/src/openimagelib/plugins/3D_lightmap -I./openlibraries/trunk/src/openimagelib/plugins/bmp -I./openlibraries/trunk/src/openimagelib/plugins/dds -I./openlibraries/trunk/src/openimagelib/plugins/dpx -I./openlibraries/trunk/src/openimagelib/plugins/exr -I./openlibraries/trunk/src/openimagelib/plugins/gdi+ -I./openlibraries/trunk/src/openimagelib/plugins/hdr -I./openlibraries/trunk/src/openimagelib/plugins/jpg -I./openlibraries/trunk/src/openimagelib/plugins/png -I./openlibraries/trunk/src/openimagelib/plugins/psd -I./openlibraries/trunk/src/openimagelib/plugins/quicktime -I./openlibraries/trunk/src/openimagelib/plugins/sgi -I./openlibraries/trunk/src/openimagelib/plugins/tga -I./openlibraries/trunk/src/openimagelib/plugins/tiff -I./openlibraries/trunk/src/openimagelib/py -I./openlibraries/trunk/src/openmedialib -I./openlibraries/trunk/src/openmedialib/ml -I./openlibraries/trunk/src/openmedialib/plugins -I./openlibraries/trunk/src/openmedialib/plugins/avformat -I./openlibraries/trunk/src/openmedialib/plugins/directshow -I./openlibraries/trunk/src/openmedialib/plugins/gensys -I./openlibraries/trunk/src/openmedialib/plugins/glew -I./openlibraries/trunk/src/openmedialib/plugins/ofx -I./openlibraries/trunk/src/openmedialib/plugins/oil -I./openlibraries/trunk/src/openmedialib/plugins/openal -I./openlibraries/trunk/src/openmedialib/plugins/quicktime -I./openlibraries/trunk/src/openmedialib/plugins/sdl -I./openlibraries/trunk/src/openmedialib/plugins/template -I./jahshaka/source/Jahshaka/JahSource/jahsplash -I./jahshaka/source/Jahshaka/JahSource/jahmain/jahplayermain -I./jahshaka/source/Jahshaka/JahDesktop/network -I./jahshaka/source/Jahshaka/JahDesktop/encoder -I./openlibraries/trunk/src/openmedialib/py -I./openlibraries/trunk/src/openobjectlib -I./openlibraries/trunk/src/openobjectlib/plugins -I./openlibraries/trunk/src/openobjectlib/plugins/3ds -I./openlibraries/trunk/src/openobjectlib/plugins/Collada -I./openlibraries/trunk/src/openobjectlib/plugins/Collada/actions -I./openlibraries/trunk/src/openobjectlib/plugins/X3D -I./openlibraries/trunk/src/openobjectlib/plugins/X3D/actions -I./openlibraries/trunk/src/openobjectlib/plugins/wavefront -I./openlibraries/trunk/src/openobjectlib/sg -I./openlibraries/trunk/src/openpluginlib -I./openlibraries/trunk/src/openpluginlib/pl -I./openlibraries/trunk/src/openpluginlib/py/pcos -I./openlibraries/trunk/src/umbrella_framework -I./jahshaka/Pixmaps/interface -I./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate -I/usr/include/qt3 -I/usr/include/freetype2 -I/usr/include/libxml2/libxml -I/usr/include/libxml2 -I/usr/include/OpenEXR -I/usr/include/lpkit -I/usr/include/GL -I/usr/include/python2.4 -I/usr/include/mlt/ -I/usr/include/mlt++/ -I/usr/include/ffmpeg -I/usr/share/qt3/mkspecs/default -I/usr/X11R6/include -MD ofx_plugin.d -MF .deps/ofx_plugin.Tpo -MP -MT ofx_plugin.o -MQ ofx_plugin.o -D_GNU_SOURCE -DHAVE_CONFIG_H -D_REENTRANT -DJAHPREFIX="./openlibraries/install" -D_THREAD_SAFE=true -DHAVE_GL_GLEW_H -DHAVE_GL_GLUT_H -DNEWOPENOBJECTLIB -DJAHTHEMES -DJAHGIFT -DNVIDIA_GPU -DOPENIMAGELIB_PLUGINS=".openlibraries/trunk/src/openimagelib/" -DOPENMEDIALIB_PLUGINS=".openlibraries/trunk/src/openmedialib/" -DOPENEFFECTSLIB_PLUGINS=".openlibraries/trunk/src/openeffectslib/" -DOPENOBJECTLIB_PLUGINS=".openlibraries/trunk/src/openobjectlib/" -DJAHSCRIPT -DJAHLINUX -DQT_THREAD_SUPPORT -DQT_SHARED -DQT_TABLET_SUPPORT ./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp -quiet -dumpbase ofx_plugin.cpp -mtune=generic -auxbase-strip ofx_plugin.o -g -O2 -version -o /tmp/cczu4MqF.s
+ignoring nonexistent directory "/usr/local/include/i486-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/i486-linux-gnu/4.2.3/../../../../i486-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/i486-linux-gnu"
+ignoring duplicate directory "."
+ignoring duplicate directory "."
+ignoring nonexistent directory "./jahshaka/source/AuxiliaryLibraries/sndfile"
+ignoring duplicate directory "./jahshaka/source/Jahshaka/JahLibraries/"
+ignoring duplicate directory "./jahshaka/source/Jahshaka/JahLibraries/jahdatabase/"
+ignoring duplicate directory "./jahshaka/source/Jahshaka/JahLibraries/jahdataio"
+ignoring duplicate directory "./jahshaka/source/Jahshaka/JahLibraries/jahformatter"
+ignoring duplicate directory "./jahshaka/source/Jahshaka/JahLibraries/jahglcore"
+ignoring duplicate directory "./jahshaka/source/Jahshaka/JahLibraries/jahkeyframes"
+ignoring duplicate directory "./jahshaka/source/Jahshaka/JahLibraries/jahplugins"
+ignoring duplicate directory "./jahshaka/source/Jahshaka/JahLibraries/jahpreferences"
+ignoring duplicate directory "./jahshaka/source/Jahshaka/JahLibraries/jahpreferences"
+ignoring duplicate directory "./jahshaka/source/Jahshaka/JahLibraries/jahtracer"
+ignoring duplicate directory "./jahshaka/source/Jahshaka/JahLibraries/jahxml"
+ignoring duplicate directory "./jahshaka/source/OpenLibraries/openassetlib"
+ignoring duplicate directory "./jahshaka/source/OpenLibraries/openmedialib"
+ignoring duplicate directory "./openlibraries/trunk/src/openassetlib"
+#include "..." search starts here:
+#include <...> search starts here:
+ .
+ ./jahshaka/source/AuxiliaryLibraries
+ ./jahshaka/source/AuxiliaryLibraries/FTGL/
+ ./jahshaka/source/AuxiliaryLibraries/apollon
+ ./jahshaka/source/AuxiliaryLibraries/gift/
+ ./jahshaka/source/AuxiliaryLibraries/glew
+ ./jahshaka/source/AuxiliaryLibraries/particle
+ ./jahshaka/source/Jahshaka
+ ./jahshaka/source/Jahshaka/JahCore/jahobjects
+ ./jahshaka/source/Jahshaka/JahCore/jahrender
+ ./jahshaka/source/AuxiliaryLibraries/blur/
+ ./jahshaka/source/Jahshaka/JahCore/jahworld
+ ./jahshaka/source/Jahshaka/JahDesktop/desktop
+ ./jahshaka/source/Jahshaka/JahDesktop/library
+ ./jahshaka/source/Jahshaka/JahDesktop/player
+ ./jahshaka/source/Jahshaka/JahLibraries
+ ./jahshaka/source/Jahshaka/JahLibraries/jahdatabase
+ ./jahshaka/source/Jahshaka/JahLibraries/jahdataio
+ ./jahshaka/source/Jahshaka/JahLibraries/jahfontmanager
+ ./jahshaka/source/Jahshaka/JahLibraries/jahformatter
+ ./jahshaka/source/Jahshaka/JahLibraries/jahglcore
+ ./jahshaka/source/Jahshaka/JahLibraries/jahkeyframes
+ ./jahshaka/source/Jahshaka/JahLibraries/jahplayer
+ ./jahshaka/source/Jahshaka/JahLibraries/jahplayer/audioplayer
+ ./jahshaka/source/Jahshaka/JahLibraries/jahplayer/diskplayer
+ ./jahshaka/source/Jahshaka/JahLibraries/jahplugins
+ ./jahshaka/source/Jahshaka/JahLibraries/jahpreferences
+ ./jahshaka/source/Jahshaka/JahLibraries/jahthemes
+ ./jahshaka/source/Jahshaka/JahLibraries/jahthemes/superggraphics
+ ./jahshaka/source/Jahshaka/JahLibraries/jahtimer
+ ./jahshaka/source/Jahshaka/JahLibraries/jahtracer
+ ./jahshaka/source/Jahshaka/JahLibraries/jahtranslate
+ ./jahshaka/source/Jahshaka/JahLibraries/jahxml
+ ./jahshaka/source/Jahshaka/JahLibraries/shaders
+ ./jahshaka/source/Jahshaka/JahLibraries/shaders/source
+ ./jahshaka/source/Jahshaka/JahLibraries/shaders/source/create_turbulence_texture_gpu
+ ./jahshaka/source/Jahshaka/JahLibraries/shaders/source/earthquake_gpu
+ ./jahshaka/source/Jahshaka/JahLibraries/shaders/source/explosion_gpu
+ ./jahshaka/source/Jahshaka/JahLibraries/shaders/source/fire3D_gpu
+ ./jahshaka/source/Jahshaka/JahLibraries/shaders/source/fisheye_gpgpu
+ ./jahshaka/source/Jahshaka/JahLibraries/shaders/source/fisheye_gpu
+ ./jahshaka/source/Jahshaka/JahLibraries/shaders/source/jahshaka_basic
+ ./jahshaka/source/Jahshaka/JahLibraries/shaders/source/swirl_gpgpu
+ ./jahshaka/source/Jahshaka/JahModules/animation
+ ./jahshaka/source/Jahshaka/JahModules/colorize
+ ./jahshaka/source/Jahshaka/JahModules/editing
+ ./jahshaka/source/Jahshaka/JahModules/editing_mlt
+ ./jahshaka/source/Jahshaka/JahModules/effect
+ ./jahshaka/source/Jahshaka/JahModules/keyer
+ ./jahshaka/source/Jahshaka/JahModules/painter
+ ./jahshaka/source/Jahshaka/JahModules/text
+ ./jahshaka/source/Jahshaka/JahModules/tracker
+ ./jahshaka/source/Jahshaka/JahSource/jahcreate
+ ./jahshaka/source/Jahshaka/JahSource/jahmain
+ ./jahshaka/source/Jahshaka/JahWidgets/advancedtimeline
+ ./jahshaka/source/Jahshaka/JahWidgets/colordropper
+ ./jahshaka/source/Jahshaka/JahWidgets/colortri
+ ./jahshaka/source/Jahshaka/JahWidgets/interfaceobjs
+ ./jahshaka/source/Jahshaka/JahWidgets/jahcalc
+ ./jahshaka/source/Jahshaka/JahWidgets/jahfileloader
+ ./jahshaka/source/Jahshaka/JahWidgets/keyframes
+ ./jahshaka/source/Jahshaka/JahWidgets/mediatable
+ ./jahshaka/source/Jahshaka/JahWidgets/multitrack
+ ./jahshaka/source/Jahshaka/JahWidgets/nodes
+ ./jahshaka/source/Jahshaka/JahWidgets/slider
+ ./jahshaka/source/Jahshaka/JahWidgets/timeline
+ ./jahshaka/source/Jahshaka/JahWidgets/waveform
+ ./jahshaka/source/Jahshaka/JahWidgets/wireup
+ ./jahshaka/source/OpenLibraries
+ ./jahshaka/source/OpenLibraries/openassetlib
+ ./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib
+ ./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/common
+ ./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/common/include
+ ./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3
+ ./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/sqlite3/src
+ ./jahshaka/source/OpenLibraries/openassetlib/v2_openassetlib/src
+ ./jahshaka/source/OpenLibraries/opencore
+ ./jahshaka/source/OpenLibraries/opengpulib
+ ./jahshaka/source/OpenLibraries/openimagelib
+ ./jahshaka/source/OpenLibraries/openmedialib
+ ./jahshaka/source/OpenLibraries/openmedialib/codecs
+ ./jahshaka/source/OpenLibraries/openmedialib/codecs/aviutils
+ ./jahshaka/source/OpenLibraries/openmedialib/codecs/mpegdec
+ ./jahshaka/source/OpenLibraries/openmedialib/codecs/mpegenc
+ ./jahshaka/source/OpenLibraries/openmedialib/formats
+ ./jahshaka/source/OpenLibraries/openmedialib/mediaobject
+ ./jahshaka/source/OpenLibraries/opennetworklib
+ ./jahshaka/source/OpenLibraries/openobjectlib
+ ./jahshaka/source/OpenLibraries/openobjectlib/plugins
+ ./jahshaka/source/OpenLibraries/openobjectlib/plugins/3ds
+ ./jahshaka/source/OpenLibraries/openobjectlib/plugins/dxf
+ ./jahshaka/source/OpenLibraries/openobjectlib/plugins/obj
+ ./jahshaka/source/OpenLibraries/openobjectlib/plugins/stl
+ ./openlibraries/install/include
+ ./openlibraries/trunk/
+ ./openlibraries/trunk/src
+ ./openlibraries/trunk/src/openassetlib
+ ./openlibraries/trunk/src/openassetlib/al
+ ./openlibraries/trunk/src/openassetlib/plugins
+ ./openlibraries/trunk/src/openassetlib/plugins/sqlite
+ ./openlibraries/trunk/src/openassetlib/py
+ ./openlibraries/trunk/src/openeffectslib
+ ./openlibraries/trunk/src/openeffectslib/plugins
+ ./openlibraries/trunk/src/openeffectslib/plugins/tonemap
+ ./openlibraries/trunk/src/openimagelib
+ ./openlibraries/trunk/src/openimagelib/il
+ ./openlibraries/trunk/src/openimagelib/plugins
+ ./openlibraries/trunk/src/openimagelib/plugins/3D_lightmap
+ ./openlibraries/trunk/src/openimagelib/plugins/bmp
+ ./openlibraries/trunk/src/openimagelib/plugins/dds
+ ./openlibraries/trunk/src/openimagelib/plugins/dpx
+ ./openlibraries/trunk/src/openimagelib/plugins/exr
+ ./openlibraries/trunk/src/openimagelib/plugins/gdi+
+ ./openlibraries/trunk/src/openimagelib/plugins/hdr
+ ./openlibraries/trunk/src/openimagelib/plugins/jpg
+ ./openlibraries/trunk/src/openimagelib/plugins/png
+ ./openlibraries/trunk/src/openimagelib/plugins/psd
+ ./openlibraries/trunk/src/openimagelib/plugins/quicktime
+ ./openlibraries/trunk/src/openimagelib/plugins/sgi
+ ./openlibraries/trunk/src/openimagelib/plugins/tga
+ ./openlibraries/trunk/src/openimagelib/plugins/tiff
+ ./openlibraries/trunk/src/openimagelib/py
+ ./openlibraries/trunk/src/openmedialib
+ ./openlibraries/trunk/src/openmedialib/ml
+ ./openlibraries/trunk/src/openmedialib/plugins
+ ./openlibraries/trunk/src/openmedialib/plugins/avformat
+ ./openlibraries/trunk/src/openmedialib/plugins/directshow
+ ./openlibraries/trunk/src/openmedialib/plugins/gensys
+ ./openlibraries/trunk/src/openmedialib/plugins/glew
+ ./openlibraries/trunk/src/openmedialib/plugins/ofx
+ ./openlibraries/trunk/src/openmedialib/plugins/oil
+ ./openlibraries/trunk/src/openmedialib/plugins/openal
+ ./openlibraries/trunk/src/openmedialib/plugins/quicktime
+ ./openlibraries/trunk/src/openmedialib/plugins/sdl
+ ./openlibraries/trunk/src/openmedialib/plugins/template
+ ./jahshaka/source/Jahshaka/JahSource/jahsplash
+ ./jahshaka/source/Jahshaka/JahSource/jahmain/jahplayermain
+ ./jahshaka/source/Jahshaka/JahDesktop/network
+ ./jahshaka/source/Jahshaka/JahDesktop/encoder
+ ./openlibraries/trunk/src/openmedialib/py
+ ./openlibraries/trunk/src/openobjectlib
+ ./openlibraries/trunk/src/openobjectlib/plugins
+ ./openlibraries/trunk/src/openobjectlib/plugins/3ds
+ ./openlibraries/trunk/src/openobjectlib/plugins/Collada
+ ./openlibraries/trunk/src/openobjectlib/plugins/Collada/actions
+ ./openlibraries/trunk/src/openobjectlib/plugins/X3D
+ ./openlibraries/trunk/src/openobjectlib/plugins/X3D/actions
+ ./openlibraries/trunk/src/openobjectlib/plugins/wavefront
+ ./openlibraries/trunk/src/openobjectlib/sg
+ ./openlibraries/trunk/src/openpluginlib
+ ./openlibraries/trunk/src/openpluginlib/pl
+ ./openlibraries/trunk/src/openpluginlib/py/pcos
+ ./openlibraries/trunk/src/umbrella_framework
+ ./jahshaka/Pixmaps/interface
+ ./jahshaka/source/Jahshaka/JahSource/jahcreate/jahplayercreate
+ /usr/include/qt3
+ /usr/include/freetype2
+ /usr/include/libxml2/libxml
+ /usr/include/libxml2
+ /usr/include/OpenEXR
+ /usr/include/lpkit
+ /usr/include/GL
+ /usr/include/python2.4
+ /usr/include/mlt/
+ /usr/include/mlt++/
+ /usr/include/ffmpeg
+ /usr/share/qt3/mkspecs/default
+ /usr/X11R6/include
+ /usr/include/c++/4.2
+ /usr/include/c++/4.2/i486-linux-gnu
+ /usr/include/c++/4.2/backward
+ /usr/local/include
+ /usr/lib/gcc/i486-linux-gnu/4.2.3/include
+ /usr/include
+End of search list.
+GNU C++ version 4.2.3 20080114 (prerelease) (Debian 4.2.2-7) (i486-linux-gnu)
+	compiled by GNU C version 4.2.3 20080114 (prerelease) (Debian 4.2.2-7).
+GGC heuristics: --param ggc-min-expand=99 --param ggc-min-heapsize=129540
+Compiler executable checksum: f406bbb58e12163da4726a4b8abbe4e4
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:20:21: error: ofxCore.h: Datei oder Verzeichnis nicht gefunden
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:21:28: error: ofxImageEffect.h: Datei oder Verzeichnis nicht gefunden
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:22:25: error: ofxInteract.h: Datei oder Verzeichnis nicht gefunden
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:23:22: error: ofxParam.h: Datei oder Verzeichnis nicht gefunden
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:24:25: error: ofxProperty.h: Datei oder Verzeichnis nicht gefunden
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:25:24: error: ofxMessage.h: Datei oder Verzeichnis nicht gefunden
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:26:28: error: ofxMultiThread.h: Datei oder Verzeichnis nicht gefunden
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:44: error: variable or field 'set_property_suite' declared void
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:44: error: 'OfxPropertySuiteV1' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:44: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:45: error: variable or field 'set_image_effect_suite' declared void
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:45: error: 'OfxImageEffectSuiteV1' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:45: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:46: error: variable or field 'set_parameter_suite' declared void
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:46: error: 'OfxParameterSuiteV1' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:46: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:47: error: variable or field 'set_memory_suite' declared void
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:47: error: 'OfxMemorySuiteV1' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:47: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:48: error: variable or field 'set_multithread_suite' declared void
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:48: error: 'OfxMultiThreadSuiteV1' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:48: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:49: error: variable or field 'set_interact_suite' declared void
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:49: error: 'OfxInteractSuiteV1' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:49: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:50: error: variable or field 'set_message_suite' declared void
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:50: error: 'OfxMessageSuiteV1' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:50: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::param_descriptor::param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:70: error: 'kOfxPropType' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:71: error: 'kOfxPropName' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:72: error: 'kOfxPropLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:73: error: 'kOfxPropShortLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:74: error: 'kOfxPropLongLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:75: error: 'kOfxParamPropType' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:76: error: 'kOfxParamPropSecret' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:77: error: 'kOfxParamPropCanUndo' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:78: error: 'kOfxParamPropHint' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:79: error: 'kOfxParamPropScriptName' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:80: error: 'kOfxParamPropParent' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:81: error: 'kOfxParamPropEnabled' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:82: error: 'kOfxParamPropDataPtr' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::param_descriptor::set_param_descriptor_properties()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:93: error: 'kOfxTypeParameter' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::value_param_descriptor::value_param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:128: error: 'kOfxParamPropAnimates' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:129: error: 'kOfxParamPropIsAnimating' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:130: error: 'kOfxParamPropIsAutoKeying' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:131: error: 'kOfxParamPropPersistant' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:132: error: 'kOfxParamPropEvaluateOnChange' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:133: error: 'kOfxParamPropPluginMayWrite' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:134: error: 'kOfxParamPropCacheInvalidation' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::value_param_descriptor::set_value_param_descriptor_properties()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:150: error: 'kOfxParamInvalidateValueChange' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::string_param_descriptor::string_param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:168: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:169: error: 'kOfxParamPropStringMode' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:170: error: 'kOfxParamPropStringFilePathExists' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::string_param_descriptor::set_string_param_descriptor_properties()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:183: error: 'kOfxParamStringIsSingleLine' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::int_param_descriptor::int_param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:197: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:198: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:199: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:200: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:201: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::int2D_param_descriptor::int2D_param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:232: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:233: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:234: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:235: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:236: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:237: error: 'kOfxParamPropDimensionLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::int3D_param_descriptor::int3D_param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:270: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:271: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:272: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:273: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:274: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:275: error: 'kOfxParamPropDimensionLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::base_double_param_descriptor::base_double_param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:308: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:309: error: 'kOfxParamPropIncrement' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:310: error: 'kOfxParamPropDigits' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:311: error: 'kOfxParamPropDoubleType' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::base_double_param_descriptor::set_base_double_param_descriptor_properties()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:324: error: 'kOfxParamDoubleTypePlain' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::double_param_descriptor::double_param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:338: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:339: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:340: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:341: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:342: error: 'kOfxParamPropShowTimeMarker' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::double2D_param_descriptor::double2D_param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:373: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:374: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:375: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:376: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:377: error: 'kOfxParamPropDimensionLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::double3D_param_descriptor::double3D_param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:408: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:409: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:410: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:411: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:412: error: 'kOfxParamPropDimensionLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::rgb_param_descriptor::rgb_param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:443: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::rgba_param_descriptor::rgba_param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:466: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::boolean_param_descriptor::boolean_param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:489: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::choice_param_descriptor::choice_param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:512: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:513: error: 'kOfxParamPropChoiceOption' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::page_param_descriptor::page_param_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:547: error: 'kOfxParamPropType' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:548: error: 'kOfxParamPropPageChild' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::page_param_descriptor::set_page_param_descriptor_properties()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:560: error: 'kOfxParamTypePage' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: At global scope:
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:590: error: 'OfxParamSetHandle' does not name a type
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:610: error: 'OfxStatus' does not name a type
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:621: error: 'OfxParamSetHandle' does not name a type
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::param::param(olib::openmedialib::ml::<unnamed>::param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:637: error: 'kOfxPropType' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:638: error: 'kOfxPropName' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:639: error: 'kOfxPropLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:640: error: 'kOfxPropShortLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:641: error: 'kOfxPropLongLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:642: error: 'kOfxParamPropSecret' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:643: error: 'kOfxParamPropCanUndo' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:644: error: 'kOfxParamPropHint' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:645: error: 'kOfxParamPropScriptName' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:646: error: 'kOfxParamPropParent' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:647: error: 'kOfxParamPropEnabled' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:648: error: 'kOfxParamPropDataPtr' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::param::set_param_properties(olib::openmedialib::ml::<unnamed>::param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:666: error: 'kOfxPropType' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:666: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:666: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:667: error: 'kOfxPropName' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:667: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:667: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:668: error: 'kOfxPropLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:668: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:668: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:669: error: 'kOfxPropShortLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:669: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:669: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:670: error: 'kOfxPropLongLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:670: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:670: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:671: error: 'kOfxParamPropSecret' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:671: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:671: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:672: error: 'kOfxParamPropCanUndo' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:672: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:672: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:673: error: 'kOfxParamPropHint' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:673: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:673: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:674: error: 'kOfxParamPropScriptName' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:674: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:674: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:675: error: 'kOfxParamPropParent' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:675: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:675: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:676: error: 'kOfxParamPropEnabled' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:676: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:676: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:677: error: 'kOfxParamPropDataPtr' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:677: error: expected primary-expression before 'void'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:677: error: expected ',' or ';' before 'void'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::value_param::value_param(olib::openmedialib::ml::<unnamed>::value_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:714: error: 'kOfxParamPropAnimates' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:715: error: 'kOfxParamPropIsAnimating' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:716: error: 'kOfxParamPropIsAutoKeying' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:717: error: 'kOfxParamPropPersistant' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:718: error: 'kOfxParamPropEvaluateOnChange' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:719: error: 'kOfxParamPropPluginMayWrite' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:720: error: 'kOfxParamPropCacheInvalidation' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::value_param::set_value_param_properties(olib::openmedialib::ml::<unnamed>::value_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:736: error: 'kOfxParamPropAnimates' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:736: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:736: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:737: error: 'kOfxParamPropIsAnimating' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:737: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:737: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:738: error: 'kOfxParamPropIsAutoKeying' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:738: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:738: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:739: error: 'kOfxParamPropPersistant' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:739: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:739: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:740: error: 'kOfxParamPropEvaluateOnChange' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:740: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:740: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:741: error: 'kOfxParamPropPluginMayWrite' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:741: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:741: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:742: error: 'kOfxParamPropCacheInvalidation' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:742: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:742: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::string_param::string_param(olib::openmedialib::ml::<unnamed>::string_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:769: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:770: error: 'kOfxParamPropStringMode' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:771: error: 'kOfxParamPropStringFilePathExists' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::string_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:777: error: 'kOfxParamTypeString' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::string_param::set_string_param_properties(olib::openmedialib::ml::<unnamed>::string_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:790: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:790: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:790: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:791: error: 'kOfxParamPropStringMode' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:791: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:791: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:792: error: 'kOfxParamPropStringFilePathExists' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:792: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:792: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::int_param::int_param(olib::openmedialib::ml::<unnamed>::int_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:813: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:814: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:815: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:816: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:817: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::int_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:823: error: 'kOfxParamTypeInteger' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::int_param::set_int_param_properties(olib::openmedialib::ml::<unnamed>::int_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:836: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:836: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:836: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:837: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:837: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:837: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:838: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:838: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:838: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:839: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:839: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:839: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:840: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:840: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:840: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::int2D_param::int2D_param(olib::openmedialib::ml::<unnamed>::int2D_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:865: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:866: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:867: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:868: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:869: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:870: error: 'kOfxParamPropDimensionLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::int2D_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:876: error: 'kOfxParamTypeInteger2D' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::int2D_param::set_int2D_param_properties(olib::openmedialib::ml::<unnamed>::int2D_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:889: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:889: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:889: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:890: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:890: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:890: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:891: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:891: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:891: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:892: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:892: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:892: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:893: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:893: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:893: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:894: error: 'kOfxParamPropDimensionLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:894: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:894: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::int3D_param::int3D_param(olib::openmedialib::ml::<unnamed>::int3D_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:921: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:922: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:923: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:924: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:925: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:926: error: 'kOfxParamPropDimensionLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::int3D_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:932: error: 'kOfxParamTypeInteger3D' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::int3D_param::set_int3D_param_properties(olib::openmedialib::ml::<unnamed>::int3D_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:945: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:945: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:945: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:946: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:946: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:946: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:947: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:947: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:947: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:948: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:948: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:948: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:949: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:949: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:949: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:950: error: 'kOfxParamPropDimensionLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:950: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:950: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::base_double_param::base_double_param(olib::openmedialib::ml::<unnamed>::base_double_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:976: error: 'kOfxParamPropIncrement' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:977: error: 'kOfxParamPropDigits' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:978: error: 'kOfxParamPropDoubleType' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::base_double_param::set_base_double_param_properties(olib::openmedialib::ml::<unnamed>::base_double_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:994: error: 'kOfxParamPropIncrement' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:994: error: expected primary-expression before 'double'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:994: error: expected ',' or ';' before 'double'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:995: error: 'kOfxParamPropDigits' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:995: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:995: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:996: error: 'kOfxParamPropDoubleType' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:996: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:996: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::double_param::double_param(olib::openmedialib::ml::<unnamed>::double_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1015: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1016: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1017: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1018: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1019: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1020: error: 'kOfxParamPropShowTimeMarker' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::double_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1026: error: 'kOfxParamTypeDouble' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::double_param::set_double_param_properties(olib::openmedialib::ml::<unnamed>::double_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1039: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1039: error: expected primary-expression before 'double'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1039: error: expected ',' or ';' before 'double'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1040: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1040: error: expected primary-expression before 'double'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1040: error: expected ',' or ';' before 'double'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1041: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1041: error: expected primary-expression before 'double'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1041: error: expected ',' or ';' before 'double'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1042: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1042: error: expected primary-expression before 'double'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1042: error: expected ',' or ';' before 'double'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1043: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1043: error: expected primary-expression before 'double'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1043: error: expected ',' or ';' before 'double'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1044: error: 'kOfxParamPropShowTimeMarker' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1044: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1044: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::double2D_param::double2D_param(olib::openmedialib::ml::<unnamed>::double2D_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1071: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1072: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1073: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1074: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1075: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1076: error: 'kOfxParamPropDimensionLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::double2D_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1082: error: 'kOfxParamTypeDouble2D' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::double2D_param::set_double2D_param_properties(olib::openmedialib::ml::<unnamed>::double2D_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1095: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1095: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1095: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1096: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1096: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1096: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1097: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1097: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1097: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1098: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1098: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1098: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1099: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1099: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1099: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1100: error: 'kOfxParamPropDimensionLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1100: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1100: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::double3D_param::double3D_param(olib::openmedialib::ml::<unnamed>::double3D_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1127: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1128: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1129: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1130: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1131: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1132: error: 'kOfxParamPropDimensionLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::double3D_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1138: error: 'kOfxParamTypeDouble3D' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::double3D_param::set_double3D_param_properties(olib::openmedialib::ml::<unnamed>::double3D_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1151: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1151: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1151: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1152: error: 'kOfxParamPropMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1152: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1152: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1153: error: 'kOfxParamPropMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1153: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1153: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1154: error: 'kOfxParamPropDisplayMin' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1154: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1154: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1155: error: 'kOfxParamPropDisplayMax' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1155: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1155: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1156: error: 'kOfxParamPropDimensionLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1156: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1156: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::rgb_param::rgb_param(olib::openmedialib::ml::<unnamed>::rgb_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1183: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::rgb_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1189: error: 'kOfxParamTypeRGB' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::rgb_param::set_rgb_param_properties(olib::openmedialib::ml::<unnamed>::rgb_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1201: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1201: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1201: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::rgba_param::rgba_param(olib::openmedialib::ml::<unnamed>::rgba_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1217: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::rgba_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1223: error: 'kOfxParamTypeRGBA' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::rgba_param::set_rgba_param_properties(olib::openmedialib::ml::<unnamed>::rgba_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1235: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1235: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1235: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::boolean_param::boolean_param(olib::openmedialib::ml::<unnamed>::boolean_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1251: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::boolean_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1257: error: 'kOfxParamTypeBoolean' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::boolean_param::set_boolean_param_properties(olib::openmedialib::ml::<unnamed>::boolean_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1270: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1270: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1270: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::choice_param::choice_param(olib::openmedialib::ml::<unnamed>::choice_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1287: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1288: error: 'kOfxParamPropChoiceOption' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::choice_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1294: error: 'kOfxParamTypeChoice' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::choice_param::set_choice_param_properties(olib::openmedialib::ml::<unnamed>::choice_param_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1307: error: 'kOfxParamPropDefault' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1307: error: expected primary-expression before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1307: error: expected ',' or ';' before 'int'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1308: error: 'kOfxParamPropChoiceOption' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1308: error: expected primary-expression before '>' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1308: error: expected primary-expression before ')' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::group_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1330: error: 'kOfxParamTypeGroup' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::page_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1345: error: 'kOfxParamTypePage' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::push_button_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1366: error: 'kOfxParamTypePushButton' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'virtual olib::openpluginlib::string olib::openmedialib::ml::<unnamed>::custom_param::get_type()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1381: error: 'kOfxParamTypeCustom' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: At global scope:
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1407: error: 'OfxParamSetHandle' does not name a type
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::image::image()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1433: error: 'kOfxPropType' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1434: error: 'kOfxImageEffectPropPixelDepth' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1435: error: 'kOfxImageEffectPropComponents' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1436: error: 'kOfxImageEffectPropPreMultiplication' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1437: error: 'kOfxImageEffectPropRenderScale' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1438: error: 'kOfxImagePropPixelAspectRatio' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1439: error: 'kOfxImagePropData' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1440: error: 'kOfxImagePropBounds' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1441: error: 'kOfxImagePropRegionOfDefinition' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1442: error: 'kOfxImagePropRowBytes' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1443: error: 'kOfxImagePropField' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1444: error: 'kOfxImagePropUniqueIdentifier' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::image::set_image_properties()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1475: error: 'kOfxTypeImage' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1476: error: 'kOfxBitDepthNone' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1477: error: 'kOfxImageComponentRGBA' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1478: error: 'kOfxImageUnPreMultiplied' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1485: error: 'kOfxImageFieldNone' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::clip_descriptor::clip_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1509: error: 'kOfxPropType' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1510: error: 'kOfxPropName' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1511: error: 'kOfxPropLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1512: error: 'kOfxPropShortLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1513: error: 'kOfxPropLongLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1514: error: 'kOfxImageEffectPropSupportedComponents' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1515: error: 'kOfxImageEffectPropTemporalClipAccess' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1516: error: 'kOfxImageClipPropOptional' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1517: error: 'kOfxImageClipPropFieldExtraction' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1518: error: 'kOfxImageClipPropIsMask' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1519: error: 'kOfxImageEffectPropSupportsTiles' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::clip_descriptor::set_clip_descriptor_properties()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1530: error: 'kOfxTypeClip' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1538: error: 'kOfxImageFieldDoubled' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::interact_descriptor::interact_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1563: error: 'kOfxInteractPropHasAlpha' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1564: error: 'kOfxInteractPropBitDepth' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: At global scope:
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1642: error: ISO C++ forbids declaration of 'OfxPluginEntryPoint' with no type
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1642: error: expected ';' before '*' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1650: error: expected `;' before 'private'
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::image_effect_descriptor::image_effect_descriptor()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1599: error: 'kOfxPropType' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1600: error: 'kOfxPropLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1601: error: 'kOfxPropShortLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1602: error: 'kOfxPropLongLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1603: error: 'kOfxImageEffectPropSupportedContexts' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1604: error: 'kOfxImageEffectPluginPropGrouping' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1605: error: 'kOfxImageEffectPluginPropSingleInstance' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1606: error: 'kOfxImageEffectPluginRenderThreadSafety' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1607: error: 'kOfxImageEffectPluginPropHostFrameThreading' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1608: error: 'kOfxImageEffectPluginPropOverlayInteractV1' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1609: error: 'kOfxImageEffectPropSupportsMultiResolution' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1610: error: 'kOfxImageEffectPropSupportsTiles' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1611: error: 'kOfxImageEffectPropTemporalClipAccess' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1612: error: 'kOfxImageEffectPropSupportedPixelDepths' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1613: error: 'kOfxImageEffectPluginPropFieldRenderTwiceAlways' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1614: error: 'kOfxImageEffectPropSupportsMultipleClipDepths' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1615: error: 'kOfxImageEffectPropSupportsMultipleClipPARs' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1616: error: 'kOfxImageEffectPropClipPreferencesSlaveParam' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1617: error: 'kOfxPluginPropFilePath' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::image_effect_descriptor::set_image_effect_descriptor_properties()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1654: error: 'kOfxBitDepthNone' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1656: error: 'kOfxTypeImageEffect' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1663: error: 'kOfxImageEffectRenderUnsafe' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::clip_instance::clip_instance(olib::openmedialib::ml::<unnamed>::clip_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1708: error: 'kOfxPropType' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1709: error: 'kOfxPropName' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1710: error: 'kOfxPropLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1711: error: 'kOfxPropShortLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1712: error: 'kOfxPropLongLabel' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1713: error: 'kOfxImageEffectPropSupportedComponents' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1714: error: 'kOfxImageEffectPropTemporalClipAccess' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1715: error: 'kOfxImageClipPropOptional' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1716: error: 'kOfxImageClipPropFieldExtraction' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1717: error: 'kOfxImageClipPropIsMask' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1718: error: 'kOfxImageEffectPropSupportsTiles' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1719: error: 'kOfxImageEffectPropPixelDepth' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1720: error: 'kOfxImageEffectPropComponents' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1721: error: 'kOfxImageClipPropUnmappedPixelDepth' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1722: error: 'kOfxImageClipPropUnmappedComponents' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1723: error: 'kOfxImageEffectPropPreMultiplication' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1724: error: 'kOfxImagePropPixelAspectRatio' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1725: error: 'kOfxImageEffectPropFrameRate' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1726: error: 'kOfxImageEffectPropFrameRange' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1727: error: 'kOfxImageClipPropFieldOrder' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1728: error: 'kOfxImageClipPropConnected' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1729: error: 'kOfxImageEffectPropUnmappedFrameRange' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1730: error: 'kOfxImageEffectPropUnmappedFrameRate' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1731: error: 'kOfxImageClipPropContinuousSamples' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::clip_instance::set_image(olib::openimagelib::il::image_type_ptr)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1742: error: 'kOfxBitDepthByte' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1743: error: 'kOfxBitDepthFloat' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1743: error: 'kOfxBitDepthShort' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::clip_instance::set_clip_instance_properties(olib::openmedialib::ml::<unnamed>::clip_descriptor&)':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1758: error: 'kOfxTypeClip' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1766: error: 'kOfxImageFieldDoubled' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1769: error: 'kOfxBitDepthNone' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1770: error: 'kOfxImageComponentNone' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1772: error: 'kOfxImageComponentRGBA' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1773: error: 'kOfxImageOpaque' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1777: error: 'kOfxImageFieldNone' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: At global scope:
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1858: error: 'OfxParamSetHandle' does not name a type
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::image_effect_instance::image_effect_instance()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1834: error: 'kOfxPropType' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1835: error: 'kOfxImageEffectPropContext' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1836: error: 'kOfxPropInstanceData' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1837: error: 'kOfxImageEffectPropProjectSize' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1838: error: 'kOfxImageEffectPropProjectOffset' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1839: error: 'kOfxImageEffectPropProjectExtent' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1840: error: 'kOfxImageEffectPropProjectPixelAspectRatio' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1841: error: 'kOfxImageEffectInstancePropEffectDuration' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1842: error: 'kOfxImageEffectInstancePropSequentialRender' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1843: error: 'kOfxImageEffectPropFrameRate' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1844: error: 'kOfxPropIsInteractive' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In member function 'void olib::openmedialib::ml::<unnamed>::image_effect_instance::set_image_effect_instance_properties()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1887: error: 'kOfxTypeImageEffectInstance' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1888: error: 'kOfxImageEffectContextFilter' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: In constructor 'olib::openmedialib::ml::<unnamed>::interact_instance::interact_instance()':
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1924: error: 'kOfxPropEffectInstance' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1925: error: 'kOfxPropInstanceData' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1926: error: 'kOfxInteractPropPixelScale' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1927: error: 'kOfxInteractPropBackgroundColour' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1928: error: 'kOfxInteractPropViewportSize' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1929: error: 'kOfxInteractPropHasAlpha' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1930: error: 'kOfxInteractPropBitDepth' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1931: error: 'kOfxInteractPropSlaveToParam' was not declared in this scope
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp: At global scope:
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:1962: error: 'OfxStatus' does not name a type
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:2058: error: expected class-name before '{' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:2060: error: expected `)' before '*' token
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:3389: error: expected `}' at end of input
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:3389: error: expected unqualified-id at end of input
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:3389: error: expected `}' at end of input
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:3389: error: expected `}' at end of input
+./openlibraries/trunk/src/openmedialib/plugins/ofx/ofx_plugin.cpp:3389: error: expected `}' at end of input
+make[1]: *** [ofx_plugin.o] Fehler 1
+make[1]: Leaving directory `/mnt/sda10/mdupont/experiments/video/js/test2/FreeMediaTools'
+make: *** [all] Fehler 2

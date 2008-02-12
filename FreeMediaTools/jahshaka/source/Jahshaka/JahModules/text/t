@@ -1,0 +1,53 @@
+g++ -c -save-temps -I/usr/share/qt3/mkspecs/default -I. -I. -I../../../AuxiliaryLibraries/apollon -I../../../AuxiliaryLibraries/blur -I../../../AuxiliaryLibraries/FTGL -I../../../AuxiliaryLibraries/gift -I../../../AuxiliaryLibraries/glew -I../../../AuxiliaryLibraries/particle -I../../../AuxiliaryLibraries/spaceball -I../../../AuxiliaryLibraries/sqlite -I../../../OpenLibraries/opencore -I../../../OpenLibraries/openassetlib -I../../../OpenLibraries/openobjectlib -I../../../OpenLibraries/openobjectlib/surface3d -I../../../OpenLibraries/openmedialib -I../../../OpenLibraries/openmedialib/mediaobject -I../../../OpenLibraries/opengpulib -I../../../OpenLibraries/openimagelib -I../../../OpenLibraries/opennetworklib -I../../JahCore/jahobjects -I../../JahCore/jahrender -I../../JahCore/jahworld -I../../JahModules/text -I../../JahWidgets/colortri -I../../JahWidgets/interfaceobjs -I../../JahWidgets/calc -I../../JahWidgets/jahfileloader -I../../JahWidgets/keyframes -I../../JahWidgets/nodes -I../../JahWidgets/wireup -I../../JahWidgets/timeline -I../../JahWidgets/mediatable -I../../JahDesktop/desktop -I../../JahModules/animation -I../../JahSource/jahcreate -I../../JahLibraries -I../../JahLibraries/jahdatabase -I../../JahLibraries/jahdataio -I../../JahLibraries/jahformatter -I../../JahLibraries/jahglcore -I../../JahLibraries/jahkeyframes -I../../JahLibraries/jahplayer -I../../JahLibraries/jahplayer/audioplayer -I../../JahLibraries/jahplayer/diskplayer -I../../JahLibraries/jahplayer/ramplayer -I../../JahLibraries/jahplugins -I../../JahLibraries/jahpreferences -I../../JahLibraries/jahthemes -I../../JahLibraries/jahtimer -I../../JahLibraries/jahtracer -I../../JahLibraries/jahtranslate -I/usr/include/freetype2 -I/usr/local/include -I/usr/include -I../../../../../openlibraries/trunk/src -I/usr/include/qt3 -I/usr/X11R6/include -I/usr/X11R6/include -o characterinterface.o characterinterface.cpp
+characterinterface.cpp: In member function 'virtual void GLChar::buildInterface(QHBox*)':
+characterinterface.cpp:53: error: 'AddButton' was not declared in this scope
+characterinterface.cpp:54: error: 'jt' was not declared in this scope
+characterinterface.cpp:58: error: 'NameButton' was not declared in this scope
+characterinterface.cpp:63: error: 'namepopup' was not declared in this scope
+characterinterface.cpp:66: error: 'DelButton' was not declared in this scope
+characterinterface.cpp:71: error: 'MoveupButton' was not declared in this scope
+characterinterface.cpp:76: error: 'MovedownButton' was not declared in this scope
+characterinterface.cpp:95: error: 'm_layer_listview' was not declared in this scope
+characterinterface.cpp:138: error: 'objectControlStack' was not declared in this scope
+characterinterface.cpp:143: error: 'objectControl' was not declared in this scope
+characterinterface.cpp:197: error: 'm_run_script_button' was not declared in this scope
+characterinterface.cpp:237: error: 'forcedplay' was not declared in this scope
+characterinterface.cpp:242: error: 'm_show_lights_checkbox' was not declared in this scope
+characterinterface.cpp:248: error: 'm_use_auto_key_checkbox' was not declared in this scope
+characterinterface.cpp:262: error: 'startFrameControl' was not declared in this scope
+characterinterface.cpp:265: error: 'Astartframe' was not declared in this scope
+characterinterface.cpp:273: error: 'endFrameControl' was not declared in this scope
+characterinterface.cpp:276: error: 'Aendframe' was not declared in this scope
+characterinterface.cpp:286: error: 'm_select_fps_label' was not declared in this scope
+characterinterface.cpp:291: error: 'm_select_fps_pushbutton' was not declared in this scope
+characterinterface.cpp:297: error: 'jahreslabel' was not declared in this scope
+characterinterface.cpp:302: error: 'JahresCombo' was not declared in this scope
+characterinterface.cpp:304: error: 'hasResMenu' was not declared in this scope
+characterinterface.cpp:322: error: 'objectControl' was not declared in this scope
+characterinterface.cpp:434: error: 'm_compositing_mode_select_button' was not declared in this scope
+characterinterface.cpp:439: error: 'm_compositing_mode_label' was not declared in this scope
+characterinterface.cpp:449: error: 'm_pbuffer_select_checkbox' was not declared in this scope
+characterinterface.cpp:487: error: 'm_text_extrude_label' was not declared in this scope
+characterinterface.cpp:492: error: 'm_text_extrude_lcd' was not declared in this scope
+characterinterface.cpp:508: error: 'textEd' was not declared in this scope
+characterinterface.cpp:578: error: 'm_lighting_slider' was not declared in this scope
+characterinterface.cpp:579: error: 'm_lighting_lcd' was not declared in this scope
+characterinterface.cpp:580: error: 'm_lighting_slider_label' was not declared in this scope
+characterinterface.cpp:801: error: 'JahSliders' was not declared in this scope
+characterinterface.cpp:837: error: 'JahModuleOption' was not declared in this scope
+characterinterface.cpp:840: error: 'm_use_lighting_checkbox' was not declared in this scope
+characterinterface.cpp:843: error: 'numUiOptions' was not declared in this scope
+characterinterface.cpp:849: error: 'm_translate_first_checkbox' was not declared in this scope
+characterinterface.cpp:893: error: 'hasButtons' was not declared in this scope
+characterinterface.cpp:917: error: 'm_use_opengl_key_layer_checkbox' was not declared in this scope
+characterinterface.cpp:921: error: 'm_use_fast_shader_key_layer_checkbox' was not declared in this scope
+characterinterface.cpp:948: error: 'm_slip_frames_lcd' was not declared in this scope
+characterinterface.cpp:955: error: 'm_in_frames_lcd' was not declared in this scope
+characterinterface.cpp:960: error: 'm_out_frames_lcd' was not declared in this scope
+characterinterface.cpp:965: error: 'm_key_slip_frames_lcd' was not declared in this scope
+characterinterface.cpp:972: error: 'm_key_in_frames_lcd' was not declared in this scope
+characterinterface.cpp:977: error: 'm_key_out_frames_lcd' was not declared in this scope
+characterinterface.cpp:986: error: 'm_lock_key_and_clip_checkbox' was not declared in this scope
+characterinterface.cpp: In member function 'virtual void GLChar::createMenuItem(QPopupMenu*)':
+characterinterface.cpp:1042: error: 'jt' was not declared in this scope
+make: *** [characterinterface.o] Fehler 1

@@ -1,0 +1,1332 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>AssetManMainWidget</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>AssetManMainWidget</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>832</width>
+            <height>687</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Asset manager</string>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <property name="spacing">
+            <number>0</number>
+        </property>
+        <widget class="QLayoutWidget">
+            <property name="name">
+                <cstring>layout11</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout16</cstring>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>0</number>
+                        </property>
+                        <widget class="QLabel" row="0" column="2">
+                            <property name="name">
+                                <cstring>pixmapLabel1_2</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>5</hsizetype>
+                                    <vsizetype>5</vsizetype>
+                                    <horstretch>1</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>0</width>
+                                    <height>6</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>32767</width>
+                                    <height>6</height>
+                                </size>
+                            </property>
+                            <property name="pixmap">
+                                <pixmap>image0</pixmap>
+                            </property>
+                            <property name="scaledContents">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton" row="0" column="4" rowspan="3" colspan="1">
+                            <property name="name">
+                                <cstring>advancedSearchButton</cstring>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>0</width>
+                                    <height>27</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>32767</width>
+                                    <height>27</height>
+                                </size>
+                            </property>
+                            <property name="paletteForegroundColor">
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                            </property>
+                            <property name="paletteBackgroundColor">
+                                <color>
+                                    <red>51</red>
+                                    <green>102</green>
+                                    <blue>255</blue>
+                                </color>
+                            </property>
+                            <property name="palette">
+                                <palette>
+                                    <active>
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                        <color>
+                                            <red>51</red>
+                                            <green>102</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>178</red>
+                                            <green>197</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>114</red>
+                                            <green>149</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>25</red>
+                                            <green>51</green>
+                                            <blue>127</blue>
+                                        </color>
+                                        <color>
+                                            <red>34</red>
+                                            <green>68</green>
+                                            <blue>170</blue>
+                                        </color>
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>51</red>
+                                            <green>102</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>128</blue>
+                                        </color>
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                    </active>
+                                    <disabled>
+                                        <color>
+                                            <red>128</red>
+                                            <green>128</green>
+                                            <blue>128</blue>
+                                        </color>
+                                        <color>
+                                            <red>51</red>
+                                            <green>102</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>178</red>
+                                            <green>197</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>89</red>
+                                            <green>131</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>25</red>
+                                            <green>51</green>
+                                            <blue>127</blue>
+                                        </color>
+                                        <color>
+                                            <red>34</red>
+                                            <green>68</green>
+                                            <blue>170</blue>
+                                        </color>
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>128</red>
+                                            <green>128</green>
+                                            <blue>128</blue>
+                                        </color>
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>51</red>
+                                            <green>102</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>128</blue>
+                                        </color>
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                    </disabled>
+                                    <inactive>
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                        <color>
+                                            <red>51</red>
+                                            <green>102</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>178</red>
+                                            <green>197</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>89</red>
+                                            <green>131</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>25</red>
+                                            <green>51</green>
+                                            <blue>127</blue>
+                                        </color>
+                                        <color>
+                                            <red>34</red>
+                                            <green>68</green>
+                                            <blue>170</blue>
+                                        </color>
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>51</red>
+                                            <green>102</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>128</blue>
+                                        </color>
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                    </inactive>
+                                </palette>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>7</pointsize>
+                                    <underline>1</underline>
+                                </font>
+                            </property>
+                            <property name="cursor">
+                                <cursor>13</cursor>
+                            </property>
+                            <property name="text">
+                                <string>Advanced</string>
+                            </property>
+                            <property name="flat">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="2" column="2">
+                            <property name="name">
+                                <cstring>pixmapLabel1</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>5</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>1</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>32767</width>
+                                    <height>5</height>
+                                </size>
+                            </property>
+                            <property name="pixmap">
+                                <pixmap>image1</pixmap>
+                            </property>
+                            <property name="scaledContents">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="3" rowspan="3" colspan="1">
+                            <property name="name">
+                                <cstring>pixmapLabel2</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>0</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>0</width>
+                                    <height>27</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>32767</width>
+                                    <height>27</height>
+                                </size>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                            <property name="pixmap">
+                                <pixmap>image2</pixmap>
+                            </property>
+                            <property name="scaledContents">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit" row="1" column="2">
+                            <property name="name">
+                                <cstring>searchLineEdit</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>true</bool>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>7</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>1</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>150</width>
+                                    <height>16</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>200</width>
+                                    <height>16</height>
+                                </size>
+                            </property>
+                            <property name="paletteForegroundColor">
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>0</blue>
+                                </color>
+                            </property>
+                            <property name="paletteBackgroundColor">
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                            </property>
+                            <property name="frameShape">
+                                <enum>NoFrame</enum>
+                            </property>
+                            <property name="frameShadow">
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                            <property name="frame">
+                                <bool>false</bool>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="0" rowspan="3" colspan="1">
+                            <property name="name">
+                                <cstring>textLabel1</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>5</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>60</width>
+                                    <height>27</height>
+                                </size>
+                            </property>
+                            <property name="paletteForegroundColor">
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                            </property>
+                            <property name="paletteBackgroundColor">
+                                <color>
+                                    <red>51</red>
+                                    <green>102</green>
+                                    <blue>255</blue>
+                                </color>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <family>Arial</family>
+                                    <pointsize>10</pointsize>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>Search</string>
+                            </property>
+                            <property name="alignment">
+                                <set>AlignVCenter|AlignRight</set>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="5" rowspan="3" colspan="1">
+                            <property name="name">
+                                <cstring>pixmapLabel2_3</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>0</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>42</width>
+                                    <height>27</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>42</width>
+                                    <height>27</height>
+                                </size>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                            <property name="pixmap">
+                                <pixmap>image3</pixmap>
+                            </property>
+                            <property name="scaledContents">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="1" rowspan="3" colspan="1">
+                            <property name="name">
+                                <cstring>pixmapLabel2_2</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>0</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>32767</width>
+                                    <height>27</height>
+                                </size>
+                            </property>
+                            <property name="pixmap">
+                                <pixmap>image4</pixmap>
+                            </property>
+                            <property name="scaledContents">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+                <widget class="QToolButton">
+                    <property name="name">
+                        <cstring>connectServerButton</cstring>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>32767</width>
+                            <height>27</height>
+                        </size>
+                    </property>
+                    <property name="backgroundMode">
+                        <enum>PaletteBackground</enum>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="iconSet">
+                        <iconset>image5</iconset>
+                    </property>
+                    <property name="autoRaise">
+                        <bool>true</bool>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Connect to new server</string>
+                    </property>
+                </widget>
+                <widget class="QToolButton">
+                    <property name="name">
+                        <cstring>backButton</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="backgroundMode">
+                        <enum>PaletteBackground</enum>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="iconSet">
+                        <iconset>image6</iconset>
+                    </property>
+                    <property name="autoRaise">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QToolButton">
+                    <property name="name">
+                        <cstring>upButton</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>32767</width>
+                            <height>35</height>
+                        </size>
+                    </property>
+                    <property name="backgroundMode">
+                        <enum>PaletteBackground</enum>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="iconSet">
+                        <iconset>image6</iconset>
+                    </property>
+                    <property name="autoRaise">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>viewsButton</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>35</width>
+                            <height>0</height>
+                        </size>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>45</width>
+                            <height>32767</height>
+                        </size>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="pixmap">
+                        <pixmap>image7</pixmap>
+                    </property>
+                    <property name="flat">
+                        <bool>true</bool>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Choose view options</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>mediaViewsButton</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>45</width>
+                            <height>0</height>
+                        </size>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>45</width>
+                            <height>32767</height>
+                        </size>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="pixmap">
+                        <pixmap>image8</pixmap>
+                    </property>
+                    <property name="flat">
+                        <bool>true</bool>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Choose files to show</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox">
+                    <property name="name">
+                        <cstring>driveCombo</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>10</width>
+                            <height>0</height>
+                        </size>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>60</width>
+                            <height>32767</height>
+                        </size>
+                    </property>
+                    <property name="editable">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QComboBox">
+                    <property name="name">
+                        <cstring>pathCombo</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>true</bool>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>1</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>150</width>
+                            <height>0</height>
+                        </size>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>200</width>
+                            <height>32767</height>
+                        </size>
+                    </property>
+                    <property name="editable">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>dummyLabel</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>15</width>
+                            <height>0</height>
+                        </size>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <spacer>
+            <property name="name">
+                <cstring>spacer9</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Fixed</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>8</width>
+                    <height>2</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QSplitter">
+            <property name="name">
+                <cstring>splitter3</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="opaqueResize">
+                <bool>true</bool>
+            </property>
+            <widget class="QSplitter">
+                <property name="name">
+                    <cstring>splitter2</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Horizontal</enum>
+                </property>
+                <property name="opaqueResize">
+                    <bool>true</bool>
+                </property>
+                <widget class="QWidgetStack">
+                    <property name="name">
+                        <cstring>widgetStack1</cstring>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>150</width>
+                            <height>0</height>
+                        </size>
+                    </property>
+                    <widget class="QWidget">
+                        <property name="name">
+                            <cstring>dirlistStackPage</cstring>
+                        </property>
+                        <attribute name="id">
+                            <number>0</number>
+                        </attribute>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="DirectoryView">
+                                <property name="name">
+                                    <cstring>dirlist</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>5</hsizetype>
+                                        <vsizetype>5</vsizetype>
+                                        <horstretch>1</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>100</width>
+                                        <height>100</height>
+                                    </size>
+                                </property>
+                            </widget>
+                        </vbox>
+                    </widget>
+                    <widget class="QWidget">
+                        <property name="name">
+                            <cstring>advancedSearchStackPage</cstring>
+                        </property>
+                        <attribute name="id">
+                            <number>1</number>
+                        </attribute>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="advancedSearchForm" row="0" column="0">
+                                <property name="name">
+                                    <cstring>advancedSearchForm1</cstring>
+                                </property>
+                            </widget>
+                        </grid>
+                    </widget>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout19</cstring>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QtFileIconView" row="1" column="0" rowspan="1" colspan="4">
+                            <property name="name">
+                                <cstring>fileview</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>5</hsizetype>
+                                    <vsizetype>5</vsizetype>
+                                    <horstretch>1</horstretch>
+                                    <verstretch>1</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>100</width>
+                                    <height>100</height>
+                                </size>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+            </widget>
+            <widget class="QTable">
+                <property name="name">
+                    <cstring>assetTable</cstring>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>7</hsizetype>
+                        <vsizetype>7</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                    <size>
+                        <width>32767</width>
+                        <height>350</height>
+                    </size>
+                </property>
+                <property name="numRows">
+                    <number>0</number>
+                </property>
+                <property name="numCols">
+                    <number>1</number>
+                </property>
+                <property name="showGrid">
+                    <bool>false</bool>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QLayoutWidget">
+            <property name="name">
+                <cstring>layout7</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>2</number>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>progressLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="JahProgressBar">
+                    <property name="name">
+                        <cstring>progress</cstring>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>150</width>
+                            <height>0</height>
+                        </size>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>250</width>
+                            <height>32767</height>
+                        </size>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>461</width>
+                            <height>16</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>closeButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Close</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+    </vbox>
+</widget>
+<customwidgets>
+    <customwidget>
+        <class>DirectoryView</class>
+        <header location="local">dirview.h</header>
+        <header location="local">AssetManager.h</header>
+        <header location="local">Asset.h</header>
+       <sizehint>
+            <width>200</width>
+            <height>400</height>
+        </sizehint>
+        <container>0</container>
+        <sizepolicy>
+            <hordata>5</hordata>
+            <verdata>5</verdata>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+        <pixmap>image9</pixmap>
+        <signal>folderSelected(const QString&amp;)</signal>
+        <signal>selectionChanged( QListViewItem*)</signal>
+        <signal>collectionDeleted()</signal>
+        <signal>delayedSelectionChanged( QListViewItem*)</signal>
+    </customwidget>
+    <customwidget>
+        <class>QtFileIconView</class>
+        <header location="local">jahfileiconview.h</header>
+        <sizehint>
+            <width>200</width>
+            <height>400</height>
+        </sizehint>
+        <container>0</container>
+        <sizepolicy>
+            <hordata>5</hordata>
+            <verdata>5</verdata>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+        <pixmap>image9</pixmap>
+        <signal>directoryChanged(const QString&amp;)</signal>
+        <signal>startReadDir(int)</signal>
+        <signal>readNextDir()</signal>
+        <signal>readDirDone()</signal>
+        <signal>enableUp()</signal>
+        <signal>disableUp()</signal>
+        <signal>enableBack()</signal>
+        <signal>disableBack()</signal>
+        <slot access="public" specifier="">setDirectory(const QString&amp;)</slot>
+        <slot access="public" specifier="">viewLarge()</slot>
+        <slot access="public" specifier="">viewImage()</slot>
+        <slot access="public" specifier="">viewSmall()</slot>
+        <slot access="public" specifier="">slot()</slot>
+        <slot access="public" specifier="">readAssets(std::list&lt;olib::openassetlib::Asset*&gt;)</slot>
+        <slot access="public" specifier="">clearAll()</slot>
+    </customwidget>
+    <customwidget>
+        <class>JahProgressBar</class>
+        <header location="local">jahprogressbar.h</header>
+        <sizehint>
+            <width>100</width>
+            <height>15</height>
+        </sizehint>
+        <container>0</container>
+        <sizepolicy>
+            <hordata>5</hordata>
+            <verdata>5</verdata>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+        <pixmap>image9</pixmap>
+    </customwidget>
+    <customwidget>
+        <class>advancedSearchForm</class>
+        <header location="local">advancedsearchform.h</header>
+        <sizehint>
+            <width>-1</width>
+            <height>-1</height>
+        </sizehint>
+        <container>0</container>
+        <sizepolicy>
+            <hordata>5</hordata>
+            <verdata>5</verdata>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+        <pixmap>image9</pixmap>
+        <signal>hitsToShow( std::list&lt;olib::openassetlib::Asset*&gt;)</signal>
+        <slot access="public" specifier="">slot()</slot>
+        <slot access="public" specifier="">listViewSelectionChangedSlot( QListViewItem* )</slot>
+    </customwidget>
+</customwidgets>
+<images>
+    <image name="image0">
+        <data format="XPM.GZ" length="1085">789cb5d24b6fe2301405e03dbfc2821d1ab5252136d1a80b86d237853e411acd22b94e7835859200a5d5fcf7c93d76bc9e4daf575fceb1251b8e9b62321a88e6712d2fa2624e8266d14634f536cb0ebfff9c7ed5ea7e28a4083cd1aaffa8d58f048986ef4b99a6cc144c64a843e6144c2b66ccf689ec182e1d2366047a5299347644fa0afa55dab0b47b090ca434e9c21169022ad936a906c38a3390a467380775c51553064a859ab976c47ddf40a982909839a89434e54f4b15c6cc77b05396b1f760294d5a3862ef1e24e51b6ec04479666fd7d2a65ba6f2d489493f2c5b26dd817e959e31c9a398f038e7a04f9a70851ed8a6d0b06f4994302f2c6df9171854e50928cb93511e5b92496f4055a6e0a523ca4f96441de62d185264ca2f8e283f5ac6a63c02235ecc2b5093d2f88b0e2d3be6a867471c75ed88c7193075abbc13f860294df91ef4ca14bc7344f9e8ffe6fbaa0d9ea89c388a4927e974365f2c978bf96c9a26fa355b66112fbcd11bcfaa9cf56afdbed9e4c576b72f8afdeee3f0d9ed16e5d79c578e1fb9d7eb9df5cffb17e55c5e5ddfdc0eee86a3d1f0fee1f169f8fc329e8c2798fadf9fb57fb4b5ff69</data>
+    </image>
+    <image name="image1">
+        <data format="XPM.GZ" length="391">789c8dd0b10ac2301006e03d4f71a45b90969a34b4888f20380ae2905e7ad5a18bd641c47797bb58a15bfe7ffa08e472a90c9c8e0730957acc61be21e035dcc1c4e734bdce97fd5b69db42031dd47aa3f4080885b5de5364d29fc41c84adb7e934fee8a867f642f26ee898c874b5b7898530f806911984b8b064f614b769509915b936e4549e873995bd869ccaff2c19d7a155f467a7beab7069de</data>
+    </image>
+    <image name="image2">
+        <data format="XPM.GZ" length="4481">789cad96c9721b490e86ef7e0a8671734ca049d61e13739028598bb5dada27e6805c4a0b496b21b576ccbb4f12f8abec3ef46da24e5fa032b1e49f40fef1657071b43ff8f2c7a7c55296b77ee06fe469f0253ccfe7effffecfbffefcf479940fc6d5603cce06e3cffff8f4d95d0ffc80c6ae1cb741f95ed9176d5b2b3f1a9755db2abf821bf013586cbdec2987c2b5e58aa9322e73fb9f2ec005d67f80bbfd5fc0b5b11c809bd6a9fda6678b77ad675bcf60b1f8e5b2e766c57cab1c53be1a1fdb7e6d62dd9f4a708678cfc15dfc3518f1d301b8041f82918f3c836b8b97367a36fb15b841bc873d6bbcb4d9b3c627d31567c3426254ae8dcb11e2df0777f14dc0884f96e0aedeebe01afe9e7bb67a4f7ab6f867e006e7eb7bd6f8f94d79d4f9e75d30fc730eae6c7f9ef66cfad9efd9febf03233e56bd66e394afc51f94b34242a6f1d8fe5999c591fe3fef18f528c0384f9e81bb7a397069f11c2f7bb6fa356081ff07b003ff54ced3fe5a1f99f56cfe76c09dbf2518fe9cd5a32842a8d47e665c1651f3e35770a7b78572590ea3a8bf0a9cb5b9fedff66cfe4fc09d9ea7e002fedf95abceee9ec105ce5b94eb14befa233b9fba1cb61a9f7b0367d0cb3a388f767e0e5c078bcf839b60f165ca4d77befc03dcc5ff02eef415c19dbe02b86eb5bf89f6874c8a10351ed6fb97b9545fd39fe5e7ba7c258071bf58ef5fe68bd816ca765ebe3fcf6d30ee33ed811b9cc705585abbafda2fb350f868f7f90c1c82d6d7593d42390aa6df0538b37cdc129c47f3770a2e9cd7ff9f3a0ee66f1ddcf59b6fca31d54bcfc345708d7cbf2aaffaa1fd7f0ecedba1dab7c09dfe3270e3ac9ed2b1e9971fc1e26d9eccc00efb1daf381fa67a981ec6c69d7ef8bbf228e94be3953b30eeb75bf46cf6029c07f3d7825be8d9d68fcba1b7fa94e0daeae9e6e0b6d57a92d62b4ff7dd6b3eb2007be4aff326cfcb21f43401e7def44ee006f69172ba8f383f0297a62fd90557a61f7e003ba7f98acecbbc4afeecbc8e94d37db37c48e7592e65e12dfe35706be721deb81a435f3aeff334ff1badbfe4e0dad63b9d97b9eff6e361c7960f3d826b3b7fb2ffdb0afd80548fc5b0caa2e941f5588caacc597eda4f8b71d9a0beda1f8ba2c4fd14dd3fb53be8c339e3aab2fbc2da6f8baa4c0d45ff3f35ae4641ef0b69bd8a5039e853e76d39ac726ffe0fc1385fd67a95592abfe949f3a94675037d39e366e42d1ed57b55d531d87dcf8c9b74a594b59f56758d7e423abf2adf0c83cddb5db0f7d62f55fff55072db9ff57d91da6344fdf53d53374db0fc44fb4fed9b60fd84b4bfd7213dc74c4fcacd482af40fd55b9349097de9fba129a4c67cd17a355e1a67f93e740cbd2bcbc815d1e6bdce6b295c033d69bee2ddc8999e341f89beeb176a77e2a3e95f54afce7bcc53d67ee94721437fd479e2c71ef395f43efb2264367f58fbad77a1eb773a2f523171df59e7a18fc1e17da4fa0ac358a19f683f0b6544bf63bdefa14ee3c2f613e314aef9d7fb1b425b62fea9bfe40df348f43ec53c221f8ae08878b5dfc4bacd5ad3bbee179bb69bc7b65edaeebda1e7157dfadffac91918ef0b3e0777f5d1fb19435ba1bf68ff6c87c96e7ae8b8cb47ef4f3b6e2b8b4f747df2d6c5bf0d0e36bfe8ad678b4fe7c52a7bfcaff333edd6bdff55af6d9dfe50bdd011b8c27bf71a8cfdb80077ef0b7defb44d8ac7eed326b8f3aff363953dfc5b3cab7a987e22d88327e0807c37c011ef4fd557b2e27f6a7a36fb0b18ebe9179bfd088c78c4ea1bfb78e760f8a35f6c7a7b0577eb75be24c07a3a0647c477d5b3edb7056ef1be3eed59d71f2ffffefb7fd89958d8b1e7c0915bbee61bbee53b9ef28ce7d6aff99e1ff8919f78c14b7ee6177e5dade5377eb3fec11fbcc6eb3ce10ddee4afbcc5dbbc93ecbbb07fe33ddee7033ee4233ee6efe98f1f7ca2f65dcb97cff89c2ff892af78c8231e73a6f629e7b09f72c125575c73434c44c227e4f88e7c6f3fa540915abaa61bbaa53b9af2943ccd7eb3cfe927ddd3033dd2132d2879a7e7bfac7fa1577aa377faa0355aa7254d688336cd9e6c2ff495b6689b766897bed11eefd03e1dd0e16feb8fe898bed30f3aa1533ae3199dd3051dfc66bfa42b1ad288c694514e05955451fd9bbd11161291d4682524fb6a7d6f97d45e92fd5a6ee456ee642ab314dfe12fff32a72bf929f7f2208ff2240bde91a53c77f1cb5c5ee435ad7e9377f99035593f5eca9236cd2e13d9904df92a5bb22d3bb22bdf644ff6e5590ee4d0ee871ccb77f92127722a67722e177c93763f904bb9b2fe2323194b26b914524a25b534abd58ecdeed2ec48a33c357c175d4b4b774d1bee462e1d13de2beece4dddcccddd4f772f4bf7e01eddd36a77d8176ee99e69a5b8dd55d6eec5bdaed6f7f637f7ceab7a4ce8c07da4ef257d6bb4e9d6f94ef39fe9ba0358933d9dec869bb849d2d77ffff9e97f7e9b2f3f</data>
+    </image>
+    <image name="image3">
+        <data format="PNG" length="526">89504e470d0a1a0a0000000d49484452000000190000001b080600000089212468000001d549444154789c9d954b8ee3300c445f2946afe6367da7b9ff629200ddb16a16fa58b264c708010396258a2c1659d6f75f47c0c003780277e02178c4fc5e1e39ad2d9e65edb227ee127794cf8b87f2b3d09b776b649cbfd73d410422c2027bf0ea6d1fa4068be01ce0230bafe41f8c9726cb72e1fc6235e78c002190b0443cf49b2039cf7cbbdc7965001b49a03896f6df5742726e6a9cd45f80373447ee7f7ed0ac5c50f8d83bab3bbbf7a9f60ad8600b478d484647b1d1df7051ad29d12bcc0387239843a0d4ae31b76ffa7ca1fb6ecfb1bbb6477db964ec844165762ca44918ada9dc3636a9bb341e3b00e4be1c97907cf5483eb2b8f160adf3bb0e271ed5891f1ce3acbbe2f930ce267e2a2971867aeb2e14babbacfcfd68e255489d65dd107fc966e5aa48e201576d97d5ac845b24cadd196e1764a5e5a564beef3248fa45ccc19be95bee7d908e9799d40f97abd63d65df4cbc7e7b4e2ee9d155dd9ad935593932e5da73aec4e16d56c5d98d32ec25a7045ad3406ac53fcbb63fe3649c93d97f844691e33cd1e782d7d0135f1c47147da091978088e93fc2a432e72a7c609ddc18cf98d52fbe45ccebdd9cf4d9b7935e8631d9896e25a01f989c154138ab70bfbfbe2f57457055a38adcb7521f6e38e67fe87f7f926e428759f7110000000049454e44ae426082</data>
+    </image>
+    <image name="image4">
+        <data format="XPM.GZ" length="4311">789c85975d531c3b0e86eff32ba6a2bbd496cecc74b7bbbbb6f6021220091f812410e0d45ec86d9befef0102a7f6bfaf477a3d7548853a35373c65599664f955f3c7bbd1fef6e6e8dd1f6fee66323b1946c3b1dc8ede85fb8b8ba73ffffb9fbfdebc9d34a3693b9a8efbd1f4edbfdebca5f16818d1d4373e853967eb390757a766cefe1cdca5a47c01ee617fa09c5c9bd49f3f01f7a957ffc39cabb1abb09ec00efe2ec12df814dcc1ff3eb88fc39cf9a670aa95af17dce9fea83c710dfc0530ce930edc26affb8705eb3adf82e15fb6c012351eb2f8a6ae8a51d78fc035ce3b53ae0ab307231ebe033bcb8f69c1b61ec0ade523870bd67a8ade5755bb69b2f38fc1559ae87e59b0f99b814b3c2dd821ff082ee77d018bf993afca4d5347eb970e9c709e9ddfe478acbe2be02a8adab760e42f1fc03dfcbf07079c5f29bbdc8fbabe63f1bb85ff1e5cf23b0297fc12b841ff2d2bb7f978ed675e59b0d9df1bbb31eeef0a8cf33c83cb7927e01afd69fbbb6618f43ef8015cfc5b3dbb85ff2330fcd335b84d95fabb03a3ffe8bb725ff2a38fcad2c4a4ef41768cb37fddcf07e009ec03781a9d9e7f5c18eb67e02ab4ba4e85d19fa7e03e5abfac2afb26201feb379fedf5fee801dc24f5c716dfd038ec7f367613aff7c34f8583e53f0597fb3e01d7c1eadb15c67ba89543cecfe2f7e03a8d359e0918ef87cfc0122cbf6de598eb69f5b0fb8ab91ea62703b8c6fbdf2a0cfb1b701bec3dac29a766c0baf56bcafe2cff9f85ad3eb20d2e7a3a59b0f5cf3958ac3eacfd598fdd78b0f54770795fabe016ef6fb7b0d54366608ffbd07eaa274d88a6a73d3845cbe7b030f4e2c2d839eb77f9a63c6d12ea7969ec2abc8725702dba5f1ae5ac67c1e275e02e587c5abf3aeb95add327708ffc8df3fbf7b6ff145c0fdadff4080ec1f251bdacdb66b0fa93ea4ddde575d503517daa7b172c5e523dac7daeb7f9d3f79f9d8f07abc732b8b77c58f5b14e395ebb4fad6733713e58bf7d0647b1fbd853aedb1aeb1a4fe3f2f3b0f3ce8d5b3758bcfa1e9abe159b37acfad9c4b6f2369f541fdcb81b5bff93ce2f37edaac1f454dfa3abda64facdda5fceb52dfa675db9edc6a2f6acf7e97c877c45f377a9ebed7e49fbb59df653b0f673dbf51deab95bd8fa4bf4be5ae9a798df1b73eec67d6bef9f54afbb3aefb7fbd67a758d54e80fad57d7c9807ed6fc3b910efdaaf977439fd00ffabefba9f4d158fba16fc4438fb49ebd936ab07edd54ee4510ff0fe5c107d353d27ecfe25745d313d54799fa89e5431558f0fe347ef14399f7aa1732f81eef7f171c07cb47f5debba1b7fb13f5ef878079411acf5005f8673d6fa887887ed3fa0f2ee0fb45d68d63d1779d37431f9ce933ef814bbd55bfe7dea2e9b7ea751847cc3bd17e0c552c7aa77a1deae8307ff43eb3777cbf909e1fba28f67d42aacf4122e2279dbfc147e82d6b7e711c3bd317d2f914275990f53db0ee8f758cc6a4fa92adcb7cdb0717fdd3fb8c593dc11aef3c1a9c67f6432af9dd803dfcebfc88f9f6a3cd17bdff1cad87fd1238995e93ea6dc606f35be779cab767fd21cb85f17df3bc60f3a7f5cfd194f8541f539dcfb3fe33fb5ced64fda2fa9fdad4621e6d80316fc48383d5532ec1e53c9d6729571bf3e00a9ce07fb660abafc5b3a827a9dee5d35a7c7f46704a5a3f490bb67e527dcfd1e07b91b47e39dbf27d19c009f91e2cd8f2533d9a7bc3f99be0325fefc101f37e0d1cd14f27e0647a408785f1ff835bb0aeefcc985effe90ef9470bff8f1603078e9cf86867964f3ce6133ee5333ee70bbee42bb5b8e61bbee53b9ef13d3ff023ffe4277ee6255ee6f7fc412d8a47e1155ee535fec89ff833aff3066ff2d60b0bcf5f789b77f82b7fe3efbccb7bfc83f77fb138e0431ef384a75c71cd0d3b762f2c5aeeb8cf7f1009f9f9eaaf163450a048898ee8984e7e6b714a67744e1774495765fd178b6bbaa15bbaa319ddbf62f1408ff4939ee899965eb158a6f7f481566895d65eb1f8489fe833add3066dbe62b1455f689b76721c5fe9db6f2dbed32eedd10fdaa7033afcadc5982634a58a6a6ae8f7a7b4d4512f2c24225e065199fcbb851cc9b19cc8a99cc9b95cc8a55cc9b5dcbcb0b8953b99c9bd3cc8a3fc9427799625597e61f15e3ec88aacca9a7c944ff259d66543365f586cc997ec655b76e4ab7c93efb22b7bf2e385c5be1cc8a18c652253a9a496469cb42ffae356badcd59e457acf9ebc78ef871716b9cb7c167e9fa5c7479e65ab237f3cb7f027fe74be33bf04f16779f5dc5fe4df65b6bff2576ffff7ef37ff075171d38d</data>
+    </image>
+    <image name="image5">
+        <data format="PNG" length="522">89504e470d0a1a0a0000000d494844520000000e00000010080600000026944e3a000001d149444154789c9593bd6b536114c67fef9bf7de9b9b90204ab4ada428218a163fea258a16512a0e522d5d440787562d383834598582831f5bea24940e4efe0f82087592762848a969832021c4c6421313536c72f35e87fa910cc5e4999fdf73ce73e008b8669966f9f0a1584fca506a12a05117345d68d43d4ceb03adca66730240c58f1a0f064e5c98b979fb2a23a317d11af2ab7e2aa526b9cf75a69f1d23319864d039c9ecdcc4df00b5bdedce8cdfbbc1e52b09006a6505c0f8fd58db24ad3500f178bf0720c2e14bdef9730e470622dcb93b4af4608cfa4fc1f0d030893363489f8f807f2fa79d53d4b6369052323b378192c2c78f926461fe2bab2b2f31fdf03b9c62b18010823d61cdf2c74f54aaeb18c6ce460a404a45281062c8b9ce81fd5100d6320ef9620e809ede2495ea3a8b4be97f1d5b7b18cac2326d001e25570078923ebed3b1d96cbf2a1d6871298d76fb912d6ef93fe8cdbb0cef17328c8d3c2697ef7bde31b89bba0285e7999148242484905d81a1702d655946251aedbbd5d1715a65db26205e77ddb1ded068ed7b21b5e74ead7d5966f3fbc6aee6a9874f793bff8a60600b0f375d2e97a6c59fb7b283762a68872795cf688302212814bf9df5d8acf6eeaba2b52a64b3d9ca2fb6ac98839ff07a840000000049454e44ae426082</data>
+    </image>
+    <image name="image6">
+        <data format="PNG" length="693">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000027c49444154789c95934b4854511cc67ff78ee988efd46c318642920986e8c684923623541461ad9a85445882906d7ad2a6c7462a5c086241604451411211a4501884e24622b351f3559a33e4635e77c63bf7714e0b4b1c66631f1c381cceeffb1f0edfa74829d92ce59ce246d2804a1d92bdeb8778110ca2d027bb657fc2fd7f064a8b5282a0b5aaacaced78b5dbb1cf5549667a3a9a19647a7992e1e91186c6c6ecc5a570072a9db24bce6d18fc856fb51c6df49cad6d21272d9f796d1c5f6c9a88b98a2d2d226680a9d00443a3337cfdb2fc04951bb24bcea50020683d7fe484e7c2814bacc417793fdbc34adc87dbd54411253c9f6ec790101306bbcab388da8667e15bc4051c5268c65d5a507aed71ebfd7a5d84e99b7f844070b1f221ae8c3d00783e561013263161b1264c34c3c03b10b0d7c2d6611549c3c983f5f5163a1f169f26c12fe73ad16c2361c5141367b1c381a42105953a57412163ab9f88dbb10478c0dfcbe7c010bb736a884b1b5d58c4a5cd48700447ee1aa8d44133c1f69133f2eab05bce6be3722bba3b715bee7ce594341354017e45bf13315759d617d98ac26668639f8282f7e7b2bf362fdf49a7f732d7ab7a28cd5ccfcfb31f0fb8397685356162483bc1c48a4850f03aa8a6222b3b757fc6f66d842c8d7e5f2f35f9f5e4a7eda032b78622a78bb7fed749afd07d36f1dfe2858a42dfd46cd00e193a9a6de08fafd0347c0c6f78148053c5a793606981be60db28f4a9b25bf607027ac7843780260c3461e08b2fd138d8c03bff1bee4dde493288ce581861d121bb657f42940bcbd33de9a52a96432093b0f5c9d1198bc8a4b911e5a432a566ab6d4e97c3919aa79292a56c7c981110e80bb66d8445729936eb7febfc07debe8f006ea83ef50000000049454e44ae426082</data>
+    </image>
+    <image name="image7">
+        <data format="PNG" length="408">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000015f49444154789ca593ad4f034110c57fbb77502a3028744935416248a8c041409050040efe815a080224100c0285030c49d30a5441201028340830a40848e85d7bb9bbbd5dc491eb076d29e953fb662633efcdee0a630cc3408ce72b8bc69812881e152084446b8d941213292c22b41c59aa9de7caf658f5b9949e5bfef7e4cfbb4a09103680735fc4e8ee5604202d8936062904e8084b68463f5e813cb672231e2e16fe9ca822f035f8117821ac6e9e016003643219f6f66f93e29ded79acada784578fb34c1ec984df6c68c22000a019ed033768e7751f8410bd1bf8513baff9eddc53cdb3dd2a3bd2b14fd78797832c5e084e084e00d7eb1a4f41a020d05d1a046bd349a07efac8d4ec6152542e15485f5aa47ef8db4a53a2ec26f9abc373a323df0a09f1b5b4c2edf0ec2b7ac28678cbef278fb8213442680470552ce02b50e6b76c0044bc7fdb160e33b95d309a81212dacd444dc67d8df38d043ea876f1ada8f233693427b0000000049454e44ae426082</data>
+    </image>
+    <image name="image8">
+        <data format="PNG" length="336">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000011749444154789c9591b18ac2401445cf484a7bff604151700904a6f45f04edf209fb0d812d5cf05f84b5080406858881545b6e3a0b6d24305bcd38936c76cd85c0e3ddbc3befbe2b78403bb5c04727273ec29095527a9b9c6d73194f90528af7644f18052dcecc010ccc705e542ce3097951b14dcea469aacd709373371a9822d92c50594db259d04417f7add443205eef08a38078bd6b0974716fce417adfc053727c6940ef3f35524a545673b9df3c4e4ac9e57e73fb16fac9cf13b5169afe66e391ad5fe50b0087b4341650594d180504ad8bfd03f71ee0c4d81787b404786e03f333d814ec269d1be445d5ea39110a23e4a24f0276c6b5208ea72bf3e9d04b64361ed9978fa72b5fa517bdf06e309f0effb4f21bff03c2b8aa0585e6f2480000000049454e44ae426082</data>
+    </image>
+    <image name="image9">
+        <data format="PNG" length="1002">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b000003b149444154789cad94514c5b5518c77fe7dc4b7b4b6150bb96324418ca32358bee6192609c51d883892ce083f1718b3ebb185f8dc91e972cf39d2d6a78d0b027b3cd07d9e68c81c625a6c139408a4384f416100aed6d4b7bdb7b8e0fc0921a70c6ed7b3ae7e43bbff3fffedfc927e2f138bbd1dbdbab7902118fc785d8058f8d8de9aeae2e72b91cb66de338ce7f82e47239666767492412b8aefbf0dcdc553a323242f4501d918e2d3a8f15a9784584100809a609526eafd1a0f54e6142e029c5c21f3ef41583bb77a805efbe1ce9d86279e32619678eaab7853fa0f02a16abb64166ad0cdac75307eb3874b84cb0a14aa5a24108cc0688c48c9a4a1e826ddbe6f0b12219678e8ace610502ccdfafe3f68d3c33bf6c01c59dcc209d472c4e0d35d2f3ba81d205d06005e4de60c77170bd2255af80150870f70e8c0eaf009260a349577714e913a4175d16925b5cbe50607931cc3b677c68ca28a5f7066f5b26f00760febec9e8f032a0e81b68a17fc0201415989647a9d8c4c498cbe8f05f5cff3a4d4bac8bfe210b290b35e01afd428257b1b875cd01aaf4bd1de5dd0fea688e1530ad1c1bab16b7af17393558cf997311c0e49bafd670d6258621f6576c9ab09a3248fe5ae6c08103f49f36517213d33070369bf8e2529ee9c90ceb2b2eef7f14617c2c48722a4b7226845143fa87622905ebeb6514253a9eb5084504a66950c88618bee0303d99217cb09e9ed71a09369538fa523d00e9a50a42eed3bc6d8f41281fa0903e8561796cac86f8f2b33c33930ea0f0fb4d5adbeb30ad22866ffbbad226d2a805d7ee0484220208925aaa50deaa67e27b97e9c90ccdcdf5c462cdd8a94d2e7e62f3603244ea410989a4ed191f52a8fd156b056d9d553a9e0bf0e7ef45c6bf7339fd5e90ec7a88575e6d20d6e6e7e2a755ec854dce7fb8885b2cd014f6f3c2714d3a550bae55ac35c1068fb7061b00b87a7995899b25ce9e0b73e24d8fae97b37c7cbe9370b499fce6066eb54adf6098f6ee2a9a7ff9c70841a5023d270deca510d746537c7e29cdf8ad20475fb4307c82d4fc324ec6859d66fdfc6381e44014b36e9fe6e572393ca54068aa22cfd0598b686b3737aeae90bc9725796f0350802414b6e81b7c9a9f7e70708a2e6e5991cfeee3f1ecec2c0b0b3e8c068142a2a8d23728397132c6dc6f2e2b8b0a8da4b5ddc7f3c735ed47146f0cb4502983693a4c25ca7b83138904fa8a412466e00f48b4271086c2901263676c4a6990b615b6ade15b85694af239984a94585bf6f606bbae5b334f1f37e4a3531e031c8fc7c5a312ff17f849c3e3f1b8f81b8be6900aca9b61c90000000049454e44ae426082</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>fileview</sender>
+        <signal>directoryChanged(const QString&amp;)</signal>
+        <receiver>AssetManMainWidget</receiver>
+        <slot>directoryChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>fileview</sender>
+        <signal>startReadDir(int)</signal>
+        <receiver>AssetManMainWidget</receiver>
+        <slot>slotStartReadDir(int)</slot>
+    </connection>
+    <connection>
+        <sender>fileview</sender>
+        <signal>readNextDir()</signal>
+        <receiver>AssetManMainWidget</receiver>
+        <slot>slotReadNextDir()</slot>
+    </connection>
+    <connection>
+        <sender>fileview</sender>
+        <signal>readDirDone()</signal>
+        <receiver>AssetManMainWidget</receiver>
+        <slot>slotReadDirDone()</slot>
+    </connection>
+    <connection>
+        <sender>advancedSearchButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AssetManMainWidget</receiver>
+        <slot>advandedSearchClicked()</slot>
+    </connection>
+    <connection>
+        <sender>dirlist</sender>
+        <signal>folderSelected(const QString&amp;)</signal>
+        <receiver>fileview</receiver>
+        <slot>setDirectory(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>searchLineEdit</sender>
+        <signal>returnPressed()</signal>
+        <receiver>AssetManMainWidget</receiver>
+        <slot>executeSimpleSearch()</slot>
+    </connection>
+    <connection>
+        <sender>dirlist</sender>
+        <signal>selectionChanged(QListViewItem*)</signal>
+        <receiver>advancedSearchForm1</receiver>
+        <slot>listViewSelectionChangedSlot(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>upButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AssetManMainWidget</receiver>
+        <slot>cdUp()</slot>
+    </connection>
+    <connection>
+        <sender>dirlist</sender>
+        <signal>collectionDeleted()</signal>
+        <receiver>fileview</receiver>
+        <slot>clearAll()</slot>
+    </connection>
+    <connection>
+        <sender>fileview</sender>
+        <signal>enableUp()</signal>
+        <receiver>AssetManMainWidget</receiver>
+        <slot>enableUp()</slot>
+    </connection>
+    <connection>
+        <sender>fileview</sender>
+        <signal>disableUp()</signal>
+        <receiver>AssetManMainWidget</receiver>
+        <slot>disableUp()</slot>
+    </connection>
+    <connection>
+        <sender>connectServerButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AssetManMainWidget</receiver>
+        <slot>connectToServerDialog()</slot>
+    </connection>
+    <connection>
+        <sender>pathCombo</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>fileview</receiver>
+        <slot>setDirectory(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>fileview</sender>
+        <signal>enableBack()</signal>
+        <receiver>AssetManMainWidget</receiver>
+        <slot>enableBack()</slot>
+    </connection>
+    <connection>
+        <sender>backButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AssetManMainWidget</receiver>
+        <slot>cdBack()</slot>
+    </connection>
+    <connection>
+        <sender>fileview</sender>
+        <signal>disableBack()</signal>
+        <receiver>AssetManMainWidget</receiver>
+        <slot>disableBack()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>searchLineEdit</tabstop>
+    <tabstop>advancedSearchButton</tabstop>
+    <tabstop>assetTable</tabstop>
+    <tabstop>closeButton</tabstop>
+</tabstops>
+<includes>
+    <include location="local" impldecl="in implementation">AssetManager.h</include>
+    <include location="local" impldecl="in declaration">dirview.h</include>
+    <include location="local" impldecl="in implementation">assetmanmainwidget.ui.h</include>
+</includes>
+<forwards>
+    <forward>class AssetManager</forward>
+</forwards>
+<variables>
+    <variable>Directory *root;</variable>
+    <variable>olib::openassetlib::AssetManager *asman;</variable>
+    <variable>std::list&lt;olib::openassetlib::Asset*&gt; hits;</variable>
+</variables>
+<slots>
+    <slot>populateDrivesCombo()</slot>
+    <slot>changeWinDir( int drive )</slot>
+    <slot>changePath( const QString &amp; path )</slot>
+    <slot>comboTextWasChanged( const QString &amp; thedir )</slot>
+    <slot>setPathCombo( QString path )</slot>
+    <slot>directoryChanged( const QString &amp; dir )</slot>
+    <slot>slotStartReadDir( int dirs )</slot>
+    <slot>slotReadNextDir()</slot>
+    <slot>slotReadDirDone()</slot>
+    <slot>loadThisFile( QString filename )</slot>
+    <slot>setTheFileName( QString filename )</slot>
+    <slot access="protected">populateDirView()</slot>
+    <slot>advandedSearchClicked()</slot>
+    <slot>advancedSearchCancelPressed()</slot>
+    <slot>executeSimpleSearch()</slot>
+    <slot>cdUp()</slot>
+    <slot>enableUp()</slot>
+    <slot>disableUp()</slot>
+    <slot>connectToServerDialog()</slot>
+    <slot>enableBack()</slot>
+    <slot>disableBack()</slot>
+    <slot>cdBack()</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+</functions>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>directoryview.h</includehint>
+    <includehint>advancedsearchform.h</includehint>
+    <includehint>qtfileiconview.h</includehint>
+    <includehint>jahprogressbar.h</includehint>
+</includehints>
+</UI>

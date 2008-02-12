@@ -1,0 +1,13 @@
+label=FFmpeg DiVX
+
+# Fixed quality
+0=label=Full 4:3/Fixed Quality,consumer=avformat,extension=.avi,profile=dv,qscale=2,vcodec=msmpeg4v2
+1=label=Full 16:9/Fixed Quality,consumer=avformat,extension=.avi,profile=dv_wide,qscale=2,vcodec=msmpeg4v2
+2=label=VCD Resolution/Fixed Quality,consumer=avformat,extension=.avi,profile=vcd,qscale=2,vcodec=msmpeg4v2
+3=label=VCD Resolution/Fixed Quality WMV2,consumer=avformat,extension=.avi,profile=vcd,qscale=2,vcodec=wmv2
+
+# Fixed bitrate low
+4=label=Full 4:3/Fixed Bitrate 1000kbs,consumer=avformat,extension=.avi,profile=dv,vcodec=msmpeg4v2,video_bit_rate=1000000
+5=label=Full 16:9/Fixed Bitrate 1000kbs,consumer=avformat,extension=.avi,profile=dv_wide,vcodec=msmpeg4v2,video_bit_rate=1000000
+6=label=VCD Resolution/Fixed Bitrate 1000kbs,consumer=avformat,extension=.avi,profile=vcd,vcodec=msmpeg4v2,video_bit_rate=1000000
+7=label=VCD Resolution/Fixed Bitrate WMV2 1000kbs,consumer=avformat,extension=.avi,profile=vcd,vcodec=wmv2,video_bit_rate=1000000

@@ -1,0 +1,1286 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>AssetManItem</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>AssetManItem</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>736</width>
+            <height>238</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Asset Man Item</string>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <property name="spacing">
+            <number>0</number>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>dropShadowPixmapLabel</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="maximumSize">
+                <size>
+                    <width>32767</width>
+                    <height>10</height>
+                </size>
+            </property>
+            <property name="lineWidth">
+                <number>0</number>
+            </property>
+            <property name="pixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="scaledContents">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QFrame">
+            <property name="name">
+                <cstring>mainFrame0</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>5</hsizetype>
+                    <vsizetype>1</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>0</number>
+                </property>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>nameLineEdit</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>7</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>230</width>
+                            <height>0</height>
+                        </size>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <family>Arial</family>
+                            <pointsize>9</pointsize>
+                            <bold>1</bold>
+                        </font>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                    </property>
+                    <property name="lineWidth">
+                        <number>2</number>
+                    </property>
+                    <property name="margin">
+                        <number>3</number>
+                    </property>
+                    <property name="text">
+                        <string>(No item to view)</string>
+                    </property>
+                    <property name="frame">
+                        <bool>false</bool>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignLeft</set>
+                    </property>
+                    <property name="readOnly">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer2_3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Fixed</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>25</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>dateCreatedLabel</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <family>Arial</family>
+                            <pointsize>9</pointsize>
+                            <bold>1</bold>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>Date Created:</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignVCenter|AlignRight</set>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>dateCreatedValueLabel</cstring>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>90</width>
+                            <height>0</height>
+                        </size>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <family>Arial</family>
+                            <pointsize>10</pointsize>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>-</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignCenter</set>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer2_2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Fixed</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>16</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>sizeLabel</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <family>Arial</family>
+                            <pointsize>9</pointsize>
+                            <bold>1</bold>
+                        </font>
+                    </property>
+                    <property name="lineWidth">
+                        <number>0</number>
+                    </property>
+                    <property name="text">
+                        <string>Size:</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignVCenter|AlignRight</set>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>sizeValueLabel</cstring>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>60</width>
+                            <height>0</height>
+                        </size>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <family>Arial</family>
+                            <pointsize>9</pointsize>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>-</string>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Fixed</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>55</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>expandButton</cstring>
+                    </property>
+                    <property name="paletteForegroundColor">
+                        <color>
+                            <red>255</red>
+                            <green>255</green>
+                            <blue>255</blue>
+                        </color>
+                    </property>
+                    <property name="palette">
+                        <palette>
+                            <active>
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>0</blue>
+                                </color>
+                                <color>
+                                    <red>20</red>
+                                    <green>20</green>
+                                    <blue>20</blue>
+                                </color>
+                                <color>
+                                    <red>30</red>
+                                    <green>30</green>
+                                    <blue>30</blue>
+                                </color>
+                                <color>
+                                    <red>25</red>
+                                    <green>25</green>
+                                    <blue>25</blue>
+                                </color>
+                                <color>
+                                    <red>10</red>
+                                    <green>10</green>
+                                    <blue>10</blue>
+                                </color>
+                                <color>
+                                    <red>13</red>
+                                    <green>13</green>
+                                    <blue>13</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>0</blue>
+                                </color>
+                                <color>
+                                    <red>236</red>
+                                    <green>233</green>
+                                    <blue>216</blue>
+                                </color>
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>0</blue>
+                                </color>
+                                <color>
+                                    <red>49</red>
+                                    <green>106</green>
+                                    <blue>197</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>0</green>
+                                    <blue>255</blue>
+                                </color>
+                            </active>
+                            <disabled>
+                                <color>
+                                    <red>128</red>
+                                    <green>128</green>
+                                    <blue>128</blue>
+                                </color>
+                                <color>
+                                    <red>20</red>
+                                    <green>20</green>
+                                    <blue>20</blue>
+                                </color>
+                                <color>
+                                    <red>30</red>
+                                    <green>30</green>
+                                    <blue>30</blue>
+                                </color>
+                                <color>
+                                    <red>23</red>
+                                    <green>23</green>
+                                    <blue>23</blue>
+                                </color>
+                                <color>
+                                    <red>10</red>
+                                    <green>10</green>
+                                    <blue>10</blue>
+                                </color>
+                                <color>
+                                    <red>13</red>
+                                    <green>13</green>
+                                    <blue>13</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>0</blue>
+                                </color>
+                                <color>
+                                    <red>236</red>
+                                    <green>233</green>
+                                    <blue>216</blue>
+                                </color>
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>0</blue>
+                                </color>
+                                <color>
+                                    <red>49</red>
+                                    <green>106</green>
+                                    <blue>197</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>0</green>
+                                    <blue>255</blue>
+                                </color>
+                            </disabled>
+                            <inactive>
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>0</blue>
+                                </color>
+                                <color>
+                                    <red>20</red>
+                                    <green>20</green>
+                                    <blue>20</blue>
+                                </color>
+                                <color>
+                                    <red>30</red>
+                                    <green>30</green>
+                                    <blue>30</blue>
+                                </color>
+                                <color>
+                                    <red>23</red>
+                                    <green>23</green>
+                                    <blue>23</blue>
+                                </color>
+                                <color>
+                                    <red>10</red>
+                                    <green>10</green>
+                                    <blue>10</blue>
+                                </color>
+                                <color>
+                                    <red>13</red>
+                                    <green>13</green>
+                                    <blue>13</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>0</blue>
+                                </color>
+                                <color>
+                                    <red>236</red>
+                                    <green>233</green>
+                                    <blue>216</blue>
+                                </color>
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>0</blue>
+                                </color>
+                                <color>
+                                    <red>49</red>
+                                    <green>106</green>
+                                    <blue>197</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>255</blue>
+                                </color>
+                                <color>
+                                    <red>255</red>
+                                    <green>0</green>
+                                    <blue>255</blue>
+                                </color>
+                            </inactive>
+                        </palette>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <family>Tahoma</family>
+                            <pointsize>9</pointsize>
+                            <bold>1</bold>
+                            <underline>1</underline>
+                        </font>
+                    </property>
+                    <property name="cursor">
+                        <cursor>13</cursor>
+                    </property>
+                    <property name="text">
+                        <string>Expand Info</string>
+                    </property>
+                    <property name="flat">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>collapseButton</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                    <property name="paletteBackgroundColor">
+                        <color>
+                            <red>20</red>
+                            <green>20</green>
+                            <blue>20</blue>
+                        </color>
+                    </property>
+                    <property name="cursor">
+                        <cursor>13</cursor>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="iconSet">
+                        <iconset>image1</iconset>
+                    </property>
+                    <property name="flat">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>fullExpandButton</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                    <property name="paletteBackgroundColor">
+                        <color>
+                            <red>20</red>
+                            <green>20</green>
+                            <blue>20</blue>
+                        </color>
+                    </property>
+                    <property name="cursor">
+                        <cursor>13</cursor>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="iconSet">
+                        <iconset>image2</iconset>
+                    </property>
+                    <property name="flat">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>firstExpandButton</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                    <property name="paletteBackgroundColor">
+                        <color>
+                            <red>20</red>
+                            <green>20</green>
+                            <blue>20</blue>
+                        </color>
+                    </property>
+                    <property name="cursor">
+                        <cursor>13</cursor>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="iconSet">
+                        <iconset>image3</iconset>
+                    </property>
+                    <property name="flat">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QFrame">
+            <property name="name">
+                <cstring>mainFrame1</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>5</hsizetype>
+                    <vsizetype>1</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>previewLabel</cstring>
+                    </property>
+                    <property name="backgroundOrigin">
+                        <enum>WidgetOrigin</enum>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="pixmap">
+                        <pixmap>image4</pixmap>
+                    </property>
+                    <property name="scaledContents">
+                        <bool>false</bool>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignCenter</set>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout13</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel3</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <family>Arial</family>
+                                    <pointsize>9</pointsize>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>Description:</string>
+                            </property>
+                        </widget>
+                        <widget class="QTextEdit">
+                            <property name="name">
+                                <cstring>descriptionTextEdit</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>7</hsizetype>
+                                    <vsizetype>7</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <family>Tahoma</family>
+                                    <pointsize>10</pointsize>
+                                </font>
+                            </property>
+                            <property name="frameShape">
+                                <enum>Box</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Sunken</enum>
+                            </property>
+                            <property name="vScrollBarMode">
+                                <enum>Auto</enum>
+                            </property>
+                            <property name="hScrollBarMode">
+                                <enum>AlwaysOff</enum>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                            <property name="wordWrap">
+                                <enum>WidgetWidth</enum>
+                            </property>
+                            <property name="readOnly">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer9</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Fixed</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>16</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout12</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout9</cstring>
+                            </property>
+                            <property name="paletteForegroundColor">
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>0</blue>
+                                </color>
+                            </property>
+                            <grid>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel" row="3" column="1">
+                                    <property name="name">
+                                        <cstring>compressionValueLabel</cstring>
+                                    </property>
+                                    <property name="paletteForegroundColor">
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>-</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="2" column="1">
+                                    <property name="name">
+                                        <cstring>framesizeValueLabel</cstring>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>-</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="0" column="0">
+                                    <property name="name">
+                                        <cstring>fileTypeLabel</cstring>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                            <bold>1</bold>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>File Type:</string>
+                                    </property>
+                                    <property name="alignment">
+                                        <set>AlignVCenter|AlignRight</set>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="3" column="0">
+                                    <property name="name">
+                                        <cstring>compressionLabel</cstring>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                            <bold>1</bold>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>Compression 
+Method:</string>
+                                    </property>
+                                    <property name="alignment">
+                                        <set>AlignVCenter|AlignRight</set>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="2" column="0">
+                                    <property name="name">
+                                        <cstring>framesizeLabel</cstring>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                            <bold>1</bold>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>Frame Size:</string>
+                                    </property>
+                                    <property name="alignment">
+                                        <set>AlignVCenter|AlignRight</set>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="1" column="1">
+                                    <property name="name">
+                                        <cstring>trtValueLabel</cstring>
+                                    </property>
+                                    <property name="paletteForegroundColor">
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>-</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="1" column="0">
+                                    <property name="name">
+                                        <cstring>trtLabel</cstring>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                            <bold>1</bold>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>TRT:</string>
+                                    </property>
+                                    <property name="alignment">
+                                        <set>AlignVCenter|AlignRight</set>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="0" column="1">
+                                    <property name="name">
+                                        <cstring>fileTypeValueLabel</cstring>
+                                    </property>
+                                    <property name="minimumSize">
+                                        <size>
+                                            <width>60</width>
+                                            <height>0</height>
+                                        </size>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>-</string>
+                                    </property>
+                                </widget>
+                            </grid>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout12</cstring>
+                            </property>
+                            <grid>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel" row="0" column="0">
+                                    <property name="name">
+                                        <cstring>tagsLabel</cstring>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                            <bold>1</bold>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>Tags:</string>
+                                    </property>
+                                    <property name="alignment">
+                                        <set>AlignVCenter|AlignRight</set>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="3" column="0">
+                                    <property name="name">
+                                        <cstring>textLabel3_4_3_2_2</cstring>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                            <bold>1</bold>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>Licence:</string>
+                                    </property>
+                                    <property name="alignment">
+                                        <set>AlignVCenter|AlignRight</set>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="1" column="0">
+                                    <property name="name">
+                                        <cstring>formatLabel</cstring>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                            <bold>1</bold>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>Format:</string>
+                                    </property>
+                                    <property name="alignment">
+                                        <set>AlignVCenter|AlignRight</set>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="1" column="1">
+                                    <property name="name">
+                                        <cstring>formatValueLabel</cstring>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>-</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="3" column="1">
+                                    <property name="name">
+                                        <cstring>licenceValueLabel</cstring>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>-    </string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="0" column="1">
+                                    <property name="name">
+                                        <cstring>tagValueLabel</cstring>
+                                    </property>
+                                    <property name="minimumSize">
+                                        <size>
+                                            <width>60</width>
+                                            <height>0</height>
+                                        </size>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>-</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="2" column="1">
+                                    <property name="name">
+                                        <cstring>audioValueLabel</cstring>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>-</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="2" column="0">
+                                    <property name="name">
+                                        <cstring>audioLabel</cstring>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <family>Arial</family>
+                                            <pointsize>9</pointsize>
+                                            <bold>1</bold>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>Audio:</string>
+                                    </property>
+                                    <property name="alignment">
+                                        <set>AlignVCenter|AlignRight</set>
+                                    </property>
+                                </widget>
+                            </grid>
+                        </widget>
+                    </hbox>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QFrame">
+            <property name="name">
+                <cstring>mainFrame2</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>5</hsizetype>
+                    <vsizetype>1</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>tempLabel</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <family>Arial</family>
+                            <pointsize>9</pointsize>
+                            <bold>1</bold>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>More Stuff:</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignVCenter|AlignRight</set>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel3_3_2_6</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <family>Arial</family>
+                            <pointsize>9</pointsize>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>could go here</string>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer28</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>589</width>
+                            <height>16</height>
+                        </size>
+                    </property>
+                </spacer>
+            </hbox>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>dummyLabel1</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>5</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+    </vbox>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="240">89504e470d0a1a0a0000000d49484452000000640000000a0806000000421cfb7e000000b749444154789ced95411683200c44274277bd4657bdad67b4bd84afa60b5d2002865792bae0af50c7c9843c85e01e234a0c0096a2c2168d3c12cf50a3b8271ec4ef6dcd490503a09feb50d6bf963679ea3d438d46860d0fc6b4bbe3007c748a1db0ac654daa3741bfe117b2b2406dfa072c6b5993ea4dd0af87f3af753947bf945be6d599f3cf72fad8efcc435a23d685d7250f89bf3463cd7e9ce723e0799799752c20e636676da70dc3bf0374f6f4815c8c3e908bf105a76a3a9e737164a10000000049454e44ae426082</data>
+    </image>
+    <image name="image1">
+        <data format="PNG" length="473">89504e470d0a1a0a0000000d49484452000000140000001408060000008d891d0d000001a049444154789cbdd4bf2f03611807f0efeb5e55d7e6a283a06dea5768459a082922484b484c7e24122b26f16f1898ec0621168db5311a88a462906e554d9df4d4a2aaa2cd7177794d1a5aed955c3cdbf30c9fe1fbbccf4bb68361185935866aff029af312330c34e725367bb40edff936b3666fff04d3af8dcc3b49a2cbcf86cf82f04642103b06d98d7b1ac9f600a91624c55bb6be886cf160055463e0d477806878707810f5cee2ba675e172ec9f055682362e71038f51d8aa91e4aad15cda904268fb7b0b437cffa2e77989089958de3c72dc7ddd300d10abd4a4d78abb342c8663072ba8b85c3358c9e6c30e7dd59094c8b0700906c0f9094c3c35a5209a8d454986b1c056086259783f72a8486a73b646c3ccb0903a422080051ef1c9cc9cd6f205564a41bed88bba720b97c786cea2bc9b42c18eb9923fd17fb4cc866a071145491111e5f466460b5e2622a5e4ab477065495c1692ad28d765d4c174c74f991e72da85564c4dd537a963ef8d2d04d6e3c1360844072f9aa02cb66f85962c7386c4fe28f0bf81378df3a469e6d7cd5775dd5f7f5f59d1902fea60c073f00252d8a7353fcfaf90000000049454e44ae426082</data>
+    </image>
+    <image name="image2">
+        <data format="PNG" length="457">89504e470d0a1a0a0000000d49484452000000140000001408060000008d891d0d0000019049444154789cc594bf4b42511cc5cff55d1f0f15076da9ac54ac7c2d25d168f0f6061b72ab7fa7b1d5a5688d06750841a1a4964004e929fe28327f252242494ae07bdc8648304d1f2874c6cbb91fcef9decb979c5cdc6396d2cd94f6af40633bc9660a9462012c96ee26423501e71a29b6fc9286fdf976a25713d0564e803086d5dc35cc6f85b12935015df9187a7a01866e07cec7f874093793a7ccda7c85ca512854803b1319eba7a30ee71a29662b27e0cac7606dbe42d10b000095a3b0b4ea58cb865841f4918940633bc9a468004b25193a06f4f4421ff62395e3e196432888be9109072a77ccdb24b57304d9b3878ed108aa7c825395810b0ae5b150cb61a97833f271862a5757bca4bae2c583c7cf9c4f71b83311585a75a81c0f85f2df26c6c1958fa2e290868044cb7258cf06995b0e63be9603180795f2503882cbc3337c98ed03b3d4f46df2e23e09fbcfc995ef18858d5da85407d34717623a38b9f238551c12a9382498de8b4c4c87e07c8c43de3a609f065b3fa5a6ca7f49e8560760c094ebeb376c6ae028cd1cf8054b088ea514887db50000000049454e44ae426082</data>
+    </image>
+    <image name="image3">
+        <data format="PNG" length="431">89504e470d0a1a0a0000000d49484452000000140000001408060000008d891d0d0000017649444154789cdd94bf4b026118c7bfefbd772f57727a272e4114524b834b343804fd01b6459b4353ff49b37334b6341be212768683e064479ca69262fe082dc1c21bd47b1b6ab9143d4c08fa8e2fcffbe1f33cefcb43d2691dcb8cb054da9f025b15ce970ad4639b78caaecc85ba02361f18af1a7e9432deb9b5ae80d59c020e01e6ad1faf553ad3d215b090f2814936ac0f198fbaef7786d94b3fefd61550c986c8388c646066bd38edb0f9c0782da7c04cf9d0ad2b90e4af2ea968e3aded8191f0f250a44fe6025b15703db681aae107870026d99064db71818a1cf96b0da1487faaa1a3e5b52d9070b483ddc3363c1e0ba321c178e49c8ac86c344c15e5ccead4c799683918b648306c61efb8c38bba0f4632805edb032a7288ecdb9608306f546cef0f2680c4cd7230125e9e8f6b6814548008101907a5439c5c14a0ae8f1db374f56d42913e899ed7c8d159093b072fa07488f7818c7c5c5bccf0677acf94dfc73514ef549c5e951d860b0167e51fed43b7f904328a846e4135d24f0000000049454e44ae426082</data>
+    </image>
+    <image name="image4">
+        <data format="PNG" length="7358">89504e470d0a1a0a0000000d49484452000000b40000007808060000005be7d8fd00001c8549444154789ced9d5b6c13e9f9ffbfef1cecf1d9cec139024938881060c329828200d11f5dbadd56552b156dd5d24aadaa56ea552faa5e57ea45d58b767bbfdb6df55fd18beeb64ba5eec5c22e875dc4a101921042428e4e4c129cf8107b7c98d3fbbf3033b51ddb71020b249e8f14259979e7f538f9fa99e77ddee77d5e42298589c9468179d9376062f23ce1d672112184acd4642dfd9a980028eb32d0155c0a52a9cbf154c4ba5049ced7320e1c3850519f262685f4f6f6963a4573be80acb69789b72241134274d784edeaea22a228326eb79b9d9f9f87d7eb5de6b6a8aa6a5a689335c1b2ec324146a351ada1a1014b4b4baac3e1d00607072900150028a55a6edbb282ceb1caa4abab8b1504818b4422bcc562e12c160bcbf33cab280a432935056cf2a54008a11cc769b22cab9224a99224293e9f4f4ea7d3cae0e0a08aa7565bb7d62b099a0140b66ddbc63d7af428fd62de8289493e7bf6ec79cd62b1c89224490cc364789e4fa7d3e974269391474747156405ad016504ad5be7aeae2eeefefdfb1900e8e9e979616fc2c404006eddba0500d8bf7fffff514a538aa22408210942484255d524006970705017352d17b623070e1c604d319bbc4c74ddddb973e722c771cd3ccffb2d168b9752ea14b270070e1c60f134405154d07a582e168b31b99d9a98bc0c74fd514a9b1986f1330c53c3719c4b9665211289f0ba4e494ef4a21844511473b067f2ca4029f503a8a3947a29a50e8ee384baba3aeea94e4b5b6800e4e4c993c4ed76b32fec6e4d4c56c603c0ad699a93e7791ba5d44208e1dc6e377bf2e44902a0b4858ec7e3c48c279bbc62d801d80921365996ad00784551185555493c1e2f6ba10100a6cb61f28ac1534a79001c2184635996511485c9d5e99a72394c4c5e064fc77c0ca594651886a19492c2493d33dbce64dda0695a9e808bcd509715b4e9439bbc4a300c931df8314c9eb073756a5a68937505c39497ac2968930d853928fc92d0340daaaa42d334504a8ddf29a5e0380e0cc3185f0040080121049aa6419665288a029665c1b22c08216059160cc360e5b515d58d29e8e7802e56555521499221544dd360b15860b3d9c0b22c28a5a094425114d4d6d642100443b0ba58154541229180288aa09442966588a20859968df30cc380e7f9bc0f8529f42ca6a0d7806e7115458124495055150cc3c0e3f1c0e3f1c0e572c1ed76c36ab5c2e170c0e170401004701c074dd3d0dbdb8bfafa7aecdcb9d31034a5d4f8ae7f30244982288a88c56248269348a7d388c562c6b9783c6e089c10028bc59267fdab1153d0ab449665241209288a02b7db8da6a626d4d7d7c3e572c1e3f1c06eb743100458add63ccba95b6700a8ababc3b56bd7a0691af6eedd0b00463b4208388e03c77170381cf0f97c686d6d35ac75269381244948a55288c7e348a552104511914804c96412914804a954cab8079bcd5655e236055d019452a4d36988a2088bc582b6b636b4b6b6c2e7f3c1e572c16eb783e779a36dee75b99657a7b3b313535353b878f12228a5e8eeeece3b9f7b7d2e3ccf83e7f93cf1ebd63c954a2193c920994c221e8f231c0e637e7e1eb1580ca9540a369b0d369b0d168be5cbf813bd3298822e812ea64c2683582c06afd78bfdfbf71b4276381c6018c668576ee58f7e4e1722cff33871e204c6c6c6f0e9a79f421004ecdcb9b3641fb91f88dc9ff50f8bd56a852008467b4dd390c964208a22445144341a453018c4cccc0c62b1189c4e270441d8907eb729e812a8aa8a68340a003876ec18dadadae072b9c0715c9e1bb11a72dbbbdd6e9c3871021f7ef821ae5dbb06bfdf8f9a9a9a152d75a9d7cc3d4e0881cd66832008a8adad456b6b2b76ecd881582c86898909dcbb770f9aa6c16eb76f38519b822e80526a3cb6b76fdf8eaf7ce52b70bbdd861f5a282e3ddcb692b8f5b6b974767662f7eedde8ebebc3b56bd770e6cc993c97a0927e4bf59d7b1dcbb21004018220c0eff7c3e7f3e1ca952b45af5bef9882ce4155552c2d2dc16ab5e25bdffa16dadada96fdc3737f2fb4d4b90229144b31c1592c161c3f7e1ce3e3e3e8efef87dfef474f4fcfb20fcf4ac2ce8d92e8d7e50e42f501653a9d463c1ec7c8c808344d2bd9df7ac614f453f4e8456b6b2b8e1d3b06afd79b77be126b5628e652be6f6edbdada5a1c3972041f7ffc316edfbe0dbfdf8f8e8e8ebc6b0ac55a0c3d162e4912128904161616b0b0b08070388cd9d95924934923a4c7f33c3c1ecf868c7e9882068cb8eef6eddb71e8d021b8ddee656d2a793417b394a5d0cf592c16ecdab50bfdfdfd989b9b437f7f3feaeaeae076bb57f49d29a5868043a110e6e7e7313535654cc4b02c0b9bcd06a7d3098fc763c4bc379a9b914bd50b5a7f146fddbad51073a1252db4b2a5ac752502d67fce15bdc7e3c1be7dfbf0f1c71fe3c18307d8b2650bf6eedd0b962dbd022e93c9606e6e0ec16010814000e170180cc3c062b1c0ed761bd76e64f116a3aa05ad280ad2e934366dda8483070f2e1333503cc2f0ac2229bcde6ab5a2bdbd1d8d8d8d080402b877ef1e9a9b9bd1d0d0b0ec3a5555313f3f8fd1d1514c4e4e42144558ad56f87cbea203d76aa36a05ad4f9678bd5e1c3972041e8f67452114f3839f877828a5f0f97cd8be7d3b1e3f7e8cb1b1318c8c8cc0e7f3e5453d2449c2e8e828060606100e8761b3d9e0f57af39e1c85f7b6112319e5a85a414b920442080e1e3c08afd75bd1a44639eb5d784db9f3c5b0d96c686e6e86cbe542381c465f5f1f3a3a3ad0dcdc0c42086459c6bd7bf770ebd62da45229389d4e4892844c2603555501642d3dcff346acbc9a84ac53b5825e5a5a42777737366fde5cb65db1a9eb9528159f2ed70fc330a8abab436d6d2dc2e13082c120868787515f5f0fabd58ae9e9693c79f2041d1d1df07abd468e86aaaa463e87288a989d9d85a228b0d96cc66c66355195824ea7d3b0dbedd8b76f9f91d6598eb5b81595e466140a5c4f7002b283d5bebe3eecdab50b8d8d8d686868406d6d2d388e33524775545585a228501405a9540ae1701843434398999981d3e984d3e95cf5fdaf57aa52d00b0b0b387dfa349c4ee7aac45a89a5d693f42b79dc170e38f518b1cedcdc1c060707e1f7fbe170384abe3ec771b05aad00009fcf07bfdf8fcd9b37637272125f7cf105d2e9745eaec746a6ba9e47c846360441c0f6eddb2b1273ae308b59d8424a0dc22a9994d1b3e6745455456f6f2f44512cfafac5fa208420954a61747414bdbdbd46be74b55075163a1a8da2b3b3130e8763d99475256e42e1b962d96fa5da9643d3343c7efc1833333379c717161630383888c3870f1bc70aef559fda8e46a3e8efefc7f0f030244982d7eb456d6d6d550d0eab4ad09aa621994c62f7eedd15472c56a250cc85ab4fca4d7fe7120a85d0d7d7874824b2ec9e07060670ecd831288a92774e5555a4d3692c2c2ca0afaf0f23232346288fe3aaea5f6b5055ef5ad334389d4eb85c2ee358a5518852b9182bb52d3631a3fbcbfaef914804d7ae5d437f7fbf1182cb65787818f1781c76bbddb0c6f1781cc160100f1e3cc0ecec2cec763b5a5a5aaacabd284655093a954aa1b5b5153ccfafcabdc85deba7afc85614059aa61903b9dcd524ab99a0492412b87efd3a6edfbebdcc02e7323e3e8ecece4e4422114c4f4f63747414a15008168b05f5f5f565a7c9ab89aa12743a9d467d7dfdb22422a0b4752684401445cccdcd211c0e63717111a228229d4e4355552301c8e572c1eff7a3a5a505b5b5b52bde8b3e8d3d3434849b376f961533008c8e8e4296654c4c4c20140a8161182367a39a7ce495a82a410380dfef2f3a8b562c82914c2631363686e1e161cccccc201a8d4214c5a2b9c42ccbc2e3f160d3a64dd8b3670f76edda654c5b974ac04f2693b87bf72e92c9e48af73d3e3e8e858505288a02abd56ac4cff5a78429ea2c5525688661e0743af34a07944ace0f0402e8ededc5c8c80842a1d08a7dabaa8a70388c482482c78f1f4314451c3a74c8880f1742084124125916d528c5d2d2121c0e07ec767b9e9fac280a92c92428a5703a9d1b7e11ec4a5495a0f5da15232323080402e8e8e83056a5e45ab8478f1ee1ead5ab181f1f872449ab7a0d4a2916161670e3c60df87c3e747575e59dcb7d1d5114f3e2cee5d8ba752b7a7a7a8cda1b7a7f8aa24014453c78f0008b8b8bf07abd553d30ac2a41330c83a9a9297cf6d967585c5cc4c3870f71faf469ecdcb9d37023a6a7a771f5ea558c8e8eaee8d79682528a482482c9c949ecd8b1c3106031b7a3d2706153531376ecd851f4b52626268c1529d5ee7a54d54799e338dcb9730773737348a552989a9ac2e79f7f8e4c2663ccd4ddbd7b176363636b16b38eaaaa482693cbc270b96e8dc562a9383ae1743a8b8a757c7cdc285a53aa4d355155825614058140c01099a66946b23c000483414c4e4e4296e5677e2d9665e1703896f9b4b96e87d7eb85cfe7aba83f9fcf97576006c8ba46972f5f36b2ebaad9d5d0a9aabf802449cb1ef1b22c63696909008cfa71cf0a2104353535e8ececcc1359e1648bcbe542737373457dd6d6d6e65d3f3e3e8ecf3fff1c00aa324db41455f5572084a0a1a1a1e43fdfe170c066b33df3ebb8dd6ef4f4f460f3e6cd656717799e47777777c948880ecbb27996fcc99327b873e70e645936b2f04cb2549da0b76edd0abbdd6e1cb3582c460e725353133a3a3ad69c6a4908416d6d2d8e1e3d8ac3870f17fde0e4ba0d0cc3a0adad0dbb76ed2a6b611b1b1b61b55a4129452a95c2d0d01042a1105c2e9729e602aa2aca4129454b4b0bbabbbb313030004a29b66edd8af6f676504a2108027a7a7a904c2631383868d4685e0942085c2e179a9a9a70f0e041ecdfbfbf648e4861c2925e126c69690981406099ffce300c5e7bed35a378fad4d4141e3e7c08a7d369ba1945a82a411342100e8771ead4293435354155556cdbb60d8220182134bfdf8f53a74ea1aeae0ea3a3a3989f9f473a9d86244946684fcfdfd04b06d4d7d7a3bdbd1d9d9d9d79be6e297217af1242d0d4d484d75f7f1dd7af5fc7c4c4041289845173bab5b5155d5d5dd0340d8944024343432084e42d0430f91f5525684110b0b8b808411070e8d0a165596f40566c7575753876ec183a3b3b110c06118d46118bc590c9640064dd14bda8796d6d2dfc7e3f5c2e57c9e55ca57244f4732ccba2ed6931c8b1b131048341c4e371088280bd7bf7a2bebe1e9aa6617a7a1a73737370bbdda6ab5182aa12b4d56ac593274fa0aa2a2c164b494b4a2905cff3686a6a426363e3b2d5d52ccbc262b1c062b1e4d5c2789692060cc3181548bbbaba90c964c0719c51285296650c0c0c80e77933b3ae0c5525689665f32adcaf842e505dbce5da006babd351e85fb32c6b58ffdcbe666666303f3f6f640b9a14a7aa46157aa9acd9d9d92f4514952e00c83d5fcab2e71e635916030303c6e64326a5a92a410380dd6e3766069f37ab29ee92bb2c6ba5d52f8aa2607878d858b162529aaa13b4cbe5423018340678955ad25214a6a016ce06165e5f2c4169a5dceca1a121300c63261f5540d5099a65592c2d2d617e7ebea8cfbb92b80a59c9c2965a8c9b3bc152ee1ef445b275757565efc3244bd5091ac82605f5f7f7575412b7d2bad0abb59cc516d1166371711181400056abd5b4ce15507582d65776048341c462b18ada97a2d8c06eb59598ca454628a5b87fffbe19775e05552768209b172d49121e3d7af45cd7e3add65297f2b3f563e1701813131379b92726e5a93a41ebe271381c181e1eae787058096b89409412b53e9122cb72d5168d590b5527681dabd50a511431353505a07231162b1c530995444b72999898c0e4e4a499b8bf4aaaf62fa56ff0fee0c183925b9cada5e862a97e5633d89c9f9f475f5f1f344d3393905649d50a5acf585b5c5cc4f4f4f433c7a3cbb19a84a568348adbb76f2312896cd8ed8bbf4caa56d0008c9260030303c61615a5584b8e46256d72e3d1914804376edcc0ececac39cdbd46aa5ad08410701c878585054c4c4c2c3bbf16bf7ab5e8d72e2e2ee2ead5ab989a9a82cd663307826ba4aa050d6433e9f45c89783c0ea0f86c5e392a99a02986de26140ae1d2a54b080683703a9de614f73350f5822684c06ab5626e6e0ec3c3c346adb85cd6924557c9715996313c3c8c7ffef39f46d52353cccf86f95c4376a28565598c8f8fa3b9b9194d4d4d00561ecc955b2b58accabe2e547d739f9b376fa2afaf0f353535e600f039610a1a59f1098280502884818101b8dd6e381c8ebcf32b09b630d9a8d88741afa614080470e3c60d2493493436369a83bfe78829e8a7e82b45a6a6a6505f5f8fddbb77e7ad522966718b512cdeac2f707dfcf831464646303d3d0d9bcd5675fb9fbc084c41e7c0f33c6459c6fdfbf7e1f178d0d6d656d12c5da904234a2962b118666666100804303737075555e1f178aa7673f92f1b53d039104260b7db91482470fbf66d08825051a9ae5c31330c03455130373787603088d9d9592c2e2e1adbc9d96c3653c45f22a6a00b2084c0e170201a8de2dab56b387efc385a5a5a4a4e8f03ff13712c16c3ecec2ca6a7a71189448c6aff369bcd14f20bc2147411188681cbe5422c16c3a54b9770f8f061b4b7b71b7915fa0642a9540af1781c8f1f3f46281442341a452693413a9d06cff31004c1dc03e505630aba04fa20319d4ee3d34f3f457373b3514220914820994c1ac567f40808cbb2e0380e2e97cbcc907b4998822e03c330c634f4ececacb11f8a5e88462f07a667ee9996f8e5630a7a05f47d590af7365ccb3a42932f1f53d015620a787d603a7a261b0a53d0261b0a53d0261b0a53d0261b0a53d0261b8a0d11e5686f6f37aadce7ae3c2947737333366dda646c505f6c0379bddfb544372449c2cccc0c28a5d8b265cb9a9754c5e3710c0f0f1bc5d60541c0962d5be0f57a0164f7009f9a9a2a7aff3a76bb1d9b366d82d7eb452814c2ccccccaab77c5e2fac6b41d7d4d4e0cd37dfc4e1c387e1f1788cfdfb3ef8e003f4f5f515bdc66ab5e2cd37dfc4a953a7e0f3f92049121e3e7c880b172ee0c183070080cd9b37e3f4e9d33870e0003c1ecf9a041d0a85f0fefbef43d3349c3b776ecdc516d3e934464646f0de7bef616e6e0e4ea7135ffbdad770e4c81100c09d3b7770fefcf992826e6969c177bef31d747777c366b3219148e0ca952bf8e8a38f904824d6744faf32eb5ad0870f1fc6b7bffd6db4b4b418a26b6f6f87dbedc6db6fbf5d74e1ebebafbf8e1ffde847686c6c348e757474c066b3e19d77de812449f8f18f7f8ce3c78f3fd3b6697a4212a5149b366d424b4bcbdade24801d3b76c0eff7e30f7ff80328a5a8afafc7b66ddb006477bf2d65fd1b1a1a70eedc399c3e7d1a4ea7d338be79f366b8dd6efce52f7f792e1b8dbe4aac6b41373434e415324c2693b0dbedd8bf7f3fbefbddefe2cf7ffe73dea3b5a3a30367cf9e45434303344d432412416d6d2d0441404b4b0bbc5e2f789ec78e1d3be076bb01007ffce31f71f3e6cd55df9b2ccb585c5cc4c18307f38efff6b7bf359e042bd1dede8e5ffdea57a8afaf47777737f6eedd5bf2c95388c3e1c037bef10d9c397306369b0da228429665389d4ed4d4d4e07bdffb1e82c1202e5cb8b0eaf7f62ab3ae055d9800f4e1871fe2073ff8010441c06bafbd863d7bf6a0b7b7d738fffdef7f1f5bb66c0121040b0b0bf8c73ffe815ffce21700fe3713c8715c5ebf0e87c3d8987335489254d4979f9d9dc5f8f878457d58ad56288a02209b2cb5d28eb33a0cc360e7ce9d387bf6acb133eee5cb9771edda359c3b770ebb76ed82c3e1c0cf7ffe735cba7409a22856f8ae5e7dd6b5a00b79f7dd77b173e74e1c3c78105bb76ec51b6fbc81f1f171442211ecdbb70f7bf7ee85c56281a66978f7dd770db194e3673ffbd99aee25180ce24f7ffad34bd942a2aeae0ebff9cd6f8ced94a7a6a61008040000a3a3a3d8bc79339c4e27eaeaeaf0eb5fff1abffbddef36cc207143093a954ae1fdf7dfc7ce9d3be1743ab16fdf3ef4f4f4e0ead5ab387af428eaebeb0100c3c3c3b870e102de78e38d15fb8c46a348a552abbe97502884743a5db1557d5e0882805ffef297d8b2658b716ccb962dc693a89093274fa2bfbf1ffffad7bf8c48ca7a6643095a55550c0c0ce0dffffe37ce9e3d8bd6d6569c3871026eb71b478f1e85c3e180288a78e79d772aeef3830f3ec0ddbb77577d2f994c06d3d3d3d8bd7b77de71bbdd0e97cb55511f76bb7d5579d52ccbe2eb5fff3ace9c3903201b210906834557dbe8e306411070f6ec593c7cf81083838315bfd6abca861234908ddb7ef2c9273874e810b66ddb86fdfbf7a3bbbb1b3e9f0faaaae2e2c58bb87dfb76c9eba3d128c2e130545505cbb2686f6f5ff37d2c2d2d2d3bfed5af7e15bb76edaaa88fbaba3aa39cc2d2d2129e3c7952b67d4747077efad39f02c8faf0d7af5fc7dffef6b7a2ee84dfefc74f7ef213ecd9b307cdcdcd78ebadb7f0f6db6f23140a55746faf2a1b4ed07a2cfafcf9f3f8e10f7f884d9b3681655988a288bb77efe2fcf9f348a7d325435d636363f8e8a38f4029457777374e9d3ab5a6fb080683080683cb7ce84adc9c5c6459c683070f70f1e245dcb9730735353545dbf97c3ebcf5d65bf07abda094627272127ffdeb5f31343454b4fde8e828d2e9347efffbdfc3e3f1a0a7a707dffce637f1f7bfffbdec24cdabceba16f4e8e8282e5ebcb86c57d86432892b57ae60696909dddddd70b95c080402f8e28b2f303535054a29344d432010c07ffef31f00d99d5a2391081445c1679f7d8660308823478ea0a5a5654dcba9229108e6e7e74129c5e5cb978d01da6a999999c1ddbb778d0aa9a954caa81d0d64c703a228a2a6a606a228e2934f3e81aaaaf8ef7fff5b52cc3a77eedcc17befbd87eddbb703c8467a5c2ed7ba16342951a7983970e0001b8bc56c8f1e3d8af5f4f4bc845b5b1987c391e767cecfcf176d230802e2f1f8b247af200846484e9665241289bc363ccfc3ebf5ae49d0aaaa22914880526a6c6cbf16f412083a2ccbc2e9741a1fe24c2683442291b7b25cd33444a351c8b2bc62ff56abd59846d7340da228be9282be75eb160e1e3c789e10320f20a069da248080a228f3c96472c9e3f1a47a7b7bd5756da145515c31865aae4d3a9d2e3b5326cbf273f129f57d5c9e07aaaa22168b2ddbc12b1e8f5794c352482693296a08d62b66b69dc986c214b4c986c214b4c986c214b4c986c214b4c986c214b4c986c214b4c9baa25c1558600541b32cfbe2731f4d4c4aa0691a0540354da38410439bb93a352db4c9ba8161983c21e7fe6cb479b1b76462b27628a51aa5542384a89aa66984105a28eab282e6388e02d97974139397458efe6442880c40a1942aaaaa6a1cc769ba4e81328276b95c9465597af8f0e1c6824e4d4c5e18baee0e1d3af4ff0024012429a5299ee73300648ee3349665a9cbe5a240e96c3b0280696b6be3fd7ebf4351145f6f6fefa317f7364c4cfec7810307de4556cc3142c81342c86345511e330cf384e3b8c893274fc4c9c9491980562edb8e721c4717161614a7d399debf7f7f37c771f59aa6f901d4017003b0534a3942084b29350a58300c6316523659134f231900b2833e4aa94a08519015f412800542489410222a8a928e46a3ca539783022512fc29a59410423c1e8f06400690962429ce300cab691a589695344d5b2284d828a51c80c2645f53d0266bc510f4d31d7955428842294d310c935055350a20ac284adc62b1a47d3e9f0c407bda9e16753900c3ed205d5d5d1c000bcbb2764aa99352eae438cef954ccd6a722cf13b469a14dd64aae8506008661544dd354424886529a521425410849104212aaaa2601488383830ab27a2e2d6820bb720500d9b66d1b67b55a794110045996054dd3ac168bc5224912cfb26c9ebb01001cc799823659138aa2e4099210425555552d168b2c4992c4304c86e7f9743a9d4e6732197974745417b306941814e6744690751f485757172b0802178944788bc5c2592c1696e779565114a650d02626cf0b4208e5384e936559952449952449f1f97c723a9d5606070755645d144a9f0ab9aca0733ad5c37b6c57571711459171bbddecfcfc3cbc5eefb2d09faaaaa6c04dd644b1748b6834aa3534346069694975381cdae0e02005a002d9c996dcb6ff1f7604bd8fdfcb37310000000049454e44ae426082</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>expandButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AssetManItem</receiver>
+        <slot>expand()</slot>
+    </connection>
+    <connection>
+        <sender>firstExpandButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AssetManItem</receiver>
+        <slot>expand()</slot>
+    </connection>
+    <connection>
+        <sender>fullExpandButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AssetManItem</receiver>
+        <slot>expand()</slot>
+    </connection>
+    <connection>
+        <sender>collapseButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AssetManItem</receiver>
+        <slot>expand()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="global" impldecl="in implementation">qimage.h</include>
+    <include location="global" impldecl="in declaration">qiconview.h</include>
+    <include location="local" impldecl="in implementation">assetmanitem.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">int assetNumber;</variable>
+    <variable access="public">int expandLevel;</variable>
+</variables>
+<signals>
+    <signal>assetExpanded(int)</signal>
+</signals>
+<slots>
+    <slot>expand()</slot>
+    <slot>setGroupBackgroundColor( int groupnum, QColor col )</slot>
+    <slot>setInfoFromFile( const QString &amp; filename )</slot>
+    <slot>resetAllFields()</slot>
+    <slot>setInfoFromIconViewItem( QIconViewItem * item )</slot>
+    <slot>newSlot()</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+    <function returnType="int">groupHeight( int groupnum )</function>
+    <function>setThumbImage( QImage theimage )</function>
+</functions>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

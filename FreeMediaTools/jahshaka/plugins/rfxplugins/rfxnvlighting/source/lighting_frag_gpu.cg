@@ -1,0 +1,36 @@
+/**
+ * The main entry point for the fragment shader.
+ * @param edge The angle between the lights and the vertex [0.0, 1.0]
+ * @param random A random value, computed via the vertex position.
+ * @param contrastTexture A contrast enhancing texture.
+ * @param paperTexture A paper texture. (Also used as the background).
+ * @param randomTexture A random texture to add the noise to the image.
+ * @param darker The image will be darkened with this value (defaults to 0.1).
+ * @return The computed color for each fragment.
+ */
+void main( 
+		   float2 base_uv          				: TEXCOORD0,
+           float4 light1Position        		: TEXCOORD1,
+		   float edge          					: TEXCOORD2,
+           float2 random_uv        				: TEXCOORD3,
+           float2 contrast_uv        			: TEXCOORD4,
+		   uniform sampler2D BaseTexture		: register (s0),
+		   uniform sampler2D contrastTexture	: register (s1),
+		   uniform sampler2D randomTexture		: register (s2),
+		   uniform float4 light_color			: register (c0),
+           out float4 color 					: COLOR )
+{
+	/* Get the texture values */
+	float4 random = tex2D( randomTexture, random_uv ).xyzw;
+	float4 contrast = tex2D( contrastTexture, contrast_uv).xyzw;
+	float4 base = tex2D( BaseTexture, base_uv ).xyzw;
+
+	float4 red = {1.0, 0.0, 0.0, 1.0};
+	float4 green = {0.0, 1.0, 0.0, 1.0};
+
+	/* Compute the final color */
+  	color = float4( (edge.xxxx * base)) * light_color;
+// 	color = contrast_uv.xyxy;
+// 	color = light1Position.xyzz;
+	color.w = 1.0;
+}

@@ -1,0 +1,90 @@
+test.cpp: In member function 'virtual void GLKeyer::initializeObjects()':
+test.cpp:53: error: 'm_chroma_base_layer' was not declared in this scope
+test.cpp:59: error: 'm_chroma_key_layer' was not declared in this scope
+test.cpp:94: error: 'm_am_aJahSliderLabels' was not declared in this scope
+test.cpp:96: error: 'm_am_aJahSliderLCDs' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::initializeVariables()':
+test.cpp:128: error: 'm_select_colors_individually' was not declared in this scope
+test.cpp:134: error: 'm_textures_initialized' was not declared in this scope
+test.cpp:135: error: 'm_use_textures_for_readback' was not declared in this scope
+test.cpp:136: error: 'm_gpu_select' was not declared in this scope
+test.cpp: In member function 'virtual void GLKeyer::configureModuleEngine()':
+test.cpp:150: error: 'm_gpu_select' was not declared in this scope
+test.cpp:153: error: 'm_chroma_key_layer' was not declared in this scope
+test.cpp:165: error: 'm_gpu_select' was not declared in this scope
+test.cpp:179: error: 'm_chroma_settings_layer' was not declared in this scope
+test.cpp: In member function 'virtual void GLKeyer::addClip(assetData)':
+test.cpp:200: error: 'm_chroma_key_layer' was not declared in this scope
+test.cpp:200: error: 'm_chroma_settings_layer' was not declared in this scope
+test.cpp:210: error: 'm_chroma_base_layer' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::addBaseClip(assetData)':
+test.cpp:240: error: 'm_chroma_base_layer' was not declared in this scope
+test.cpp: In member function 'virtual void GLKeyer::layerClicked(QListViewItem*)':
+test.cpp:299: error: 'm_chroma_key_layer' was not declared in this scope
+test.cpp:304: error: 'm_chroma_settings_layer' was not declared in this scope
+test.cpp:310: error: 'm_chroma_base_layer' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::setColorBase(const QColor&)':
+test.cpp:336: error: 'm_hsv_base' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::setHueBase(int)':
+test.cpp:345: error: 'm_hsv_base' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::setSaturationBase(int)':
+test.cpp:352: error: 'm_hsv_base' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::setValueBase(int)':
+test.cpp:359: error: 'm_hsv_base' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::setHueRange(int)':
+test.cpp:366: error: 'm_hsv_range' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::setSaturationRange(int)':
+test.cpp:373: error: 'm_hsv_range' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::setSoftenValue(int)':
+test.cpp:381: error: 'm_am_aJahSliderLCDs' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::setValueRange(int)':
+test.cpp:388: error: 'm_hsv_range' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::setColorLimitSliderLabels()':
+test.cpp:469: error: 'm_am_aJahSliderLabels' was not declared in this scope
+test.cpp: In member function 'virtual void GLKeyer::setSelectColorsIndividually()':
+test.cpp:482: error: 'm_chroma_settings_layer' was not declared in this scope
+test.cpp:484: error: 'm_select_colors_individually' was not declared in this scope
+test.cpp: In member function 'float4& GLKeyer::getRgbaLow()':
+test.cpp:501: error: 'm_rgba_low' was not declared in this scope
+test.cpp: In member function 'float4& GLKeyer::getRgbaHigh()':
+test.cpp:502: error: 'm_rgba_high' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::setRgbaLow(float4&)':
+test.cpp:503: error: 'm_rgba_low' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::setRgbaHigh(float4&)':
+test.cpp:504: error: 'm_rgba_high' was not declared in this scope
+test.cpp: In member function 'float4& GLKeyer::getHsvBase()':
+test.cpp:505: error: 'm_hsv_base' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::setHsvBase(float4&)':
+test.cpp:506: error: 'm_hsv_base' was not declared in this scope
+test.cpp: In member function 'float4& GLKeyer::getHsvRange()':
+test.cpp:507: error: 'm_hsv_range' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::setHsvRange(float4&)':
+test.cpp:508: error: 'm_hsv_range' was not declared in this scope
+test.cpp: In member function 'float4& GLKeyer::getRgbaRange()':
+test.cpp:509: error: 'm_rgba_range' was not declared in this scope
+test.cpp: In member function 'void GLKeyer::setRgbaRange(float4&)':
+test.cpp:510: error: 'm_rgba_range' was not declared in this scope
+test.cpp: At global scope:
+test.cpp:527: error: expected constructor, destructor, or type conversion before '::' token
+test.cpp:530: error: declaration of 'virtual void GLKeyer::setDefaultAxisSliderLabels()' outside of class is not definition
+test.cpp: In member function 'JahLayer* GLKeyer::getChromaBaseLayer()':
+test.cpp:534: error: 'm_chroma_base_layer' was not declared in this scope
+test.cpp: In member function 'JahLayer* GLKeyer::getChromaKeyLayer()':
+test.cpp:535: error: 'm_chroma_key_layer' was not declared in this scope
+test.cpp: In member function 'JahLayer* GLKeyer::getChromaSettingsLayer()':
+test.cpp:536: error: 'm_chroma_settings_layer' was not declared in this scope
+test.cpp: In member function 'bool GLKeyer::getSelectColorsIndividually()':
+test.cpp:537: error: 'm_select_colors_individually' was not declared in this scope
+test.cpp: In member function 'bool GLKeyer::getGpuSelect()':
+test.cpp:538: error: 'm_gpu_select' was not declared in this scope
+test.cpp: In member function 'GLuint* GLKeyer::getBaseTextureIDPtr()':
+test.cpp:539: error: 'm_base_texture_id' was not declared in this scope
+test.cpp: In member function 'GLuint GLKeyer::getBaseTextureID()':
+test.cpp:540: error: 'm_base_texture_id' was not declared in this scope
+test.cpp: In member function 'GLuint* GLKeyer::getKeyTextureIDPtr()':
+test.cpp:541: error: 'm_key_texture_id' was not declared in this scope
+test.cpp: In member function 'GLuint GLKeyer::getKeyTextureID()':
+test.cpp:542: error: 'm_key_texture_id' was not declared in this scope
+test.cpp: In member function 'bool GLKeyer::getTexturesInitialized()':
+test.cpp:543: error: 'm_textures_initialized' was not declared in this scope
+make: *** [test.o] Fehler 1

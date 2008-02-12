@@ -1,0 +1,14 @@
+
+// fx - A compositing library representation.
+
+// Copyright (C) 2005-2006 VM Inc.
+// Released under the LGPL.
+// For more information, see http://www.openlibraries.org.
+
+void main( in  float4 v_pos:	 POSITION, in  float2 v_tex:	 TEXCOORD0,
+		   out float4 v_out_pos: POSITION, out float2 v_out_tex: TEXCOORD0,
+		   const uniform float4x4 model_view_proj )
+{
+	v_out_tex = v_tex;
+	v_out_pos = mul( model_view_proj, v_pos );
+}

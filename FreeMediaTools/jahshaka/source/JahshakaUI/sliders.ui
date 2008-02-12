@@ -1,0 +1,726 @@
+<!DOCTYPE UI><UI>
+<class>FreeFlameForm</class>
+<widget>
+    <class>QWidget</class>
+    <property stdset="1">
+        <name>name</name>
+        <cstring>FreeFlameForm</cstring>
+    </property>
+    <property stdset="1">
+        <name>geometry</name>
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>530</width>
+            <height>120</height>
+        </rect>
+    </property>
+    <property stdset="1">
+        <name>palette</name>
+        <palette>
+            <active>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>175</red>
+                    <green>180</green>
+                    <blue>159</blue>
+                </color>
+                <color>
+                    <red>252</red>
+                    <green>255</green>
+                    <blue>240</blue>
+                </color>
+                <color>
+                    <red>213</red>
+                    <green>217</green>
+                    <blue>199</blue>
+                </color>
+                <color>
+                    <red>88</red>
+                    <green>90</green>
+                    <blue>79</blue>
+                </color>
+                <color>
+                    <red>117</red>
+                    <green>120</green>
+                    <blue>106</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>213</red>
+                    <green>219</green>
+                    <blue>193</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>145</red>
+                    <green>149</green>
+                    <blue>131</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>111</red>
+                    <green>122</green>
+                    <blue>99</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </active>
+            <disabled>
+                <color>
+                    <red>128</red>
+                    <green>128</green>
+                    <blue>128</blue>
+                </color>
+                <color>
+                    <red>175</red>
+                    <green>180</green>
+                    <blue>159</blue>
+                </color>
+                <color>
+                    <red>252</red>
+                    <green>255</green>
+                    <blue>240</blue>
+                </color>
+                <color>
+                    <red>201</red>
+                    <green>207</green>
+                    <blue>183</blue>
+                </color>
+                <color>
+                    <red>88</red>
+                    <green>90</green>
+                    <blue>79</blue>
+                </color>
+                <color>
+                    <red>117</red>
+                    <green>120</green>
+                    <blue>106</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>213</red>
+                    <green>219</green>
+                    <blue>193</blue>
+                </color>
+                <color>
+                    <red>128</red>
+                    <green>128</green>
+                    <blue>128</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>145</red>
+                    <green>149</green>
+                    <blue>131</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>111</red>
+                    <green>122</green>
+                    <blue>99</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </disabled>
+            <inactive>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>175</red>
+                    <green>180</green>
+                    <blue>159</blue>
+                </color>
+                <color>
+                    <red>252</red>
+                    <green>255</green>
+                    <blue>240</blue>
+                </color>
+                <color>
+                    <red>201</red>
+                    <green>207</green>
+                    <blue>183</blue>
+                </color>
+                <color>
+                    <red>88</red>
+                    <green>90</green>
+                    <blue>79</blue>
+                </color>
+                <color>
+                    <red>117</red>
+                    <green>120</green>
+                    <blue>106</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>213</red>
+                    <green>219</green>
+                    <blue>193</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>145</red>
+                    <green>149</green>
+                    <blue>131</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>111</red>
+                    <green>122</green>
+                    <blue>99</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </inactive>
+        </palette>
+    </property>
+    <property stdset="1">
+        <name>maximumSize</name>
+        <size>
+            <width>530</width>
+            <height>120</height>
+        </size>
+    </property>
+    <property stdset="1">
+        <name>baseSize</name>
+        <size>
+            <width>530</width>
+            <height>120</height>
+        </size>
+    </property>
+    <property stdset="1">
+        <name>caption</name>
+        <string>Jahshaka</string>
+    </property>
+    <property stdset="1">
+        <name>minimumSize</name>
+        <size>
+            <width>530</width>
+            <height>120</height>
+        </size>
+    </property>
+    <widget>
+        <class>QFrame</class>
+        <property stdset="1">
+            <name>name</name>
+            <cstring>FrameMenu</cstring>
+        </property>
+        <property stdset="1">
+            <name>geometry</name>
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>530</width>
+                <height>120</height>
+            </rect>
+        </property>
+        <property stdset="1">
+            <name>frameShadow</name>
+            <enum>Raised</enum>
+        </property>
+        <property stdset="1">
+            <name>frameShape</name>
+            <enum>StyledPanel</enum>
+        </property>
+        <property stdset="1">
+            <name>sizePolicy</name>
+            <sizepolicy>
+                <hsizetype>0</hsizetype>
+                <vsizetype>0</vsizetype>
+            </sizepolicy>
+        </property>
+        <widget>
+            <class>QSlider</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>Slider1_3_2</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>180</x>
+                    <y>60</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>orientation</name>
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget>
+            <class>QSlider</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>Slider1_3</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>180</x>
+                    <y>30</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>orientation</name>
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget>
+            <class>QLCDNumber</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>LCDNumber1_3_3</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>490</x>
+                    <y>30</y>
+                    <width>31</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget>
+            <class>QLCDNumber</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>LCDNumber1_3_3_2_2</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>490</x>
+                    <y>90</y>
+                    <width>31</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget>
+            <class>QSlider</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>Slider1_2_2</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>10</x>
+                    <y>90</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>orientation</name>
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget>
+            <class>QLCDNumber</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>LCDNumber1_2</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>140</x>
+                    <y>60</y>
+                    <width>31</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget>
+            <class>QLCDNumber</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>LCDNumber1_3_2</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>310</x>
+                    <y>60</y>
+                    <width>31</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget>
+            <class>QLabel</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>TextLabel1_2_2</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>180</x>
+                    <y>10</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>text</name>
+                <string>TRANSLATE</string>
+            </property>
+            <property stdset="1">
+                <name>alignment</name>
+                <set>AlignCenter</set>
+            </property>
+            <property stdset="1">
+                <name>font</name>
+                <font>
+                    <pointsize>9</pointsize>
+                </font>
+            </property>
+            <property>
+                <name>hAlign</name>
+            </property>
+        </widget>
+        <widget>
+            <class>QLCDNumber</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>LCDNumber1_2_2</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>140</x>
+                    <y>90</y>
+                    <width>31</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget>
+            <class>QLCDNumber</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>LCDNumber1_3_2_2</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>310</x>
+                    <y>90</y>
+                    <width>31</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget>
+            <class>QLCDNumber</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>LCDNumber1</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>140</x>
+                    <y>30</y>
+                    <width>31</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget>
+            <class>QLCDNumber</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>LCDNumber1_3_3_2</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>490</x>
+                    <y>60</y>
+                    <width>31</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget>
+            <class>QSlider</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>Slider1_2</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>10</x>
+                    <y>60</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>orientation</name>
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget>
+            <class>QSlider</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>Slider1_3_2_2</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>180</x>
+                    <y>90</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>orientation</name>
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget>
+            <class>QSlider</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>Slider1_3_2_3_2</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>360</x>
+                    <y>90</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>orientation</name>
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget>
+            <class>QSlider</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>Slider1_3_2_3</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>360</x>
+                    <y>60</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>orientation</name>
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget>
+            <class>QLCDNumber</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>LCDNumber1_3</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>310</x>
+                    <y>30</y>
+                    <width>31</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget>
+            <class>QLabel</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>TextLabel1_2</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>360</x>
+                    <y>10</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>text</name>
+                <string>SCALE</string>
+            </property>
+            <property stdset="1">
+                <name>alignment</name>
+                <set>AlignCenter</set>
+            </property>
+            <property stdset="1">
+                <name>font</name>
+                <font>
+                    <pointsize>9</pointsize>
+                </font>
+            </property>
+            <property>
+                <name>hAlign</name>
+            </property>
+        </widget>
+        <widget>
+            <class>QSlider</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>Slider1_3_2</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>360</x>
+                    <y>30</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>orientation</name>
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget>
+            <class>QSlider</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>Slider1</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>10</x>
+                    <y>30</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>orientation</name>
+                <enum>Horizontal</enum>
+            </property>
+            <property stdset="1">
+                <name>sizePolicy</name>
+                <sizepolicy>
+                    <hsizetype>7</hsizetype>
+                    <vsizetype>0</vsizetype>
+                </sizepolicy>
+            </property>
+        </widget>
+        <widget>
+            <class>QLabel</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>TextLabel1</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>10</x>
+                    <y>10</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>text</name>
+                <string>ROTATE</string>
+            </property>
+            <property stdset="1">
+                <name>alignment</name>
+                <set>AlignCenter</set>
+            </property>
+            <property stdset="1">
+                <name>font</name>
+                <font>
+                    <pointsize>9</pointsize>
+                </font>
+            </property>
+            <property>
+                <name>hAlign</name>
+            </property>
+        </widget>
+    </widget>
+</widget>
+</UI>

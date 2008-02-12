@@ -1,0 +1,74 @@
+/**
+ * The vertex shader entry point.
+ * @param position
+ * @param normal
+ * @param modelViewProj
+ * @param modelView
+ * @param light1Position
+ * @param light2Position
+ * @return oRandom to the fragment shader.<br />
+ * oEdge (the dot products of light rays and vertex normal) to the fragment
+ * oPosition to the application.<br />
+ * shader.
+ */
+void main( float4 object_position			: POSITION,
+		   float3 normal					: NORMAL,
+		   float2 base_texture_uv			: TEXCOORD0,
+		   float2 random_texture_uv			: TEXCOORD1,
+		   float2 contrast_texture_uv		: TEXCOORD2,
+		   uniform float4x4 modelViewProj	: register (c0),
+		   uniform float4x4 modelView		: register (c4),
+		   uniform float4x4 modelViewIT		: register (c8),
+		   uniform float4     dummy1		: register (c12),
+		   uniform float4     dummy2		: register (c13),
+		   uniform float3 light1Position    : register (c14),
+		   uniform float3 light2Position	: register (c15),
+		   uniform float4 texture_width		: register (c16),
+		   uniform float4 texture_height	: register (c17),
+		   uniform float camera_distance	: register (c18),
+		   out float2 uv					: TEXCOORD0,
+    	   out float4 oLight1Position		: TEXCOORD1,
+		   out float oEdge					: TEXCOORD2,
+		   out float2 oRandom_uv			: TEXCOORD3,
+		   out float2 oContrast_uv			: TEXCOORD4,
+		   out float4 oPosition				: POSITION )
+{
+
+	float4			 normalized_position;
+
+	// Normalize xyz to range (0,1)
+	normalized_position.x = (object_position.x / (texture_width.x / 2.0));
+	normalized_position.y = (object_position.y / (texture_height.x / 2.0));
+	normalized_position.z = ((object_position.z + camera_distance) / camera_distance) * 2.0;
+	normalized_position.w = object_position.w;
+
+
+	/* The vertex position in projection space */
+	oPosition = mul( modelViewProj, object_position );
+
+	/* The normal vector in eye space */
+	float3 normalE = normalize( mul( (float3x3)modelViewIT, normal ) );
+
+	/* The position vector in eye space */
+	float3 positionE = mul( modelView, object_position ).xyz;
+
+	/* The light vectors in eye space */
+	float3 light1PositionE = normalize( light1Position - positionE );
+	oLight1Position = normalize(light1PositionE.xyzx);
+	float3 light2PositionE = normalize( light2Position - positionE );
+	oLight1Position = normalize(light2PositionE.xyzz);
+	oLight1Position = normalize(light1PositionE.xyzz);
+
+	oRandom_uv = random_texture_uv;
+	oContrast_uv = contrast_texture_uv;
+
+	/* Edge detection plus a little brightening using x^0.5 */
+	float2 edge = pow( float2( max( dot( light1PositionE, normalE ), 0.0 ), 
+					   max( dot( light2PositionE, normalE ), 0.0 ) ), 0.5 );
+
+
+	oLight1Position = edge.xyxy;
+	oEdge = max( edge.x, edge.y );
+
+	uv = base_texture_uv;
+}

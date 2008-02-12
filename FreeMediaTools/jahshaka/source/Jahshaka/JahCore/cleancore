@@ -1,0 +1,7 @@
+cd World;
+make clean;
+cd ../Objects;
+make clean;
+cd ../Render;
+make clean;
+

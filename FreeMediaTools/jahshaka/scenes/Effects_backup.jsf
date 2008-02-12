@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- Jahshaka Scene File -->
+
+<JAHSHAKA jah_version = '2.0RC2' xml_file_version = '0.01'>
+    <SCENE_FILE name = 'Effects_backup' />
+    <MODULE name = 'Effects' />
+    <FRAMES resolution = 'NTSC D1' code = '3' number = '1' />
+    <LAYER name = 'FxLayer' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' use_open_gl_keyer = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'MESHLAYER' composite_type = 'Standard' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' translate_first = '1' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'dscf0080' clipnumber = '3'
+             location = '/mnt/sda10/mdupont/Desktop/pictures/frankfurt/'
+             filename = 'dscf0080' extension = '.jpg'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             slip = '0' inframe_number = '1' outframe_number = '1' showedges = '1' loop = '0' ping = '0' xpos = '10' ypos = '10' />
+        <KEYFRAMES count = '0'>
+            <KEYFRAME TC = '0' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '20'
+                layer_enabled = '1'
+                ambient_red = '255' ambient_green = '255' ambient_blue = '255'
+                diffuse_red = '255' diffuse_green = '255' diffuse_blue = '255'
+                specular_red = '255' specular_green = '255' specular_blue = '255' />
+        </KEYFRAMES>
+    </LAYER>
+</JAHSHAKA>

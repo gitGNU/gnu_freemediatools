@@ -1,0 +1,279 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>advancedSearchForm</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>advancedSearchForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>376</width>
+            <height>348</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Advanced Search</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>textLabel2</cstring>
+            </property>
+            <property name="text">
+                <string>Construct a query by combining conditions below. Conditions can be added and deleted from the table.</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="QTable" row="1" column="0">
+            <property name="name">
+                <cstring>table</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="numRows">
+                <number>0</number>
+            </property>
+            <property name="numCols">
+                <number>4</number>
+            </property>
+            <property name="rowMovingEnabled">
+                <bool>true</bool>
+            </property>
+            <property name="selectionMode">
+                <enum>SingleRow</enum>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="4" column="0">
+            <property name="name">
+                <cstring>layout8</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer4</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>149</width>
+                            <height>16</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>doAdvancedSearchButton</cstring>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>100</width>
+                            <height>32767</height>
+                        </size>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Search</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+S</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>cancelAdvancedSearchButton</cstring>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>100</width>
+                            <height>32767</height>
+                        </size>
+                    </property>
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <spacer row="3" column="0">
+            <property name="name">
+                <cstring>spacer3</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>16</width>
+                    <height>68</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QLayoutWidget" row="2" column="0">
+            <property name="name">
+                <cstring>layout12</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QToolButton">
+                    <property name="name">
+                        <cstring>addConditionButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="iconSet">
+                        <iconset>image0</iconset>
+                    </property>
+                    <property name="usesBigPixmap">
+                        <bool>false</bool>
+                    </property>
+                    <property name="usesTextLabel">
+                        <bool>true</bool>
+                    </property>
+                    <property name="textLabel">
+                        <string>Add row</string>
+                    </property>
+                    <property name="textPosition">
+                        <enum>BesideIcon</enum>
+                    </property>
+                </widget>
+                <widget class="QToolButton">
+                    <property name="name">
+                        <cstring>deleteConditionButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="iconSet">
+                        <iconset>image1</iconset>
+                    </property>
+                    <property name="usesBigPixmap">
+                        <bool>false</bool>
+                    </property>
+                    <property name="usesTextLabel">
+                        <bool>true</bool>
+                    </property>
+                    <property name="textLabel">
+                        <string>Delete row</string>
+                    </property>
+                    <property name="textPosition">
+                        <enum>BesideIcon</enum>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>dummyLabel</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>2</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QSpinBox">
+                    <property name="name">
+                        <cstring>hitLimitSpinBox</cstring>
+                    </property>
+                    <property name="prefix">
+                        <string>Limit to </string>
+                    </property>
+                    <property name="suffix">
+                        <string> hits</string>
+                    </property>
+                    <property name="maxValue">
+                        <number>500</number>
+                    </property>
+                    <property name="minValue">
+                        <number>10</number>
+                    </property>
+                    <property name="lineStep">
+                        <number>10</number>
+                    </property>
+                    <property name="value">
+                        <number>50</number>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+    </grid>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="209">89504e470d0a1a0a0000000d494844520000000f0000000f08060000003bd6954a0000009849444154789c63646513644007bcbcacffd1c53e7ffecd882ec682a1130a36ae7f0967fb078a6355c3844b73554925c38ac56b7149e3d74c0ca048330bb6c0c106b0a96361606060d0564e62d0d337c1a91139f060c03f501c7768c300b6408b880d46d8ccc0c0c070e9e2190c45f85cc3c0c0c0c028242c86d5cfc85e59be2e0bab66166c2987d8143680f18c4f125b202203464a72150078fa28c9d18096330000000049454e44ae426082</data>
+    </image>
+    <image name="image1">
+        <data format="PNG" length="646">89504e470d0a1a0a0000000d494844520000000f0000000f08060000003bd6954a0000024d49444154789c6d93dd4b53611cc73f679ee9397be9f8d2a6065a98529611bd406405114817d54d17525e08411762d7dd78d3df104404de7591d08d102995a921343574732ae14baecdb5a99b9b6773ce1ddd76ba108f8df5bd7a2e9ecff7fbe5f77b1ec1e50ef2af9e7575eb00a9e4268e5a857038c4bbbe4181ff4870b983dcb87c52375bab69a86b01e0faad0bf4bce8a1f74d2fd18d28e1e00e3eff2c7ffce30cbb8286912060d21bcf5ea3041b1d8f9e10de58e558958eb346c126399875cf93d5ac04422bf85646f8135c360c4480126cdcbdf39858244377d773e4aa2db4bd4d063e4c53e33c432c9261716118caa4e2da1d0f9fea75ce4bd8950a9a9a1cd49dcb10082f9253cb09454bf9d23f42f3c57afcfe013e0e4d1bb54580f09acabdb6abb4dd7e40438b487d730649ccb3f053c0eb0d73fed44d3e7fea637b7bbf20593c3c28e50eb6d43d1289d2820bf3ee45d2490d59b12198a562389f4f90dad93d3051f20064b2264c39897452a3c46c23baf61babd95a009b00c6268784b1d14100120913926801605fd3d1349ddc7e8abd4c96819151a10806b0db2dcccc4d6191724795977d38ab9d4c4c7ca55412e96c6fd5efb75dd18be0486c1900cff81280911ed988202b36b45c0a80ca8a323adb5bf5828145625e74934679adf320753680d55c09407a378624e5c96641108e8666c0aaeac333f58dd38db564b23200f1789c0a8744687d1ebbbc0e402c9e30766dd4feee0e08e95d15d922e35fd211c5e307a949cd487afbde25143d9243cd2d7978fdf2156eef0900567f09fc98f1a0aadbf44fba8a7ed65fc34cf4c5ae3ef5df0000000049454e44ae426082</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>addConditionButton</sender>
+        <signal>clicked()</signal>
+        <receiver>advancedSearchForm</receiver>
+        <slot>addCondition()</slot>
+    </connection>
+    <connection>
+        <sender>deleteConditionButton</sender>
+        <signal>clicked()</signal>
+        <receiver>advancedSearchForm</receiver>
+        <slot>deleteSelectedCondition()</slot>
+    </connection>
+    <connection>
+        <sender>doAdvancedSearchButton</sender>
+        <signal>clicked()</signal>
+        <receiver>advancedSearchForm</receiver>
+        <slot>executeSearch()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">DataSource.h</include>
+    <include location="local" impldecl="in declaration">Asset.h</include>
+    <include location="local" impldecl="in implementation">advancedsearchform.ui.h</include>
+</includes>
+<forwards>
+    <forward>class QListViewItem</forward>
+    <forward>using namespace olib::openassetlib</forward>
+</forwards>
+<variables>
+    <variable>std::list&lt;olib::openassetlib::Asset*&gt; hits;</variable>
+    <variable>olib::openassetlib::DataSource *datasource;</variable>
+</variables>
+<signals>
+    <signal>hitsToShow( std::list&lt;Asset*&gt;)</signal>
+</signals>
+<slots>
+    <slot>addCondition()</slot>
+    <slot>deleteSelectedCondition()</slot>
+    <slot>listViewSelectionChangedSlot( QListViewItem * i )</slot>
+    <slot>executeSearch()</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+</functions>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

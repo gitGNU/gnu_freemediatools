@@ -1,0 +1,4 @@
+To compile the clearspeed plugins you need to build the using the csplugins.pro
+file by doing a
+qmake cstplugins.pro
+

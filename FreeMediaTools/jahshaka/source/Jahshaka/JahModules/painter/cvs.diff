@@ -1,0 +1,4247 @@
+? Makefile
+? cvs.diff
+? moc_paint.cpp
+? paintinterface.ii
+? paintinterface.s
+? test.cpp
+Index: paint.cpp
+===================================================================
+RCS file: /cvsroot/jahshakafx/jahshaka/source/Jahshaka/JahModules/painter/paint.cpp,v
+retrieving revision 1.136
+diff -r1.136 paint.cpp
+16c16
+< #include <qtimer.h>
+---
+> #include <timer.h>
+43c43
+<     jtrace->info( "Initializing GLPaint Class");
+---
+>     m_pJTrace->info( "Initializing GLPaint Class");
+51c51
+<     m_image_layer = getLayerList()->at(0)->getJahLayer();
+---
+>     m_pImageLayer = getLayerList()->at(0)->getJahLayer();
+71c71
+< 	core->switchAutoBufferSwap( true ); 
+---
+> 	m_pCore->switchAutoBufferSwap( true ); 
+73c73
+< 	glClearColor( core->backgroundRed, core->backgroundGreen, core->backgroundBlue, 0.0 );
+---
+> 	glClearColor( m_pCore->backgroundRed, m_pCore->backgroundGreen, m_pCore->backgroundBlue, 0.0 );
+93c93
+<     forceplay       = true;
+---
+>     m_bForcePlay       = true;
+101c101
+<     m_currentFrame = 1;
+---
+>     m_nCurrentFrame = 1;
+111,116c111,116
+<     maxFrame = 1;
+<     minFrame = 1;
+<     updatesliderEndframe(maxFrame);
+<     updatesliderStartframe(minFrame);
+<     startFrameControl->setValue(minFrame);
+<     endFrameControl->setValue(maxFrame);
+---
+>     m_nMaxFrame = 1;
+>     m_nMinFrame = 1;
+>     updatesliderEndframe(m_nMaxFrame);
+>     updatesliderStartframe(m_nMinFrame);
+>     m_pStartFrameControl->setValue(m_nMinFrame);
+>     m_pEndFrameControl->setValue(m_nMaxFrame);
+201,202c201,202
+<     X_RESOLUTION = image_width;
+<     Y_RESOLUTION = image_height;
+---
+>     m_nX_RESOLUTION = image_width;
+>     m_nY_RESOLUTION = image_height;
+204c204
+< 	if (X_RESOLUTION % 2)
+---
+> 	if (m_nX_RESOLUTION % 2)
+206c206
+< 		X_RESOLUTION -= 1;
+---
+> 		m_nX_RESOLUTION -= 1;
+209c209
+< 	if (Y_RESOLUTION % 2)
+---
+> 	if (m_nY_RESOLUTION % 2)
+211c211
+< 		Y_RESOLUTION -= 1;
+---
+> 		m_nY_RESOLUTION -= 1;
+214,215c214,215
+< 	m_frame_width  = X_RESOLUTION;
+<     m_frame_height = Y_RESOLUTION;
+---
+> 	m_frame_width  = m_nX_RESOLUTION;
+>     m_frame_height = m_nY_RESOLUTION;
+232,233c232,233
+<     maxFrame = clip.endframe;
+<     m_animation = false;
+---
+>     m_nMaxFrame = clip.endframe;
+>     m_bAnimation = false;
+247,248c247,248
+<         m_redo_button->show();
+<         m_undo_button->show();
+---
+>         m_pRedoButton->show();
+>         m_pUndoButton->show();
+253,255c253,255
+<         m_redo_button->hide();
+<         m_undo_button->hide();
+<         setVideoFrameDirty(minFrame, false);
+---
+>         m_pRedoButton->hide();
+>         m_pUndoButton->hide();
+>         setVideoFrameDirty(m_nMinFrame, false);
+268c268
+<     if (m_currentFrame == 0)
+---
+>     if (m_nCurrentFrame == 0)
+270c270
+<         m_currentFrame = 1;
+---
+>         m_nCurrentFrame = 1;
+275c275
+<     endFrameControl->setValue(clip.endframe);
+---
+>     m_pEndFrameControl->setValue(clip.endframe);
+278c278
+<     startFrameControl->setValue(start_frame);
+---
+>     m_pStartFrameControl->setValue(start_frame);
+303c303
+<         if ( getCurrentFrame() > maxFrame )
+---
+>         if ( getCurrentFrame() > m_nMaxFrame )
+305c305
+<             m_currentFrame = minFrame; 
+---
+>             m_nCurrentFrame = m_nMinFrame; 
+379c379
+<     core->zoomVal = 1.0f;  // Hardcode this for now  FIXME
+---
+>     m_pCore->zoomVal = 1.0f;  // Hardcode this for now  FIXME
+389,390c389,390
+<             glVertex3f( getScreenCenterX() - ( getImageWidthDiv2() * core->zoomVal ), 
+<                 getScreenCenterY() -  ( getImageHeightDiv2() * core->zoomVal ), 
+---
+>             glVertex3f( getScreenCenterX() - ( getImageWidthDiv2() * m_pCore->zoomVal ), 
+>                 getScreenCenterY() -  ( getImageHeightDiv2() * m_pCore->zoomVal ), 
+394,395c394,395
+<             glVertex3f( getScreenCenterX() + ( getImageWidthDiv2() * core->zoomVal ), 
+<                 getScreenCenterY() - ( getImageHeightDiv2() * core->zoomVal ), 
+---
+>             glVertex3f( getScreenCenterX() + ( getImageWidthDiv2() * m_pCore->zoomVal ), 
+>                 getScreenCenterY() - ( getImageHeightDiv2() * m_pCore->zoomVal ), 
+399,400c399,400
+<             glVertex3f( getScreenCenterX() + ( getImageWidthDiv2() * core->zoomVal ), 
+<                 getScreenCenterY() + ( getImageHeightDiv2() * core->zoomVal ), 
+---
+>             glVertex3f( getScreenCenterX() + ( getImageWidthDiv2() * m_pCore->zoomVal ), 
+>                 getScreenCenterY() + ( getImageHeightDiv2() * m_pCore->zoomVal ), 
+404,405c404,405
+<             glVertex3f( getScreenCenterX() - ( getImageWidthDiv2() * core->zoomVal ), 
+<                 getScreenCenterY() + ( getImageHeightDiv2() * core->zoomVal ), 
+---
+>             glVertex3f( getScreenCenterX() - ( getImageWidthDiv2() * m_pCore->zoomVal ), 
+>                 getScreenCenterY() + ( getImageHeightDiv2() * m_pCore->zoomVal ), 
+423,424c423,424
+<     setScreenWidthDiv2( core->getRenderWidth() / 2 );
+<     setScreenHeightDiv2( core->getRenderHeight() / 2 );
+---
+>     setScreenWidthDiv2( m_pCore->getRenderWidth() / 2 );
+>     setScreenHeightDiv2( m_pCore->getRenderHeight() / 2 );
+430,431c430,431
+<     m_frame_width *= core->zoomVal;
+<     m_frame_height *= core->zoomVal;
+---
+>     m_frame_width *= m_pCore->zoomVal;
+>     m_frame_height *= m_pCore->zoomVal;
+446,447c446,447
+<     float delta_x = float(core->getRenderWidth() - getFrameWidth() );
+<     float delta_y = float(core->getRenderHeight() - getFrameHeight() );
+---
+>     float delta_x = float(m_pCore->getRenderWidth() - getFrameWidth() );
+>     float delta_y = float(m_pCore->getRenderHeight() - getFrameHeight() );
+472,473c472,473
+<     int abs_w = core->getRenderWidth(); //getFrameWidth()( );
+<     int abs_h = core->getRenderHeight(); //( );
+---
+>     int abs_w = m_pCore->getRenderWidth(); //getFrameWidth()( );
+>     int abs_h = m_pCore->getRenderHeight(); //( );
+506c506
+<     if (minFrame < 1)
+---
+>     if (m_nMinFrame < 1)
+508c508
+<         minFrame = 1;
+---
+>         m_nMinFrame = 1;
+511c511
+<     if (frame_number < minFrame)
+---
+>     if (frame_number < m_nMinFrame)
+513,514c513,514
+<         m_currentFrame = minFrame;
+<         frame_number = minFrame;
+---
+>         m_nCurrentFrame = m_nMinFrame;
+>         frame_number = m_nMinFrame;
+517c517
+<     if (frame_number > maxFrame)
+---
+>     if (frame_number > m_nMaxFrame)
+519,520c519,520
+<         frame_number = maxFrame;
+<         m_currentFrame = maxFrame;
+---
+>         frame_number = m_nMaxFrame;
+>         m_nCurrentFrame = m_nMaxFrame;
+679,680c679,680
+<     X_RESOLUTION = m_frame_width;
+<     Y_RESOLUTION = m_frame_height;
+---
+>     m_nX_RESOLUTION = m_frame_width;
+>     m_nY_RESOLUTION = m_frame_height;
+687,688c687,688
+<     m_redo_button->show();
+<     m_undo_button->show();
+---
+>     m_pRedoButton->show();
+>     m_pUndoButton->show();
+692,697c692,697
+<     minFrame = 1;
+<     maxFrame = 1;
+<     updatesliderEndframe(maxFrame);
+<     updatesliderStartframe(minFrame);
+<     startFrameControl->setValue(minFrame);
+<     endFrameControl->setValue(maxFrame);
+---
+>     m_nMinFrame = 1;
+>     m_nMaxFrame = 1;
+>     updatesliderEndframe(m_nMaxFrame);
+>     updatesliderStartframe(m_nMinFrame);
+>     m_pStartFrameControl->setValue(m_nMinFrame);
+>     m_pEndFrameControl->setValue(m_nMaxFrame);
+Index: paintcore.cpp
+===================================================================
+RCS file: /cvsroot/jahshakafx/jahshaka/source/Jahshaka/JahModules/painter/paintcore.cpp,v
+retrieving revision 1.61
+diff -r1.61 paintcore.cpp
+1,857d0
+< /*******************************************************************************
+< **
+< ** The source file for the Jahshaka animation module
+< ** The Jahshaka Project
+< ** Copyright (C) 2000-2006 VM Inc.
+< ** Released under the GNU General Public License
+< **
+< *******************************************************************************/
+< 
+< #include "paint.h"
+< #include <sstream>
+< #include <qpushbutton.h>
+< #include <InputLCD.h>
+< #include <qlistview.h>
+< 
+< /*
+< | Draw with the active tool using this canvas's two points, x1,y1 and x2,y2.
+< */
+< void GLPaint::drawWithActiveTool() 
+< {
+< 	frameEdited = true;
+< 
+< 	GLint   minPointSize = 1;
+< 	color3 penColor,  penColorDark,  penColorLight,
+< 		fillColor, fillColorDark, fillColorLight;
+< 
+< 	//switch from QT colors to openGL colors, 0...255  to  0.0...1.0
+< 	GLfloat gradientDegree = m_gradient_degree / 255.0;
+< 	penColor[0] = m_pen_color->red()   / 255.0;
+< 	penColor[1] = m_pen_color->green() / 255.0;
+< 	penColor[2] = m_pen_color->blue()  / 255.0;
+< 
+< 	penColorLight[0] = penColor[0];
+< 	penColorLight[1] = penColor[1];
+< 	penColorLight[2] = penColor[2];
+< 
+< 	//penColorDark  = penColor;     need to write a copy constructor to do this for me
+< 	penColorDark[0]  = penColor[0];
+< 	penColorDark[1]  = penColor[1];
+< 	penColorDark[2]  = penColor[2];
+< 
+< 	for (int i = 0; i < 3; i++) 
+< 	{
+< 		if  (penColorLight[i]  + gradientDegree > 1) penColorLight[i] = 1;
+< 		else penColorLight[i] += gradientDegree;
+< 
+< 		if  (penColorDark[i]   - gradientDegree < 0) penColorDark[i]  = 0;
+< 		else penColorDark[i]  -= gradientDegree;
+< 	}
+< 
+< 	fillColor[0] = m_fill_color->red()   / 255.0;
+< 	fillColor[1] = m_fill_color->green() / 255.0;
+< 	fillColor[2] = m_fill_color->blue()  / 255.0;
+< 
+< 	fillColorLight[0] = fillColor[0];
+< 	fillColorLight[1] = fillColor[1];
+< 	fillColorLight[2] = fillColor[2];
+< 
+< 	fillColorDark[0]  = fillColor[0];
+< 	fillColorDark[1]  = fillColor[1];
+< 	fillColorDark[2]  = fillColor[2];
+< 
+< 	for (int ii = 0; ii < 3; ii++) 
+< 	{
+< 		if  (fillColorLight[ii]  + gradientDegree > 1) fillColorLight[ii] = 1;
+< 		else fillColorLight[ii] += gradientDegree;
+< 
+< 		if  (fillColorDark[ii]   - gradientDegree < 0) fillColorDark[ii]  = 0;
+< 		else fillColorDark[ii]  -= gradientDegree;
+< 	}
+< 
+<     color4 pen_color( penColor[0], penColor[1], penColor[2], getPenAlpha() );
+<     color4 pen_color_light( penColorLight[0], penColorLight[1], penColorLight[2], getPenAlpha() );
+<     color4 pen_color_dark( penColorDark[0], penColorDark[1], penColorDark[2], getPenAlpha() );
+< 
+<     color4 fill_color( fillColor[0], fillColor[1], fillColor[2], getFillAlpha() );
+<     color4 fill_color_light( fillColorLight[0], fillColorLight[1], fillColorLight[2], getFillAlpha() );
+<     color4 fill_color_dark( fillColorDark[0], fillColorDark[1], fillColorDark[2], getFillAlpha() );
+< 
+< 
+< 	// use my brush size for points and lines
+< 	glLineWidth(m_brush_size);
+< 
+<     glEnable(GL_BLEND);
+<     glBlendFunc( getSrcBlendFactor(), getDstBlendFactor() );
+< 
+<     switch(m_active_tool) 
+<     {
+<     case none    :
+<         break;
+< 
+<     case pen     :
+< 
+<         drawToolPen( pen_color );
+<         break;
+< 
+<     case line      :
+< 
+<         drawToolLine( m_brush_size, pen_color_light, pen_color_dark, minPointSize,
+<             x1, y1, x2, y2 );
+<         break;
+< 
+<     case rectangle :
+< 
+<         drawToolRect( m_brush_size, pen_color, pen_color_light, pen_color_dark, minPointSize,
+<             x1, y1, x2, y2  );
+<         break;
+< 
+<     case rectangleFilled :
+< 
+<         drawToolRectFilled( m_brush_size, minPointSize,
+<             pen_color,  pen_color_light,  pen_color_dark, fill_color, fill_color_light, fill_color_dark,
+<             x1,  y1,  x2,  y2  );
+<         break;
+< 
+<     case circle :
+< 
+<         drawToolCircle( pen_color, gradientDegree, x1, y1, x2, y2 );
+<         break;
+< 
+<     case circleFilled :
+< 
+<         drawToolCircleFilled( pen_color, fill_color, gradientDegree, x1, y1, x2, y2  );
+<         break;
+< 
+<     case triangle :
+< 
+<         drawToolTri ( pen_color, pen_color_light, pen_color_dark,
+<             x1, y1, x2, y2  );
+<         break;
+< 
+<     case triangleFilled :
+< 
+<         drawToolTriFilled( pen_color,  pen_color_light,  pen_color_dark,
+<             fill_color, fill_color_light, fill_color_dark,
+<             x1, y1, x2, y2  );
+<         break;
+< 
+<     case eraser :
+< 
+<         drawEraser(x1, y1);
+<         break;
+< 
+<     case foregroundColorPicker :
+< 
+<         drawToolForegroundColorPicker(pen_color, x1, y1);
+<         break;
+< 
+<     case backgroundColorPicker :
+< 
+<         drawToolBackgroundColorPicker(fill_color, x1, y1);
+<         break;
+< 
+<     default :
+<         break;
+<     }
+< 
+<     glDisable(GL_BLEND);
+< }
+< 
+< ////////////////////////////////////////////////////
+< //Jah UI code to be implemented
+< void GLPaint::updateSliders() 
+< {   
+< }
+< 
+< void GLPaint::clicked( QListViewItem* item) 
+< { 
+<     if (!item)
+<     {
+<         return;
+<     }
+< 
+<     getImageLayer()->layerStatus = ( (QCheckListItem*)item )->isOn();
+<     updateGL();
+< }
+< 
+< 
+< ////////////////////////////////////////////////////
+< //history code
+< 
+< void GLPaint::slotHistoryPrevious() 
+< { 
+<     previousframeanimation();
+< }
+< 
+< void GLPaint::slotHistoryNext()     
+< { 
+< 	nextframeanimation();
+< }
+< 
+< void GLPaint::slotDelete()     
+< { 
+< 	deleteFrames(getCurrentHistoryFrame(), 1);
+< }
+< 
+< void GLPaint::slotCopyOne()     
+< { 
+< 	copyFrames(getCurrentHistoryFrame(), 1);
+< }
+< 
+< void GLPaint::slotPaste()     
+< { 
+< 	pasteFrames( getCurrentHistoryFrame() );
+< }
+< 
+< bool            
+< GLPaint::getApplyEffectToAllFrames()
+< {
+<     return( m_apply_effect_to_all_frames_qcheckbox->isChecked() );
+< }
+< 
+< bool            
+< GLPaint::getAdvanceFrameAfterEffectApplied()
+< {
+<     return( m_advance_frame_qcheckbox->isChecked() );
+< }
+< 
+< 
+< void            
+< GLPaint::executeEffect(PAINT_EFFECT_TYPE effect_type)
+< {
+<     if ( getApplyEffectToAllFrames() )
+<     {
+<         setStopRequested(false);  
+<         //firstframeanimation();
+< 
+<         while ( m_currentFrame <= maxFrame && getApplyEffectToAllFrames() && !getStopRequested() )
+<         {
+<             qApp->processEvents();
+< 
+<             executePaintEffect(effect_type);
+<             nextframeanimation();
+< 
+<             if (m_currentFrame == maxFrame)
+<             {
+<                 executePaintEffect(effect_type);
+<                 break;
+<             }
+<         }
+<     }
+<     else
+<     {
+<         executePaintEffect(effect_type);
+<         advanceVideoFrameIfRequested();
+<     }
+< 
+<     if ( getStopRequested() )
+<     {
+<         setStopRequested(false);
+<     }
+< }
+< 
+< 
+< ////////////////////////////////////////////////////
+< //paint slots
+< 
+< void GLPaint::slotInvert()       
+< { 
+<     executeEffect(INVERT_EFFECT);
+< }
+< 
+< void GLPaint::slotFade()         
+< { 
+<     executeEffect(FADE_EFFECT);
+< }
+< 
+< void GLPaint::slotIntensify()    
+< { 
+<     executeEffect(INTENSIFY_EFFECT);
+< }
+< 
+< void GLPaint::slotEmboss()    
+< { 
+<     executeEffect(EMBOSS_EFFECT);
+< }
+< 
+< void GLPaint::slotBlur()         
+< { 
+<     executeEffect(BLUR_EFFECT);
+< }
+< 
+< void GLPaint::slotSharpen()      
+< { 
+<     executeEffect(SHARPEN_EFFECT);
+< }
+< 
+< void GLPaint::slotEdgeDetectX()  
+< { 
+<     executeEffect(EDGE_DETECT_X_EFFECT);
+< }
+< 
+< void GLPaint::slotEdgeDetectY()  
+< { 
+<     executeEffect(EDGE_DETECT_Y_EFFECT);
+< }
+< 
+< void
+< GLPaint::slotSetCompositeType()
+< {
+<     QPopupMenu *menu = new QPopupMenu( 0 );
+< 
+<     menu->insertItem( "A over B", A_OVER_B_COMPOSITE_EFFECT);
+<     menu->insertItem( "B over A", B_OVER_A_COMPOSITE_EFFECT);
+<     menu->insertItem( "A in B", A_IN_B_COMPOSITE_EFFECT);
+<     menu->insertItem( "B in A", B_IN_A_COMPOSITE_EFFECT);
+<     menu->insertItem( "A out B", A_OUT_B_COMPOSITE_EFFECT);
+<     menu->insertItem( "B out A", B_OUT_A_COMPOSITE_EFFECT);
+<     menu->insertItem( "A atop B", A_ATOP_B_COMPOSITE_EFFECT);
+<     menu->insertItem( "B atop A", B_ATOP_A_COMPOSITE_EFFECT);
+<     menu->insertItem( "A xor B", A_XOR_B_COMPOSITE_EFFECT);
+< 
+<     menu->setMouseTracking(TRUE);
+< 
+<     PAINT_EFFECT_TYPE type = 
+<         (PAINT_EFFECT_TYPE)menu->exec( m_select_composite_button->mapToGlobal( QPoint( 0, m_select_composite_button->height() + 1 ) ) );
+< 
+<     if (type < A_OVER_B_COMPOSITE_EFFECT || type > A_XOR_B_COMPOSITE_EFFECT) 
+<     {
+<         type = A_OVER_B_COMPOSITE_EFFECT;
+<     }
+< 
+<     setCurrentCompositeType(type);
+< 
+<     switch (type)
+<     {
+<         case A_OVER_B_COMPOSITE_EFFECT :
+<         {
+<             m_composite_button->setText("A over B");
+<             break;
+<         }
+<         case B_OVER_A_COMPOSITE_EFFECT :
+<         {
+<             m_composite_button->setText("B over A");
+<             break;
+<         }
+<         case A_IN_B_COMPOSITE_EFFECT :
+<         {
+<             m_composite_button->setText("B in A");
+<             break;
+<         }
+<         case B_IN_A_COMPOSITE_EFFECT :
+<         {
+<             m_composite_button->setText("B in A");
+<             break;
+<         }
+<         case A_OUT_B_COMPOSITE_EFFECT :
+<         {
+<             m_composite_button->setText("A out B");
+<             break;
+<         }
+<         case B_OUT_A_COMPOSITE_EFFECT :
+<         {
+<             m_composite_button->setText("B out A");
+<             break;
+<         }
+<         case A_ATOP_B_COMPOSITE_EFFECT :
+<         {
+<             m_composite_button->setText("A atop B");
+<             break;
+<         }
+<         case B_ATOP_A_COMPOSITE_EFFECT :
+<         {
+<             m_composite_button->setText("B atop A");
+<             break;
+<         }
+<         case A_XOR_B_COMPOSITE_EFFECT :
+<         {
+<             m_composite_button->setText("A xor B");
+<             break;
+<         }
+<         default :
+<         {
+<             m_composite_button->setText("A Over B");
+<             break;
+<         }
+<     }
+< 
+<     delete menu;
+< }
+< 
+< void
+< GLPaint::slotComposite()
+< {
+< 	if ( jahstd::glslSupport() )
+<     {
+<         executeEffect( getCurrentCompositeType() );
+<     }
+< }
+< 
+< void GLPaint::slotSobel()        
+< { 
+<     executeEffect(SOBEL_EFFECT);
+< }
+< 
+< void GLPaint::slotLaplacian()    
+< { 
+<     executeEffect(LAPLACIAN_EFFECT);
+< }
+< 
+< void GLPaint::slotLaplacian2()   
+< { 
+<     executeEffect(LAPLACIAN2_EFFECT);
+< }
+< 
+< void GLPaint::slotLapOfGauss()   
+< { 
+<     executeEffect(LAP_OF_GAUSS_EFFECT);
+< }
+< 
+< void GLPaint::slotClear()        
+< { 
+< 	clear(); 
+< }
+< 
+< void GLPaint::slotRefresh()        
+< { 
+< 	updateGL(); 
+< }
+< 
+< void
+< GLPaint::slotTurnOffApplyEffectsToAllFrames()
+< {
+<     if ( !getAdvanceFrameAfterEffectApplied() )
+<     {
+<         return;
+<     }
+< 
+<     if ( m_apply_effect_to_all_frames_qcheckbox->isChecked() )
+<     {
+<         m_apply_effect_to_all_frames_qcheckbox->toggle();
+<     }
+< }
+< 
+< void
+< GLPaint::slotTurnOffAdvanceFrame()
+< {
+<     if ( !getApplyEffectToAllFrames() )
+<     {
+<         return;
+<     }
+< 
+<     if ( m_advance_frame_qcheckbox->isChecked() )
+<     {
+<         m_advance_frame_qcheckbox->toggle();
+<     }
+< }
+< 
+< ////////////////////////////////////////////
+< //brush and gradient sizing
+< 
+< void GLPaint::slotBrushSize(int value)  
+< { 
+< 	setBrushSize(value); 
+< }
+< 
+< void GLPaint::slotGradientDegree(int value) 
+< {  
+< 	setGradientDegree(value); 
+< }
+< 
+< void GLPaint::slotFillBucketRange(int value) 
+< {  
+< 	setFillBucketRange(value); 
+< }
+< 
+< void 
+< GLPaint::showPaintSlider(enum PaintSliders slider)
+< {
+<     switch(slider)
+<     {
+<         case PEN_ALPHA_SLIDER :
+<         {
+<             m_pen_alpha_slider->show();
+<             m_pen_alpha_lcd->show();
+<             m_pen_alpha_label->show();
+<             break;
+<         }
+<         case FILL_ALPHA_SLIDER :
+<         {
+<             m_fill_alpha_slider->show();
+<             m_fill_alpha_lcd->show();
+<             m_fill_alpha_label->show();
+<             break;
+<         }
+<         case BACKGROUND_ALPHA_SLIDER :
+<         {
+<             m_background_alpha_slider->show();
+<             m_background_alpha_lcd->show();
+<             m_background_alpha_label->show();
+<             break;
+<         }
+<         case BRUSH_SIZE_SLIDER :
+<         {
+<             m_brush_size_slider->show();
+<             m_brush_size_lcd->show();
+<             m_brush_size_label->show();
+<             break;
+<         }
+<         case GRADIENT_SLIDER :
+<         {
+<             m_gradient_slider->show();
+<             m_gradient_lcd->show();
+<             m_gradient_label->show();
+<             break;
+<         }
+<         case BUCKET_RANGE_SLIDER :
+<         {
+<             m_bucket_range_slider->show();
+<             m_bucket_range_lcd->show();
+<             m_bucket_range_label->show();
+<             break;
+<         }
+<         default :
+<         {
+<             break;
+<         }
+<     }
+< }
+< 
+< void 
+< GLPaint::hidePaintSliders()
+< {
+<     m_pen_alpha_slider->hide();
+<     m_pen_alpha_lcd->hide();
+<     m_pen_alpha_label->hide();
+<     m_fill_alpha_slider->hide();
+<     m_fill_alpha_lcd->hide();
+<     m_fill_alpha_label->hide();
+<     m_background_alpha_slider->hide();
+<     m_background_alpha_lcd->hide();
+<     m_background_alpha_label->hide();
+<     m_brush_size_slider->hide();
+<     m_brush_size_lcd->hide();
+<     m_brush_size_label->hide();
+<     m_gradient_slider->hide();
+<     m_gradient_lcd->hide();
+<     m_gradient_label->hide();
+<     m_bucket_range_slider->hide();
+<     m_bucket_range_lcd->hide();
+<     m_bucket_range_label->hide();
+< }
+< 
+< 
+< ////////////////////////////////////////////
+< //tool selection slots
+< 
+< void GLPaint::slotPen()          
+< { 
+< 	activateTool(pen); 
+<     m_pen_button->setFocus();
+< 
+<     hidePaintSliders();
+<     showPaintSlider(PEN_ALPHA_SLIDER);
+<     m_pen_alpha_label->setText("Brush Alpha");
+<     showPaintSlider(BRUSH_SIZE_SLIDER);
+<     m_brush_size_label->setText("Brush Size");
+< }
+< 
+< void GLPaint::slotLine()         
+< { 
+< 	activateTool(line); 
+<     m_line_button->setFocus();
+< 
+<     hidePaintSliders();
+<     showPaintSlider(PEN_ALPHA_SLIDER);
+<     m_pen_alpha_label->setText("Pen Alpha");
+<     showPaintSlider(BRUSH_SIZE_SLIDER);
+<     m_brush_size_label->setText("Line Width");
+<     showPaintSlider(GRADIENT_SLIDER);
+< }
+< 
+< void GLPaint::slotRectangle()    
+< { 
+< 	activateTool(rectangle); 
+<     m_rectangle_button->setFocus();
+< 
+<     hidePaintSliders();
+<     showPaintSlider(PEN_ALPHA_SLIDER);
+<     m_pen_alpha_label->setText("Pen Alpha");
+<     showPaintSlider(BRUSH_SIZE_SLIDER);
+<     m_brush_size_label->setText("Line Width");
+<     showPaintSlider(GRADIENT_SLIDER);
+< }
+< 
+< void GLPaint::slotRectangleFilled()  
+< { 
+< 	activateTool(rectangleFilled); 
+<     m_rectangle_filled_button->setFocus();
+< 
+<     hidePaintSliders();
+<     showPaintSlider(PEN_ALPHA_SLIDER);
+<     m_pen_alpha_label->setText("Pen Alpha");
+<     showPaintSlider(FILL_ALPHA_SLIDER);
+<     showPaintSlider(BRUSH_SIZE_SLIDER);
+<     m_brush_size_label->setText("Line Width");
+<     showPaintSlider(GRADIENT_SLIDER);
+< }
+< 
+< void GLPaint::slotCircle()       
+< { 
+< 	activateTool(circle); 
+<     m_circle_button->setFocus();
+< 
+<     hidePaintSliders();
+<     showPaintSlider(PEN_ALPHA_SLIDER);
+<     m_pen_alpha_label->setText("Pen Alpha");
+<     showPaintSlider(BRUSH_SIZE_SLIDER);
+<     m_brush_size_label->setText("Line Width");
+<     showPaintSlider(GRADIENT_SLIDER);
+< }
+< 
+< void GLPaint::slotCircleFilled()  
+< { 
+< 	activateTool(circleFilled); 
+<     m_circle_filled_button->setFocus();
+< 
+<     hidePaintSliders();
+<     showPaintSlider(PEN_ALPHA_SLIDER);
+<     m_pen_alpha_label->setText("Pen Alpha");
+<     showPaintSlider(FILL_ALPHA_SLIDER);
+<     showPaintSlider(BRUSH_SIZE_SLIDER);
+<     m_brush_size_label->setText("Line Width");
+<     showPaintSlider(GRADIENT_SLIDER);
+< }
+< 
+< void GLPaint::slotTriangle()     
+< { 
+< 	activateTool(triangle); 
+<     m_triangle_button->setFocus();
+< 
+<     hidePaintSliders();
+<     showPaintSlider(PEN_ALPHA_SLIDER);
+<     m_pen_alpha_label->setText("Pen Alpha");
+<     showPaintSlider(BRUSH_SIZE_SLIDER);
+<     m_brush_size_label->setText("Line Width");
+<     showPaintSlider(GRADIENT_SLIDER);
+< }
+< 
+< void GLPaint::slotTriangleFilled()   
+< { 
+< 	activateTool(triangleFilled); 
+<     m_triangle_filled_button->setFocus();
+< 
+<     hidePaintSliders();
+<     showPaintSlider(PEN_ALPHA_SLIDER);
+<     m_pen_alpha_label->setText("Pen Alpha");
+<     showPaintSlider(FILL_ALPHA_SLIDER);
+<     showPaintSlider(BRUSH_SIZE_SLIDER);
+<     m_brush_size_label->setText("Line Width");
+<     showPaintSlider(GRADIENT_SLIDER);
+< }
+< 
+< void GLPaint::slotPaintBucket()   
+< { 
+< 	activateTool(paintBucket); 
+<     m_paintbucket_button->setFocus();
+< 
+<     hidePaintSliders();
+<     showPaintSlider(FILL_ALPHA_SLIDER);
+<     showPaintSlider(BUCKET_RANGE_SLIDER);
+< }
+< 
+< void GLPaint::slotPaintBucketFillAll()   
+< { 
+< 	activateTool(paintBucketFillAll); 
+<     m_paintbucket_fill_all_button->setFocus();
+< 
+<     hidePaintSliders();
+<     showPaintSlider(FILL_ALPHA_SLIDER);
+<     showPaintSlider(BUCKET_RANGE_SLIDER);
+< }
+< 
+< void GLPaint::slotEraser()   
+< { 
+< 	activateTool(eraser); 
+<     m_eraser_button->setFocus();
+< 
+<     hidePaintSliders();
+<     showPaintSlider(PEN_ALPHA_SLIDER);
+<     m_pen_alpha_label->setText("Eraser Alpha");
+<     showPaintSlider(BRUSH_SIZE_SLIDER);
+<     m_brush_size_label->setText("Eraser Size");
+< }
+< 
+< void GLPaint::slotForegroundColorPicker()   
+< { 
+< 	activateTool(foregroundColorPicker); 
+<     m_foreground_color_picker_button->setFocus();
+< 
+<     hidePaintSliders();
+< }
+< 
+< void GLPaint::slotBackgroundColorPicker()   
+< { 
+< 	activateTool(backgroundColorPicker); 
+<     m_background_color_picker_button->setFocus();
+< 
+<     hidePaintSliders();
+< }
+< 
+< ////////////////////////////////////////////////
+< // color selection slots
+< 
+< void GLPaint::slotPenColor()  
+< {
+<     incrementHistoryCount(true);
+< 
+<     captureDrawingArea();
+< 
+< 	QColor select_color = QColorDialog::getColor( penColor(), this );
+< 
+< 	if ( select_color.isValid() ) 
+< 	{
+< 		setPenColor( select_color );
+< 		m_pen_color_button->setPaletteBackgroundColor( select_color ); 
+< 	}
+< 
+<     historyRemoveCurrent();
+<     updateGL();
+< 
+<     unsigned char select_red = qRed( select_color.rgb() );
+<     unsigned char select_green = qGreen( select_color.rgb() );
+<     unsigned char select_blue = qBlue( select_color.rgb() );
+<     unsigned char select_alpha = qAlpha( select_color.rgb() );
+< 
+<     std::ostringstream color_string_stream;
+<     color_string_stream << (int)select_red << ", " << (int)select_green << ", ";
+<     color_string_stream << (int)select_blue << ", " << (int)select_alpha;
+< 
+<     getCurrentColorLabel()->setText( color_string_stream.str().data() );
+<     getCurrentColorLabel()->setBackgroundColor( select_color );
+< 
+<     QColor foreground_color = qRgba(~select_red, ~select_green, ~select_blue, 255); 
+<     getCurrentColorLabel()->setPaletteForegroundColor( foreground_color );
+< }
+< 
+< void GLPaint::slotFillColor() 
+< {
+<     incrementHistoryCount(true);
+< 
+<     captureDrawingArea();
+< 
+< 	QColor select_color = QColorDialog::getColor( fillColor(), this );
+< 
+< 	if ( select_color.isValid() ) 
+< 	{
+< 		setFillColor( select_color );
+< 		m_fill_color_button->setPaletteBackgroundColor( select_color ); 
+< 	}
+< 
+<    	historyRemoveCurrent();
+< 
+<     updateGL();
+< 
+<     unsigned char select_red = qRed( select_color.rgb() );
+<     unsigned char select_green = qGreen( select_color.rgb() );
+<     unsigned char select_blue = qBlue( select_color.rgb() );
+<     unsigned char select_alpha = qAlpha( select_color.rgb() );
+< 
+<     std::ostringstream color_string_stream;
+<     color_string_stream << (int)select_red << ", " << (int)select_green << ", ";
+<     color_string_stream << (int)select_blue << ", " << (int)select_alpha;
+< 
+<     getCurrentColorLabel()->setText( color_string_stream.str().data() );
+<     getCurrentColorLabel()->setBackgroundColor( select_color );
+< 
+<     QColor foreground_color = qRgba(~select_red, ~select_green, ~select_blue, 255); 
+<     getCurrentColorLabel()->setPaletteForegroundColor( foreground_color );
+< }
+< 
+< void GLPaint::slotBackgroundColor() 
+< {
+<     if ( getClipIsStillImage() )
+<     {
+< 	    incrementHistoryCount(true);
+<     }
+< 
+<     captureDrawingArea();
+< 
+< 	QColor select_color = QColorDialog::getColor( backgroundColor(), this );
+< 
+< 	if ( select_color.isValid() ) 
+< 	{
+< 		setBackgroundColor( select_color );
+< 		m_background_color_button->setPaletteBackgroundColor( select_color ); 
+< 	}
+< 
+<     if ( getClipIsStillImage() )
+<     {
+< 	    historyRemoveCurrent();
+<     }
+< 
+< 	clear();
+< 
+<     unsigned char select_red = qRed( select_color.rgb() );
+<     unsigned char select_green = qGreen( select_color.rgb() );
+<     unsigned char select_blue = qBlue( select_color.rgb() );
+<     unsigned char select_alpha = qAlpha( select_color.rgb() );
+< 
+<     std::ostringstream color_string_stream;
+<     color_string_stream << (int)select_red << ", " << (int)select_green << ", ";
+<     color_string_stream << (int)select_blue << ", " << (int)select_alpha;
+< 
+<     getCurrentColorLabel()->setText( color_string_stream.str().data() );
+<     getCurrentColorLabel()->setBackgroundColor( select_color );
+< 
+<     QColor foreground_color = qRgba(~select_red, ~select_green, ~select_blue, 255); 
+<     getCurrentColorLabel()->setPaletteForegroundColor( foreground_color );
+< 
+< }
+< 
+< void
+< GLPaint::setBackgroundColor( QColor newColor )
+< {
+<     *m_background_color = newColor;
+<     m_background_color_button->setPaletteBackgroundColor( newColor ); 
+<     QImage temp_qimage(getTextureWidth(), getTextureHeight(), 32);
+<     temp_qimage.fill( newColor.rgb() );
+<     //temp_qimage.fill( black );
+<     glBindTexture(GL_TEXTURE_2D, getImageLayerTextureId() );
+<     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE );
+<     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE );
+<     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); 
+<     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR); 
+<     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, getTextureWidth(), getTextureHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+<     glTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, getTextureWidth(), getTextureHeight(), GL_BGRA, GL_UNSIGNED_BYTE, temp_qimage.mirror(false, true).bits() );
+<     m_current_history_frame--;
+<     clear(true);
+< }
+< 
+< bool            
+< GLPaint::getAdvanceFrameAfterEffectApplication()
+< {
+<     if ( m_advance_frame_qcheckbox->isChecked() )
+<     {
+<         return true;
+<     }
+< 
+<     return false;
+< }
+< 
+< void            
+< GLPaint::advanceVideoFrameIfRequested()
+< {
+<     if ( getAdvanceFrameAfterEffectApplication() )
+<     {
+<         nextframeanimation();
+<     }
+< }
+< 
+< bool            
+< GLPaint::getOverwriteStillFrames()
+< {
+<     return m_overwrite_still_frames_qcheckbox->isChecked();
+< }
+< 
+Index: painthistory.cpp
+===================================================================
+RCS file: /cvsroot/jahshakafx/jahshaka/source/Jahshaka/JahModules/painter/painthistory.cpp,v
+retrieving revision 1.33
+diff -r1.33 painthistory.cpp
+55,57c55,57
+<     maxFrame = jahstd::Min<unsigned int>(maxFrame, getHistoryListPtr()->count() - 1);
+<     updatesliderEndframe(maxFrame);
+<     endFrameControl->setValue(maxFrame);
+---
+>     m_nMaxFrame = jahstd::Min<unsigned int>(m_nMaxFrame, getHistoryListPtr()->count() - 1);
+>     updatesliderEndframe(m_nMaxFrame);
+>     m_pEndFrameControl->setValue(m_nMaxFrame);
+60c60
+<     m_currentFrame = m_current_history_frame;
+---
+>     m_nCurrentFrame = m_current_history_frame;
+139,143c139,143
+<     m_currentFrame = m_current_history_frame;
+<     maxFrame += getCopyListPtr()->count();
+<     updatesliderEndframe(maxFrame);
+<     endFrameControl->setValue(maxFrame);
+<     updateTimeSlider(m_currentFrame);
+---
+>     m_nCurrentFrame = m_current_history_frame;
+>     m_nMaxFrame += getCopyListPtr()->count();
+>     updatesliderEndframe(m_nMaxFrame);
+>     m_pEndFrameControl->setValue(m_nMaxFrame);
+>     updateTimeSlider(m_nCurrentFrame);
+229c229
+<     if (m_current_history_frame > maxFrame)
+---
+>     if (m_current_history_frame > m_nMaxFrame)
+231,233c231,233
+<         maxFrame = m_current_history_frame;
+<         updatesliderEndframe(maxFrame);
+<         endFrameControl->setValue(maxFrame);
+---
+>         m_nMaxFrame = m_current_history_frame;
+>         updatesliderEndframe(m_nMaxFrame);
+>         m_pEndFrameControl->setValue(m_nMaxFrame);
+236c236
+<     m_currentFrame = m_current_history_frame;
+---
+>     m_nCurrentFrame = m_current_history_frame;
+Index: paintinterface.cpp
+===================================================================
+RCS file: /cvsroot/jahshakafx/jahshaka/source/Jahshaka/JahModules/painter/paintinterface.cpp,v
+retrieving revision 1.89
+diff -r1.89 paintinterface.cpp
+1,628d0
+< /*******************************************************************************
+<  **
+<  ** The source file for the Jahshaka paint interface module
+<  ** The Jahshaka Project
+<  ** Copyright (C) 2000-2006 VM Inc.
+<  ** Released under the GNU General Public License
+<  **
+<  *******************************************************************************/
+< 
+< #include "paint.h"
+< #include <jahformatter.h>
+< #include <InputLCD.h>
+< #include <supergrangecontrol.h>
+< #include <jahtranslate.h>
+< #include <valueFormatters.h>
+< 
+< #include <qframe.h>
+< #include <qhbox.h>
+< #include <qlistview.h>
+< #include <qpushbutton.h>
+< #include <qlayout.h>
+< #include <widget.h>
+< 
+< void GLPaint::buildInterfaceMenus( QHBox*, QHBox* rightcontroller) 
+< {
+< 	// Container widget
+< 	QWidget *container = new QWidget( rightcontroller, "page" );
+< 	QVBoxLayout *container_layout = new QVBoxLayout( container, 0, 0, "container_layout");
+< 
+< 	container_layout->addStretch( );
+< 
+< 	// Wow - confusing variable names here....
+<     tooltranslate = new JahToolButton( container, "pen" );
+<     JahFormatter::addJahPlayerButton( tooltranslate, JahBasePath+"Pixmaps/paint/buttonPen.png", JahBasePath+"Pixmaps/paint/buttonPen.png" );
+< 	container_layout->addWidget( tooltranslate );
+< 
+<     toolrotate = new JahToolButton( container, "line" );
+<     JahFormatter::addJahPlayerButton( toolrotate, JahBasePath+"Pixmaps/paint/buttonLine.png", JahBasePath+"Pixmaps/paint/buttonLine.png" );
+< 	container_layout->addWidget( toolrotate );
+< 
+<     toolscale = new JahToolButton( container, "erase" );
+<     JahFormatter::addJahPlayerButton( toolscale, JahBasePath+"Pixmaps/paint/buttonEraser.png", JahBasePath+"Pixmaps/paint/buttonEraser.png" );
+< 	container_layout->addWidget( toolscale );
+< 
+< 	container_layout->addSpacing( 10 );
+< 
+< 	// Photo and Render
+<     scrubrender = new JahToolButton( container, "controllerrewindbutton" );
+<     JahFormatter::addJahPlayerButton( scrubrender, JahBasePath+"Pixmaps/desktop/phototool.png", JahBasePath+"Pixmaps/desktop/phototool.png" );
+<     connect( scrubrender,  SIGNAL(clicked()), SLOT(Render())  );
+< 	container_layout->addWidget( scrubrender );
+<    
+<     scrubrenderAll = new JahToolButton( container, "controllerpreviousbutton" );
+<     JahFormatter::addJahPlayerButton( scrubrenderAll, JahBasePath+"Pixmaps/desktop/rendertool.png", JahBasePath+"Pixmaps/desktop/rendertool.png" );
+<     connect( scrubrenderAll,  SIGNAL(clicked()), SLOT( RenderScene() )  );
+< 	container_layout->addWidget( scrubrenderAll );
+< 
+<     //connect tools to object and add object to display widget
+<     connect( toolscale,      SIGNAL(clicked()), this, SLOT(slotEraser() )  );
+< 
+< 	//connect tools to object and add object to display widget
+<     connect( tooltranslate,  SIGNAL(clicked()), this, SLOT(slotPen() )  );
+<     connect( toolrotate,      SIGNAL(clicked()), this, SLOT(slotLine() )  );
+< 
+< 	container_layout->addStretch( );
+< }
+< 
+< void GLPaint::buildInterface( QHBox* f ) 
+< {
+<     
+<     QWidget* placeholder = new QWidget( f );
+<     QHBoxLayout* mainLayout = new QHBoxLayout( placeholder );
+<     JahFormatter::setMarginAndSpacingSmall( mainLayout );
+< 
+<     ///////////////////////////////////////////////////////////
+<     //The layers interface
+< 
+<     QBoxLayout* layersLayout = new QVBoxLayout();
+<     mainLayout->addLayout( layersLayout );
+< 
+<     ///////////////////////////////////////////////////////////
+<     //The layer options
+<     //these are defined in the world object
+<     AddButton = new QPushButton( placeholder, "ClearButton" );
+<     AddButton->setText( jt->tr("Clear") );
+<     layersLayout->addWidget( AddButton );
+<     connect  ( AddButton,  SIGNAL(clicked()), this, SLOT( slotClear())  );
+<     
+<     m_refresh_button = new QPushButton( placeholder, "RefreshButton" );
+<     m_refresh_button->setText( jt->tr("Refresh") );
+<     layersLayout->addWidget( m_refresh_button );
+<     connect  ( m_refresh_button,  SIGNAL(clicked()), this, SLOT( slotRefresh() )  );
+<     
+<     m_redo_button = new QPushButton( placeholder, "RedoButton" );
+<     m_redo_button->setText( jt->tr("Redo") );
+<     layersLayout->addWidget( m_redo_button );
+<     connect  ( m_redo_button,  SIGNAL(clicked()), this, SLOT( slotHistoryNext() )  );
+<     
+<     m_undo_button = new QPushButton( placeholder, "UndoButton" );
+<     m_undo_button->setText( jt->tr("Undo") );
+<     layersLayout->addWidget( m_undo_button );
+<     connect  ( m_undo_button,  SIGNAL(clicked()), this, SLOT( slotHistoryPrevious() )  );
+<     
+<     m_delete_button = new QPushButton( placeholder, "DeleteButton" );
+<     m_delete_button->setText( jt->tr("Delete") );
+<     layersLayout->addWidget( m_delete_button );
+<     connect  ( m_delete_button,  SIGNAL(clicked()), this, SLOT( slotDelete() )  );
+<     
+<     m_copy_one_button = new QPushButton( placeholder, "CopyOneButton" );
+<     m_copy_one_button->setText( jt->tr("Copy") );
+<     layersLayout->addWidget( m_copy_one_button );
+<     connect  ( m_copy_one_button,  SIGNAL(clicked()), this, SLOT( slotCopyOne() )  );
+<     
+<     m_paste_button = new QPushButton( placeholder, "pasteButton" );
+<     m_paste_button->setText( jt->tr("Paste") );
+<     layersLayout->addWidget( m_paste_button );
+<     connect  ( m_paste_button,  SIGNAL(clicked()), this, SLOT( slotPaste() )  );
+< 
+<     layersLayout->addStretch();
+<     
+<     //////////////////////////////////////////////////////////////
+<     // set up the scene options, or prefernces
+<     
+<     EffectsFrame = new QFrame( placeholder );
+<     QBoxLayout* EffectsFrameLayout = new QHBoxLayout( EffectsFrame );
+<     JahFormatter::setSpacing( EffectsFrameLayout );
+<     mainLayout->addWidget( EffectsFrame );
+<     
+<     JahFormatter::addSpacingSmall( EffectsFrameLayout );
+< 
+<     /////////////////////////////////////////////////////////
+<     //this is the list-view
+<     m_layer_listview = new QListView( EffectsFrame );
+<     m_layer_listview->setRootIsDecorated(true);
+<     m_layer_listview->addColumn( (jt->tr("LAYERS")), -1 );
+<     m_layer_listview->setSorting( -1,1 );   // disables the autosort
+< 
+<     JahFormatter::setListViewAsSingleColumn( m_layer_listview );
+<     EffectsFrameLayout->addWidget( m_layer_listview );
+< 
+<     connect( m_layer_listview, SIGNAL( clicked( QListViewItem* ) ), this, SLOT( clicked( QListViewItem* ) ) );
+<     
+<     //allow for multiple selections
+<     m_layer_listview->setSelectionMode (QListView::Extended );
+<     
+<     /////////////////////////////////////////////////////////
+<     //Set up tabbed interface
+<     
+<     tabframe = new QTabWidget( EffectsFrame, "axiscontrols" );	
+<     EffectsFrameLayout->addWidget( tabframe );
+<     
+<     tabframe->setTabShape( QTabWidget::Triangular );
+<     tabframe->setAutoMask( FALSE );
+<     
+<     /////////////////////////////////////////////////////////
+<     //Set up tabbed interface
+<     //this has become the settings panel need to update variable names
+<     moduleOptionsUI[0] = new QHBox( EffectsFrame, "encoderUI0" ); //scenecontrols
+<     tabframe->insertTab( moduleOptionsUI[0], tr("  "+jt->tr("SCENE")+"  ") );
+<     
+<     moduleOptionsUI[1] = new QHBox( EffectsFrame, "objectcontrols" ); //objectcontrols
+<     tabframe->insertTab( moduleOptionsUI[1], tr( "  "+jt->tr("TOOLS")+"  " ) );
+<     
+<     moduleOptionsUI[2] = new QHBox( EffectsFrame, "axiscontrols" ); //axiscontrols
+<     tabframe->insertTab( moduleOptionsUI[2], tr( "  "+jt->tr("BLEND")+"  " ) );
+<     
+<     moduleOptionsUI[3] = new QHBox( EffectsFrame, "texturecontrols" ); //texturecontrols
+<     tabframe->insertTab( moduleOptionsUI[3], tr( "    "+jt->tr("EFFECTS")+"    " ) );
+<     
+<     //moduleOptionsUI[4] = new QWidget( EffectsFrame, "effectscontrols" ); //effectscontrols
+<     //tabframe->insertTab( moduleOptionsUI[4], tr( "  "+jt->tr("CONTROLS")+"  " ) );
+<     
+<     //this has become the settings panel need to update variable names
+<     //moduleOptionsUI[5] = new QWidget( EffectsFrame, "keysettings" ); //keycontrols
+<     //tabframe->insertTab( moduleOptionsUI[5], tr( "  "+jt->tr("KEYFRAMES")+"  " ) );
+<         
+<     ///////////////////////////////////////////////////////////////////
+<     // the scene control tab bar
+<     
+<     //mover this into the layers...
+<     {
+<         ControlFrameUI[0][0] = new QFrame( moduleOptionsUI[0], "ControlFrame3" ); //scenecontrols
+<         
+<         QBoxLayout* outer = new QVBoxLayout( ControlFrameUI[0][0] );
+<         JahFormatter::setMarginAndSpacing( outer );
+<         QBoxLayout* mainLayout = new QHBoxLayout();
+<         outer->addLayout( mainLayout );
+<         outer->addStretch();
+<         
+<         QBoxLayout* buttons = new QVBoxLayout();
+<         mainLayout->addLayout( buttons );
+<         
+< #if 0
+<         LoadButton = new QPushButton( ControlFrameUI[0][0], "LoadButton" );
+<         LoadButton->setText( jt->tr("Load") );
+<         buttons->addWidget( LoadButton );
+<         connect  ( LoadButton,  SIGNAL(clicked()), this, SLOT( SceneLoad())  );
+<         
+<         SaveButton = new QPushButton( ControlFrameUI[0][0], "SaveButton" );
+<         SaveButton->setText( jt->tr("Save") );
+<         buttons->addWidget( SaveButton );
+<         connect  ( SaveButton,  SIGNAL(clicked()), this, SLOT( sceneSave())  );
+< #endif
+<         
+<         ResetButton = new QPushButton( ControlFrameUI[0][0], "ResetButton" );
+<         ResetButton->setText( jt->tr("Reset All") );
+<         buttons->addWidget( ResetButton );
+<         connect  ( ResetButton,  SIGNAL(clicked()), this, SLOT( resetAll())  );
+<         
+<         ClearButton = new QPushButton( ControlFrameUI[0][0], "ClearButton" );
+<         ClearButton->setText( jt->tr("Clear Scene") );
+<         buttons->addWidget( ClearButton );
+<         connect( ClearButton,  SIGNAL(clicked()), this, SLOT( slotClear())  ); 
+<         
+<         mainLayout->addStretch();
+<         
+<         // 
+<         QBoxLayout* controls = new QVBoxLayout();
+<         mainLayout->addLayout( controls );
+<         
+<         m_select_fps_label = new QLabel( ControlFrameUI[0][0], "FPSPushButtonLabel" );
+<         controls->addWidget( m_select_fps_label );
+<         m_select_fps_label->setAlignment( int( QLabel::AlignCenter ) );
+<         m_select_fps_label->setText( jt->tr( "Playback Speed" ) );
+<         
+<         m_select_fps_pushbutton = new QPushButton( ControlFrameUI[0][0], "FPSPushButton" );
+<         controls->addWidget( m_select_fps_pushbutton );
+<         QString text_string = getFramesPerSecondName(FRAMES_PER_SECOND_30).data();
+<         m_select_fps_pushbutton->setText(text_string);
+<         connect(m_select_fps_pushbutton, SIGNAL( pressed() ), SLOT( slotChooseFramesPerSecond() ) );
+<         
+<         m_gpu_select_qcheckbox = new QCheckBox( ControlFrameUI[0][0], "GpuSelect" );
+<         m_gpu_select_qcheckbox->setText( jt->tr("Use GPU") );
+<         controls->addWidget( m_gpu_select_qcheckbox );
+<         //connect( m_gpu_select_qcheckbox,  SIGNAL(clicked()), this, SLOT( gpuSelect() )  );
+<         
+<         // 
+<         
+<         //need to move this into the module
+<         //this is mandatory for all modules...
+<         QGridLayout* lcdLayout = new QGridLayout( 3, 2 );
+<         lcdLayout->setColStretch( 0, 0 );
+<         lcdLayout->setColStretch( 1, 1 );
+<         lcdLayout->setColStretch( 2, 1 );
+<         mainLayout->addLayout( lcdLayout );
+<         
+<         QLabel* sframetext = new QLabel( ControlFrameUI[0][0], "sframetext" );
+<         lcdLayout->addWidget( sframetext, 0, 0, Qt::AlignVCenter );
+<         sframetext->setText( tr( jt->tr("STARTFRAME") ) );
+<         sframetext->setAlignment( int( QLabel::AlignRight ) );
+<         
+<         startFrameControl = new SupergRangeControl( ControlFrameUI[0][0], "startframe" );
+<         startFrameControl->setFormatter( TimecodeValueFormatter() );
+<         lcdLayout->addWidget( startFrameControl, 0, 1 );
+<         JahFormatter::configure( startFrameControl, Astartframe, Astartframe );
+<         connect( startFrameControl, SIGNAL(valueChanged(int)),   SLOT(updatesliderStartframe(int)) );
+<         
+<         QLabel* eframetext = new QLabel( ControlFrameUI[0][0], "eframetext" );
+<         lcdLayout->addWidget( eframetext, 1, 0, Qt::AlignVCenter );
+<         eframetext->setText( tr( jt->tr("ENDFRAME")  ) );
+<         eframetext->setAlignment( int( QLabel::AlignRight ) );
+<         
+<         endFrameControl = new SupergRangeControl( ControlFrameUI[0][0], "endframe" );
+<         endFrameControl->setFormatter( TimecodeValueFormatter() );
+<         lcdLayout->addWidget( endFrameControl, 1, 1 );
+<         JahFormatter::configure( endFrameControl, Aendframe, Astartframe );
+<         connect( endFrameControl, SIGNAL(valueChanged(int)),   SLOT(updatesliderEndframe(int)) );
+<         
+< #if 0
+<         jahreslabel = new QLabel( ControlFrameUI[0][0], "languagelabel" );
+<         jahreslabel->setGeometry( QRect( 450, 75, 120, 21 ) );
+<         jahreslabel->setAlignment( int( QLabel::AlignCenter ) );
+<         jahreslabel->setText( jt->tr( "Resolution" ) );
+<         
+<         JahresCombo = new QComboBox( FALSE, ControlFrameUI[0][0], "JahresCombo" );
+<         JahresCombo->setGeometry( QRect( 450, 100, 170, 21 ) );
+<         hasResMenu = true;
+<         
+<         projectData thedata;
+<         thedata.buildComboBox(JahresCombo);
+<         int defaultRes = jprefs.getJahResolution();
+<         JahresCombo->setCurrentItem(defaultRes); //should be set to appdefault
+<         connect( JahresCombo,  SIGNAL(activated(int)), this, SLOT(setResolution(int))  );
+< #endif
+<     }
+< 
+<     ///////////////////////////////////////////////////////////
+<     //Tool control panel
+<     
+<     ControlFrameUI[1][0] = new QFrame( moduleOptionsUI[1], "ControlFrame1" );
+<     ControlFrameUI[1][0]->setGeometry( QRect( 0, 0, 660, 190 ) );    // was 510
+<     
+<     ////standard tools are here
+<     //ControlFrame1L1 = new QLabel( ControlFrameUI[1][0], "brushslider" );
+<     //JahFormatter::addLabel( ControlFrame1L1, 10, 1, 150, 10, "DRAW LayerCategory::OBJECT", 9);
+<     
+<     //these were toolbuttons not pushbuttons so we could see what was selected
+<     m_pen_button	= new QPushButton(ControlFrameUI[1][0],"brush");
+<     JahFormatter::addIconButton(m_pen_button, 10, 20, 22, 22, JahBasePath+"Pixmaps/paint/buttonPen.png");
+<     connect( m_pen_button,  SIGNAL(clicked()), this, SLOT(slotPen())  );
+<     
+<     m_line_button	= new QPushButton(ControlFrameUI[1][0],"line");
+<     JahFormatter::addIconButton(m_line_button, 35, 20, 22, 22, JahBasePath+"Pixmaps/paint/buttonLine.png");
+<     connect( m_line_button,  SIGNAL(clicked()), this, SLOT(slotLine())  );
+<     
+<     m_rectangle_button	= new QPushButton(ControlFrameUI[1][0],"square");
+<     JahFormatter::addIconButton(m_rectangle_button, 70, 20, 22, 22, JahBasePath+"Pixmaps/paint/buttonRectangle.png");
+<     connect( m_rectangle_button,  SIGNAL(clicked()), this, SLOT(slotRectangle())  );
+<     
+<     m_rectangle_filled_button	= new QPushButton(ControlFrameUI[1][0],"square");
+<     JahFormatter::addIconButton(m_rectangle_filled_button, 95, 20, 22, 22, JahBasePath+"Pixmaps/paint/buttonRectangleFilled.png");
+<     connect( m_rectangle_filled_button,  SIGNAL(clicked()), this, SLOT(slotRectangleFilled())  );
+<     
+<     m_triangle_button	= new QPushButton(ControlFrameUI[1][0],"triangle");
+<     JahFormatter::addIconButton(m_triangle_button, 130, 20, 22, 22, JahBasePath+"Pixmaps/paint/buttonTriangle.png");
+<     connect( m_triangle_button,  SIGNAL(clicked()), this, SLOT(slotTriangle())  );
+<     
+<     m_triangle_filled_button	= new QPushButton(ControlFrameUI[1][0],"triangle");
+<     JahFormatter::addIconButton(m_triangle_filled_button, 155, 20, 22, 22, JahBasePath+"Pixmaps/paint/buttonTriangleFilled.png");
+<     connect( m_triangle_filled_button,  SIGNAL(clicked()), this, SLOT(slotTriangleFilled())  );
+<     
+<     m_circle_button	= new QPushButton(ControlFrameUI[1][0],"circle");
+<     JahFormatter::addIconButton(m_circle_button, 190, 20, 22, 22, JahBasePath+"Pixmaps/paint/buttonCircle.png");
+<     connect( m_circle_button,  SIGNAL(clicked()), this, SLOT(slotCircle())  );
+<     
+<     m_circle_filled_button	= new QPushButton(ControlFrameUI[1][0],"circle");
+<     JahFormatter::addIconButton(m_circle_filled_button, 215, 20, 22, 22, JahBasePath+"Pixmaps/paint/buttonCircleFilled.png");
+<     connect( m_circle_filled_button,  SIGNAL(clicked()), this, SLOT(slotCircleFilled())  );
+<     
+<     m_paintbucket_button = new QPushButton(ControlFrameUI[1][0],"paintbucket");
+<     JahFormatter::addIconButton(m_paintbucket_button, 275, 20, 22, 22, JahBasePath+"Pixmaps/paint/buttonBucket.png");
+<     connect( m_paintbucket_button,  SIGNAL(clicked()), this, SLOT(slotPaintBucket())  );
+<     
+<     m_paintbucket_fill_all_button = new QPushButton(ControlFrameUI[1][0],"paintbucketfillall");
+<     JahFormatter::addIconButton(m_paintbucket_fill_all_button, 300, 20, 22, 22, JahBasePath+"Pixmaps/paint/buttonFillAllBucket.png");
+<     connect( m_paintbucket_fill_all_button,  SIGNAL(clicked()), this, SLOT(slotPaintBucketFillAll())  );
+<     
+<     m_eraser_button = new QPushButton(ControlFrameUI[1][0],"eraser");
+<     JahFormatter::addIconButton(m_eraser_button, 335, 20, 22, 22, JahBasePath+"Pixmaps/paint/buttonEraser.png");
+<     connect( m_eraser_button,  SIGNAL(clicked()), this, SLOT( slotEraser() )  );
+<     
+<     // Brushes
+<     
+<     //m_brushes_label = new QLabel( ControlFrameUI[1][0], "brushslider" );
+<     //JahFormatter::addLabel( m_brushes_label, 10, 55, 150, 10, "BRUSHES", 9);
+<     
+<     int left_x = 70;
+<     
+<     m_pen_alpha_slider = new QSlider( ControlFrameUI[1][0] );   m_pen_alpha_lcd = new InputLCD( ControlFrameUI[1][0] );
+<     JahFormatter::addSliderAndLcd(  m_pen_alpha_slider, left_x, 55, 150, 20,  0, 100, m_pen_alpha_lcd );
+<     m_pen_alpha_slider->setTickInterval(2);
+<     m_pen_alpha_label = new QLabel( ControlFrameUI[1][0], "PenAlpha" );
+<     JahFormatter::addLabel( m_pen_alpha_label, left_x, 75, 150, 15, "Pen Alpha", 9);
+<     
+<     connect( m_pen_alpha_slider, SIGNAL(valueChanged(int)), this, SLOT(slotSetPenAlpha(int)) );
+<     connect( m_pen_alpha_slider, SIGNAL(valueChanged(int)), m_pen_alpha_lcd, SLOT(setValue(int)) );
+<     connect(m_pen_alpha_lcd, SIGNAL(valueChanged(int)), this, SLOT(slotSetPenAlpha(int)) );
+<     connect( m_pen_alpha_lcd, SIGNAL(valueChanged(int)), m_pen_alpha_slider, SLOT(setValue(int)) );
+<     m_pen_alpha_slider->setValue(100);
+<     
+<     m_fill_alpha_slider = new QSlider( ControlFrameUI[1][0] );   m_fill_alpha_lcd = new InputLCD( ControlFrameUI[1][0] );
+<     JahFormatter::addSliderAndLcd(  m_fill_alpha_slider, left_x, 90, 150, 20,  0, 100, m_fill_alpha_lcd );
+<     m_fill_alpha_slider->setTickInterval(2);
+<     m_fill_alpha_label = new QLabel( ControlFrameUI[1][0], "FillAlpha" );
+<     JahFormatter::addLabel( m_fill_alpha_label, left_x, 110, 150, 15, "Fill Alpha", 9);
+<     
+<     connect( m_fill_alpha_slider, SIGNAL(valueChanged(int)), this, SLOT(slotSetFillAlpha(int)) );
+<     connect( m_fill_alpha_slider, SIGNAL(valueChanged(int)), m_fill_alpha_lcd, SLOT(setValue(int)) );
+<     connect(m_fill_alpha_lcd, SIGNAL(valueChanged(int)), this, SLOT(slotSetFillAlpha(int)) );
+<     connect( m_fill_alpha_lcd, SIGNAL(valueChanged(int)), m_fill_alpha_slider, SLOT(setValue(int)) );
+<     m_fill_alpha_slider->setValue(100);
+<     
+<     m_background_alpha_slider = new QSlider( ControlFrameUI[1][0] );   m_background_alpha_lcd = new InputLCD( ControlFrameUI[1][0] );
+<     JahFormatter::addSliderAndLcd(  m_background_alpha_slider, left_x, 125, 150, 20,  0, 100, m_background_alpha_lcd );
+<     m_background_alpha_slider->setTickInterval(2);
+<     m_background_alpha_label = new QLabel( ControlFrameUI[1][0], "BackgroundAlpha" );
+<     JahFormatter::addLabel( m_background_alpha_label, left_x, 145, 150, 15, "Background Alpha", 9);
+<     
+<     connect( m_background_alpha_slider, SIGNAL(valueChanged(int)), this, SLOT(slotSetBackgroundAlpha(int)) );
+<     connect( m_background_alpha_slider, SIGNAL(valueChanged(int)), m_background_alpha_lcd, SLOT(setValue(int)) );
+<     connect(m_background_alpha_lcd, SIGNAL(valueChanged(int)), this, SLOT(slotSetBackgroundAlpha(int)) );
+<     connect( m_background_alpha_lcd, SIGNAL(valueChanged(int)), m_background_alpha_slider, SLOT(setValue(int)) );
+<     m_background_alpha_slider->setValue(100);
+<     m_background_alpha_slider->hide();
+<     m_background_alpha_lcd->hide();
+<     m_background_alpha_label->hide();
+<     
+<     
+<     left_x = 270;
+<     
+<     m_brush_size_slider = new QSlider( ControlFrameUI[1][0] );   m_brush_size_lcd = new InputLCD( ControlFrameUI[1][0] );
+<     JahFormatter::addSliderAndLcd(  m_brush_size_slider, left_x, 55, 150, 20,  0, 50, m_brush_size_lcd );
+<     m_brush_size_slider->setTickInterval(2);
+<     //m_brush_size_slider->setTickmarks(QSlider::Below);
+<     m_brush_size_label = new QLabel( ControlFrameUI[1][0], "brushslider" );
+<     JahFormatter::addLabel( m_brush_size_label, left_x, 75, 150, 15, "Brush Size", 9);
+<     
+<     m_brush_size_slider->setValue(1);
+<     connect( m_brush_size_slider, SIGNAL(valueChanged(int)), this, SLOT(slotBrushSize(int)) );
+<     connect( m_brush_size_slider, SIGNAL(valueChanged(int)), m_brush_size_lcd, SLOT(setValue(int)) );
+<     connect(m_brush_size_lcd, SIGNAL(valueChanged(int)), this, SLOT(slotBrushSize(int)) );
+<     connect( m_brush_size_lcd, SIGNAL(valueChanged(int)), m_brush_size_slider, SLOT(setValue(int)) );
+<     
+<     m_gradient_slider = new QSlider( ControlFrameUI[1][0] );   m_gradient_lcd = new InputLCD( ControlFrameUI[1][0] );
+<     JahFormatter::addSliderAndLcd(  m_gradient_slider, left_x, 90, 150, 20,  -255, 255, m_gradient_lcd );
+<     m_gradient_slider->setTickInterval(25);
+<     //m_gradient_slider->setTickmarks(QSlider::Below);
+<     m_gradient_label = new QLabel( ControlFrameUI[1][0], "gradientslider" );
+<     JahFormatter::addLabel( m_gradient_label, left_x, 110, 150, 15, "Gradient Angle", 9);
+<     
+<     connect( m_gradient_slider, SIGNAL(valueChanged(int)), this, SLOT(slotGradientDegree(int)) );
+<     connect( m_gradient_slider, SIGNAL(valueChanged(int)), m_gradient_lcd, SLOT(setValue(int)) );
+<     connect(m_gradient_lcd, SIGNAL(valueChanged(int)), this, SLOT(slotGradientDegree(int)) );
+<     
+<     m_bucket_range_slider = new QSlider( ControlFrameUI[1][0] );   m_bucket_range_lcd = new InputLCD( ControlFrameUI[1][0] );
+<     JahFormatter::addSliderAndLcd(  m_bucket_range_slider, left_x, 90, 150, 20,  0, 255, m_bucket_range_lcd );
+<     m_bucket_range_slider->setTickInterval(25);
+<     //m_bucket_range_slider->setTickmarks(QSlider::Below);
+<     m_bucket_range_label = new QLabel( ControlFrameUI[1][0], "bucketrangeslider" );
+<     JahFormatter::addLabel( m_bucket_range_label, left_x, 110, 150, 15, "Fill Bucket Range", 9);
+<     
+<     connect( m_bucket_range_slider, SIGNAL(valueChanged(int)), this, SLOT(slotFillBucketRange(int)) );
+<     connect( m_bucket_range_slider, SIGNAL(valueChanged(int)), m_bucket_range_lcd, SLOT(setValue(int)) );
+<     connect(m_bucket_range_lcd, SIGNAL(valueChanged(int)), this, SLOT(slotFillBucketRange(int)) );
+<     m_bucket_range_lcd->hide();
+<     m_bucket_range_slider->hide();
+<     m_bucket_range_label->hide();
+<     
+<     m_overwrite_still_frames_qcheckbox = new QCheckBox( ControlFrameUI[1][0], "overwrite" );
+<     m_overwrite_still_frames_qcheckbox->setGeometry(10, 140, 130, 20);
+<     m_overwrite_still_frames_qcheckbox->setText("Overwrite Frames");
+<     
+<     left_x = 460;
+<     
+<     m_current_color_label = new QLabel( ControlFrameUI[1][0], "Colorlabel" );
+<     JahFormatter::addLabel( m_current_color_label, left_x + 25, 20, 110, 22, "", 9);
+<     //m_background_color_label->setAlignment( QLabel::AlignRight );
+<     
+<     m_background_color_label = new QLabel( ControlFrameUI[1][0], "Background" );
+<     JahFormatter::addLabel( m_background_color_label, left_x, 55, 100, 22, "Background", 9);
+<     //m_background_color_label->setAlignment( QLabel::AlignRight );
+<     
+<     m_background_color_button	= new QPushButton(ControlFrameUI[1][0],"backgroundcolor");
+<     JahFormatter::addIconButton(m_background_color_button, left_x + 100, 55, 40, 22 );
+<     m_background_color_button->setPaletteBackgroundColor( QColor(5,38,10) );
+<     connect( m_background_color_button,  SIGNAL(clicked()), this, SLOT(slotBackgroundColor())  );
+<     
+<     m_foreground_color_picker_button = new QPushButton(ControlFrameUI[1][0],"foregroundcolorpicker");
+<     JahFormatter::addIconButton(m_foreground_color_picker_button, left_x + 75, 90, 22, 22, JahBasePath+"Pixmaps/paint/buttonForegroundDropper.png");
+<     connect( m_foreground_color_picker_button,  SIGNAL(clicked()), this, SLOT(slotForegroundColorPicker())  );
+<     
+<     m_pen_color_label = new QLabel( ControlFrameUI[1][0], "Pen" );
+<     JahFormatter::addLabel( m_pen_color_label, left_x + 20, 90, 55, 22, "Pen", 9);
+<     //m_gradient_angle_label->setAlignment( QLabel::AlignRight );
+<     
+<     m_pen_color_button = new QPushButton(ControlFrameUI[1][0],"pencolor");
+<     JahFormatter::addIconButton(m_pen_color_button, left_x + 100, 90, 40, 22 );
+<     m_pen_color_button->setPaletteBackgroundColor( QColor(0,58,140) );
+<     connect( m_pen_color_button,  SIGNAL(clicked()), this, SLOT(slotPenColor())  );
+<     
+<     m_fill_color_label = new QLabel( ControlFrameUI[1][0], "Fill" );
+<     JahFormatter::addLabel( m_fill_color_label, left_x + 20, 125, 55, 22, "Fill", 9);
+<     //m_fill_color_label->setAlignment( QLabel::AlignRight );
+<     
+<     m_background_color_picker_button = new QPushButton(ControlFrameUI[1][0],"backgroundcolorpicker");
+<     JahFormatter::addIconButton(m_background_color_picker_button, left_x + 75, 125, 22, 22, JahBasePath+"Pixmaps/paint/buttonDropper.png");
+<     connect( m_background_color_picker_button,  SIGNAL(clicked()), this, SLOT(slotBackgroundColorPicker())  );
+<     
+<     m_fill_color_button	= new QPushButton(ControlFrameUI[1][0],"fillcolor");
+<     JahFormatter::addIconButton(m_fill_color_button, left_x + 100, 125, 40, 22 );
+<     m_fill_color_button->setPaletteBackgroundColor( QColor(0,97,140) );
+<     connect( m_fill_color_button,  SIGNAL(clicked()), this, SLOT(slotFillColor())  );
+<     
+<     ///////////////////////////////////////////////////////////
+<     //color control panel
+<     {
+<         
+<         ControlFrameUI[2][0] = new QFrame( moduleOptionsUI[2], "ControlFrame4" );
+<         QGridLayout* top = new QGridLayout( ControlFrameUI[2][0], 2, 2 );
+<         QGridLayout* g = new QGridLayout( 4, 2 );
+<         top->addLayout( g, 0, 0 );
+<         JahFormatter::setMarginAndSpacing( g );
+< 
+<         m_src_blend_mode_select_label = new QLabel( ControlFrameUI[2][0] );
+<         m_src_blend_mode_select_label->setText("Src Blend Mode");
+<         m_src_blend_mode_select_label->setAlignment( QLabel::AlignCenter );
+<         g->addWidget( m_src_blend_mode_select_label, 0, 0 );
+<     
+<         m_src_blend_mode_select_button = new QToolButton(ControlFrameUI[2][0], "SourceBlend" );
+<         m_src_blend_mode_select_button->setText("GL_SRC_ALPHA");
+<         connect( m_src_blend_mode_select_button,  SIGNAL(clicked()), this, SLOT(slotSetSrcBlendFactor())  );
+<         g->addWidget( m_src_blend_mode_select_button, 1, 0 );
+< 
+<         m_dst_blend_mode_select_label = new QLabel( ControlFrameUI[2][0] );
+<         m_dst_blend_mode_select_label->setText("Dest Blend Mode");
+<         m_dst_blend_mode_select_label->setAlignment( QLabel::AlignCenter );
+<         g->addWidget( m_dst_blend_mode_select_label, 0, 1 );
+< 
+<         m_dst_blend_mode_select_button = new QToolButton(ControlFrameUI[2][0], "DstBlend" );
+<         m_dst_blend_mode_select_button->setText("GL_ONE_MINUS_SRC_ALPHA");
+<         connect( m_dst_blend_mode_select_button,  SIGNAL(clicked()), this, SLOT(slotSetDstBlendFactor())  );
+<         g->addWidget( m_dst_blend_mode_select_button, 1, 1 );
+< 
+<         g->setRowSpacing( 2, 20 );
+< 
+<         m_reset_blend_mode_button = new QToolButton(ControlFrameUI[2][0], "ResetBlendMode" );
+<         m_reset_blend_mode_button->setText("Reset Blend Mode");
+<         connect( m_reset_blend_mode_button,  SIGNAL(clicked()), this, SLOT( slotResetBlendFactor() )  );
+<         g->addWidget( m_reset_blend_mode_button, 3, 0 );
+<     
+< #if 0
+<         // N.B. if this is going to be used, it needs to be placed into the 
+<         // above layout scheme
+<         ControlFrame4L1 = new QLabel( ControlFrameUI[2][0], "gradientslider" );
+<         JahFormatter::addLabel( ControlFrame4L1, 10, 10, 110, 22, "BACKGROUND", 9);
+<         
+<         m_background_color_button	= new QPushButton(ControlFrameUI[2][0],"backgroundcolor");
+<         JahFormatter::addIconButton(m_background_color_button, 120, 10, 40, 22 );
+<         m_background_color_button->setPaletteBackgroundColor( QColor(5,38,10) );
+<         connect( m_background_color_button,  SIGNAL(clicked()), this, SLOT(slotBackgroundColor())  );
+<         
+<         m_gradient_angle_label = new QLabel( ControlFrameUI[2][0], "gradientslider" );
+<         JahFormatter::addLabel( m_gradient_angle_label, 10, 40, 90, 22, "PEN", 9);
+<         
+<         m_pen_color_button	= new QPushButton(ControlFrameUI[2][0],"pencolor");
+<         JahFormatter::addIconButton(m_pen_color_button, 120, 40, 40, 22 );
+<         m_pen_color_button->setPaletteBackgroundColor( QColor(0,58,140) );
+<         connect( m_pen_color_button,  SIGNAL(clicked()), this, SLOT(slotPenColor())  );
+<         
+<         ControlFrame4L3 = new QLabel( ControlFrameUI[2][0], "gradientslider" );
+<         JahFormatter::addLabel( ControlFrame4L3, 10, 70, 90, 22, "FILL", 9);
+<         
+<         m_fill_color_button	= new QPushButton(ControlFrameUI[2][0],"fillcolor");
+<         JahFormatter::addIconButton(m_fill_color_button, 120, 70, 40, 22 );
+<         m_fill_color_button->setPaletteBackgroundColor( QColor(0,97,140) );
+<         connect( m_fill_color_button,  SIGNAL(clicked()), this, SLOT(slotFillColor())  );
+< #endif
+<     }
+<     
+<     /////////////////////////////////////////////////////////////////////////
+<     //
+<     
+<     //add the layer reset button here as well
+<     ControlFrameUI[3][0] = new QFrame( moduleOptionsUI[3], "ControlFrame4" );
+<     ControlFrameUI[3][0]->setGeometry( QRect( 0, 0, 660, 190 ) );
+<     
+<     //column one
+<     effectInvert = new QPushButton( ControlFrameUI[3][0], "invert" );
+<     JahFormatter::addButton( effectInvert, 10, 10, 120, 21, "Invert" );
+<     connect( effectInvert,  SIGNAL(clicked()), this, SLOT(slotInvert())  );
+<     
+<     effectBlur = new QPushButton( ControlFrameUI[3][0], "blur" );
+<     JahFormatter::addButton( effectBlur, 10, 40, 120, 21, "Blur" );
+<     connect( effectBlur,  SIGNAL(clicked()), this, SLOT(slotBlur())  );
+<     
+<     effectSharpen = new QPushButton( ControlFrameUI[3][0], "sharpen" );
+<     JahFormatter::addButton( effectSharpen, 10, 70, 120, 21, "Sharpen" );
+<     connect( effectSharpen,  SIGNAL(clicked()), this, SLOT(slotSharpen())  );
+<     
+<     m_advance_frame_qcheckbox = new QCheckBox( ControlFrameUI[3][0], "advanceframe" );
+<     m_advance_frame_qcheckbox->setGeometry(10, 130, 130, 20);
+<     m_advance_frame_qcheckbox->setText("Advance Frame");
+<     connect( m_advance_frame_qcheckbox,  SIGNAL(clicked()), this, SLOT( slotTurnOffApplyEffectsToAllFrames() )  );
+<     
+<     m_apply_effect_to_all_frames_qcheckbox = new QCheckBox( ControlFrameUI[3][0], "applyeffecttoallframes" );
+<     m_apply_effect_to_all_frames_qcheckbox->setGeometry(150, 130, 220, 20);
+<     m_apply_effect_to_all_frames_qcheckbox->setText("Apply Effect To All Frames");
+<     connect( m_apply_effect_to_all_frames_qcheckbox,  SIGNAL(clicked()), this, SLOT( slotTurnOffAdvanceFrame() )  );
+<     
+<     //column 2
+<     effectFade = new QPushButton( ControlFrameUI[3][0], "fade" );         //these need a slider as well
+<     JahFormatter::addButton( effectFade, 150, 10, 120, 21, "Fade" );
+<     connect( effectFade,  SIGNAL(clicked()), this, SLOT( slotFade() )  );
+<     
+<     effectIntensify = new QPushButton( ControlFrameUI[3][0], "intensify" );     //these need a slider as well
+<     JahFormatter::addButton( effectIntensify, 150, 40, 120, 21, "Intensify" );
+<     connect( effectIntensify,  SIGNAL(clicked()), this, SLOT( slotIntensify() )  );
+<     
+<     m_emboss_button = new QPushButton( ControlFrameUI[3][0], "emboss" );     //these need a slider as well
+<     JahFormatter::addButton( m_emboss_button, 150, 70, 120, 21, "Emboss" );
+<     connect( m_emboss_button,  SIGNAL(clicked()), this, SLOT( slotEmboss() )  );
+<     
+<     effectEdgeX = new QPushButton( ControlFrameUI[3][0], "edgex" );
+<     JahFormatter::addButton( effectEdgeX, 290, 10, 120, 21, "Edge detectX" );
+<     connect( effectEdgeX,  SIGNAL(clicked()), this, SLOT(slotEdgeDetectX())  );
+<     
+<     effectEdgeY = new QPushButton( ControlFrameUI[3][0], "edgey" );
+<     JahFormatter::addButton( effectEdgeY, 290, 40, 120, 21, "Edge detectY" );
+<     connect( effectEdgeY,  SIGNAL(clicked()), this, SLOT(slotEdgeDetectY())  );
+<     
+<     m_select_composite_button = new QPushButton( ControlFrameUI[3][0], "select_composite" );
+<     JahFormatter::addButton( m_select_composite_button, 10, 100, 120, 21, "Composite Select" );
+<     connect( m_select_composite_button,  SIGNAL(clicked()), this, SLOT( slotSetCompositeType() )  );
+<     //m_select_composite_button->setPaletteBackgroundColor( QColor(30, 30, 30) );
+<     
+<     m_composite_button = new QPushButton( ControlFrameUI[3][0], "execute_composite" );
+<     JahFormatter::addButton( m_composite_button, 150, 100, 120, 21, "A over B" );
+<     connect( m_composite_button,  SIGNAL(clicked()), this, SLOT( slotComposite() )  );
+<     
+<     //column four
+<     effectSobel = new QPushButton( ControlFrameUI[3][0], "sobel" );
+<     JahFormatter::addButton( effectSobel, 430, 10, 120, 21, "Sobel" );
+<     connect( effectSobel,  SIGNAL(clicked()), this, SLOT(slotSobel())  );
+<     
+<     effectLapacian = new QPushButton( ControlFrameUI[3][0], "lapacian" );
+<     JahFormatter::addButton( effectLapacian, 430, 40, 120, 21, "Lapacian" );
+<     connect( effectLapacian,  SIGNAL(clicked()), this, SLOT(slotLaplacian())  );
+<     
+<     effectLapacian2 = new QPushButton( ControlFrameUI[3][0], "lapacian2" );
+<     JahFormatter::addButton( effectLapacian2, 430, 70, 120, 21, "Lapacian2" );
+<     connect( effectLapacian2,  SIGNAL(clicked()), this, SLOT(slotLaplacian2())  );
+<     
+<     effectGauss = new QPushButton( ControlFrameUI[3][0], "gaussian" );
+<     JahFormatter::addButton( effectGauss, 430, 100, 120, 21, "Gaussian" );
+<     connect( effectGauss,  SIGNAL(clicked()), this, SLOT(slotLapOfGauss())  );
+<     
+< }
+< 
+< 
+< void GLPaint::createMenuItem( QPopupMenu * themenu )
+< {
+<     Q_CHECK_PTR(themenu);
+<     //themenu->insertItem("&"+jt->tr("Add Object"),this, SLOT(addLayer()) );
+<     //   themenu->insertItem("&"+jt->tr("Name Object"),this,SLOT(nameLayer()) );
+<     //   themenu->insertItem("&"+jt->tr("Delete Object"),this,SLOT(delLayer()) );
+<     // themenu->insertSeparator();
+<     //make this a popup 'Move'
+< }
+Index: paintobjects.cpp
+===================================================================
+RCS file: /cvsroot/jahshakafx/jahshaka/source/Jahshaka/JahModules/painter/paintobjects.cpp,v
+retrieving revision 1.107
+diff -r1.107 paintobjects.cpp
+1,2292d0
+< /*******************************************************************************
+< **
+< ** The source file for the Jahshaka animation selections module
+< ** The Jahshaka Project
+< ** Copyright (C) 2000-2006 VM Inc.
+< ** Released under the GNU General Public License
+< **
+< *******************************************************************************/
+< 
+< 
+< 
+< #include "paint.h"
+< #include <glcore.h>
+< #include <sstream>
+< #include <qpushbutton.h>
+< 
+< 
+< void            
+< GLPaint::executePaintEffect(PAINT_EFFECT_TYPE effect_type)
+< {
+<     ( *this.*getPaintEffectFunction(effect_type) )();
+< }
+< 
+< /*
+< | Apply the given convolution matrix to the pixel at the given location, and
+< | set the rgb color to the color for the pixel at that location.
+< */
+< void GLPaint::convolute(const convolutionType type) 
+< {
+<     color3f255 rgb;
+<     unsigned int pix;
+< 
+<     int buffer_size = getFrameWidth() * getFrameHeight();
+<     unsigned int* buffer = new unsigned int[buffer_size];
+<     unsigned int* working_buffer = new unsigned int[buffer_size];
+< 
+<     glBindTexture(GL_TEXTURE_2D, getCurrentTextureId() );
+<     jahstd::glGetTextureSubImage(0, 0, getFrameWidth(), getFrameHeight(), 
+<                                  getTextureWidth(), getTextureHeight(), (unsigned char*)buffer );
+< 
+<     for (int y = 0; y < getFrameHeight(); y++)
+<     {
+<         int pixel_row_offset = y * getFrameWidth();
+< 
+<         for (int x = 0; x < getFrameWidth(); x++) 
+<         {
+<             rgb[0] = rgb[1] = rgb[2] = 0.0;
+< 
+<             for( int row = -1;  row <= 1;  row++ ) 
+<             {
+<                 for( int col = -1;  col <= 1;  col++ ) 
+<                 {
+<                     int current_column = x + row;
+<                     int current_row = y + col;
+<                     int row_offset = current_row * getFrameWidth();
+<                     int buffer_offset = row_offset + current_column;
+< 
+<                     if (buffer_offset >= 0 && buffer_offset < buffer_size)
+<                     {
+<                         pix = buffer[buffer_offset];
+<                     }
+<                     else
+<                     {
+<                         pix = buffer[pixel_row_offset + x];
+<                     }
+< 
+<                     rgb[0] += (double)qRed(pix)   * convolutionMatrix[type][col+1][row+1];
+<                     rgb[1] += (double)qGreen(pix) * convolutionMatrix[type][col+1][row+1];
+<                     rgb[2] += (double)qBlue(pix)  * convolutionMatrix[type][col+1][row+1];
+<                 }
+<             }
+< 
+<             unsigned int convoluted_pixel = qRgb(limit0_255((int)rgb[0]),
+<                                                  limit0_255((int)rgb[1]),
+<                                                  limit0_255((int)rgb[2]) );
+< 
+<             working_buffer[pixel_row_offset + x] = convoluted_pixel;
+<         }
+<     }
+< 
+<     if ( getClipIsStillImage() && !getApplyEffectToAllFrames() && !getAdvanceFrameAfterEffectApplication() )
+<     {
+< 	    incrementHistoryCount();
+<     }
+< 
+<     refreshCurrentTexture();
+<     glBindTexture(GL_TEXTURE_2D, getCurrentTextureId() );
+<     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, getFrameWidth(), getFrameHeight(), GL_RGBA, GL_UNSIGNED_BYTE, working_buffer );
+<     updateGL();
+<     updateTimeSlider( getCurrentHistoryFrame() );
+<     delete [] buffer;
+<     delete [] working_buffer;
+< }
+< 
+< void GLPaint::invertEffect() 
+< {
+<     int buffer_size = getFrameWidth() * getFrameHeight() * 4;
+<     unsigned char* buffer = new unsigned char[buffer_size];
+< 
+<     glBindTexture(GL_TEXTURE_2D, getCurrentTextureId() );
+<     jahstd::glGetTextureSubImage(0, 0, getFrameWidth(), getFrameHeight(), 
+<                                  getTextureWidth(), getTextureHeight(), buffer);
+< 
+<     for (int i = 0; i < buffer_size; i++)
+<     {
+<         buffer[i] = ~buffer[i];
+<     }
+< 
+<     if ( getClipIsStillImage() && !getApplyEffectToAllFrames() && !getAdvanceFrameAfterEffectApplication() )
+<     {
+< 	    incrementHistoryCount();
+<     }
+< 
+<     refreshCurrentTexture();
+<     glBindTexture(GL_TEXTURE_2D, getCurrentTextureId() );
+<     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, getFrameWidth(), getFrameHeight(), GL_RGBA, GL_UNSIGNED_BYTE, buffer );
+<     updateGL();
+<     updateTimeSlider( getCurrentHistoryFrame() );
+<     delete [] buffer;
+< }
+< 
+< void 
+< GLPaint::blurEffect()
+< {
+<     convolute(blur);
+< }
+< 
+< void 
+< GLPaint::sharpenEffect()
+< {
+<     convolute(sharpen);
+< }
+< 
+< void 
+< GLPaint::edgeDetectXEffect()
+< {
+<     convolute(edgeDetectX);
+< }
+< 
+< void 
+< GLPaint::edgeDetectYEffect()
+< {
+<     convolute(edgeDetectY);
+< }
+< 
+< void
+< GLPaint::aOverBCompositeEffect()
+< {
+<     int a_frame_number = getCurrentHistoryFrame();
+<     int b_frame_number = (a_frame_number > 1) ? a_frame_number - 1 : a_frame_number;
+<     glslAOverBComposite( getTextureId(a_frame_number), getTextureId(b_frame_number) );
+< }
+< 
+< void
+< GLPaint::bOverACompositeEffect()
+< {
+<     int a_frame_number = getCurrentHistoryFrame();
+<     int b_frame_number = (a_frame_number > 1) ? a_frame_number - 1 : a_frame_number;
+<     glslBOverAComposite( getTextureId(a_frame_number), getTextureId(b_frame_number) );
+< }
+< 
+< void
+< GLPaint::aInBCompositeEffect()
+< {
+<     int a_frame_number = getCurrentHistoryFrame();
+<     int b_frame_number = (a_frame_number > 1) ? a_frame_number - 1 : a_frame_number;
+<     glslAInBComposite( getTextureId(a_frame_number), getTextureId(b_frame_number) );
+< }
+< 
+< void
+< GLPaint::bInACompositeEffect()
+< {
+<     int a_frame_number = getCurrentHistoryFrame();
+<     int b_frame_number = (a_frame_number > 1) ? a_frame_number - 1 : a_frame_number;
+<     glslBInAComposite( getTextureId(a_frame_number), getTextureId(b_frame_number) );
+< }
+< 
+< void GLPaint::aOutBCompositeEffect()
+< {
+<     int a_frame_number = getCurrentHistoryFrame();
+<     int b_frame_number = (a_frame_number > 1) ? a_frame_number - 1 : a_frame_number;
+<     glslAOutBComposite( getTextureId(a_frame_number), getTextureId(b_frame_number) );
+< }
+< 
+< void GLPaint::bOutACompositeEffect()
+< {
+<     int a_frame_number = getCurrentHistoryFrame();
+<     int b_frame_number = (a_frame_number > 1) ? a_frame_number - 1 : a_frame_number;
+<     glslBOutAComposite( getTextureId(a_frame_number), getTextureId(b_frame_number) );
+< }
+< 
+< void GLPaint::aAtopBCompositeEffect()
+< {
+<     int a_frame_number = getCurrentHistoryFrame();
+<     int b_frame_number = (a_frame_number > 1) ? a_frame_number - 1 : a_frame_number;
+<     glslAAtopBComposite( getTextureId(a_frame_number), getTextureId(b_frame_number) );
+< }
+< 
+< void GLPaint::bAtopACompositeEffect()
+< {
+<     int a_frame_number = getCurrentHistoryFrame();
+<     int b_frame_number = (a_frame_number > 1) ? a_frame_number - 1 : a_frame_number;
+<     glslBAtopAComposite( getTextureId(a_frame_number), getTextureId(b_frame_number) );
+< }
+< 
+< void GLPaint::aXorBCompositeEffect()
+< {
+<     int a_frame_number = getCurrentHistoryFrame();
+<     int b_frame_number = (a_frame_number > 1) ? a_frame_number - 1 : a_frame_number;
+<     glslAXorBComposite( getTextureId(a_frame_number), getTextureId(b_frame_number) );
+< }
+< 
+< 
+< void 
+< GLPaint::sobelEffect()
+< {
+<     convolute(sobel);
+< }
+< 
+< void 
+< GLPaint::laplacianEffect()
+< {
+<     convolute(laplacian);
+< }
+<     
+< void 
+< GLPaint::laplacian2Effect()
+< {
+<     convolute(laplacian2);
+< }
+<     
+< void GLPaint::lapOfGaussEffect()
+< {
+<     convolute(lapOfGauss);
+< }
+< 
+< 
+< 
+< /*
+< | Fade the colors in the image towards white.
+< | Approximately the opposite of intensify().
+< */
+< void GLPaint::fadeEffect() 
+< {
+<     unsigned int pix;
+< 
+<     int buffer_size = getFrameWidth() * getFrameHeight();
+<     unsigned int* buffer = new unsigned int[buffer_size];
+< 
+<     glBindTexture(GL_TEXTURE_2D, getCurrentTextureId() );
+<     jahstd::glGetTextureSubImage(0, 0, getFrameWidth(), getFrameHeight(), getTextureWidth(), getTextureHeight(), 
+<                                  (unsigned char*)buffer );
+< 
+<     QImage qimage(getFrameWidth(), getFrameHeight(), 32);
+<     updateQimageFromRgbaBuffer(&qimage, buffer, getFrameWidth(), getFrameHeight());
+< 
+<     for (int y = 0; y < qimage.height(); y++)
+<     {
+<         for (int x = 0; x < qimage.width(); x++) 
+<         {
+<             pix = qimage.pixel(x,y);
+<             qimage.setPixel(x, y,
+<                 qRgb(limit0_255( (qRed(pix) * m_fade_degree) / 255 ),
+<                 limit0_255( (qGreen(pix) * m_fade_degree) / 255 ),
+<                 limit0_255( (qBlue(pix) * m_fade_degree) / 255 ) ) );
+<         }
+<     }
+< 
+<     qimage = qimage.mirror(false, true);
+< 
+<     if ( getClipIsStillImage() && !getApplyEffectToAllFrames() && !getAdvanceFrameAfterEffectApplication() )
+<     {
+< 	    incrementHistoryCount();
+<     }
+< 
+<     refreshCurrentTexture();
+<     glBindTexture(GL_TEXTURE_2D, getCurrentTextureId() );
+<     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, getFrameWidth(), getFrameHeight(), GL_RGBA, GL_UNSIGNED_BYTE, qimage.bits() );
+<     updateGL();
+<     updateTimeSlider( getCurrentHistoryFrame() );
+<     delete [] buffer;
+< }
+< 
+< 
+< /*
+< | Intensify the colors in the image towards black.
+< | Approximately the opposite of fade().
+< */
+< void GLPaint::intensifyEffect() 
+< {
+<     unsigned int pix;
+< 
+<     int buffer_size = getFrameWidth() * getFrameHeight();
+<     unsigned int* buffer = new unsigned int[buffer_size];
+< 
+<     glBindTexture(GL_TEXTURE_2D, getCurrentTextureId() );
+<     jahstd::glGetTextureSubImage(0, 0, getFrameWidth(), getFrameHeight(), getTextureWidth(), getTextureHeight(), 
+<                                  (unsigned char*)buffer );
+< 
+<     QImage qimage(getFrameWidth(), getFrameHeight(), 32);
+<     updateQimageFromRgbaBuffer(&qimage, buffer, getFrameWidth(), getFrameHeight());
+< 
+<     for (int y = 0; y < qimage.height(); y++)
+<     {
+<         for (int x = 0; x < qimage.width(); x++) 
+<         {
+<             pix = qimage.pixel(x,y);
+<             qimage.setPixel(x, y,
+<                 qRgb(limit0_255( (qRed(pix) * 255) / m_fade_degree ),
+<                 limit0_255( (qGreen(pix) * 255) / m_fade_degree ),
+<                 limit0_255( (qBlue(pix) * 255) / m_fade_degree ) ) );
+<         }
+<     }
+< 
+<     qimage = qimage.mirror(false, true);
+< 
+<     if ( getClipIsStillImage() && !getApplyEffectToAllFrames() && !getAdvanceFrameAfterEffectApplication() )
+<     {
+< 	    incrementHistoryCount();
+<     }
+< 
+<     refreshCurrentTexture();
+<     glBindTexture(GL_TEXTURE_2D, getCurrentTextureId() );
+<     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, getFrameWidth(), getFrameHeight(), GL_RGBA, GL_UNSIGNED_BYTE, qimage.bits() );
+<     updateGL();
+<     updateTimeSlider( getCurrentHistoryFrame() );
+<     delete [] buffer;
+< }
+< 
+< void 
+< GLPaint::embossEffect()
+< {
+<     int buffer_size = getFrameWidth() * getFrameHeight();
+<     unsigned int* buffer = new unsigned int[buffer_size];
+< 
+<     glBindTexture(GL_TEXTURE_2D, getCurrentTextureId() );
+<     jahstd::glGetTextureSubImage(0, 0, getFrameWidth(), getFrameHeight(), getTextureWidth(), getTextureHeight(), 
+<                                  (unsigned char*)buffer );
+< 
+<     QImage qimage(getFrameWidth(), getFrameHeight(), 32);
+<     updateQimageFromRgbaBuffer(&qimage, buffer, getFrameWidth(), getFrameHeight());
+< 
+<     int red;
+<     int green;
+<     int blue;
+<     int alpha = 0;
+< 
+<     const int emboss_w = 3;
+<     const int emboss_h = 3;
+< 
+<     int sumr = 0;
+<     int sumg = 0;
+<     int sumb = 0;
+<     int emboss_filter[emboss_w][emboss_h]={{2,0,0},{0,-1,0},{0,0,-1}};
+<     //int emboss_sum = (int)(getCurrentEffectLayer()->layernodes->m_node->rx+1);
+<     int emboss_sum = 1;
+< 
+<     if (emboss_sum < 1) 
+<     {
+<         emboss_sum = 1;
+<     }
+< 
+<     QImage* qimage_buffer = new QImage( getFrameWidth(), getFrameHeight(), 32 );
+< 
+<     for ( int y = 1; y < getFrameHeight() - 1; y++ )
+<     {
+<         for ( int x = 1; x < getFrameWidth() - 1; x++ )
+<         {
+<             sumr = 0;
+< 
+<             //added these
+<             sumg = 0;
+<             sumb = 0;
+< 
+<             for(int k = 0; k < emboss_w; k++)
+<             {
+<                 for(int l = 0; l < emboss_h; l++)
+<                 {
+<                     int xval = x - ( (emboss_w-1) >> 1 ) + k;
+<                     int yval = y - ( (emboss_h-1) >> 1 ) + l;
+< 
+<                     QRgb *sp = (QRgb *)qimage.scanLine(yval) + xval;
+< 
+<                     red = qRed(*sp);
+<                     green = qGreen(*sp);
+<                     blue = qBlue(*sp);
+<                     alpha = qAlpha(*sp);
+< 
+<                     sumr += red * emboss_filter[k][l];
+<                     sumg += green * emboss_filter[k][l];
+<                     sumb += blue * emboss_filter[k][l];
+<                 }
+<             }
+< 
+<             sumr /= emboss_sum; 
+<             sumr += 128;
+<             sumr = jahstd::Min<int>(sumr, 255);
+<             sumr = jahstd::Max<int>(sumr, 0);
+< 
+<             //added these
+<             sumg /= emboss_sum; 
+<             sumg += 128;
+<             sumg = jahstd::Min<int>(sumg, 255);
+<             sumg = jahstd::Max<int>(sumg, 0);
+< 
+<             sumb /= emboss_sum; 
+<             sumb += 128;
+<             sumb = jahstd::Min<int>(sumb, 255);
+<             sumb = jahstd::Max<int>(sumb, 0);
+< 
+<             QRgb *p = (QRgb *)qimage_buffer->scanLine(y) + x;
+<             *p = qRgba(sumr, sumg, sumb, alpha);
+<         }
+<     }
+< 
+<     //now we must copy buffer into pix
+<     qimage = qimage_buffer->copy();
+< 	delete qimage_buffer;
+< 
+<     qimage = qimage.mirror(false, true);
+< 
+<     if ( getClipIsStillImage() && !getApplyEffectToAllFrames() && !getAdvanceFrameAfterEffectApplication() )
+<     {
+< 	    incrementHistoryCount();
+<     }
+< 
+<     refreshCurrentTexture();
+<     glBindTexture(GL_TEXTURE_2D, getCurrentTextureId() );
+<     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, getFrameWidth(), getFrameHeight(), GL_RGBA, GL_UNSIGNED_BYTE, qimage.bits() );
+<     updateGL();
+<     delete [] buffer;
+<     updateTimeSlider( getCurrentHistoryFrame() );
+< }
+< 
+< 
+< void GLPaint::drawToolPen( color4& pen_color )
+< {
+<     // A point on point1 and point2, with a line between, without any gradient.
+< 
+<     //glPointSize(brush_size);
+< 
+< 
+< 	std::vector< PaintPixelCoords >::iterator iter;
+< 
+<     int point_brush_size = int( jahstd::Max<int>(int( m_point_brush_size ), 1) );
+<     int line_brush_size = int( jahstd::Max<int>(int( m_line_brush_size ), 1) );
+< 
+< 	for ( iter = m_pixel_coords.begin( ); iter != m_pixel_coords.end( ); iter ++ )
+< 	{
+< 		PaintPixelCoords &coords = *iter;
+< 
+<     	glColor4fv(&pen_color.x);
+< 
+<     	if (getPenAlpha() > 0.99f)
+<     	{
+<         	glDisable(GL_BLEND);
+<     	}
+< 
+<     	glPointSize(point_brush_size);
+<         glEnable(GL_POINT_SMOOTH);
+<     	glBegin(GL_POINTS);
+<     	{
+<         	glVertex2f(coords.x1,coords.y1); 
+<         	glVertex2f(coords.x2,coords.y2);
+<     	}
+<     	glEnd();
+< 
+< 		glLineWidth(line_brush_size);
+< 		glEnable(GL_LINE_SMOOTH);
+<     	glBegin(GL_LINES);
+<     	{
+<         	glVertex2f(coords.x1,coords.y1);   
+<         	glVertex2f(coords.x2,coords.y2);
+<     	}
+<     	glEnd();
+< 	}
+< }
+< 
+< void GLPaint::drawToolLine( int, color4& pen_color_light, color4& pen_color_dark, GLint,
+<                            int x1, int y1, int x2, int y2  ) 
+< {
+<     float line_range[2];
+<     glGetFloatv(GL_LINE_WIDTH_RANGE, line_range);
+< 
+<     float point_size = jahstd::Min<float>(m_point_brush_size, line_range[1]);
+<     point_size = jahstd::Max(point_size, 1.0f);
+<     float line_size = point_size;
+< 
+<     // A point on point1 and point2, with a line between.
+<     glPointSize(point_size);
+< 	glEnable(GL_POINT_SMOOTH);
+<     glBegin(GL_POINTS);
+<     glColor4fv(&pen_color_light.x);
+<     //glVertex2f(x1, y1);
+<     //glVertex2f(x2, y2);
+<     glEnd();
+< 
+<     glLineWidth(line_size);
+< 	glEnable(GL_LINE_SMOOTH);
+<     glBegin(GL_LINES);
+<     {
+<         glColor4fv(&pen_color_light.x);
+<         glVertex2f(x1,y1);
+<         glColor4fv(&pen_color_dark.x);
+<         glVertex2f(x2,y2);
+<     }
+<     glEnd();
+< }
+< 
+< void GLPaint::drawToolRect( int,
+<                            color4& pen_color, color4& pen_color_light, color4& pen_color_dark, GLint,
+<                            int x1, int y1, int x2, int y2  ) 
+< {
+<     float line_brush_size = jahstd::Even(int( m_line_brush_size ) + 1);
+<     line_brush_size = jahstd::Max<float>(line_brush_size, 2.0f);
+< 
+<     float y_displacement = line_brush_size / 2.0f;
+< 	y_displacement = (y1 > y2) ? y_displacement : -y_displacement;
+<     float x_displacement = line_brush_size / 2.0f;
+< 	x_displacement = (x1 < x2) ? x_displacement : -x_displacement;
+< 
+<     glLineWidth(line_brush_size);
+< 	glDisable(GL_LINE_SMOOTH);
+<     glBegin(GL_LINES);
+< 	{
+< 		glColor4fv(&pen_color_light.x); 
+< 		glVertex2f(x1 + x_displacement, y1 - y_displacement); 
+< 		glColor4fv(&pen_color.x);      
+< 		glVertex2f(x2 - x_displacement, y1 - y_displacement);
+< 
+< 		glVertex2f(x2, y1); 
+< 		glColor4fv(&pen_color_dark.x);  
+< 		glVertex2f(x2, y2);
+< 
+< 		glVertex2f(x2 - x_displacement, y2 + y_displacement); 
+< 		glColor4fv(&pen_color.x);      
+< 		glVertex2f(x1 + x_displacement, y2 + y_displacement);
+< 
+< 		glVertex2f(x1, y2); 
+< 		glColor4fv(&pen_color_light.x); 
+< 		glVertex2f(x1, y1);
+< 	}
+<     glEnd();
+< }
+< 
+< void GLPaint::drawToolRectFilled( int,  GLint,
+<                                  color4& pen_color, color4& pen_color_light, color4& pen_color_dark,
+<                                  color4& fill_color, color4& fill_color_light, color4& fill_color_dark,
+<                                  int x1, int y1, int x2, int y2  ) 
+< {
+<     float line_brush_size = jahstd::Even(int( m_line_brush_size ) + 1);
+< 
+<     float y_displacement = line_brush_size / 2.0f;
+< 	y_displacement = (y1 > y2) ? y_displacement : -y_displacement;
+<     float x_displacement = line_brush_size / 2.0f;
+< 	x_displacement = (x1 < x2) ? x_displacement : -x_displacement;
+< 
+<     if (line_brush_size > 0)
+<     {
+<         glLineWidth(line_brush_size);
+<         glDisable(GL_LINE_SMOOTH);
+<         glBegin(GL_LINES);
+<         {
+<             glColor4fv(&pen_color_light.x); 
+<             glVertex2f(x1 + x_displacement, y1 - y_displacement); 
+<             glColor4fv(&pen_color.x);      
+<             glVertex2f(x2 - x_displacement, y1 - y_displacement);
+< 
+<             glVertex2f(x2, y1); 
+<             glColor4fv(&pen_color_dark.x);  
+<             glVertex2f(x2, y2);
+< 
+<             glVertex2f(x2 - x_displacement, y2 + y_displacement); 
+<             glColor4fv(&pen_color.x);      
+<             glVertex2f(x1 + x_displacement, y2 + y_displacement);
+< 
+<             glVertex2f(x1, y2); 
+<             glColor4fv(&pen_color_light.x); 
+<             glVertex2f(x1, y1);
+<         }
+<         glEnd();
+<     }
+< 
+<     y_displacement = (y1 < y2) ? line_brush_size : -line_brush_size;
+< 
+<     glDisable(GL_POLYGON_SMOOTH);
+<     glBegin(GL_POLYGON);
+<     {
+<         glColor4fv(&fill_color_dark.x);
+<         glVertex3f(x1 + x_displacement, y1 + y_displacement, 0.0f);
+<         glColor4fv(&fill_color.x);
+<         glVertex3f(x2 - x_displacement, y1 + y_displacement, 0.0f);
+<         glColor4fv(&fill_color_light.x);
+<         glVertex3f(x2 - x_displacement, y2 - y_displacement, 0.0f);
+<         glColor4fv(&fill_color.x);
+<         glVertex3f(x1 + x_displacement, y2 - y_displacement, 0.0f);
+<     }
+<     glEnd();
+< 
+<     glColor4fv(&pen_color.x);
+< }
+< 
+< 
+< 
+< void GLPaint::drawToolCircle(  color4& pen_color, GLfloat gradientDegree,
+<                              int x1, int y1, int x2, int y2  ) 
+< {
+<     // A circle with its centre on point1, and its radius out to point2
+<     float xLen = fabs( fabs( double(x1) ) - fabs( double(x2) ) );
+<     float yLen = fabs( fabs( double(y1) ) - fabs( double(y2) ) );
+< 
+<     float radius = sqrt( xLen * xLen + yLen * yLen );
+< 	xLen = jahstd::Max<float>(xLen, 0.0001f);
+< 	
+<     float drawingAngle = atan( yLen / xLen );  // angle from point1 to point2
+< 
+<     if ( y2 > y1 ) 
+<     {
+<         if ( x2 < x1 ) 
+<         {
+<             drawingAngle  = PI - drawingAngle;    //flip   into quad2
+<         }
+<     } 
+<     else 
+<     {
+<         if ( x2 > x1 ) 
+<         {
+<             drawingAngle  = twoPI - drawingAngle; //flip   into quad4
+<         }
+<         else           
+<         {
+<             drawingAngle += float(PI);                   //rotate into quad3
+<         }
+<     }
+< 
+<     float line_brush_size = (m_line_brush_size == 0) ? 1 : m_line_brush_size;
+< 
+< 	glLineWidth(line_brush_size);
+< 	glEnable(GL_LINE_SMOOTH);
+< 
+<     float step = float(PI) / float(toolCirclePointsPerPI);
+<     float offset = 0.0f;
+< 
+< 
+<     glBegin(GL_LINE_STRIP);
+<     {
+<         for (int i = 0; i < 5; i++)
+<         {
+<             for ( float angle  = offset ; angle  < float(twoPI) + step + offset; angle += step)
+<             {
+<                 glColor4f( pen_color.red() - gradientDegree * cos(angle),
+<                     pen_color.green() - gradientDegree * cos(angle),
+<                     pen_color.blue() - gradientDegree * cos(angle), pen_color.alpha() );
+<                 glVertex2f( x1 + radius * cos(angle+drawingAngle),
+<                     y1 + radius * sin(angle+drawingAngle));
+<             }
+< 
+<             offset += step / 5.0f;
+<         }
+<     }
+<     glEnd();
+< 
+< 
+< }
+< 
+< void GLPaint::drawToolCircleFilled(  color4& pen_color, color4& fill_color, GLfloat gradientDegree,
+<                                    int x1, int y1, int x2, int y2  ) 
+< {
+<     GLfloat angle,drawingAngle,xLen,yLen,radius;
+< 
+<     // A filled circle with its centre on point1, and its radius out to point2,
+<     // and a pen circle with its centre on point1 and its radius out to point2.
+<     xLen = fabs(fabs((double)x1)-fabs((double)x2));
+<     yLen = fabs(fabs((double)y1)-fabs((double)y2));
+<     radius = sqrt( xLen*xLen + yLen*yLen );
+<     float fill_radius = radius - (m_line_brush_size / 2.0f) + 0.5f;
+< 
+<     if (xLen == 0) 
+<     {
+<         xLen = 0.0001f;          // avoid dividing by zero
+<     }
+< 
+<     drawingAngle = atan ( yLen / xLen );  // angle from point1 to point2
+< 
+<     if ( y2 > y1 ) 
+<     {
+<         if ( x2 < x1 ) 
+<         {
+<             drawingAngle  = PI - drawingAngle;    //flip   into quad2
+<         }
+<     } 
+<     else 
+<     {
+<         if ( x2 > x1 ) 
+<         {
+<             drawingAngle  = twoPI - drawingAngle; //flip   into quad4
+<         }
+<         else           
+<         {
+<             drawingAngle += float(PI);                   //rotate into quad3
+<         }
+<     }
+< 
+< 	glDisable(GL_POLYGON_SMOOTH);
+<     glBegin(GL_POLYGON);
+<     {
+<         for ( angle  = 0.0f; angle  < float(twoPI) + float(PI) / float(toolCirclePointsPerPI);
+<             angle += float(PI) / float(toolCirclePointsPerPI) ) 
+<         {
+<             glColor4f( fill_color.red() + gradientDegree * cos(angle),
+<                 fill_color.green() + gradientDegree * cos(angle),
+<                 fill_color.blue() + gradientDegree * cos(angle), fill_color.alpha() );
+<             glVertex2f( x1 + fill_radius * cos(angle+drawingAngle),
+<                 y1 + fill_radius * sin(angle+drawingAngle));
+<         }
+<     }
+<     glEnd();
+< 
+<     if (m_line_brush_size > 0)
+<     {
+<         glLineWidth(m_line_brush_size);
+<         glEnable(GL_LINE_SMOOTH);
+< 
+<         float step = float(PI) / float(toolCirclePointsPerPI);
+<         float offset = 0.0f;
+< 
+<         glBegin(GL_LINE_STRIP);
+<         {
+<             for (int i = 0; i < 5; i++)
+<             {
+<                 for ( angle  = offset ; angle  < float(twoPI) + step + offset; angle += step)
+<                 {
+<                     glColor4f( pen_color.red() - gradientDegree * cos(angle),
+<                         pen_color.green() - gradientDegree * cos(angle),
+<                         pen_color.blue() - gradientDegree * cos(angle), pen_color.alpha() );
+<                     glVertex2f( x1 + radius * cos(angle+drawingAngle),
+<                         y1 + radius * sin(angle+drawingAngle));
+<                 }
+< 
+<                 offset += step / 5.0f;
+<             }
+<         }
+<         glEnd();
+<     }
+< }
+< 
+< void GLPaint::drawToolTri ( color4& pen_color, color4& pen_color_light, color4& pen_color_dark,
+<                            int x1, int y1, int x2, int y2  ) 
+< {
+<     GLfloat angle,xLen,yLen,radius;
+< 
+<     // A pen triangle from point1 to point2, attempting to be equilateral,
+<     // with a point on each of its corners.
+<     xLen   = fabs(fabs((double)x2)-fabs((double)x1));
+<     yLen   = fabs(fabs((double)y1)-fabs((double)y2));
+<     radius = sqrt( xLen*xLen + yLen*yLen ) * atanPI;
+< 
+<     if (radius != 0) 
+<     {                  // be careful not to divide by zero
+<         angle  = asin( yLen / radius );
+<         xLen   = radius * sin(angle) * 0.77;
+<         yLen   = radius * cos(angle) * 0.77;
+< 		glColor4fv(&pen_color.x);
+< 
+<         float line_brush_size = (m_line_brush_size == 0) ? 1 : m_line_brush_size;
+< 
+< 		glLineWidth(line_brush_size);
+< 		glDisable(GL_LINE_SMOOTH);
+< 
+< 		glBegin(GL_LINE_STRIP);
+<         {
+<             glColor4fv(&pen_color_light.x);
+<             glVertex2f( x2, y2 );
+<             glColor4fv(&pen_color_dark.x);
+< 
+<             if (y2<=y1 && x2>=x1) 
+<             {
+<                 glVertex2f( x1-xLen, y1-yLen ); glVertex2f( x1+xLen, y1+yLen );
+<             } 
+<             else if (y2<=y1 && x2< x1) 
+<             {
+<                 glVertex2f( x1-xLen, y1+yLen ); glVertex2f( x1+xLen, y1-yLen );
+<             } 
+<             else if (y2> y1 && x2>=x1) 
+<             {
+<                 glVertex2f( x1+xLen, y1-yLen ); glVertex2f( x1-xLen, y1+yLen );
+<             } 
+<             else                       
+<             {
+<                 glVertex2f( x1+xLen, y1+yLen ); glVertex2f( x1-xLen, y1-yLen );
+<             }
+<             glColor4fv(&pen_color_light.x);
+<             glVertex2f( x2, y2 );
+<         }
+<         glEnd();
+<     }
+<                            }
+< 
+< void GLPaint::drawToolTriFilled( color4& pen_color, color4& pen_color_light,color4& pen_color_dark,
+<                                 color4& fill_color, color4& fill_color_light,color4& fill_color_dark,
+<                                 int x1, int y1, int x2, int y2  ) 
+< {
+<     GLfloat angle,xLen,yLen,radius;
+< 
+< 
+<     // A filled triangle from point1 to point2, attempting to be equilateral,
+<     // a pen triangle from point1 to point2, attempting to be equilateral,
+<     // and a point on each of the corners.
+<     xLen   = fabs(fabs((double)x2)-fabs((double)x1));
+<     yLen   = fabs(fabs((double)y1)-fabs((double)y2));
+<     radius = sqrt( xLen*xLen + yLen*yLen ) * atanPI;
+< 
+<     if (radius != 0) 
+<     {                  // be careful not to divide by zero
+<         angle  = asin( yLen / radius );
+<         xLen   = radius * sin(angle) * 0.77;
+<         yLen   = radius * cos(angle) * 0.77;
+<         glColor4fv(&fill_color.x);
+< 
+< 		glDisable(GL_POLYGON_SMOOTH);
+<         glBegin(GL_POLYGON);
+<         {
+<             glColor4fv(&fill_color_light.x);
+<             glVertex2f( x2, y2 );
+<             glColor4fv(&fill_color_dark.x);
+< 
+<             if (y2<=y1 && x2>=x1) 
+<             {        // quadrant 4
+<                 glVertex2f( x1-xLen, y1-yLen ); glVertex2f( x1+xLen, y1+yLen );
+<             } 
+<             else if (y2<=y1 && x2< x1) 
+<             {        // quadrant 3
+<                 glVertex2f( x1-xLen, y1+yLen ); glVertex2f( x1+xLen, y1-yLen );
+<             } 
+<             else if (y2> y1 && x2>=x1) 
+<             {        // quadrant 1
+<                 glVertex2f( x1+xLen, y1-yLen ); glVertex2f( x1-xLen, y1+yLen );
+<             } 
+<             else                       
+<             {        // quadrant 2
+<                 glVertex2f( x1+xLen, y1+yLen ); glVertex2f( x1-xLen, y1-yLen );
+<             }
+<         }
+<         glEnd();
+< 
+<         glColor4fv(&pen_color.x);
+< 
+<         if (m_line_brush_size > 0)
+<         {
+<             glLineWidth(m_line_brush_size);
+<             glDisable(GL_LINE_SMOOTH);
+<             glBegin(GL_LINE_STRIP);
+<             {
+<                 glColor4fv(&pen_color_dark.x);
+<                 glVertex2f( x2, y2 );
+<                 glColor4fv(&pen_color_light.x);
+< 
+<                 if        (y2<=y1 && x2>=x1) 
+<                 {        // quadrant 4
+<                     glVertex2f( x1-xLen, y1-yLen ); glVertex2f( x1+xLen, y1+yLen );
+<                 } 
+<                 else if (y2<=y1 && x2< x1) 
+<                 {        // quadrant 3
+<                     glVertex2f( x1-xLen, y1+yLen ); glVertex2f( x1+xLen, y1-yLen );
+<                 } 
+<                 else if (y2> y1 && x2>=x1) 
+<                 {        // quadrant 1
+<                     glVertex2f( x1+xLen, y1-yLen ); glVertex2f( x1-xLen, y1+yLen );
+<                 } 
+<                 else                       
+<                 {        // quadrant 2
+<                     glVertex2f( x1+xLen, y1+yLen ); glVertex2f( x1-xLen, y1-yLen );
+<                 }
+<                 glColor4fv(&pen_color_dark.x);
+<                 glVertex2f( x2, y2 );
+<             }
+<             glEnd();
+<         }
+<     }
+< }
+< 
+< void 
+< GLPaint::drawToolForegroundColorPicker( color4& pen_color, int x_position, int y_position )
+< {
+<     unsigned int select_color;
+<     glReadPixels(x_position, y_position, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, &select_color);
+< 
+<     // QT uses BGRA so reverse red and blue
+<     unsigned char select_red = qBlue(select_color);
+<     unsigned char select_green = qGreen(select_color);
+<     unsigned char select_blue = qRed(select_color);
+<     unsigned char select_alpha = qAlpha(select_color);
+< 
+<     color4 select_color4( float(select_red) / 255.0f, float(select_green) / 255.0f, 
+<                           float(select_blue) / 255.0f, float(select_alpha) / 255.0f ); 
+< 
+<     pen_color = select_color4;
+< 
+<     QRgb new_color = qRgba(select_red, select_green, select_blue, select_alpha);
+< 
+< 	setPenColor( new_color );
+< 	m_pen_color_button->setPaletteBackgroundColor( new_color ); 
+< 
+<     std::ostringstream color_string_stream;
+<     color_string_stream << (int)select_red << ", " << (int)select_green << ", ";
+<     color_string_stream << (int)select_blue << ", " << (int)select_alpha;
+< 
+<     getCurrentColorLabel()->setText( color_string_stream.str().data() );
+<     getCurrentColorLabel()->setBackgroundColor( new_color );
+< 
+<     QColor foreground_color = qRgba(~select_red, ~select_green, ~select_blue, 255); 
+<     getCurrentColorLabel()->setPaletteForegroundColor( foreground_color );
+< }
+< 
+< void 
+< GLPaint::drawToolBackgroundColorPicker( color4& fill_color, int x_position, int y_position )
+< {
+<     unsigned int select_color;
+<     glReadPixels(x_position, y_position, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, &select_color);
+< 
+<     // QT uses BGRA so reverse red and blue
+<     unsigned char select_red = qBlue(select_color);
+<     unsigned char select_green = qGreen(select_color);
+<     unsigned char select_blue = qRed(select_color);
+<     unsigned char select_alpha = qAlpha(select_color);
+< 
+<     color4 select_color4( float(select_red) / 255.0f, float(select_green) / 255.0f, 
+<                           float(select_blue) / 255.0f, float(select_alpha) / 255.0f ); 
+< 
+<     fill_color = select_color4;
+< 
+<     QRgb new_color = qRgba(select_red, select_green, select_blue, select_alpha);
+< 
+< 	setFillColor( new_color );
+< 	m_fill_color_button->setPaletteBackgroundColor( new_color ); 
+< 
+<     std::ostringstream color_string_stream;
+<     color_string_stream << (int)select_red << ", " << (int)select_green << ", ";
+<     color_string_stream << (int)select_blue << ", " << (int)select_alpha;
+< 
+<     getCurrentColorLabel()->setText( color_string_stream.str().data() );
+<     getCurrentColorLabel()->setBackgroundColor( new_color );
+< 
+<     QColor foreground_color = qRgba(~select_red, ~select_green, ~select_blue, 255); 
+<     getCurrentColorLabel()->setPaletteForegroundColor( foreground_color );
+< }
+< 
+< void            
+< GLPaint::buildEraserCircleLookupTable()
+< {
+<     if ( getUseGpuEraser() )
+<     {
+<         return;
+<     }
+< 
+<     if (m_eraser_circle_lookup_table)
+<     {
+<         delete m_eraser_circle_lookup_table;
+<     }
+< 
+<     int eraser_diameter = int( m_point_brush_size );
+<     int eraser_radius = eraser_diameter / 2;
+<     eraser_radius = jahstd::Max<int>(eraser_radius, 2);
+< 
+<     m_eraser_circle_lookup_table = new bool [(eraser_diameter + 1) * (eraser_diameter + 1)];
+< 
+<     for (int x = 0; x <= eraser_diameter; x++)
+<     {
+<         float float_x_minus_eraser_radius =  float(x - eraser_radius);
+< 
+<         for (int y = 0; y <= eraser_diameter; y++)
+<         {
+<             float float_y_minus_eraser_radius = float(y - eraser_radius);
+< 
+<             float radius = sqrtf( ( float_x_minus_eraser_radius * float_x_minus_eraser_radius ) + 
+<                                   ( float_y_minus_eraser_radius * float_y_minus_eraser_radius ) );
+< 
+<             if (radius < eraser_radius)
+<             {
+<                 // Inside the circle
+<                 m_eraser_circle_lookup_table[ (y * eraser_diameter) + x ] = true;
+<             }
+<             else
+<             {
+<                 // Outside the circle
+<                 m_eraser_circle_lookup_table[ (y * eraser_diameter) + x ] = false;
+<             }
+<         }
+<     }
+< }
+< 
+< void            
+< GLPaint::captureEraserBuffer()
+< {
+<     if ( getUseGpuEraser() )
+<     {
+<         return;
+<     }
+< 
+<     int buffer_size = getFrameWidth() * getFrameHeight();
+<     m_eraser_buffer = new unsigned int[buffer_size];
+<     m_eraser_buffer_color4 = new color4[buffer_size];
+< 
+<     GLuint texture_id;
+< 
+<     if ( getCopyListPtr()->first() && getCopyListPtr()->first()->getTextureId() )
+<     {
+<         texture_id = getCopyListPtr()->first()->getTextureId();
+<     }
+<     else
+<     {
+<          texture_id = getImageLayer()->getTextureData().getTexId();
+<     }
+< 
+<     glBindTexture(GL_TEXTURE_2D, texture_id);
+<     jahstd::glGetTextureSubImage( 1, 0, getFrameWidth(), getFrameHeight(), 
+<                                   getTextureWidth(), getTextureHeight(), (unsigned char*)getEraserBuffer() );
+< 
+<     unsigned int* eraser_buffer = getEraserBuffer();
+< 
+<     for (int i = 0; i < buffer_size; i++)
+<     {
+<         unsigned int pixel;
+<         pixel = eraser_buffer[i];
+<         // QT uses BGRA so reverse red and blue
+<         float red = qBlue(pixel) / 255.0f;
+<         float green = qGreen(pixel) / 255.0f;
+<         float blue = qRed(pixel) / 255.0f;
+<         m_eraser_buffer_color4[i].x = red;
+<         m_eraser_buffer_color4[i].y = green;
+<         m_eraser_buffer_color4[i].z = blue;
+<     }
+< }
+< 
+< void
+< GLPaint::deleteEraserBuffer()
+< {
+<     if ( getUseGpuEraser() )
+<     {
+<         return;
+<     }
+< 
+<     delete [] getEraserBuffer();
+<     delete [] m_eraser_buffer_color4;
+< }
+< 
+< void 
+< GLPaint::drawEraser( int x_position, int y_position )
+< {
+< 
+<     if (x_position< 0)
+<     {
+<         return;
+<     }
+< 
+<     if ( getUseGpuEraser() )
+<     {
+<         glslDrawEraser();
+<         return;
+<     }
+< 
+<     std::vector< PaintPixelCoords >::iterator iter;
+< 
+<     int lower_left_x = getLowerLeftX();
+<     int lower_left_y = getLowerLeftY();
+<     int frame_width = getFrameWidth();
+<     int frame_height = getFrameHeight();
+<     color4* eraser_buffer = getEraserBufferColor4();
+<     // Fudge factor because points tend to get written multiple times as the mouse is moved
+<     float pen_alpha = getPenAlpha() * getPenAlpha();
+< 
+<     int eraser_diameter = m_point_brush_size_int;
+<     int eraser_radius = eraser_diameter / 2;
+<     eraser_radius = jahstd::Max<int>(eraser_radius, 2);
+<     glDisable(GL_POINT_SMOOTH);
+<     glPointSize(1.0f);
+< 
+<     if (pen_alpha > 0.99f)
+<     {
+<         glDisable(GL_BLEND);
+<     }
+< 
+<     x_position = x1;
+<     y_position = y1;
+< 
+<     for (int x = -eraser_radius; x <= eraser_radius; x++)
+<     {
+<         int x_plus_eraser_radius = x + eraser_radius;
+<         int pixel_x_position = x_position + x;
+<         int pixel_x_offset = pixel_x_position - lower_left_x;
+< 
+<         for (int y = -eraser_radius; y <= eraser_radius; y++)
+<         {
+<             color4& pixel = eraser_buffer[0];
+< 
+<             if ( isInsideTheEraserCircle(x_plus_eraser_radius, y + eraser_radius) )
+<             {
+<                 int pixel_y_position = y_position + y;
+<                 int pixel_y_offset = pixel_y_position - lower_left_y;
+< 
+<                 if (   pixel_x_offset < 0 || pixel_x_offset >= frame_width
+<                     || pixel_y_offset < 0 || pixel_y_offset >= frame_height 
+<                     )
+<                 {
+<                     continue;
+<                 }
+< 
+<                 if (getImageLayer()->layerStatus)
+<                 {
+<                     int buffer_offset = (frame_width * pixel_y_offset) + pixel_x_offset;
+<                     pixel = eraser_buffer[buffer_offset];
+<                 }
+<                 else
+<                 {
+<                     pixel.x = 0.0f;
+<                     pixel.y = 0.0f;
+<                     pixel.z = 0.0f;
+<                     pixel.w = 0.0f;
+<                 }
+< 
+<                 glBegin(GL_POINTS);
+<                 {
+<                     glColor4f( pixel.x, pixel.y, pixel.z, pen_alpha );
+<                     glVertex2f(pixel_x_position + 1, pixel_y_position);
+<                 }
+<                 glEnd(); // GL_POINTS
+<             }
+<         }
+<     }
+< }
+< 
+< void 
+< GLPaint::drawToolPaintBucketFillAll()
+< {
+<     color3 fillColor;
+<     fillColor[0] = m_fill_color->red() / 255.0f;
+<     fillColor[1] = m_fill_color->green() / 255.0f;
+<     fillColor[2] = m_fill_color->blue() / 255.0f;
+<     color4 fill_color( fillColor[0], fillColor[1], fillColor[2], getFillAlpha() );
+< 
+<     int x_position = x1;
+<     int y_position = y1;
+< 
+<     unsigned int select_color;
+< 
+<     int buffer_size = getFrameWidth() * getFrameHeight();
+< 
+<     unsigned int* image_buffer = new unsigned int[buffer_size];
+< 
+<     glReadPixels(getLowerLeftX(), getLowerLeftY(), getFrameWidth(), getFrameHeight(), GL_RGBA, GL_UNSIGNED_BYTE, image_buffer);
+< 
+<     int x_offset = x_position - getLowerLeftX();
+<     int y_offset = y_position - getLowerLeftY();
+< 
+<     if (x_offset > getFrameWidth() || y_offset > getFrameHeight() || x_offset < 0 || y_offset < 0)
+<     {
+<         return;
+<     }
+< 
+<     select_color = *(image_buffer + ( y_offset * getFrameWidth() ) + x_offset);
+< 
+<     // QT uses BGRA so reverse red and blue
+<     unsigned char select_red = qBlue(select_color);
+<     unsigned char select_green = qGreen(select_color);
+<     unsigned char select_blue = qRed(select_color);
+< 
+<     color4 select_color4( float(select_red) / 255.0f, float(select_green) / 255.0f, float(select_blue) / 255.0f, 1.0f ); 
+< 
+<     if (select_color4 == fill_color)
+<     {
+<         return;
+<     }
+< 
+<     // This fudge factor seems to necessary to deal with inaccuracy in drawn colors
+<     int color_tolerance = getFillBucketRange() + 4;
+< 
+<     unsigned char select_red_low = (color_tolerance > (int)select_red) ? 0 : select_red - color_tolerance;
+<     unsigned char select_green_low = (color_tolerance > (int)select_green) ? 0 : select_green - color_tolerance;
+<     unsigned char select_blue_low = (color_tolerance > (int)select_blue) ? 0 : select_blue - color_tolerance;
+< 
+<     unsigned char select_red_high = ( (select_red + color_tolerance ) > 255 ) ? 255 : select_red + color_tolerance;
+<     unsigned char select_green_high = ( (select_green + color_tolerance ) > 255 ) ? 255 : select_green + color_tolerance;
+<     unsigned char select_blue_high = ( (select_blue + color_tolerance ) > 255 ) ? 255 : select_blue + color_tolerance;
+< 
+<     color4 select_color_low( float(select_red_low) / 255.0f, float(select_green_low) / 255.0f, float(select_blue_low) / 255.0f, 1.0f);
+<     color4 select_color_high( float(select_red_high) / 255.0f, float(select_green_high) / 255.0f, float(select_blue_high) / 255.0f, 1.0f);
+< 
+<     unsigned char new_red = (unsigned char)(fill_color.red() * 255.0f);
+<     unsigned char new_green = (unsigned char)(fill_color.green() * 255.0f);
+<     unsigned char new_blue = (unsigned char)(fill_color.blue() * 255.0f);
+<     unsigned char new_alpha = (unsigned char)(fill_color.alpha() * 255.0f);
+< 
+<     // QT uses BGRA so reverse red and blue
+<     QRgb new_color = qRgba(new_blue, new_green, new_red, new_alpha); 
+< 
+<     int x;
+<     int y;
+<     int buffer_offset;
+< 
+<     for (x = 0; x < getFrameWidth(); x++)
+<     {
+<         for (y = 0; y < getFrameHeight(); y++)
+<         {
+<             buffer_offset = ( y * getFrameWidth() ) + x;
+< 
+<             if ( checkColorRangeAndPosition(x, y, image_buffer, new_color, select_color_low, select_color_high) )
+<             {
+<                 image_buffer[buffer_offset] = new_color;
+<             }
+<         }
+<     }
+< 
+<     if ( getClipIsStillImage() && !getApplyEffectToAllFrames() && !getAdvanceFrameAfterEffectApplication() )
+<     {
+< 	    incrementHistoryCount();
+<     }
+< 
+<     refreshCurrentTexture();
+<     glBindTexture(GL_TEXTURE_2D, getCurrentTextureId() );
+<     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, getFrameWidth(), getFrameHeight(), GL_RGBA, GL_UNSIGNED_BYTE, image_buffer );
+<     updateGL();
+<     updateTimeSlider( getCurrentHistoryFrame() );
+<     delete [] image_buffer;
+< }
+< 
+< void 
+< GLPaint::drawToolPaintBucket()
+< {
+<     color3 fillColor;
+<     fillColor[0] = m_fill_color->red() / 255.0f;
+<     fillColor[1] = m_fill_color->green() / 255.0f;
+<     fillColor[2] = m_fill_color->blue() / 255.0f;
+<     color4 fill_color( fillColor[0], fillColor[1], fillColor[2], getFillAlpha() );
+< 
+<     int x_position = x1;
+<     int y_position = y1;
+< 
+<     unsigned int select_color;
+< 
+<     int buffer_size = getFrameWidth() * getFrameHeight();
+< 
+<     unsigned int* image_buffer = new unsigned int[buffer_size];
+< 
+<     glReadPixels(getLowerLeftX(), getLowerLeftY(), getFrameWidth(), getFrameHeight(), GL_RGBA, GL_UNSIGNED_BYTE, image_buffer);
+< 
+<     int x_offset = x_position - getLowerLeftX();
+<     int y_offset = y_position - getLowerLeftY();
+< 
+<     if (x_offset > getFrameWidth() || y_offset > getFrameHeight() || x_offset < 0 || y_offset < 0)
+<     {
+<         return;
+<     }
+< 
+<     select_color = *(image_buffer + ( y_offset * getFrameWidth() ) + x_offset);
+< 
+<     // QT uses BGRA so reverse red and blue
+<     unsigned char select_red = qBlue(select_color);
+<     unsigned char select_green = qGreen(select_color);
+<     unsigned char select_blue = qRed(select_color);
+< 
+<     color4 select_color4( float(select_red) / 255.0f, float(select_green) / 255.0f, float(select_blue) / 255.0f, 1.0f ); 
+< 
+<     if (select_color4 == fill_color)
+<     {
+<         return;
+<     }
+< 
+<     // This fudge factor seems to necessary to deal with inaccuracy in drawn colors
+<     int color_tolerance = getFillBucketRange() + 4;
+< 
+<     unsigned char select_red_low = (color_tolerance > (int)select_red) ? 0 : select_red - color_tolerance;
+<     unsigned char select_green_low = (color_tolerance > (int)select_green) ? 0 : select_green - color_tolerance;
+<     unsigned char select_blue_low = (color_tolerance > (int)select_blue) ? 0 : select_blue - color_tolerance;
+< 
+<     unsigned char select_red_high = ( (select_red + color_tolerance ) > 255 ) ? 255 : select_red + color_tolerance;
+<     unsigned char select_green_high = ( (select_green + color_tolerance ) > 255 ) ? 255 : select_green + color_tolerance;
+<     unsigned char select_blue_high = ( (select_blue + color_tolerance ) > 255 ) ? 255 : select_blue + color_tolerance;
+< 
+<     color4 select_color_low( float(select_red_low) / 255.0f, float(select_green_low) / 255.0f, float(select_blue_low) / 255.0f, 1.0f);
+<     color4 select_color_high( float(select_red_high) / 255.0f, float(select_green_high) / 255.0f, float(select_blue_high) / 255.0f, 1.0f);
+< 
+<     unsigned char new_red = (unsigned char)(fill_color.red() * 255.0f);
+<     unsigned char new_green = (unsigned char)(fill_color.green() * 255.0f);
+<     unsigned char new_blue = (unsigned char)(fill_color.blue() * 255.0f);
+<     unsigned char new_alpha = (unsigned char)(fill_color.alpha() * 255.0f);
+< 
+<     // QT uses BGRA so reverse red and blue
+<     QRgb new_color = qRgba(new_blue, new_green, new_red, new_alpha); 
+< 
+<     //printf("x_position = %d   y_position = %d  color = %08x\n", x_position, y_position, select_color);
+< 
+<     fillPixelColorRange(x_offset, y_offset, select_color_low, select_color_high, new_color, image_buffer);
+< 
+<     if ( getClipIsStillImage() && !getApplyEffectToAllFrames() && !getAdvanceFrameAfterEffectApplication() )
+<     {
+< 	    incrementHistoryCount();
+<     }
+< 
+<     refreshCurrentTexture();
+<     glBindTexture(GL_TEXTURE_2D, getCurrentTextureId() );
+<     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, getFrameWidth(), getFrameHeight(), GL_RGBA, GL_UNSIGNED_BYTE, image_buffer );
+<     updateGL();
+<     updateTimeSlider( getCurrentHistoryFrame() );
+<     delete [] image_buffer;
+< }
+< 
+< bool 
+< GLPaint::checkColorRangeAndPosition(int x_position, int y_position, unsigned int* pixel_buffer, 
+<                                     QRgb, color4& color_range_low, color4& color_range_high)
+< {
+<     if ( x_position < 0 || x_position >= getFrameWidth() || y_position < 0 || y_position >= getFrameHeight() )
+<     {
+<         return false;
+<     }
+< 
+<     int buffer_offset = ( y_position * getFrameWidth() ) + x_position;
+<     unsigned int* pixel_pointer = pixel_buffer + buffer_offset;
+<     unsigned int current_color = *pixel_pointer;
+< 
+<         // QT uses BGRA so reverse red and blue
+<     float current_red = qBlue(current_color) / 255.0f;
+<     float current_green = qGreen(current_color) / 255.0f;
+<     float current_blue = qRed(current_color) / 255.0f;
+< 
+<     //if (current_color == (unsigned int)new_color)
+<     //{
+<     //    return true;
+<     //}
+< 
+<     if (  current_red < color_range_low.red() || current_red > color_range_high.red() )
+<     {
+<         return false;
+<     }
+< 
+<     if (  current_green < color_range_low.green() || current_green > color_range_high.green() )
+<     {
+<         return false;
+<     }
+< 
+<     if (  current_blue < color_range_low.blue() || current_blue > color_range_high.blue() )
+<     {
+<         return false;
+<     }
+< 
+<     return true;
+< }
+< 
+< bool 
+< GLPaint::adjacentPixelSet(bool* image_map, int x_position, int y_position)
+< {
+<     if ( x_position < 0 || x_position >= getFrameWidth() || y_position < 0 || y_position >= getFrameHeight() )
+<     {
+<         return false;
+<     }
+< 
+<     int buffer_offset;
+<     int x;
+<     int y;
+< 
+<     for (x = x_position - 1; x <= x_position + 1; x++)
+<     {
+<         for (y = y_position - 1; y <= y_position + 1; y++)
+<         {
+<             if (x == x_position && y == y_position)
+<             {
+<                 continue;
+<             }
+< 
+<             if ( x < 0 || x > getFrameWidth() || y < 0 || y > getFrameHeight() )
+<             {
+<             }
+<             else
+<             {
+<                 buffer_offset = ( y * getFrameWidth() ) + x;
+< 
+<                 if (image_map[buffer_offset])
+<                 {
+<                     return true;
+<                 }
+<             }
+<         }
+<     }
+< 
+<     return false;
+< }
+< 
+< void
+< GLPaint::evaluateAndSetPixelColor(int x, int y, unsigned int* pixel_buffer, bool* image_map,
+<                                   QRgb new_color, color4& color_range_low, color4& color_range_high,
+<                                   bool& point_found)
+< {
+<     if ( checkColorRangeAndPosition(x, y, pixel_buffer, new_color, color_range_low, color_range_high) )
+<     {
+<         if ( adjacentPixelSet(image_map, x, y) )
+<         {
+<             int buffer_offset = ( y * getFrameWidth() ) + x;
+<             pixel_buffer[buffer_offset] = new_color;
+<             image_map[buffer_offset] = true;
+<             point_found = true;
+<         }
+<     }
+< }
+< 
+< void 
+< GLPaint::fillPixelColorRange(int x_position, int y_position, 
+<                              color4& color_range_low, color4& color_range_high, QRgb new_color, 
+<                              unsigned int* pixel_buffer)
+< {
+<     int map_size = getFrameWidth() * getFrameHeight();
+<     bool* image_map = new bool[map_size];
+< 
+<     int x;
+<     int y;
+<     int buffer_offset;
+< 
+<     for (int i = 0; i < map_size; i++)
+<     {
+<         image_map[i] = false;
+<     }
+< 
+<     int max_radius = jahstd::Max<int>( getFrameWidth(), getFrameHeight() );
+<     buffer_offset = ( y_position * getFrameWidth() ) + x_position;
+<     image_map[buffer_offset] = true;
+<     pixel_buffer[buffer_offset] = new_color;
+< 
+<     bool point_found = true;
+<     int radius;
+< 
+<     for (radius = 1; radius < max_radius && point_found; radius++)
+<     {
+<         point_found = false;
+<         
+<         y = y_position - radius;
+< 
+<         for (x = x_position - radius; x <= x_position + radius; x++)
+<         {
+<             evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<                                      color_range_low, color_range_high, point_found);
+<         }
+< 
+<         x = x_position - radius;
+<         evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<             color_range_low, color_range_high, point_found);
+< 
+<         x = x_position - radius;
+< 
+<         for (y = y_position - radius; y <= y_position + radius; y++)
+<         {
+<             evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<                                      color_range_low, color_range_high, point_found);
+<         }
+< 
+<         y = y_position - radius;
+<         evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<             color_range_low, color_range_high, point_found);
+< 
+<         y = y_position + radius;
+< 
+<         for (x = x_position - radius; x <= x_position + radius; x++)
+<         {
+<             evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<                                      color_range_low, color_range_high, point_found);
+<         }
+< 
+<         x = x_position - radius;
+<         evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<             color_range_low, color_range_high, point_found);
+< 
+<         x = x_position + radius;
+< 
+<         for (y = y_position - radius; y <= y_position + radius; y++)
+<         {
+<             evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<                                      color_range_low, color_range_high, point_found);
+<         }
+< 
+<         y = y_position - radius;
+<         evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<             color_range_low, color_range_high, point_found);
+<     }
+< 
+<     max_radius = radius;
+< 
+<     for (radius = max_radius; radius >= 0; radius--)
+<     {
+<         y = y_position - radius;
+< 
+<         for (x = x_position - radius; x <= x_position + radius; x++)
+<         {
+<             evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<                                      color_range_low, color_range_high, point_found);
+<         }
+< 
+<         x = x_position - radius;
+< 
+<         for (y = y_position - radius; y <= y_position + radius; y++)
+<         {
+<             evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<                                      color_range_low, color_range_high, point_found);
+<         }
+< 
+<         y = y_position + radius;
+< 
+<         for (x = x_position - radius; x <= x_position + radius; x++)
+<         {
+<             evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<                                      color_range_low, color_range_high, point_found);
+<         }
+< 
+<         x = x_position + radius;
+< 
+<         for (y = y_position - radius; y <= y_position + radius; y++)
+<         {
+<             evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<                                      color_range_low, color_range_high, point_found);
+<         }
+<     }
+< 
+<     for (radius = 0; radius < max_radius; radius++)
+<     {
+<         y = y_position - radius;
+< 
+<         for (x = x_position - radius; x <= x_position + radius; x++)
+<         {
+<             evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<                                      color_range_low, color_range_high, point_found);
+<         }
+< 
+<         x = x_position - radius;
+< 
+<         for (y = y_position - radius; y <= y_position + radius; y++)
+<         {
+<             evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<                                      color_range_low, color_range_high, point_found);
+<         }
+< 
+<         y = y_position + radius;
+< 
+<         for (x = x_position - radius; x <= x_position + radius; x++)
+<         {
+<             evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<                                      color_range_low, color_range_high, point_found);
+<         }
+< 
+<         x = x_position + radius;
+< 
+<         for (y = y_position - radius; y <= y_position + radius; y++)
+<         {
+<             evaluateAndSetPixelColor(x, y, pixel_buffer, image_map, new_color, 
+<                                      color_range_low, color_range_high, point_found);
+<         }
+<     }
+< 
+<     delete [] image_map;
+< }
+< 
+< 
+< void GLPaint::addLayer(void)
+< {
+<     //add a new layer
+< 
+< 
+< }
+< 
+< 
+< void GLPaint::changeParticle() {
+< 
+< }
+< 
+< void GLPaint::changeFontDraw() {
+< 
+< 
+< }
+< 
+< void GLPaint::changeObjectDraw() {
+< 
+< 
+< }
+< 
+< 
+< void GLPaint::keyCliplayer() {
+< 
+< }
+< 
+< void GLPaint::keyClipkey() 
+< {
+< 
+< }
+< 
+< void 
+< GLPaint::copyTextureToQimage(QImage& qimage, unsigned int texture_id)
+< {
+<     int pixel_count = getTextureWidth() * getTextureHeight();
+<     unsigned int* buffer = new unsigned int[pixel_count];
+<     glBindTexture(GL_TEXTURE_2D, texture_id);
+<     glGetTexImage(GL_TEXTURE_2D, 0, GL_BGRA, GL_UNSIGNED_BYTE, buffer);
+<     qimage.create(getTextureWidth(), getTextureHeight(), 32);
+<     qimage.loadFromData( (const unsigned char*)buffer, pixel_count * 4 );
+<     qimage = core->convertToGLFormat(qimage);
+<     delete [] buffer;
+< }
+< 
+< void 
+< GLPaint::copyQimageToTexture(unsigned int texture_id, QImage& qimage)
+< {
+<     glBindTexture(GL_TEXTURE_2D, texture_id);
+<     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, getTextureWidth(), getTextureHeight(), GL_BGRA, GL_UNSIGNED_BYTE, (void*)qimage.bits() );
+< }
+< 
+< bool            
+< GLPaint::isInsideTheEraserCircle(int x, int y)
+< {
+<     
+<     return *(getEraserCircleLookupTable() + (m_point_brush_size_int * y) + x);
+< }
+< 
+< static const char* a_over_b_fragment_shader =
+< {
+<         "   uniform sampler2D      b_texture;                                               \n"
+<         "   uniform sampler2D      a_texture;                                               \n"
+<         "                                                                                   \n"
+<         "   void main()                                                                     \n"
+<         "   {                                                                               \n"
+<         "       vec2    a_position = gl_TexCoord[0].st;                                     \n"
+<         "       vec2    b_position = gl_TexCoord[1].st;                                     \n"
+<         "       vec4    a_color = texture2D(a_texture, a_position);                         \n"
+<         "       vec4    b_color = texture2D(b_texture, b_position);                         \n"
+<         "                                                                                   \n"
+<         "       gl_FragColor = a_color + ( b_color * (1.0 - a_color.w) );                   \n"
+<         "   }                                                                               \n"
+< };
+< 
+< static const char* b_over_a_fragment_shader =
+< {
+<         "   uniform sampler2D      b_texture;                                               \n"
+<         "   uniform sampler2D      a_texture;                                               \n"
+<         "                                                                                   \n"
+<         "   void main()                                                                     \n"
+<         "   {                                                                               \n"
+<         "       vec2    a_position = gl_TexCoord[0].st;                                     \n"
+<         "       vec2    b_position = gl_TexCoord[1].st;                                     \n"
+<         "       vec4    a_color = texture2D(a_texture, a_position);                         \n"
+<         "       vec4    b_color = texture2D(b_texture, b_position);                         \n"
+<         "                                                                                   \n"
+<         "       gl_FragColor = b_color + ( a_color * (1.0 - b_color.w) );                   \n"
+<         "   }                                                                               \n"
+< };
+< 
+< static const char* a_in_b_fragment_shader =
+< {
+<         "   uniform sampler2D      b_texture;                                               \n"
+<         "   uniform sampler2D      a_texture;                                               \n"
+<         "                                                                                   \n"
+<         "   void main()                                                                     \n"
+<         "   {                                                                               \n"
+<         "       vec2    a_position = gl_TexCoord[0].st;                                     \n"
+<         "       vec2    b_position = gl_TexCoord[1].st;                                     \n"
+<         "       vec4    a_color = texture2D(a_texture, a_position);                         \n"
+<         "       vec4    b_color = texture2D(b_texture, b_position);                         \n"
+<         "                                                                                   \n"
+<         "       gl_FragColor = a_color * b_color.w;                                         \n"
+<         "   }                                                                               \n"
+< };
+< 
+< 
+< static const char* b_in_a_fragment_shader =
+< {
+<         "   uniform sampler2D      b_texture;                                               \n"
+<         "   uniform sampler2D      a_texture;                                               \n"
+<         "                                                                                   \n"
+<         "   void main()                                                                     \n"
+<         "   {                                                                               \n"
+<         "       vec2    a_position = gl_TexCoord[0].st;                                     \n"
+<         "       vec2    b_position = gl_TexCoord[1].st;                                     \n"
+<         "       vec4    a_color = texture2D(a_texture, a_position);                         \n"
+<         "       vec4    b_color = texture2D(b_texture, b_position);                         \n"
+<         "                                                                                   \n"
+<         "       gl_FragColor = b_color * a_color.w;                                         \n"
+<         "   }                                                                               \n"
+< };
+< 
+< static const char* a_out_b_fragment_shader =
+< {
+<         "   uniform sampler2D      b_texture;                                               \n"
+<         "   uniform sampler2D      a_texture;                                               \n"
+<         "                                                                                   \n"
+<         "   void main()                                                                     \n"
+<         "   {                                                                               \n"
+<         "       vec2    a_position = gl_TexCoord[0].st;                                     \n"
+<         "       vec2    b_position = gl_TexCoord[1].st;                                     \n"
+<         "       vec4    a_color = texture2D(a_texture, a_position);                         \n"
+<         "       vec4    b_color = texture2D(b_texture, b_position);                         \n"
+<         "                                                                                   \n"
+<         "       gl_FragColor = a_color * (1.0 - b_color.w);                                 \n"
+<         "   }                                                                               \n"
+< };
+< 
+< static const char* b_out_a_fragment_shader =
+< {
+<         "   uniform sampler2D      b_texture;                                               \n"
+<         "   uniform sampler2D      a_texture;                                               \n"
+<         "                                                                                   \n"
+<         "   void main()                                                                     \n"
+<         "   {                                                                               \n"
+<         "       vec2    a_position = gl_TexCoord[0].st;                                     \n"
+<         "       vec2    b_position = gl_TexCoord[1].st;                                     \n"
+<         "       vec4    a_color = texture2D(a_texture, a_position);                         \n"
+<         "       vec4    b_color = texture2D(b_texture, b_position);                         \n"
+<         "                                                                                   \n"
+<         "       gl_FragColor = b_color * (1.0 - a_color.w);                                 \n"
+<         "   }                                                                               \n"
+< };
+< 
+< static const char* a_atop_b_fragment_shader =
+< {
+<         "   uniform sampler2D      b_texture;                                               \n"
+<         "   uniform sampler2D      a_texture;                                               \n"
+<         "                                                                                   \n"
+<         "   void main()                                                                     \n"
+<         "   {                                                                               \n"
+<         "       vec2    a_position = gl_TexCoord[0].st;                                     \n"
+<         "       vec2    b_position = gl_TexCoord[1].st;                                     \n"
+<         "       vec4    a_color = texture2D(a_texture, a_position);                         \n"
+<         "       vec4    b_color = texture2D(b_texture, b_position);                         \n"
+<         "                                                                                   \n"
+<         "       gl_FragColor = (a_color * b_color.w) + ( b_color * (1.0 - a_color.w) );     \n"
+<         "   }                                                                               \n"
+< };
+< 
+< static const char* b_atop_a_fragment_shader =
+< {
+<         "   uniform sampler2D      b_texture;                                               \n"
+<         "   uniform sampler2D      a_texture;                                               \n"
+<         "                                                                                   \n"
+<         "   void main()                                                                     \n"
+<         "   {                                                                               \n"
+<         "       vec2    a_position = gl_TexCoord[0].st;                                     \n"
+<         "       vec2    b_position = gl_TexCoord[1].st;                                     \n"
+<         "       vec4    a_color = texture2D(a_texture, a_position);                         \n"
+<         "       vec4    b_color = texture2D(b_texture, b_position);                         \n"
+<         "                                                                                   \n"
+<         "       gl_FragColor = (b_color * a_color.w) + ( a_color * (1.0 - b_color.w) );     \n"
+<         "   }                                                                               \n"
+< };
+< 
+< static const char* a_xor_b_fragment_shader =
+< {
+<         "   uniform sampler2D      b_texture;                                                       \n"
+<         "   uniform sampler2D      a_texture;                                                       \n"
+<         "                                                                                           \n"
+<         "   void main()                                                                             \n"
+<         "   {                                                                                       \n"
+<         "       vec2    a_position = gl_TexCoord[0].st;                                             \n"
+<         "       vec2    b_position = gl_TexCoord[1].st;                                             \n"
+<         "       vec4    a_color = texture2D(a_texture, a_position);                                 \n"
+<         "       vec4    b_color = texture2D(b_texture, b_position);                                 \n"
+<         "                                                                                           \n"
+<         "       gl_FragColor = ( a_color * (1.0 - b_color.w) ) + ( b_color * (1.0 - a_color.w) );   \n"
+<         "   }                                                                                       \n"
+< };
+< 
+< void        
+< GLPaint::glslAOverBComposite(GLuint a_texture_id, GLuint b_texture_id)
+< {
+<     GLsizei                             message_length;
+<     char                                message[1000];
+< 
+<     static GLhandleARB                  shader_program_handle = 0;
+<     static std::vector<GlslShader*>     shader_vector;
+<     static GlslShader*                  fragment_shader;
+<     static GlslProgram*                 shader_program = NULL;
+< 
+<     if (shader_program == NULL)
+<     {
+<         fragment_shader = new GlslShader(GL_FRAGMENT_SHADER_ARB, a_over_b_fragment_shader);
+<         shader_vector.push_back(fragment_shader);
+<         shader_program = new GlslProgram(shader_vector);
+<         shader_program_handle = *shader_program->getGlHandle();
+<         glGetInfoLogARB(shader_program_handle, 1000, &message_length, message);
+<     }
+< 
+<     executeComposite(a_texture_id, b_texture_id, shader_program_handle, shader_program);
+< }
+< void        
+< GLPaint::glslBOverAComposite(GLuint a_texture_id, GLuint b_texture_id)
+< {
+<     GLsizei                             message_length;
+<     char                                message[1000];
+< 
+<     static GLhandleARB                  shader_program_handle = 0;
+<     static std::vector<GlslShader*>     shader_vector;
+<     static GlslShader*                  fragment_shader;
+<     static GlslProgram*                 shader_program = NULL;
+< 
+<     if (shader_program == NULL)
+<     {
+<         fragment_shader = new GlslShader(GL_FRAGMENT_SHADER_ARB, b_over_a_fragment_shader);
+<         shader_vector.push_back(fragment_shader);
+<         shader_program = new GlslProgram(shader_vector);
+<         shader_program_handle = *shader_program->getGlHandle();
+<         glGetInfoLogARB(shader_program_handle, 1000, &message_length, message);
+<     }
+< 
+<     executeComposite(a_texture_id, b_texture_id, shader_program_handle, shader_program);
+< }
+< 
+< void        
+< GLPaint::glslAInBComposite(GLuint a_texture_id, GLuint b_texture_id)
+< {
+<     GLsizei                             message_length;
+<     char                                message[1000];
+< 
+<     static GLhandleARB                  shader_program_handle = 0;
+<     static std::vector<GlslShader*>     shader_vector;
+<     static GlslShader*                  fragment_shader;
+<     static GlslProgram*                 shader_program = NULL;
+< 
+<     if (shader_program == NULL)
+<     {
+<         fragment_shader = new GlslShader(GL_FRAGMENT_SHADER_ARB, a_in_b_fragment_shader);
+<         shader_vector.push_back(fragment_shader);
+<         shader_program = new GlslProgram(shader_vector);
+<         shader_program_handle = *shader_program->getGlHandle();
+<         glGetInfoLogARB(shader_program_handle, 1000, &message_length, message);
+<     }
+< 
+<     executeComposite(a_texture_id, b_texture_id, shader_program_handle, shader_program);
+< }
+< 
+< void        
+< GLPaint::glslBInAComposite(GLuint a_texture_id, GLuint b_texture_id)
+< {
+<     GLsizei                             message_length;
+<     char                                message[1000];
+< 
+<     static GLhandleARB                  shader_program_handle = 0;
+<     static std::vector<GlslShader*>     shader_vector;
+<     static GlslShader*                  fragment_shader;
+<     static GlslProgram*                 shader_program = NULL;
+< 
+<     if (shader_program == NULL)
+<     {
+<         fragment_shader = new GlslShader(GL_FRAGMENT_SHADER_ARB, b_in_a_fragment_shader);
+<         shader_vector.push_back(fragment_shader);
+<         shader_program = new GlslProgram(shader_vector);
+<         shader_program_handle = *shader_program->getGlHandle();
+<         glGetInfoLogARB(shader_program_handle, 1000, &message_length, message);
+<     }
+< 
+<     executeComposite(a_texture_id, b_texture_id, shader_program_handle, shader_program);
+< }
+< 
+< void 
+< GLPaint::glslAOutBComposite(GLuint a_texture_id, GLuint b_texture_id)
+< {
+<     GLsizei                             message_length;
+<     char                                message[1000];
+< 
+<     static GLhandleARB                  shader_program_handle = 0;
+<     static std::vector<GlslShader*>     shader_vector;
+<     static GlslShader*                  fragment_shader;
+<     static GlslProgram*                 shader_program = NULL;
+< 
+<     if (shader_program == NULL)
+<     {
+<         fragment_shader = new GlslShader(GL_FRAGMENT_SHADER_ARB, a_out_b_fragment_shader);
+<         shader_vector.push_back(fragment_shader);
+<         shader_program = new GlslProgram(shader_vector);
+<         shader_program_handle = *shader_program->getGlHandle();
+<         glGetInfoLogARB(shader_program_handle, 1000, &message_length, message);
+<     }
+< 
+<     executeComposite(a_texture_id, b_texture_id, shader_program_handle, shader_program);
+< }
+< 
+< void 
+< GLPaint::glslBOutAComposite(GLuint a_texture_id, GLuint b_texture_id)
+< {
+<     GLsizei                             message_length;
+<     char                                message[1000];
+< 
+<     static GLhandleARB                  shader_program_handle = 0;
+<     static std::vector<GlslShader*>     shader_vector;
+<     static GlslShader*                  fragment_shader;
+<     static GlslProgram*                 shader_program = NULL;
+< 
+<     if (shader_program == NULL)
+<     {
+<         fragment_shader = new GlslShader(GL_FRAGMENT_SHADER_ARB, b_out_a_fragment_shader);
+<         shader_vector.push_back(fragment_shader);
+<         shader_program = new GlslProgram(shader_vector);
+<         shader_program_handle = *shader_program->getGlHandle();
+<         glGetInfoLogARB(shader_program_handle, 1000, &message_length, message);
+<     }
+< 
+<     executeComposite(a_texture_id, b_texture_id, shader_program_handle, shader_program);
+< }
+< 
+< void 
+< GLPaint::glslAAtopBComposite(GLuint a_texture_id, GLuint b_texture_id)
+< {
+<     GLsizei                             message_length;
+<     char                                message[1000];
+< 
+<     static GLhandleARB                  shader_program_handle = 0;
+<     static std::vector<GlslShader*>     shader_vector;
+<     static GlslShader*                  fragment_shader;
+<     static GlslProgram*                 shader_program = NULL;
+< 
+<     if (shader_program == NULL)
+<     {
+<         fragment_shader = new GlslShader(GL_FRAGMENT_SHADER_ARB, a_atop_b_fragment_shader);
+<         shader_vector.push_back(fragment_shader);
+<         shader_program = new GlslProgram(shader_vector);
+<         shader_program_handle = *shader_program->getGlHandle();
+<         glGetInfoLogARB(shader_program_handle, 1000, &message_length, message);
+<     }
+< 
+<     executeComposite(a_texture_id, b_texture_id, shader_program_handle, shader_program);
+< }
+< 
+< void 
+< GLPaint::glslBAtopAComposite(GLuint a_texture_id, GLuint b_texture_id)
+< {
+<     GLsizei                             message_length;
+<     char                                message[1000];
+< 
+<     static GLhandleARB                  shader_program_handle = 0;
+<     static std::vector<GlslShader*>     shader_vector;
+<     static GlslShader*                  fragment_shader;
+<     static GlslProgram*                 shader_program = NULL;
+< 
+<     if (shader_program == NULL)
+<     {
+<         fragment_shader = new GlslShader(GL_FRAGMENT_SHADER_ARB, b_atop_a_fragment_shader);
+<         shader_vector.push_back(fragment_shader);
+<         shader_program = new GlslProgram(shader_vector);
+<         shader_program_handle = *shader_program->getGlHandle();
+<         glGetInfoLogARB(shader_program_handle, 1000, &message_length, message);
+<     }
+< 
+<     executeComposite(a_texture_id, b_texture_id, shader_program_handle, shader_program);
+< }
+< 
+< void 
+< GLPaint::glslAXorBComposite(GLuint a_texture_id, GLuint b_texture_id)
+< {
+<     GLsizei                             message_length;
+<     char                                message[1000];
+< 
+<     static GLhandleARB                  shader_program_handle = 0;
+<     static std::vector<GlslShader*>     shader_vector;
+<     static GlslShader*                  fragment_shader;
+<     static GlslProgram*                 shader_program = NULL;
+< 
+<     if (shader_program == NULL)
+<     {
+<         fragment_shader = new GlslShader(GL_FRAGMENT_SHADER_ARB, a_xor_b_fragment_shader);
+<         shader_vector.push_back(fragment_shader);
+<         shader_program = new GlslProgram(shader_vector);
+<         shader_program_handle = *shader_program->getGlHandle();
+<         glGetInfoLogARB(shader_program_handle, 1000, &message_length, message);
+<     }
+< 
+<     executeComposite(a_texture_id, b_texture_id, shader_program_handle, shader_program);
+< }
+< 
+< 
+< void
+< GLPaint::executeComposite(GLuint a_texture_id, GLuint b_texture_id, 
+<                           GLhandleARB shader_program_handle, GlslProgram* shader_program)
+< {
+<     glActiveTextureARB(GL_TEXTURE0_ARB);
+<     glBindTexture(GL_TEXTURE_2D, a_texture_id);
+<     glEnable(GL_TEXTURE_2D);
+< 
+<     glActiveTextureARB(GL_TEXTURE1_ARB);
+<     glBindTexture(GL_TEXTURE_2D, b_texture_id);
+<     glEnable(GL_TEXTURE_2D);
+< 
+<     glUseProgramObjectARB(shader_program_handle);
+< 
+<     shader_program->setTextureHandle("a_texture", 0);
+<     shader_program->setTextureHandle("b_texture", 1);
+< 
+<     glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+< 
+<     glBegin(GL_QUADS);
+<     {
+<         glMultiTexCoord2fARB(GL_TEXTURE0_ARB, 0.0f, 0.0f);
+<         glMultiTexCoord2fARB(GL_TEXTURE1_ARB, 0.0f, 0.0f);
+<         glVertex3f( getScreenCenterX() - ( getImageWidthDiv2() * core->zoomVal ), 
+<                     getScreenCenterY() -  ( getImageHeightDiv2() * core->zoomVal ), 
+<                     0.0f );
+< 
+<         glMultiTexCoord2fARB(GL_TEXTURE0_ARB, m_texture_ratio.x, 0.0f);
+<         glMultiTexCoord2fARB(GL_TEXTURE1_ARB, m_texture_ratio.x, 0.0f);
+<         glVertex3f( getScreenCenterX() + ( getImageWidthDiv2() * core->zoomVal ), 
+<                     getScreenCenterY() - ( getImageHeightDiv2() * core->zoomVal ), 
+<                     0.0f);
+< 
+<         glMultiTexCoord2fARB(GL_TEXTURE0_ARB, m_texture_ratio.x, m_texture_ratio.y);
+<         glMultiTexCoord2fARB(GL_TEXTURE1_ARB, m_texture_ratio.x, m_texture_ratio.y);
+<         glVertex3f( getScreenCenterX() + ( getImageWidthDiv2() * core->zoomVal ), 
+<                     getScreenCenterY() + ( getImageHeightDiv2() * core->zoomVal ), 
+<                     0.0f);
+< 
+<         glMultiTexCoord2fARB(GL_TEXTURE0_ARB, 0.0f, m_texture_ratio.y);
+<         glMultiTexCoord2fARB(GL_TEXTURE1_ARB, 0.0f, m_texture_ratio.y);
+<         glVertex3f( getScreenCenterX() - ( getImageWidthDiv2() * core->zoomVal ), 
+<                     getScreenCenterY() + ( getImageHeightDiv2() * core->zoomVal ), 
+<                     0.0f);
+<     }
+<     glEnd(); // GL_QUADS
+< 
+<     glActiveTextureARB(GL_TEXTURE1_ARB);
+<     glDisable(GL_TEXTURE_2D);
+<     glActiveTextureARB(GL_TEXTURE0_ARB);
+<     glUseProgramObjectARB(0);
+< 
+<     if ( getClipIsStillImage() && !getApplyEffectToAllFrames() && !getAdvanceFrameAfterEffectApplication() )
+<     {
+< 	    incrementHistoryCount();
+<     }
+< 
+<     captureDrawingArea();
+<     updateTimeSlider( getCurrentHistoryFrame() );
+<     advanceVideoFrameIfRequested();
+< }
+< 
+< static const char* eraser_fragment_shader =
+< {
+<         "   uniform sampler2D       eraser_texture;                                                 \n"
+<         "   uniform sampler2D       base_texture;                                                   \n"
+<         "   uniform vec2            eraser_position;                                                \n"
+<         "   uniform int             eraser_src_blend_mode;                                          \n"
+<         "   uniform int             eraser_dst_blend_mode;                                          \n"
+<         "   uniform float           eraser_radius;                                                  \n"
+<         "   uniform float           eraser_transparency;                                            \n"
+<         "   uniform int             JAH_GL_ZERO;                                                    \n"
+<         "   uniform int             JAH_GL_ONE;                                                     \n"
+<         "   uniform int             JAH_GL_SRC_COLOR;                                               \n"
+<         "   uniform int             JAH_GL_ONE_MINUS_SRC_COLOR;                                     \n"
+<         "   uniform int             JAH_GL_SRC_ALPHA;                                               \n"
+<         "   uniform int             JAH_GL_ONE_MINUS_SRC_ALPHA;                                     \n"
+<         "   uniform int             JAH_GL_DST_ALPHA;                                               \n"
+<         "   uniform int             JAH_GL_ONE_MINUS_DST_ALPHA;                                     \n"
+<         "   uniform int             JAH_GL_DST_COLOR;                                               \n"
+<         "   uniform int             JAH_GL_ONE_MINUS_DST_COLOR;                                     \n"
+<         "                                                                                           \n"
+<         "   void main()                                                                             \n"
+<         "   {                                                                                       \n"
+<         "       vec2    texture_coords = gl_TexCoord[0].st;                                         \n"
+<         "       vec4    eraser_color = texture2D(eraser_texture, texture_coords);                   \n"
+<         "       vec4    base_color = texture2D(base_texture, texture_coords);                       \n"
+<         "       vec2    position = gl_FragCoord.xy;                                                 \n"
+<         "       vec2    delta = eraser_position - position;                                         \n"
+<         "       float   radius = length(delta);                                                     \n"
+<         "                                                                                           \n"
+<         "       if (radius < eraser_radius)                                                         \n"
+<         "       {                                                                                   \n"
+<         "           if (eraser_src_blend_mode == JAH_GL_ZERO)                                       \n"
+<         "           {                                                                               \n"
+<         "               eraser_color = vec4(0.0, 0.0, 0.0, 0.0);                                    \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_src_blend_mode == JAH_GL_ONE)                                   \n"
+<         "           {                                                                               \n"
+<         "               //eraser_color = eraser_color;                                              \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_src_blend_mode == JAH_GL_SRC_COLOR)                             \n"
+<         "           {                                                                               \n"
+<         "               eraser_color *= eraser_color;                                               \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_src_blend_mode == JAH_GL_ONE_MINUS_SRC_COLOR)                   \n"
+<         "           {                                                                               \n"
+<         "               eraser_color *= (1.0 - eraser_color);                                       \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_src_blend_mode == JAH_GL_SRC_ALPHA)                             \n"
+<         "           {                                                                               \n"
+<         "               eraser_color *= eraser_transparency;                                        \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_src_blend_mode == JAH_GL_ONE_MINUS_SRC_ALPHA)                   \n"
+<         "           {                                                                               \n"
+<         "               eraser_color *= (1.0 - eraser_transparency);                                \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_src_blend_mode == JAH_GL_DST_ALPHA)                             \n"
+<         "           {                                                                               \n"
+<         "               eraser_color *= base_color.w;                                               \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_src_blend_mode == JAH_GL_ONE_MINUS_DST_ALPHA)                   \n"
+<         "           {                                                                               \n"
+<         "               eraser_color *= (1.0 - base_color.w);                                       \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_src_blend_mode == JAH_GL_DST_COLOR)                             \n"
+<         "           {                                                                               \n"
+<         "               eraser_color *= base_color;                                                 \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_src_blend_mode == JAH_GL_ONE_MINUS_DST_COLOR)                   \n"
+<         "           {                                                                               \n"
+<         "               eraser_color *= (1.0 - base_color);                                         \n"
+<         "           }                                                                               \n"
+<         "                                                                                           \n"
+<         "           if (eraser_dst_blend_mode == JAH_GL_ZERO)                                       \n"
+<         "           {                                                                               \n"
+<         "               base_color = vec4(0.0, 0.0, 0.0, 0.0);                                      \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_dst_blend_mode == JAH_GL_ONE)                                   \n"
+<         "           {                                                                               \n"
+<         "               //base_color = base_color;                                                  \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_dst_blend_mode == JAH_GL_SRC_COLOR)                             \n"
+<         "           {                                                                               \n"
+<         "               base_color *= eraser_color;                                                 \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_dst_blend_mode == JAH_GL_ONE_MINUS_SRC_COLOR)                   \n"
+<         "           {                                                                               \n"
+<         "               base_color *= (1.0 - eraser_color);                                         \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_dst_blend_mode == JAH_GL_SRC_ALPHA)                             \n"
+<         "           {                                                                               \n"
+<         "               base_color *= eraser_transparency;                                          \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_dst_blend_mode == JAH_GL_ONE_MINUS_SRC_ALPHA)                   \n"
+<         "           {                                                                               \n"
+<         "               base_color *= (1.0 - eraser_transparency);                                  \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_dst_blend_mode == JAH_GL_DST_ALPHA)                             \n"
+<         "           {                                                                               \n"
+<         "               base_color *= base_color.w;                                                 \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_dst_blend_mode == JAH_GL_ONE_MINUS_DST_ALPHA)                   \n"
+<         "           {                                                                               \n"
+<         "               base_color *= (1.0 - base_color.w);                                         \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_dst_blend_mode == JAH_GL_DST_COLOR)                             \n"
+<         "           {                                                                               \n"
+<         "               base_color *= base_color;                                                   \n"
+<         "           }                                                                               \n"
+<         "           else if (eraser_dst_blend_mode == JAH_GL_ONE_MINUS_DST_COLOR)                   \n"
+<         "           {                                                                               \n"
+<         "               base_color *= (1.0 - base_color);                                           \n"
+<         "           }                                                                               \n"
+<         "                                                                                           \n"
+<         "           gl_FragColor = eraser_color + base_color;                                       \n"
+<         "       }                                                                                   \n"
+<         "       else                                                                                \n"
+<         "       {                                                                                   \n"
+<         "           gl_FragColor = base_color;                                                      \n"
+<         "       }                                                                                   \n"
+<         "   }                                                                                       \n"
+< };
+< 
+< void
+< GLPaint::glslDrawEraser(bool initialize)
+< {
+<     GLsizei                             message_length;
+<     char                                message[1000];
+< 
+<     static GLhandleARB                  shader_program_handle = 0;
+<     static std::vector<GlslShader*>     shader_vector;
+<     static GlslShader*                  fragment_shader;
+<     static GlslProgram*                 shader_program = NULL;
+<     static GLint                        eraser_position_handle = 0;
+<     static GLint                        eraser_radius_handle = 0;
+<     static GLint                        eraser_transparency_handle = 0;
+<     static GLint                        eraser_src_blend_mode_handle = 0;
+<     static GLint                        eraser_dst_blend_mode_handle = 0;
+<     static GLint                        JAH_GL_ZERO_handle = 0;
+<     static GLint                        JAH_GL_ONE_handle = 0;
+<     static GLint                        JAH_GL_SRC_COLOR_handle = 0;
+<     static GLint                        JAH_GL_ONE_MINUS_SRC_COLOR_handle = 0;
+<     static GLint                        JAH_GL_SRC_ALPHA_handle = 0;
+<     static GLint                        JAH_GL_ONE_MINUS_SRC_ALPHA_handle = 0;
+<     static GLint                        JAH_GL_DST_ALPHA_handle = 0;
+<     static GLint                        JAH_GL_ONE_MINUS_DST_ALPHA_handle = 0;
+<     static GLint                        JAH_GL_DST_COLOR_handle = 0;
+<     static GLint                        JAH_GL_ONE_MINUS_DST_COLOR_handle = 0;
+< 
+<     if (shader_program == NULL || initialize)
+<     {
+<         fragment_shader = new GlslShader(GL_FRAGMENT_SHADER_ARB, eraser_fragment_shader);
+<         shader_vector.push_back(fragment_shader);
+<         shader_program = new GlslProgram(shader_vector);
+<         shader_program_handle = *shader_program->getGlHandle();
+<         eraser_position_handle = glGetUniformLocationARB(shader_program_handle, "eraser_position");
+<         eraser_radius_handle = glGetUniformLocationARB(shader_program_handle, "eraser_radius");
+<         eraser_transparency_handle = glGetUniformLocationARB(shader_program_handle, "eraser_transparency");
+<         eraser_src_blend_mode_handle = glGetUniformLocationARB(shader_program_handle, "eraser_src_blend_mode");
+<         eraser_dst_blend_mode_handle = glGetUniformLocationARB(shader_program_handle, "eraser_dst_blend_mode");
+<         JAH_GL_ZERO_handle = glGetUniformLocationARB(shader_program_handle, "JAH_GL_ZERO");
+<         JAH_GL_ONE_handle = glGetUniformLocationARB(shader_program_handle, "JAH_GL_ONE");
+<         JAH_GL_SRC_COLOR_handle = glGetUniformLocationARB(shader_program_handle, "JAH_GL_SRC_COLOR");
+<         JAH_GL_ONE_MINUS_SRC_COLOR_handle = glGetUniformLocationARB(shader_program_handle, "JAH_GL_ONE_MINUS_SRC_COLOR");
+<         JAH_GL_SRC_ALPHA_handle = glGetUniformLocationARB(shader_program_handle, "JAH_GL_SRC_ALPHA");
+<         JAH_GL_ONE_MINUS_SRC_ALPHA_handle = glGetUniformLocationARB(shader_program_handle, "JAH_GL_ONE_MINUS_SRC_ALPHA");
+<         JAH_GL_DST_ALPHA_handle = glGetUniformLocationARB(shader_program_handle, "JAH_GL_DST_ALPHA");
+<         JAH_GL_ONE_MINUS_DST_ALPHA_handle = glGetUniformLocationARB(shader_program_handle, "JAH_GL_ONE_MINUS_DST_ALPHA");
+<         JAH_GL_DST_COLOR_handle = glGetUniformLocationARB(shader_program_handle, "JAH_GL_DST_COLOR");
+<         JAH_GL_ONE_MINUS_DST_COLOR_handle = glGetUniformLocationARB(shader_program_handle, "JAH_GL_ONE_MINUS_DST_COLOR");
+<         glGetInfoLogARB(shader_program_handle, 1000, &message_length, message);
+<     }
+< 
+<     if (initialize)
+<     {
+<         return;
+<     }
+< 
+<     GLuint eraser_texture_id;
+<     GLuint base_texture_id = getCurrentTextureId();
+< 
+<     int eraser_diameter = m_point_brush_size_int;
+<     int eraser_radius = eraser_diameter / 2;
+<     float eraser_transparency = getPenAlpha() * getPenAlpha();
+< 
+<     if ( getCopyListPtr()->first() && getCopyListPtr()->first()->getTextureId() )
+<     {
+<         eraser_texture_id = getCopyListPtr()->first()->getTextureId();
+<     }
+<     else
+<     {
+<         eraser_texture_id = getImageLayer()->getTextureData().getTexId();
+<     }
+< 
+<     glActiveTextureARB(GL_TEXTURE0_ARB);
+<     glBindTexture(GL_TEXTURE_2D, eraser_texture_id);
+<     glEnable(GL_TEXTURE_2D);
+< 
+<     glActiveTextureARB(GL_TEXTURE1_ARB);
+<     glBindTexture(GL_TEXTURE_2D, base_texture_id);
+<     glEnable(GL_TEXTURE_2D);
+< 
+<     glUseProgramObjectARB(shader_program_handle);
+< 
+<     shader_program->setTextureHandle("eraser_texture", 0);
+<     shader_program->setTextureHandle("base_texture", 1);
+< 
+<     glUniform2fARB( eraser_position_handle, float(x1), float(y1) );
+<     glUniform1fARB( eraser_radius_handle, float(eraser_radius) );
+<     glUniform1fARB( eraser_transparency_handle, eraser_transparency );
+<     glUniform1iARB( eraser_src_blend_mode_handle, (int)getSrcBlendFactor() );
+<     glUniform1iARB( eraser_dst_blend_mode_handle, (int)getDstBlendFactor() );
+<     glUniform1iARB( JAH_GL_ZERO_handle, GLint( getJahGlBlendModeValueVector(JAH_GL_ZERO) ) );
+<     glUniform1iARB( JAH_GL_ONE_handle, GLint( getJahGlBlendModeValueVector(JAH_GL_ONE) ) );
+<     glUniform1iARB( JAH_GL_SRC_COLOR_handle, GLint( getJahGlBlendModeValueVector(JAH_GL_SRC_COLOR) ) );
+<     glUniform1iARB( JAH_GL_ONE_MINUS_SRC_COLOR_handle, GLint(JAH_GL_ONE_MINUS_SRC_COLOR) );
+<     glUniform1iARB( JAH_GL_SRC_ALPHA_handle, GLint( getJahGlBlendModeValueVector(JAH_GL_SRC_ALPHA) ) );
+<     glUniform1iARB( JAH_GL_ONE_MINUS_SRC_ALPHA_handle, GLint( getJahGlBlendModeValueVector(JAH_GL_ONE_MINUS_SRC_ALPHA) ) );
+<     glUniform1iARB( JAH_GL_DST_ALPHA_handle, GLint( getJahGlBlendModeValueVector(JAH_GL_DST_ALPHA) ) );
+<     glUniform1iARB( JAH_GL_ONE_MINUS_DST_ALPHA_handle, GLint( getJahGlBlendModeValueVector(JAH_GL_ONE_MINUS_DST_ALPHA) ) );
+<     glUniform1iARB( JAH_GL_DST_COLOR_handle, GLint( getJahGlBlendModeValueVector(JAH_GL_DST_COLOR) ) );
+<     glUniform1iARB( JAH_GL_ONE_MINUS_DST_COLOR_handle, GLint( getJahGlBlendModeValueVector(JAH_GL_ONE_MINUS_DST_COLOR) ) );
+< 
+<     glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+< 
+<     // This is necessary becauseof some bizarre nvidia driver bug
+<     glDisable(GL_BLEND);
+< 
+<     glBegin(GL_QUADS);
+<     {
+<         glMultiTexCoord2fARB(GL_TEXTURE0_ARB, 0.0f, 0.0f);
+<         glMultiTexCoord2fARB(GL_TEXTURE1_ARB, 0.0f, 0.0f);
+<         glVertex3f( getScreenCenterX() - ( getImageWidthDiv2() * core->zoomVal ), 
+<                     getScreenCenterY() -  ( getImageHeightDiv2() * core->zoomVal ), 
+<                     0.0f );
+< 
+<         glMultiTexCoord2fARB(GL_TEXTURE0_ARB, m_texture_ratio.x, 0.0f);
+<         glMultiTexCoord2fARB(GL_TEXTURE1_ARB, m_texture_ratio.x, 0.0f);
+<         glVertex3f( getScreenCenterX() + ( getImageWidthDiv2() * core->zoomVal ), 
+<                     getScreenCenterY() - ( getImageHeightDiv2() * core->zoomVal ), 
+<                     0.0f);
+< 
+<         glMultiTexCoord2fARB(GL_TEXTURE0_ARB, m_texture_ratio.x, m_texture_ratio.y);
+<         glMultiTexCoord2fARB(GL_TEXTURE1_ARB, m_texture_ratio.x, m_texture_ratio.y);
+<         glVertex3f( getScreenCenterX() + ( getImageWidthDiv2() * core->zoomVal ), 
+<                     getScreenCenterY() + ( getImageHeightDiv2() * core->zoomVal ), 
+<                     0.0f);
+< 
+<         glMultiTexCoord2fARB(GL_TEXTURE0_ARB, 0.0f, m_texture_ratio.y);
+<         glMultiTexCoord2fARB(GL_TEXTURE1_ARB, 0.0f, m_texture_ratio.y);
+<         glVertex3f( getScreenCenterX() - ( getImageWidthDiv2() * core->zoomVal ), 
+<                     getScreenCenterY() + ( getImageHeightDiv2() * core->zoomVal ), 
+<                     0.0f);
+<     }
+<     glEnd(); // GL_QUADS
+< 
+<     glActiveTextureARB(GL_TEXTURE1_ARB);
+<     glDisable(GL_TEXTURE_2D);
+<     glActiveTextureARB(GL_TEXTURE0_ARB);
+<     glUseProgramObjectARB(0);
+< 
+< }
+< 
+Index: paintuievents.cpp
+===================================================================
+RCS file: /cvsroot/jahshakafx/jahshaka/source/Jahshaka/JahModules/painter/paintuievents.cpp,v
+retrieving revision 1.47
+diff -r1.47 paintuievents.cpp
+1,170d0
+< /*******************************************************************************
+< **
+< ** The source file for the Jahshaka animation module
+< ** The Jahshaka Project
+< ** Copyright (C) 2000-2006 VM Inc.
+< ** Released under the GNU General Public License
+< **
+< *******************************************************************************/
+< 
+< #include "paint.h"
+< #include <glcore.h>
+< #include <qtimer.h>
+< #include <qcursor.h>
+< 
+< void GLPaint::mousePressEvent( QMouseEvent* mouse_position ) 
+< {
+<     setClearState();
+<     mousePressed = true;
+< 
+< 
+<     if ( Globals::getGlRenderer().find("RADEON Xpress 200 Series") == std::string::npos )
+<     {
+<         // Software cursors screw up all kinds of things on RADEON Xpress 200 Series
+<         // There are probably more hardware/driver combinations of this bug, but this is the '
+<         // only one I know about for sure.
+<         getMainworldQframe()->setCursor( Qt::CrossCursor ); 
+<     }
+< 
+<     x1 = mouse_position->x();
+<     y1 = core->height() - mouse_position->y();
+<     x2 = x1;
+<     y2 = y1;
+< 
+< 	if (m_active_tool == pen)
+< 	{
+< 		m_pixel_coords.clear( );
+< 		PaintPixelCoords pixel( x1, y1, x2, y2 );
+< 		m_pixel_coords.push_back( pixel );
+< 	}
+<     else if (m_active_tool == eraser)
+<     {
+<         if ( getClipIsStillImage() && !getOverwriteStillFrames() )
+<         {
+<             incrementHistoryCount();
+<         }
+< 
+<         if ( !getUseGpuEraser() )
+<         {
+<             captureDrawingArea();
+<             captureEraserBuffer();
+<             buildEraserCircleLookupTable();
+<         }
+<    }
+<     else if (m_active_tool == paintBucketFillAll)
+<     {
+<         drawToolPaintBucketFillAll();
+<         return;
+<     }
+<     else if (m_active_tool == paintBucket)
+<     {
+<         drawToolPaintBucket();
+<         return;
+<     }
+<     else if (m_active_tool == foregroundColorPicker || m_active_tool == backgroundColorPicker)
+<     {
+<         updateGL( );
+< 
+<         if (m_active_tool == paintBucket || m_active_tool == paintBucketFillAll)
+<         {
+<             advanceVideoFrameIfRequested();
+<         }
+<     }
+< }
+< 
+< void GLPaint::mouseReleaseEvent( QMouseEvent * ) 
+< {
+<     getMainworldQframe()->setCursor( Qt::ArrowCursor ); 
+< 
+<     if (!mousePressed)
+<     {
+<         return;
+<     }
+< 
+<     mousePressed = false;
+< 
+<     if (m_active_tool == paintBucket || m_active_tool == paintBucketFillAll)
+<     {
+<         advanceVideoFrameIfRequested();
+<         return;
+<     }
+<     else if (m_active_tool == foregroundColorPicker || m_active_tool == backgroundColorPicker)
+<     {
+<         return;
+<     }
+< 
+< 	// Draw with the currently active tool
+<     updateGL();
+< 
+<     if ( getClipIsStillImage() && !getOverwriteStillFrames() && m_active_tool != eraser )
+<     {
+< 	    incrementHistoryCount();
+<     }
+< 
+< 	// Capture the image
+<     captureDrawingArea();
+<     updateTimeSlider( getCurrentHistoryFrame() );
+< 
+<     if (m_active_tool == eraser)
+<     {
+<         deleteEraserBuffer();
+<     }
+< 
+< 	// Clear the state so we don't draw again (result should be cached now)
+< 	m_pixel_coords.clear( );
+< 	x1 = x2 = y1 = y2 = -1;
+< 
+< 	// Redraw the captured texture to clip everything
+<     updateGL();
+< 
+< 	// And move to the next position
+<     advanceVideoFrameIfRequested();
+< }
+< 
+< void GLPaint::mouseMoveEvent( QMouseEvent* mouse_position ) 
+< {
+<     if (   m_active_tool == paintBucket || m_active_tool == paintBucketFillAll
+<         || m_active_tool == foregroundColorPicker || m_active_tool == backgroundColorPicker)
+<     {
+<         return;
+<     }
+< 
+<     if ( mousePressed ) 
+<     {  // drawing is currently occurring
+<         if ( m_active_tool == pen ) 
+<         {
+<             x1 = x2;
+<             y1 = y2;
+<             x2 = mouse_position->x();
+<             y2 = core->height() - mouse_position->y();
+< 
+< 			PaintPixelCoords pixel( x1, y1, x2, y2 );
+< 			if ( m_pixel_coords.empty( ) || pixel != *( m_pixel_coords.end( ) - 1 ) )
+< 				m_pixel_coords.push_back( pixel );
+< 
+< 			core->update( );
+<         } 
+<         else if (m_active_tool == eraser)
+<         {
+<             x1 = x2;
+<             y1 = y2;
+<             x2 = mouse_position->x();
+<             y2 = core->height() - mouse_position->y();
+<             captureDrawingArea();
+<             updateGL();
+<        }
+<         else 
+<         {
+<             x2 = mouse_position->x();
+<             y2 = core->height() - mouse_position->y();
+<             core->update();
+<         }
+<     }
+<     else
+<     {
+<         setClearState();
+<     }
+< }
+< 
+< 
+< 

@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- Jahshaka Scene File -->
+
+<JAHSHAKA jah_version = '2.0RC1' xml_file_version = '0.01'>
+    <SCENE_FILE name = 'grovejet' />
+    <MODULE name = 'Animation' />
+    <FRAMES resolution = 'NTSC D1' code = '3' number = '137' />
+    <LAYER name = 'World' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'BACKDROP' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <BACKDROP grid_setting = '0' aliasing = '0' text_safe = '0'>
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'grovejetback' clipnumber = '10'
+             location = '/jahstorage/media/comps/groovejet/'
+             filename = 'grovejetback' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '743' ypos = '86' />
+        <KEYFRAMES count = '0'>
+            <KEYFRAME TC = '0' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+        </BACKDROP>
+    </LAYER>
+    <LAYER name = 'groovegirl' activation = '0'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'grivegirl' clipnumber = '1'
+             location = '/jahstorage/media/comps/groovejet/'
+             filename = 'grivegirl' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '79' ypos = '316' />
+        <KEYFRAMES count = '0'>
+            <KEYFRAME TC = '0' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '-52' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'grooveguy' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'CLIP' type = 'SEQUENCE' clipname = 'crazy_' clipnumber = '2'
+             location = '/jahstorage/media/comps/groovejet/crazy/'
+             filename = 'crazy_' extension = '.bmp'
+             startframe = '0' endframe = '83' clipinframe = '0' clipoutframe = '83' videoext = '00000' videotex = '1'
+             inframe = '0' outframe = '83' toggleends = '1' loop = '0' ping = '0' xpos = '288' ypos = '316' />
+        <KEYFRAMES count = '2'>
+            <KEYFRAME TC = '61' SX = '2.22' SY = '2.04' SZ = '1' TX = '0' TY = '0' TZ = '23' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '82' SX = '2.22' SY = '2.04' SZ = '1' TX = '0' TY = '0' TZ = '23' RX = '0' RY = '0' RZ = '0' AL = '1' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'mask' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'mask' clipnumber = '7'
+             location = '/jahstorage/media/comps/groovejet/'
+             filename = 'mask' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '278' ypos = '88' />
+        <KEYFRAMES count = '1'>
+            <KEYFRAME TC = '70' SX = '0.93' SY = '0.93' SZ = '1' TX = '0' TY = '0' TZ = '53' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'lines' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'lines' clipnumber = '4'
+             location = '/jahstorage/media/comps/groovejet/'
+             filename = 'lines' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '506' ypos = '313' />
+        <KEYFRAMES count = '0'>
+            <KEYFRAME TC = '0' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '38' RX = '0' RY = '0' RZ = '0' AL = '14' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'groovelogo' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '1' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'groovejetcom' clipnumber = '6'
+             location = '/jahstorage/media/comps/groovejet/'
+             filename = 'groovejetcom' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '507' ypos = '154' />
+        <KEYFRAMES count = '3'>
+            <KEYFRAME TC = '41' SX = '0.7' SY = '0.7' SZ = '1' TX = '-1' TY = '0' TZ = '156' RX = '0' RY = '66' RZ = '0' AL = '1' extrude = '5' />
+            <KEYFRAME TC = '81' SX = '0.7' SY = '0.7' SZ = '1' TX = '-1' TY = '0' TZ = '156' RX = '0' RY = '-35.6667' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '137' SX = '0.53' SY = '0.53' SZ = '1' TX = '-1' TY = '0' TZ = '156' RX = '0' RY = '-360' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'graphicgirl' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'girl' clipnumber = '9'
+             location = '/jahstorage/media/images/misc/'
+             filename = 'girl' extension = '.bmp'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '10' ypos = '10' />
+        <KEYFRAMES count = '2'>
+            <KEYFRAME TC = '115' SX = '0.71' SY = '0.71' SZ = '1' TX = '0' TY = '-89' TZ = '19' RX = '0' RY = '0' RZ = '0' AL = '1' extrude = '5' />
+            <KEYFRAME TC = '137' SX = '0.71' SY = '0.71' SZ = '1' TX = '0' TY = '-89' TZ = '19' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'emtertainment' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '1' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'entertainment' clipnumber = '11'
+             location = '/jahstorage/media/comps/groovejet/text/'
+             filename = 'entertainment' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '10' ypos = '10' />
+        <KEYFRAMES count = '2'>
+            <KEYFRAME TC = '74' SX = '1' SY = '1' SZ = '1' TX = '-553' TY = '154' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '89' SX = '1' SY = '1' SZ = '1' TX = '176' TY = '154' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'culture' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '1' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'culture' clipnumber = '12'
+             location = '/jahstorage/media/comps/groovejet/text/'
+             filename = 'culture' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '9' ypos = '10' />
+        <KEYFRAMES count = '2'>
+            <KEYFRAME TC = '73' SX = '1' SY = '1' SZ = '1' TX = '503' TY = '90' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '90' SX = '1' SY = '1' SZ = '1' TX = '-242' TY = '90' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'music' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '1' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'music' clipnumber = '13'
+             location = '/jahstorage/media/comps/groovejet/text/'
+             filename = 'music' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '10' ypos = '10' />
+        <KEYFRAMES count = '2'>
+            <KEYFRAME TC = '89' SX = '1' SY = '1' SZ = '1' TX = '483' TY = '-25' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '106' SX = '1' SY = '1' SZ = '1' TX = '-259' TY = '-25' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'art' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '1' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'art' clipnumber = '14'
+             location = '/jahstorage/media/comps/groovejet/text/'
+             filename = 'art' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '10' ypos = '10' />
+        <KEYFRAMES count = '2'>
+            <KEYFRAME TC = '89' SX = '1' SY = '1' SZ = '1' TX = '-436' TY = '31' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '106' SX = '1' SY = '1' SZ = '1' TX = '273' TY = '31' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'events' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '1' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'events' clipnumber = '15'
+             location = '/jahstorage/media/comps/groovejet/text/'
+             filename = 'events' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '10' ypos = '10' />
+        <KEYFRAMES count = '2'>
+            <KEYFRAME TC = '113' SX = '1' SY = '1' SZ = '1' TX = '485' TY = '-135' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '136' SX = '1' SY = '1' SZ = '1' TX = '-243' TY = '-135' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'fashion' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'JAHLAYER' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' foreground = '1' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'fashion' clipnumber = '16'
+             location = '/jahstorage/media/comps/groovejet/text/'
+             filename = 'fashion' extension = '.png'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '10' ypos = '10' />
+        <KEYFRAMES count = '2'>
+            <KEYFRAME TC = '113' SX = '1' SY = '1' SZ = '1' TX = '-473' TY = '-82' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+            <KEYFRAME TC = '136' SX = '1' SY = '1' SZ = '1' TX = '237' TY = '-82' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+    <LAYER name = 'Layer' activation = '0'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'CYLINDER' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'earthtex' clipnumber = '18'
+             location = '/jahstorage/media/images/textures/'
+             filename = 'earthtex' extension = '.jpg'
+             startframe = '1' endframe = '1' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             xpos = '10' ypos = '10' />
+        <KEYFRAMES count = '2'>
+            <KEYFRAME TC = '113' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '73' RX = '-74' RY = '19' RZ = '0' AL = '1' extrude = '5' />
+            <KEYFRAME TC = '137' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '73' RX = '-71' RY = '20' RZ = '599' AL = '100' extrude = '5' />
+        </KEYFRAMES>
+    </LAYER>
+</JAHSHAKA>

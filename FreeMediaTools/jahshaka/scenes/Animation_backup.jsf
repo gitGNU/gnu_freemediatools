@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- Jahshaka Scene File -->
+
+<JAHSHAKA jah_version = '2.0RC2' xml_file_version = '0.01'>
+    <SCENE_FILE name = 'Animation_backup' />
+    <MODULE name = 'Animation' />
+    <FRAMES resolution = 'NTSC D1' code = '3' number = '100' />
+    <LAYER name = 'World' activation = '0'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' use_open_gl_keyer = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'BACKDROP' composite_type = 'Standard' />
+        <PROPERTIES blend = '1' depth = '0' cull = '0' lighting = '0' translate_first = '1' foreground = '0' smooth = '1' reflect = '0' />
+        <BACKDROP grid_setting = '0' aliasing = '0' text_safe = '0'>
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'jahlayer' clipnumber = '1'
+             location = '/mnt/sda10/mdupont/experiments/video/js/jahshaka/Pixmaps/'
+             filename = 'jahlayer' extension = '.bmp'
+             startframe = '0' endframe = '0' clipinframe = '0' clipoutframe = '0' videoext = '' videotex = '0'
+             slip = '0' inframe_number = '1' outframe_number = '1' showedges = '1' loop = '0' ping = '0' xpos = '0' ypos = '0' />
+        <KEYFRAMES count = '0'>
+            <KEYFRAME TC = '0' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '0' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '20'
+                layer_enabled = '0'
+                ambient_red = '255' ambient_green = '255' ambient_blue = '255'
+                diffuse_red = '255' diffuse_green = '255' diffuse_blue = '255'
+                specular_red = '255' specular_green = '255' specular_blue = '255' />
+        </KEYFRAMES>
+        </BACKDROP>
+    </LAYER>
+    <LAYER name = 'frankfurt' activation = '1'>
+        <KEY invert = '0' draw = '0' status = '0' keyinframe = '0' keyoutframe = '0' use_open_gl_keyer = '0' />
+        <TYPE layertype = 'LAYER' objtype = 'CYLINDER' composite_type = 'Standard' />
+        <PROPERTIES blend = '1' depth = '1' cull = '0' lighting = '0' translate_first = '1' foreground = '0' smooth = '1' reflect = '0' />
+        <ASSET layer_status = '1' category = 'IMAGE' type = 'STILL' clipname = 'dscf0081' clipnumber = '4'
+             location = '/mnt/sda10/mdupont/Desktop/pictures/frankfurt/'
+             filename = 'dscf0081' extension = '.jpg'
+             startframe = '1' endframe = '1' clipinframe = '1' clipoutframe = '1' videoext = '' videotex = '0'
+             slip = '0' inframe_number = '1' outframe_number = '1' showedges = '1' loop = '0' ping = '0' xpos = '298' ypos = '56' />
+        <KEYFRAMES count = '5'>
+            <KEYFRAME TC = '1' SX = '1' SY = '1' SZ = '-1' TX = '-104' TY = '0' TZ = '0' RX = '472' RY = '136' RZ = '0' AL = '100' extrude = '20'
+                layer_enabled = '1'
+                ambient_red = '255' ambient_green = '255' ambient_blue = '255'
+                diffuse_red = '255' diffuse_green = '255' diffuse_blue = '255'
+                specular_red = '255' specular_green = '255' specular_blue = '255' />
+            <KEYFRAME TC = '11' SX = '1' SY = '1' SZ = '-1' TX = '-104' TY = '8' TZ = '96' RX = '472' RY = '136' RZ = '0' AL = '100' extrude = '20'
+                layer_enabled = '1'
+                ambient_red = '255' ambient_green = '255' ambient_blue = '255'
+                diffuse_red = '255' diffuse_green = '255' diffuse_blue = '255'
+                specular_red = '255' specular_green = '255' specular_blue = '255' />
+            <KEYFRAME TC = '25' SX = '1' SY = '1' SZ = '1' TX = '0' TY = '-88' TZ = '128' RX = '304' RY = '200' RZ = '0' AL = '100' extrude = '20'
+                layer_enabled = '1'
+                ambient_red = '255' ambient_green = '255' ambient_blue = '255'
+                diffuse_red = '255' diffuse_green = '255' diffuse_blue = '255'
+                specular_red = '255' specular_green = '255' specular_blue = '255' />
+            <KEYFRAME TC = '68' SX = '1' SY = '1' SZ = '1' TX = '88' TY = '128' TZ = '120' RX = '216' RY = '516' RZ = '0' AL = '100' extrude = '20'
+                layer_enabled = '1'
+                ambient_red = '255' ambient_green = '255' ambient_blue = '255'
+                diffuse_red = '255' diffuse_green = '255' diffuse_blue = '255'
+                specular_red = '255' specular_green = '255' specular_blue = '255' />
+            <KEYFRAME TC = '85' SX = '1' SY = '1' SZ = '1' TX = '-200' TY = '-144' TZ = '0' RX = '0' RY = '0' RZ = '0' AL = '100' extrude = '20'
+                layer_enabled = '1'
+                ambient_red = '255' ambient_green = '255' ambient_blue = '255'
+                diffuse_red = '255' diffuse_green = '255' diffuse_blue = '255'
+                specular_red = '255' specular_green = '255' specular_blue = '255' />
+        </KEYFRAMES>
+    </LAYER>
+</JAHSHAKA>

@@ -1,0 +1,21 @@
+Begin3
+Title:		FreeMediaTools
+Version:	@VERSION@
+Entered-date:	@ISODATE@
+Description:	Free/Libre Software for Video Processing
+		@configure_input@
+		Please edit FreeMediaTools.lsm.in to fix the Keywords and
+		Primary-site entries, add several more lines of
+		description here if appropriate, and to delete these
+		instructions.
+Keywords:	[substitute your keywords here]
+Author: 	mdupont@users.sf.net (James Michael DuPont)
+Maintained-by:	mdupont@users.sf.net (James Michael DuPont)
+Primary-site:	metlab.unc.edu pub/Linux/apps/some/directory
+		31k FreeMediaTools-@VERSION@.tar.gz
+		500  FreeMediaTools.lsm
+Alternate-site: 
+Original-site:  
+Platforms:      
+Copying-policy:	GNU copyleft
+End

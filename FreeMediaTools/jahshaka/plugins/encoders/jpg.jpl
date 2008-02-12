@@ -1,0 +1,6 @@
+label=FFmpeg JPG Sequence
+0=label=Square 4:3,consumer=avformat,profile=square,extension=%05d.jpg
+1=label=Square 16:9,consumer=avformat,profile=square_wide,extension=%05d.jpg
+2=label=DV 4:3,consumer=avformat,profile=dv,extension=%05d.jpg
+3=label=DV 16:9,consumer=avformat,profile=dv_wide,extension=%05d.jpg
+4=label=VCD,consumer=avformat,profile=vcd,extension=%05d.jpg

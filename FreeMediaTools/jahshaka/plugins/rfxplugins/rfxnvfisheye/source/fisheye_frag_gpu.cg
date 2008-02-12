@@ -1,0 +1,69 @@
+
+half4 main(half2 uv           				: TEXCOORD0,
+	uniform half xcenter 					: register (c0),
+	uniform half ycenter 					: register (c1),
+	uniform half fisheye_radius 			: register (c2),
+	uniform half transparency 				: register (c3),
+	uniform half gamma 						: register (c4),
+	uniform half2 size_ratio 				: register (c5),
+	uniform half number_of_lenses 			: register (c6),
+    uniform sampler2D texture) : COLOR
+{
+	float3 					Color;
+	float2 					old_position;
+	float4					_OUT;
+	float					alpha = abs(transparency);
+
+	float  					radius;
+	float  					u;
+	float  					angle;
+	float  					dx;
+	float  					dy;
+	float					dx_squared;
+	float					dy_squared;
+
+
+	float2 position = uv;
+	half4 current_pixel = (half4)tex2D(texture, position); 
+
+	dx = position.x - xcenter + 0.0000001f;
+	dy = position.y - ycenter + 0.0000001f;
+
+	dx_squared = dx * dx;
+	dy_squared = dy * dy;
+
+	radius = sqrt((dx_squared) + (dy_squared));
+	u = pow(radius, gamma) / (fisheye_radius + 0.000001f);
+ 	angle = atan2(dy, dx);
+
+	float px = u * cos(angle);
+	float py = u * sin(angle);
+
+	old_position.x = xcenter + px;
+	old_position.y = ycenter + py;
+	half4 old_pixel = (half4)tex2D(texture, old_position);
+
+	// This keeps a single fisheye lens from grabbong texture data outside the
+	// image boundaries
+	float2 test_position = old_position / size_ratio;
+  	
+	half neg_number_of_lenses_minus_one = -(number_of_lenses - 1.0);
+
+
+	if ((test_position.x > neg_number_of_lenses_minus_one) && 
+		(test_position.x < number_of_lenses) &&
+		(test_position.y > neg_number_of_lenses_minus_one)  && 
+		(test_position.y < number_of_lenses))
+	{
+		_OUT = (old_pixel * alpha) + ((1 - alpha) * current_pixel);
+	}
+	else
+	{
+		_OUT = current_pixel;
+	}
+
+	Color = _OUT.xyz;
+
+    // Always set the alpha value to 1.
+    return half4(Color, 1);
+}

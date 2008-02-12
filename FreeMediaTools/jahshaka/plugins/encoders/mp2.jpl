@@ -1,0 +1,9 @@
+label=FFmpeg MPEG Layer 2
+0=label=48khz Stereo 256kbs,consumer=avformat,extension=.mp2,render_off=1,frequency=48000,channels=2,audio_bit_rate=256000
+1=label=48khz Stereo 192kbs,consumer=avformat,extension=.mp2,render_off=1,frequency=48000,channels=2,audio_bit_rate=192000
+2=label=48khz Stereo 128kbs,consumer=avformat,extension=.mp2,render_off=1,frequency=48000,channels=2,audio_bit_rate=128000
+3=label=48khz Stereo 64kbs,consumer=avformat,extension=.mp2,render_off=1,frequency=48000,channels=2,audio_bit_rate=64000
+4=label=44.1khz Stereo 256kbs,consumer=avformat,extension=.mp2,render_off=1,frequency=44100,channels=2,audio_bit_rate=256000
+5=label=44.1khz Stereo 192kbs,consumer=avformat,extension=.mp2,render_off=1,frequency=44100,channels=2,audio_bit_rate=192000
+6=label=44.1khz Stereo 128kbs,consumer=avformat,extension=.mp2,render_off=1,frequency=44100,channels=2,audio_bit_rate=128000
+7=label=44.1khz Stereo 64kbs,consumer=avformat,extension=.mp2,render_off=1,frequency=44100,channels=2,audio_bit_rate=64000

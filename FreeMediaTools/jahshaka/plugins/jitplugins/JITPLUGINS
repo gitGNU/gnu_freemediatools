@@ -1,0 +1,4 @@
+To compile the jit plugins you need to build the using the jiplugins.pro 
+file by doing a 
+qmake jitplugins.pro
+

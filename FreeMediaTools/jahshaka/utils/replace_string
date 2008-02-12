@@ -1,0 +1,16 @@
+#!/bin/tcsh
+
+set CPP_FILES = `find . -name "*.cpp"`
+set HEADER_FILES = `find . -name "*.h"`
+set C_FILES = `find . -name "*.c"`
+
+#echo $CPP_FILES $HEADER_FILES $C_FILES
+echo $1 $2
+
+foreach file (`echo $CPP_FILES $HEADER_FILES $C_FILES`)
+	if (`grep -c $1 $file` > 0) then
+		echo $file matchesd pattern $1
+		sed '1,$s/$1/$2/' $file > tmp
+		mv tmp $file
+	endif
+end

@@ -1,0 +1,18 @@
+
+half4 main(
+	float2 position           				: TEXCOORD0,
+	float2 undistorted_position           	: TEXCOORD1,
+	float4 ColorIn       					: COLOR0,
+    uniform sampler2D texture				: register (s0)
+	) : COLOR
+{
+	float4 					Color;
+	float4					nondistorted_color;
+
+	nondistorted_color = (half4)tex2D(texture, undistorted_position);
+	Color = (half4)tex2D(texture, position);
+
+// 	Color = (Color + nondistorted_color) / 2.0;
+	Color = ColorIn;
+    return (half4)Color;
+}
