@@ -99,7 +99,7 @@ void JahControl::createJahUI(	QFrame *mainworld,		  QFrame *mainleftmenu,		QFram
 
 void JahControl::splitterChanged(void)
 {
-    //jtrace->debug("is changed");
+  jtrace->debug("is changed");
 }
 
 void JahControl::createJahDesktopUI(	QFrame *moduleselection, QFrame *D2moduleselection)

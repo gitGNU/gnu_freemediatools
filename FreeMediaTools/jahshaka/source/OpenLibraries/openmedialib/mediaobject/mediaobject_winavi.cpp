@@ -199,7 +199,7 @@ void  mediaObjectWinavi::getAudioFrame(int frame)
 
 QString mediaObjectWinavi::getFileName() 
 {
-    //jtrace->debug(">>getting media filename");
+  jtrace->debug(">>getting media filename");
 
     QString loadfile;
     return loadfile;  
@@ -207,7 +207,7 @@ QString mediaObjectWinavi::getFileName()
     
 int  mediaObjectWinavi::getNumberFrames() 
 {
-    //jtrace->debug(">>getting number frames");
+  jtrace->debug(">>getting number frames");
 
     if (mediaopen) { 
         //should check if stream is open...

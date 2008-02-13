@@ -142,7 +142,7 @@ GLEdit::GLEdit(
     buildInterface(controls);
     buildInterfaceMenus(leftcontroller,rightcontroller);
 
-    initializeObjects();
+    initializeObjects(); // EXEC
 };
 
 

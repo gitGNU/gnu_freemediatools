@@ -63,7 +63,7 @@ JahPluginLib* JahPluginLib::getInstance()
 void JahPluginLib::initializePlugins(void)
     throw()
 {
-    //jtrace->info( ">in initializePlugins");
+  jtrace->info( ">in initializePlugins");
 
     QString JahBasePath;
     //initalize the global vars from the prefs
@@ -196,7 +196,7 @@ void JahPluginLib::initializePlugins(void)
         }
         ++dit;
     }
-    //jtrace->info( ">finished initializePlugins");
+    jtrace->info( ">finished initializePlugins");
 
 }
 

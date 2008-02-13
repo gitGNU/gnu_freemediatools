@@ -75,7 +75,11 @@
 
 void todo ()
 {
-  std::cerr << "TODO " << std::endl;
+  JahTrace * jtrace = JahTrace::getInstance();	//set up tracer
+
+  jtrace->info("TODO");
+
+  //  std::cerr << "TODO " << std::endl;
 }
 
 
@@ -192,11 +196,13 @@ typedef openpluginlib::wstring                                                 p
  p *((this->_M_dataplus)._M_p) =0
 
   */
-  std::wcerr << "create a wstring/property_typename" 
+
+  /*
+  std::wcerr << "create a wstring/property_typename"
 	    <<"test2:" 
 	    << c_str()  
 	    << std::endl;
-
+  */
   //  todo ();
 }
 

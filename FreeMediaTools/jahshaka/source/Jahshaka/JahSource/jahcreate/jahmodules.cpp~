@@ -25,7 +25,9 @@
 #include "jahlibrary.h"
 #include "MainPlayer.h"
 #include "color.h"
+#ifdef USE_NETWORK
 #include "networking.h"
+#endif
 #include "keyer.h"
 #include "MainEncoder.h"
 
@@ -213,6 +215,7 @@ void JahControl::CreateEncodingModule(QFrame* frame)
     connect( JahEncoderMod,  SIGNAL(encoderDraggedAImage()),  this, SLOT(notifyEncoderOfChange())  );
 }
 
+#ifdef USE_NETWORK
 void JahControl::CreateNetworkModule(QFrame* frame)
 {
     
@@ -257,6 +260,7 @@ void JahControl::CreateNetworkModule(QFrame* frame)
     connect(portLineEdit, SIGNAL(textChanged(const QString &)), 
             JahNetworkMod, SLOT(updateportLineEdit(const QString &)));
 }
+#endif
 
 void JahControl::CreateAnimationModule() 
 {

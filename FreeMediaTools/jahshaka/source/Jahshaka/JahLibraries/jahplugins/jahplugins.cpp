@@ -44,7 +44,7 @@ JahPluginListElement::~JahPluginListElement( )
 
 bool  JahPluginListElement::loadPlugin(QString loadname)
 {
-    //jtrace->debug( "JahPluginListElement","loadPlugin");
+  jtrace->debug( "JahPluginListElement","loadPlugin");
 
     JahPrefs& jprefs    = JahPrefs::getInstance();
 

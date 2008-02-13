@@ -2291,4 +2291,5 @@ JahLayer*       GLWorld::getImageLayer()
 JahLayer* GLWorld::getLayer()
 {  
   JahLayer* layer = getLayerList()->last()->thelayer;
+  return layer;
 };

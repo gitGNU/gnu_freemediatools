@@ -136,11 +136,11 @@ bool JahDesktop::handleJahSceneFile(QString filename )
 
 		if (theModule!="NULL")
         {
-			//jtrace->debug("found the module");
+			jtrace->debug("found the module");
 		    //2. switch to the module
 		    emit switchMainModule(theModule);
 
-			//jtrace->debug("loading the file",filename);
+		    jtrace->debug("loading the file",filename);
 		    //3. load the scene file
 		    emit loadMainModuleFile(filename);
         }

@@ -182,6 +182,7 @@ m_lights_list(0),
   //JahLayer* 
   m_camera_layer(0)
 {
+  layername="THISISMYTEST";
     jtrace = JahTrace::getInstance();	//set up tracer
 
 	jplugin = JahPluginLib::getInstance();	//set up tracer
@@ -912,6 +913,7 @@ JahLayer::layerIsEnabled()
     {
 		return getCheckListItem()->isOn();
     }
+    return false;
 }
 
 bool                        

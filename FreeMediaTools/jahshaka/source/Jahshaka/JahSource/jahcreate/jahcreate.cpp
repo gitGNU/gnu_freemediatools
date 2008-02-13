@@ -305,7 +305,7 @@ JahControl::JahControl( QGLWidget *share,
     jtrace->info( "Loading Editing Module" );
     
     emit creatingModule(jt->tr("Editing"));
-    CreateEditingModule();
+    CreateEditingModule(); // EXEC
     emit updateProgress( );
     
     /////////////////////////////////////////////////////////////////
@@ -524,6 +524,6 @@ void JahControl::initializePlugins( )
     //oolib->initializePlugins();
     //oolib->listPlugins();
     
-    //jtrace->info( ">Initialized OOlib Plugins");
+    jtrace->info( ">Initialized OOlib Plugins");
 }
 

@@ -27,7 +27,9 @@
 #include "dialogs.h"
 #include "glworld.h"
 #include "color.h"
+#ifdef USE_NETWORK
 #include "networking.h"
+#endif
 #include "keyer.h"
 #include "jahtranslate.h"
 #include "jahheader.h"
@@ -260,16 +262,19 @@ JahControl::JahControl( QGLWidget *share,
     
     /////////////////////////////////////////////////////////////////
     //we set up the network module  here
+    
+#ifdef USE_NETWORK
     jtrace->info( "Loading Network Module" );
     
     emit creatingModule(jt->tr("Network"));
-    
+
     thenetworkdisplay = new QFrame (WorldLayout, "net");
     WorldLayout->addWidget(thenetworkdisplay,module_counter);
     
     CreateNetworkModule(thenetworkdisplay);
     emit updateProgress( );
-    
+#endif
+
     /////////////////////////////////////////////////////////////////
     //Now we can Create and setup the different jahshaka modules
     //we do this after the others sice they all use the shared core
@@ -456,9 +461,14 @@ JahControl::~JahControl()
     delete JahEffectsMod;      jtrace->debug( ">> Closed effects");
     delete JahEditingMod;      jtrace->debug( ">> Closed editing");
     delete JahTextMod;         jtrace->debug( ">> Closed text");
+
     delete JahColorMod;     jtrace->debug( ">> Closed colorize");
     delete JahPlayerMod;    jtrace->debug( ">> Closed vidplayer");
+
+#ifdef USE_NETWORK
     delete JahNetworkMod;   jtrace->debug( ">> Closed jahnetwork");
+#endif
+
     delete JahPaintMod;        jtrace->debug( ">> Closed paint");
     delete JahKeyerMod;        jtrace->debug( ">> Closed keyer");
     delete JahLibraryMod;        jtrace->debug( ">> Closed library");

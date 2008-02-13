@@ -257,7 +257,7 @@ void GLWorld::nextKeyframe()
 void GLWorld::updateKeyframeDisplay() 
 { 
     #ifndef JAHPLAYER
-    //jtrace->debug( "GLWorld::","updateKeyframeDisplay() updating keyframes");
+  jtrace->debug( "GLWorld::","updateKeyframeDisplay() updating keyframes");
 
     if (m_bHasKeyFramer==true)
     {

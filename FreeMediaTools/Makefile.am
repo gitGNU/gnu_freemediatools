@@ -943,6 +943,7 @@ AM_CXXFLAGS=											\
 	--verbose										\
 	-MD											\
 	-save-temps                                                                             \
+	-Wall 											\
         -D_REENTRANT										\
 	-DOPENOBJECTLIB_SHADER="./effects/shaders/"						\
 	-DJAHPREFIX=\"$(srcdir)/openlibraries/install\"						\

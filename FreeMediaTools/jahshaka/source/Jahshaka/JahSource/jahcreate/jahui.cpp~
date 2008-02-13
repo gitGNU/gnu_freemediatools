@@ -206,10 +206,12 @@ void JahControl::createJahDesktopUI( QFrame *moduleselection, QFrame *D2modulese
         DualEncoding->setText( jt->tr( "Encode"  ) );
         connect( DualEncoding,  SIGNAL(clicked()), SLOT(changeModeEncoding())  );
 
+#ifdef USE_NETWORK
         DualNetwork = new QPushButton( D2moduleselection, "Network" );
         D2moduleselection->layout()->add( DualNetwork );
         DualNetwork->setText( jt->tr( "Network"  ) );
-        connect( DualNetwork,  SIGNAL(clicked()), SLOT(changeModeNetwork())  );
+        connect( DeualNetwork,  SIGNAL(clicked()), SLOT(changeModeNetwork())  );
+#endif
 
         D2moduleselection->layout()->addItem( new QSpacerItem( 0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding ) );
     }

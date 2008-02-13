@@ -113,11 +113,11 @@ public slots:
     //variable used to hide the ui
     void shrinkUI(bool value);
 
-    void JahchangeModeText(const QString & text) { thestartupscreen->setProgressText(text); }
-	void JahaddProgressSteps(int steps) { thestartupscreen->addProgressSteps(steps); }
-    void JahsetProgressValue( ) { thestartupscreen->updateProgressValue( );  }
+ void JahchangeModeText(const QString & text) ;
+ void JahaddProgressSteps(int steps) ;
+ void JahsetProgressValue( ) ;
 
-    void setStyleColor(QPalette pal);
+ void setStyleColor(QPalette pal);
 
 signals:
 
@@ -139,7 +139,7 @@ private:
     bool dualheadOption;
 
 public:
-    JahControl* getJahApp() { return jahapp; }
+    JahControl* getJahApp();
 
 public:
     JahHeader* header;

@@ -65,7 +65,7 @@ void Jahshaka::checkJahExtensions(void)
     }
 
     //does a complete listing of extensions
-    //jtrace->debug( "Extensions:"+*extensions);
+    jtrace->debug( "Extensions:"+*extensions);
 	
     //added to record stats data
     //added this to record the stats data

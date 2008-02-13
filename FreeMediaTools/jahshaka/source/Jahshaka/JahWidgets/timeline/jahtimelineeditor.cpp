@@ -123,7 +123,7 @@ void EditEditor::contentsMouseReleaseEvent(QMouseEvent*)
 
 void EditEditor::contentsMouseMoveEvent(QMouseEvent* e) 
 {
-    //jtrace->debug("EditEditor::","Moving mouse");
+  jtrace->debug("EditEditor::","Moving mouse");
 
     QString loopvald;
     //debug("rtti val:"+loopvald.setNum(moving->rtti()));

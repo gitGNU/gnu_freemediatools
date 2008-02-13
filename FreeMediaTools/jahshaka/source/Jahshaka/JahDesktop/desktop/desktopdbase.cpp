@@ -78,7 +78,7 @@ void JahDesktop::RebuildDesktop()
 
     for (int x=1; x<=numclip; x++)
     {
-        //jtrace->debug(">>Loading Asset ",x);
+      jtrace->debug(">>Loading Asset ",x);
 
         //grabs the asset, if its not there we get a -1 in theCategory
         assetData thedata = theDatabase->restoreImageFromDatabase(x);

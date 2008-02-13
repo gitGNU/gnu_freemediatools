@@ -117,10 +117,10 @@ int main(int argc, char** argv)
 	}
 
     ////////////////////////////////////////////////
-    //force overides for debugging here if you like
+    //force overrides for debugging here if you like
 	#ifdef DEBUG
     jtrace->setLevel ( JahTrace::LevelEverything );  //reports everything
-    //jtrace->setFileSave ( true ); 
+    //jtrace->setFileSave ( true );
 	#endif
 
     //report the tracer initialization

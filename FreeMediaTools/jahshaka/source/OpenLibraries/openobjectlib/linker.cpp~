@@ -343,60 +343,34 @@ namespace olib
   }
 }
 */
+
+#include <openassetlib/al/al.hpp>
+#include <openassetlib/al/set.hpp>
+
+/*
+namespace olib
+{
+  namespace openpluginlib
+  {
+    discovery<olib::openassetlib::al::oml_query_traits>::discovery(olib::openassetlib::al::oml_query_traits const&)
+    {
+      
+    }
+  }
+}
+*/
 /*
 
-./jahshaka/source/Jahshaka/JahDesktop/library/advancedsearchform.ui.h:186: undefined reference to `olib::openassetlib::DataSource::Query::Condition::Condition(olib::openassetlib::DataSource::Query::Condition*, olib::openassetlib::DataSource::Query::Condition*, olib::openassetlib::DataSource::Query::Condition::Logic)'
-./jahshaka/source/Jahshaka/JahDesktop/library/advancedsearchform.ui.h:192: undefined reference to `olib::openassetlib::DataSource::Query::Query(olib::openassetlib::DataSource::Query::Condition*)'
-./jahshaka/source/Jahshaka/JahDesktop/library/advancedsearchform.ui.h:193: undefined reference to `olib::openassetlib::DataSource::Query::maxHits(unsigned short)'
-./jahshaka/source/Jahshaka/JahDesktop/library/advancedsearchform.ui.h:211: undefined reference to `olib::openassetlib::DataSource::Query::Condition::~Condition()'
-./jahshaka/source/Jahshaka/JahDesktop/library/advancedsearchform.ui.h:213: undefined reference to `olib::openassetlib::DataSource::Query::~Query()'
-./jahshaka/source/Jahshaka/JahDesktop/library/advancedsearchform.ui.h:213: undefined reference to `olib::openassetlib::DataSource::Query::~Query()'
-assetmanmainwidget.o: In function `AssetManMainWidget::executeSimpleSearch()':
-./jahshaka/source/Jahshaka/JahDesktop/library/assetmanmainwidget.ui.h:417: undefined reference to `olib::openassetlib::DataSource::Query::Condition::Condition(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_string<char, std::char_traits<char>, std::allocator<char> >, olib::openassetlib::DataSource::Query::Condition::Comparitor)'
-./jahshaka/source/Jahshaka/JahDesktop/library/assetmanmainwidget.ui.h:418: undefined reference to `olib::openassetlib::DataSource::Query::Query(olib::openassetlib::DataSource::Query::Condition*)'
-./jahshaka/source/Jahshaka/JahDesktop/library/assetmanmainwidget.ui.h:421: undefined reference to `olib::openassetlib::DataSource::Query::Condition::~Condition()'
-./jahshaka/source/Jahshaka/JahDesktop/library/assetmanmainwidget.ui.h:422: undefined reference to `olib::openassetlib::DataSource::Query::~Query()'
-./jahshaka/source/Jahshaka/JahDesktop/library/assetmanmainwidget.ui.h:422: undefined reference to `olib::openassetlib::DataSource::Query::~Query()'
-assetmanmainwidget.o: In function `AssetManMainWidget::populateDirView()':
-./jahshaka/source/Jahshaka/JahDesktop/library/assetmanmainwidget.ui.h:300: undefined reference to `olib::openassetlib::AssetManager::instance()'
-./jahshaka/source/Jahshaka/JahDesktop/library/assetmanmainwidget.ui.h:300: undefined reference to `olib::openassetlib::AssetManager::createDataSource(olib::openassetlib::DataSource::Type, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
-dirview.o: In function `DirectoryView::contentsDropEvent(QDropEvent*)':
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/dirview.cpp:756: undefined reference to `olib::openassetlib::Asset::Asset(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long, unsigned long)'
-jahfileiconview.o: In function `QtFileIconViewItem':
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/jahfileiconview.cpp:328: undefined reference to `olib::openassetlib::Asset::filename() const'
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/jahfileiconview.cpp:328: undefined reference to `olib::openassetlib::Asset::filename() const'
-jahfileiconview.o: In function `QtFileIconView::readAssets(std::list<olib::openassetlib::Asset*, std::allocator<olib::openassetlib::Asset*> >)':
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/jahfileiconview.cpp:908: undefined reference to `olib::openassetlib::Asset::filename() const'
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/jahfileiconview.cpp:908: undefined reference to `olib::openassetlib::Asset::path() const'
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/jahfileiconview.cpp:914: undefined reference to `olib::openassetlib::Asset::filename() const'
-jahfileiconview.o: In function `QtFileIconView::showCollection(QString)':
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/jahfileiconview.cpp:940: undefined reference to `olib::openassetlib::AssetManager::instance()'
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/jahfileiconview.cpp:940: undefined reference to `olib::openassetlib::AssetManager::dataSourceListBeginIterator() const'
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/jahfileiconview.cpp:942: undefined reference to `olib::openassetlib::AssetManager::instance()'
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/jahfileiconview.cpp:942: undefined reference to `olib::openassetlib::AssetManager::dataSourceListEndIterator() const'
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/jahfileiconview.cpp:956: undefined reference to `olib::openassetlib::DataSource::Query::Condition::Condition(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_string<char, std::char_traits<char>, std::allocator<char> >, olib::openassetlib::DataSource::Query::Condition::Comparitor)'
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/jahfileiconview.cpp:957: undefined reference to `olib::openassetlib::DataSource::Query::Query(olib::openassetlib::DataSource::Query::Condition*)'
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/jahfileiconview.cpp:960: undefined reference to `olib::openassetlib::DataSource::Query::Condition::~Condition()'
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/jahfileiconview.cpp:967: undefined reference to `olib::openassetlib::DataSource::Query::~Query()'
-./jahshaka/source/Jahshaka/JahWidgets/jahfileloader/jahfileiconview.cpp:967: undefined reference to `olib::openassetlib::DataSource::Query::~Query()'
-al.o: In function `olib::openassetlib::al::convert_to_media(boost::shared_ptr<olib::openassetlib::al::asset>)':
-./openlibraries/trunk/src/openassetlib/al/al.cpp:662: undefined reference to `olib::openpluginlib::discovery<olib::openassetlib::al::oml_query_traits>::discovery(olib::openassetlib::al::oml_query_traits const&)'
-./openlibraries/trunk/src/openassetlib/al/al.cpp:663: undefined reference to `olib::openpluginlib::discovery<olib::openassetlib::al::oml_query_traits>::empty() const'
-./openlibraries/trunk/src/openassetlib/al/al.cpp:666: undefined reference to `void olib::openpluginlib::discovery<olib::openassetlib::al::oml_query_traits>::sort<olib::openpluginlib::highest_merit_sort>(olib::openpluginlib::highest_merit_sort const&)'
-./openlibraries/trunk/src/openassetlib/al/al.cpp:669: undefined reference to `olib::openpluginlib::discovery<olib::openassetlib::al::oml_query_traits>::begin() const'
-./openlibraries/trunk/src/openassetlib/al/al.cpp:670: undefined reference to `olib::openpluginlib::discovery<olib::openassetlib::al::oml_query_traits>::end() const'
-al.o: In function `olib::openassetlib::al::convert_to_image(boost::shared_ptr<olib::openassetlib::al::asset>)':
-./openlibraries/trunk/src/openassetlib/al/al.cpp:619: undefined reference to `olib::openpluginlib::discovery<olib::openassetlib::al::oil_query_traits>::discovery(olib::openassetlib::al::oil_query_traits const&)'
-./openlibraries/trunk/src/openassetlib/al/al.cpp:620: undefined reference to `olib::openpluginlib::discovery<olib::openassetlib::al::oil_query_traits>::empty() const'
-./openlibraries/trunk/src/openassetlib/al/al.cpp:623: undefined reference to `void olib::openpluginlib::discovery<olib::openassetlib::al::oil_query_traits>::sort<olib::openpluginlib::highest_merit_sort>(olib::openpluginlib::highest_merit_sort const&)'
-./openlibraries/trunk/src/openassetlib/al/al.cpp:626: undefined reference to `olib::openpluginlib::discovery<olib::openassetlib::al::oil_query_traits>::begin() const'
-./openlibraries/trunk/src/openassetlib/al/al.cpp:627: undefined reference to `olib::openpluginlib::discovery<olib::openassetlib::al::oil_query_traits>::end() const'
-al.o: In function `olib::openassetlib::al::is_convertible(boost::shared_ptr<olib::openassetlib::al::asset>)':
-./openlibraries/trunk/src/openassetlib/al/al.cpp:605: undefined reference to `olib::openpluginlib::discovery<olib::openassetlib::al::query_traits>::discovery(olib::openassetlib::al::query_traits const&)'
-./openlibraries/trunk/src/openassetlib/al/al.cpp:606: undefined reference to `olib::openpluginlib::discovery<olib::openassetlib::al::query_traits>::empty() const'
-appearance.o: In function `olib::openobjectlib::sg::texture::update()':
-./openlibraries/trunk/src/openobjectlib/sg/appearance.cpp:141: undefined reference to `olib::openobjectlib::sg::find_url_availability(olib::openpluginlib::multi_value_property<boost::filesystem::basic_path<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, boost::filesystem::path_traits> > const&, boost::filesystem::basic_path<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, boost::filesystem::path_traits>&)'
-./openlibraries/trunk/src/openobjectlib/sg/appearance.cpp:146: undefined reference to `olib::openpluginlib::discovery<olib::openobjectlib::sg::SGANON::query_traits>::discovery(olib::openobjectlib::sg::SGANON::query_traits const&)'
-./openlibraries/trunk/src/openobjectlib/sg/appearance.cpp:147: undefined reference to `olib::openpluginlib::discovery<olib::openobjectlib::sg::SGANON::query_traits>::empty() const'
-./openlibraries/trunk/src/openobjectlib/sg/appearance.cpp:149: undefined reference to `olib::openpluginlib::discovery<olib::openobjectlib::sg::SGANON::query_traits>::begin() const'
+namespace olib
+{
+  namespace openassetlib
+  {
+    AssetManager::instance()
+    {
+      
+    }
+  }
+}
+
+
 */

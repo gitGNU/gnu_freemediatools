@@ -7,6 +7,12 @@
 **
 *******************************************************************************/
 
+/*
+  this is windows only code.
+
+*/
+#ifdef WIN32
+
 #include "mediaobject_winavi.h"
 
 ////////////////////////////////////////
@@ -334,3 +340,4 @@ QImage mediaObjectWinavi::bitmapToImage(HDC chdc, HBITMAP chBitmap)
 	return res;
 }
 
+#endif

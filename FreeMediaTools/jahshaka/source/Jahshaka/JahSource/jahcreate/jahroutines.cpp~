@@ -19,7 +19,9 @@
 #include "jahlibrary.h"
 #include "MainPlayer.h"
 #include "color.h"
+#ifdef USE_NETWORK
 #include "networking.h"
+#endif
 #include "keyer.h"
 #include "MainEncoder.h"
 #include "dialogs.h"
@@ -123,7 +125,9 @@ void JahControl::switchModule(QString modname)
 	if (modname=="colorize")  changeModeColorize();
 	if (modname=="desktop")   changeModeDesktop();
 	if (modname=="paint")     changeModePaint();
+#ifdef USE_NETWORK
 	if (modname=="network")   changeModeNetworkCom(); //create a changeModeNetwork that calls changeModeNetworkCom as default
+#endif
 	if (modname=="keyer")     changeModeKeyer();
 	if (modname=="tracker")   changeModeTracker();
 	if (modname=="player")   changeModePlayer();

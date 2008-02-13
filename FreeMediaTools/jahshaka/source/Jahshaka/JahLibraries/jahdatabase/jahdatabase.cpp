@@ -247,7 +247,7 @@ bool JahDatabase::removeDesktop(const char* desktopName)
 		jtrace->error("Failed to delete rows from videodata table: ", zErrMsg);
 		free(zErrMsg);
 		zErrMsg = 0;
-		//jtrace->warning("Note: The database may now contain orphaned assets");
+		jtrace->debug("Note: The database may now contain orphaned assets");
 	}
 
 	jtrace->info( "Done" );

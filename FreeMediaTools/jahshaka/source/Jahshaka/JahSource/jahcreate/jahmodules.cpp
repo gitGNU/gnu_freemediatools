@@ -360,7 +360,7 @@ void JahControl::CreateEditingModule()
                                 MainModuleControler[module_counter],
                                 MainModuleControlerLeft[module_counter], 
                                 MainModuleControlerRight[module_counter],
-                                &globalclipnumber  );
+				&globalclipnumber  );// Exec
     module_counter++;
     
     ////////////////////////////////////////////////////////////////////////

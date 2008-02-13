@@ -372,7 +372,7 @@ void JahControl::saveSplitterValues()
 void JahControl::stopAnimation() 
 {    
 	//stop playback in other modules
-    //jtrace->debug("in stopAnimation");
+  jtrace->debug("in stopAnimation");
 
     //heres a little hack since this is always called before switching to a new module
     saveSplitterValues();

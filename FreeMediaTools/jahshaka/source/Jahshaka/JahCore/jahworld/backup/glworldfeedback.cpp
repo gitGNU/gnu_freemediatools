@@ -11,7 +11,7 @@
 // On Screen selections
 void GLWorld::contextMenuEvent(QContextMenuEvent * e)
 {
-    //jtrace->debug("GLWorld","QContextMenuEvent()");
+    jtrace->debug("GLWorld","QContextMenuEvent()");
 
     e->accept();		// put this at the start or end?
 

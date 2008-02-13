@@ -103,7 +103,7 @@ Jahshaka::Jahshaka( QWidget* parent, const char* name, WFlags fl )
                              modules_buttons, modules_controls, statusbox,
                              D2Widget ,
                              D2mainleftmenu, D2mainworld, D2mainrightmenu,
-                             D2maincontroller, D2moduleselection, D2modulesettings, D2feedbackbar );
+			     D2maincontroller, D2moduleselection, D2modulesettings, D2feedbackbar ); // EXEC
 
     if (dualheadOption)
     {
@@ -438,7 +438,7 @@ bool Jahshaka::checkDualHead(void)
 //this routine only restores ths application position and size
 void Jahshaka::restoreGlobalPositionSize(void) 
 {   
-    //jtrace->debug( "Restoring the global positioning" );
+  jtrace->debug( "Restoring the global positioning" );
 
     //the desktop info
     QRect qRect(QApplication::desktop()->screenGeometry());
@@ -604,3 +604,28 @@ void Jahshaka::contextMenuEvent( QContextMenuEvent * )
 }
 
 
+
+void Jahshaka::JahchangeModeText(const QString & text) 
+{
+  jtrace->info(
+
+	       "changeModeText",
+	       text 
+	       );
+  thestartupscreen->setProgressText(text); 
+}
+void Jahshaka::JahaddProgressSteps(int steps)
+{
+  thestartupscreen->addProgressSteps(steps); 
+}
+
+void Jahshaka::JahsetProgressValue( ) 
+{ 
+  thestartupscreen->updateProgressValue( );  
+}
+
+
+JahControl* Jahshaka::getJahApp() 
+{
+  return jahapp; 
+}

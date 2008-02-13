@@ -38,7 +38,7 @@ Jahplayer::Jahplayer( QWidget* parent, const char* name, WFlags fl )
     JahPrefs& jprefs = JahPrefs::getInstance();
     
 	//this sets up the look and feel
-    //jtrace->info("Loading Color Scheme");
+    jtrace->info("Loading Color Scheme");
 	setupInterface( this );
     setupMyCustomColors();
 

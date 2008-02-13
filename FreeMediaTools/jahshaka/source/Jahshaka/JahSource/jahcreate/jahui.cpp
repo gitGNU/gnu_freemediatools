@@ -153,7 +153,7 @@ void JahControl::createJahUI(	QFrame *mainworld,		QFrame *mainleftmenu,	  QFrame
 
 void JahControl::splitterChanged(void)
 {
-    //jtrace->debug("is changed");
+  jtrace->debug("is changed");
 }
 
 void createMinimizingLayout( QWidget* p )

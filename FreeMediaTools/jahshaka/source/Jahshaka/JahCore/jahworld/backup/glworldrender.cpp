@@ -549,7 +549,7 @@ QString GLWorld::buildFrameName(int frameval, assetData theclip )
 
 QImage GLWorld::RenderAll(assetData theclip, int startframe, int endframe ) 
 {
-    //jtrace->debug( "Rendering Scene");
+  jtrace->debug( "Rendering Scene");
     
     //////////////////////////////////////////
     QImage returnshot;

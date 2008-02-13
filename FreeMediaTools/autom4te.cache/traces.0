@@ -1,4 +1,3 @@
-m4trace:aclocal.m4:1040: -1- m4_include([acinclude.m4])
 m4trace:configure.in:3: -1- AC_PREREQ([2.61])
 m4trace:configure.in:7: -1- AC_INIT([FreeMediaTools.cc], [0.1.0], [<mdupont@users.sf.net])
 m4trace:configure.in:7: -1- m4_pattern_forbid([^_?A[CHUM]_])
@@ -478,26 +477,6 @@ m4trace:configure.in:40: -1- AH_OUTPUT([HAVE_STDINT_H], [/* Define to 1 if you h
 #undef HAVE_STDINT_H])
 m4trace:configure.in:40: -1- AH_OUTPUT([HAVE_UNISTD_H], [/* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H])
-m4trace:configure.in:42: -1- AC_CHECK_HEADERS([utime.h])
-m4trace:configure.in:42: -1- AH_OUTPUT([HAVE_UTIME_H], [/* Define to 1 if you have the <utime.h> header file. */
-#undef HAVE_UTIME_H])
-m4trace:configure.in:42: -1- AC_HEADER_TIME
-m4trace:configure.in:42: -1- AC_DEFINE_TRACE_LITERAL([TIME_WITH_SYS_TIME])
-m4trace:configure.in:42: -1- m4_pattern_allow([^TIME_WITH_SYS_TIME$])
-m4trace:configure.in:42: -1- AH_OUTPUT([TIME_WITH_SYS_TIME], [/* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
-#undef TIME_WITH_SYS_TIME])
-m4trace:configure.in:42: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2367: AC_TRY_COMPILE is expanded from...
-../../lib/m4sugar/m4sh.m4:516: AS_IF is expanded from...
-../../lib/autoconf/general.m4:1898: AC_CACHE_VAL is expanded from...
-../../lib/autoconf/general.m4:1911: AC_CACHE_CHECK is expanded from...
-acinclude.m4:9: jm_CHECK_TYPE_STRUCT_UTIMBUF is expanded from...
-configure.in:42: the top level])
-m4trace:configure.in:42: -1- AC_DEFINE_TRACE_LITERAL([HAVE_STRUCT_UTIMBUF])
-m4trace:configure.in:42: -1- m4_pattern_allow([^HAVE_STRUCT_UTIMBUF$])
-m4trace:configure.in:42: -1- AH_OUTPUT([HAVE_STRUCT_UTIMBUF], [/* Define if struct utimbuf is declared -- usually in <utime.h>. Some systems
-   have utime.h but don\'t declare the struct anywhere. */
-#undef HAVE_STRUCT_UTIMBUF])
 m4trace:configure.in:43: -1- AC_HEADER_MAJOR
 m4trace:configure.in:43: -1- AC_DEFINE_TRACE_LITERAL([MAJOR_IN_MKDEV])
 m4trace:configure.in:43: -1- m4_pattern_allow([^MAJOR_IN_MKDEV$])

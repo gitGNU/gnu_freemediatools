@@ -160,7 +160,7 @@ assetData assetExchange::loadJahImageAsset(QString filename,QString shortName,
 										   int clipnumber, bool & itWorked)
 {
 
-    //jtrace->debug ("Loading Still File:", filename);
+  jtrace->debug ("Loading Still File:", filename);
 
     itWorked = false;
         
@@ -214,7 +214,7 @@ assetData assetExchange::loadJahSequenceAsset(QString filename,QString shortName
                                               int startFrame, int numberFrames, 
                                               int clipnumber, bool & itWorked)
 {
-    //jtrace->debug ("Loading Sequence File:", filename);
+  jtrace->debug ("Loading Sequence File:", filename);
 
     itWorked = false;
 
@@ -397,7 +397,7 @@ bool
 assetExchange::loadAsset(QString filename, bool, assetData & newasset, int clipn) 
 {
 
-    //jtrace->info( ">> Loading Asset:", filename );
+  jtrace->info( ">> Loading Asset:", filename );
 
     //user didnt enter anything or cancelled
     if (filename=="" || filename==NULL)
@@ -418,9 +418,9 @@ assetExchange::loadAsset(QString filename, bool, assetData & newasset, int clipn
 	//error if we dont support dis mon
     if (!validextension)
     {
-        //QString errortext = "File type or sequence not supported:\n"+filename;
-        //errortext +="\n\nLooking for something like 'file.bmp', 'file_0000.BMP', etc.";
-        //jtrace->debug(errortext);
+       QString errortext = "File type or sequence not supported:\n"+filename;
+       errortext +="\n\nLooking for something like 'file.bmp', 'file_0000.BMP', etc.";
+      jtrace->debug(errortext);
 
         //QMessageBox::information(this, "Jahshaka", errortext);
         return false;
@@ -543,7 +543,7 @@ assetExchange::loadAsset(QString filename, bool, assetData & newasset, int clipn
     {
         //we know for sure its not a image here
         //as the filename is clean ie no numbers
-        //jtrace->debug("its a image");
+      jtrace->debug("its a image");
 
         //itWorked = loadJahImageAsset(filename,shortName,pathString,extension,loadit);
         
@@ -588,9 +588,9 @@ assetExchange::loadAsset(QString filename, bool, assetData & newasset, int clipn
     QString rere;
 
     int numberFrames =  startFrame + maxFrames;
-    //jtrace->debug (">>> numberFrames",numberFrames);
-    //jtrace->debug (">>> startFrame",startFrame);
-    //debug ("num of frames is"+rere.setNum(numberFrames-startFrame));
+    jtrace->debug (">>> numberFrames",numberFrames);
+    jtrace->debug (">>> startFrame",startFrame);
+    debug ("num of frames is"+rere.setNum(numberFrames-startFrame));
 
     //debug("basestring:"+baseString);
     QString	newstillName(baseString);

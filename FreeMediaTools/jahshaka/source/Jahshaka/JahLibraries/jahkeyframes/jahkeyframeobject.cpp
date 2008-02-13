@@ -62,7 +62,7 @@ void JahKeyframeObject::clear(void)
 //routine to add a keyframe 
 void JahKeyframeObject::addNodes(int frame_number, bool layer_enabled) 
 {
-    //jtrace->debug( "JahKeyframes::addNodes","adding a new node");
+  jtrace->debug( "JahKeyframes::addNodes","adding a new node");
 
     if (frame_number < 1)
     {

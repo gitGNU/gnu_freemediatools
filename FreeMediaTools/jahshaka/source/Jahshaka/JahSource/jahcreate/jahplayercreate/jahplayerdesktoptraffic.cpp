@@ -78,7 +78,7 @@ void JahControl::ReturnDesktop()
 	//checkDesktopButton();
 
     //switch on module for the return  
-	//jtrace->debug( "JahControl","returnDesktop "+getModuleName(module) );
+    jtrace->debug( "JahControl","returnDesktop "+getModuleName(module) );
       
 	switch(module) {
 

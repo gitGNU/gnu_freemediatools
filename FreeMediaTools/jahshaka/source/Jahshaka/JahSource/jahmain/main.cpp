@@ -59,7 +59,7 @@ int main(int argc, char** argv)
     #ifdef SPACEBALL
     App app(argc,argv);
     #else
-    QApplication app(argc,argv);
+    QApplication app(argc,argv);  // EXECUTEDo
     #endif
 
     ///////////////////////////////////////////////
@@ -163,7 +163,7 @@ int main(int argc, char** argv)
 
     ///////////////////////////////////////////////
     // Create the Main object and Launch
-    Jahshaka jahshaka;
+    Jahshaka jahshaka; // EXEC
 
     //check to see if we can initialize spaceball
     #ifdef SPACEBALL

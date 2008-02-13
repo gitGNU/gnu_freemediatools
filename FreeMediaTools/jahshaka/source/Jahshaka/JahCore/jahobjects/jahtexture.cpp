@@ -141,7 +141,7 @@ void JahLayer::setLayerTexture(void)
 
 void JahLayer::bindKeyTexture(void) 
 {
-    //jtrace->debug("set key");
+  jtrace->debug("set key");
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D,  textureKey.texID );
 }

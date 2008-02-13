@@ -231,7 +231,7 @@ void JahDesktop::clearAll()
     //do a qdialog...
     //set up tracer
 
-    //jtrace->info( "JahDesktop::","called clear all...");
+  jtrace->info( "JahDesktop::","called clear all...");
 
     int status = QMessageBox::critical( 0, "Clearing The Desktop",
                                            "You are about to Clear the Desktop!\n\n"

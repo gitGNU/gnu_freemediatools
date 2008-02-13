@@ -276,7 +276,7 @@ QImage assetExchange::getImage(assetData& theasset, int frame)
     if (!itworked)
         return NULL;
 
-   //jtrace->debug("::::AssetExchange getting image:"+loadfilename);
+    jtrace->debug("::::AssetExchange getting image:"+loadfilename);
 
     //movie is a media file
     if (theasset.theType == VideoType::MOVIE) 
@@ -285,7 +285,7 @@ QImage assetExchange::getImage(assetData& theasset, int frame)
     }
     else if (theasset.theCategory == VideoCategory::AUDIO)
     {
-        //jtrace->debug("loading audio asset");
+      jtrace->debug("loading audio asset");
 
         if ( !loadimage.load( JahBasePath+"Pixmaps/jahaudio.png" ) ) 
         {	// Load first image from file
@@ -402,7 +402,7 @@ bool assetExchange::loadFileintoimage( const QString loadfilename, QImage& image
 
 QImage* assetExchange::getStreamImagePtr(assetData& theasset, QImage& qimage, int frame)
 {
-    //jtrace->debug("getting stream image in assetExchange::getStreamImage");
+  jtrace->debug("getting stream image in assetExchange::getStreamImage");
 
     bool itworked;
 
@@ -452,7 +452,7 @@ QImage* assetExchange::getStreamImagePtr(assetData& theasset, QImage& qimage, in
 
 QImage assetExchange::getStreamImage(assetData& theasset, int frame, bool glstatus)
 {
-    //jtrace->debug("getting stream image in assetExchange::getStreamImage");
+  jtrace->debug("getting stream image in assetExchange::getStreamImage");
 
     QImage loadimage;
     bool itworked = false;
@@ -470,7 +470,7 @@ QImage assetExchange::getStreamImage(assetData& theasset, int frame, bool glstat
     //movie is a media file
     if (theasset.theType == VideoType::MOVIE)
     {
-        //jtrace->debug("its a movie getting picture");
+      jtrace->debug("its a movie getting picture");
 
         if ( openMedia( theasset ) )
         {
@@ -479,7 +479,7 @@ QImage assetExchange::getStreamImage(assetData& theasset, int frame, bool glstat
         }
 		else if ( !loadimage.load( JahBasePath+"Pixmaps/missingmedia.png" ) )
         {
-            //jtrace->error( "Could not read default image, using single-color instead." );
+	  jtrace->error( "Could not read default image, using single-color instead." );
             QImage dummy( 256, 256, 32 );
             dummy.fill( Qt::blue.rgb() );
             loadimage = dummy;
@@ -607,7 +607,7 @@ bool assetExchange::streamMediaintoimage( const QString loadfilename, QImage & i
 
 		openStream->setCorrectAspectRatio( getCorrectAspectRatio( ) );
 
-        //jtrace->debug("stream wasnt open, opening");
+		jtrace->debug("stream wasnt open, opening");
         if (openStream->openMedia(loadfilename))  //was filename
         {
 			theFileName = loadfilename;
@@ -616,7 +616,7 @@ bool assetExchange::streamMediaintoimage( const QString loadfilename, QImage & i
         }
 		else if ( !image.load( JahBasePath+"Pixmaps/missingmedia.png" ) )
         {
-            //jtrace->error( "Could not read default image, using single-color instead." );
+	  jtrace->error( "Could not read default image, using single-color instead." );
             QImage dummy( 256, 256, 32 );
             dummy.fill( Qt::blue.rgb() );
             image = dummy;
@@ -625,7 +625,7 @@ bool assetExchange::streamMediaintoimage( const QString loadfilename, QImage & i
     }
     else 
     {   
-        //jtrace->debug("stream was open");
+      jtrace->debug("stream was open");
         image = openStream->getVideoFrame(frame);	
     }
 
@@ -712,7 +712,7 @@ QString assetExchange::getsequencefilename( assetData& theasset, int frame )
 
 void assetExchange::ExportAsset(assetData &asset, QString destination)
 {
-    //jtrace->debug( "assetExchange::","Calling ExportAsset()");
+  jtrace->debug( "assetExchange::","Calling ExportAsset()");
 
     VideoType::TYPE LayerType = asset.theType;
     VideoCategory::TYPE LayerCat= asset.theCategory;

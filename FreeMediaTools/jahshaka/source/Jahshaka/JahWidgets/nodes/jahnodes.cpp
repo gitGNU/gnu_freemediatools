@@ -220,7 +220,7 @@ void JahNodes::delNodes(int x )
 
 void JahNodes::buildNodes(QString)
 {
-    //jtrace->debug( "JahNodes::","building nodes");
+  jtrace->debug( "JahNodes::","building nodes");
     
     int x0 = 100;    int y0 = 100;
 

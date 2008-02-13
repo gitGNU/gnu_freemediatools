@@ -79,7 +79,8 @@ GLWorld::buildLayer(JahLayer* layer, QString layerName, LayerCategory::TYPE laye
 
             //we only auto-create single frame layers
             //but the .jah loader uses this so we override for clips
-            if (!layer->asset.videotex)
+
+	    if (!layer->asset.videotex) // this crasesh
             {
                 layer->m_inframe    = 1;
                 layer->m_outframe   = 1;

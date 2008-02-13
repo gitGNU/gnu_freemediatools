@@ -245,7 +245,7 @@ bool JahRender::loadFontText(void)
         for (int i=0; i<= 5; i++) 
         {
 
-            //jtrace->debug ("Reading font",text->font );
+	  jtrace->debug ("Reading font" );
 
             int point_size = 24;
 
@@ -254,9 +254,9 @@ bool JahRender::loadFontText(void)
 
             if (!thelayer->text->fonts[i]->FaceSize(point_size)) 
             {
-                jtrace->error( "ERROR: Unable to set font face size " );
+	      jtrace->error( "ERROR: Unable to set font face size " );
                 fileok = false; 
-				thelayer->text->fontshere = false;
+		thelayer->text->fontshere = false;
             }
         }
 

@@ -280,7 +280,7 @@ void GLWorld::updateUiSettings()       { /* this is overridden */   }
 
 void GLWorld::updateSliders()
 {
-    //jtrace->debug( "GLWorld","updating slider display");
+  jtrace->debug( "GLWorld","updating slider display");
 
     if ( !multipleLayersSelectedInListView() )
     {
@@ -392,7 +392,7 @@ void GLWorld::updateSliders(motionNode*)
 //updates all the sliders
 void GLWorld::updateSliderValues()
 {
-    //jtrace->debug( "GLWorld","updating slider values");
+  jtrace->debug( "GLWorld","updating slider values");
 
     if ( !multipleLayersSelectedInListView() )
     {
