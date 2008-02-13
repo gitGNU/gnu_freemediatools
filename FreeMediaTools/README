@@ -20,3 +20,65 @@
 Comments are welcome.
 
 	- James Michael DuPont <mdupont@users.sf.net>
+
+
+1. PREREQUISITES
+====================
+
+Here are the debian packages that I needed to have installed to build the package :
+
+libavifile-0.7-dev
+libc6-dev
+libfreetype6-dev
+libglew1.4-dev
+libglu1-mesa-dev
+libmlt++-dev
+libmlt-dev
+libopenafs-dev
+libqt3-headers
+libqt3-mt-dev
+libstdc++6-4.2-dev
+libx11-dev
+libxml2-dev
+linux-libc-dev
+
+1.1. The link command looks like this :
+	-lmlt++ 
+	-lmlt 
+	-lpython2.4 
+	-lGLEW 
+	-lboost_filesystem 
+	-lboost_iostreams 
+	-lboost_regex 
+	-lboost_thread 
+	-lxml2 
+	-lqt-mt 
+	-laviplay 
+	-lsqlite3 
+	-lpthread 
+	-ljpeg 
+	-lfreetype 
+	-lXmu 
+	-lXi 
+	-lXext 
+	-lX11 
+	-lGLU 
+	-lGL 
+	-lstdc++ 
+	-lm 
+	-lgcc_s 
+	-lgcc 
+	
+
+2. By running ./configure, and Make, I build the ./FreeMediaTools application.
+
+
+3. when you run it :
+you will see lots of debug messages like this :
+create a wstring/property_typenametest2:MFNode
+
+4.then the program will exit, 
+because it cannot open this dir, you need to create it like this :
+mkdir -p ./openlibraries/install/share/jahshaka/database/
+
+5. 

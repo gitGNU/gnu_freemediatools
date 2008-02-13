@@ -1037,10 +1037,3 @@ AC_SUBST([am__tar])
 AC_SUBST([am__untar])
 ]) # _AM_PROG_TAR
 
-m4_include([m4/acinclude.m4])
-m4_include([m4/ax_boost_filesystem.m4])
-m4_include([m4/ax_boost_iostreams.m4])
-m4_include([m4/ax_boost_python.m4])
-m4_include([m4/ax_boost_regex.m4])
-m4_include([m4/ax_boost_thread.m4])
-m4_include([m4/ax_python.m4])

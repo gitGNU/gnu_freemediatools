@@ -57,7 +57,8 @@ void JahLayer::assignAsset(assetData clip, VideoCategory::TYPE cliptype, bool up
 
     if (cliptype == VideoCategory::KEY)
     {
-        jtrace->debug("ASSIGNING KEY");
+      if(jtrace)
+	jtrace->debug("ASSIGNING KEY");
         keyasset = clip;
 
         if ( !getInframeValid() || update_video_settings)
@@ -79,7 +80,9 @@ void JahLayer::assignAsset(assetData clip, VideoCategory::TYPE cliptype, bool up
 bool JahLayer::LoadLayerAsset( VideoCategory::TYPE imagetype )
 {
     //set up tracer
-    jtrace->debug( "JahLayer::","Loading Asset into Layer");
+  if(jtrace)
+      jtrace->debug( "JahLayer::","Loading Asset into Layer");
+
 
     QImage   buf;
 
@@ -88,11 +91,18 @@ bool JahLayer::LoadLayerAsset( VideoCategory::TYPE imagetype )
 
     if (mediaExchangePresent)
     {
-		mediaExchangePresent = false;
-		delete mediaExchange;
-		mediaExchange = NULL;
-		setEffectsSlidersHaveChanged( true ); 
+      if (mediaExchange)
+	{
+	  mediaExchangePresent = false;
+	  delete mediaExchange;
+	  mediaExchange = NULL;
+	  setEffectsSlidersHaveChanged( true );
 	}
+      else
+	{
+	  // TODO : logic bomb
+	}
+    }
 		
     addMediaObj();
 
@@ -111,7 +121,8 @@ bool JahLayer::LoadLayerAsset( VideoCategory::TYPE imagetype )
 		//the image displayed
 		//as we are using this for new layers
         if ( !buf.load( JahBasePath+"Pixmaps/jahlayer.png" ) ) {	// Load first image from file
-            jtrace->error( "Could not read default image, using single-color instead." );
+	  if(jtrace)
+	    jtrace->error( "Could not read default image, using single-color instead." );
             QImage dummy( 256, 256, 32 );
             dummy.fill( Qt::blue.rgb() );
             buf = dummy;

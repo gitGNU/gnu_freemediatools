@@ -17,7 +17,170 @@
 #define STRINGDATA(X) ( X.data() ? X.data() : "" )  
 
 JahLayer::JahLayer(void) :
-	layernodes( NULL )
+  layernodes( NULL ),
+  mediaExchangePresent(false),
+ 
+  /*    CompositeType::TYPE m_composite_type;
+    EffectInfo::EFFECT_CATEGORY m_previous_rendered_layer_effect_category;
+    EffectLayer* m_effect_layer;
+    GLenum m_dst_blend_factor;
+    GLenum m_src_blend_factor;
+    GLenum m_texture_format;
+    GLfloat MeshXCoord [74][50];
+    GLfloat MeshXNormal [74][50];
+    GLfloat MeshYCoord [74][50];
+    GLfloat MeshYNormal [74][50];
+    GLfloat MeshZCoord [74][50];
+    GLfloat MeshZNormal [74][50];
+    GLfloat Red, Green, Blue;
+    GLfloat hblur;
+    GLfloat heightOffset;
+    GLfloat light_ambient[4];
+    GLfloat light_diffuse[4];
+    GLfloat light_specular[4];
+    GLfloat vblur;
+    GLfloat widthOffset;
+    GLuint m_default_texture_id;
+  */
+  //JahKeyframeObject *
+  //JahLayer* 
+  m_parent(0),
+  //JahPluginLib* 
+  jplugin(0),
+  //LayerCategory::TYPE layertype;
+  //LayerListEntry* 
+  m_layer_list_entry(0),
+  /*    ObjectCategory::TYPE objtype;
+    ParticleCategory::TYPE ParticleStyle;
+    ParticleDrawstyle::TYPE ParticleDraw;*/
+//QCheckListItem*
+m_check_list_item(0),
+      //QImage m_composite_qimage;
+      //QImage m_composite_qimage_flipped;
+      //    QPtrList<EffectLayer>*
+m_effects_list(0),
+//    QPtrList<JahLayer>*
+m_lights_list(0),
+      /*  QString JahMediaPath;
+	  QString layername;
+	  QString objextension;
+	  QString objfilename;
+	  StabilizingState*
+      */
+      m_stabilizing_state(0),
+  /*
+    TextureImage m_key_composite;
+    TextureImage m_texture_composite;
+    TextureImage textureData;
+    TextureImage textureKey;
+    assetData asset;
+    assetData keyasset;
+
+*/
+//  assetExchange* 
+  mediaExchange(0),
+      //    bool
+  MeshFirsttime(false),
+  /*bool*/ ObjectDisplayMode(false),
+    /*bool*/ ParticleColors(false),
+    /*bool*/ ParticleFirsttime(false),
+    /*bool*/ blend(false),
+    /*bool*/ blur(false),
+    /*bool*/ cull(false),
+    /*bool*/ depth(false),
+    /*bool*/ drawKeyframes(false),
+    /*bool*/ drawtheKey(false),
+    /*bool*/ drawtheLayer(false),
+    /*bool*/ foreground(false),
+    /*bool*/ invertKey(false),
+    /*bool*/ jahobjectPresent(false),
+    /*bool*/ keyAssetStatus(false),
+    /*bool*/ layerAssetStatus(false),
+    /*bool*/ layerEffect(false),
+    /*bool*/ layerStatus(false),
+    /*bool*/ layerfog(false),
+    /*bool*/ lighting(false),
+    /*bool*/ loadLight(false),
+    /*bool*/ loadObject(false),
+    /*bool*/ loadParticles(false),
+    /*bool*/ loop(false),
+    /*bool*/ m_composite_texture_updated_by_lighting(false),
+    /*bool*/ m_contains_cpu_effects(false),
+    /*bool*/ m_create_chroma_alpha_mask(false),
+    /*bool*/ m_effects_have_key_frames(false),
+    /*bool*/ m_effects_sliders_have_changed(false),
+    /*bool*/ m_effects_updated(false),
+    /*bool*/ m_first_effect_layer_being_rendered(false),
+    /*bool*/ m_first_pass(false),
+    /*bool*/ m_inframe_valid(false),
+    /*bool*/ m_is_chroma_key_layer(false),
+    /*bool*/ m_is_slected_visible(false),
+    /*bool*/ m_lighting_enabled(false),
+    /*bool*/ m_qimage_composite_dirty(false),
+    /*bool*/ m_select_colors_individually(false),
+    /*bool*/ m_show_lights(false),
+    /*bool*/ m_texture_composite_dirty(false),
+    /*bool*/ m_translate_first(false),
+    /*bool*/ m_use_fast_shader_keyer(false),
+    /*bool*/ m_use_open_gl_keyer(false),
+    /*bool*/ m_use_pbuffer(false),
+    /*bool*/ negative(false),
+  swaprgb(false),
+  mirror(false),
+    /*bool*/ option1(false),
+    /*bool*/ option2(false),
+    /*bool*/ option3(false),
+    /*bool*/ option4(false),
+    /*bool*/ option5(false),
+    /*bool*/ ping(false),
+    /*bool*/ reflect(false),
+    /*bool*/ selected(false),
+    /*bool*/ showEdges(false),
+    /*bool*/ smooth(false),
+  /*bool*/ updateFont(false),
+  /*bool*/ usedagpu(false),
+  /*  color4 m_light0_ambient;
+    color4 m_light0_diffuse;
+    color4 m_light0_specular;
+    float BlurRate;
+    float m_light0_shininess;
+    float m_previous_alpha;
+    float m_previous_text_extrude;
+    float4 m_light0_position;
+    float4 m_mesh_normal_save[74][50];
+    float4 m_mesh_save[74][50];
+    int JAHIMAGE_SCALE;
+    int JAHMESH_X_DIMENSION;
+    int JAHMESH_X_DIMENSION_DIV_2;
+    int JAHMESH_Y_DIMENSION;
+    int JAHMESH_Y_DIMENSION_DIV_2;
+    int SteerShape;
+    int X_RESOLUTION;
+    int Y_RESOLUTION;
+    int demoNum, numSteps, prim;
+    int lightNumber;
+    int listID, SpotTexID;
+    int m_currentframe;
+    int m_inframe;
+    int m_key_slip_frame_offset;
+    int m_keycurrentframe;
+    int m_keyinframe;
+    int m_keyoutframe;
+    int m_outframe;
+    int m_plugin_number;
+    int m_slip_frame_offset;
+    int maxParticles;*/
+
+  //objectData* 
+  jahobject(0),
+  /*
+    std::string m_asset_name_string;
+    std::string m_layer_name_string;
+  */
+  //textObj *
+  text(0),
+  //JahLayer* 
+  m_camera_layer(0)
 {
     jtrace = JahTrace::getInstance();	//set up tracer
 
@@ -162,7 +325,11 @@ JahLayer::~JahLayer(void)
 void JahLayer::setupKeyframeVariables()
 {
 	//array of nodes for keyframes
+  if (layernodes)
+    {
 	delete layernodes;
+	layernodes=0;
+    }
     layernodes  = new JahKeyframeObject;
     layernodes->clear();
 }

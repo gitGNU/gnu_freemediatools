@@ -4,8 +4,32 @@ Installation Instructions
 Copyright (C) 1994, 1995, 1996, 1999, 2000, 2001, 2002, 2004, 2005 Free
 Software Foundation, Inc.
 
+Copyright (C) 2008 James Michael DuPont
+
+
 This file is free documentation; the Free Software Foundation gives
 unlimited permission to copy, distribute and modify it.
+
+PREREQUISITES
+====================
+
+Here are the debian packages that I needed to have installed to build the package :
+
+libavifile-0.7-dev
+libc6-dev
+libfreetype6-dev
+libglew1.4-dev
+libglu1-mesa-dev
+libmlt++-dev
+libmlt-dev
+libopenafs-dev
+libqt3-headers
+libqt3-mt-dev
+libstdc++6-4.2-dev
+libx11-dev
+libxml2-dev
+linux-libc-dev
+
 
 Basic Installation
 ==================

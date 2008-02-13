@@ -30,6 +30,21 @@ Source: %{name}-%{version}.tar.gz
 # RPM info
 #Provides:
 #Requires:
+libavifile-0.7-dev
+libc6-dev
+libfreetype6-dev
+libglew1.4-dev
+libglu1-mesa-dev
+libmlt++-dev
+libmlt-dev
+libopenafs-dev
+libqt3-headers
+libqt3-mt-dev
+libstdc++6-4.2-dev
+libx11-dev
+libxml2-dev
+linux-libc-dev
+
 #Conflicts:
 #Prereq:
 
