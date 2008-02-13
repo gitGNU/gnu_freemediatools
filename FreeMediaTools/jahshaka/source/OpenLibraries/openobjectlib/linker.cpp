@@ -75,11 +75,11 @@
 
 void todo ()
 {
-  JahTrace * jtrace = JahTrace::getInstance();	//set up tracer
+  //JahTrace * jtrace = JahTrace::getInstance();	//set up tracer
 
-  jtrace->info("TODO");
+  //jtrace->info("TODO");
 
-  //  std::cerr << "TODO " << std::endl;
+    std::cerr << "TODO " << std::endl;
 }
 
 
