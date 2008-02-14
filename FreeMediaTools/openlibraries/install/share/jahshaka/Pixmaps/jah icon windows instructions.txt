@@ -1,0 +1,16 @@
+Notes
+-----
+
+XP icons support large icons (up to 64x64) and alpha channel, older versions of windows do not.
+
+1. open the xcf file in gimp.
+
+2. save out as a png (it will be large size).
+
+3. Scale it to 64x64 (switch off the ratio contraint) then re-save as png with a new name. 
+   Undo, or reload to the original size, and repeat for 32x32 and 16x16.
+
+4. Its wise to do the same at 8bit color depth, save again to different names. 
+
+5. Load up your prefered icon editing program, e.g. icon sushi (freeware). Load in all the icons,
+   then save as a single icon .ico.
