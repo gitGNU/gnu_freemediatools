@@ -74,7 +74,13 @@ GLWorld::GLWorld( GLCore* jahcore, const char* name, QHBox* controller, int* glo
       m_aMeshEffectsSelectionVector(EffectInfo::NOT_A_TYPE),
       m_aGPUEffectsSelectionVector(EffectInfo::NOT_A_TYPE),
 
-      m_bStarted( false )
+      m_bStarted( false ),
+
+      //TODO: make sure all the data is initialited
+      m_nAStartFrame(0),
+      m_nAEndFrame(1),
+      m_nAAnimFrame(1)
+
 {  
     m_pJtrace = JahTrace::getInstance();	//set up tracer
     m_pJt = JahTranslate::getInstance();	//set up translator

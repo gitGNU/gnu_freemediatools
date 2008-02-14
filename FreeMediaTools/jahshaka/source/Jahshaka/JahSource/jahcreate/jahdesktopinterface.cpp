@@ -28,6 +28,7 @@
 #include <jahpreferences.h>
 #include <openmedialib.h>
 #include <stretchableButton.h>
+#include <iostream>
 
 void JahControl::CreateDesktopFeedbackBox( QWidget* parent ) 
 {
@@ -270,6 +271,8 @@ void JahControl::CreateDesktopMiddleFrame(QHBox* frame)
     
     QString path = JahBasePath + "Pixmaps/desktopController/";
 
+    std::wcerr << "going to load values from " << JahBasePath << endl;
+
     DesktopName = new StretchableButton( page, "desktopnamebutton" );
     DesktopName->setPixmap( path + "name_off.png", path + "name_on.png" );
     DesktopName->setMaximumSize( 148, 24 );
@@ -451,7 +454,25 @@ QWidget* JahControl::createCol2( QWidget* p )
     QBoxLayout* storageLocationLayout = new QHBoxLayout();
     colLayout->addLayout( storageLocationLayout );
 
-    StorageBox = new QLineEdit( col, "StorageBox" );
+    StorageBox = new QLineEdit( col, "StorageBox" ); 
+    /*
+// TODO:Check this obj :
+the cursor  is written to init data.
+==24559== Syscall param write(buf) points to uninitialised byte(s)
+==24559==    at 0x4CF4471: (within /usr/lib/debug/libpthread-2.7.so)
+==24559==    by 0x4DEC29E: _X11TransWrite (in /usr/lib/libX11.so.6.2.0)
+==24559==    by 0x4DF1BD5: (within /usr/lib/libX11.so.6.2.0)
+==24559==    by 0x4DCE500: XFlush (in /usr/lib/libX11.so.6.2.0)
+==24559==    by 0x4667B4F: QWidget::setCursor(QCursor const&) (in /usr/lib/libqt-mt.so.3.3.7)
+==24559==    by 0x47E480F: QLineEditPrivate::init(QString const&) (in /usr/lib/libqt-mt.so.3.3.7)
+==24559==    by 0x47E5E76: QLineEdit::QLineEdit(QWidget*, char const*) (in /usr/lib/libqt-mt.so.3.3.7)
+==24559==    by 0x81E6F3A: JahControl::createCol2(QWidget*) (jahdesktopinterface.cpp:454)
+==24559==    by 0x81EAEAE: JahControl::CreateDesktopPreferences(QHBox*) (jahdesktopinterface.cpp:369)
+==24559==    by 0x81F045C: JahControl::CreateDesktopModuleOptions() (jahmodules.cpp:163)
+==24559==    by 0x81F0535: JahControl::CreateDesktopModule(QHBox*, QHBox*) (jahmodules.cpp:132)
+==24559==    by 0x81F83A9: JahControl::createJahDesktopUI(QFrame*, QFrame*) (jahui.cpp:184)
+
+*/
     StorageBox->setText( JahMediaPath );
     storageLocationLayout->addWidget( StorageBox );
 

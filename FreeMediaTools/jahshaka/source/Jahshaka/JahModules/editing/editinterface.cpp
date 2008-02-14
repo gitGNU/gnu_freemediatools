@@ -37,7 +37,9 @@ void GLEdit::buildInterfaceMenus( QHBox*, QHBox* rightcontroller)
     zoom = new QSlider( glworldRight, "scrubslider" );
     zoom->setGeometry( QRect( 0, 50, 30, 150 ) );
     zoom->setOrientation( QSlider::Vertical );
-    zoom->setMinValue( -10 );    zoom->setMaxValue( 10 );    zoom->setValue   ( 0 );
+    zoom->setMinValue( -10 );    
+    zoom->setMaxValue( 10 );
+    zoom->setValue   ( 0 );
     zoom->setPageStep( 2 );
 
     toolzoomout =   new JahToolButton( glworldRight, "zoomout" );
@@ -233,7 +235,7 @@ void GLEdit::buildInterface( QHBox* qtinterface )
     lcdstartframe->setFormatter( TimecodeValueFormatter() );
     JahFormatter::addSliderLcd(lcdstartframe, 500, 5, 90, 21, m_nAStartFrame);
     lcdstartframe->setMinInt(m_nAStartFrame);
-    lcdstartframe->setValue(m_nAStartFrame);
+    lcdstartframe->setValue(m_nAStartFrame); // TODO:this data was not initialized. 
     connect( lcdstartframe, SIGNAL(valueChanged(int)),   SLOT(updatesliderStartframe(int)) );
 
     eframetext = new QLabel( ControlFrameUI[0][0], "eframetext" );

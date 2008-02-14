@@ -515,8 +515,47 @@ ML_DECLSPEC input_type_ptr create_delayed_input( const pl::wstring &resource )
 {
 	openmedialib_plugin_ptr plug = get_plug( resource, L"input" );
 	if ( plug == 0 )
+	  {
 	    std::wcerr << "create_input: failed to find a plugin for: " << resource << "\n";
-	return plug == 0 ? input_type_ptr( ) : plug->input( resource );
+	    return input_type_ptr();
+	  }
+	return plug->input( resource );
+
+	/*
+TODO:
+#1  0x082f8e53 in olib::openmedialib::ml::create_delayed_input (resource=@0xbfb74bd8)
+    at .././openlibraries/trunk/src/openmedialib/ml/utilities.cpp:519
+#2  0x082f8fd1 in olib::openmedialib::ml::create_input (resource=@0xbfb74bd8)
+    at .././openlibraries/trunk/src/openmedialib/ml/utilities.cpp:525
+#3  0x082f9290 in olib::openmedialib::ml::create_input (resource=@0xbfb74c14)
+    at .././openlibraries/trunk/src/openmedialib/ml/utilities.cpp:534
+#4  0x08139f89 in QtPlayer::play (this=0x8e5e968, input=@0xbfb74cac, speed=1)
+    at .././jahshaka/source/Jahshaka/JahDesktop/player/qtplayer.cpp:120
+#5  0x0813af52 in QtPlayer (this=0x8e5e968, input=@0xbfb74cac, speed=0, parent=0x8683808, name=0x0)
+    at .././jahshaka/source/Jahshaka/JahDesktop/player/qtplayer.cpp:81
+#6  0x08137221 in MainPlayer::activate (this=0x8684ff8)
+    at .././jahshaka/source/Jahshaka/JahDesktop/player/MainPlayer.cpp:105
+#7  0x0838aa70 in JahControl::changeModePlayer (this=0x88d64a0)
+    at .././jahshaka/source/Jahshaka/JahSource/jahcreate/jahmodes.cpp:162
+#8  0x081f935a in JahControl::qt_invoke (this=0x88d64a0, _id=41, _o=0xbfb74fec)
+    at .././jahshaka/source/Jahshaka/JahSource/jahcreate/moc_jahcreate.cpp:429
+#9  0xb76d2b10 in QObject::activate_signal () from /usr/lib/libqt-mt.so.3
+#10 0xb76d35f5 in QObject::activate_signal () from /usr/lib/libqt-mt.so.3
+#11 0xb7a6c2f9 in QButton::clicked () from /usr/lib/libqt-mt.so.3
+#12 0xb777056a in QButton::mouseReleaseEvent () from /usr/lib/libqt-mt.so.3
+#13 0xb7709460 in QWidget::event () from /usr/lib/libqt-mt.so.3
+#14 0xb766736a in QApplication::internalNotify () from /usr/lib/libqt-mt.so.3
+#15 0xb7669522 in QApplication::notify () from /usr/lib/libqt-mt.so.3
+#16 0xb75f873d in QApplication::sendSpontaneousEvent () from /usr/lib/libqt-mt.so.3
+#17 0xb75f73eb in QETWidget::translateMouseEvent () from /usr/lib/libqt-mt.so.3
+#18 0xb75f5858 in QApplication::x11ProcessEvent () from /usr/lib/libqt-mt.so.3
+#19 0xb760c67c in QEventLoop::processEvents () from /usr/lib/libqt-mt.so.3
+#20 0xb76826e4 in QEventLoop::enterLoop () from /usr/lib/libqt-mt.so.3
+#21 0xb76823e2 in QEventLoop::exec () from /usr/lib/libqt-mt.so.3
+#22 0xb7668f13 in QApplication::exec () from /usr/lib/libqt-mt.so.3
+#23 0x0820057c in main (argc=138770344, argv=0x0) at .././jahshaka/source/Jahshaka/JahSource/jahmain/main.cpp:190
+(gdb) 
+*/
 }
 
 // Return the first matching input object

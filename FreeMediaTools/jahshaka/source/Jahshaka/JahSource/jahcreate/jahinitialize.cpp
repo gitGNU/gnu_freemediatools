@@ -33,8 +33,17 @@ void JahControl::initializeVariables()
     //initialize JahBasePath & Mediapath
     JahPrefs& jprefs = JahPrefs::getInstance();
     JahBasePath   = jprefs.getBasePath().data();
+    
+    jtrace->info( "JahBasePath",JahBasePath);
+
     JahMediaPath  = jprefs.getMediaPath().data();
+
+    jtrace->info( "JahMediaPath",JahMediaPath);
+
     JahDefaultRes = jprefs.getJahResolution();
+
+
+
 
 	//////////////////////////////////////////////////////////
     //this is a global variable used by all modules

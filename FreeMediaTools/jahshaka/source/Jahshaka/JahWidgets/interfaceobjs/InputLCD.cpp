@@ -70,7 +70,19 @@ void	InputLCD::setActive (bool status)
 //----------------------------------------------------------------
 void InputLCD::setValue( int val )
 {
+  /*
+TODO:
+Conditional jump or move depends on uninitialised value(s)
+   at 0x821665E: InputLCD::setValue(int) (InputLCD.cpp:74)
+   by 0x8196721: GLEdit::buildInterface(QHBox*) (editinterface.cpp:236)
+   m_nAStartFrame was not initialized
+   by 0x8194601: GLEdit::GLEdit(GLCore*, QHBox*, QHBox*, char const*, QHBox*, QHBox*, QHBox*, QHBox*, int*) (edit.cpp:142)
+   by 0x81F0DDD: JahControl::CreateEditingModule() (jahmodules.cpp:363)
+   by 0x81E4044: JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) (jahcreate.cpp:308)
+   by 0x81FFB2F: Jahshaka::Jahshaka(QWidget*, char const*, unsigned) (jahshaka.cpp:106)
+   by 0x820053F: main (main.cpp:166)
 
+*/
     LCDactive	= TRUE;
     
     //we turned off error checking here...

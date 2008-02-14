@@ -939,10 +939,9 @@ INCLUDES=											\
 #                -e '/^$$/ d' -e 's/$$/ :/' < $*.d >> $*.P; \
 #            rm -f $*.d
 
+#	-save-temps                                                             #	--verbose										
 AM_CXXFLAGS=											\
-	--verbose										\
 	-MD											\
-	-save-temps                                                                             \
 	-Wall 											\
         -D_REENTRANT										\
 	-DOPENOBJECTLIB_SHADER="./effects/shaders/"						\

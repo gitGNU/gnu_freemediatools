@@ -138,6 +138,8 @@ namespace olib { namespace openassetlib {
 					long(lower >> 48) & 0xFFFF, 
 					long(lower >> 32) & 0xFFFF, 
 					long(lower));
+			//TODO:guid.cpp:140: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'long int'
+
 			guid_string_ = opl::string(szGuid);
 		};
 

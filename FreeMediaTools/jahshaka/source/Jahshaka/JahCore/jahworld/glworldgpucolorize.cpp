@@ -114,7 +114,10 @@ GLWorld::doNV30ColorizeGPU(JahLayer* base_layer)
 
     if (glGetError() == GL_INVALID_OPERATION)
     {
-        find_shader_program_error(fragment_program, "color_frag_gpu.fp");
+      //warning: deprecated conversion from string constant to 'char*'
+      char buffer[35];
+      strcpy(buffer,"color_frag_gpu.fp");
+        find_shader_program_error(fragment_program, buffer);
     }
 
     ////////////////////////////////////////////
@@ -241,7 +244,10 @@ GLWorld::doArbColorizeGPU(JahLayer* base_layer)
 
     if (glGetError() == GL_INVALID_OPERATION)
     {
-        find_shader_program_error(fragment_program, "color_frag_arb_gpu.fp");
+      char buffer[45];
+      strcpy(buffer,"color_frag_arb_gpu.fp");
+
+        find_shader_program_error(fragment_program,buffer );
     }
 
     ////////////////////////////////////////////

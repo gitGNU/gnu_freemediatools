@@ -189,7 +189,8 @@ void JahRender::drawLayer(JahLayer * layer, bool set_position)
              || ( camera && camera->getLightsList() && camera->getLightsList()->count() ) )
            )
         {
-            float alpha = thelayer->layernodes->m_node->Alpha;
+	  // warning: unused variable 'alpha'
+	  //float alpha = thelayer->layernodes->m_node->Alpha;
 
             if ( thelayer->getLightingNeedsToUpdateCompositeTexture() )
             {    

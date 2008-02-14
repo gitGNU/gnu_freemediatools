@@ -117,7 +117,21 @@ open plug in
 
 	bool QtPlayer::play( const std::string &input, int speed  )
 	{
-		return play( ml::create_input( input.c_str( ) ), speed );
+	  std::wcerr << "play input : " << input.c_str() << "\n";
+	  
+	  const char * name=input.c_str( );
+
+	  olib::openmedialib::ml::input_type_ptr item = ml::create_input(name);
+	    
+	  if (item != 0)
+	    {
+	      return play( item , speed );
+	    }
+	  else
+	    {
+	      std::wcerr << "load failed  : " << input.c_str() << "\n";
+	      return false;
+	    }
 	}
 
 	bool QtPlayer::play( ml::input_type_ptr input, int speed )
