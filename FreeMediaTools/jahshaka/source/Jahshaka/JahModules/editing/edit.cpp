@@ -151,5 +151,16 @@ GLEdit::GLEdit(
 */
 GLEdit::~GLEdit() 
 { 
+  delete theeditdesktop;
+}
 
- }
+
+void GLEdit::grabDesktop(void)
+{
+  emit GrabClip();
+};
+
+void GLEdit::addDesktop(void)
+{
+  emit AddClip();
+};

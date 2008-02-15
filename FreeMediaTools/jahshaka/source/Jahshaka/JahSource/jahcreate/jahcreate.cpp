@@ -77,7 +77,8 @@ JahControl::JahControl( QGLWidget *share,
       menukeyer( NULL ), 
       menuplayer( NULL ),
       moduleMenuId( -1 ),
-      m_video_head( 0 )
+      m_video_head( 0 ),
+      m_pJahTrackerMod(0)
 {
     ////////////////////////////////////////////////////////////////
     // initialise OpenPluginLib
@@ -453,17 +454,18 @@ void JahControl::configSystem()
 JahControl::~JahControl() 
 {
     jtrace->debug( "JahControl Destructor","Closing out the core modules" );
-    
+
     stopVideoHead( );
-    
+
+
     delete JahDesktopMod;   jtrace->debug( ">> Closed thedesktop");
     delete JahAnimationMod;    jtrace->debug( ">> Closed animation");
     delete JahEffectsMod;      jtrace->debug( ">> Closed effects");
     delete JahEditingMod;      jtrace->debug( ">> Closed editing");
     delete JahTextMod;         jtrace->debug( ">> Closed text");
-
     delete JahColorMod;     jtrace->debug( ">> Closed colorize");
     delete JahPlayerMod;    jtrace->debug( ">> Closed vidplayer");
+
 
 #ifdef USE_NETWORK
     delete JahNetworkMod;   jtrace->debug( ">> Closed jahnetwork");
@@ -473,15 +475,44 @@ JahControl::~JahControl()
     delete JahKeyerMod;        jtrace->debug( ">> Closed keyer");
     delete JahLibraryMod;        jtrace->debug( ">> Closed library");
     delete JahEncoderMod;        jtrace->debug( ">> Closed encoding");
-    delete JahTrackerMod;        jtrace->debug( ">> Closed tracker");
+    delete m_pJahTrackerMod;        jtrace->debug( ">> Closed tracker");
     delete core;
     delete paintcore;
-    
     opl::uninit( ); // olib::openpluginlib::uninit(
+    delete jahthemes;
+    jtrace->debug( "JahControl Destructor","Closed out the core modules" );
 
-	delete jahthemes;
+    delete StorageBox; jtrace->debug( ">> Closed StorageBox");
+    delete D2MainControler;
+    delete D2MainLeftControler;
+    delete D2MainRightControler;
+    delete D2WorldLayout;
+    delete D2maincontrollerLayout;
+    delete D2mainworldLayout;
+    delete D2mainworldLayout;
+    delete D2mainworldLeftLayout;
+    delete D2mainworldLeftLayout;
+    delete D2mainworldRightLayout;
+    delete D2optionals;
+    delete MainControler;
+    delete MainLeftControler;
+    delete MainRightControler;
+    delete WorldLayout;
+    delete WorldLayoutLeft;
+    delete WorldLayoutRight;
+    delete maincontrollerLayout;
+    delete mainworldLayout;
+    delete mainworldLayoutLeft;
+    delete mainworldLayoutRight;
+    delete mainworldLeftLayout;
+    delete mainworldRightLayout;
+    delete optionals;
+    delete splitter2;
+    delete wideframeCenter;
+    delete wideframeLayout;
+    delete wideframeLeft;
+    delete wideframeRight;
 
-    jtrace->debug( "JahControl Destructor","Closed out the core modules" );    
 }
 
 void JahControl::hidetheUI()

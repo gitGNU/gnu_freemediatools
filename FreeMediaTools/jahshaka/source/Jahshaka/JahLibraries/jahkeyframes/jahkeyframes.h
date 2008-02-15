@@ -23,27 +23,32 @@
 class motionNode 
 {
 public:
-	int         m_frame_number;   // this is the keyframe
-	GLfloat     tx, ty, tz;
-	GLfloat     rx, ry, rz;
-	GLfloat     sx, sy, sz, sc;
-    GLfloat     extrude;
-	GLfloat     Alpha;
 
-	//for the blur :)
-	GLfloat     bx, by;
+  motionNode ();
 
-    float4      ambient_light_color;
-    float4      diffuse_light_color;
-    float4      specular_light_color;
+  ~motionNode ();
 
-    bool        layer_enabled;
+  int         m_frame_number;   // this is the keyframe
+  GLfloat     tx, ty, tz;
+  GLfloat     rx, ry, rz;
+  GLfloat     sx, sy, sz, sc;
+  GLfloat     extrude;
+  GLfloat     Alpha;
+  
+  //for the blur :)
+  GLfloat     bx, by;
+  
+  float4      ambient_light_color;
+  float4      diffuse_light_color;
+  float4      specular_light_color;
+  
+  bool        layer_enabled;
+  
+  
+  void copy(motionNode*);
+  void clear(void);
 
-
-	void copy(motionNode*);
-	void clear(void);
-
-	void saveXML( std::fstream & ai_fstream ) 
+  void saveXML( std::fstream & ai_fstream )
 	{
 		ai_fstream << "<MOTIONNODE\n" ;
 		ai_fstream << " m_frame_number = '" << m_frame_number << "'\n" ;  

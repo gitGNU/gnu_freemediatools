@@ -144,8 +144,8 @@ void JahControl::buildDropDownMenus( QMenuBar* menu )
     menuOptionNames[ COLORIZE ] = JahColorMod->getModuleName();
 
     menuOptions[TRACKER] = new QPopupMenu( menu );
-    JahTrackerMod->createMenuItem(menuOptions[TRACKER]); //pass this as function ?
-    menuOptionNames[ TRACKER ] = JahTrackerMod->getModuleName();    
+    m_pJahTrackerMod->createMenuItem(menuOptions[TRACKER]); //pass this as function ?
+    menuOptionNames[ TRACKER ] = m_pJahTrackerMod->getModuleName();    
 
     menuOptions[KEYER] = new QPopupMenu( menu );
     JahKeyerMod->createMenuItem(menuOptions[KEYER]); //pass this as function ?

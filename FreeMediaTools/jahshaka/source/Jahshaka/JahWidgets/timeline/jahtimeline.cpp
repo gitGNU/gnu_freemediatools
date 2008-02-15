@@ -32,6 +32,12 @@ EditDesktop::EditDesktop(QWidget* theparent, QWidget* parent, const char* name, 
     init();
 }
 
+EditDesktop::~EditDesktop()
+{
+  delete canvas;
+  delete editor;
+}
+
 void EditDesktop::init()
 {
     clear();

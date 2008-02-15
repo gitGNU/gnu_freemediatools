@@ -15,46 +15,22 @@
 class AssetTable
 {
 	public:
-		virtual ~AssetTable( ) { }
-		virtual void selectAsset( assetData & ) = 0;
+  virtual ~AssetTable( );
+  virtual void selectAsset( assetData & ) = 0;
 };
 
 class AssetTables
 {
-	private:
-		AssetTables( ) 
-		{ 
-		}
-
-	public:
-		static AssetTables *getInstance( )
-		{
-			static AssetTables *tables = NULL;
-			if ( tables == NULL )
-				tables = new AssetTables( );
-			return tables;
-		}
-
-		void registerTable( AssetTable *table ) 
-		{ 
-			m_tables.push_back( table ); 
-		}
-
-		assetData &getSelectedAsset( ) 
-		{
-			return m_current_asset;
-		}
-
-		void setSelectedAsset( assetData &asset )
-		{
-			m_current_asset = asset;
-			for ( std::vector< AssetTable * >::iterator iter = m_tables.begin( ); iter != m_tables.end( ); iter ++ )
-				( *iter )->selectAsset( asset );
-		}
-
-	private:
-		std::vector< AssetTable * > m_tables;
-		assetData m_current_asset;
+ private:
+  AssetTables( ) ;
+ public:
+  static AssetTables *getInstance( );
+  void registerTable( AssetTable *table ) ;
+  assetData &getSelectedAsset( ) ;
+  void setSelectedAsset( assetData &asset );
+ private:
+  std::vector< AssetTable * > m_tables;
+  assetData m_current_asset;
 };
 
 #endif

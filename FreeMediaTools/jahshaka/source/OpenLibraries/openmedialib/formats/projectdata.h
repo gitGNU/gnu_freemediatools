@@ -22,6 +22,8 @@
 
 struct jahResolution
 {
+  jahResolution();
+  ~jahResolution();
     QString     family;
     QString     title;
     double      frameratio;
@@ -44,7 +46,7 @@ class projectData
 {
 public:
     projectData(void);
-    ~projectData(void) {};
+    ~projectData(void);
 
 	int      getNumformats(void);
 	int      getDefaultformat(void);

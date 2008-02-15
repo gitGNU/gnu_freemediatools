@@ -324,3 +324,18 @@ void projectData::configureProjectData(void)
     nf++;
     
 };
+
+projectData::~projectData(void) 
+{
+
+};
+
+jahResolution::jahResolution()
+{
+
+}
+
+jahResolution::~jahResolution()
+{
+
+}

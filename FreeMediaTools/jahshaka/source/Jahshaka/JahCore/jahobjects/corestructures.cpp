@@ -224,3 +224,61 @@ TextureImage::getTextureRatios(float2& ratios)
     ratios.y = texheightratio;
 }
 
+TextureImage::TextureImage( )
+  : bpp( 0 )
+  , wresolution( 0.0f )
+  , hresolution( 0.0f )
+  , width( 0.0f )
+  , height( 0.0f )
+  , x( 0.0f )
+  , y( 0.0f )
+  , texwidth( 0.0f )
+  , texheight( 0.0f )
+  , texwidthratio( 0.0f )
+  , texheightratio( 0.0f )
+  , texID( 0 )
+  , mapwidth( 0.0f )
+  , mapheight( 0.0f )
+  , m_previous_width( 0 )
+  , m_previous_height( 0 )
+  , m_previous_depth( 0 )
+{
+  //bool stop_here = true;
+}
+
+int         TextureImage::getImageWidth()
+{
+  return int(width);
+}
+
+int         TextureImage::getImageHeight()
+{
+  return int(height);
+}
+
+GLuint
+TextureImage::getTexId()
+{
+  return texID;
+}
+
+GLuint*     TextureImage::getTexIdPtr()
+{
+  return &texID; 
+}
+
+GLuint*    
+TextureImage::getTileTextureIdPtr(int index)
+{
+  return &(m_tile_texture_id[index]);
+}
+
+GLuint      TextureImage::getTileTextureId(int index) 
+{
+  return m_tile_texture_id[index]; 
+}
+
+QString textObj::getText()
+{
+  return text;
+};

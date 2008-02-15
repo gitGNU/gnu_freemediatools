@@ -1,6 +1,7 @@
 
 #include "jahheader.h"
 
+
 // qt
 #include <qmenubar.h>
 #include <qlayout.h>
@@ -14,8 +15,8 @@ class MenuBar : public QMenuBar
 
 public:
     MenuBar( QWidget* parent ) 
-        : QMenuBar( parent )
-    {}
+      : QMenuBar( parent )
+  {}
 
 signals:
     void contentsChanged();
@@ -23,14 +24,14 @@ signals:
 protected:
     virtual void menuContentsChanged()
     {
-        QMenuBar::menuContentsChanged();
-        emit contentsChanged();
+      QMenuBar::menuContentsChanged();
+	emit contentsChanged();
     }
 
     virtual void menuStateChanged()
     {
-        QMenuBar::menuStateChanged();
-        emit contentsChanged();
+      QMenuBar::menuStateChanged();
+      emit contentsChanged();
     }
 };
 
@@ -60,9 +61,9 @@ JahHeader::JahHeader( QWidget* parent, const char* name )
       m_feedbackPlaceholder( NULL )
 {
     // layout as follows:
-    // menubar | moduleSelectionPlaceholder ........ feedbackPlaceholder    
+    // menubar | moduleSelectionPlaceholder ........ feedbackPlaceholder
     QHBoxLayout* mainLayout = new QHBoxLayout( this );
-    
+
     m_menuPlaceholder = new QWidget( this );
     MenuBar* menuBar = new MenuBar( m_menuPlaceholder );
     m_moduleSelectionPlaceholder = new QWidget( this );
@@ -89,15 +90,16 @@ JahHeader::JahHeader( QWidget* parent, const char* name )
     menuBar->setFrameStyle( QFrame::NoFrame );
 
     // connect up menubar to placeholder
-    connect( menuBar, SIGNAL( contentsChanged() ), this, SLOT( onMenuContentsChanged() ) );
-    
+    connect( menuBar, SIGNAL( contentsChanged() ),
+	     this,
+	     SLOT( onMenuContentsChanged() ) );
     // store menuBar
     m_menuBar = menuBar;
 
     // and ensure we don't allow vertical resize
     setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Fixed ) );
 }
-    
+
 QMenuBar* JahHeader::menuBar() const
 {
     layout()->invalidate();
@@ -118,10 +120,12 @@ QWidget* JahHeader::feedbackPlaceholder() const
 
 void JahHeader::onMenuContentsChanged()
 {
-    layout()->invalidate();
-
-    // the +20 is an arbitrary padding number; Qt seems to require it as
-    // if the menubar is contained within a widget of exactly the sizehint, 
-    // the menubar will wrap.
-    m_menuPlaceholder->setMinimumWidth( m_menuBar->sizeHint().width() + 20 );
+  layout()->invalidate();
+  
+  // the +20 is an arbitrary padding number; Qt seems to require it as
+  // if the menubar is contained within a widget of exactly the sizehint,
+  // the menubar will wrap.
+  m_menuPlaceholder->setMinimumWidth( m_menuBar->sizeHint().width() + 20 );
 }
+
+

@@ -279,7 +279,7 @@ void JahControl::GrabClipTracker()
     assetData newclip = JahDesktopMod->getVideoData(clipstatus);
 
     if (clipstatus)
-        JahTrackerMod->addClip(newclip);
+        m_pJahTrackerMod->addClip(newclip);
 }
 
 void JahControl::GrabClipKeyer() 

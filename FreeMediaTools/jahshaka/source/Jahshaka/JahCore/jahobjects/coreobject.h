@@ -66,7 +66,7 @@ public:
     bool    canAcceptLighting();
 
     LayerListEntry*     getLayerListEntry() { return m_layer_list_entry; }
-    void                setLayerListEntry(LayerListEntry* entry) { m_layer_list_entry = entry; }
+    void                setLayerListEntry(LayerListEntry* entry);
     float               getPreviousTextExtrude() { return m_previous_text_extrude; }
     void                setPreviousTextExtrude(float value) { m_previous_text_extrude = value; }
     bool                textExtrudeHasChanged();
@@ -248,11 +248,11 @@ public:
     //jahtexture texture calls here
     ////////////////////////////////////////////////////
 
-    GLuint getDefaultTextureId() { return m_default_texture_id; }
-    GLuint* getDefaultTextureIdPtr() { return &m_default_texture_id; }
-    TextureImage& getTextureComposite() { return m_texture_composite; }
-    TextureImage& getKeyComposite() { return m_key_composite; }
-    TextureImage& getTextureData() { return textureData; }
+    GLuint getDefaultTextureId() ;
+    GLuint* getDefaultTextureIdPtr() ;
+    TextureImage& getTextureComposite();
+    TextureImage& getKeyComposite() ;
+    TextureImage& getTextureData() ;
 
     //layers can have keys
     TextureImage textureData;
@@ -308,15 +308,15 @@ public:
     EffectInfo::EFFECT_CATEGORY     getPreviousRenderedLayerEffectCategory();
     void            setPreviousRenderedLayerEffectCategory(EffectInfo::EFFECT_CATEGORY category);
     QImage*         getSourceQimageForCurrentEffect();
-    void            setTextureCompositeDirty(bool flag) { m_texture_composite_dirty = flag; }
-    void            setQimageCompositeDirty(bool flag) { m_qimage_composite_dirty = flag; }
-    bool            getTextureCompositeDirty() { return m_texture_composite_dirty; }
-    bool            getQimageCompositeDirty() { return m_qimage_composite_dirty; }
-    bool            getUseOpenGlKeyer() { return m_use_open_gl_keyer; }
-    void            setUseOpenGlKeyer(bool flag) { m_use_open_gl_keyer = flag; }
-    bool            getUseFastShaderKeyer() { return m_use_fast_shader_keyer; }
-    void            setUseFastShaderKeyer(bool flag) { m_use_fast_shader_keyer = flag; }
-    
+    void            setTextureCompositeDirty(bool flag) ;
+    void            setQimageCompositeDirty(bool flag);
+    bool            getTextureCompositeDirty();
+    bool            getQimageCompositeDirty() ;
+    bool            getUseOpenGlKeyer() ;
+    void            setUseOpenGlKeyer(bool flag);
+    bool            getUseFastShaderKeyer() ;
+    void            setUseFastShaderKeyer(bool flag) ;
+  
 
 
     void   bindBaseOrCompositeTexture();

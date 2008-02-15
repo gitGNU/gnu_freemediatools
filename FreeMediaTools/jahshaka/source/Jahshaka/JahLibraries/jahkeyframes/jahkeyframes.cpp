@@ -9,6 +9,15 @@
 
 #include "jahkeyframes.h"
 
+motionNode::motionNode ()
+{
+}
+
+motionNode::~motionNode ()
+{
+
+}
+
 void motionNode::clear(void) 
 {
     m_frame_number = 0;

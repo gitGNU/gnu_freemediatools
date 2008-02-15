@@ -115,34 +115,9 @@ public:
 
     QString	desktop;
 
-    assetData(void) 
-    {
-        //set up deafults
-        startframe		= 0;	//SOM
-        endframe		= 0;	//EOM
-        clipinframe		= 0;	//In point
-        clipoutframe	        = 0;	//Out point
-        xpos			= 0;
-        ypos			= 0;
-        xsize			= 0;
-        ysize			= 0;
-        xNativeSize		= 0;
-        yNativeSize		= 0;
-        locked			= false;
-        filmstrip		= false;
-        frameOffset		= 0;
-        clipnumber		=-1;
-        blank_length            = 0;
-        
-        clipname = "";
-        
-        theCategory = VideoCategory::NOCATEGORY;
-        theType = VideoType::NOTYPE;
+    assetData(void) ;
 
-        videotex = false;
-    };
-
-    ~assetData(void) {};
+    ~assetData(void);
 
     bool operator <( assetData other )
     {

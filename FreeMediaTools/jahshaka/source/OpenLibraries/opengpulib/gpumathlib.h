@@ -596,6 +596,11 @@ void create_pbuffer(int width, int height);
 
 class JahControl;
 
+/*
+  TODO:
+  making a static instance 
+  is sometimes a better idea
+*/
 class OPENGPULIB_API Globals
 {
 public:

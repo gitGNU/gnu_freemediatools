@@ -414,7 +414,7 @@ void JahControl::changeModeColorize()
 
 void JahControl::changeModeTracker() 
 {
-	JahTrackerMod->activate( );
+	m_pJahTrackerMod->activate( );
 	setModulesRenderQuality( );
 
     //this stops playback in the other modules so we arent eating resources
@@ -434,14 +434,14 @@ void JahControl::changeModeTracker()
 	raiseModule(module);
     WorldLayout->raiseWidget(theCoreLayout);  
 
-    connect(core, SIGNAL(paintit()), JahTrackerMod,   SLOT(paintGL()) );
-    connect(core, SIGNAL(mousePress(QMouseEvent*)),   JahTrackerMod, SLOT(mousePressEvent(QMouseEvent*)) );
-    connect(core, SIGNAL(mouseRelease(QMouseEvent*)), JahTrackerMod, SLOT(mouseReleaseEvent(QMouseEvent*)) );
-    connect(core, SIGNAL(mouseMove(QMouseEvent*)),    JahTrackerMod, SLOT(mouseMoveEvent(QMouseEvent*)) );
+    connect(core, SIGNAL(paintit()), m_pJahTrackerMod,   SLOT(paintGL()) );
+    connect(core, SIGNAL(mousePress(QMouseEvent*)),   m_pJahTrackerMod, SLOT(mousePressEvent(QMouseEvent*)) );
+    connect(core, SIGNAL(mouseRelease(QMouseEvent*)), m_pJahTrackerMod, SLOT(mouseReleaseEvent(QMouseEvent*)) );
+    connect(core, SIGNAL(mouseMove(QMouseEvent*)),    m_pJahTrackerMod, SLOT(mouseMoveEvent(QMouseEvent*)) );
 
-	core->useimagesize =  JahTrackerMod->getRenderAtImageResolution();
+	core->useimagesize =  m_pJahTrackerMod->getRenderAtImageResolution();
 
-    JahTrackerMod->raiseCore();
+    m_pJahTrackerMod->raiseCore();
 }
 
 void JahControl::changeModeKeyer() 

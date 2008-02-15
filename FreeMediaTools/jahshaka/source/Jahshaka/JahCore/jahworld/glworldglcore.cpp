@@ -15,6 +15,7 @@
 #include <map>
 #include <jahtimer.h>
 #include <qtimer.h>
+#include <iostream>
 
 void GLWorld::buildEffects(JahLayer* image_layer, bool draw_only_to_selected_effect)
 {
@@ -69,6 +70,13 @@ void GLWorld::paintGL()
         return;
     }
 
+    if (!m_pCamera)
+      {
+	// the camera is a layergetActiveJahLayer() == m_pCamera
+	std::cerr << "NO CAMERA. m_pCamera . BAIL";
+	return;
+      }
+
     check_gl();
 
     //stop the timer only if fps timing is enabled...    
@@ -114,9 +122,10 @@ void GLWorld::paintGL()
 	//second pass we draw all the elements in the scene
 	glPushMatrix();
 
-    //we position the m_pCamera here
-    m_pRenderSpace->positionObject(m_pCamera->layernodes->m_node);
 
+	    //we position the m_pCamera here
+	    m_pRenderSpace->positionObject(m_pCamera->layernodes->m_node);
+	    
     //draw the grid if its visible
     if (m_bGridVal) 
     {  
@@ -286,8 +295,9 @@ void GLWorld::initializeObjects() {   /* this is overridden */    }
 
 void GLWorld::raiseCore(void)
 {
-	changeZoom( int( m_pCore->getZoom( ) ) );
-    updateGL();
+  int zoom = m_pCore->getZoom( );
+  changeZoom(zoom  );
+  updateGL();
 }
 
 

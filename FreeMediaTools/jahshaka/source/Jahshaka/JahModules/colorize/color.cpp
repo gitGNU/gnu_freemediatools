@@ -232,3 +232,15 @@ GLColorize::getGpuSelectCheckbox()
 
     
 
+
+GLColorize::GLColorize( GLCore* core,  const char* name, QHBox* controls,
+			QHBox* controller,QHBox* leftcontroller, QHBox* rightcontroller,
+			int* globalclipnumber )
+  : GLWorld(core,name,controller,globalclipnumber )
+  , m_controls( controls )
+  , m_leftcontroller( leftcontroller )
+  , m_rightcontroller( rightcontroller )
+{
+}
+
+GLColorize::~GLColorize() {  }

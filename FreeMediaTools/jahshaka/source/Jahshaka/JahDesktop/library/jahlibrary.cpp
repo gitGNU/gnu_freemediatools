@@ -264,3 +264,34 @@ QString JahLibrary::getModuleName()
 {
   return ModuleName;
 }
+
+
+JahLibrary::JahLibrary( QWidget* parent , 
+			const char* name ,
+			QHBox* leftframe ,
+			QHBox* rightframe ,
+			QHBox* controls ,
+			QHBox* ,
+			QHBox* leftcontroller ,
+			QHBox* rightcontroller ,
+			bool ,
+			WFlags  )
+  : QWidget( parent, name )
+  , m_parent( parent )
+  , m_leftframe( leftframe )
+  , m_rightframe( rightframe )
+  , m_controls( controls )
+  , m_leftcontroller( leftcontroller )
+  , m_rightcontroller( rightcontroller )
+  , m_started( false )
+  , fileview( 0 )
+  , dirlist( 0 )
+  , root( 0 )
+{
+  ModuleName = name;
+}
+
+void JahLibrary::setDirectory( const QString dir )
+{
+  directory = dir; 
+}

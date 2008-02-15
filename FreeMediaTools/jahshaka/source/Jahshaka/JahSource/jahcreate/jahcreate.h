@@ -92,7 +92,7 @@ public:
     //optional modules
     GLColorize* JahColorMod;
     GLKeyer* JahKeyerMod;
-    GLTracker* JahTrackerMod;
+    GLTracker* m_pJahTrackerMod;
     
     //encoder
     MainEncoder* JahEncoderMod;
@@ -130,7 +130,7 @@ public:
     
     ////////////////////////////////////////////////////////////////////
     // base routines
-    QFrame*         getMainworldQframe() { return m_mainworld_qframe; }
+    QFrame*         getMainworldQframe();
     void            setMainworldQframe(QFrame* qframe) { m_mainworld_qframe = qframe; }
     
     QPushButton*    m_active_module_button;

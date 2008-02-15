@@ -26,10 +26,10 @@ class GLEdit :  public  GLWorld {
 public:
 
   // remove functions from the header! DOH?
-GLEdit( GLCore* core, QHBox*, QHBox*, const char* name,
-        QHBox* controls, QHBox* controller, QHBox* leftcontroller, QHBox* rightcontroller,
-	int* globalclipnumber );
-
+  GLEdit( GLCore* core, QHBox*, QHBox*, const char* name,
+	  QHBox* controls, QHBox* controller, QHBox* leftcontroller, QHBox* rightcontroller,
+	  int* globalclipnumber );
+  
 
   // you dont need the function name in the class decl, doh! GLEdit::
   ~GLEdit();
@@ -64,8 +64,8 @@ public slots:
 
     void updateUiSettings();
 
-    void grabDesktop(void) { emit GrabClip(); };
-    void addDesktop(void)  { emit AddClip(); };
+    void grabDesktop(void);
+    void addDesktop(void);
 
     //used for grab on add clip
     void addClipEdit(assetData newclip);

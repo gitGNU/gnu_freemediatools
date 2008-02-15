@@ -25,26 +25,10 @@ static const unsigned int MAX_RESIDENT_TEXTURES = 5000;
 class PaintPixelCoords
 {
 	public:
-		PaintPixelCoords( int x1_, int y1_, int x2_, int y2_ )
-			: x1( x1_ )
-			, y1( y1_ )
-			, x2( x2_ )
-			, y2( y2_ )
-		{ }
-
-		PaintPixelCoords( int x1_, int y1_ )
-			: x1( x1_ )
-			, y1( y1_ )
-			, x2( 0 )
-			, y2( 0 )
-		{ }
-
-		bool operator !=( PaintPixelCoords &other )
-		{
-			return x1 != other.x1 || y1 != other.y1 || x2 != other.x2 || y2 != other.y2;
-		}
-
-		int x1, y1, x2, y2;
+  PaintPixelCoords( int x1_, int y1_, int x2_, int y2_ );
+  PaintPixelCoords( int x1_, int y1_ );
+  bool operator !=( PaintPixelCoords &other );
+  int x1, y1, x2, y2;
 };
 
 class GLPaint :  public  GLWorld {
@@ -57,28 +41,14 @@ private:
 	  QHBox *m_rightcontroller;
 
 public:
-
-    GLPaint( GLCore* core, const char* name, QFrame* mainworld,
-             QHBox* controls, QHBox* controller, QHBox* leftcontroller, QHBox* rightcontroller,
-             int* globalclipnumber, const QGLWidget* =0  )
-        :  GLWorld(core,name,controller,globalclipnumber )
-           , m_mainworld( mainworld )
-           , m_controls( controls )
-           , m_leftcontroller( leftcontroller )
-           , m_rightcontroller( rightcontroller )
-           , mousePressed(false)
-           , m_history_list_ptr( NULL )
-           , m_copy_list_ptr( NULL )
-           , m_paint_effects_dispatch_table(NOT_A_PAINT_EFFECT)
-           , m_dirty_frames_list( NULL )
-	{
-	}
-
-	~GLPaint() { }
+	  GLPaint( GLCore* core, const char* name, QFrame* mainworld,
+		   QHBox* controls, QHBox* controller, QHBox* leftcontroller, QHBox* rightcontroller,
+		   int* globalclipnumber, const QGLWidget* =0  );
+	  ~GLPaint();
 
 protected:
 	void start( );
-	bool usesKeyFrames( ) { return false; }
+	bool usesKeyFrames( );
 
 public:
     enum PaintSliders
@@ -173,52 +143,63 @@ public:
 
 
 	// Return the given integer value limited within the range 0 to 255.
-	int limit0_255(const int & val) { return val < 0 ? 0 : val > 255 ? 255 : val; }
-
-	// Activate the given tool.
-	void activateTool(CanvasTool toolNum); 
-	void makeCheckImage(void);
-
+    int limit0_255(const int & val) ;
+    
+    // Activate the given tool.
+    void activateTool(CanvasTool toolNum);
+    void makeCheckImage(void);
+    
 	// Accessor functions.
-	QColor penColor()        { return *m_pen_color; }
-	QColor fillColor()       { return *m_fill_color; }
-	QColor backgroundColor() { return *m_background_color; }
-	int    brushSize()       { return m_brush_size; }
-	int    gradientDegree()  { return m_gradient_degree; }
+    QColor penColor();
+    QColor fillColor();
+    QColor backgroundColor();
+    int    brushSize();
+    int    gradientDegree();
 
 	// Modifier functions.
-	void setPenColor (QColor newColor)       { *m_pen_color        = newColor; }
-	void setFillColor(QColor newColor)       { *m_fill_color       = newColor; }
-	void setBackgroundColor(QColor newColor);
-	void setBrushSize(int newSize);
-	void setGradientDegree(int newVal)       { m_gradient_degree  = newVal; }
-
+    void setPenColor (QColor newColor);
+    void setFillColor(QColor newColor) ;
+    void setBackgroundColor(QColor newColor);
+    void setBrushSize(int newSize);
+    void setGradientDegree(int newVal);
+    
 	//the paint tools
-	void drawToolPen( color4& pen_color );
+    void drawToolPen( color4& pen_color );
+    
+    void drawToolLine( int m_brush_size,color4& pen_color_light, 
+		       color4& pen_color_dark, GLint minPointSize,
+		       int x1, int y1, int x2, int y2  );
+    
+    void drawToolRect( int m_brush_size,
+		       color4& pen_color, color4& pen_color_light,
+		       color4& pen_color_dark, GLint minPointSize,
+		       int x1, int y1, int x2, int y2  );
+    
+    void drawToolRectFilled( int m_brush_size,  GLint minPointSize,
+			     color4& pen_color,
+			     color4& pen_color_light, color4& pen_color_dark,
+			     color4& fill_color,
+			     color4& fill_color_light, color4& fill_color_dark,
+			     int x1, int y1, int x2, int y2  );
 
-	void drawToolLine( int m_brush_size,color4& pen_color_light, color4& pen_color_dark, GLint minPointSize,
-				   int x1, int y1, int x2, int y2  );
 
-	void drawToolRect( int m_brush_size,
-				   color4& pen_color, color4& pen_color_light, color4& pen_color_dark, GLint minPointSize,
-				   int x1, int y1, int x2, int y2  );
+    void drawToolCircle( color4& pen_color, 
+			 GLfloat gradientDegree, int x1, int y1, int x2, int y2  );
+    
+    void drawToolCircleFilled( color4& pen_color, color4& fill_color, 
+			       GLfloat gradientDegree, 
+			       int x1, int y1, int x2, int y2  );
 
-	void drawToolRectFilled( int m_brush_size,  GLint minPointSize,
-						 color4& pen_color, color4& pen_color_light, color4& pen_color_dark,
-						 color4& fill_color, color4& fill_color_light, color4& fill_color_dark,
-						 int x1, int y1, int x2, int y2  );
-
-
-	void drawToolCircle( color4& pen_color, GLfloat gradientDegree, int x1, int y1, int x2, int y2  );
-
-	void drawToolCircleFilled( color4& pen_color, color4& fill_color, GLfloat gradientDegree, int x1, int y1, int x2, int y2  );
-
-	void drawToolTri ( color4& pen_color, color4& pen_color_light, color4& pen_color_dark,
-				   int x1, int y1, int x2, int y2  );
-
-	void drawToolTriFilled( color4& pen_color, color4& pen_color_light, color4& pen_color_dark,
-						color4& fill_color, color4& fill_color_light, color4& fill_color_dark,
-						int x1, int y1, int x2, int y2  );
+	void drawToolTri ( color4& pen_color, color4& pen_color_light,
+			   color4& pen_color_dark,
+			   int x1, int y1, int x2, int y2  );
+	
+	void drawToolTriFilled( color4& pen_color, color4& pen_color_light,
+				color4& pen_color_dark,
+				color4& fill_color,
+				color4& fill_color_light,
+				color4& fill_color_dark,
+				int x1, int y1, int x2, int y2  );
 
     void drawToolPaintBucket();
 
@@ -226,10 +207,12 @@ public:
 
     void drawEraser( int x_position, int y_position );
 
-    void drawToolForegroundColorPicker( color4& pen_color, int x_position, int y_position );
-
-    void drawToolBackgroundColorPicker( color4& fill_color, int x_position, int y_position );
-
+    void drawToolForegroundColorPicker( color4& pen_color, 
+					int x_position, int y_position );
+    
+    void drawToolBackgroundColorPicker( color4& fill_color,
+					int x_position, int y_position );
+    
     void fillPixelColorRange(int x_position, int y_position, color4& color_range_low, color4& color_range_high, 
                              QRgb new_color, unsigned int* pixel_buffer);
 
@@ -253,21 +236,21 @@ public:
     void refreshTexture(GLuint* texture_id_ptr);
     void refreshCurrentTexture();
 
-    int  getFillBucketRange() { return m_fill_bucket_range; }
-    void setFillBucketRange(int value) { m_fill_bucket_range = value; }
+    int  getFillBucketRange();
+    void setFillBucketRange(int value);
 
     void showPaintSlider(enum PaintSliders slider);
     void hidePaintSliders();
 
-    PAINT_EFFECT_TYPE getCurrentCompositeType() { return m_current_composite_type; }
-    void setCurrentCompositeType(PAINT_EFFECT_TYPE type) { m_current_composite_type = type; }
+    PAINT_EFFECT_TYPE getCurrentCompositeType();
+    void setCurrentCompositeType(PAINT_EFFECT_TYPE type);
 
 
 public:
 	virtual void updatePosition( );
-	virtual bool usesVideoHead( ) { return false; }
+	virtual bool usesVideoHead( ) ;
 	virtual void schedulePosition( );
-
+	
 	void   drawWithActiveTool();
 	//void   initializeGL();
 	void   paintGL();
@@ -349,76 +332,77 @@ public:
 
 public:
     void            executePaintEffect(PAINT_EFFECT_TYPE effect_type);
-    PaintEffectFunction     getPaintEffectFunction(int i) { return m_paint_effects_dispatch_table[i]; }
+    PaintEffectFunction     getPaintEffectFunction(int i);
 
     bool            getOverwriteStillFrames();
 
-    QPtrList<PaintHistory>* getHistoryListPtr() { return m_history_list_ptr; }
-    QPtrList<PaintHistory>* getCopyListPtr() { return m_copy_list_ptr; }
+    QPtrList<PaintHistory>* getHistoryListPtr();
+    QPtrList<PaintHistory>* getCopyListPtr();
 
-    QPtrList<PaintHistory>* getDirtyFramesList() { return m_dirty_frames_list; }
+    QPtrList<PaintHistory>* getDirtyFramesList() ;
 
-    bool*           getEraserCircleLookupTable() { return m_eraser_circle_lookup_table; }
-    unsigned int*   getEraserBuffer() { return m_eraser_buffer; }
-    color4*         getEraserBufferColor4() { return m_eraser_buffer_color4; }
-    GLuint          getImageLayerTextureId() { return getImageLayer()->getTextureData().getTexId(); }
-    GLuint*         getImageLayerTextureIdPtr() { return &getImageLayer()->getTextureData().texID; }
-    QFrame*         getMainworldQframe() { return m_mainworld_qframe; }
-    void            setMainworldQframe(QFrame* qframe) { m_mainworld_qframe = qframe; }
-    float           getPenAlpha() { return m_pen_alpha; }
-    void            setPenAlpha(float value) { m_pen_alpha = value; }
-    float           getFillAlpha() { return m_fill_alpha; }
-    void            setFillAlpha(float value) { m_fill_alpha = value; }
-    float           getBackgroundAlpha() { return m_background_alpha; }
-    void            setBackgroundAlpha(float value) { m_background_alpha = value; }
+    bool*           getEraserCircleLookupTable();
+    unsigned int*   getEraserBuffer() ;
+    color4*         getEraserBufferColor4() ;
+    GLuint          getImageLayerTextureId() ;
+    GLuint*         getImageLayerTextureIdPtr() ;
+    QFrame*         getMainworldQframe() ;
+    void            setMainworldQframe(QFrame* qframe);
+    float           getPenAlpha() ;
+    void            setPenAlpha(float value);
+    float           getFillAlpha() ;
+    void            setFillAlpha(float value);
+    float           getBackgroundAlpha() ;
+    void            setBackgroundAlpha(float value);
 
-    int             getImageWidthDiv2() { return m_image_width_div_2; }
-    void            setImageWidthDiv2(int value) { m_image_width_div_2 = value; }
-    int             getImageHeightDiv2() { return m_image_height_div_2; }
-    void            setImageHeightDiv2(int value) { m_image_height_div_2 = value; }
-    int             getScreenWidthDiv2() { return m_screen_width_div_2; }
-    void            setScreenWidthDiv2(int value) { m_screen_width_div_2 = value; }
-    int             getScreenHeightDiv2() { return m_screen_height_div_2; }
-    void            setScreenHeightDiv2(int value) { m_screen_height_div_2 = value; }
-    int             getScreenCenterX() { return m_screen_center_x; }
-    void            setScreenCenterX(int value) { m_screen_center_x = value; }
-    int             getScreenCenterY() { return m_screen_center_y; }
-    void            setScreenCenterY(int value) { m_screen_center_y = value; }
+    int             getImageWidthDiv2();
+    void            setImageWidthDiv2(int value);
+    int             getImageHeightDiv2() ;
+    void            setImageHeightDiv2(int value);
+    int             getScreenWidthDiv2() ;
+    void            setScreenWidthDiv2(int value);
+    int             getScreenHeightDiv2();
+    void            setScreenHeightDiv2(int value);
+    int             getScreenCenterX() ;
+    void            setScreenCenterX(int value) ;
+    int             getScreenCenterY() ;
+    void            setScreenCenterY(int value) ;
 
-    int             getLowerLeftX() { return m_lower_left_x; }
-    int             getLowerLeftY() { return m_lower_left_y; }
-    void            setLowerLeftX(int value) { m_lower_left_x = value; }
-    void            setLowerLeftY(int value) { m_lower_left_y = value; }
-    int             getUpperRightX() { return m_upper_right_x; }
-    int             getUpperRightY() { return m_upper_right_y; }
-    void            setUpperRightX(int value) { m_upper_right_x = value; }
-    void            setUpperRightY(int value) { m_upper_right_y = value; }
+    int             getLowerLeftX() ;
+    int             getLowerLeftY() ;
+    void            setLowerLeftX(int value) ;
+    void            setLowerLeftY(int value);
+    int             getUpperRightX() ;
+    int             getUpperRightY() ;
+    void            setUpperRightX(int value) ;
+    void            setUpperRightY(int value) ;
     GLuint          getTextureId(int history_step);
     GLuint*         getTextureIdPtr(int history_step);
     GLuint*         getCurrentTextureIdPtr();
     GLuint          getCurrentTextureId();
     int             getCurrentHistoryFrame();
-    float2&         getTextureRatio() { return m_texture_ratio; }
-	int				getTextureWidth() { return m_texture_width; }
-	int				getTextureHeight() { return m_texture_height; }
-	bool			getNeedsClear() { return m_needs_clear; }
-	void			setNeedsClear(bool flag) { m_needs_clear = flag; }
-	void            setClearState();
+    float2&         getTextureRatio() ;
+    int				getTextureWidth() ;
+    int				getTextureHeight();
+    bool			getNeedsClear() ;
+    void			setNeedsClear(bool flag);
+    void            setClearState();
 
-    GLuint          getWorkingAreaTextureId() { return m_working_area_texture_id; }
-    GLuint*         getWorkingAreaTextureIdPtr() { return &m_working_area_texture_id; }
+    GLuint          getWorkingAreaTextureId() ;
+    GLuint*         getWorkingAreaTextureIdPtr();
 
-    int             getFrameWidth() { return m_frame_width; }
-    int             getFrameHeight() { return m_frame_height; }
+    int             getFrameWidth() ;
+    int             getFrameHeight() ;
 
-    bool            getClipIsStillImage() { return m_clip_is_still_image; }
-    void            setClipIsStillImage(bool flag) { m_clip_is_still_image = flag; }
+    bool            getClipIsStillImage();
+    void            setClipIsStillImage(bool flag);
 
     bool            getVideoFrameDirty(int frame_number);
     void            setVideoFrameDirty(int frame_number, bool flag);
 
     void            clearVideoFrameDirtyList();
-    QLabel*         getCurrentColorLabel() { return m_current_color_label; }
+
+    QLabel*         getCurrentColorLabel();
 
     void            captureEraserBuffer();
     void            deleteEraserBuffer();

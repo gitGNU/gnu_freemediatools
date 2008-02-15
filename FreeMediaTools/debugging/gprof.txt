@@ -1,0 +1,872 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+ no time accumulated
+
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  0.00      0.00     0.00      974     0.00     0.00  olib::openpluginlib::property_typename::property_typename(wchar_t const*)
+  0.00      0.00     0.00       36     0.00     0.00  Jahshaka::staticMetaObject()
+  0.00      0.00     0.00       27     0.00     0.00  JahControl::staticMetaObject()
+  0.00      0.00     0.00       20     0.00     0.00  boost::detail::sp_counted_base::destroy()
+  0.00      0.00     0.00       19     0.00     0.00  Jahshaka::JahsetProgressValue()
+  0.00      0.00     0.00       13     0.00     0.00  JahControl::creatingModule(QString const&)
+  0.00      0.00     0.00       13     0.00     0.00  JahControl::updateProgress()
+  0.00      0.00     0.00       13     0.00     0.00  Jahshaka::JahchangeModeText(QString const&)
+  0.00      0.00     0.00       12     0.00     0.00  JahControl::CreateModule(bool)
+  0.00      0.00     0.00        9     0.00     0.00  QValueListPrivate<int>::insert(QValueListIterator<int>, int const&)
+  0.00      0.00     0.00        4     0.00     0.00  JahControl::tr(char const*, char const*)
+  0.00      0.00     0.00        4     0.00     0.00  QValueListPrivate<int>::~QValueListPrivate()
+  0.00      0.00     0.00        2     0.00     0.00  JahControl::raiseMenu(Module)
+  0.00      0.00     0.00        2     0.00     0.00  QValueListPrivate<int>::QValueListPrivate()
+  0.00      0.00     0.00        2     0.00     0.00  Jahshaka::JahaddProgressSteps(int)
+  0.00      0.00     0.00        2     0.00     0.00  Jahshaka::tr(char const*, char const*)
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _Z4todov
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN10JahControl24CreateDesktopFeedbackBoxEP7QWidget
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN10JahControlC2EP9QGLWidgetP7QWidgetP9JahHeaderP6QFrameS7_S7_S7_S7_S7_S7_S3_S7_S7_S7_S7_S7_S7_S7_
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN10MainPlayerC2EPK9QGLWidgetP7QWidgetPKcP5QHBoxS8_S8_S8_S8_
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN11MainEncoder6fpsValE
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN4olib12openassetlib25SET_XML_ROOT_ELEMENT_NAMEE
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN4olib12openassetlib2al13asset_factory9instance_E
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN4olib12openmedialib2ml14template_inputC2Ev
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN4olib12openmedialib2ml19openmedialib_pluginC2Ev
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN4olib12openmedialib2ml1yE
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN4olib12openmedialib2ml20create_delayed_inputERKSbIwSt11char_traitsIwESaIwEE
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN4olib12openmedialib4initEv
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN6GLChar8addLayerEv
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN7GLAnime18initializeListviewEP8JahLayerb
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN7GLWorld12buildEffectsEP8JahLayerb
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZN8QtPlayerC2EPK9QGLWidgetRKSsiP7QWidgetPc
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZNK10JahControl9classNameEv
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZNK10MainPlayer9classNameEv
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZNK11MainEncoder9classNameEv
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZNK8Jahshaka9classNameEv
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to _ZNK8QtPlayer9classNameEv
+  0.00      0.00     0.00        1     0.00     0.00  createMinimizingLayout(QWidget*)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::createCol1(QWidget*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::createCol2(QWidget*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::createCol3(QWidget*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::createCol4(QWidget*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::createCol5(QWidget*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::createJahUI(QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::raiseModule(Module)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::buildMenuBar(JahHeader*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::configSystem()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::restoreColor()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::restoreStyle()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::saveModulesUI()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::stopVideoHead()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::createEditMenu(QPopupMenu*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::createFileMenu(QPopupMenu*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::createHelpMenu(QPopupMenu*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateTextModule()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::addProgressSteps(int)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::restoreModulesUI()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateColorModule()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateKeyerModule()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreatePaintModule()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::buildModeSelector(QWidget*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::initializePlugins()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreatePlayerModule(QFrame*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::buildDropDownMenus(QMenuBar*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::createJahDesktopUI(QFrame*, QFrame*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::selectMenuDropdown(Module)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::updateDesktopLabel(QString)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateDesktopModule(QHBox*, QHBox*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateEditingModule()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateEffectsModule()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateLibraryModule(QFrame*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateTrackerModule()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::initializeVariables()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateDesktopOptions(QHBox*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateEncodingModule(QFrame*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::getGlobalPreferences()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateAnimationModule()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::createJahDesktopButtons(QFrame*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::setModulesRenderQuality()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateDesktopFeedbackBox(QWidget*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateDesktopMiddleFrame(QHBox*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateDesktopPreferences(QHBox*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::PreferenceslanguageChange()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::CreateDesktopModuleOptions()
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*)
+  0.00      0.00     0.00        1     0.00     0.00  JahControl::~JahControl()
+  0.00      0.00     0.00        1     0.00     0.00  MainPlayer::getModuleName()
+  0.00      0.00     0.00        1     0.00     0.00  MainPlayer::createMenuItem(QPopupMenu*)
+  0.00      0.00     0.00        1     0.00     0.00  MainPlayer::MainPlayer(QGLWidget const*, QWidget*, char const*, QHBox*, QHBox*, QHBox*, QHBox*, QHBox*)
+  0.00      0.00     0.00        1     0.00     0.00  MainPlayer::~MainPlayer()
+  0.00      0.00     0.00        1     0.00     0.00  MainEncoder::getModuleName()
+  0.00      0.00     0.00        1     0.00     0.00  MainEncoder::createMenuItem(QPopupMenu*)
+  0.00      0.00     0.00        1     0.00     0.00  MainEncoder::MainEncoder(QGLWidget const*, QWidget*, char const*, QHBox*, QHBox*, QHBox*, QHBox*)
+  0.00      0.00     0.00        1     0.00     0.00  MainEncoder::~MainEncoder()
+  0.00      0.00     0.00        1     0.00     0.00  QValueListPrivate<int>::QValueListPrivate(QValueListPrivate<int> const&)
+  0.00      0.00     0.00        1     0.00     0.00  Jahshaka::setBasePath()
+  0.00      0.00     0.00        1     0.00     0.00  Jahshaka::checkDualHead()
+  0.00      0.00     0.00        1     0.00     0.00  Jahshaka::languageChange()
+  0.00      0.00     0.00        1     0.00     0.00  Jahshaka::setupInterface(QWidget*)
+  0.00      0.00     0.00        1     0.00     0.00  Jahshaka::checkJahExtensions()
+  0.00      0.00     0.00        1     0.00     0.00  Jahshaka::sendchangeModeText(QString const&)
+  0.00      0.00     0.00        1     0.00     0.00  Jahshaka::enableJahExtensions()
+  0.00      0.00     0.00        1     0.00     0.00  Jahshaka::sendsetProgressValue(int)
+  0.00      0.00     0.00        1     0.00     0.00  Jahshaka::storeGlobalPositionSize()
+  0.00      0.00     0.00        1     0.00     0.00  Jahshaka::restoreGlobalPositionSize()
+  0.00      0.00     0.00        1     0.00     0.00  Jahshaka::Jahshaka(QWidget*, char const*, unsigned int)
+  0.00      0.00     0.00        1     0.00     0.00  Jahshaka::~Jahshaka()
+  0.00      0.00     0.00        1     0.00     0.00  QValueList<int>::operator==(QValueList<int> const&) const
+  0.00      0.00     0.00        1     0.00     0.00  void std::__uninitialized_fill_n_aux<void (GLPaint::**)(), unsigned int, void (GLPaint::*)()>(void (GLPaint::**)(), unsigned int, void (GLPaint::* const&)(), std::__false_type)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) no time propagated
+
+index % time    self  children    called     name
+                0.00    0.00      33/974         __static_initialization_and_destruction_0(int, int) [528]
+                0.00    0.00      33/974         __static_initialization_and_destruction_0(int, int) [540]
+                0.00    0.00      33/974         __static_initialization_and_destruction_0(int, int) [545]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [165]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [431]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [433]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [437]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [440]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [443]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [461]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [173]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [465]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [174]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [175]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [521]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [522]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [179]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [180]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [527]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [529]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [530]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [531]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [532]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [533]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [535]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [536]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [537]
+                0.00    0.00      35/974         __static_initialization_and_destruction_0(int, int) [538]
+[127]    0.0    0.00    0.00     974         olib::openpluginlib::property_typename::property_typename(wchar_t const*) [127]
+-----------------------------------------------
+                0.00    0.00       1/36          Jahshaka::sendsetProgressValue(int) [251]
+                0.00    0.00       1/36          Jahshaka::sendchangeModeText(QString const&) [249]
+                0.00    0.00      34/36          Jahshaka::qt_invoke(int, QUObject*) [6354]
+[128]    0.0    0.00    0.00      36         Jahshaka::staticMetaObject() [128]
+-----------------------------------------------
+                0.00    0.00       1/27          JahControl::addProgressSteps(int) [204]
+                0.00    0.00      13/27          JahControl::updateProgress() [133]
+                0.00    0.00      13/27          JahControl::creatingModule(QString const&) [132]
+[129]    0.0    0.00    0.00      27         JahControl::staticMetaObject() [129]
+-----------------------------------------------
+                0.00    0.00      20/20          olib::openpluginlib::detail::registry::insert(std::string const&) [4111]
+[130]    0.0    0.00    0.00      20         boost::detail::sp_counted_base::destroy() [130]
+-----------------------------------------------
+                0.00    0.00      19/19          Jahshaka::qt_invoke(int, QUObject*) [6354]
+[131]    0.0    0.00    0.00      19         Jahshaka::JahsetProgressValue() [131]
+-----------------------------------------------
+                0.00    0.00      13/13          JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[132]    0.0    0.00    0.00      13         JahControl::creatingModule(QString const&) [132]
+                0.00    0.00      13/27          JahControl::staticMetaObject() [129]
+-----------------------------------------------
+                0.00    0.00      13/13          JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[133]    0.0    0.00    0.00      13         JahControl::updateProgress() [133]
+                0.00    0.00      13/27          JahControl::staticMetaObject() [129]
+-----------------------------------------------
+                0.00    0.00      13/13          Jahshaka::qt_invoke(int, QUObject*) [6354]
+[134]    0.0    0.00    0.00      13         Jahshaka::JahchangeModeText(QString const&) [134]
+-----------------------------------------------
+                0.00    0.00       1/12          JahControl::CreateEncodingModule(QFrame*) [223]
+                0.00    0.00       1/12          JahControl::CreatePlayerModule(QFrame*) [211]
+                0.00    0.00       1/12          JahControl::CreateDesktopModule(QHBox*, QHBox*) [216]
+                0.00    0.00       1/12          JahControl::CreateKeyerModule() [207]
+                0.00    0.00       1/12          JahControl::CreateTrackerModule() [220]
+                0.00    0.00       1/12          JahControl::CreateEffectsModule() [218]
+                0.00    0.00       1/12          JahControl::CreateColorModule() [206]
+                0.00    0.00       1/12          JahControl::CreateTextModule() [203]
+                0.00    0.00       1/12          JahControl::CreateEditingModule() [217]
+                0.00    0.00       1/12          JahControl::CreateAnimationModule() [225]
+                0.00    0.00       1/12          JahControl::CreateLibraryModule(QFrame*) [219]
+                0.00    0.00       1/12          JahControl::CreatePaintModule() [208]
+[135]    0.0    0.00    0.00      12         JahControl::CreateModule(bool) [135]
+-----------------------------------------------
+                0.00    0.00       3/9           JahControl::raiseModule(Module) [193]
+                0.00    0.00       3/9           QValueListPrivate<int>::QValueListPrivate(QValueListPrivate<int> const&) [243]
+                0.00    0.00       3/9           JahControl::createJahUI(QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [192]
+[136]    0.0    0.00    0.00       9         QValueListPrivate<int>::insert(QValueListIterator<int>, int const&) [136]
+-----------------------------------------------
+                0.00    0.00       1/4           JahControl::createCol1(QWidget*) [187]
+                0.00    0.00       3/4           JahControl::CreateDesktopMiddleFrame(QHBox*) [229]
+[137]    0.0    0.00    0.00       4         JahControl::tr(char const*, char const*) [137]
+-----------------------------------------------
+                0.00    0.00       2/4           JahControl::raiseModule(Module) [193]
+                0.00    0.00       2/4           JahControl::createJahUI(QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [192]
+[138]    0.0    0.00    0.00       4         QValueListPrivate<int>::~QValueListPrivate() [138]
+-----------------------------------------------
+                0.00    0.00       1/2           JahControl::buildDropDownMenus(QMenuBar*) [212]
+                0.00    0.00       1/2           JahControl::raiseModule(Module) [193]
+[139]    0.0    0.00    0.00       2         JahControl::raiseMenu(Module) [139]
+-----------------------------------------------
+                0.00    0.00       1/2           JahControl::raiseModule(Module) [193]
+                0.00    0.00       1/2           JahControl::createJahUI(QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [192]
+[140]    0.0    0.00    0.00       2         QValueListPrivate<int>::QValueListPrivate() [140]
+-----------------------------------------------
+                0.00    0.00       2/2           Jahshaka::qt_invoke(int, QUObject*) [6354]
+[141]    0.0    0.00    0.00       2         Jahshaka::JahaddProgressSteps(int) [141]
+-----------------------------------------------
+                0.00    0.00       2/2           Jahshaka::languageChange() [246]
+[142]    0.0    0.00    0.00       2         Jahshaka::tr(char const*, char const*) [142]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[143]    0.0    0.00    0.00       1         global constructors keyed to _Z4todov [143]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [165]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[144]    0.0    0.00    0.00       1         global constructors keyed to _ZN10JahControl24CreateDesktopFeedbackBoxEP7QWidget [144]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [176]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[145]    0.0    0.00    0.00       1         global constructors keyed to _ZN10JahControlC2EP9QGLWidgetP7QWidgetP9JahHeaderP6QFrameS7_S7_S7_S7_S7_S7_S3_S7_S7_S7_S7_S7_S7_S7_ [145]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [175]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[146]    0.0    0.00    0.00       1         global constructors keyed to _ZN10MainPlayerC2EPK9QGLWidgetP7QWidgetPKcP5QHBoxS8_S8_S8_S8_ [146]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [169]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[147]    0.0    0.00    0.00       1         global constructors keyed to _ZN11MainEncoder6fpsValE [147]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [167]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[148]    0.0    0.00    0.00       1         global constructors keyed to _ZN4olib12openassetlib25SET_XML_ROOT_ELEMENT_NAMEE [148]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [179]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[149]    0.0    0.00    0.00       1         global constructors keyed to _ZN4olib12openassetlib2al13asset_factory9instance_E [149]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [180]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[150]    0.0    0.00    0.00       1         global constructors keyed to _ZN4olib12openmedialib2ml14template_inputC2Ev [150]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [184]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[151]    0.0    0.00    0.00       1         global constructors keyed to _ZN4olib12openmedialib2ml19openmedialib_pluginC2Ev [151]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [183]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[152]    0.0    0.00    0.00       1         global constructors keyed to _ZN4olib12openmedialib2ml1yE [152]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [181]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[153]    0.0    0.00    0.00       1         global constructors keyed to _ZN4olib12openmedialib2ml20create_delayed_inputERKSbIwSt11char_traitsIwESaIwEE [153]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [185]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[154]    0.0    0.00    0.00       1         global constructors keyed to _ZN4olib12openmedialib4initEv [154]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [182]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[155]    0.0    0.00    0.00       1         global constructors keyed to _ZN6GLChar8addLayerEv [155]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [174]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[156]    0.0    0.00    0.00       1         global constructors keyed to _ZN7GLAnime18initializeListviewEP8JahLayerb [156]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [173]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[157]    0.0    0.00    0.00       1         global constructors keyed to _ZN7GLWorld12buildEffectsEP8JahLayerb [157]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [166]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[158]    0.0    0.00    0.00       1         global constructors keyed to _ZN8QtPlayerC2EPK9QGLWidgetRKSsiP7QWidgetPc [158]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [172]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[159]    0.0    0.00    0.00       1         global constructors keyed to _ZNK10JahControl9classNameEv [159]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [177]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[160]    0.0    0.00    0.00       1         global constructors keyed to _ZNK10MainPlayer9classNameEv [160]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [170]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[161]    0.0    0.00    0.00       1         global constructors keyed to _ZNK11MainEncoder9classNameEv [161]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [168]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[162]    0.0    0.00    0.00       1         global constructors keyed to _ZNK8Jahshaka9classNameEv [162]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [178]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[163]    0.0    0.00    0.00       1         global constructors keyed to _ZNK8QtPlayer9classNameEv [163]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [171]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::createJahDesktopUI(QFrame*, QFrame*) [213]
+[164]    0.0    0.00    0.00       1         createMinimizingLayout(QWidget*) [164]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _Z4todov [143]
+[165]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [165]
+                0.00    0.00      35/974         olib::openpluginlib::property_typename::property_typename(wchar_t const*) [127]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN7GLWorld12buildEffectsEP8JahLayerb [157]
+[166]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [166]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN11MainEncoder6fpsValE [147]
+[167]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [167]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZNK11MainEncoder9classNameEv [161]
+[168]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [168]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN10MainPlayerC2EPK9QGLWidgetP7QWidgetPKcP5QHBoxS8_S8_S8_S8_ [146]
+[169]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [169]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZNK10MainPlayer9classNameEv [160]
+[170]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [170]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZNK8QtPlayer9classNameEv [163]
+[171]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [171]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN8QtPlayerC2EPK9QGLWidgetRKSsiP7QWidgetPc [158]
+[172]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [172]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN7GLAnime18initializeListviewEP8JahLayerb [156]
+[173]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [173]
+                0.00    0.00      35/974         olib::openpluginlib::property_typename::property_typename(wchar_t const*) [127]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN6GLChar8addLayerEv [155]
+[174]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [174]
+                0.00    0.00      35/974         olib::openpluginlib::property_typename::property_typename(wchar_t const*) [127]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN10JahControlC2EP9QGLWidgetP7QWidgetP9JahHeaderP6QFrameS7_S7_S7_S7_S7_S7_S3_S7_S7_S7_S7_S7_S7_S7_ [145]
+[175]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [175]
+                0.00    0.00      35/974         olib::openpluginlib::property_typename::property_typename(wchar_t const*) [127]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN10JahControl24CreateDesktopFeedbackBoxEP7QWidget [144]
+[176]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [176]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZNK10JahControl9classNameEv [159]
+[177]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [177]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZNK8Jahshaka9classNameEv [162]
+[178]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [178]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4olib12openassetlib25SET_XML_ROOT_ELEMENT_NAMEE [148]
+[179]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [179]
+                0.00    0.00      35/974         olib::openpluginlib::property_typename::property_typename(wchar_t const*) [127]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4olib12openassetlib2al13asset_factory9instance_E [149]
+[180]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [180]
+                0.00    0.00      35/974         olib::openpluginlib::property_typename::property_typename(wchar_t const*) [127]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4olib12openmedialib2ml1yE [152]
+[181]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [181]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4olib12openmedialib4initEv [154]
+[182]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [182]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4olib12openmedialib2ml19openmedialib_pluginC2Ev [151]
+[183]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [183]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4olib12openmedialib2ml14template_inputC2Ev [150]
+[184]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [184]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4olib12openmedialib2ml20create_delayed_inputERKSbIwSt11char_traitsIwESaIwEE [153]
+[185]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [185]
+-----------------------------------------------
+                                   1             __static_initialization_and_destruction_0(int, int) [186]
+                0.00    0.00       1/1           __do_global_ctors_aux [8248]
+[186]    0.0    0.00    0.00       1+1       __static_initialization_and_destruction_0(int, int) [186]
+                                   1             __static_initialization_and_destruction_0(int, int) [186]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::CreateDesktopPreferences(QHBox*) [230]
+[187]    0.0    0.00    0.00       1         JahControl::createCol1(QWidget*) [187]
+                0.00    0.00       1/4           JahControl::tr(char const*, char const*) [137]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::CreateDesktopPreferences(QHBox*) [230]
+[188]    0.0    0.00    0.00       1         JahControl::createCol2(QWidget*) [188]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::CreateDesktopPreferences(QHBox*) [230]
+[189]    0.0    0.00    0.00       1         JahControl::createCol3(QWidget*) [189]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::CreateDesktopPreferences(QHBox*) [230]
+[190]    0.0    0.00    0.00       1         JahControl::createCol4(QWidget*) [190]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::CreateDesktopPreferences(QHBox*) [230]
+[191]    0.0    0.00    0.00       1         JahControl::createCol5(QWidget*) [191]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[192]    0.0    0.00    0.00       1         JahControl::createJahUI(QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [192]
+                0.00    0.00       3/9           QValueListPrivate<int>::insert(QValueListIterator<int>, int const&) [136]
+                0.00    0.00       2/4           QValueListPrivate<int>::~QValueListPrivate() [138]
+                0.00    0.00       1/2           QValueListPrivate<int>::QValueListPrivate() [140]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::configSystem() [195]
+[193]    0.0    0.00    0.00       1         JahControl::raiseModule(Module) [193]
+                0.00    0.00       3/9           QValueListPrivate<int>::insert(QValueListIterator<int>, int const&) [136]
+                0.00    0.00       2/4           QValueListPrivate<int>::~QValueListPrivate() [138]
+                0.00    0.00       1/2           QValueListPrivate<int>::QValueListPrivate() [140]
+                0.00    0.00       1/1           QValueList<int>::operator==(QValueList<int> const&) const [256]
+                0.00    0.00       1/2           JahControl::raiseMenu(Module) [139]
+                0.00    0.00       1/1           JahControl::selectMenuDropdown(Module) [214]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[194]    0.0    0.00    0.00       1         JahControl::buildMenuBar(JahHeader*) [194]
+                0.00    0.00       1/1           JahControl::buildDropDownMenus(QMenuBar*) [212]
+                0.00    0.00       1/1           JahControl::buildModeSelector(QWidget*) [209]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[195]    0.0    0.00    0.00       1         JahControl::configSystem() [195]
+                0.00    0.00       1/1           JahControl::updateDesktopLabel(QString) [215]
+                0.00    0.00       1/1           JahControl::setModulesRenderQuality() [227]
+                0.00    0.00       1/1           JahControl::raiseModule(Module) [193]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::Jahshaka(QWidget*, char const*, unsigned int) [254]
+[196]    0.0    0.00    0.00       1         JahControl::restoreColor() [196]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::Jahshaka(QWidget*, char const*, unsigned int) [254]
+[197]    0.0    0.00    0.00       1         JahControl::restoreStyle() [197]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::storeGlobalPositionSize() [252]
+[198]    0.0    0.00    0.00       1         JahControl::saveModulesUI() [198]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::~JahControl() [234]
+[199]    0.0    0.00    0.00       1         JahControl::stopVideoHead() [199]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::buildDropDownMenus(QMenuBar*) [212]
+[200]    0.0    0.00    0.00       1         JahControl::createEditMenu(QPopupMenu*) [200]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::buildDropDownMenus(QMenuBar*) [212]
+[201]    0.0    0.00    0.00       1         JahControl::createFileMenu(QPopupMenu*) [201]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::buildDropDownMenus(QMenuBar*) [212]
+[202]    0.0    0.00    0.00       1         JahControl::createHelpMenu(QPopupMenu*) [202]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[203]    0.0    0.00    0.00       1         JahControl::CreateTextModule() [203]
+                0.00    0.00       1/12          JahControl::CreateModule(bool) [135]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[204]    0.0    0.00    0.00       1         JahControl::addProgressSteps(int) [204]
+                0.00    0.00       1/27          JahControl::staticMetaObject() [129]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[205]    0.0    0.00    0.00       1         JahControl::restoreModulesUI() [205]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[206]    0.0    0.00    0.00       1         JahControl::CreateColorModule() [206]
+                0.00    0.00       1/12          JahControl::CreateModule(bool) [135]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[207]    0.0    0.00    0.00       1         JahControl::CreateKeyerModule() [207]
+                0.00    0.00       1/12          JahControl::CreateModule(bool) [135]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[208]    0.0    0.00    0.00       1         JahControl::CreatePaintModule() [208]
+                0.00    0.00       1/12          JahControl::CreateModule(bool) [135]
+                0.00    0.00       1/1           void std::__uninitialized_fill_n_aux<void (GLPaint::**)(), unsigned int, void (GLPaint::*)()>(void (GLPaint::**)(), unsigned int, void (GLPaint::* const&)(), std::__false_type) [257]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::buildMenuBar(JahHeader*) [194]
+[209]    0.0    0.00    0.00       1         JahControl::buildModeSelector(QWidget*) [209]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[210]    0.0    0.00    0.00       1         JahControl::initializePlugins() [210]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[211]    0.0    0.00    0.00       1         JahControl::CreatePlayerModule(QFrame*) [211]
+                0.00    0.00       1/12          JahControl::CreateModule(bool) [135]
+                0.00    0.00       1/1           MainPlayer::MainPlayer(QGLWidget const*, QWidget*, char const*, QHBox*, QHBox*, QHBox*, QHBox*, QHBox*) [237]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::buildMenuBar(JahHeader*) [194]
+[212]    0.0    0.00    0.00       1         JahControl::buildDropDownMenus(QMenuBar*) [212]
+                0.00    0.00       1/1           JahControl::createFileMenu(QPopupMenu*) [201]
+                0.00    0.00       1/1           JahControl::createEditMenu(QPopupMenu*) [200]
+                0.00    0.00       1/1           MainPlayer::createMenuItem(QPopupMenu*) [236]
+                0.00    0.00       1/1           MainPlayer::getModuleName() [235]
+                0.00    0.00       1/1           MainEncoder::createMenuItem(QPopupMenu*) [240]
+                0.00    0.00       1/1           MainEncoder::getModuleName() [239]
+                0.00    0.00       1/1           JahControl::createHelpMenu(QPopupMenu*) [202]
+                0.00    0.00       1/2           JahControl::raiseMenu(Module) [139]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[213]    0.0    0.00    0.00       1         JahControl::createJahDesktopUI(QFrame*, QFrame*) [213]
+                0.00    0.00       1/1           JahControl::CreateDesktopModule(QHBox*, QHBox*) [216]
+                0.00    0.00       1/1           createMinimizingLayout(QWidget*) [164]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::raiseModule(Module) [193]
+[214]    0.0    0.00    0.00       1         JahControl::selectMenuDropdown(Module) [214]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::configSystem() [195]
+[215]    0.0    0.00    0.00       1         JahControl::updateDesktopLabel(QString) [215]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::createJahDesktopUI(QFrame*, QFrame*) [213]
+[216]    0.0    0.00    0.00       1         JahControl::CreateDesktopModule(QHBox*, QHBox*) [216]
+                0.00    0.00       1/12          JahControl::CreateModule(bool) [135]
+                0.00    0.00       1/1           JahControl::CreateDesktopModuleOptions() [232]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[217]    0.0    0.00    0.00       1         JahControl::CreateEditingModule() [217]
+                0.00    0.00       1/12          JahControl::CreateModule(bool) [135]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[218]    0.0    0.00    0.00       1         JahControl::CreateEffectsModule() [218]
+                0.00    0.00       1/12          JahControl::CreateModule(bool) [135]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[219]    0.0    0.00    0.00       1         JahControl::CreateLibraryModule(QFrame*) [219]
+                0.00    0.00       1/12          JahControl::CreateModule(bool) [135]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[220]    0.0    0.00    0.00       1         JahControl::CreateTrackerModule() [220]
+                0.00    0.00       1/12          JahControl::CreateModule(bool) [135]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[221]    0.0    0.00    0.00       1         JahControl::initializeVariables() [221]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::CreateDesktopModuleOptions() [232]
+[222]    0.0    0.00    0.00       1         JahControl::CreateDesktopOptions(QHBox*) [222]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[223]    0.0    0.00    0.00       1         JahControl::CreateEncodingModule(QFrame*) [223]
+                0.00    0.00       1/12          JahControl::CreateModule(bool) [135]
+                0.00    0.00       1/1           MainEncoder::MainEncoder(QGLWidget const*, QWidget*, char const*, QHBox*, QHBox*, QHBox*, QHBox*) [241]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[224]    0.0    0.00    0.00       1         JahControl::getGlobalPreferences() [224]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[225]    0.0    0.00    0.00       1         JahControl::CreateAnimationModule() [225]
+                0.00    0.00       1/12          JahControl::CreateModule(bool) [135]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[226]    0.0    0.00    0.00       1         JahControl::createJahDesktopButtons(QFrame*) [226]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::configSystem() [195]
+[227]    0.0    0.00    0.00       1         JahControl::setModulesRenderQuality() [227]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+[228]    0.0    0.00    0.00       1         JahControl::CreateDesktopFeedbackBox(QWidget*) [228]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::CreateDesktopModuleOptions() [232]
+[229]    0.0    0.00    0.00       1         JahControl::CreateDesktopMiddleFrame(QHBox*) [229]
+                0.00    0.00       3/4           JahControl::tr(char const*, char const*) [137]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::CreateDesktopModuleOptions() [232]
+[230]    0.0    0.00    0.00       1         JahControl::CreateDesktopPreferences(QHBox*) [230]
+                0.00    0.00       1/1           JahControl::createCol1(QWidget*) [187]
+                0.00    0.00       1/1           JahControl::createCol2(QWidget*) [188]
+                0.00    0.00       1/1           JahControl::createCol3(QWidget*) [189]
+                0.00    0.00       1/1           JahControl::createCol4(QWidget*) [190]
+                0.00    0.00       1/1           JahControl::createCol5(QWidget*) [191]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::CreateDesktopModuleOptions() [232]
+[231]    0.0    0.00    0.00       1         JahControl::PreferenceslanguageChange() [231]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::CreateDesktopModule(QHBox*, QHBox*) [216]
+[232]    0.0    0.00    0.00       1         JahControl::CreateDesktopModuleOptions() [232]
+                0.00    0.00       1/1           JahControl::CreateDesktopMiddleFrame(QHBox*) [229]
+                0.00    0.00       1/1           JahControl::CreateDesktopOptions(QHBox*) [222]
+                0.00    0.00       1/1           JahControl::PreferenceslanguageChange() [231]
+                0.00    0.00       1/1           JahControl::CreateDesktopPreferences(QHBox*) [230]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::Jahshaka(QWidget*, char const*, unsigned int) [254]
+[233]    0.0    0.00    0.00       1         JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+                0.00    0.00      13/13          JahControl::creatingModule(QString const&) [132]
+                0.00    0.00      13/13          JahControl::updateProgress() [133]
+                0.00    0.00       1/1           JahControl::initializeVariables() [221]
+                0.00    0.00       1/1           JahControl::getGlobalPreferences() [224]
+                0.00    0.00       1/1           JahControl::createJahUI(QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [192]
+                0.00    0.00       1/1           JahControl::createJahDesktopUI(QFrame*, QFrame*) [213]
+                0.00    0.00       1/1           JahControl::createJahDesktopButtons(QFrame*) [226]
+                0.00    0.00       1/1           JahControl::CreatePlayerModule(QFrame*) [211]
+                0.00    0.00       1/1           JahControl::CreateEncodingModule(QFrame*) [223]
+                0.00    0.00       1/1           JahControl::CreateLibraryModule(QFrame*) [219]
+                0.00    0.00       1/1           JahControl::CreateAnimationModule() [225]
+                0.00    0.00       1/1           JahControl::CreateEffectsModule() [218]
+                0.00    0.00       1/1           JahControl::CreateEditingModule() [217]
+                0.00    0.00       1/1           JahControl::CreateTextModule() [203]
+                0.00    0.00       1/1           JahControl::CreateColorModule() [206]
+                0.00    0.00       1/1           JahControl::CreateKeyerModule() [207]
+                0.00    0.00       1/1           JahControl::CreateTrackerModule() [220]
+                0.00    0.00       1/1           JahControl::CreatePaintModule() [208]
+                0.00    0.00       1/1           JahControl::CreateDesktopFeedbackBox(QWidget*) [228]
+                0.00    0.00       1/1           JahControl::buildMenuBar(JahHeader*) [194]
+                0.00    0.00       1/1           JahControl::restoreModulesUI() [205]
+                0.00    0.00       1/1           JahControl::initializePlugins() [210]
+                0.00    0.00       1/1           JahControl::configSystem() [195]
+                0.00    0.00       1/1           JahControl::addProgressSteps(int) [204]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::~Jahshaka() [255]
+[234]    0.0    0.00    0.00       1         JahControl::~JahControl() [234]
+                0.00    0.00       1/1           JahControl::stopVideoHead() [199]
+                0.00    0.00       1/1           MainPlayer::~MainPlayer() [238]
+                0.00    0.00       1/1           MainEncoder::~MainEncoder() [242]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::buildDropDownMenus(QMenuBar*) [212]
+[235]    0.0    0.00    0.00       1         MainPlayer::getModuleName() [235]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::buildDropDownMenus(QMenuBar*) [212]
+[236]    0.0    0.00    0.00       1         MainPlayer::createMenuItem(QPopupMenu*) [236]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::CreatePlayerModule(QFrame*) [211]
+[237]    0.0    0.00    0.00       1         MainPlayer::MainPlayer(QGLWidget const*, QWidget*, char const*, QHBox*, QHBox*, QHBox*, QHBox*, QHBox*) [237]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::~JahControl() [234]
+[238]    0.0    0.00    0.00       1         MainPlayer::~MainPlayer() [238]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::buildDropDownMenus(QMenuBar*) [212]
+[239]    0.0    0.00    0.00       1         MainEncoder::getModuleName() [239]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::buildDropDownMenus(QMenuBar*) [212]
+[240]    0.0    0.00    0.00       1         MainEncoder::createMenuItem(QPopupMenu*) [240]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::CreateEncodingModule(QFrame*) [223]
+[241]    0.0    0.00    0.00       1         MainEncoder::MainEncoder(QGLWidget const*, QWidget*, char const*, QHBox*, QHBox*, QHBox*, QHBox*) [241]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::~JahControl() [234]
+[242]    0.0    0.00    0.00       1         MainEncoder::~MainEncoder() [242]
+-----------------------------------------------
+                0.00    0.00       1/1           QValueList<int>::detachInternal() [1125]
+[243]    0.0    0.00    0.00       1         QValueListPrivate<int>::QValueListPrivate(QValueListPrivate<int> const&) [243]
+                0.00    0.00       3/9           QValueListPrivate<int>::insert(QValueListIterator<int>, int const&) [136]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::Jahshaka(QWidget*, char const*, unsigned int) [254]
+[244]    0.0    0.00    0.00       1         Jahshaka::setBasePath() [244]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::Jahshaka(QWidget*, char const*, unsigned int) [254]
+[245]    0.0    0.00    0.00       1         Jahshaka::checkDualHead() [245]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::setupInterface(QWidget*) [247]
+[246]    0.0    0.00    0.00       1         Jahshaka::languageChange() [246]
+                0.00    0.00       2/2           Jahshaka::tr(char const*, char const*) [142]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::Jahshaka(QWidget*, char const*, unsigned int) [254]
+[247]    0.0    0.00    0.00       1         Jahshaka::setupInterface(QWidget*) [247]
+                0.00    0.00       1/1           Jahshaka::languageChange() [246]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::Jahshaka(QWidget*, char const*, unsigned int) [254]
+[248]    0.0    0.00    0.00       1         Jahshaka::checkJahExtensions() [248]
+                0.00    0.00       1/1           Jahshaka::enableJahExtensions() [250]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::Jahshaka(QWidget*, char const*, unsigned int) [254]
+[249]    0.0    0.00    0.00       1         Jahshaka::sendchangeModeText(QString const&) [249]
+                0.00    0.00       1/36          Jahshaka::staticMetaObject() [128]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::checkJahExtensions() [248]
+[250]    0.0    0.00    0.00       1         Jahshaka::enableJahExtensions() [250]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::Jahshaka(QWidget*, char const*, unsigned int) [254]
+[251]    0.0    0.00    0.00       1         Jahshaka::sendsetProgressValue(int) [251]
+                0.00    0.00       1/36          Jahshaka::staticMetaObject() [128]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::~Jahshaka() [255]
+[252]    0.0    0.00    0.00       1         Jahshaka::storeGlobalPositionSize() [252]
+                0.00    0.00       1/1           JahControl::saveModulesUI() [198]
+-----------------------------------------------
+                0.00    0.00       1/1           Jahshaka::Jahshaka(QWidget*, char const*, unsigned int) [254]
+[253]    0.0    0.00    0.00       1         Jahshaka::restoreGlobalPositionSize() [253]
+-----------------------------------------------
+                0.00    0.00       1/1           main [90]
+[254]    0.0    0.00    0.00       1         Jahshaka::Jahshaka(QWidget*, char const*, unsigned int) [254]
+                0.00    0.00       1/1           Jahshaka::setupInterface(QWidget*) [247]
+                0.00    0.00       1/1           Jahshaka::setBasePath() [244]
+                0.00    0.00       1/1           JahControl::restoreStyle() [197]
+                0.00    0.00       1/1           Jahshaka::checkJahExtensions() [248]
+                0.00    0.00       1/1           Jahshaka::checkDualHead() [245]
+                0.00    0.00       1/1           JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [233]
+                0.00    0.00       1/1           Jahshaka::restoreGlobalPositionSize() [253]
+                0.00    0.00       1/1           Jahshaka::sendsetProgressValue(int) [251]
+                0.00    0.00       1/1           Jahshaka::sendchangeModeText(QString const&) [249]
+                0.00    0.00       1/1           JahControl::restoreColor() [196]
+-----------------------------------------------
+                0.00    0.00       1/1           main [90]
+[255]    0.0    0.00    0.00       1         Jahshaka::~Jahshaka() [255]
+                0.00    0.00       1/1           Jahshaka::storeGlobalPositionSize() [252]
+                0.00    0.00       1/1           JahControl::~JahControl() [234]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::raiseModule(Module) [193]
+[256]    0.0    0.00    0.00       1         QValueList<int>::operator==(QValueList<int> const&) const [256]
+-----------------------------------------------
+                0.00    0.00       1/1           JahControl::CreatePaintModule() [208]
+[257]    0.0    0.00    0.00       1         void std::__uninitialized_fill_n_aux<void (GLPaint::**)(), unsigned int, void (GLPaint::*)()>(void (GLPaint::**)(), unsigned int, void (GLPaint::* const&)(), std::__false_type) [257]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+ [143] global constructors keyed to _Z4todov (al.hpp) [187] JahControl::createCol1(QWidget*) [227] JahControl::setModulesRenderQuality()
+ [144] global constructors keyed to _ZN10JahControl24CreateDesktopFeedbackBoxEP7QWidget (jahdesktopinterface.cpp) [188] JahControl::createCol2(QWidget*) [228] JahControl::CreateDesktopFeedbackBox(QWidget*)
+ [145] global constructors keyed to _ZN10JahControlC2EP9QGLWidgetP7QWidgetP9JahHeaderP6QFrameS7_S7_S7_S7_S7_S7_S3_S7_S7_S7_S7_S7_S7_S7_ (jahcreate.cpp) [189] JahControl::createCol3(QWidget*) [229] JahControl::CreateDesktopMiddleFrame(QHBox*)
+ [146] global constructors keyed to _ZN10MainPlayerC2EPK9QGLWidgetP7QWidgetPKcP5QHBoxS8_S8_S8_S8_ (MainPlayer.cpp) [190] JahControl::createCol4(QWidget*) [230] JahControl::CreateDesktopPreferences(QHBox*)
+ [147] global constructors keyed to _ZN11MainEncoder6fpsValE (MainEncoder.cpp) [191] JahControl::createCol5(QWidget*) [231] JahControl::PreferenceslanguageChange()
+ [148] global constructors keyed to _ZN4olib12openassetlib25SET_XML_ROOT_ELEMENT_NAMEE (al.cpp) [192] JahControl::createJahUI(QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) [232] JahControl::CreateDesktopModuleOptions()
+ [149] global constructors keyed to _ZN4olib12openassetlib2al13asset_factory9instance_E (asset.cpp) [193] JahControl::raiseModule(Module) [137] JahControl::tr(char const*, char const*)
+ [150] global constructors keyed to _ZN4olib12openmedialib2ml14template_inputC2Ev (template_plugin.cpp) [135] JahControl::CreateModule(bool) [139] JahControl::raiseMenu(Module)
+ [151] global constructors keyed to _ZN4olib12openmedialib2ml19openmedialib_pluginC2Ev (openmedialib_plugin.cpp) [194] JahControl::buildMenuBar(JahHeader*) [233] JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*)
+ [152] global constructors keyed to _ZN4olib12openmedialib2ml1yE (input.cpp) [195] JahControl::configSystem() [234] JahControl::~JahControl()
+ [153] global constructors keyed to _ZN4olib12openmedialib2ml20create_delayed_inputERKSbIwSt11char_traitsIwESaIwEE (utilities.cpp) [196] JahControl::restoreColor() [235] MainPlayer::getModuleName()
+ [154] global constructors keyed to _ZN4olib12openmedialib4initEv (ml.cpp) [197] JahControl::restoreStyle() [236] MainPlayer::createMenuItem(QPopupMenu*)
+ [155] global constructors keyed to _ZN6GLChar8addLayerEv (characterselections.cpp) [198] JahControl::saveModulesUI() [237] MainPlayer::MainPlayer(QGLWidget const*, QWidget*, char const*, QHBox*, QHBox*, QHBox*, QHBox*, QHBox*)
+ [156] global constructors keyed to _ZN7GLAnime18initializeListviewEP8JahLayerb (animeselections.cpp) [199] JahControl::stopVideoHead() [238] MainPlayer::~MainPlayer()
+ [157] global constructors keyed to _ZN7GLWorld12buildEffectsEP8JahLayerb (glworldglcore.cpp) [200] JahControl::createEditMenu(QPopupMenu*) [239] MainEncoder::getModuleName()
+ [158] global constructors keyed to _ZN8QtPlayerC2EPK9QGLWidgetRKSsiP7QWidgetPc (qtplayer.cpp) [201] JahControl::createFileMenu(QPopupMenu*) [240] MainEncoder::createMenuItem(QPopupMenu*)
+ [159] global constructors keyed to _ZNK10JahControl9classNameEv (moc_jahcreate.cpp) [202] JahControl::createHelpMenu(QPopupMenu*) [241] MainEncoder::MainEncoder(QGLWidget const*, QWidget*, char const*, QHBox*, QHBox*, QHBox*, QHBox*)
+ [160] global constructors keyed to _ZNK10MainPlayer9classNameEv (moc_MainPlayer.cpp) [132] JahControl::creatingModule(QString const&) [242] MainEncoder::~MainEncoder()
+ [161] global constructors keyed to _ZNK11MainEncoder9classNameEv (moc_MainEncoder.cpp) [133] JahControl::updateProgress() [136] QValueListPrivate<int>::insert(QValueListIterator<int>, int const&)
+ [162] global constructors keyed to _ZNK8Jahshaka9classNameEv (moc_jahshaka.cpp) [203] JahControl::CreateTextModule() [243] QValueListPrivate<int>::QValueListPrivate(QValueListPrivate<int> const&)
+ [163] global constructors keyed to _ZNK8QtPlayer9classNameEv (moc_qtplayer.cpp) [204] JahControl::addProgressSteps(int) [140] QValueListPrivate<int>::QValueListPrivate()
+ [164] createMinimizingLayout(QWidget*) [205] JahControl::restoreModulesUI() [138] QValueListPrivate<int>::~QValueListPrivate()
+ [165] __static_initialization_and_destruction_0(int, int) (al.hpp) [129] JahControl::staticMetaObject() [127] olib::openpluginlib::property_typename::property_typename(wchar_t const*)
+ [166] __static_initialization_and_destruction_0(int, int) (glworldglcore.cpp) [206] JahControl::CreateColorModule() [130] boost::detail::sp_counted_base::destroy()
+ [167] __static_initialization_and_destruction_0(int, int) (MainEncoder.cpp) [207] JahControl::CreateKeyerModule() [244] Jahshaka::setBasePath()
+ [168] __static_initialization_and_destruction_0(int, int) (moc_MainEncoder.cpp) [208] JahControl::CreatePaintModule() [245] Jahshaka::checkDualHead()
+ [169] __static_initialization_and_destruction_0(int, int) (MainPlayer.cpp) [209] JahControl::buildModeSelector(QWidget*) [246] Jahshaka::languageChange()
+ [170] __static_initialization_and_destruction_0(int, int) (moc_MainPlayer.cpp) [210] JahControl::initializePlugins() [247] Jahshaka::setupInterface(QWidget*)
+ [171] __static_initialization_and_destruction_0(int, int) (moc_qtplayer.cpp) [211] JahControl::CreatePlayerModule(QFrame*) [128] Jahshaka::staticMetaObject()
+ [172] __static_initialization_and_destruction_0(int, int) (qtplayer.cpp) [212] JahControl::buildDropDownMenus(QMenuBar*) [134] Jahshaka::JahchangeModeText(QString const&)
+ [173] __static_initialization_and_destruction_0(int, int) (animeselections.cpp) [213] JahControl::createJahDesktopUI(QFrame*, QFrame*) [248] Jahshaka::checkJahExtensions()
+ [174] __static_initialization_and_destruction_0(int, int) (characterselections.cpp) [214] JahControl::selectMenuDropdown(Module) [249] Jahshaka::sendchangeModeText(QString const&)
+ [175] __static_initialization_and_destruction_0(int, int) (jahcreate.cpp) [215] JahControl::updateDesktopLabel(QString) [141] Jahshaka::JahaddProgressSteps(int)
+ [176] __static_initialization_and_destruction_0(int, int) (jahdesktopinterface.cpp) [216] JahControl::CreateDesktopModule(QHBox*, QHBox*) [131] Jahshaka::JahsetProgressValue()
+ [177] __static_initialization_and_destruction_0(int, int) (moc_jahcreate.cpp) [217] JahControl::CreateEditingModule() [250] Jahshaka::enableJahExtensions()
+ [178] __static_initialization_and_destruction_0(int, int) (moc_jahshaka.cpp) [218] JahControl::CreateEffectsModule() [251] Jahshaka::sendsetProgressValue(int)
+ [179] __static_initialization_and_destruction_0(int, int) (al.cpp) [219] JahControl::CreateLibraryModule(QFrame*) [252] Jahshaka::storeGlobalPositionSize()
+ [180] __static_initialization_and_destruction_0(int, int) (asset.cpp) [220] JahControl::CreateTrackerModule() [253] Jahshaka::restoreGlobalPositionSize()
+ [181] __static_initialization_and_destruction_0(int, int) (input.cpp) [221] JahControl::initializeVariables() [142] Jahshaka::tr(char const*, char const*)
+ [182] __static_initialization_and_destruction_0(int, int) (ml.cpp) [222] JahControl::CreateDesktopOptions(QHBox*) [254] Jahshaka::Jahshaka(QWidget*, char const*, unsigned int)
+ [183] __static_initialization_and_destruction_0(int, int) (openmedialib_plugin.cpp) [223] JahControl::CreateEncodingModule(QFrame*) [255] Jahshaka::~Jahshaka()
+ [184] __static_initialization_and_destruction_0(int, int) (template_plugin.cpp) [224] JahControl::getGlobalPreferences() [256] QValueList<int>::operator==(QValueList<int> const&) const
+ [185] __static_initialization_and_destruction_0(int, int) (utilities.cpp) [225] JahControl::CreateAnimationModule() [257] void std::__uninitialized_fill_n_aux<void (GLPaint::**)(), unsigned int, void (GLPaint::*)()>(void (GLPaint::**)(), unsigned int, void (GLPaint::* const&)(), std::__false_type)
+ [186] __static_initialization_and_destruction_0(int, int) (openmedialib_plugin.hpp) [226] JahControl::createJahDesktopButtons(QFrame*)

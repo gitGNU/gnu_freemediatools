@@ -29,7 +29,9 @@ JahKeyframeObject::JahKeyframeObject()
 
 JahKeyframeObject::~JahKeyframeObject() 
 {
-    
+  delete m_node;
+  delete m_nodelist;
+
 }
 
 

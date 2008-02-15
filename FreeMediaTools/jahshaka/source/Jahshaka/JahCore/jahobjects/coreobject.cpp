@@ -290,37 +290,34 @@ void JahLayer::updateResolution(int res)
 
 JahLayer::~JahLayer(void)
 {
-	if (layernodes)
-	{
-		delete layernodes;
-	}
-
-    if (mediaExchangePresent)
+  if (layernodes)
     {
-        delete mediaExchange;
+      delete layernodes;
     }
-
-	if ( textureData.texID )
-    	glDeleteTextures(1, &textureData.texID); 
-	if ( textureKey.texID )
-    	glDeleteTextures(1, &textureKey.texID); 
-	if ( getTextureComposite().texID )
-    	glDeleteTextures(1, &(getTextureComposite().texID) );
-
-    if ( getCategory() == ObjectCategory::LARGE_LAYER )
+  if (mediaExchangePresent)
     {
-        glDeleteTextures(4, textureData.getTileTextureIdPtr(0) );
+      delete mediaExchange;
     }
-
-    if ( getCategory() == ObjectCategory::OBJECT && jahobject )
+  if ( textureData.texID )
+    glDeleteTextures(1, &textureData.texID);
+  if ( textureKey.texID )
+    glDeleteTextures(1, &textureKey.texID);
+  if ( getTextureComposite().texID )
+    glDeleteTextures(1, &(getTextureComposite().texID) );
+  if ( getCategory() == ObjectCategory::LARGE_LAYER )
     {
-        delete jahobject;
+      glDeleteTextures(4, textureData.getTileTextureIdPtr(0) );
     }
-
-	if (m_effects_list)
-	{
-		delete m_effects_list;
-	}
+  if ( getCategory() == ObjectCategory::OBJECT && jahobject )
+    {
+      delete jahobject;
+      jahobject=0;
+    }
+  if (m_effects_list)
+    {
+      delete m_effects_list;
+      m_effects_list=0;
+    }
 }
 
 void JahLayer::setupKeyframeVariables()
@@ -986,5 +983,57 @@ JahLayer::getLightingNeedsToUpdateCompositeTexture()
     return false;
 }
 
+void  JahLayer::setLayerListEntry(LayerListEntry* entry)
+{
+  m_layer_list_entry = entry;
+}
 
+
+GLuint JahLayer::getDefaultTextureId()
+{
+  return m_default_texture_id; }
+GLuint* JahLayer::getDefaultTextureIdPtr() 
+{
+  return &m_default_texture_id; }
+
+TextureImage& JahLayer::getTextureComposite() 
+{
+  return m_texture_composite; }
+
+TextureImage& JahLayer::getKeyComposite() 
+{
+  return m_key_composite; }
+
+TextureImage& JahLayer::getTextureData() { 
+  return textureData; }
+
+void            JahLayer::setTextureCompositeDirty(bool flag) 
+{ m_texture_composite_dirty = flag; }
+
+void            JahLayer::setQimageCompositeDirty(bool flag)
+{
+  m_qimage_composite_dirty = flag; }
+bool            JahLayer::getTextureCompositeDirty()
+{
+  return m_texture_composite_dirty; }
+
+bool            JahLayer::getQimageCompositeDirty()
+{
+  return m_qimage_composite_dirty; }
+
+bool            JahLayer::getUseOpenGlKeyer()
+{
+  return m_use_open_gl_keyer; }
+
+void            JahLayer::setUseOpenGlKeyer(bool flag) 
+{
+  m_use_open_gl_keyer = flag; }
+
+bool            JahLayer::getUseFastShaderKeyer()
+{
+  return m_use_fast_shader_keyer; 
+}
+
+void            JahLayer::setUseFastShaderKeyer(bool flag) 
+{ m_use_fast_shader_keyer = flag; }
 

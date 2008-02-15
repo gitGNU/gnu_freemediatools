@@ -528,7 +528,7 @@ void JahControl::CreateTrackerModule()
     ////////////////////////////////////////////////////////////////////////
     // create the animation module/object
     
-    JahTrackerMod = new GLTracker(core, "Tracker" , 
+    m_pJahTrackerMod = new GLTracker(core, "Tracker" , 
                                   ModulesOptions[module_counter],
                                   MainModuleControler[module_counter],
                                   MainModuleControlerLeft[module_counter], 
@@ -540,17 +540,17 @@ void JahControl::CreateTrackerModule()
     ////////////////////////////////////////////////////////////////////////
     
     //without this windows boxes loose tracking in the anime module (only?)
-    JahTrackerMod->setMouseTracking( false );
+    m_pJahTrackerMod->setMouseTracking( false );
     
     //connect module to desktop framework
-    connect ( JahTrackerMod, SIGNAL(updateDesktop(assetData)), SLOT( addImageToDesktop(assetData)) );
-    connect ( JahTrackerMod, SIGNAL(GrabClip()),			   SLOT( GetDesktop()) );
-    //connect ( JahTrackerMod, SIGNAL(GrabClipKey()),			   
+    connect ( m_pJahTrackerMod, SIGNAL(updateDesktop(assetData)), SLOT( addImageToDesktop(assetData)) );
+    connect ( m_pJahTrackerMod, SIGNAL(GrabClip()),			   SLOT( GetDesktop()) );
+    //connect ( m_pJahTrackerMod, SIGNAL(GrabClipKey()),			   
     //	SLOT( GrabClipAnimKey()) );
-    connect ( JahTrackerMod, SIGNAL(GrabDesktop()), SLOT( GetDesktop()) );
+    connect ( m_pJahTrackerMod, SIGNAL(GrabDesktop()), SLOT( GetDesktop()) );
     
-    connect ( JahTrackerMod,     SIGNAL(hideUI( bool )), SLOT( hidetheUI( bool ) ) );
-    connect( JahTrackerMod,  SIGNAL( showInHead( JahHeadable * ) ),  this, SLOT( showInHead( JahHeadable * ))  );
+    connect ( m_pJahTrackerMod,     SIGNAL(hideUI( bool )), SLOT( hidetheUI( bool ) ) );
+    connect( m_pJahTrackerMod,  SIGNAL( showInHead( JahHeadable * ) ),  this, SLOT( showInHead( JahHeadable * ))  );
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -588,5 +588,11 @@ void JahControl::CreateLibraryModule(QFrame* frame)
     //connect( JahLibraryMod, SIGNAL(importButton()), this, SLOT( slotLoadIconview()) );
     
     //connect( importclip, SIGNAL(clicked()), JahDesktopMod, SLOT( slotLoadIconview()) );
+}
+
+
+QFrame*         JahControl::getMainworldQframe() 
+{
+  return m_mainworld_qframe; 
 }
 

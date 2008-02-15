@@ -196,7 +196,7 @@ void JahControl::slotSmartLoader()
         //                        break; }
         case COLORIZE     : {   JahColorMod->SceneLoad();
                                 break; }
-        case TRACKER      : {   JahTrackerMod->SceneLoad();
+        case TRACKER      : {   m_pJahTrackerMod->SceneLoad();
                                 break; }
         case KEYER        : {   JahKeyerMod->SceneLoad();
                                 break; }
@@ -236,7 +236,7 @@ void JahControl::slotSmartSaver()
                                 break; }
         case COLORIZE     : {   JahColorMod->sceneSave();
                                 break; }
-        case TRACKER      : {   JahTrackerMod->sceneSave();
+        case TRACKER      : {   m_pJahTrackerMod->sceneSave();
                                 break; }
         case KEYER        : {   JahKeyerMod->sceneSave();
                                 break; }
@@ -273,7 +273,7 @@ void JahControl::loadModuleFile(QString fn)
         case COLORIZE     : {   status=JahColorMod->SceneLoadName(fn);
                                 break; }
 
-        case TRACKER      : {   status=JahTrackerMod->SceneLoadName(fn);
+        case TRACKER      : {   status=m_pJahTrackerMod->SceneLoadName(fn);
                                 break; }
 
         case KEYER        : {   status=JahKeyerMod->SceneLoadName(fn);
@@ -415,11 +415,11 @@ void JahControl::stopAnimation()
                                 QObject::disconnect(core, SIGNAL(mouseRelease(QMouseEvent*)), JahColorMod, SLOT(mouseReleaseEvent(QMouseEvent*)) );
                                 QObject::disconnect(core, SIGNAL(mouseMove(QMouseEvent*)),    JahColorMod, SLOT(mouseMoveEvent(QMouseEvent*)) );
                                 break; }
-        case TRACKER      : {   JahTrackerMod->stopanimation();
-                                QObject::disconnect(core, SIGNAL(paintit()), JahTrackerMod, SLOT(paintGL()) );
-                                QObject::disconnect(core, SIGNAL(mousePress(QMouseEvent*)),   JahTrackerMod, SLOT(mousePressEvent(QMouseEvent*)) );
-                                QObject::disconnect(core, SIGNAL(mouseRelease(QMouseEvent*)), JahTrackerMod, SLOT(mouseReleaseEvent(QMouseEvent*)) );
-                                QObject::disconnect(core, SIGNAL(mouseMove(QMouseEvent*)),    JahTrackerMod, SLOT(mouseMoveEvent(QMouseEvent*)) );
+        case TRACKER      : {   m_pJahTrackerMod->stopanimation();
+                                QObject::disconnect(core, SIGNAL(paintit()), m_pJahTrackerMod, SLOT(paintGL()) );
+                                QObject::disconnect(core, SIGNAL(mousePress(QMouseEvent*)),   m_pJahTrackerMod, SLOT(mousePressEvent(QMouseEvent*)) );
+                                QObject::disconnect(core, SIGNAL(mouseRelease(QMouseEvent*)), m_pJahTrackerMod, SLOT(mouseReleaseEvent(QMouseEvent*)) );
+                                QObject::disconnect(core, SIGNAL(mouseMove(QMouseEvent*)),    m_pJahTrackerMod, SLOT(mouseMoveEvent(QMouseEvent*)) );
                                 break; }
         case KEYER        : {   JahKeyerMod->stopanimation();
                                 QObject::disconnect(core, SIGNAL(paintit()), JahKeyerMod, SLOT(paintGL()) );

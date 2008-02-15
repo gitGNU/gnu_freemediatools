@@ -116,3 +116,98 @@ LayerListEntry::addEffectLayer(EffectInfo::EFFECT_TYPE effect_type, bool status,
     effects_list->append(new_effect_layer);
     return new_effect_layer;
 }
+
+
+LayerListEntry::LayerListEntry( int layer, const QString& name )
+    {
+        thelayer = new JahLayer;
+        thelayer->layername = name;
+        thelayername = name;
+        thelayernumber = layer;
+        thelayer->setLayerListEntry(this);
+
+        m_effects_list = new QPtrList<EffectLayer>;
+        m_effects_list->setAutoDelete( TRUE );
+    }
+
+LayerListEntry::LayerListEntry(const QString& name )
+    {
+        // (NOTE: layernumber never set if using this constr?)
+
+        // Further note. Position in a list should never be kept as state
+        // If a layer is inserted or deleted earlier in the list, the layernumber
+        // becomes incorrect and potentially leads to all kinds of bugs.  The great thing about lists 
+        // is that they manage themselves, and if you really want to know the layer number (why?)
+        // you can find it using the list find() method. 
+        // Tony
+
+        thelayer = new JahLayer;
+        thelayername = name;
+        thelayer->layername = name;
+        thelayer->setLayerListEntry(this);
+
+        m_effects_list = new QPtrList<EffectLayer>;
+        m_effects_list->setAutoDelete( TRUE );
+    }
+
+LayerListEntry::~LayerListEntry()
+    {
+        delete m_effects_list;
+		delete thelayer;
+    }
+
+    /////////////////////////////////////////////////////
+    //for the layer
+    QString         LayerListEntry::name()   const  { return thelayername;  }
+    int             LayerListEntry::layer()  const  { return thelayernumber;  }
+
+    JahLayer*       LayerListEntry::getJahLayer() { return thelayer; }
+
+    EffectLayer* LayerListEntry::addEffectLayer(EffectInfo::EFFECT_TYPE effect_type, bool status = true, int pluginid = 0);
+
+	int LayerListEntry::getNumberOfEffects()
+    {
+        return m_effects_list->count();
+	}
+
+	bool LayerListEntry::fxLayerStatus(int effect_number)
+    {
+        return m_effects_list->at(effect_number)->layerStatus;
+	}
+
+int LayerListEntry::fxPluginNumber(int effect_number)
+{
+  return m_effects_list->at(effect_number)->getPluginNumber();
+}
+
+
+QPtrList<EffectLayer>* LayerListEntry::getEffectsList() 
+{
+  return m_effects_list; 
+}
+
+EffectInfo::EFFECT_TYPE LayerListEntry::getEffectType(int effect_number)
+{
+  if ( effect_number < 0 || effect_number > (int)m_effects_list->count() )
+    {
+      return EffectInfo::NOT_A_TYPE;
+    }
+  if (m_effects_list->at(effect_number))
+    {
+      return m_effects_list->at(effect_number)->objtype;
+    }
+  else
+    {
+      return EffectInfo::NOT_A_TYPE;
+    }
+}
+
+bool LayerListEntry::getLayerStatus(void)
+{
+  return thelayer->layerStatus;
+}
+
+
+
+selectionList::selectionList( int l, bool s) : layer(l), status(s)
+{}

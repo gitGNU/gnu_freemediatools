@@ -679,3 +679,40 @@ void JHClient::freeResults()
     }
 	JHClient::results.next = NULL;
 }
+
+
+
+AssetTables::AssetTables( )
+{
+}
+
+AssetTables *AssetTables::getInstance( )
+{
+  static AssetTables *tables = NULL;
+  if ( tables == NULL )
+    tables = new AssetTables( );
+  return tables;
+}
+
+void AssetTables::registerTable( AssetTable *table )
+{
+  m_tables.push_back( table );
+}
+
+assetData &AssetTables::getSelectedAsset( )
+{
+  return m_current_asset;
+}
+
+void AssetTables::setSelectedAsset( assetData &asset )
+{
+  m_current_asset = asset;
+  for ( std::vector< AssetTable * >::iterator iter = m_tables.begin( ); iter != m_tables.end( ); iter ++ )
+    ( *iter )->selectAsset( asset );
+}
+
+
+AssetTable::~AssetTable( ) 
+{
+
+}

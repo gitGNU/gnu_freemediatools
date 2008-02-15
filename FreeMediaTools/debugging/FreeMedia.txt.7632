@@ -1,0 +1,1134 @@
+==7632== Memcheck, a memory error detector.
+==7632== Copyright (C) 2002-2005, and GNU GPL'd, by Julian Seward et al.
+==7632== Using LibVEX rev 1471, a library for dynamic binary translation.
+==7632== Copyright (C) 2004-2005, and GNU GPL'd, by OpenWorks LLP.
+==7632== Using valgrind-3.1.0-Debian, a dynamic binary instrumentation framework.
+==7632== Copyright (C) 2000-2005, and GNU GPL'd, by Julian Seward et al.
+==7632== 
+==7632== My PID = 7632, parent PID = 7631.  Prog and args are:
+==7632==    FreeMediaTools
+==7632== 
+--7632-- 
+--7632-- Command line
+--7632--    FreeMediaTools
+--7632-- Startup, with flags:
+--7632--    --suppressions=/usr/lib/valgrind/debian-libc6-dbg.supp
+--7632--    --log-file=FreeMedia.txt
+--7632--    --db-attach=yes
+--7632--    --leak-check=full
+--7632--    --show-reachable=yes
+--7632--    --verbose
+--7632-- Contents of /proc/version:
+--7632--   Linux version 2.6.14-2-686 (Debian 2.6.14-7) (maks@sternwelten.at) (gcc version 4.0.3 20051201 (prerelease) (Debian 4.0.2-5)) #1 Wed Dec 28 18:21:03 UTC 2005
+--7632-- Arch and subarch: X86, x86-sse2
+--7632-- Valgrind library directory: /usr/lib/valgrind
+--7632-- Reading syms from /lib/ld-2.7.so (0x4000000)
+--7632-- Reading debug info from /lib/ld-2.7.so...
+--7632-- ... CRC mismatch (computed D696698D wanted 041FEC65)
+--7632-- Reading debug info from /usr/lib/debug/lib/ld-2.7.so...
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /mnt/sda9/experiments/freemediatools/FreeMediaTools/FreeMediaTools (0x8048000)
+--7632-- Reading syms from /usr/lib/valgrind/x86-linux/memcheck (0xA000000)
+--7632--    object doesn't have a dynamic symbol table
+--7632-- Reading suppressions file: /usr/lib/valgrind/debian-libc6-dbg.supp
+--7632-- Reading suppressions file: /usr/lib/valgrind/default.supp
+--7632-- Reading syms from /usr/lib/valgrind/x86-linux/vgpreload_core.so (0x4020000)
+--7632-- Reading syms from /usr/lib/valgrind/x86-linux/vgpreload_memcheck.so (0x4022000)
+--7632-- Reading syms from /usr/lib/libXi.so.6.0.0 (0x4056000)
+--7632-- Reading debug info from /usr/lib/libXi.so.6.0.0...
+--7632-- ... CRC mismatch (computed 7F1C6956 wanted 9BA5B22A)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libmlt++.so.0.2.5 (0x405E000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libmlt.so.0.2.5 (0x407C000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libpython2.4.so.1.0 (0x409B000)
+--7632-- Reading debug info from /usr/lib/libpython2.4.so.1.0...
+--7632-- ... CRC mismatch (computed C59E1EDD wanted 80299DB0)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libGLEW.so.1.4.0 (0x41AD000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libboost_filesystem-gcc41-1_34_1.so.1.34.1 (0x41E4000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libboost_iostreams-gcc41-1_34_1.so.1.34.1 (0x41F0000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libboost_regex-gcc41-1_34_1.so.1.34.1 (0x41FB000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libboost_thread-gcc41-mt-1_34_1.so.1.34.1 (0x42A0000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libxml2.so.2.6.30 (0x42AD000)
+--7632-- Reading debug info from /usr/lib/libxml2.so.2.6.30...
+--7632-- ... CRC mismatch (computed 631C9217 wanted C65496CE)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libqt-mt.so.3.3.7 (0x43CB000)
+--7632-- Reading debug info from /usr/lib/libqt-mt.so.3.3.7...
+--7632-- ... CRC mismatch (computed ADBE4524 wanted 5D1B8C2F)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libaviplay-0.7.so.0.0.47 (0x4BE8000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libsqlite3.so.0.8.6 (0x4C84000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/debug/libpthread-2.7.so (0x4CE8000)
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- Reading syms from /usr/lib/libjpeg.so.62.0.0 (0x4CFF000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libfreetype.so.6.3.16 (0x4D1F000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libXmu.so.6.2.0 (0x4D8E000)
+--7632-- Reading debug info from /usr/lib/libXmu.so.6.2.0...
+--7632-- ... CRC mismatch (computed 6BB132E9 wanted 09B6F4AF)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libXext.so.6.4.0 (0x4DA3000)
+--7632-- Reading debug info from /usr/lib/libXext.so.6.4.0...
+--7632-- ... CRC mismatch (computed CFE696D0 wanted 8A919B19)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libX11.so.6.2.0 (0x4DB2000)
+--7632-- Reading debug info from /usr/lib/libX11.so.6.2.0...
+--7632-- ... CRC mismatch (computed DD9A3771 wanted DEE5C1B0)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libGLU.so.1.3.060401 (0x4E9E000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libGL.so.1.2 (0x4F18000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libstdc++.so.6.0.10 (0x4FB7000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/debug/libm-2.7.so (0x50A3000)
+--7632-- Reading syms from /lib/libgcc_s.so.1 (0x50C9000)
+--7632-- Reading debug info from /lib/libgcc_s.so.1...
+--7632-- ... CRC mismatch (computed 2EB018E3 wanted 3C41591C)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/debug/libc-2.7.so (0x50D7000)
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- DWARF2 CFI reader: unhandled CFI instruction 0:22
+--7632-- Reading syms from /usr/lib/debug/libdl-2.7.so (0x5224000)
+--7632-- Reading syms from /usr/lib/libmiracle.so.0.2.5 (0x5228000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/debug/libutil-2.7.so (0x5234000)
+--7632-- Reading syms from /lib/libbz2.so.1.0.3 (0x5238000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libz.so.1.2.3.3 (0x524A000)
+--7632-- Reading debug info from /usr/lib/libz.so.1.2.3.3...
+--7632-- ... CRC mismatch (computed 19CBBC88 wanted FBB21122)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libicui18n.so.36.0 (0x525F000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libicuuc.so.36.0 (0x53A1000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/debug/librt-2.7.so (0x54BF000)
+--7632-- Reading syms from /usr/lib/libfontconfig.so.1.1.0 (0x54C8000)
+--7632-- Reading debug info from /usr/lib/libfontconfig.so.1.1.0...
+--7632-- ... CRC mismatch (computed C88E9AE8 wanted 6158022E)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libaudio.so.2.3 (0x54F3000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libXt.so.6.0.0 (0x5508000)
+--7632-- Reading debug info from /usr/lib/libXt.so.6.0.0...
+--7632-- ... CRC mismatch (computed 1BF27C08 wanted 38D16C61)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libpng12.so.0.15.0 (0x5558000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libXrender.so.1.3.0 (0x557B000)
+--7632-- Reading debug info from /usr/lib/libXrender.so.1.3.0...
+--7632-- ... CRC mismatch (computed DF8AAA49 wanted AB4D3587)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libXrandr.so.2.1.0 (0x5584000)
+--7632-- Reading debug info from /usr/lib/libXrandr.so.2.1.0...
+--7632-- ... CRC mismatch (computed BB027CA6 wanted C935C4B5)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libXcursor.so.1.0.2 (0x558A000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/X11R6/lib/libXinerama.so.1.0 (0x5594000)
+--7632-- Reading debug info from /usr/X11R6/lib/libXinerama.so.1.0...
+--7632-- ... CRC mismatch (computed 45D900D5 wanted FF19F3AA)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libXft.so.2.1.2 (0x5597000)
+--7632-- Reading debug info from /usr/lib/libXft.so.2.1.2...
+--7632-- ... CRC mismatch (computed 91812054 wanted 01CD6B6A)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libSM.so.6.0.0 (0x55AA000)
+--7632-- Reading debug info from /usr/lib/libSM.so.6.0.0...
+--7632-- ... CRC mismatch (computed 3F76BC5B wanted E2605046)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libICE.so.6.3.0 (0x55B2000)
+--7632-- Reading debug info from /usr/lib/libICE.so.6.3.0...
+--7632-- ... CRC mismatch (computed EAEBB4D1 wanted 49996AC6)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libaviplayavformat-0.7.so.0.0.47 (0x55C9000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libaviplayavcodec-0.7.so.0.0.47 (0x5640000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/liba52-0.7.4.so (0x5A36000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libaviplayswscale-0.7.so.0.0.47 (0x5A41000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libaviplayavutil-0.7.so.0.0.47 (0x5A5A000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libSDL-1.2.so.0.11.1 (0x5A65000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libaviplayvidix-0.7.so.0.0.47 (0x5B21000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libaviplaydha-0.7.so.0.0.47 (0x5B25000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/debug/libnsl-2.7.so (0x5B5A000)
+--7632-- Reading syms from /usr/lib/libXau.so.6.0.0 (0x5B72000)
+--7632-- Reading debug info from /usr/lib/libXau.so.6.0.0...
+--7632-- ... CRC mismatch (computed 5EE386D6 wanted F3D2A1AB)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libXdmcp.so.6.0.0 (0x5B75000)
+--7632-- Reading debug info from /usr/lib/libXdmcp.so.6.0.0...
+--7632-- ... CRC mismatch (computed EBD5E58E wanted 0120BE78)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libvalerie.so.0.2.5 (0x5B7B000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libexpat.so.1.0.0 (0x6534000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libasound.so.2.0.0 (0x6554000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libartsc.so.0.0.0 (0x661B000)
+--7632-- Reading debug info from /usr/lib/libartsc.so.0.0.0...
+--7632-- ... CRC mismatch (computed 6115DA10 wanted BB63D09C)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libgmodule-2.0.so.0.1400.5 (0x6621000)
+--7632-- Reading debug info from /usr/lib/libgmodule-2.0.so.0.1400.5...
+--7632-- ... CRC mismatch (computed 9E293F7D wanted 9F9267BA)
+--7632-- Reading debug info from /usr/lib/debug/usr/lib/libgmodule-2.0.so.0.1400.5...
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libgthread-2.0.so.0.1400.5 (0x6625000)
+--7632-- Reading debug info from /usr/lib/libgthread-2.0.so.0.1400.5...
+--7632-- ... CRC mismatch (computed E2F2F8F2 wanted 7F12CA3E)
+--7632-- Reading debug info from /usr/lib/debug/usr/lib/libgthread-2.0.so.0.1400.5...
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libglib-2.0.so.0.1400.5 (0x6629000)
+--7632-- Reading debug info from /usr/lib/libglib-2.0.so.0.1400.5...
+--7632-- ... CRC mismatch (computed EAFC4DA2 wanted DC1342C9)
+--7632-- Reading debug info from /usr/lib/debug/usr/lib/libglib-2.0.so.0.1400.5...
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libesd.so.0.2.36 (0x66CA000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libaudiofile.so.0.0.2 (0x66D4000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libpulse-simple.so.0.0.1 (0x66F9000)
+--7632-- Reading debug info from /usr/lib/libpulse-simple.so.0.0.1...
+--7632-- ... CRC mismatch (computed C1DD8DD0 wanted CA3BE406)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libpulse.so.0.4.0 (0x66FD000)
+--7632-- Reading debug info from /usr/lib/libpulse.so.0.4.0...
+--7632-- ... CRC mismatch (computed 8F267814 wanted 8463C527)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libdirectfb-1.0.so.0.1.0 (0x673A000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libfusion-1.0.so.0.1.0 (0x679E000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libdirect-1.0.so.0.1.0 (0x67A6000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libvga.so.1.4.3 (0x67B9000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libaa.so.1.0.4 (0x6819000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libpcre.so.3.12.1 (0x6834000)
+--7632-- Reading debug info from /usr/lib/libpcre.so.3.12.1...
+--7632-- ... CRC mismatch (computed 6DA11F71 wanted D80569EB)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /lib/libcap.so.1.10 (0x685B000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libasyncns.so.0.1.0 (0x685F000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /lib/libx86.so.1 (0x6865000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /lib/libncurses.so.5.6 (0x6868000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /lib/libslang.so.2.1.3 (0x6899000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/libgpm.so.1.19.6 (0x6977000)
+--7632--    object doesn't have a symbol table
+--7632-- Reading syms from /usr/lib/debug/libresolv-2.7.so (0x697D000)
+==7632== Conditional jump or move depends on uninitialised value(s)
+==7632==    at 0x400B50B: (within /lib/ld-2.7.so)
+==7632==    by 0x400360D: (within /lib/ld-2.7.so)
+==7632==    by 0x401540C: (within /lib/ld-2.7.so)
+==7632==    by 0x4000C3D: (within /lib/ld-2.7.so)
+==7632==    by 0x4000816: (within /lib/ld-2.7.so)
+==7632== 
+==7632== ---- Attach to debugger ? --- [Return/N/n/Y/y/C/c] ---- ==7632== 
+==7632== Conditional jump or move depends on uninitialised value(s)
+==7632==    at 0x400B542: (within /lib/ld-2.7.so)
+==7632==    by 0x400360D: (within /lib/ld-2.7.so)
+==7632==    by 0x401540C: (within /lib/ld-2.7.so)
+==7632==    by 0x4000C3D: (within /lib/ld-2.7.so)
+==7632==    by 0x4000816: (within /lib/ld-2.7.so)
+==7632== 
+==7632== ---- Attach to debugger ? --- [Return/N/n/Y/y/C/c] ---- ==7632== 
+==7632== Conditional jump or move depends on uninitialised value(s)
+==7632==    at 0x400B3F2: (within /lib/ld-2.7.so)
+==7632==    by 0x400360D: (within /lib/ld-2.7.so)
+==7632==    by 0x401540C: (within /lib/ld-2.7.so)
+==7632==    by 0x4000C3D: (within /lib/ld-2.7.so)
+==7632==    by 0x4000816: (within /lib/ld-2.7.so)
+==7632== 
+==7632== ---- Attach to debugger ? --- [Return/N/n/Y/y/C/c] ---- ==7632== 
+==7632== Conditional jump or move depends on uninitialised value(s)
+==7632==    at 0x400B3FA: (within /lib/ld-2.7.so)
+==7632==    by 0x400360D: (within /lib/ld-2.7.so)
+==7632==    by 0x401540C: (within /lib/ld-2.7.so)
+==7632==    by 0x4000C3D: (within /lib/ld-2.7.so)
+==7632==    by 0x4000816: (within /lib/ld-2.7.so)
+==7632== 
+==7632== ---- Attach to debugger ? --- [Return/N/n/Y/y/C/c] ---- ==7632== 
+==7632== Conditional jump or move depends on uninitialised value(s)
+==7632==    at 0x400C06C: (within /lib/ld-2.7.so)
+==7632==    by 0x400360D: (within /lib/ld-2.7.so)
+==7632==    by 0x401540C: (within /lib/ld-2.7.so)
+==7632==    by 0x4000C3D: (within /lib/ld-2.7.so)
+==7632==    by 0x4000816: (within /lib/ld-2.7.so)
+==7632== 
+==7632== ---- Attach to debugger ? --- [Return/N/n/Y/y/C/c] ---- ==7632== ---- Attach to debugger ? --- [Return/N/n/Y/y/C/c] ---- ==7632== 
+==7632== Process terminating with default action of signal 2 (SIGINT)
+==7632==    at 0x400BBB1: (within /lib/ld-2.7.so)
+==7632==    by 0x400360D: (within /lib/ld-2.7.so)
+==7632==    by 0x401540C: (within /lib/ld-2.7.so)
+==7632==    by 0x4000C3D: (within /lib/ld-2.7.so)
+==7632==    by 0x4000816: (within /lib/ld-2.7.so)
+==7632== 
+==7632== ---- Attach to debugger ? --- [Return/N/n/Y/y/C/c] ---- ==7632== 
+==7632== Jump to the invalid address stated on the next line
+==7632==    at 0x226: ???
+==7632==    by 0x5B6DFFF: (within /usr/lib/debug/libnsl-2.7.so)
+==7632==    by 0x400360D: (within /lib/ld-2.7.so)
+==7632==    by 0x401540C: (within /lib/ld-2.7.so)
+==7632==    by 0x4000C3D: (within /lib/ld-2.7.so)
+==7632==    by 0x4000816: (within /lib/ld-2.7.so)
+==7632==  Address 0x226 is not stack'd, malloc'd or (recently) free'd
+==7632== 
+==7632== Process terminating with default action of signal 11 (SIGSEGV)
+==7632==  Bad permissions for mapped region at address 0x226
+==7632==    at 0x226: ???
+==7632==    by 0x5B6DFFF: (within /usr/lib/debug/libnsl-2.7.so)
+==7632==    by 0x400360D: (within /lib/ld-2.7.so)
+==7632==    by 0x401540C: (within /lib/ld-2.7.so)
+==7632==    by 0x4000C3D: (within /lib/ld-2.7.so)
+==7632==    by 0x4000816: (within /lib/ld-2.7.so)
+==7632== 
+==7632== ERROR SUMMARY: 59 errors from 6 contexts (suppressed: 0 from 0)
+==7632== 
+==7632== 1 errors in context 1 of 6:
+==7632== Jump to the invalid address stated on the next line
+==7632==    at 0x226: ???
+==7632==    by 0x5B6DFFF: (within /usr/lib/debug/libnsl-2.7.so)
+==7632==    by 0x400360D: (within /lib/ld-2.7.so)
+==7632==    by 0x401540C: (within /lib/ld-2.7.so)
+==7632==    by 0x4000C3D: (within /lib/ld-2.7.so)
+==7632==    by 0x4000816: (within /lib/ld-2.7.so)
+==7632==  Address 0x226 is not stack'd, malloc'd or (recently) free'd
+==7632== 
+==7632== 1 errors in context 2 of 6:
+==7632== Conditional jump or move depends on uninitialised value(s)
+==7632==    at 0x400C06C: (within /lib/ld-2.7.so)
+==7632==    by 0x400360D: (within /lib/ld-2.7.so)
+==7632==    by 0x401540C: (within /lib/ld-2.7.so)
+==7632==    by 0x4000C3D: (within /lib/ld-2.7.so)
+==7632==    by 0x4000816: (within /lib/ld-2.7.so)
+==7632== 
+==7632== 1 errors in context 3 of 6:
+==7632== Conditional jump or move depends on uninitialised value(s)
+==7632==    at 0x400B3FA: (within /lib/ld-2.7.so)
+==7632==    by 0x400360D: (within /lib/ld-2.7.so)
+==7632==    by 0x401540C: (within /lib/ld-2.7.so)
+==7632==    by 0x4000C3D: (within /lib/ld-2.7.so)
+==7632==    by 0x4000816: (within /lib/ld-2.7.so)
+==7632== 
+==7632== 1 errors in context 4 of 6:
+==7632== Conditional jump or move depends on uninitialised value(s)
+==7632==    at 0x400B3F2: (within /lib/ld-2.7.so)
+==7632==    by 0x400360D: (within /lib/ld-2.7.so)
+==7632==    by 0x401540C: (within /lib/ld-2.7.so)
+==7632==    by 0x4000C3D: (within /lib/ld-2.7.so)
+==7632==    by 0x4000816: (within /lib/ld-2.7.so)
+==7632== 
+==7632== 27 errors in context 5 of 6:
+==7632== Conditional jump or move depends on uninitialised value(s)
+==7632==    at 0x400B542: (within /lib/ld-2.7.so)
+==7632==    by 0x400360D: (within /lib/ld-2.7.so)
+==7632==    by 0x401540C: (within /lib/ld-2.7.so)
+==7632==    by 0x4000C3D: (within /lib/ld-2.7.so)
+==7632==    by 0x4000816: (within /lib/ld-2.7.so)
+==7632== 
+==7632== 28 errors in context 6 of 6:
+==7632== Conditional jump or move depends on uninitialised value(s)
+==7632==    at 0x400B50B: (within /lib/ld-2.7.so)
+==7632==    by 0x400360D: (within /lib/ld-2.7.so)
+==7632==    by 0x401540C: (within /lib/ld-2.7.so)
+==7632==    by 0x4000C3D: (within /lib/ld-2.7.so)
+==7632==    by 0x4000816: (within /lib/ld-2.7.so)
+==7632== IN SUMMARY: 59 errors from 6 contexts (suppressed: 0 from 0)
+==7632== 
+==7632== malloc/free: in use at exit: 0 bytes in 0 blocks.
+==7632== malloc/free: 0 allocs, 0 frees, 0 bytes allocated.
+==7632== 
+==7632== No malloc'd blocks -- no leaks are possible.
+--7632--  memcheck: sanity checks: 34 cheap, 2 expensive
+--7632--  memcheck: auxmaps: 0 auxmap entries (0k, 0M) in use
+--7632--  memcheck: auxmaps: 0 searches, 0 comparisons
+--7632--  memcheck: secondaries: 88 issued (5632k, 5M)
+--7632--  memcheck: secondaries: 660 accessible and distinguished (42240k, 41M)
+--7632--     tt/tc: 3,074 tt lookups requiring 3,086 probes
+--7632--     tt/tc: 3,073 fast-cache updates, 2 flushes
+--7632-- translate: new        1,296 (28,950 -> 452,688; ratio 156:10) [0 scs]
+--7632-- translate: dumped     0 (0 -> ??)
+--7632-- translate: discarded  0 (0 -> ??)
+--7632-- scheduler: 1,700,002 jumps (bb entries).
+--7632-- scheduler: 33/2,565 major/minor sched events.
+--7632--    sanity: 35 cheap, 2 expensive checks.
+--7632--    exectx: 30,011 lists, 6 contexts (avg 0 per list)
+--7632--    exectx: 59 searches, 53 full compares (898 per 1000)
+--7632--    exectx: 0 cmp2, 121 cmp4, 0 cmpAll

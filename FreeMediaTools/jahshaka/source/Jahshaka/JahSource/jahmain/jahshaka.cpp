@@ -157,13 +157,13 @@ Jahshaka::~Jahshaka()
     storeGlobalPositionSize();
 
     delete jahapp;
-
-	delete( vendor );
-	delete( renderer );
-	delete( version );
-	delete( extensions );
+    
+    delete( vendor );
+    delete( renderer );
+    delete( version );
+    delete( extensions );
     delete thestartupscreen;
-
+    
 	//finished
     jtrace->info( "Jah Destructor","Closed Jahshaka" );
 }

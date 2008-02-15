@@ -329,3 +329,19 @@ GLEffect::addMeshEffectFromTopMenu()
     }
 }
 
+
+GLEffect::GLEffect( GLCore* core, QHBox*, QHBox* parent1, const char* name, QHBox* controls,
+            QHBox* controller,QHBox* leftcontroller, QHBox* rightcontroller,
+            int* globalclipnumber )
+            :  GLWorld(core,name,controller,globalclipnumber )
+			, m_parent1( parent1 )
+			, m_controls( controls )
+    		, m_controller( controller )
+			, m_leftcontroller( leftcontroller )
+			, m_rightcontroller( rightcontroller )
+{
+}
+
+
+
+GLEffect::~GLEffect() {  }

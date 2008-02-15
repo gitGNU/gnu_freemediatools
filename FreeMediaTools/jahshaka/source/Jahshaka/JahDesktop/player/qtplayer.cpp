@@ -120,7 +120,7 @@ open plug in
 	  std::wcerr << "play input : " << input.c_str() << "\n";
 	  
 	  const char * name=input.c_str( );
-
+	  
 	  olib::openmedialib::ml::input_type_ptr item = ml::create_input(name);
 	    
 	  if (item != 0)

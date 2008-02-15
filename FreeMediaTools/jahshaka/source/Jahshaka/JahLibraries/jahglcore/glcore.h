@@ -145,8 +145,8 @@ public:
     void    mouseReleaseEvent( QMouseEvent *e );
     void    mouseMoveEvent( QMouseEvent *e );
 
-	// Special case to allow auto double buffering to be switched off
-	void switchAutoBufferSwap( bool on ) { setAutoBufferSwap( on ); }
+    // Special case to allow auto double buffering to be switched off
+    void switchAutoBufferSwap( bool on );
 
 signals:
 

@@ -1,0 +1,3 @@
+{theToolMode = 3069268360, m_glworld_ptr = 0x8a053d8, jtrace = 0x856ace0, JahBasePath = {static null = {
+      static null = <same as static member of an already seen type>, d = 0x85257e0, 
+      static shared_null = 0x85257e0}, d = 0x8947cf8, static shared_null = 0x85257e0}, thelayer = 0x97b3048}x

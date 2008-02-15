@@ -1,0 +1,7 @@
+p *m_pCore
+$11 = {<> = {<No data fields>}, static metaObj = 0x8a25760, m_pbuffer = 0x891d148, static m_win32 = false, 
+  m_camera_distance = 1096.10217, m_render_width = 1108, m_render_height = 373, m_pbuffer_render_width = 2048, 
+  m_pbuffer_render_height = 2048, m_pbuffer_bound = false, useimagesize = false, imagewidth = 0, 
+  imageheight = 0, fAspectval = 8.7677993e-34, fAspect = -6.93106995e-06, backgroundRed = 0.300000012, 
+  backgroundGreen = 0.300000012, backgroundBlue = 0.300000012, zoomVal = 1, glmode = 0}
+(gdb) 

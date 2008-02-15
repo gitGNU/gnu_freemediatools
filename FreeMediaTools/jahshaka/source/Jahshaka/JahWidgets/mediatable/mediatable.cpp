@@ -103,6 +103,11 @@ void MediaTable::keyPressEvent ( QKeyEvent * e )
 }
 
 
+AssetDisplay::~AssetDisplay()
+{
+  delete m_info;
+}
+
 AssetDisplay::AssetDisplay( QWidget* parent, const char* name )
     : QWidget( parent, name )
 {
@@ -292,8 +297,18 @@ JahDesktopSideTable::JahDesktopSideTable( int, QWidget* parent, const char* name
 
 JahDesktopSideTable::~JahDesktopSideTable( )
 {
-	delete thetable;
-	delete figure;
+  delete thetable;
+  delete figure;
+  delete pbplay;
+  delete pbstop;
+  delete pbffwd;
+  delete pbfrev;
+  delete m_timecode;
+  delete lspacer1;
+  delete lspacer2;
+  delete topspacer;
+  delete m_assetDisplay;
+
 }
 
 void JahDesktopSideTable::setAssetTracking( bool on ) 

@@ -143,7 +143,7 @@ void JahControl::setModulesRenderQuality(void)
     JahTextMod->setRenderQuality(jahrenderquality);
     JahColorMod->setRenderQuality(jahrenderquality);
     JahKeyerMod->setRenderQuality(jahrenderquality);
-    JahTrackerMod->setRenderQuality(jahrenderquality);
+    m_pJahTrackerMod->setRenderQuality(jahrenderquality);
     JahPaintMod->setRenderQuality(jahrenderquality);
 
 }
@@ -336,3 +336,81 @@ void JahControl::restoreModulesUI(void)
     }
 }
 
+
+
+JahHead::JahHead( const QGLWidget *core,
+		  QWidget * parent,
+		  const char * name,
+		  WFlags f )
+  : QGLWidget( parent, name, core, f )
+  , other_( 0 )
+  , width_( 0 )
+  , height_( 0 )
+{
+}
+
+void JahHead::showInHead( JahHeadable *other )
+{
+  other_ = other;
+  if ( isVisible( ) && !isMinimized( ) )
+    updateGL( );
+}
+
+void JahHead::initializeGL()
+{
+  glewInit( );
+  glClearColor( 0.0f, 0.0f, 0.0f, 0.0f );
+  glEnable( GL_NORMALIZE );
+  glEnable( GL_RESCALE_NORMAL );
+}
+
+void JahHead::resizeGL( int w, int h )
+{
+  width_ = w;
+  height_ = h;
+  glViewport( 0, 0, width_, height_ );
+  GLfloat light_ambient[ ]  = { 0.0f, 0.0f, 0.0f, 0.0f };
+  GLfloat light_diffuse[ ]  = { 1.0f, 1.0f, 1.0f, 1.0f };
+  GLfloat light_specular[ ] = { 1.0f, 1.0f, 1.0f, 1.0f };
+  GLfloat light_position[ ] = { 0.0f, 0.0f, 10.0f, 0.0f };
+  glLightfv( GL_LIGHT0, GL_AMBIENT, light_ambient );
+  glLightfv( GL_LIGHT0, GL_DIFFUSE, light_diffuse );
+  glLightfv( GL_LIGHT0, GL_SPECULAR, light_specular );
+  glLightfv( GL_LIGHT0, GL_POSITION, light_position );
+  glEnable( GL_LIGHT0 );
+  glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+}
+
+void JahHead::paintGL( )
+{
+  float ar = ( float ) width_ / height_;
+  glMatrixMode( GL_PROJECTION );
+  glLoadIdentity( );
+  gluPerspective( 25.5f, ar, 1.0f, 10000.0f);
+  glMatrixMode( GL_MODELVIEW );
+  glLoadIdentity( );
+  glTranslatef( 0.0f, 0.0f, -Globals::getCameraDistance( ) );
+
+  if ( other_ )
+    other_->headRender( width_, height_ );
+  else
+    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+}
+
+void JahHead::toggle_full_screen( )
+{
+  if ( isFullScreen( ) )
+    showNormal( );
+  else
+    showFullScreen( );
+}
+
+void JahHead::keyPressEvent( QKeyEvent *e )
+{
+  e->accept( );
+  switch( e->key() )
+    {
+    case 'F':	toggle_full_screen( ); break;
+    default:	e->ignore( );
+    }
+}

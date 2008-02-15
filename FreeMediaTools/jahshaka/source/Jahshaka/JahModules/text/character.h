@@ -23,19 +23,12 @@ private:
 	QHBox *m_leftcontroller; 
 	QHBox *m_rightcontroller;
 
-public:
-
-    GLChar( GLCore* core, const char* name,
-        QHBox* controls, QHBox* controller, QHBox* leftcontroller, QHBox* rightcontroller,
-        int* globalclipnumber, const QGLWidget* =0   )
-        :  GLAnime(core, name, controls, controller, leftcontroller, rightcontroller, globalclipnumber)
-		, m_controls( controls )
-		, m_leftcontroller( leftcontroller )
-		, m_rightcontroller( rightcontroller )
-    {
-    };
-
-    ~GLChar() {  }
+ public:
+	GLChar( GLCore* core, const char* name,
+		QHBox* controls, QHBox* controller, QHBox* leftcontroller,
+		QHBox* rightcontroller,
+		int* globalclipnumber, const QGLWidget* =0   );
+	~GLChar();
 
     void buildInterface( QHBox* qtinterface );
     void createMenuItem( QPopupMenu* themenu );

@@ -490,12 +490,15 @@ static openmedialib_plugin_ptr get_plug( const pl::wstring &resource, const pl::
 */
 	  //	  new plugin::template_plugin
 
-	  opl::openplugin* pplug;
-	  opl::openplugin** ppplug=&pplug;
+	  //opl::openplugin* pplug=0;
+	  //opl::openplugin** ppplug=&pplug;
 
-	  templateplugin_openplugin_create_plugin("Does not matter",ppplug);
+	  //templateplugin_openplugin_create_plugin("Does not matter",ppplug);
 
-	  olib::openmedialib::ml::openmedialib_plugin* pomlpi=(olib::openmedialib::ml::openmedialib_plugin*)ppplug;
+	  olib::openmedialib::ml::openmedialib_plugin* pomlpi=
+	    new plugin::template_plugin();
+
+	  //(olib::openmedialib::ml::openmedialib_plugin*)ppplug;
 
 	  openmedialib_plugin_ptr ret(pomlpi);
 	
@@ -513,7 +516,10 @@ static openmedialib_plugin_ptr get_plug( const pl::wstring &resource, const pl::
 // Return the first matching input object
 ML_DECLSPEC input_type_ptr create_delayed_input( const pl::wstring &resource )
 {
-	openmedialib_plugin_ptr plug = get_plug( resource, L"input" );
+	openmedialib_plugin_ptr plug;
+
+	plug = get_plug( resource, L"input" );
+
 	if ( plug == 0 )
 	  {
 	    std::wcerr << "create_input: failed to find a plugin for: " << resource << "\n";

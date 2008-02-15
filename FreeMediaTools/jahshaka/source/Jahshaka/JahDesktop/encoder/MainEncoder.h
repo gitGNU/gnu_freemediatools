@@ -236,7 +236,7 @@ private:
     QPushButton* controllernextbutton;
     QPushButton* controllerrewindbutton;
 
-    TimelineSlider* controllerslider;
+    TimelineSlider* m_pControllerSlider;
     QFrame* timecodeframe;
     QPushButton* keyframebutton;
     QLCDNumber* timecodedisplay;

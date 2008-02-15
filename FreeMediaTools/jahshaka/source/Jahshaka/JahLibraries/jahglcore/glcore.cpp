@@ -471,3 +471,8 @@ GLCore::copyFrameBufferToPbuffer()
     unbindPbuffer();
 
 }
+
+void GLCore::switchAutoBufferSwap( bool on )
+{
+  setAutoBufferSwap( on ); 
+}

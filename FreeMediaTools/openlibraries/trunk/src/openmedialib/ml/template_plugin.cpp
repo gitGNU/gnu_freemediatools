@@ -65,14 +65,34 @@ namespace olib {
       }
 
       // Visual
-      void template_input::get_fps( int &num, int &den ) const { num = 25; den = 1; }
-      void template_input::get_sar( int &num, int &den ) const { num = 1; den = 1; }
-      int template_input::get_video_streams( ) const { return 1; }
-      int template_input::get_width( ) const { return 512; }
-      int template_input::get_height( ) const { return 512; }
+      void template_input::get_fps( int &num, int &den ) const 
+      {
+	num = 25; 
+	den = 1; 
+      }
+      void template_input::get_sar( int &num, int &den ) const 
+      { 
+	num = 1; 
+	den = 1; 
+      }
+      int template_input::get_video_streams( ) const 
+      { 
+	return 1;
+      }
+      int template_input::get_width( ) const 
+      {
+	return 512; 
+      }
+      int template_input::get_height( ) const 
+      {
+	return 512; 
+      }
 
       // Audio
-      int template_input::get_audio_streams( ) const { return 0; }
+      int template_input::get_audio_streams( ) const 
+      {
+	return 0; 
+      }
 
       // Fetch method
       frame_type_ptr template_input::fetch( )
@@ -203,18 +223,27 @@ namespace olib {
   // Plugin object
   //
 
+  template_plugin::template_plugin(   )
+  {
+    std::cerr << "template_plugin::template_plugin";
+    myid=123;
+  }
+
   input_type_ptr template_plugin::input(  const opl::wstring & )
   {
+    std::cerr << "template_plugin::input";
     return input_type_ptr( new template_input( ) );
   }
 
   store_type_ptr template_plugin::store( const opl::wstring &, const frame_type_ptr & )
   {
+    std::cerr << "template_plugin::store";
     return store_type_ptr( new template_store( ) );
   }
 
   filter_type_ptr template_plugin::filter( const opl::wstring & )
   {
+    std::cerr << "template_plugin::filter";
     return filter_type_ptr( new template_filter( ) );
   }
 
@@ -272,7 +301,14 @@ extern "C"
 
   ML_PLUGIN_DECLSPEC bool templateplugin_openplugin_create_plugin( const char*, opl::openplugin** plug )
   {
-    *plug = new plugin::template_plugin;
+
+    std::cerr << "to create a new template_plugin";
+
+    plugin::template_plugin * pNew;
+    pNew = new plugin::template_plugin();
+
+    *plug = pNew;
+
     return true;
   }
 

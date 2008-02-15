@@ -100,24 +100,19 @@ protected:
 
 public:
 
-	EffectInfo()
-	{
-		m_type = NOT_A_TYPE;
-	}
-
-	EffectInfo(EFFECT_TYPE type);
+    EffectInfo();
+    EffectInfo(EFFECT_TYPE type);
 
 public:
 	static EFFECT_CATEGORY  getCategory(EFFECT_TYPE type);
 	static EFFECT_CATEGORY  getCategory(std::string& name);
-    static std::string*		getName(EFFECT_TYPE type) { return &m_name_table[type]; }
-    static std::string	    getStringName(EFFECT_TYPE type) { return std::string(m_name_table[type]); }
-    static EFFECT_TYPE      getType(std::string& name);
-
-	EFFECT_TYPE	            getType() { return m_type; }
-	void				    setType(EFFECT_TYPE type) { m_type = type; }
-	JahLayer*			    getJahLayer() { return m_jah_layer; }
-    void                    setJahLayer(JahLayer* layer) { m_jah_layer = layer; } 
+	static std::string*		getName(EFFECT_TYPE type);
+	static std::string	    getStringName(EFFECT_TYPE type);
+	static EFFECT_TYPE      getType(std::string& name);
+	EFFECT_TYPE	            getType() ;
+	void				    setType(EFFECT_TYPE type);
+	JahLayer*			    getJahLayer() ;
+	void                    setJahLayer(JahLayer* layer) ;
 };
 
 class EffectLayer
@@ -149,12 +144,9 @@ public:
     std::string&                getSliderName(int slider_number) { return m_slider_name_vector[slider_number]; }
     std::vector<std::string>*   getSliderNameVector() { return &m_slider_name_vector; }
 
-    EffectLayer(void)
-    {
-        objtype = EffectInfo::NOT_A_TYPE;
-    };
+    EffectLayer(void);
 
-    ~EffectLayer(void) {};
+    ~EffectLayer(void);
 
     QString							effectname;
 

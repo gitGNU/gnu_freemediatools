@@ -57,13 +57,12 @@ private:
 class selectionList
 {
 public:
-    selectionList( int l, bool s) : layer(l), status(s)
-    {}
-
-    public:
-
-    int       layer;
-    bool      status;
+  selectionList( int l, bool s) ;
+  
+ public:
+  
+  int       layer;
+  bool      status;
 };
 
 
@@ -75,51 +74,18 @@ public:
 class LayerListEntry
 {
 public:
-    LayerListEntry( int layer, const QString& name )
-    {
-        thelayer = new JahLayer;
-        thelayer->layername = name;
-        thelayername = name;
-        thelayernumber = layer;
-        thelayer->setLayerListEntry(this);
+  LayerListEntry( int layer, const QString& name );
+  LayerListEntry(const QString& name );
+  ~LayerListEntry();
 
-        m_effects_list = new QPtrList<EffectLayer>;
-        m_effects_list->setAutoDelete( TRUE );
-    }
+  /////////////////////////////////////////////////////
+  //for the layer
 
-    LayerListEntry(const QString& name )
-    {
-        // (NOTE: layernumber never set if using this constr?)
+  QString         name()   const;
+  int             layer()  const;  
+  JahLayer*       getJahLayer();
 
-        // Further note. Position in a list should never be kept as state
-        // If a layer is inserted or deleted earlier in the list, the layernumber
-        // becomes incorrect and potentially leads to all kinds of bugs.  The great thing about lists 
-        // is that they manage themselves, and if you really want to know the layer number (why?)
-        // you can find it using the list find() method. 
-        // Tony
-
-        thelayer = new JahLayer;
-        thelayername = name;
-        thelayer->layername = name;
-        thelayer->setLayerListEntry(this);
-
-        m_effects_list = new QPtrList<EffectLayer>;
-        m_effects_list->setAutoDelete( TRUE );
-    }
-
-    ~LayerListEntry()
-    {
-        delete m_effects_list;
-		delete thelayer;
-    }
-
-    /////////////////////////////////////////////////////
-    //for the layer
-    QString         name()   const  { return thelayername;  }
-    int             layer()  const  { return thelayernumber;  }
-
-    JahLayer*       getJahLayer() { return thelayer; }
-    JahLayer*       thelayer;
+  JahLayer*       thelayer;
 
     /////////////////////////////////////////////////////
     //for the layer effects
@@ -128,52 +94,13 @@ public:
 
 	//we should set the effect name and number at the same time?
 
-    EffectLayer* addEffectLayer(EffectInfo::EFFECT_TYPE effect_type, bool status = true, int pluginid = 0);
-
-	inline int getNumberOfEffects()
-    {
-        return m_effects_list->count();
-	}
-
-	inline bool fxLayerStatus(int effect_number)
-    {
-        return m_effects_list->at(effect_number)->layerStatus;
-	}
-
-	inline int fxPluginNumber(int effect_number)
-    {
-		return m_effects_list->at(effect_number)->getPluginNumber();
-	}
-
-
-    inline QPtrList<EffectLayer>* getEffectsList() { return m_effects_list; }
-
-	inline EffectInfo::EFFECT_TYPE getEffectType(int effect_number)
-    {
-		if ( effect_number < 0 || effect_number > (int)m_effects_list->count() )
-		{
-			return EffectInfo::NOT_A_TYPE;
-		}
-
-		if (m_effects_list->at(effect_number))
-        {
-			return m_effects_list->at(effect_number)->objtype;
-        }
-		else
-        {
-			return EffectInfo::NOT_A_TYPE;
-        }
-	
-	}
-
-	inline bool getLayerStatus(void)
-    {
-		return thelayer->layerStatus;
-	}
-
-    //2. turn effect on/off
-    //3. remove layer effect
-
+  EffectLayer* addEffectLayer(EffectInfo::EFFECT_TYPE effect_type, bool status = true, int pluginid = 0);
+  int getNumberOfEffects();
+  bool fxLayerStatus(int effect_number);
+  int fxPluginNumber(int effect_number);
+  QPtrList<EffectLayer>* getEffectsList() ;
+  EffectInfo::EFFECT_TYPE getEffectType(int effect_number);
+  bool getLayerStatus(void);
 public:
     QString         thelayername;
 

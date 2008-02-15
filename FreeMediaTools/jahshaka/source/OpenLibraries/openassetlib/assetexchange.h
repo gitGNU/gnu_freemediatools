@@ -100,7 +100,7 @@ class assetExchange
     void ExportAsset(assetData &asset, QString destination);
     
 	bool getCorrectAspectRatio( ) { return m_correct_ar; }
-	void setCorrectAspectRatio( bool on ) { m_correct_ar = on; }
+	void setCorrectAspectRatio( bool on );
 
 private:
     bool   streamMediaintoimage( const QString loadfilename,  QImage & image, int frame);

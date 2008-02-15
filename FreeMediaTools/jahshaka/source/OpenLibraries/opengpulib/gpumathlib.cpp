@@ -1547,6 +1547,14 @@ void create_pbuffer(int width, int height)
     check_gl();
 }
 
+
 #endif // !WIN32
+
+float    Globals::getCameraDistance()
+{
+  return m_camera_distance;
+}
+
 #endif // NVIDIA_GPU
+
 

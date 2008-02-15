@@ -64,7 +64,8 @@ protected:
 class AssetDisplay : public QWidget
 {
 public:
-    AssetDisplay( QWidget* parent, const char* name = 0 );
+  AssetDisplay( QWidget* parent, const char* name = 0 );
+  ~AssetDisplay();
 
     void setAssetData( const assetData& );
     virtual void setFont( const QFont& );

@@ -52,13 +52,103 @@ MainEncoder::MainEncoder( const QGLWidget *core, QWidget *parent, const char* na
 	, m_control( control )
 	, m_controller( controller )
 	, m_leftcontroller( leftcontroller )
-	, m_rightcontroller( rightcontroller )
-	, m_started( false )
-  //	, m_jahnle_render( 0 )
+	, m_rightcontroller( rightcontroller ),
+	  m_started( false ),
+	  m_render_formats_label(0),
+	  m_render_normalisation_label(0),
+	  m_render_profiles_label(0),
+	  m_render_formats_combobox(0),
+	  m_render_normalisation_combobox(0),
+	  m_render_profiles_combobox(0),
+	  EffectsFrame(0),
+	  MiddleFrame(0),
+	  Slider2(0),
+	  animframe(0),
+	  EncodeButton(0),
+	  MainController(0),
+	  frameNumString(0),
+	  TimecodeFrame(0),
+	  controllerffworardbutton(0),
+	  controllerframe(0),
+	  controllernextbutton(0),
+	  controllerplaybutton(0),
+	  controllerpreviousbutton(0),
+	  controllerrewindbutton(0),
+	  controllerstopbutton(0),
+	  forceplaycheckbox(0),
+	  forceplayframe(0),
+	  imagingphotobutton(0),
+	  imagingrenderbutton(0),
+	  keyframebutton(0),
+	  m_pControllerSlider(0),
+	  m_render_button(0),
+	  maincontroller(0),
+	  page(0),
+	  pingButton(0),
+	  rewButton(0),
+	  scrublast(0),
+	  stopButton(0),
+	  Form1Layout(0),
+	  controlers(0),
+	  controlpanel(0),
+	  controls(0),
+	  //	  forcedplay(0),
+	  imagingframe(0),
+	  jahshakaLayout(0),
+	  maincontrollerLayout(0),
+	  mainplayerLayout(0),
+	  mainplayerframe(0),
+	  mainworld(0),
+	  mainworldLayout(0),
+	  object_controls(0),
+	  pageLayout(0),
+	  player(0),
+	  playerClip(0),
+	  playerframe(0),
+	  playerh(0),
+	  playerv(0),
+	  playmodecombo(0),
+	  scene_controls(0),
+	  scrubfirst(0),
+	  scrubkey(0),
+	  scrubnext(0),
+	  scrubplay(0),
+	  scrubprevious(0),
+	  scrubrender(0),
+	  scrubrenderAll(0),
+	  scrubstop(0),
+	  timecodedisplay(0),
+	  timecodeframe(0),
+	  //	  button(0),
+	  filePopup(0),
+	  frameNum(0),
+	  frameScroll(0),
+	  glworldLeft(0),
+	  glworldRight(0),
+	  m_render_formats_button(0),
+	  m_render_profiles_button(0),
+	  menuBar(0),
+	  midL(0),
+	  midM(0),
+	  midR(0),
+	  middle(0),
+	  status(0),
+	  timer(0),
+	  toolbinview(0),
+	  toolrotate(0),
+	  toolscale(0),
+	  toolthumbview(0),
+	  tooltranslate(0),
+	  toolzoomin(0),
+	  toolzoomout(0),
+	  topLayout(0),
+	  utilPopup(0),
+	  zoom(0),
+	  minFrame(0),
+	  maxFrame(0),
+	  ModuleName(name)
 {
-    ModuleName = name;
-    minFrame = 0;
-    maxFrame = 0;
+  
 }
 
 MainEncoder::~MainEncoder()
@@ -171,7 +261,8 @@ void MainEncoder::LoadMySequence(assetData desktopclip)
     encplayer->show( );
 	encplayer->play( filename, 0 );
 
-    controllerslider->setRange( 0,  encplayer->length( ) );
+	if (m_pControllerSlider)
+	    m_pControllerSlider->setRange( 0,  encplayer->length( ) );
 
     //this sets up the interface values
     LoadSequenceCompleted(1, true);
@@ -203,8 +294,10 @@ void	MainEncoder::SetFrameNumber(int i)
     }
 
     frameNumString.setNum( frame );
-    animframe->setValue( frame );
-    controllerslider->setValue( frame );
+    if (animframe) // CRASH
+      animframe->setValue( frame );
+    if (m_pControllerSlider) // CRASH
+      m_pControllerSlider->setValue( frame );
 }
 
 void	MainEncoder::Clear()
@@ -231,7 +324,8 @@ void	MainEncoder::LoadSequenceCompleted(int, bool)
     minFrame = 0;
     maxFrame = encplayer->length( );
 
-    controllerslider->setValue( 0 );
+if (m_pControllerSlider)
+  m_pControllerSlider->setValue( 0 );
 
 }
 
@@ -249,7 +343,8 @@ void	MainEncoder::SetMinFrame(int value)
 	if ( value <= int( maxFrame ) )
 	{
             minFrame = value;
-            controllerslider->setRange(minFrame, maxFrame);
+	    if (m_pControllerSlider)
+	      m_pControllerSlider->setRange(minFrame, maxFrame);
 	}
 }
 
@@ -258,7 +353,8 @@ void	MainEncoder::SetMaxFrame(int value)
 	if ( value >= int( minFrame ) )
 	{
             maxFrame = value;
-            controllerslider->setRange(minFrame, maxFrame);
+	    if (m_pControllerSlider)
+	      m_pControllerSlider->setRange(minFrame, maxFrame);
 	}
 }
 
@@ -371,7 +467,8 @@ void MainEncoder::ActionLoopForward()
             }
         }
 
-        controllerslider->setValue(curFrame);
+	if (m_pControllerSlider)
+	  m_pControllerSlider->setValue(curFrame);
         SetFrameNumber(curFrame);
 }
 
@@ -389,7 +486,8 @@ void MainEncoder::ActionPingPong()
         pingpong = frameStep;
     }
 
-    controllerslider->setValue(curFrame);
+    if (m_pControllerSlider)
+      m_pControllerSlider->setValue(curFrame);
     SetFrameNumber(curFrame);
 }
 
@@ -461,7 +559,8 @@ void MainEncoder::SetZoom(int index)
     //encplayer->SetDisplayZoom(thezoom);
 
     //now update the ui based on the slider position
-    SetFrameNumber(controllerslider->value());
+    if (m_pControllerSlider)
+      SetFrameNumber(m_pControllerSlider->value());
 
 }
 

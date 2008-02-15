@@ -539,3 +539,20 @@ GLAnime::slotLightColorSpecular(QColor color)
     m_specular_color_button->setPaletteBackgroundColor(color); 
 }
 
+
+GLAnime::GLAnime( GLCore* core, const char* name,
+		  QHBox* controls, QHBox* controller, 
+		  QHBox* leftcontroller, QHBox* rightcontroller,
+		  int* globalclipnumber, const QGLWidget*    )
+  :  GLWorld(core,name,controller,globalclipnumber )
+  , m_controls( controls )
+  , m_leftcontroller( leftcontroller )
+  , m_rightcontroller( rightcontroller )
+{
+  
+};
+
+GLAnime::~GLAnime()
+{
+
+}

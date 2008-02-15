@@ -863,3 +863,9 @@ void assetExchange::saveXML( std::fstream & ai_fstream )
     //ai_fstream << " jtrace = '" << jtrace << "'" ;  // OL_Trace * 
     //ai_fstream << " openStream = '" << openStream << "'" ;  // mediaData * 
 }
+
+
+void assetExchange::setCorrectAspectRatio( bool on ) 
+{
+  m_correct_ar = on; 
+}

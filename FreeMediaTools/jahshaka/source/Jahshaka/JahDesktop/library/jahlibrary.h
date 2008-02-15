@@ -63,24 +63,11 @@ private:
 
 public:
 
-    JahLibrary( QWidget* parent = 0, const char* name = 0, QHBox* leftframe = 0,QHBox* rightframe = 0,
-        QHBox* controls = 0, QHBox* = 0, QHBox* leftcontroller = 0, QHBox* rightcontroller = 0,
-        bool = FALSE, WFlags = 0 )
-        : QWidget( parent, name )
-		, m_parent( parent )
-		, m_leftframe( leftframe )
-		, m_rightframe( rightframe )
-		, m_controls( controls )
-		, m_leftcontroller( leftcontroller )
-		, m_rightcontroller( rightcontroller )
-		, m_started( false )
-		, fileview( 0 )
-		, dirlist( 0 )
-		, root( 0 )
-    {
-		ModuleName = name;
-    }
-
+	JahLibrary( QWidget* parent = 0, const char* name = 0, 
+		    QHBox* leftframe = 0,QHBox* rightframe = 0,
+		    QHBox* controls = 0, QHBox* = 0, 
+		    QHBox* leftcontroller = 0, QHBox* rightcontroller = 0,
+		bool = FALSE, WFlags = 0 );
     ~JahLibrary();
 
 
@@ -101,13 +88,13 @@ public:
     QtFileIconView *fileView() { return fileview; }
     DirectoryView *dirList() { return dirlist; }
 
-	void setDirectory( const QString dir ) { directory = dir; }
-
-	QValueList < QString > m_selected_items;
+    void setDirectory( const QString dir );
     
-	QString    ModuleName;
-
-	AssetManMainWidget *ammw;
+    QValueList < QString > m_selected_items;
+    
+    QString    ModuleName;
+    
+    AssetManMainWidget *ammw;
 
 protected:
     void setup();

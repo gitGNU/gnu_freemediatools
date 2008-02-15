@@ -1,0 +1,67 @@
+(gdb) p layer->asset
+$1 = {theCategory = 31, theType = 73, clipname = {static null = {
+      static null = <same as static member of an already seen type>, d = 0x85257e0, 
+      static shared_null = 0x85257e0}, d = 0x1, static shared_null = 0x85257e0}, 
+  clipnumber = 0, location = {static null = {
+      static null = <same as static member of an already seen type>, d = 0x85257e0, 
+      static shared_null = 0x85257e0}, d = 0x0, static shared_null = 0x85257e0}, filename = {
+    static null = {static null = <same as static member of an already seen type>, 
+      d = 0x85257e0, static shared_null = 0x85257e0}, d = 0x0, 
+    static shared_null = 0x85257e0}, extension = {static null = {
+      static null = <same as static member of an already seen type>, d = 0x85257e0, 
+      static shared_null = 0x85257e0}, d = 0x0, static shared_null = 0x85257e0}, 
+  startframe = 0, endframe = 0, clipinframe = 0, clipoutframe = 0, videotex = false, 
+  videoext = {static null = {static null = <same as static member of an already seen type>, 
+      d = 0x85257e0, static shared_null = 0x85257e0}, d = 0x0, 
+    static shared_null = 0x85257e0}, 
+  m_frame_name_vector = {<std::_Vector_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> >,std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >> = {
+      _M_impl = {<std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >> = {<__gnu_cxx::new_allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >> = {<No data fields>}, <No data fields>}, _M_start = 0x0, 
+        _M_finish = 0x0, _M_end_of_storage = 0x0}}, <No data fields>}, 
+  xpos = 5.9415882147027625e-313, ypos = 1.0397779377212031e-312, 
+  xsize = -2.9783088258064803e-44, ysize = 0, xNativeSize = -nan(0xfffff00000000), 
+  yNativeSize = 0, locked = 31, filmstrip = false, frameOffset = 31, blank_length = 48, 
+  desktop = {static null = {static null = <same as static member of an already seen type>, 
+      d = 0x85257e0, static shared_null = 0x85257e0}, d = 0x11, 
+    static shared_null = 0x85257e0}}
+
+
+type = class assetData {
+  public:
+    VideoCategory::TYPE theCategory;
+    VideoType::TYPE theType;
+    QString clipname;
+    int clipnumber;
+    QString location;
+    QString filename;
+    QString extension;
+    int startframe;
+    int endframe;
+    int clipinframe;
+    int clipoutframe;
+    bool videotex;
+    QString videoext;
+    
+    std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >,std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > m_frame_name_vector;
+    double xpos;
+    double ypos;
+    double xsize;
+    double ysize;
+    double xNativeSize;
+    double yNativeSize;
+    bool locked;
+    bool filmstrip;
+    int frameOffset;
+    int blank_length;
+    QString desktop;
+
+    
+    std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >,std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > & getFrameNameVector();
+    assetData(void);
+    ~assetData(int);
+    bool operator<(assetData);
+    int getNumFrames() const;
+    QString getFullFileName() const;
+    int getMaxFrames() const;
+    void validate();
+    static void saveXML(std::basic_fstream<char, std::char_traits<char> >&);
+}

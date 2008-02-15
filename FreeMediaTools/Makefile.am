@@ -939,9 +939,14 @@ INCLUDES=											\
 #                -e '/^$$/ d' -e 's/$$/ :/' < $*.d >> $*.P; \
 #            rm -f $*.d
 
-#	-save-temps                                                             #	--verbose										
+#	-save-temps                                                             #	--verbose
+
+# turned off the optimization for debugging.										
 AM_CXXFLAGS=											\
 	-MD											\
+	-O0                                                                                     \
+	-pg                                                                                     \
+	 -fprofile-arcs -ftest-coverage	                                                        \
 	-Wall 											\
         -D_REENTRANT										\
 	-DOPENOBJECTLIB_SHADER="./effects/shaders/"						\
@@ -985,13 +990,16 @@ AM_CXXFLAGS=											\
 #LDADD=-lGL -lGLU -lX11 -lXext -lXmu -lfreetype -ljpeg -lm -lpthread -lsqlite3
 
 #-L/usr/share/qt3/lib 
-AM_LDFLAGS= 
+#AM_LDFLAGS= 
 #x-Wl,-verbose,-M,--cref,
 
 # removed
 #-lformats
 #-ln
-LDADD= -lXi  -lmlt++  -lmlt -lpython2.4   -lGLEW  -lboost_filesystem -lboost_iostreams  -lboost_regex -lboost_thread  -lxml2 	 -lqt-mt -laviplay
+AM_LDFLAGS = -pg \
+	      -fprofile-arcs -ftest-coverage
+
+LDADD=  -lXi  -lmlt++  -lmlt -lpython2.4   -lGLEW  -lboost_filesystem -lboost_iostreams  -lboost_regex -lboost_thread  -lxml2 	 -lqt-mt -laviplay
 #-laviplay 
 
 #-lsqlite3 -lpthread -lm -ljpeg -lfreetype -lXmu -lXext -lX11 -lGLU -lGL 

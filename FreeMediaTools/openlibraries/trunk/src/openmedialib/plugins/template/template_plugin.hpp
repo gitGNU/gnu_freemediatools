@@ -98,10 +98,17 @@ namespace olib {
 
       class ML_PLUGIN_DECLSPEC template_plugin : public openmedialib_plugin
 	{
+	  int myid;
 	public:
+
+	  template_plugin (); // bogus
+
 	  virtual input_type_ptr input(  const opl::wstring & );
+
 	  virtual store_type_ptr store( const opl::wstring &, const frame_type_ptr & );
+
 	  virtual filter_type_ptr filter( const opl::wstring & );
+
 	};
 
     }

@@ -106,16 +106,50 @@ EffectInfo::getCategory(EFFECT_TYPE type)
     return NOT_A_CATEGORY;
 }
 
+EffectLayer::EffectLayer(void)
+{
+  objtype = EffectInfo::NOT_A_TYPE;
+};
+
+EffectLayer::~EffectLayer(void)
+{
+
+};
 
 
+EffectInfo::EffectInfo()
+{
+  m_type = NOT_A_TYPE;
+}
 
+std::string*		
+EffectInfo::getName(EFFECT_TYPE type)
+{
+  return &m_name_table[type]; 
+}
 
+std::string	    
+EffectInfo::getStringName(EFFECT_TYPE type)
+{ return std::string(m_name_table[type]); }
 
+EffectInfo::EFFECT_TYPE	            EffectInfo::getType() 
+{
+  return m_type; 
+}
+void				    
+EffectInfo::setType(EffectInfo::EFFECT_TYPE type) 
+{
+  m_type = type; 
+}
 
+JahLayer*			    
+EffectInfo::getJahLayer()
+{ 
+  return m_jah_layer; 
+}
 
-
-
-
-
-
-
+void                    
+EffectInfo::setJahLayer(JahLayer* layer)
+{ 
+  m_jah_layer = layer; 
+}

@@ -140,36 +140,17 @@ public:
     GLfloat      mapheight;                              // Image mapping height
 
 public:
-	TextureImage( )
-    	: bpp( 0 )
-    	, wresolution( 0.0f )
-    	, hresolution( 0.0f )
-    	, width( 0.0f )
-    	, height( 0.0f )
-    	, x( 0.0f )
-    	, y( 0.0f )
-    	, texwidth( 0.0f )
-    	, texheight( 0.0f )
-    	, texwidthratio( 0.0f )
-    	, texheightratio( 0.0f )
-    	, texID( 0 )
-    	, mapwidth( 0.0f )
-    	, mapheight( 0.0f )
-        , m_previous_width( 0 )
-        , m_previous_height( 0 )
-        , m_previous_depth( 0 )
-	{ 
-        //bool stop_here = true;
-    }
-
+    TextureImage( );
+    
     int         getTextureWidth() { return int(wresolution); }
     int         getTextureHeight() { return int(hresolution); }
-    int         getImageWidth() { return int(width); }
-    int         getImageHeight() { return int(height); }
-    GLuint      getTexId() { return texID; }
-    GLuint*     getTexIdPtr() { return &texID; } 
-    GLuint      getTileTextureId(int index) { return m_tile_texture_id[index]; }
-    GLuint*     getTileTextureIdPtr(int index) { return &(m_tile_texture_id[index]); } 
+    int         getImageWidth() ;
+    int         getImageHeight();
+    GLuint      getTexId();
+    GLuint*     getTexIdPtr();
+    GLuint      getTileTextureId(int index) ;
+    GLuint*     getTileTextureIdPtr(int index);
+  
     int         getTileTextureWidth(int index) { return m_tile_texture_width[index]; }
     int         getTileTextureHeight(int index) { return m_tile_texture_height[index]; }
     int         getTileImageWidth(int index) { return m_tile_image_width[index]; }
@@ -250,7 +231,7 @@ public:
     //for Qt font support
     QFont			*theqfont;
 
-    QString     getText() { return text; };
+    QString     getText();
 
 	//void saveXML( std::fstream & ai_fstream ) ;
 };

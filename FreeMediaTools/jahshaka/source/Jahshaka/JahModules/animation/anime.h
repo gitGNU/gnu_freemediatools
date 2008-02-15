@@ -28,16 +28,11 @@ private:
 public:
 
     GLAnime( GLCore* core, const char* name,
-             QHBox* controls, QHBox* controller, QHBox* leftcontroller, QHBox* rightcontroller,
-             int* globalclipnumber, const QGLWidget* =0   )
-        :  GLWorld(core,name,controller,globalclipnumber )
-           , m_controls( controls )
-           , m_leftcontroller( leftcontroller )
-           , m_rightcontroller( rightcontroller )
-        {
-        };
+	     QHBox* controls, QHBox* controller, QHBox* leftcontroller, 
+	     QHBox* rightcontroller,
+	     int* globalclipnumber, const QGLWidget* =0   );
 
-	~GLAnime() { }
+    ~GLAnime();
 
 protected:
 	void start( );
