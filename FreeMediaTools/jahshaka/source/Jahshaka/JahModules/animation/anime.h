@@ -19,7 +19,6 @@
 class GLAnime :  public  GLWorld {
     Q_OBJECT
 
-
 private:
 	QHBox *m_controls; 
 	QHBox *m_leftcontroller; 
@@ -105,8 +104,8 @@ public slots:
     void keyCliplayer();
     void keyClipkey();
 
-    void grabDesktop(void)      { emit GrabClip();      };
-    void grabDesktopKey(void)   { emit GrabClipKey();   };
+    void grabDesktop(void)     ;
+    void grabDesktopKey(void)   ;
 
     //we override this routine for the animation module
     //as it uses a custom selection workflow
@@ -115,7 +114,7 @@ public slots:
     //this is experimental used for media location
     void locateMissingMedia(void);
 
-    QCheckBox* getKeySelect() { return KeySelect; }
+    QCheckBox* getKeySelect() ;
 
     //move into core once it works
     void slotChooseLightColorAmbient();

@@ -48,41 +48,41 @@ class PlayControlSprite: public QCanvasSprite {
 public:
 
   PlayControlSprite( QCanvasPixmapArray * a, QCanvas * canvas );
-  int rtti () const { return playcontrolRTTI; }
+  int rtti () const;
 };
 
 class RewindControlSprite: public QCanvasSprite {
 public:
   RewindControlSprite( QCanvasPixmapArray * a, QCanvas * canvas );
-  int rtti () const { return rewindcontrolRTTI; }
+  int rtti () const ;
 };
 
 class BackControlSprite: public QCanvasSprite {
 public:
 
   BackControlSprite( QCanvasPixmapArray * a, QCanvas * canvas );
-  int rtti () const { return backcontrolRTTI; }
+  int rtti () const ;
 };
 
 class ForwardControlSprite: public QCanvasSprite {
 public:
 
   ForwardControlSprite( QCanvasPixmapArray * a, QCanvas * canvas );
-  int rtti () const { return forwardcontrolRTTI; }
+  int rtti () const;
 };
 
 class FForwardControlSprite: public QCanvasSprite {
 public:
 
   FForwardControlSprite( QCanvasPixmapArray * a, QCanvas * canvas );
-  int rtti () const { return fforwardcontrolRTTI; }
+  int rtti  () const;
 
 };
 
 class BackgroundSprite: public QCanvasSprite {
 public:
   BackgroundSprite( QCanvasPixmapArray * a, QCanvas * canvas );
-  int rtti () const { return bgRTTI; }
+  int rtti  () const;
   bool isValid ();
 
 };
@@ -102,7 +102,7 @@ public:
   int getDesktopSelect();
 
   // returns true if the current clip is playing on the desktop.
-  bool clipIsPlaying() { return clipplaying; } ;
+  bool clipIsPlaying() ;
 
   QString imagetext;
   ImageItem *globalitem;
@@ -116,13 +116,13 @@ public:
   // General options can be set here
   enum PlayerControlsMode { Reveal, AlwaysShow, AlwaysHide };
   // Setting setSelectionAllowed (false) prevents any interaction at all.
-  void setSelectionAllowed ( bool enable ) { selectionallowed = enable; }; 
-  void setResizingAllowed ( bool enable ) { resizeallowed = enable; };
-  void setMovingAllowed( bool enable ) { movingallowed = enable; };
+  void setSelectionAllowed ( bool enable );
+  void setResizingAllowed ( bool enable ) ;
+  void setMovingAllowed( bool enable ) ;
   void setPlayerControlsMode ( FigureEditor::PlayerControlsMode mode );
-  void setItemBorderEnabled ( bool enable ) { borderenabled = enable; };
-  void setFilmStripAllowed( bool enable ) { filmstripallowed = enable; };
-  bool filmStripAllowed() { return filmstripallowed; };
+  void setItemBorderEnabled ( bool enable );
+  void setFilmStripAllowed( bool enable ) ;
+  bool filmStripAllowed() ;
 
   // If an item is moved or resized externally, the selection border and text (drawn in this class)
   // wont know, so you might want to hide these if items move externally.
@@ -192,7 +192,7 @@ protected:
   QString categoryName( VideoCategory::TYPE cat );
 
   //! Make sure the canvas bg fits in with our current theme/palette if it changes.
-  void styleChange ( QStyle & ){ if (canvas() ) canvas()->setBackgroundColor( qApp->palette().color( QPalette::Active, QColorGroup::Mid )); };
+  void styleChange ( QStyle & );
 
 signals:
   void status(const QString&);

@@ -487,19 +487,13 @@ void GLEffect::buildInterface( QHBox* f )
     JahFormatter::addCheckButton( togglePing, 510, 130, 100, 25, "Ping Pong" );
     connect( togglePing,  SIGNAL(clicked()), this, SLOT( togglePingPong() )  );
     
-    //what is this used for?
-    //need to make the icon a lock... 3x current height as well for links
-    //lockicon	= new QToolButton(ControlFrameUI[2][0],"lockicon");
-    //lockicon->setGeometry( QRect( 600, 55, 18, 26 ) );
-    //lockicon->setFixedSize(18, 26);  	//lighticon->setUsesBigPixmap(true);
-    //lockicon->setAutoRaise(true);
-    
+   
     FindMediaLabel = new QLabel( ControlFrameUI[2][0], "FindMediaLabel" );
     JahFormatter::addLabel( FindMediaLabel, 0, 110, 110, 21, "Media Location", 9);
     
     FindMediaText	= new QLineEdit( ControlFrameUI[2][0], "FindMediaText" );
     FindMediaText->setGeometry( QRect( 2, 135, 250, 21 ) );
-    //FindMediaText->setText( "jahshaka" );
+    //FindMediaText->setText( "FMT FreeMediaTools" );
     
     FindMediaButton = new QPushButton( ControlFrameUI[2][0], "find" );
     JahFormatter::addButton( FindMediaButton, 255, 135, 55, 21, m_pJt->tr("locate") );

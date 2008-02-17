@@ -13,6 +13,7 @@
 #include <iostream>
 
 #include "opentracer.h"
+#include <FreeMediaTools.h>
 
 class OL_Trace::OL_TraceDestroyer
 {
@@ -527,7 +528,7 @@ void OL_Trace::setFileSave( bool  fileout ) throw()
                         
             //QTextStream t( jahfile );
             jahfile <<  ( const char * )"---------------------------" << "\n"; 
-            jahfile <<  "Jahshaka Tracer Log File " << "\n"; 
+	    jahfile <<  FMT_PROGRAM_TITLE << " Tracer Log File " << "\n";
             //jahfile <<  "Date: " << thedatestr.data() << " Time: " <<  thetimestr.data() << "\n"; 
             jahfile <<  "Date & Time: " << thedatestr.data() << "\n"; 
             jahfile <<  "---------------------------" << "\n"; 

@@ -165,3 +165,20 @@ KeyEdgeBezierItem::moveBy(double, double)
 {
 }
 
+
+int KeyEdgeItem::count() { return c; }
+
+QPointArray* KeyEdgeBezierItem::getPointArray() { return &m_point_array; }
+
+KeyframeItem::~KeyframeItem() {}
+
+int KeyframeItem::rtti () const 
+{ 
+  return keyframeRTTI;
+}
+
+void KeyframeItem::addInEdge( KeyEdgeItem *edge ) { inList.append( edge ); }
+
+void KeyframeItem::addOutEdge( KeyEdgeItem *edge ) { outList.append( edge ); }
+
+

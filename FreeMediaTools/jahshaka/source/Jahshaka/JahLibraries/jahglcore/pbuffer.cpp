@@ -376,3 +376,42 @@ createAndSetRgbaPbuffer(PBuffer** pbuffer, int width, int height)
     return new_pbuffer;
 }
 
+int               PBuffer::getPreviousViewportWidth() 
+{
+  return m_previous_viewport_width; 
+}
+
+void              PBuffer::setPreviousViewportWidth(int width)
+{
+  m_previous_viewport_width = width;
+}
+
+int               PBuffer::getPreviousViewportHeight()
+{
+  return m_previous_viewport_height;
+}
+
+void              PBuffer::setPreviousViewportHeight(int height)
+{
+  m_previous_viewport_height = height;
+}
+
+int               PBuffer::getWidth()
+{
+  return m_width;
+}
+
+void              PBuffer::setWidth(int width)
+{
+  m_width = width; 
+}
+
+int               PBuffer::getHeight()
+{ 
+  return m_height; 
+}
+
+void              PBuffer::setHeight(int height) 
+{
+  m_height = height; 
+}

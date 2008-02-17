@@ -38,7 +38,7 @@ public:
     void setFromPoint( int x, int y ) ;
     void setToPoint( int x, int y );
 
-    static int count() { return c; }
+    static int count() ;
     void moveBy(double dx, double dy);
 
 private:
@@ -58,7 +58,7 @@ public:
 
     static int getCount();
     void moveBy(double dx, double dy);
-    QPointArray* getPointArray() { return &m_point_array; }
+    QPointArray* getPointArray() ;
 
 private:
     static int m_count;
@@ -73,12 +73,11 @@ class KeyframeItem: public QCanvasEllipse
 public:
 
     KeyframeItem( QColor color, QCanvas *canvas, float* keyframe_value_pointer );
-    ~KeyframeItem() {}
-    
-    int rtti () const { return keyframeRTTI; }
+    ~KeyframeItem();
+    int rtti  () const;
 
-    void addInEdge( KeyEdgeItem *edge ) { inList.append( edge ); }
-    void addOutEdge( KeyEdgeItem *edge ) { outList.append( edge ); }
+    void addInEdge( KeyEdgeItem *edge );
+    void addOutEdge( KeyEdgeItem *edge );
     void moveBy(double dx, double dy);
 
 private:

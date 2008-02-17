@@ -15,6 +15,7 @@
 #include <qlistview.h>
 
 #include <InputLCD.h>
+#include <iostream>
 
 //////////////////////////////////////////////////////
 //first the headings group headings
@@ -442,6 +443,19 @@ void GLWorld::updateSliderValues()
 
         if ( getModuleUsesLighting() )
         {
+	  QSlider* pSlider=getLightingSliderPtr(0);
+
+	  if (!pSlider)
+	    {
+	      std::cerr << "No Slider! bailing";
+	      return ;
+	    }
+	  if (!interpolated_values)
+	    {
+	      std::cerr << "No Values";
+	      return ;
+	    } 
+
             getLightingSliderPtr(0)->setValue( (int)( interpolated_values->ambient_light_color.x * 255.0f) );
             getLightingSliderPtr(1)->setValue( (int)( interpolated_values->ambient_light_color.y * 255.0f) );
             getLightingSliderPtr(2)->setValue( (int)( interpolated_values->ambient_light_color.z * 255.0f) );

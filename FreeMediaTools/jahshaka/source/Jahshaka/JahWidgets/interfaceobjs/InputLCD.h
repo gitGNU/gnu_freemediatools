@@ -28,14 +28,11 @@ public:
     InputLCD (QWidget* parent = NULL, const char* name = NULL );
     virtual ~InputLCD();
 
-    inline	int	getMinInt ()	{	return minInt;	}
-    inline	int	getMaxInt ()	{	return maxInt;	}
+    inline	int	getMinInt ()	;
+    inline	int	getMaxInt ()	;
     
-    void contextMenuEvent(QContextMenuEvent * e)
-    {
-        //dont want context menus poping up in lcd's
-    	e->accept();		// Is this the correct way to
-    }
+    void contextMenuEvent(QContextMenuEvent * e);
+
 
     // Enumerated type to specify whether a double click gravitates to 0, Min or Max
     typedef enum Default
@@ -47,7 +44,7 @@ public:
     };
 
     // Allow default gravity to be specified
-    void setDefault( Default val ) { m_default = val; }
+    void setDefault( Default val );
 
     // allow the int value to be formatted before display
     void setFormatter( const IntValueFormatter& f );

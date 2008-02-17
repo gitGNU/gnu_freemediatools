@@ -282,3 +282,37 @@ QString textObj::getText()
 {
   return text;
 };
+
+
+
+const std::string&   LayerCategory::getName(TYPE type)
+{
+  return m_type_string_vector[type]; 
+}
+
+ const std::string&   CompositeType::getName(TYPE type) 
+{
+ return m_type_string_vector[type]; 
+}
+
+
+const std::string&   ObjectCategory::getName(TYPE type) { return m_type_string_vector[type]; }
+int         TextureImage::getTextureWidth() { return int(wresolution); }
+int         TextureImage::getTextureHeight() { return int(hresolution); }
+int         TextureImage::getTileTextureWidth(int index) { return m_tile_texture_width[index]; }
+int         TextureImage::getTileTextureHeight(int index) { return m_tile_texture_height[index]; }
+int         TextureImage::getTileImageWidth(int index) { return m_tile_image_width[index]; }
+int         TextureImage::getTileImageHeight(int index) { return m_tile_image_height[index]; }
+void        TextureImage::setTileImageWidth(int index, int width) { m_tile_image_width[index] = width; }
+void        TextureImage::setTileImageHeight(int index, int height) { m_tile_image_height[index] = height; }
+void        TextureImage::setTileTextureWidth(int index, int width) { m_tile_texture_width[index] = width; }
+void        TextureImage::setTileTextureHeight(int index, int height) { m_tile_texture_height[index] = height; }
+int         TextureImage::getPreviousWidth() { return m_previous_width; }
+    void        TextureImage::setPreviousWidth(int width) { m_previous_width = width; }
+int         TextureImage::getPreviousHeight() { return m_previous_height; }
+void        TextureImage::setPreviousHeight(int height) { m_previous_height = height; }
+int         TextureImage::getPreviousDepth() { return m_previous_depth; }
+void        TextureImage::setPreviousDepth(int depth) { m_previous_depth = depth; }
+const std::string&   FontDrawstyle::getName(TYPE type) { return m_type_string_vector[type]; }
+const std::string&   ParticleCategory::getName(TYPE type) { return m_type_string_vector[type]; }
+const std::string&   ParticleDrawstyle::getName(TYPE type) { return m_type_string_vector[type]; }

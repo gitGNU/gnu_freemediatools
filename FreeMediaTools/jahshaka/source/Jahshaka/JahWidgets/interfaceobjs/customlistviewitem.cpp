@@ -1,6 +1,4 @@
 #include "customlistviewitem.h"
-//TODO #include "icons.h"
-
 #include <qpixmap.h>
 #include <qlistview.h>
 #include <qevent.h>
@@ -134,12 +132,7 @@ CustomListViewItem::CustomListViewItem( CustomListViewItem* parenti ) : QListVie
 
 void CustomListViewItem::initIcons()
 {
-    // TODO
-    /*
-	if ( ouricon_ == 0)
-	{	ouricon_ = new QPixmap ( "todo.png" );
-	}
-    */
+
 }
 
 void CustomListViewItem::initColors()

@@ -46,7 +46,7 @@ struct Collapsable::PrivateCollapsable
     {
         if ( open )
         {
-            return QPixmap( pixmapPath + "collapse-close.png" );
+	  return QPixmap( pixmapPath + "collapse-close.png" );
         }
 
         return QPixmap( pixmapPath + "collapse-open.png" );

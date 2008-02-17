@@ -51,8 +51,6 @@ ApollonQueryView::ApollonQueryView(QTabWidget *parent, int ID, int index, const 
 {
 	setName("queryTab");
 
-//	m_loader = KGlobal::iconLoader();
-
 	QHBox *box = new QHBox(this);
 	QHBox *box2 = new QHBox(this);
 
@@ -61,47 +59,6 @@ ApollonQueryView::ApollonQueryView(QTabWidget *parent, int ID, int index, const 
 
 	QString realm;
 
-	switch(index)
-	{
-		case 0:
-//			realm = i18n("Everything");
-//			m_iconLabel->setPixmap(m_loader->loadIcon("find", KIcon::Small));
-			break;
-		case 1:
-//			realm = i18n("Audio");
-//			m_iconLabel->setPixmap(m_loader->loadIcon("sound", KIcon::Small));
-			break;
-		case 2:
-//			realm = i18n("Video");
-//			m_iconLabel->setPixmap(m_loader->loadIcon("video", KIcon::Small));
-			break;
-		case 3:
-//			realm = i18n("Images");
-//			m_iconLabel->setPixmap(m_loader->loadIcon("image", KIcon::Small));
-			break;
-		case 4:
-//			realm = i18n("Text documents");
-//			m_iconLabel->setPixmap(m_loader->loadIcon("txt", KIcon::Small));
-			break;
-		case 5:
-//			realm = i18n("Software");
-//			m_iconLabel->setPixmap(m_loader->loadIcon("binary", KIcon::Small));
-			break;
-
-		case 6:
-			// These are not allowed as realm
-			//realm = i18n("User");
-//			m_iconLabel->setPixmap(m_loader->loadIcon("connect_established", KIcon::Small));
-			break;
-		case 7:
-			// These are not allowed as realm
-			//realm = "hash";
-//			m_iconLabel->setPixmap(m_loader->loadIcon("help_index", KIcon::Small));
-			break;
-	}
-
-	//m_textSearchString = i18n("Results for <i>%1</i> with keywords <i>%2</i> - Searching...").arg(realm).arg(text);
-	//m_textCompleteString = i18n("Results for <i>%1</i> with keywords <i>%2</i> - Search completed!").arg(realm).arg(text);
 	m_textSearchString = "Results for <i>%1</i> with keywords <i>%2</i> - Searching...";
 	m_textCompleteString = "Results for <i>%1</i> with keywords <i>%2</i> - Search completed!";
 
@@ -355,25 +312,8 @@ void ApollonQueryView::addItem(QString searchReply)
 				p->setDirectory(giFTConnection::searchKey("directory", searchReply));
 
 				QString mime = giFTConnection::searchKey("mime", searchReply);
-//				KMimeType::Ptr type = KMimeType::mimeType(mime);
-//#if KDE_IS_VERSION(3,2,0)
-//				if(type == KMimeType::defaultMimeTypePtr())
-//#else
-//				if(type == KMimeType::mimeType(""))
-//#endif
-				{
-				//	type = KMimeType::findByPath(p->fileName(), 0, true);
-				}
 				QString mimeIcon;// = type->icon(mime, 1);
-	//			p->setPixmap(ApollonSearchListView::columnMimeType,
-//				             m_loader->loadIcon(mimeIcon, KIcon::Small));
-//				p->setMimeTypeIcon(type->icon(mime, 1));
-	//			p->setMimeTypeComment(type->comment());
-
 				p->setVisible(itemVisible(p));
-
-		//		m_summaryLabel->setText(m_textSearchString + (" (1 result)",
-			//	                                                  " (%n results)", m_searchResults->childCount()));
 			}
 			else
 			{

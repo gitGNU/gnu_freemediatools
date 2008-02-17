@@ -35,7 +35,7 @@ ApollonSearchViewItem::ApollonSearchViewItem(QListView *parent, bool child) :
   m_child(child),
   m_availSlots(0)
 {
-	//m_loader = KGlobal::iconLoader();
+
 }
 
 ApollonSearchViewItem::ApollonSearchViewItem(QListViewItem *parent, bool child) :
@@ -44,7 +44,6 @@ ApollonSearchViewItem::ApollonSearchViewItem(QListViewItem *parent, bool child) 
 {
 	m_availSlots = (static_cast<ApollonSearchViewItem*>(parent))->availSlots();
 	m_availSlots = 1;
-//	m_loader = KGlobal::iconLoader();
 }
 
 ApollonSearchViewItem::~ApollonSearchViewItem()

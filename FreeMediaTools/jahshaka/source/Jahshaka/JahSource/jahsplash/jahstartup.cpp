@@ -27,6 +27,15 @@ startup::startup( )
 #else
 : QDialog( 0, "Splash", false, Qt::WStyle_Customize | Qt::WStyle_Splash | Qt::WStyle_StaysOnTop )
 #endif
+  ,
+  version(0),
+  vendor(0),
+  renderer(0),
+  extensions(0),
+  glsplash(0),
+  plabel(0),
+  pbar(0)
+  
 {
 
 	//should be smaller was 300x200 for the gl intro alone
@@ -103,6 +112,13 @@ startup::startup( )
 
 startup::~startup()
 {
+  delete version;
+  delete vendor;
+  delete renderer;
+  delete extensions;
+  delete glsplash;
+  delete plabel;
+  delete pbar ;
 }
 
 void startup::updateProgressValue( ) 

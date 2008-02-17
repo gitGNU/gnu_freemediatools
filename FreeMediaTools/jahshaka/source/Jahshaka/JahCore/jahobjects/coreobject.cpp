@@ -318,6 +318,8 @@ JahLayer::~JahLayer(void)
       delete m_effects_list;
       m_effects_list=0;
     }
+  delete m_lights_list;
+  m_lights_list=0;
 }
 
 void JahLayer::setupKeyframeVariables()
@@ -1035,5 +1037,96 @@ bool            JahLayer::getUseFastShaderKeyer()
 }
 
 void            JahLayer::setUseFastShaderKeyer(bool flag) 
-{ m_use_fast_shader_keyer = flag; }
+{
+  m_use_fast_shader_keyer = flag;
+
+ }
+
+
+CompositeType::TYPE         JahLayer::getCompositeType() { return m_composite_type; }
+
+GLenum          JahLayer::getDstBlendFactor() { return m_dst_blend_factor; }
+GLenum          JahLayer::getSrcBlendFactor() { return m_src_blend_factor; }
+GLenum      JahLayer::getTextureFormat() { return m_texture_format; }
+
+JahLayer*                   JahLayer::getParent() { return m_parent; }
+
+JahLayer*           JahLayer::getCameraLayer() { return m_camera_layer; }
+
+//------------------
+
+LayerListEntry*     JahLayer::getLayerListEntry() { return m_layer_list_entry; }
+ObjectCategory::TYPE              JahLayer::getCategory() { return objtype; }
+QCheckListItem*				JahLayer::getCheckListItem() { return m_check_list_item; }
+QImage*             JahLayer::getCompositeQimageFlippedPtr() { return &m_composite_qimage_flipped; }
+QImage*             JahLayer::getCompositeQimagePtr() { return &m_composite_qimage;}
+QPtrList<EffectLayer>*		JahLayer::getEffectsList() { return m_effects_list; }
+QPtrList<JahLayer>* JahLayer::getLightsList() { return m_lights_list; }
+StabilizingState*   JahLayer::getStabilizingState() { return m_stabilizing_state; }
+bool                        JahLayer::isChromaKeyLayer() { return m_is_chroma_key_layer; }
+bool                JahLayer::getCompositeTextureUpdatedByLighting() { return m_composite_texture_updated_by_lighting; }
+bool                JahLayer::getCreateChromaAlphaMask() { return m_create_chroma_alpha_mask; }
+bool                JahLayer::getEffectsUpdated() { return m_effects_updated; }
+bool                JahLayer::getFirstPass() { return m_first_pass; }
+bool                JahLayer::getInframeValid() { return m_inframe_valid; }
+bool                JahLayer::getLightingEnabled() { return m_lighting_enabled; }
+bool                JahLayer::getSelectColorsIndividually() { return m_select_colors_individually; }
+bool                JahLayer::getShowLights() { return m_show_lights; }
+bool                JahLayer::getTranslateFirst() { return m_translate_first; }
+bool                JahLayer::getUsePbuffer() { return m_use_pbuffer; }
+bool            JahLayer::isFirstEffectLayerBeingRendered() { return m_first_effect_layer_being_rendered; }
+bool        JahLayer::getIsSelectedVisible() { return m_is_slected_visible; }
+bool    JahLayer::containsCpuEffects() { return m_contains_cpu_effects; }
+bool    JahLayer::getEffectsHaveKeyFrames() { return m_effects_have_key_frames; }
+bool    JahLayer::getEffectsSlidersHaveChanged() { return m_effects_sliders_have_changed; }
+color4*             JahLayer::getLight0AmbientPtr() { return &m_light0_ambient; }
+color4*             JahLayer::getLight0DiffusePtr() { return &m_light0_diffuse; }
+color4*             JahLayer::getLight0SpecularPtr() { return &m_light0_specular; }
+float               JahLayer::getPreviousAlpha() { return m_previous_alpha; }
+float               JahLayer::getPreviousTextExtrude() { return m_previous_text_extrude; }
+float*              JahLayer::getLight0ShininessPtr() { return &m_light0_shininess; }
+float4*             JahLayer::getLight0PositionPtr() { return &m_light0_position; }
+int                         JahLayer::getPluginNumber() { return m_plugin_number; }
+int                         m_plugin_number;
+int                 JahLayer::getKeySlipFrameOffset() { return m_key_slip_frame_offset; }
+int                 JahLayer::getSlipFrameOffset() { return m_slip_frame_offset; }
+int JahLayer::getImageHeight() { return textureData.objectImage.height(); }
+int JahLayer::getImageWidth()  { return textureData.objectImage.width(); }
+int JahLayer::getXResolution() { return X_RESOLUTION; }
+int JahLayer::getYResolution() { return Y_RESOLUTION; }
+void						JahLayer::setCheckListItem(QCheckListItem* item) { m_check_list_item = item; }
+void                        JahLayer::setCategory(ObjectCategory::TYPE category) { objtype = category; }
+void                        JahLayer::setCompositeType(CompositeType::TYPE type);
+void                        JahLayer::setParent(JahLayer* parent) { m_parent = parent; }
+void                        JahLayer::setPluginNumber(int number) { m_plugin_number = number; }
+void                JahLayer::setCameraLayer(JahLayer* layer) { m_camera_layer = layer; }
+void                JahLayer::setCompositeTextureUpdatedByLighting(bool flag) { m_composite_texture_updated_by_lighting = flag; }
+void                JahLayer::setCreateChromaAlphaMask(bool flag) { m_create_chroma_alpha_mask = flag; }
+void                JahLayer::setEffectsUpdated(bool flag) { m_effects_updated = flag; }
+void                JahLayer::setFirstPass(bool flag) { m_first_pass = flag; }
+void                JahLayer::setInframeValid(bool flag) { m_inframe_valid = flag; }
+void                JahLayer::setKeySlipFrameOffset(int value) { m_key_slip_frame_offset = value; }
+void                JahLayer::setLayerListEntry(LayerListEntry* entry);
+void                JahLayer::setLightingEnabled(bool flag) { m_lighting_enabled = flag; }
+void                JahLayer::setLightsList( QPtrList<JahLayer>* list ) { m_lights_list = list; }
+void                JahLayer::setPreviousAlpha(float value) { m_previous_alpha = value; }
+void                JahLayer::setPreviousTextExtrude(float value) { m_previous_text_extrude = value; }
+void                JahLayer::setSelectColorsIndividually(bool flag) { m_select_colors_individually = flag; }
+void                JahLayer::setShowLights(bool flag) { m_show_lights = flag; }
+void                JahLayer::setSlipFrameOffset(int value) { m_slip_frame_offset = value; }
+void                JahLayer::setStabilizingState(StabilizingState* state) { m_stabilizing_state = state; }
+void                JahLayer::setTranslateFirst(bool flag) { m_translate_first = flag; }
+void                JahLayer::setUsePbuffer(bool flag) { m_use_pbuffer = flag; }
+void            JahLayer::setDstBlendFactor(GLenum factor) { m_dst_blend_factor = factor; }
+void            JahLayer::setFirstEffectLayerBeingRendered(bool flag) { m_first_effect_layer_being_rendered = flag; }
+void            JahLayer::setSrcBlendFactor(GLenum factor) { m_src_blend_factor = factor; }
+void        JahLayer::setIsSelectedVisible(bool flag) { m_is_slected_visible = flag; }
+void    JahLayer::setContainsCpuEffects(bool flag) { m_contains_cpu_effects = flag; }
+void    JahLayer::setEffectsHaveKeyFrames(bool flag) { m_effects_have_key_frames = flag; }
+
+void    JahLayer::setEffectsSlidersHaveChanged(bool flag) { m_effects_sliders_have_changed = flag; }
+
+EffectLayer*		        JahLayer::getEffectLayer() { return m_effect_layer; }
+
+void JahLayer::setEffectLayer(EffectLayer* layer) { m_effect_layer = layer; }
 

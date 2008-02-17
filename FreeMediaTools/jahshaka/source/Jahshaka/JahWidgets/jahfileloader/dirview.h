@@ -26,10 +26,6 @@ class QDragMoveEvent;
 class QDragLeaveEvent;
 class QDropEvent;
 
-//#ifdef WIN32
-//static IconProvider *iconprovider;
-//#endif
-
 class FileItem : public QListViewItem
 {
 public:

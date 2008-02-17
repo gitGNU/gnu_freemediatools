@@ -28,7 +28,7 @@ Jahplayer::Jahplayer( QWidget* parent, const char* name, WFlags fl )
     //////////////////////////////////////////////////////////////
     //set up tracer
     jtrace = JahTrace::getInstance();	//set up tracer
-    jtrace->info("Jah Constructor","Initializing Jahshaka");
+    jtrace->info("Jah Constructor","Initializing FreeMediaTools");
 
     //////////////////////////////////////////////////////////////
     //check and restore preferences first
@@ -157,8 +157,7 @@ bool Jahplayer::setBasePath(void)
     //since QApplication::applicationFilePath() only works on Qt 3.2 and up
     jtrace->debug("QT_VERSION_STR: " QT_VERSION_STR );
 
-#if (QT_VERSION >= 0x030200)  //was 320
-    jtrace->debug("Qt is up to date");
+
 
 	#ifndef __APPLE__
     	QString apppath = qApp->applicationFilePath();// only works on Qt 3.2 and up
@@ -175,21 +174,6 @@ bool Jahplayer::setBasePath(void)
 		foundpath= true;
 	#endif
 
-#else
-    jtrace->debug("Older version of Qt < 3.2");
-
-    QString thearg = qApp->argv()[0];
-
-    QFile file(thearg);
-    QFileInfo fi(file);
-
-    fileinfo = fi.dirPath(true);
-
-    //make sure we are in the jahshaka directory
-    //this should always be the case
-    foundpath = ( fileinfo.endsWith("jahshaka") || fileinfo.endsWith("jahshaka/") );
-
-#endif
 
     //this is a old method of looking for the path
     //if the new method doesnt work we go with this...

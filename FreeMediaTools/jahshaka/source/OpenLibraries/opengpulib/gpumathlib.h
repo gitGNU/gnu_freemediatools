@@ -87,154 +87,27 @@ public:
     float                z;
     float                w;
 
-    float4()
-    {
-        x = 0.0f;
-        y = 0.0f;
-        z = 0.0f;
-        w = 0.0f;
-    }
+    float4();
+    float4(float X, float Y, float Z, float W);
+    float4(float scalar);
+    void clamp();
+    void clampToOne();
+    float max4();
 
-    float4(float X, float Y, float Z, float W)
-    {
-        x = X;
-        y = Y;
-        z = Z;
-        w = W;
-    }
-
-    float4(float scalar)
-    {
-        x = scalar;
-        y = scalar;
-        z = scalar;
-        w = scalar;
-    }
-
-    void clamp()
-    {
-        if (x < 0.0f) { x = 0.0f; }
-        else if (x > 255.0f) { x = 255.0f; }
-
-        if (y < 0.0f) { y = 0.0f; }
-        else if (y > 255.0f) { y = 255.0f; }
-
-        if (z < 0.0f) { z = 0.0f; }
-        else if (z > 255.0f) { z = 255.0f; }
-
-        if (w < 0.0f) { w = 0.0f; }
-        else if (w > 255.0f) { w = 255.0f; }
-    }
-
-    void clampToOne()
-    {
-        if (x < 0.0f) { x = 0.0f; }
-        if (y < 0.0f) { y = 0.0f; }
-        if (z < 0.0f) { z = 0.0f; }
-        if (w < 0.0f) { w = 0.0f; }
-        if (x > 1.0f) { x = 1.0f; }
-        if (y > 1.0f) { y = 1.0f; }
-        if (z > 1.0f) { z = 1.0f; }
-        if (w > 1.0f) { w = 1.0f; }
-    }
-
-    float max4()
-    {
-        float maximum = x;
-        if (y > maximum) { maximum = y; };
-        if (z > maximum) { maximum = z; };
-        if (w > maximum) { maximum = w; };
-
-        return maximum;
-    }
-
-    float min4()
-    {
-        float minimum = x;
-        if (y < minimum) { minimum = y; };
-        if (z < minimum) { minimum = z; };
-        if (w < minimum) { minimum = w; };
-
-        return minimum;
-    }
-
-    float max3()
-    {
-        float maximum = x;
-        if (y > maximum) { maximum = y; };
-        if (z > maximum) { maximum = z; };
-
-        return maximum;
-    }
-
-    float min3()
-    {
-        float minimum = x;
-        if (y < minimum) { minimum = y; };
-        if (z < minimum) { minimum = z; };
-
-        return minimum;
-    }
-
+    float min4();
+    float max3();
+    float min3();
     static float dot(float4& vector1, float4& vector2);
     static float4 crossProduct(float4& vector1, float4& vector2);
     static float4 pow(float4& vector, float scalar);
 
-    void operator = (float scalar)
-    {
-        x = scalar;
-        y = scalar;
-        z = scalar;
-        w = scalar;
-    }
-
-    void operator = (float4 vector)
-    {
-        x = vector.x;
-        y = vector.y;
-        z = vector.z;
-        w = vector.w;
-    }
-
-    void operator -= (float scalar)
-    {
-        x -= scalar;
-        y -= scalar;
-        z -= scalar;
-        w -= scalar;
-    }
-
-    void operator += (float scalar)
-    {
-        x += scalar;
-        y += scalar;
-        z += scalar;
-        w += scalar;
-    }
-
-    void operator *= (float scalar)
-    {
-        x *= scalar;
-        y *= scalar;
-        z *= scalar;
-        w *= scalar;
-    }
-
-    void operator /= (float scalar)
-    {
-        x /= scalar;
-        y /= scalar;
-        z /= scalar;
-        w /= scalar;
-    }
-
-    void operator += (float4& vector)
-    {
-        x += vector.x;
-        y += vector.y;
-        z += vector.z;
-        w += vector.w;
-    }
+    void operator = (float scalar);
+    void operator = (float4 vector);
+    void operator -= (float scalar);
+    void operator += (float scalar);
+    void operator *= (float scalar);
+    void operator /= (float scalar);
+    void operator += (float4& vector);
 };
 
 OPENGPULIB_API float4 operator - (float scalar, float4& vector);
@@ -247,46 +120,15 @@ OPENGPULIB_API float4 operator + (float4& vector1, float4& vector2);
 class OPENGPULIB_API color4 : public float4
 {
 public:
-    float red() { return x; }
-    float green() { return y; }
-    float blue() { return z; }
-    float alpha() { return w; }
+    float alpha();
+    float blue();
+    float green();
+    float red();
 
-    color4()
-    {
-    }
-
-    color4(float red, float green, float blue, float alpha)
-    {
-        x = red;
-        y = green;
-        z = blue;
-        w = alpha;
-    }
-
-    void operator = (float4 vector)
-    {
-        x = vector.x;
-        y = vector.y;
-        z = vector.z;
-        w = vector.w;
-    }
-
-    bool operator == (float4& vector)
-    {
-        float tolerance = 1.0f / 255.0f;
-
-        if (   fabs(x - vector.x) >= tolerance 
-            || fabs(y - vector.y) >= tolerance
-            || fabs(z - vector.z) >= tolerance
-            || fabs(w - vector.w) >= tolerance
-            )
-        {
-            return false;
-        }
-
-        return true;
-    }
+    color4();
+    color4(float red, float green, float blue, float alpha);
+    void operator = (float4 vector);
+    bool operator == (float4& vector);
 };
 
 class OPENGPULIB_API float2
@@ -295,145 +137,29 @@ public:
     float                x;
     float                y;
 
-    float2()
-    {
-        x = 0.0f;
-        y = 0.0f;
-    }
-
-    float2(float X, float Y)
-    {
-        x = X;
-        y = Y;
-    }
-
-    float2(float V)
-    {
-        x = V;
-        y = V;
-    }
-
-    float length()
-    {
-        return sqrtf( (x * x) + (y * y) );
-    }
-
-    void clampToOne()
-    {
-        if (x < 0.0f) { x = 0.0f; }
-        if (y < 0.0f) { y = 0.0f; }
-        if (x > 1.0f) { x = 1.0f; }
-        if (y > 1.0f) { y = 1.0f; }
-    }
-
-    void floor()
-    {
-        x = floorf(x);
-        y = floorf(y);
-    }
-
-    void ceil()
-    {
-        x = ceilf(x);
-        y = ceilf(y);
-    }
-
-    void round()
-    {
-        x = jahstd::Roundf(x);
-        y = jahstd::Roundf(y);
-    }
-
-    float max2()
-    {
-        return ( (x > y) ? x : y );
-    }
-
-    float min2()
-    {
-        return ( (x < y) ? x : y );
-    }
-
-    float aspect()
-    {
-        return x / y;
-    }
-
+    float2();
+    float2(float X, float Y)     ;
+    float2(float V);
+    float length();
+    void clampToOne();
+    void floor();
+    void ceil();
+    void round();
+    float max2();
+    float min2();
+    float aspect();
     static float dot(float2& vector1, float2& vector2);
-
-    void operator = (float scalar)
-    {
-        x = scalar;
-        y = scalar;
-    }
-
-    void operator -= (float scalar)
-    {
-        x -= scalar;
-        y -= scalar;
-    }
-
-    void operator += (float scalar)
-    {
-        x += scalar;
-        y += scalar;
-    }
-
-    void operator += (float2& vector)
-    {
-        x += vector.x;
-        y += vector.y;
-    }
-
-    void operator -= (float2& vector)
-    {
-        x -= vector.x;
-        y -= vector.y;
-    }
-
-    void operator /= (float scalar)
-    {
-        x /= scalar;
-        y /= scalar;
-    }
-
-    void operator *= (float2& vector)
-    {
-        x *= vector.x;
-        y *= vector.y;
-    }
-
-    void operator *= (float scalar)
-    {
-        x *= scalar;
-        y *= scalar;
-    }
-
-    void operator /= (float2& vector)
-    {
-        x /= vector.x;
-        y /= vector.y;
-    }
-
-    bool operator == (float2& vector)
-    {
-        if (x == vector.x && y == vector.y)
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    bool operator != (float2& vector)
-    {
-        if (x != vector.x || y != vector.y)
-        {
-            return true;
-        }
-
-        return false;
-    }
+    void operator = (float scalar);
+    void operator -= (float scalar);
+    void operator += (float scalar);
+    void operator += (float2& vector);
+    void operator -= (float2& vector);
+    void operator /= (float scalar);
+    void operator *= (float2& vector);
+    void operator *= (float scalar);
+    void operator /= (float2& vector);
+    bool operator == (float2& vector);
+    bool operator != (float2& vector);
 };
 
 OPENGPULIB_API float2 operator - (float scalar, float2& vector);
@@ -605,35 +331,35 @@ class OPENGPULIB_API Globals
 {
 public:
     Globals();
-    static std::string&     getGlVendor() { return m_gl_vendor; }
-    static void             setGlVendor(std::string& vendor) { m_gl_vendor = vendor; }
-    static std::string&     getGlRenderer() { return m_gl_renderer; }
-    static void             setGlRenderer(std::string& renderer) { m_gl_renderer = renderer; }
-    static std::string&     getGlVersion() { return m_gl_version; }
-    static void             setGlVersion(std::string& version) { m_gl_version = version; }
-    static int              getGlMaxTextureSize() { return m_gl_max_texture_size; }
-    static void             setGlMaxtextureSize(int size) { m_gl_max_texture_size = size; }
+    static std::string&     getGlVendor() ;
+    static void             setGlVendor(std::string& vendor);
+    static std::string&     getGlRenderer() ;
+    static void             setGlRenderer(std::string& renderer);
+    static std::string&     getGlVersion();
+    static void             setGlVersion(std::string& version);
+    static int              getGlMaxTextureSize();
+    static void             setGlMaxtextureSize(int size);
 
-    static bool             isWin32() { return m_is_win32; }
-    static void             setisWin32(bool flag) { m_is_win32 = flag; }
-    static void             setEnableScriptingButton(bool flag) { m_enable_scripting_button= flag; }
-    static bool             getEnableScriptingButton() { return m_enable_scripting_button; }
-    static void             setSuppressPopups(bool flag) { m_suppress_popups = flag; }
-    static bool             getSuppressPopups() { return m_suppress_popups; }
-    static void             setAutoSaveEnable(bool flag) { m_auto_save_enable = flag; }
-    static bool             getAutoSaveEnable() { return m_auto_save_enable; }
-    static void             setCameraDistance(float distance) { m_camera_distance = distance; }
-    static float            getCameraDistance() { return m_camera_distance; }
-    static void             setShowLights(bool flag) { m_show_lights = flag; }
-    static bool             getShowLights() { return m_show_lights; }
-    static void             setJahControl(JahControl* jah_control) { m_jah_control = jah_control; }
-    static JahControl*      getJahControl() { return m_jah_control; }
-    static void             setRendering(bool flag) { m_rendering = flag; }
-    static bool             getRendering() { return m_rendering; }
-    static float            getKeyframerZoomFactor() { return m_keyframer_zoom_factor; }
-    static void             setKeyframerZoomFactor(float value) { m_keyframer_zoom_factor = value; }
-    static int              getKeyframerYOffset() { return m_keyframer_y_offset; }
-    static void             setKeyframerYOffset(int value) { m_keyframer_y_offset = value; }
+    static bool             isWin32();
+    static void             setisWin32(bool flag) ;
+    static void             setEnableScriptingButton(bool flag);
+    static bool             getEnableScriptingButton() ;
+    static void             setSuppressPopups(bool flag);
+    static bool             getSuppressPopups() ;
+    static void             setAutoSaveEnable(bool flag);
+    static bool             getAutoSaveEnable();
+    static void             setCameraDistance(float distance);
+    static float            getCameraDistance() ;
+    static void             setShowLights(bool flag);
+    static bool             getShowLights() ;
+    static void             setJahControl(JahControl* jah_control);
+    static JahControl*      getJahControl() ;
+    static void             setRendering(bool flag);
+    static bool             getRendering() ;
+    static float            getKeyframerZoomFactor() ;
+    static void             setKeyframerZoomFactor(float value) ;
+    static int              getKeyframerYOffset();
+    static void             setKeyframerYOffset(int value);
 
 protected:
     static std::string      m_gl_vendor;

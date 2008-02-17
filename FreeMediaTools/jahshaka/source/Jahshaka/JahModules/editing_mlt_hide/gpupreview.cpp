@@ -19,6 +19,8 @@
 
 #include <openpluginlib/pl/GL_utility.hpp>
 
+#include <FreeMediaTools.h>
+
 using namespace Mlt;
 using namespace jahnle;
 
@@ -153,9 +155,12 @@ void PreviewGpu::refresh( )
 		{
 			while ( m_ask_audio && !m_audio->init( ) )
 			{
-				int response = QMessageBox::warning( m_edit->getCore( ), "Jahshaka", 
-													 "Audio device is unavailable.\nDo you want to retry?", 
-													 "Retry", "Ignore", 0, 0, 1 );
+				int response = 
+				  QMessageBox::warning(
+						       m_edit->getCore( ), 
+						       FMT_PROGRAM_TITLE,
+	       "Audio device is unavailable.\nDo you want to retry?",
+	       "Retry", "Ignore", 0, 0, 1 );
 
 				delete m_audio;
 				m_audio = NULL;

@@ -259,19 +259,10 @@ void JahControl::configSystem()
 
     //set the main module to desktop
     module = DESKTOP;
-//    updateDesktopLabel( " Jahshaka Interactive Desktop" );
-    //GetButton->hide();
-/*
-    if (dualhead)
-    {
-		raiseD2Module(DESKTOP);
-	    D2WorldLayout->raiseWidget(desktopdisplay);  
-    }
-    else
-    {*/
-		raiseModule(DESKTOP);
-		WorldLayout->raiseWidget(desktopdisplay); 
-    //}
+
+    raiseModule(DESKTOP);
+    WorldLayout->raiseWidget(desktopdisplay);
+
 
     JahDesktopMod->setFocus();
 

@@ -70,3 +70,13 @@ IntValueFormatter* TimecodeValueFormatter::clone() const
 {
     return new TimecodeValueFormatter( *this );
 }
+
+IntValueFormatter::~IntValueFormatter()
+{
+
+}
+
+IntValueFormatter::IntValueFormatter()
+{
+
+}

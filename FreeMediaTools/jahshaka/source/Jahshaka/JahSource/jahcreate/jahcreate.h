@@ -35,7 +35,7 @@ class GLCore;
 class JahHead;
 class JahHeadable;
 class StretchableButton;
-
+class QBoxLayout;
 ////////////////////////////////////////////////////////////////////
 //these are the modules that are supported in this build of jahshaka
 //but dont necessarily have to be here
@@ -131,11 +131,11 @@ public:
     ////////////////////////////////////////////////////////////////////
     // base routines
     QFrame*         getMainworldQframe();
-    void            setMainworldQframe(QFrame* qframe) { m_mainworld_qframe = qframe; }
+    void            setMainworldQframe(QFrame* qframe);
     
     QPushButton*    m_active_module_button;
-    QPushButton*    getActiveModuleButton() { return m_active_module_button; }
-    void            setActiveModuleButton(QPushButton* button) { m_active_module_button = button; }
+    QPushButton*    getActiveModuleButton() ;
+    void            setActiveModuleButton(QPushButton* button);
     
     
     //used to initialize main variables on startup
@@ -181,7 +181,7 @@ public:
     void spaceballmoved(double x, double y, double z, double a, double b , double c);
     
     //routines to get style and app preferences
-    bool getPrefs(void)      { return rememberprefs; }
+    bool getPrefs(void);
     
     //used to save and restore ui
     void saveModulesUI(void);
@@ -261,7 +261,7 @@ public slots:
     //for themes
     void setJahTheme();
     void recordTheme(const QString &);
-    int getJahThemeColor (void) { return jahStyleColor; }
+    int getJahThemeColor (void);
     
     void hidetheUI( bool );
 
@@ -712,6 +712,11 @@ private:
     QComboBox* modeSelector; 
 
     JahHead *m_video_head;
+
+    // added this 
+ private: 
+    QBoxLayout* storageLocationLayout;
+
 };
 
 

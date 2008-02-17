@@ -244,3 +244,9 @@ GLColorize::GLColorize( GLCore* core,  const char* name, QHBox* controls,
 }
 
 GLColorize::~GLColorize() {  }
+
+
+
+void GLColorize::grabDesktop(void) { emit GrabClip(); };
+void GLColorize::grabDesktopBaselayer(void)   { emit GrabBaseClip();   };
+void GLColorize::setDefaultAxisSliderLabels() { }

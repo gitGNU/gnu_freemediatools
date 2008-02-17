@@ -147,7 +147,7 @@ SceneFileXml::SceneFileXml(std::string scene_file_string)
     m_scene_file_string = scene_file_string;
     m_effect_structure.builtin.type = "";
 
-    m_keyword_string_vector[JAHSHAKA] = "JAHSHAKA";
+    m_keyword_string_vector[FREEMEDIATOOLS] = "FREEMEDIATOOLS";
     m_keyword_string_vector[SCENE_FILE] = "SCENE_FILE";
     m_keyword_string_vector[MODULE] = "MODULE";
     m_keyword_string_vector[EXPORT] = "EXPORT";
@@ -189,7 +189,7 @@ bool
 SceneFileXml::parseJahshakaStructure(JAHSHAKA_STRUCTURE& jahshaka_structure)
 {
     std::string tmp;
-    parseStringToken(jahshaka_structure.jah_version, tmp = "jah_version" );
+    parseStringToken(jahshaka_structure.jah_version, tmp = "fmt_version" );
     parseStringToken(jahshaka_structure.xml_file_version, tmp = "xml_file_version" );
     return true;
 }

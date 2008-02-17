@@ -1235,3 +1235,58 @@ BackgroundSprite::BackgroundSprite(  QCanvasPixmapArray * a, QCanvas * canvas )
 
 
 
+// Setting setSelectionAllowed (false) prevents any interaction at all.
+void FigureEditor::setSelectionAllowed ( bool enable )
+{
+  selectionallowed = enable; 
+};
+
+void FigureEditor::setResizingAllowed ( bool enable )
+{
+  resizeallowed = enable; 
+};
+
+
+void FigureEditor::setMovingAllowed( bool enable )
+{ 
+  movingallowed = enable; 
+};
+
+void FigureEditor::setItemBorderEnabled ( bool enable )
+{
+  borderenabled = enable;
+};
+
+void FigureEditor::setFilmStripAllowed( bool enable ) { 
+  filmstripallowed = enable;
+ };
+
+bool FigureEditor::filmStripAllowed()
+{ 
+  return filmstripallowed; 
+};
+
+
+void FigureEditor::styleChange ( QStyle & )
+{
+  if (canvas() ) 
+    canvas()->setBackgroundColor( qApp->palette().color( QPalette::Active, QColorGroup::Mid ));
+};
+
+  int PlayControlSprite::rtti () const { return playcontrolRTTI; }
+
+  int RewindControlSprite::rtti () const { return rewindcontrolRTTI; }
+
+
+  int BackControlSprite::rtti () const { return backcontrolRTTI; }
+
+  int ForwardControlSprite::rtti () const { return forwardcontrolRTTI; }
+
+  int FForwardControlSprite::rtti () const 
+{ return fforwardcontrolRTTI; }
+
+
+  int BackgroundSprite::rtti () const { return bgRTTI; }
+
+
+  bool FigureEditor::clipIsPlaying() { return clipplaying; } ;

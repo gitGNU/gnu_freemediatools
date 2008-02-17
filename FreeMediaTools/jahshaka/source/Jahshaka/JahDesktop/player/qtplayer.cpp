@@ -35,6 +35,8 @@
 #include <deque>
 #include "qtplayer.h"
 
+#include <FreeMediaTools.h>
+
 namespace ml  = olib::openmedialib::ml;
 namespace il  = olib::openimagelib::il;
 namespace opl = olib::openpluginlib;
@@ -179,8 +181,14 @@ open plug in
 			{
 				while ( ask_audio_ && !audio_->init( ) )
 				{
-					int response = QMessageBox::warning( this, "Jahshaka", "Audio device is unavailable.\nDo you want to retry?", "Retry", "Ignore", 0, 0, 1 );
-
+				  int response =
+				    QMessageBox::warning( this,
+							  FMT_PROGRAM_TITLE,
+		       "Audio device is unavailable.\nDo you want to retry?",
+							  "Retry", 
+							  "Ignore", 
+							  0, 0, 1 );
+				  
 					delete audio_;
 					audio_ = NULL;
 

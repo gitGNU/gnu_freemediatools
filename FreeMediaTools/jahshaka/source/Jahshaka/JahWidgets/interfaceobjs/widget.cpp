@@ -38,80 +38,62 @@ void JahPushButton::leaveEvent( QEvent* )
 	setFlat(true);
 }
 
-/*
-// QNakedToolButton
-// --------------
-// 
-// QNakedToolButton just like a QToolButton but doesn't draw any kind of
-// border around its icons.
-//
+JahToolButton::    JahToolButton( QWidget * parent, const char *name )
+  : QToolButton( parent, name ){
 
+    setBackgroundMode(PaletteBackground);
+    setAutoRaise(true);
 
-#ifndef __QNAKEDTOOLBUTTON_H__
-#define __QNAKEDTOOLBUTTON_H__
+    };
 
-#include <qtoolbutton.h>
-
-class QNakedToolButton: public QToolButton
-{
-
-public:
-    QNakedToolButton( QWidget * parent, const char *name )
-    	: QToolButton( parent, name ){};
-
-//
-// Lifted from QToolButton
-// only sizes the size of the content, not any button border.
-//
-QSize QNakedToolButton::sizeHint() const
+QSize JahToolButton::sizeHint() const
 {
 
     int w = 0, h = 0;
 
     if ( iconSet().isNull() && !text().isNull() && !usesTextLabel() ) {
-     	w = fontMetrics().width( text() );
-     	h = fontMetrics().height(); // boundingRect()?
+      w = fontMetrics().width( text() );
+      h = fontMetrics().height(); // boundingRect()?
     } else if ( usesBigPixmap() ) {
-     	QPixmap pm = iconSet().pixmap( QIconSet::Large, QIconSet::Normal );
-     	w = pm.width();
-     	h = pm.height();
-     	if ( w < 32 )
-     	    w = 32;
-     	if ( h < 32 )
-     	    h = 32;
+      QPixmap pm = iconSet().pixmap( QIconSet::Large, QIconSet::Normal );
+      w = pm.width();
+      h = pm.height();
+      if ( w < 32 )
+	w = 32;
+      if ( h < 32 )
+	h = 32;
     } else {
-     	QPixmap pm = iconSet().pixmap( QIconSet::Small, QIconSet::Normal );
-     	w = pm.width();
-     	h = pm.height();
-	if ( w < 16 )
-	    w = 16;
-	if ( h < 16 )
-	    h = 16;
+      QPixmap pm = iconSet().pixmap( QIconSet::Small, QIconSet::Normal );
+      w = pm.width();
+      h = pm.height();
+      if ( w < 16 )
+	w = 16;
+      if ( h < 16 )
+	h = 16;
     }
-
+    
     if ( usesTextLabel() ) {
-     	h += 4 + fontMetrics().height();
-     	int tw = fontMetrics().width( textLabel() ) + fontMetrics().width("  ");
-     	if ( tw > w )
-     	    w = tw;
+      h += 4 + fontMetrics().height();
+      int tw = fontMetrics().width( textLabel() ) + fontMetrics().width("  ");
+      if ( tw > w )
+	w = tw;
     }
 
     return QSize(w, h);
 }
 
 
-protected:
-
-    void drawButton( QPainter * painter ) { drawButtonLabel( painter ); };
-
+void JahToolButton::drawButton( QPainter * painter ) 
+{
+  drawButtonLabel( painter ); 
 };
 
+SliderItem:: SliderItem( QCanvas *canvas ) 
+  :
+  QCanvasLine( canvas ) 
+{};
 
-#endif // __QNAKEDTOOLBUTTON_H__
-*/
-
-
-
-
-
-
+int  SliderItem:: rtti () const
+{
+  return sliderRTTI2; 
+}

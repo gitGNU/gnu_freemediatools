@@ -44,7 +44,7 @@ public:
 
     LayerCategory();
     static TYPE                 getType(std::string& type_name);
-    static const std::string&   getName(TYPE type) { return m_type_string_vector[type]; }
+    static const std::string&   getName(TYPE type);
 
 protected:
     static std::vector<std::string>   m_type_string_vector;
@@ -71,7 +71,7 @@ public:
 
     CompositeType();
     static TYPE                 getType(std::string& type_name);
-    static const std::string&   getName(TYPE type) { return m_type_string_vector[type]; }
+    static const std::string&   getName(TYPE type);
 
 protected:
     static std::vector<std::string>     m_type_string_vector;
@@ -92,7 +92,7 @@ public:
 
     ObjectCategory();
     static TYPE                 getType(std::string& type_name);
-    static const std::string&   getName(TYPE type) { return m_type_string_vector[type]; }
+    static const std::string&   getName(TYPE type);
 
 protected:
     static std::vector<std::string>   m_type_string_vector;
@@ -142,8 +142,8 @@ public:
 public:
     TextureImage( );
     
-    int         getTextureWidth() { return int(wresolution); }
-    int         getTextureHeight() { return int(hresolution); }
+    int         getTextureWidth() ;
+    int         getTextureHeight() ;
     int         getImageWidth() ;
     int         getImageHeight();
     GLuint      getTexId();
@@ -151,22 +151,22 @@ public:
     GLuint      getTileTextureId(int index) ;
     GLuint*     getTileTextureIdPtr(int index);
   
-    int         getTileTextureWidth(int index) { return m_tile_texture_width[index]; }
-    int         getTileTextureHeight(int index) { return m_tile_texture_height[index]; }
-    int         getTileImageWidth(int index) { return m_tile_image_width[index]; }
-    int         getTileImageHeight(int index) { return m_tile_image_height[index]; }
-    void        setTileImageWidth(int index, int width) { m_tile_image_width[index] = width; }
-    void        setTileImageHeight(int index, int height) { m_tile_image_height[index] = height; }
-    void        setTileTextureWidth(int index, int width) { m_tile_texture_width[index] = width; }
-    void        setTileTextureHeight(int index, int height) { m_tile_texture_height[index] = height; }
+    int         getTileTextureWidth(int index) ;
+    int         getTileTextureHeight(int index);
+    int         getTileImageWidth(int index) ;
+    int         getTileImageHeight(int index);
+    void        setTileImageWidth(int index, int width) ;
+    void        setTileImageHeight(int index, int height) ;
+    void        setTileTextureWidth(int index, int width) ;
+    void        setTileTextureHeight(int index, int height) ;
     void        getTextureRatios(float4& ratios);
     void        getTextureRatios(float2& ratios);
-    int         getPreviousWidth() { return m_previous_width; }
-    void        setPreviousWidth(int width) { m_previous_width = width; }
-    int         getPreviousHeight() { return m_previous_height; }
-    void        setPreviousHeight(int height) { m_previous_height = height; }
-    int         getPreviousDepth() { return m_previous_depth; }
-    void        setPreviousDepth(int depth) { m_previous_depth = depth; }
+    int         getPreviousWidth() ;
+    void        setPreviousWidth(int width) ;
+    int         getPreviousHeight() ;
+    void        setPreviousHeight(int height);
+    int         getPreviousDepth();
+    void        setPreviousDepth(int depth);
 
 protected:
     int         m_previous_width;
@@ -191,7 +191,7 @@ public:
 
     FontDrawstyle();
     static TYPE                 getType(std::string& type_name);
-    static const std::string&   getName(TYPE type) { return m_type_string_vector[type]; }
+    static const std::string&   getName(TYPE type) ;
 
 protected:
     static std::vector<std::string>   m_type_string_vector;
@@ -253,7 +253,7 @@ public:
 
     ParticleCategory();
     static TYPE                 getType(std::string& type_name);
-    static const std::string&   getName(TYPE type) { return m_type_string_vector[type]; }
+    static const std::string&   getName(TYPE type) ;
 
 protected:
     static std::vector<std::string>   m_type_string_vector;
@@ -272,7 +272,7 @@ public:
 
     ParticleDrawstyle();
     static TYPE                 getType(std::string& type_name);
-    static const std::string&   getName(TYPE type) { return m_type_string_vector[type]; }
+    static const std::string&   getName(TYPE type);
 
 protected:
     static std::vector<std::string>   m_type_string_vector;

@@ -32,23 +32,23 @@ class JahPluginLib;
 class JahLayer {
 
 public:
-    EffectLayer*		        getEffectLayer() { return m_effect_layer; }
-    void                        setEffectLayer(EffectLayer* layer) { m_effect_layer = layer; }
-    QPtrList<EffectLayer>*		getEffectsList() { return m_effects_list; }
-    QCheckListItem*				getCheckListItem() { return m_check_list_item; }
+  EffectLayer*		        getEffectLayer();
+  void                        setEffectLayer(EffectLayer* layer);
+  QPtrList<EffectLayer>*		getEffectsList() ;
+  QCheckListItem*				getCheckListItem();
+  
+  void						setCheckListItem(QCheckListItem* item);
+  int                         getPluginNumber();
+  void                        setPluginNumber(int number);
 
-    void						setCheckListItem(QCheckListItem* item) { m_check_list_item = item; }
-    int                         getPluginNumber() { return m_plugin_number; }
-    void                        setPluginNumber(int number) { m_plugin_number = number; }
+  JahLayer*                   getParent();
 
-    JahLayer*                   getParent() { return m_parent; }
-
-    void                        setParent(JahLayer* parent) { m_parent = parent; }
-    bool                        isChromaKeyLayer() { return m_is_chroma_key_layer; }
-    void                        setCategory(ObjectCategory::TYPE category) { objtype = category; }
+  void                        setParent(JahLayer* parent);
+  bool                        isChromaKeyLayer() ;
+  void                        setCategory(ObjectCategory::TYPE category);
     bool                        isCameraLayer();
 
-    ObjectCategory::TYPE              getCategory() { return objtype; }
+    ObjectCategory::TYPE              getCategory();
     EffectInfo::EFFECT_CATEGORY getEffectCategory();
     EffectInfo::EFFECT_CATEGORY getPluginEffectCategory();
 
@@ -57,48 +57,48 @@ public:
     bool    removeAllListViewItems();
     bool    buildListViewItems();
     bool    reorderListViewItems();
-    bool    containsCpuEffects() { return m_contains_cpu_effects; }
-    void    setContainsCpuEffects(bool flag) { m_contains_cpu_effects = flag; }
-    void    setEffectsSlidersHaveChanged(bool flag) { m_effects_sliders_have_changed = flag; }
-    bool    getEffectsSlidersHaveChanged() { return m_effects_sliders_have_changed; }
-    void    setEffectsHaveKeyFrames(bool flag) { m_effects_have_key_frames = flag; }
-    bool    getEffectsHaveKeyFrames() { return m_effects_have_key_frames; }
+    bool    containsCpuEffects();
+    void    setContainsCpuEffects(bool flag) ;
+    void    setEffectsSlidersHaveChanged(bool flag);
+    bool    getEffectsSlidersHaveChanged();
+    void    setEffectsHaveKeyFrames(bool flag) ;
+    bool    getEffectsHaveKeyFrames();
     bool    canAcceptLighting();
 
-    LayerListEntry*     getLayerListEntry() { return m_layer_list_entry; }
+    LayerListEntry*     getLayerListEntry() ;
     void                setLayerListEntry(LayerListEntry* entry);
-    float               getPreviousTextExtrude() { return m_previous_text_extrude; }
-    void                setPreviousTextExtrude(float value) { m_previous_text_extrude = value; }
+    float               getPreviousTextExtrude();
+    void                setPreviousTextExtrude(float value) ;
     bool                textExtrudeHasChanged();
-    bool                getUsePbuffer() { return m_use_pbuffer; }
-    void                setUsePbuffer(bool flag) { m_use_pbuffer = flag; }
-    StabilizingState*   getStabilizingState() { return m_stabilizing_state; }
-    void                setStabilizingState(StabilizingState* state) { m_stabilizing_state = state; }
+    bool                getUsePbuffer();
+    void                setUsePbuffer(bool flag);
+    StabilizingState*   getStabilizingState();
+    void                setStabilizingState(StabilizingState* state);
     void                drawTexture(bool position_object = true);
-    color4*             getLight0AmbientPtr() { return &m_light0_ambient; }
-    color4*             getLight0DiffusePtr() { return &m_light0_diffuse; }
-    color4*             getLight0SpecularPtr() { return &m_light0_specular; }
-    float4*             getLight0PositionPtr() { return &m_light0_position; }
-    float*              getLight0ShininessPtr() { return &m_light0_shininess; }
-    void                setTranslateFirst(bool flag) { m_translate_first = flag; }
-    bool                getTranslateFirst() { return m_translate_first; }
-    JahLayer*           getCameraLayer() { return m_camera_layer; }
-    void                setCameraLayer(JahLayer* layer) { m_camera_layer = layer; }
-    QPtrList<JahLayer>* getLightsList() { return m_lights_list; }
-    void                setLightsList( QPtrList<JahLayer>* list ) { m_lights_list = list; }
+    color4*             getLight0AmbientPtr();
+    color4*             getLight0DiffusePtr();
+    color4*             getLight0SpecularPtr();
+    float4*             getLight0PositionPtr() ;
+    float*              getLight0ShininessPtr();
+    void                setTranslateFirst(bool flag);
+    bool                getTranslateFirst() ;
+    JahLayer*           getCameraLayer() ;
+    void                setCameraLayer(JahLayer* layer);
+    QPtrList<JahLayer>* getLightsList() ;
+    void                setLightsList( QPtrList<JahLayer>* list );
 
     motionNode*         findKeyframeAtTime(int time);
 
-    float               getPreviousAlpha() { return m_previous_alpha; }
-    void                setPreviousAlpha(float value) { m_previous_alpha = value; }
+    float               getPreviousAlpha();
+    void                setPreviousAlpha(float value);
 
-    bool                getCompositeTextureUpdatedByLighting() { return m_composite_texture_updated_by_lighting; }
-    void                setCompositeTextureUpdatedByLighting(bool flag) { m_composite_texture_updated_by_lighting = flag; }
+    bool                getCompositeTextureUpdatedByLighting();
+    void                setCompositeTextureUpdatedByLighting(bool flag);
 
     bool                getCompositeTextureNeedsUpdatingByLighting();
 
-    bool                getEffectsUpdated() { return m_effects_updated; }
-    void                setEffectsUpdated(bool flag) { m_effects_updated = flag; }
+    bool                getEffectsUpdated();
+    void                setEffectsUpdated(bool flag) ;
     bool                getSupportsTransparency();
     bool                getLightingNeedsToUpdateCompositeTexture();
 
@@ -200,12 +200,12 @@ public:
     //assetexchange is replacing mediadata
     assetExchange*      mediaExchange;
     bool                mediaExchangePresent;
-    bool                getInframeValid() { return m_inframe_valid; }
-    void                setInframeValid(bool flag) { m_inframe_valid = flag; }
-    int                 getSlipFrameOffset() { return m_slip_frame_offset; }
-    void                setSlipFrameOffset(int value) { m_slip_frame_offset = value; }
-    int                 getKeySlipFrameOffset() { return m_key_slip_frame_offset; }
-    void                setKeySlipFrameOffset(int value) { m_key_slip_frame_offset = value; }
+    bool                getInframeValid() ;
+    void                setInframeValid(bool flag) ;
+    int                 getSlipFrameOffset();
+    void                setSlipFrameOffset(int value);
+    int                 getKeySlipFrameOffset() ;
+    void                setKeySlipFrameOffset(int value);
 
     void addMediaObj();
 
@@ -258,22 +258,22 @@ public:
     TextureImage textureData;
     TextureImage textureKey;
 
-    QImage*             getCompositeQimagePtr() { return &m_composite_qimage; }
-    QImage*             getCompositeQimageFlippedPtr() { return &m_composite_qimage_flipped; }
-    bool                getSelectColorsIndividually() { return m_select_colors_individually; }
-    void                setSelectColorsIndividually(bool flag) { m_select_colors_individually = flag; }
-    bool                getFirstPass() { return m_first_pass; }
-    void                setFirstPass(bool flag) { m_first_pass = flag; }
-    bool                getCreateChromaAlphaMask() { return m_create_chroma_alpha_mask; }
-    void                setCreateChromaAlphaMask(bool flag) { m_create_chroma_alpha_mask = flag; }
+    QImage*             getCompositeQimagePtr();
+    QImage*             getCompositeQimageFlippedPtr() ;
+    bool                getSelectColorsIndividually() ;
+    void                setSelectColorsIndividually(bool flag);
+    bool                getFirstPass() ;
+    void                setFirstPass(bool flag) ;
+    bool                getCreateChromaAlphaMask();
+    void                setCreateChromaAlphaMask(bool flag);
 
-    CompositeType::TYPE         getCompositeType() { return m_composite_type; }
+    CompositeType::TYPE         getCompositeType() ;
     void                        setCompositeType(CompositeType::TYPE type);
 
-    bool                getLightingEnabled() { return m_lighting_enabled; }
-    void                setLightingEnabled(bool flag) { m_lighting_enabled = flag; }
-    bool                getShowLights() { return m_show_lights; }
-    void                setShowLights(bool flag) { m_show_lights = flag; }
+    bool                getLightingEnabled() ;
+    void                setLightingEnabled(bool flag) ;
+    bool                getShowLights() ;
+    void                setShowLights(bool flag) ;
 
 protected:
     bool                            m_first_effect_layer_being_rendered;
@@ -296,13 +296,13 @@ protected:
     bool                            m_use_fast_shader_keyer;
 
 public:
-    GLenum          getSrcBlendFactor() { return m_src_blend_factor; }
-    void            setSrcBlendFactor(GLenum factor) { m_src_blend_factor = factor; }
-    GLenum          getDstBlendFactor() { return m_dst_blend_factor; }
-    void            setDstBlendFactor(GLenum factor) { m_dst_blend_factor = factor; }
+    GLenum          getSrcBlendFactor();
+    void            setSrcBlendFactor(GLenum factor) ;
+    GLenum          getDstBlendFactor() ;
+    void            setDstBlendFactor(GLenum factor) ;
 
-    bool            isFirstEffectLayerBeingRendered() { return m_first_effect_layer_being_rendered; }
-    void            setFirstEffectLayerBeingRendered(bool flag) { m_first_effect_layer_being_rendered = flag; }
+    bool            isFirstEffectLayerBeingRendered() ;
+    void            setFirstEffectLayerBeingRendered(bool flag) ;
     EffectLayer*    findFirstGpuEffectLayer();
 
     EffectInfo::EFFECT_CATEGORY     getPreviousRenderedLayerEffectCategory();
@@ -344,8 +344,8 @@ public:
 
     //return some layer data... used for new effects module
     //dont now if this is repetitious...
-    int getImageWidth()  { return textureData.objectImage.width(); }
-    int getImageHeight() { return textureData.objectImage.height(); }
+    int getImageWidth() ;
+    int getImageHeight() ;
 
     ///////////////////////////////////////////////
     //jahdraw calls here
@@ -505,8 +505,8 @@ protected:
     bool        m_is_slected_visible;
 
 public:
-    bool        getIsSelectedVisible() { return m_is_slected_visible; }
-    void        setIsSelectedVisible(bool flag) { m_is_slected_visible = flag; }
+    bool        getIsSelectedVisible() ;
+    void        setIsSelectedVisible(bool flag) ;
 
     bool        ObjectDisplayMode;  //draw object as wireframe or as textured?
     bool        showEdges;          //used to hide or show head/tail for clips with slip
@@ -530,9 +530,9 @@ public:
     GLenum      m_texture_format;
 
 public:
-    GLenum      getTextureFormat() { return m_texture_format; }
-    int getXResolution() { return X_RESOLUTION; }
-    int getYResolution() { return Y_RESOLUTION; }
+    GLenum      getTextureFormat() ;
+    int getXResolution() ;
+    int getYResolution() ;
 
     bool addEffect(EffectInfo::EFFECT_TYPE category, bool status = true, int pluginid = 0);
 

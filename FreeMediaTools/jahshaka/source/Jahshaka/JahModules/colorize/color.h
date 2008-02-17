@@ -65,12 +65,12 @@ public:
     QCheckBox* getGpuSelectCheckbox(); 
 
     // Override of GLWorld method
-    void setDefaultAxisSliderLabels() { }
+    void setDefaultAxisSliderLabels();
     ColorCorrectorWidget* m_color_corrector_widget;
 
 public slots:    
-    void grabDesktop(void) { emit GrabClip(); };
-    void grabDesktopBaselayer(void)   { emit GrabBaseClip();   };
+  void grabDesktop(void);
+ void grabDesktopBaselayer(void);
 
     // The following slots deal with the color corrector wheel widget communicating with the sliders etc.
     // Often, unit converstions are required.

@@ -1,6 +1,6 @@
 /*******************************************************************************
 **
-** The source file for the Jahshaka Jah module
+** The source file for the FMT_PROGRAM_TITLE Jah module
 ** The Jahshaka Project
 ** Copyright (C) 2000-2006 VM Inc.
 ** Released under the GNU General Public License
@@ -11,7 +11,7 @@
 #include <desktop.h>
 #include <qpopupmenu.h>
 #include <qcursor.h>
-
+#include <FreeMediaTools.h>
 #ifndef JAHPREFIX
 #define JAHPREFIX ""
 #endif
@@ -23,7 +23,7 @@ Jahshaka::Jahshaka( QWidget* parent, const char* name, WFlags fl )
     //////////////////////////////////////////////////////////////
     //set up tracer
     jtrace = JahTrace::getInstance();	//set up tracer
-    jtrace->info("Jah Constructor","Initializing Jahshaka");
+    jtrace->info("Jah Constructor","Initializing " FMT_PROGRAM_TITLE);
 
     //////////////////////////////////////////////////////////////
     //check and restore preferences first
@@ -151,7 +151,7 @@ Jahshaka::Jahshaka( QWidget* parent, const char* name, WFlags fl )
 //cleans up as we leave and releases memory...
 Jahshaka::~Jahshaka() 
 {
-    jtrace->info( "Jah Destructor","Closing Jahshaka" );
+    jtrace->info( "Destructor","Closing FreeMediaTools" );
 
     //we store all preference data before exiting
     storeGlobalPositionSize();
@@ -165,7 +165,7 @@ Jahshaka::~Jahshaka()
     delete thestartupscreen;
     
 	//finished
-    jtrace->info( "Jah Destructor","Closed Jahshaka" );
+    jtrace->info( "Destructor","Closed FreeMediaTools" );
 }
 
 bool Jahshaka::event( QEvent *e )
@@ -202,8 +202,6 @@ bool Jahshaka::setBasePath(void)
     //since QApplication::applicationFilePath() only works on Qt 3.2 and up
     jtrace->debug("QT_VERSION_STR: " QT_VERSION_STR );
 
-#if (QT_VERSION >= 0x030200)  //was 320
-    jtrace->debug("Qt is up to date");
 
 	#ifndef __APPLE__
     	QString apppath = qApp->applicationFilePath();// only works on Qt 3.2 and up
@@ -220,21 +218,6 @@ bool Jahshaka::setBasePath(void)
 		foundpath= true;
 	#endif
 
-#else
-    jtrace->debug("Older version of Qt < 3.2");
-
-    QString thearg = qApp->argv()[0];
-
-    QFile file(thearg);
-    QFileInfo fi(file);
-
-    fileinfo = fi.dirPath(true);
-
-    //make sure we are in the jahshaka directory
-    //this should always be the case
-    foundpath = ( fileinfo.endsWith("jahshaka") || fileinfo.endsWith("jahshaka/") );
-
-#endif
 
     //this is a old method of looking for the path
     //if the new method doesnt work we go with this...
@@ -500,10 +483,8 @@ void Jahshaka::exitError(void)
 
     //we could not find the default environment here
     //make this a popup window with a timer?
-    jtrace->error ("Cannot find the basic jahshaka paths");
-    jtrace->error ("Exiting jahshaka");
-    jtrace->error ("please email your configuration to");
-    jtrace->error ("jahshaka@users.sourceforge.net");
+    jtrace->error ("Cannot find the basic data paths");
+    jtrace->error ("Exiting Program");
     jtrace->error ("-------------------------------------");
     exit(0);
 }

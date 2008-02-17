@@ -105,6 +105,7 @@ JahDesktop::~JahDesktop()
 
 	delete mediatable;
 	delete theDatabase;
+	delete themaindesktopLayout;
 }
 
 QCanvasItemList JahDesktop::allItems( )

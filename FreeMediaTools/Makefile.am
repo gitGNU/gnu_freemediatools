@@ -733,8 +733,8 @@ FreeMediaTools_TEXINFOS = gpl-3.0.texi
 #  install the man pages
 man_MANS=FreeMediaTools.1
 
-
 INCLUDES=											\
+-I$(srcdir)/src                                                                                 \
 -I$(srcdir)/jahshaka/source/AuxiliaryLibraries							\
 -I$(srcdir)/jahshaka/source/AuxiliaryLibraries/FTGL/						\
 -I$(srcdir)/jahshaka/source/AuxiliaryLibraries/glew						\
@@ -941,10 +941,10 @@ INCLUDES=											\
 
 #	-save-temps                                                             #	--verbose
 
-# turned off the optimization for debugging.										
+# turned off the optimization for debugging.			-O0
+
 AM_CXXFLAGS=											\
 	-MD											\
-	-O0                                                                                     \
 	-pg                                                                                     \
 	 -fprofile-arcs -ftest-coverage	                                                        \
 	-Wall 											\

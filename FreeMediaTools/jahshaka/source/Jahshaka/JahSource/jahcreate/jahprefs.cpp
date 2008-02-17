@@ -92,7 +92,7 @@ void JahControl::getStoragePath(void)
         QString qs = QFileDialog::getExistingDirectory(
 							QDir::homeDirPath (),
 							0,
-							"Set Jahshaka Storage Space",
+							"Set FreeMediaTools Storage Space",
 							"Choose a Directory for Media & Scene Storage" );
 
 		if(qs.length() == 0)

@@ -19,19 +19,21 @@
 #error "(The moc has changed too much.)"
 #endif
 
+#include <FreeMediaTools.h>
+
 const char *Jahshaka::className() const
 {
-    return "Jahshaka";
+    return FMT_PROGRAM_TITLE;
 }
 
 QMetaObject *Jahshaka::metaObj = 0;
-static QMetaObjectCleanUp cleanUp_Jahshaka( "Jahshaka", &Jahshaka::staticMetaObject );
+static QMetaObjectCleanUp cleanUp_Jahshaka( FMT_PROGRAM_TITLE, &Jahshaka::staticMetaObject );
 
 #ifndef QT_NO_TRANSLATION
 QString Jahshaka::tr( const char *s, const char *c )
 {
     if ( qApp )
-	return qApp->translate( "Jahshaka", s, c, QApplication::DefaultCodec );
+	return qApp->translate( FMT_PROGRAM_TITLE, s, c, QApplication::DefaultCodec );
     else
 	return QString::fromLatin1( s );
 }
@@ -39,7 +41,7 @@ QString Jahshaka::tr( const char *s, const char *c )
 QString Jahshaka::trUtf8( const char *s, const char *c )
 {
     if ( qApp )
-	return qApp->translate( "Jahshaka", s, c, QApplication::UnicodeUTF8 );
+	return qApp->translate( FMT_PROGRAM_TITLE, s, c, QApplication::UnicodeUTF8 );
     else
 	return QString::fromUtf8( s );
 }
@@ -91,7 +93,7 @@ QMetaObject* Jahshaka::staticMetaObject()
 	{ "sendsetProgressValue(int)", &signal_1, QMetaData::Public }
     };
     metaObj = QMetaObject::new_metaobject(
-	"Jahshaka", parentObject,
+	FMT_PROGRAM_TITLE, parentObject,
 	slot_tbl, 6,
 	signal_tbl, 2,
 #ifndef QT_NO_PROPERTIES
@@ -105,7 +107,7 @@ QMetaObject* Jahshaka::staticMetaObject()
 
 void* Jahshaka::qt_cast( const char* clname )
 {
-    if ( !qstrcmp( clname, "Jahshaka" ) )
+    if ( !qstrcmp( clname, FMT_PROGRAM_TITLE ) )
 	return this;
     return QMainWindow::qt_cast( clname );
 }

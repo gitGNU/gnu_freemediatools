@@ -384,7 +384,7 @@ void GLEdit::buildInterface( QHBox* qtinterface )
 
     m_pTextEd	= new QMultiLineEdit( ControlFrameUI[1][2], "text" );
     m_pTextEd->setGeometry( QRect( 0, 60, 150, 21 ) );
-    m_pTextEd->setText( "jahshaka" );
+    m_pTextEd->setText( "FMT FreeMediaTools" );
     connect( m_pTextEd, SIGNAL(textChanged(const QString&)), this, SLOT(setText(const QString&)) );
 
     textFont = new QPushButton( ControlFrameUI[1][2], "font" );

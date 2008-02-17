@@ -17,7 +17,11 @@ const int redrawWait = 25;
 
 // Create a GLTexobj widget
 GLTexobj::GLTexobj( QWidget* parent, const char* name )
-    : QGLWidget( parent, name )
+	: QGLWidget( parent, name ),
+	version(0),
+	timer(0),
+	vendor(0),
+	extensions(0)
 {
     //this just sets the format
     QGLFormat format;
@@ -63,6 +67,12 @@ GLTexobj::~GLTexobj()
     makeCurrent();
     glDeleteLists( object1, 1 );
     glDeleteLists( object2, 1 );
+
+	delete renderer;
+	delete version;
+	delete timer;
+	delete vendor;
+	delete extensions;
 }
 
 

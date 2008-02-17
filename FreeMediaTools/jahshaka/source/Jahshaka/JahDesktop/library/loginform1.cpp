@@ -959,7 +959,7 @@ void ConnectDialog::languageChange()
     dummyLabel->setText( QString::null );
     pushButton1->setText( tr( "Connect" ) );
     pushButton2->setText( tr( "Cancel" ) );
-    textLabel6->setText( tr( "<p>&nbsp;  &nbsp;  Please enter the Jahshaka server details and your login information.</p>" ) );
+    textLabel6->setText( tr( "<p>&nbsp;  &nbsp;  Please enter the server details and your login information.</p>" ) );
     pixmapLabel3->setText( QString::null );
 }
 

@@ -422,7 +422,7 @@ assetExchange::loadAsset(QString filename, bool, assetData & newasset, int clipn
        errortext +="\n\nLooking for something like 'file.bmp', 'file_0000.BMP', etc.";
       jtrace->debug(errortext);
 
-        //QMessageBox::information(this, "Jahshaka", errortext);
+
         return false;
     }
 

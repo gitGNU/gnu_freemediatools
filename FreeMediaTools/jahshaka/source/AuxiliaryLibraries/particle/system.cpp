@@ -686,3 +686,117 @@ int pGetGroupCount()
 	
 	return _ps.pgrp->p_count;
 }
+
+
+// moved the inline functions here 
+
+pVector::pVector(float ax, float ay, float az) 
+: x(ax), y(ay), z(az)
+{
+  //x = ax; y = ay; z = az;
+}
+
+pVector:: pVector() {}
+
+float pVector::length() const
+{
+  return sqrtf(x*x+y*y+z*z);
+}
+
+float pVector::length2() const
+{
+  return (x*x+y*y+z*z);
+}
+
+float pVector::normalize()
+{
+  float onel = 1.0f / sqrtf(x*x+y*y+z*z);
+  x *= onel;
+  y *= onel;
+  z *= onel;
+
+  return onel;
+}
+
+float pVector::operator*(const pVector &a) const
+{
+  return x*a.x + y*a.y + z*a.z;
+}
+
+pVector pVector::operator*(const float s) const
+{
+  return pVector(x*s, y*s, z*s);
+}
+
+pVector pVector::operator/(const float s) const
+{
+  float invs = 1.0f / s;
+  return pVector(x*invs, y*invs, z*invs);
+}
+
+pVector pVector::operator+(const pVector& a) const
+{
+  return pVector(x+a.x, y+a.y, z+a.z);
+}
+
+pVector pVector::operator-(const pVector& a) const
+{
+  return pVector(x-a.x, y-a.y, z-a.z);
+}
+
+pVector pVector::operator-()
+{
+  x = -x;
+  y = -y;
+  z = -z;
+  return *this;
+}
+
+pVector& pVector::operator+=(const pVector& a)
+{
+  x += a.x;
+  y += a.y;
+  z += a.z;
+  return *this;
+}
+
+pVector& pVector::operator-=(const pVector& a)
+{
+  x -= a.x;
+  y -= a.y;
+  z -= a.z;
+  return *this;
+}
+
+pVector& pVector::operator*=(const float a)
+{
+  x *= a;
+  y *= a;
+  z *= a;
+  return *this;
+}
+
+pVector& pVector::operator/=(const float a)
+{
+  float b = 1.0f / a;
+  x *= b;
+  y *= b;
+  z *= b;
+  return *this;
+}
+
+pVector& pVector::operator=(const pVector& a)
+{
+  x = a.x;
+  y = a.y;
+  z = a.z;
+  return *this;
+}
+
+pVector pVector::operator^(const pVector& b) const
+{
+  return pVector(
+		 y*b.z-z*b.y,
+		 z*b.x-x*b.z,
+		 x*b.y-y*b.x);
+}

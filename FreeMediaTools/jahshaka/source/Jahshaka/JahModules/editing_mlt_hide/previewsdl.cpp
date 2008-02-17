@@ -18,6 +18,7 @@
 #include <qmessagebox.h>
 using namespace Mlt;
 using namespace jahnle;
+#include <FreeMediaTools.h>
 
 PreviewSdl::PreviewSdl( EditBase *edit, const QString test_card ) :
 	QObject( NULL ),
@@ -166,7 +167,8 @@ void PreviewSdl::refresh( )
 		{
 			while ( m_ask_audio && !m_audio->init( ) )
 			{
-				int response = QMessageBox::warning( m_edit->getCore( ), "Jahshaka", 
+				int response = QMessageBox::warning( m_edit->getCore( ), 
+								     FMT_PROGRAM_TITLE,
 													 "Audio device is unavailable.\nDo you want to retry?", 
 													 "Retry", "Ignore", 0, 0, 1 );
 

@@ -556,3 +556,9 @@ GLAnime::~GLAnime()
 {
 
 }
+
+
+
+void GLAnime::grabDesktop(void)      { emit GrabClip();      };
+void GLAnime::grabDesktopKey(void)   { emit GrabClipKey();   };
+QCheckBox* GLAnime::getKeySelect() { return KeySelect; }

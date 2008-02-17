@@ -16,7 +16,8 @@ class QString;
 class IntValueFormatter
 {
 public:
-    virtual ~IntValueFormatter() {}
+  IntValueFormatter();
+  virtual ~IntValueFormatter();
 
     virtual QString convert( int ) const = 0;
     virtual IntValueFormatter* clone() const = 0;

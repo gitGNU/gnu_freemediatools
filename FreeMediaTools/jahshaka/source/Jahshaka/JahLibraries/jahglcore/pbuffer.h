@@ -36,14 +36,14 @@ class PBuffer
       //swap if applicable
       void Swap();
 
-      int               getPreviousViewportWidth() { return m_previous_viewport_width; }
-      void              setPreviousViewportWidth(int width) { m_previous_viewport_width = width; }
-      int               getPreviousViewportHeight() { return m_previous_viewport_height; }
-      void              setPreviousViewportHeight(int height) { m_previous_viewport_height = height; }
-      int               getWidth() { return m_width; }
-      void              setWidth(int width) { m_width = width; }
-      int               getHeight() { return m_height; }
-      void              setHeight(int height) { m_height = height; }
+      int               getPreviousViewportWidth() ;
+      void              setPreviousViewportWidth(int width);
+      int               getPreviousViewportHeight();
+      void              setPreviousViewportHeight(int height);
+      int               getWidth();
+      void              setWidth(int width);
+      int               getHeight() ;
+      void              setHeight(int height);
 
 
 protected:

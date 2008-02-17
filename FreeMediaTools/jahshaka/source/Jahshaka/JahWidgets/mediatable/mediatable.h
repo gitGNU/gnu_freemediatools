@@ -47,7 +47,7 @@ protected:
     void contentsMousePressEvent ( QMouseEvent *e );
     void dragMoveEvent( QDragMoveEvent *e );
     void dragEnterEvent( QDragEnterEvent *e );
-    void focusInEvent( QFocusEvent * ) { emit gotFocus( ); }
+    void focusInEvent( QFocusEvent * ) ;
 
     // we dont actually accept drops, see comment in constr code.
     void contentsDropEvent ( QDropEvent * e );
@@ -91,12 +91,12 @@ public:
     bool clearAll(void);
     
     // returns the value from the table.
-    QString text( int row, int col ) { return thetable->text( row, col ); };
+    QString text( int row, int col ) ;
     
     // switches on/off the 'empty' backdrop
     void showBackdrop( bool on = true ); 
     
-    MediaTable *getTable( ) { return thetable; }
+    MediaTable *getTable( ) ;
     int find( assetData );
     
 	void setAssetTracking( bool );

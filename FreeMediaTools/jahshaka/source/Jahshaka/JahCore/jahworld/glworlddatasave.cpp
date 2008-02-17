@@ -57,7 +57,7 @@ void GLWorld::saveSceneFile(std::string const& a_save_filename)
     }
 
     sceneDecreaseIndent();
-    l_file_stream << "</JAHSHAKA>" << "\n";  
+    l_file_stream << "</FREEMEDIATOOLS>" << "\n";  
 
 
     ///////////////////////////////////////////////////////////////////////////
@@ -696,9 +696,9 @@ GLWorld::saveHeaders(std::fstream& l_file_stream, std::string const & a_save_fil
 {
     l_file_stream << "<?xml version='1.0' encoding='utf-8' ?>" << "\n" ; 
 
-    l_file_stream << "<!-- Jahshaka Scene File -->" << "\n\n" ; 
+    l_file_stream << "<!-- FREEMEDIATOOLS Scene File -->" << "\n\n" ; 
 
-    l_file_stream << "<JAHSHAKA" ;
+    l_file_stream << "<FREEMEDIATOOLS" ;
     //l_file_stream << " jah_version = '" << jprefs.getJahVersion() << "'" ; 
     // jahversion set explicitly - FIXME
     l_file_stream << " jah_version = '" << "2.0RC2" << "'" ;
@@ -833,7 +833,7 @@ GLWorld::saveEffects(std::string& file_name, JahLayer* jah_layer)
 	file_stream << sceneGetIndent() << "</LAYER>\n";
 
     sceneDecreaseIndent();
-    file_stream << "</JAHSHAKA>" << "\n";  
+    file_stream << "</FREEMEDIATOOLS>" << "\n";  
 
 
     ///////////////////////////////////////////////////////////////////////////

@@ -515,7 +515,7 @@ GLChar::buildInterface( QHBox* f )
     
     m_pTextEd	= new QMultiLineEdit( ControlFrameUI[1][2], "text" );
     m_pTextEd->setGeometry( QRect( 0, 60, 300, 80 ) );
-    m_pTextEd->setText( "jahshaka" );
+    m_pTextEd->setText( "FMT FreeMediaTools" );
     connect( m_pTextEd, SIGNAL(textChanged()), this, SLOT(m_pTextEdChanged()) );
     
     textFont = new QPushButton( ControlFrameUI[1][2], "font" );
@@ -1008,13 +1008,6 @@ GLChar::buildInterface( QHBox* f )
     togglePing = new QCheckBox( ControlFrameUI[3][0], "togglePing" );
     JahFormatter::addCheckButton( togglePing, 510, 130, 100, 25, "Ping Pong" );
     connect( togglePing,  SIGNAL(clicked()), this, SLOT( togglePingPong() )  );
-    
-    //what is this used for?
-    //need to make the icon a lock... 3x current height as well for links
-    //lockicon	= new QToolButton(ControlFrameUI[3][0],"lockicon");
-    //lockicon->setGeometry( QRect( 600, 55, 18, 26 ) );
-    //lockicon->setFixedSize(18, 26);  	//lighticon->setUsesBigPixmap(true);
-    //lockicon->setAutoRaise(true);
     
     FindMediaLabel = new QLabel( ControlFrameUI[3][0], "FindMediaLabel" );
     JahFormatter::addLabel( FindMediaLabel, 0, 110, 110, 21, "Media Location", 9);

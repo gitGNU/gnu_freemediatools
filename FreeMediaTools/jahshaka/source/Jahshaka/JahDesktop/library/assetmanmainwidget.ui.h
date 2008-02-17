@@ -289,12 +289,12 @@ void AssetManMainWidget::populateDirView()
     QString dsname;
     dir = new Directory( dirlist, "Search results", Directory::SearchRoot );
     dir->setPixmap( new QPixmap( qembed_findImage("search-mini") ));
-    dsname = "www.jahshaka.net";
+    dsname = "www.gnu.org";
     dir = new Directory( dirlist, dsname, Directory::RemoteDataSource);
     dir->setPixmap( new QPixmap( qembed_findImage("minidb-16w") ));
     dir->setReadable( false ); // its not connected yet.
    
-    dsname = "Jahshaka Libraries";
+    dsname = "FreeMediaTools Libraries";
     localdb = new Directory( dirlist, dsname, Directory::LocalDataSource);
     localdb->setPixmap( new QPixmap( qembed_findImage("minidb-16w") ));
     DataSource *ds = olib::openassetlib::AssetManager::instance().createDataSource(DataSource::LocalDatabase, dsname.latin1() );
@@ -486,9 +486,9 @@ std::string AssetManMainWidget::locateAssetDatabase()
 	//database at the sme time from different apps
     //need to check this here as we dont have a JahScenesPAth pref yet
 	#ifndef JAHPLAYER
-    QString databasename = "jahshaka.db";
+    QString databasename = "freemediatools.db";
 	#else
-	QString databasename = "jahplayer.db";
+	QString databasename = "freemediatoolsplayer.db";
 	#endif
 
     /////////////////////////////////////////////////////
@@ -502,12 +502,12 @@ std::string AssetManMainWidget::locateAssetDatabase()
     
     if ( d.exists() )
     {
-        jtrace->info( "Initializing Jahshaka Asset Database externally");
+        jtrace->info( "Initializing FreeMediaTools Asset Database externally");
         jtrace->debug("Database at:",JahMediaPath+"/database/"+databasename);
         return (JahMediaPath+"/database/"+databasename).ascii();
     }
  
-    jtrace->info( "Initializing Jahshaka Asset Database locally" );
+    jtrace->info( "Initializing FreeMediaTools Asset Database locally" );
     jtrace->debug("Database at:",JahBasePath+"database/"+databasename);
     return (JahBasePath+"database/"+ databasename).ascii();
 }

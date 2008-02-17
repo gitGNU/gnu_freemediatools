@@ -38,7 +38,6 @@ ApollonTransferTab::ApollonTransferTab(QWidget *parent, const char *name, giFTCo
   ApollonTab(parent, name, gcn)//,
   //m_playerTab(0)
 {
-//	KIconLoader *loader = KGlobal::iconLoader();
 
 	connect(m_gcn, SIGNAL(giftAddDownloadReply(QString)), this, SLOT(addDownloadViewItem(QString)));
 	connect(m_gcn, SIGNAL(giftAddUploadReply(QString)),   this, SLOT(addUploadViewItem(QString)));
@@ -285,15 +284,11 @@ void ApollonTransferTab::delDownloadViewItem(QString line)
 		item->setProgress(-1);
 
 
-		//KIconLoader *loader = KGlobal::iconLoader();
-		//QMimeSourceFactory::defaultFactory()->setPixmap("Apollon",loader->loadIcon("apollon", KIcon::MainToolbar));
 		QString statustext;
 
 		if(m_showPopup==1)
                 {
-                        //statustext = "<br><img source = \"Apollon\"><br><strong>" + "Download finished:" + "</strong> <br>" + item->name() +"<br>";
                         statustext = "Download finished:" + item->name() +"<br>";
-                        //QPassivePopup::message(statustext, m_systemTray);
                 }
 
 		if(m_showPopup==2)

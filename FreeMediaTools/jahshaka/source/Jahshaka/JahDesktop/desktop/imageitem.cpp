@@ -6,7 +6,8 @@
 ImageItem::ImageItem( assetData full, QImage img, QCanvas *canvas, QString& clipname )
     : QCanvasRectangle( canvas ), 
       image(img), 
-      currentframe( full.startframe + full.frameOffset )
+      currentframe( full.startframe + full.frameOffset ),
+      filmstrip(0)
 {
     setSize( image.width() +2, image.height() +2 ); // increased by 2 to deal with die size :P
     _type = ITEM_IMAGE;
@@ -223,4 +224,95 @@ void ImageItem::setImage( QImage img )
 	update();
 	canvas()->update();
 	//debug( "in setImage" );
+}
+
+
+assetData ImageItem::getClip()
+{ return itemdata; }
+
+bool ImageItem::operator < ( const ImageItem &other ) const 
+{
+  
+  return itemdata.clipnumber < other.itemdata.clipnumber; 
+}
+
+int ImageItem::rtti () const 
+{
+  return imageRTTI; 
+}
+
+
+int ImageItem::Type () const 
+{
+  return _type; 
+}
+
+QString ImageItem::getText()
+{
+  return name; 
+}
+
+void ImageItem::setText(QString& newname)
+{
+  name=newname;
+}
+
+void ImageItem::setCurrentFrameNumber( int num )
+{ 
+  currentframe = num; 
+} ;
+
+int ImageItem::currentFrameNumber()
+{
+  return currentframe;
+} ;
+
+int ImageItem::maxFrames()
+{
+  return itemdata.getMaxFrames(); 
+};
+
+void ImageItem::enableResizeHandle( bool enable)
+{
+  enableresizehandle = enable; 
+};
+
+int ImageItem::dieWidth()
+{
+  return diewidth; 
+};
+// Returns the die height (can be larger than the image on the die)
+
+int ImageItem::dieHeight()
+{
+  return dieheight; 
+};
+
+int ImageItem::dieWidthGap()
+{
+  return diewidthgap;
+};
+
+int ImageItem::dieHeightGap()
+{
+  return dieheightgap; 
+};
+
+assetData* ImageItem::getItemData()
+{
+  return &itemdata;
+}
+
+FilmStrip* ImageItem::filmStrip()
+{
+  return filmstrip;
+};
+
+
+ImageItem::~ImageItem()
+{
+  if (filmstrip)
+    {
+      delete filmstrip;
+    }
 }

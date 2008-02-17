@@ -32,7 +32,7 @@ public:
         KEY_ASSET,
         KEYFRAME,
         KEYFRAMES,
-        JAHSHAKA,
+        FREEMEDIATOOLS,
         LAYER,
         LIGHT,
         MODULE,

@@ -78,7 +78,51 @@ JahControl::JahControl( QGLWidget *share,
       menuplayer( NULL ),
       moduleMenuId( -1 ),
       m_video_head( 0 ),
-      m_pJahTrackerMod(0)
+      m_pJahTrackerMod(0),
+      JahDesktopMod(0),
+     D2MainControler(0),
+     D2MainLeftControler(0),
+     D2MainRightControler(0),
+     D2WorldLayout(0),
+     D2maincontrollerLayout(0),
+     D2mainworldLayout(0),
+     D2mainworldLeftLayout(0),
+     D2mainworldRightLayout(0),
+     D2optionals(0),
+     JahAnimationMod(0),
+     JahColorMod(0),
+     JahEditingMod(0),
+     JahEffectsMod(0),
+     JahEncoderMod(0),
+     JahKeyerMod(0),
+     JahLibraryMod(0),
+     JahPaintMod(0),
+     JahPlayerMod(0),
+     JahTextMod(0),
+     MainControler(0),
+     MainLeftControler(0),
+     MainRightControler(0),
+     StorageBox(0),
+     WorldLayout(0),
+     WorldLayoutLeft(0),
+     WorldLayoutRight(0),
+     core(0),
+     jahthemes(0),
+     maincontrollerLayout(0),
+     mainworldLayout(0),
+     mainworldLayoutLeft(0),
+     mainworldLayoutRight(0),
+     mainworldLeftLayout(0),
+     mainworldRightLayout(0),
+     optionals(0),
+     paintcore(0),
+     splitter2(0),
+     wideframeCenter(0),
+     wideframeLayout(0),
+     wideframeLeft(0),
+      wideframeRight(0),
+      storageLocationLayout(0)  // new parts
+
 {
     ////////////////////////////////////////////////////////////////
     // initialise OpenPluginLib
@@ -482,36 +526,35 @@ JahControl::~JahControl()
     delete jahthemes;
     jtrace->debug( "JahControl Destructor","Closed out the core modules" );
 
+    delete D2MainControler; jtrace->debug( ">> D2MainControler");
+    delete D2MainLeftControler; jtrace->debug( ">> D2MainLeftControler");
+    delete D2MainRightControler; jtrace->debug( ">> D2MainRightControler");
+    delete D2WorldLayout;jtrace->debug( ">> D2WorldLayout");
+    delete D2maincontrollerLayout;jtrace->debug( ">> D2maincontrollerLayout");
+    delete D2mainworldLayout;jtrace->debug( ">> D2mainworldLayout");
+    delete D2mainworldLeftLayout;    jtrace->debug( ">> D2mainworldLeftLayout");
+    delete D2mainworldRightLayout;   jtrace->debug( ">> D2mainworldRightLayout");
+    delete D2optionals;              jtrace->debug( ">> D2optionals");
+    delete MainControler; jtrace->debug( ">> MainControler");
+    delete MainLeftControler; jtrace->debug( ">> MainLeftControler");
+    delete MainRightControler; jtrace->debug( ">> MainRightControler");
     delete StorageBox; jtrace->debug( ">> Closed StorageBox");
-    delete D2MainControler;
-    delete D2MainLeftControler;
-    delete D2MainRightControler;
-    delete D2WorldLayout;
-    delete D2maincontrollerLayout;
-    delete D2mainworldLayout;
-    delete D2mainworldLayout;
-    delete D2mainworldLeftLayout;
-    delete D2mainworldLeftLayout;
-    delete D2mainworldRightLayout;
-    delete D2optionals;
-    delete MainControler;
-    delete MainLeftControler;
-    delete MainRightControler;
-    delete WorldLayout;
-    delete WorldLayoutLeft;
-    delete WorldLayoutRight;
-    delete maincontrollerLayout;
-    delete mainworldLayout;
-    delete mainworldLayoutLeft;
-    delete mainworldLayoutRight;
-    delete mainworldLeftLayout;
-    delete mainworldRightLayout;
-    delete optionals;
-    delete splitter2;
-    delete wideframeCenter;
-    delete wideframeLayout;
-    delete wideframeLeft;
-    delete wideframeRight;
+    delete WorldLayout;  jtrace->debug( ">> WorldLayout");
+    delete WorldLayoutLeft; jtrace->debug( ">> WorldLayoutLeft");
+    delete WorldLayoutRight; jtrace->debug( ">> WorldLayoutRight");
+    delete maincontrollerLayout; jtrace->debug( ">> maincontrollerLayout");
+    delete mainworldLayout;      jtrace->debug( ">> mainworldLayout");
+    delete mainworldLayoutLeft; jtrace->debug( ">> mainworldLayoutLeft");
+    delete mainworldLayoutRight; jtrace->debug( ">> mainworldLayoutRight");
+    delete mainworldLeftLayout;  jtrace->debug( ">> mainworldLeftLayout");
+    delete mainworldRightLayout; jtrace->debug( ">> mainworldRightLayout");
+    delete optionals; jtrace->debug( ">> optionals");
+    delete splitter2;jtrace->debug( ">> splitter2");
+    delete storageLocationLayout;jtrace->debug( ">> storageLocationLayout");
+    delete wideframeCenter;jtrace->debug( ">> wideframeCenter");
+    delete wideframeLayout;jtrace->debug( ">> wideframeLayout");
+    delete wideframeLeft;jtrace->debug( ">> wideframeLeft");
+    delete wideframeRight;jtrace->debug( ">> wideframeRight");
 
 }
 
@@ -558,3 +601,29 @@ void JahControl::initializePlugins( )
     jtrace->info( ">Initialized OOlib Plugins");
 }
 
+
+
+bool JahControl::getPrefs(void)
+{
+  return rememberprefs;
+}
+
+void            JahControl::setMainworldQframe(QFrame* qframe)
+{
+  m_mainworld_qframe = qframe; 
+}
+
+QPushButton*    JahControl::getActiveModuleButton()
+{
+  return m_active_module_button; 
+}
+
+void            JahControl::setActiveModuleButton(QPushButton* button) 
+{
+  m_active_module_button = button; 
+}
+
+int JahControl::getJahThemeColor (void) 
+{
+  return jahStyleColor; 
+}

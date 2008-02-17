@@ -8,7 +8,7 @@
 *******************************************************************************/
 
 #include "jahshaka.h"
-#include "jahlogo.h"
+
 
 //#include "qsizepolicy.h"
 #include <qvariant.h>
@@ -31,28 +31,31 @@
 #include <qpixmap.h>
 #include <qstylefactory.h>
 
+#include <FreeMediaTools.h>
+
 /////////////////////////////////////////////////////////////
 // Builds the frame of the interface
 
 //void Jah::setupInterface( QWidget* parent, const char* name )
 void Jahshaka::setupInterface(QWidget* parent )
 {
-	QPixmap image1( (const char **) image0_data );
 
-    setMinimumSize( QSize( 800, 600 ) );
-    setIcon( image1 );
-    setAcceptDrops( TRUE );
-    setOpaqueMoving( TRUE );
+  QPixmap image1( pixmapPath + "FMT_Icon.png" );
+  
+  setMinimumSize( QSize( 800, 600 ) );
+  setIcon( image1 );
+  setAcceptDrops( TRUE );
+  setOpaqueMoving( TRUE );
+  
+  JahPrefs& jprefs = JahPrefs::getInstance();
+  QString theJahVersion    = jprefs.getJahVersion().c_str();
 
-    JahPrefs& jprefs = JahPrefs::getInstance();
-    QString theJahVersion    = jprefs.getJahVersion().c_str();
-
-	#ifndef JAHPLAYER 
-		setName( "Jahshaka "+theJahVersion );
-	#else
-		setName( "Jahplayer "+theJahVersion );
-	#endif
-
+#ifndef JAHPLAYER
+  setName( "FreeMediaTools "+theJahVersion );
+#else
+  setName( "FreeMediaTools "+theJahVersion );
+#endif
+  
 
 	setCentralWidget( new QWidget( parent, "qt_central_widget" ) );
     JahshakaLayout = new QGridLayout( centralWidget(), 1, 1, 0, 0, "JahshakaLayout"); 
@@ -210,8 +213,8 @@ void Jahshaka::setupInterface(QWidget* parent )
 
 void Jahshaka::languageChange()
 {
-    setCaption( tr( "Jahshaka" ) );
-    QWhatsThis::add( this, tr( "Jahshaka" ) );
+    setCaption( tr( FMT_PROGRAM_TITLE ) );
+    QWhatsThis::add( this, tr( FMT_PROGRAM_TITLE ) );
 }
 
 

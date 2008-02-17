@@ -33,7 +33,7 @@
 void JahControl::CreateDesktopFeedbackBox( QWidget* parent ) 
 {
     m_desktopFeedbackLabel = new QLabel( parent );
-    m_desktopFeedbackLabel->setText( jt->tr( "Jahshaka Desktop"  ) );
+    m_desktopFeedbackLabel->setText( jt->tr( "FreeMediaTools Desktop"  ) );
     QFont f( parent->font() );
     f.setItalic( true );
     m_desktopFeedbackLabel->setFont( f );
@@ -451,35 +451,37 @@ QWidget* JahControl::createCol2( QWidget* p )
     colLayout->addWidget( storagelabel );
 
     // make the line edit and folder button appear side by side
-    QBoxLayout* storageLocationLayout = new QHBoxLayout();
+    storageLocationLayout = new QHBoxLayout();
     colLayout->addLayout( storageLocationLayout );
 
     StorageBox = new QLineEdit( col, "StorageBox" ); 
     /*
 // TODO:Check this obj :
 the cursor  is written to init data.
-==24559== Syscall param write(buf) points to uninitialised byte(s)
-==24559==    at 0x4CF4471: (within /usr/lib/debug/libpthread-2.7.so)
-==24559==    by 0x4DEC29E: _X11TransWrite (in /usr/lib/libX11.so.6.2.0)
-==24559==    by 0x4DF1BD5: (within /usr/lib/libX11.so.6.2.0)
-==24559==    by 0x4DCE500: XFlush (in /usr/lib/libX11.so.6.2.0)
-==24559==    by 0x4667B4F: QWidget::setCursor(QCursor const&) (in /usr/lib/libqt-mt.so.3.3.7)
-==24559==    by 0x47E480F: QLineEditPrivate::init(QString const&) (in /usr/lib/libqt-mt.so.3.3.7)
-==24559==    by 0x47E5E76: QLineEdit::QLineEdit(QWidget*, char const*) (in /usr/lib/libqt-mt.so.3.3.7)
-==24559==    by 0x81E6F3A: JahControl::createCol2(QWidget*) (jahdesktopinterface.cpp:454)
-==24559==    by 0x81EAEAE: JahControl::CreateDesktopPreferences(QHBox*) (jahdesktopinterface.cpp:369)
-==24559==    by 0x81F045C: JahControl::CreateDesktopModuleOptions() (jahmodules.cpp:163)
-==24559==    by 0x81F0535: JahControl::CreateDesktopModule(QHBox*, QHBox*) (jahmodules.cpp:132)
-==24559==    by 0x81F83A9: JahControl::createJahDesktopUI(QFrame*, QFrame*) (jahui.cpp:184)
+JahControl::createCol2(QWidget*) (jahdesktopinterface.cpp:454)
+JahControl::CreateDesktopPreferences(QHBox*) (jahdesktopinterface.cpp:369)
+JahControl::CreateDesktopModuleOptions() (jahmodules.cpp:163)
+JahControl::CreateDesktopModule(QHBox*, QHBox*) (jahmodules.cpp:132)
+JahControl::createJahDesktopUI(QFrame*, QFrame*) (jahui.cpp:184)
 
+==28068==    by 0x83702B7: JahControl::createCol2(QWidget*) (jahdesktopinterface.cpp:476)
+==28068==    by 0x83794E7: JahControl::CreateDesktopPreferences(QHBox*) (jahdesktopinterface.cpp:372)
+==28068==    by 0x8385E5B: JahControl::CreateDesktopModuleOptions() (jahmodules.cpp:163)
+==28068==    by 0x8385FD2: JahControl::CreateDesktopModule(QHBox*, QHBox*) (jahmodules.cpp:132)
+==28068==    by 0x8398347: JahControl::createJahDesktopUI(QFrame*, QFrame*) (jahui.cpp:184)
+==28068==    by 0x8368160: JahControl::JahControl(QGLWidget*, QWidget*, JahHeader*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QWidget*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*, QFrame*) (jahcreate.cpp:213)
+==28068==    by 0x83AB2A4: Jahshaka::Jahshaka(QWidget*, char const*, unsigned) (jahshaka.cpp:106)
+==28068==    by 0x83AC9E5: main (main.cpp:166)
 */
     StorageBox->setText( JahMediaPath );
     storageLocationLayout->addWidget( StorageBox );
+
 
     StorageLocation = new QToolButton( col, "StorageLocation" );
     StorageLocation->setFixedSize( QSize( 31, 21 ) );
     StorageLocation->setIconSet( QPixmap( basefolder_xpm ) );
     connect( StorageLocation , SIGNAL(clicked()),  SLOT(getStoragePath()) );
+
     storageLocationLayout->addWidget( StorageLocation );
     
     StorageButton = new QPushButton( col, "StorageButton" );

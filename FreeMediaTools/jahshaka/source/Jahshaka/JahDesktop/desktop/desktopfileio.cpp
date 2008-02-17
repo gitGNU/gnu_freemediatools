@@ -20,6 +20,9 @@
 #include <jahtracer.h>
 #include <jahdatabase.h>
 
+
+#include <FreeMediaTools.h>
+
 #ifdef _MSC_VER
 #pragma warning (disable : 4786) // no big deal, this is a cpp file
 #endif
@@ -228,7 +231,7 @@ bool JahDesktop::loadJahAsset(QString filename, bool )
         errortext +="\n\nLooking for something like 'file.bmp', 'file_0000.BMP', etc.";
         jtrace->debug(errortext);
 
-        QMessageBox::information(this, "Jahshaka", errortext);
+        QMessageBox::information(this, FMT_PROGRAM_TITLE, errortext);
         return false;
     }
 
@@ -450,8 +453,8 @@ QString JahDesktop::findModuleName(QString loadfilename)
 	bool l_found_attribute ;
 	l_found_attribute = bxmlnode::getAttributeFromThisTag ( 
 		l_xml_root ,
-		std::string ( "JAHSHAKA" ) ,
-		std::string ( "jah_version" ) ,
+		std::string ( "FMTFreeMediaTools" ) ,
+		std::string ( "FMT_version" ) ,
 		l_attribute_value ) ;
 
 	//some error checking here

@@ -146,12 +146,12 @@ void JHClient::replyIndex()
 
     // HEAD
     ss << "<head>\r\n"
-        << "<title>Jahshaka Web Desktop View</title>\r\n"
+        << "<title> Web Desktop View</title>\r\n"
         << "</head>\r\n";
 
     // BODY
     ss << "<body>\r\n";
-    ss << "<h1>Jahshaka: Table</h1>\r\n";
+    ss << "<h1>Table</h1>\r\n";
 
 	ss << "<table>\r\n"
 	   << "<tr><td valign=top>\r\n"
@@ -245,7 +245,7 @@ void JHClient::replyDetail(QString &req)
 
     // HEAD
     ss = "<head>\r\n"
-         "<title>Jahshaka Web Desktop View</title>\r\n"
+         "<title>Web Desktop View</title>\r\n"
          "</head>\r\n";
     writeBlock(ss.c_str(), ss.size());
 
@@ -258,7 +258,7 @@ void JHClient::replyDetail(QString &req)
 
     // BODY
     ss = "<body>\r\n"
-         "<h1>Jahshaka: Detail</h1>\r\n"
+         "<h1>Detail</h1>\r\n"
     	 "<table>\r\n"
          "<tbody>\r\n"
 		 "<tr>"
@@ -302,13 +302,13 @@ void JHClient::replyGallery( QString & )
 
     // HEAD
     ss = "<head>\r\n"
-         "<title>Jahshaka Web Desktop View</title>\r\n"
+         "<title>Web Desktop View</title>\r\n"
          "</head>\r\n";
     writeBlock(ss.c_str(), ss.size());
 
     // BODY
     ss = "<body>\r\n"
-         "<h1>Jahshaka: Gallery</h1>\r\n";
+         "<h1>Gallery</h1>\r\n";
     writeBlock(ss.c_str(), ss.size());
 
 	ss = "<table>\r\n"
@@ -713,6 +713,15 @@ void AssetTables::setSelectedAsset( assetData &asset )
 
 
 AssetTable::~AssetTable( ) 
+{
+
+}
+
+VideodataTable::VideodataTable()
+{
+}
+
+VideodataTable::~VideodataTable()
 {
 
 }

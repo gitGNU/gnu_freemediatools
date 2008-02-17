@@ -79,7 +79,7 @@ QPopupMenu *menu = new QPopupMenu( 0 );
 
         case 4  : { getLayerList()->append( new LayerListEntry(m_number_of_layers, "3DText") );
                     getLayerList()->at(m_number_of_layers)->thelayer->addTextObj();
-                    getLayerList()->at(m_number_of_layers)->thelayer->text->text = "jahshaka";
+                    getLayerList()->at(m_number_of_layers)->thelayer->text->text = "FMT FreeMediaTools";
                     getLayerList()->at(m_number_of_layers)->thelayer->text->font = m_qsJahBasePath+"fonts/arial.ttf";
                     getLayerList()->at(m_number_of_layers)->thelayer->layernodes->m_node->extrude = DEFAULT_TEXT_EXTRUDE_DEPTH;
                     getLayerList()->at(m_number_of_layers)->thelayer->text->fontstyle = FontDrawstyle::FEXTRUDE; //or FSOLID

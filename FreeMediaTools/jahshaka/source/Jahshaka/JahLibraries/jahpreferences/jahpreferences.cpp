@@ -117,7 +117,7 @@ void JahPrefs::savePreferences(void)
     QSettings settings;
     #ifndef __sgi
 	#ifndef JAHPLAYER
-    settings.setPath( "jahshaka.com", "jahshaka" );
+    settings.setPath( "gnu.org", "FreeMediaTools" );
     //fprintf(stderr, "save: set the settings path\n");
 	#else
     settings.setPath( "jahplayer.com", "jahplayer" );

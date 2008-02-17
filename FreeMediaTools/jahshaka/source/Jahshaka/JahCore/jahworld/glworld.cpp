@@ -46,6 +46,7 @@
 GLWorld::GLWorld( GLCore* jahcore, const char* name, QHBox* controller, int* globalclipnumber )
     : m_pCore( jahcore ),
       m_pLayerListEntryList( NULL ),
+      m_pLayerListView(NULL),
       m_qsModuleName( name ),
       m_pController( controller ),
       m_pGrid( NULL ),
@@ -74,7 +75,15 @@ GLWorld::GLWorld( GLCore* jahcore, const char* name, QHBox* controller, int* glo
       m_aMeshEffectsSelectionVector(EffectInfo::NOT_A_TYPE),
       m_aGPUEffectsSelectionVector(EffectInfo::NOT_A_TYPE),
 
-      m_bStarted( false )
+      m_bStarted( false ),
+
+  //TODO: make sure all the data is initialited
+  m_nAStartFrame(0),
+  m_nAEndFrame(1),
+  m_nAAnimFrame(1),
+  m_bModuleUsesLighting(false), // was not initialized
+  m_pNodeFramer(0)
+  
 {  
     m_pJTrace = JahTrace::getInstance();	//set up tracer
     m_pJt = JahTranslate::getInstance();	//set up translator
@@ -107,29 +116,51 @@ JahPluginLib* GLWorld::m_pJPlugIn=0;
 
 GLWorld::~GLWorld(void) 
 {
-    if ( m_pTimer ) m_pTimer->stop( );
-    if ( m_pAutoSaveTimer ) m_pAutoSaveTimer->stop( );
-    
-    delete m_pCoreTimer;m_pCoreTimer=0;
-    delete m_pRenderSpace;m_pRenderSpace=0;
-    delete m_pActiveLayers;m_pActiveLayers=0;
-    delete m_pLayerListEntryList;m_pLayerListEntryList=0;
-    //    delete m_pJahLayerList;m_pJahLayerList=0;
-    delete m_pGrid;m_pGrid=0;
-    delete m_pTitleSafe;m_pTitleSafe=0;
-    delete m_pTextSafe;m_pTextSafe=0;
-    
-    std::vector<EffectInfo*>::iterator it = m_aCPUEffectsSelectionVector.begin( );
-    while ( it != m_aCPUEffectsSelectionVector.end( ) )
-        delete *( it ++ );
-    
-    it = m_aMeshEffectsSelectionVector.begin( );
-    while ( it != m_aMeshEffectsSelectionVector.end( ) )
-        delete *( it ++ );
-    
-    it = m_aGPUEffectsSelectionVector.begin( );
-    while ( it != m_aGPUEffectsSelectionVector.end( ) )
-        delete *( it ++ );
+  //  (//  ClearAll();
+  if (m_pLayerListView)
+    {
+      m_pLayerListView->clear();
+    }
+
+  if (m_pLayerListEntryList)
+    {
+      m_pLayerListEntryList->clear();
+      delete m_pLayerListEntryList;
+      m_pLayerListEntryList=0;
+    }
+
+    if (m_pNodeFramer)
+    {
+      m_pNodeFramer->clear();
+      delete m_pNodeFramer;
+      m_pNodeFramer=0;
+    }
+
+    //7--------------------
+  
+  if ( m_pTimer ) m_pTimer->stop( );
+  if ( m_pAutoSaveTimer ) m_pAutoSaveTimer->stop( );
+  
+  delete m_pCoreTimer;m_pCoreTimer=0;
+  delete m_pRenderSpace;m_pRenderSpace=0;
+  delete m_pActiveLayers;m_pActiveLayers=0;
+  delete m_pLayerListEntryList;m_pLayerListEntryList=0;
+  //    delete m_pJahLayerList;m_pJahLayerList=0;
+  delete m_pGrid;m_pGrid=0;
+  delete m_pTitleSafe;m_pTitleSafe=0;
+  delete m_pTextSafe;m_pTextSafe=0;
+  
+  std::vector<EffectInfo*>::iterator it = m_aCPUEffectsSelectionVector.begin( );
+  while ( it != m_aCPUEffectsSelectionVector.end( ) )
+    delete *( it ++ );
+  
+  it = m_aMeshEffectsSelectionVector.begin( );
+  while ( it != m_aMeshEffectsSelectionVector.end( ) )
+    delete *( it ++ );
+  
+  it = m_aGPUEffectsSelectionVector.begin( );
+  while ( it != m_aGPUEffectsSelectionVector.end( ) )
+    delete *( it ++ );
 };
 
 void GLWorld::lazy( )
@@ -916,6 +947,7 @@ void GLWorld::ResetAll()
 
 void GLWorld::ClearAll() 
 {
+  if(m_pLayerListView)
     m_pLayerListView->clear();
 
     // TODO : refactor to own method
@@ -952,7 +984,8 @@ GLWorld::getFirstJahLayer()
 void GLWorld::loadClearAll()
 {
     m_pJTrace->info( "GLWorld::","called LoadClearAll()");
-    m_pLayerListView->clear();
+    if (m_pLayerListView)
+      m_pLayerListView->clear();
     getLayerList()->clear();
     delete m_pLayerListEntryList;
     m_pLayerListEntryList=0;

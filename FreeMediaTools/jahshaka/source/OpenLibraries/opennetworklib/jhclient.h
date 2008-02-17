@@ -9,6 +9,8 @@ class JahTrace;
 class JahPrefs;
 
 struct VideodataTable {
+  VideodataTable();
+  ~VideodataTable();
     assetData data;
     int category;
     int cliptype;

@@ -94,7 +94,7 @@ fetch_online(const QString &page)
 		}
     QHttpRequestHeader head("GET", path);
     head.setValue("Host", host);    
-    head.setValue("User-Agent", "Jahshaka/2.0");
+    head.setValue("User-Agent", "FreeMediaTools/2.0");
 	http.setHost(host);
     http.request(head);
 }

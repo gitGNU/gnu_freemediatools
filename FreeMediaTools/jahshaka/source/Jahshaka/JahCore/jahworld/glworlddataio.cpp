@@ -54,7 +54,8 @@ void GLWorld::SceneLoad()
     JahDataIO::readFileIntoBuffer(scene_file_buffer, (char*)file_name_string.c_str() );
     std::string scene_file_string = scene_file_buffer;
 
-    if (scene_file_string.find("<JAHSHAKA") != std::string::npos)
+    //TODO : what a hack
+    if (scene_file_string.find("<FREEMEDIATOOLS") != std::string::npos)
     {
        LoadAll(scene_file_string, true, false, file_name_string);
     }
@@ -76,7 +77,7 @@ void GLWorld::SceneAppend()
     std::string scene_file_string = scene_file_buffer;
 
 
-    if (scene_file_string.find("<JAHSHAKA") != std::string::npos)
+    if (scene_file_string.find("<FREEMEDIATOOLS") != std::string::npos)
     {
        LoadAll(scene_file_string, false, false, file_name_string);
     }
@@ -98,7 +99,7 @@ void GLWorld::importFx()
     std::string scene_file_string = scene_file_buffer;
 
 
-    if (scene_file_string.find("<JAHSHAKA") != std::string::npos)
+    if (scene_file_string.find("<FREEMEDIATOOLS") != std::string::npos)
     {
        LoadAll(scene_file_string, false, true, file_name_string);
     }
@@ -121,7 +122,7 @@ bool GLWorld::SceneLoadName(QString file_name)
     std::string scene_file_string = scene_file_buffer;
 
 
-    if (scene_file_string.find("<JAHSHAKA") != std::string::npos)
+    if (scene_file_string.find("<FREEMEDIATOOLS") != std::string::npos)
     {
        status = LoadAll(scene_file_string, true, false, file_name_string);
     }

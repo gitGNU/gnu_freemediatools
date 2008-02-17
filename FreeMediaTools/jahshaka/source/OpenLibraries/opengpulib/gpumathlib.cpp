@@ -1558,3 +1558,365 @@ float    Globals::getCameraDistance()
 #endif // NVIDIA_GPU
 
 
+float4::float4()
+{
+  x = 0.0f;
+  y = 0.0f;
+  z = 0.0f;
+  w = 0.0f;
+}
+
+float4::float4(float X, float Y, float Z, float W)
+{
+  x = X;
+  y = Y;
+  z = Z;
+  w = W;
+}
+
+float4::  float4(float scalar)
+{
+  x = scalar;
+  y = scalar;
+  z = scalar;
+  w = scalar;
+}
+
+void float4::clamp()
+{
+  if (x < 0.0f) { x = 0.0f; }
+  else if (x > 255.0f) { x = 255.0f; }
+
+  if (y < 0.0f) { y = 0.0f; }
+  else if (y > 255.0f) { y = 255.0f; }
+
+  if (z < 0.0f) { z = 0.0f; }
+  else if (z > 255.0f) { z = 255.0f; }
+
+  if (w < 0.0f) { w = 0.0f; }
+  else if (w > 255.0f) { w = 255.0f; }
+}
+
+void float4::clampToOne()
+{
+  if (x < 0.0f) { x = 0.0f; }
+  if (y < 0.0f) { y = 0.0f; }
+  if (z < 0.0f) { z = 0.0f; }
+  if (w < 0.0f) { w = 0.0f; }
+  if (x > 1.0f) { x = 1.0f; }
+  if (y > 1.0f) { y = 1.0f; }
+  if (z > 1.0f) { z = 1.0f; }
+  if (w > 1.0f) { w = 1.0f; }
+}
+
+float float4::max4()
+{
+  float maximum = x;
+  if (y > maximum) { maximum = y; };
+  if (z > maximum) { maximum = z; };
+  if (w > maximum) { maximum = w; };
+
+  return maximum;
+}
+
+float float4::min4()
+{
+  float minimum = x;
+  if (y < minimum) { minimum = y; };
+  if (z < minimum) { minimum = z; };
+  if (w < minimum) { minimum = w; };
+
+  return minimum;
+}
+
+float float4::max3()
+{
+  float maximum = x;
+  if (y > maximum) { maximum = y; };
+  if (z > maximum) { maximum = z; };
+
+  return maximum;
+}
+
+float float4::min3()
+{
+  float minimum = x;
+  if (y < minimum) { minimum = y; };
+  if (z < minimum) { minimum = z; };
+
+  return minimum;
+}
+
+void float4::operator = (float scalar)
+{
+  x = scalar;
+  y = scalar;
+  z = scalar;
+  w = scalar;
+}
+
+void float4::operator = (float4 vector)
+{
+  x = vector.x;
+  y = vector.y;
+  z = vector.z;
+  w = vector.w;
+}
+
+void float4::operator -= (float scalar)
+{
+  x -= scalar;
+  y -= scalar;
+  z -= scalar;
+  w -= scalar;
+}
+
+void float4::operator += (float scalar)
+{
+  x += scalar;
+  y += scalar;
+  z += scalar;
+  w += scalar;
+}
+
+void float4::operator *= (float scalar)
+{
+  x *= scalar;
+  y *= scalar;
+  z *= scalar;
+  w *= scalar;
+}
+
+void float4::operator /= (float scalar)
+{
+  x /= scalar;
+  y /= scalar;
+  z /= scalar;
+  w /= scalar;
+}
+
+void float4::operator += (float4& vector)
+{
+  x += vector.x;
+  y += vector.y;
+  z += vector.z;
+  w += vector.w;
+}
+
+
+    float color4::red() { return x; }
+    float color4::green() { return y; }
+    float color4::blue() { return z; }
+    float color4::alpha() { return w; }
+
+
+    color4::color4()
+    {
+    }
+
+    color4::color4(float red, float green, float blue, float alpha)
+    {
+        x = red;
+        y = green;
+        z = blue;
+        w = alpha;
+    }
+
+    void color4::operator = (float4 vector)
+    {
+        x = vector.x;
+        y = vector.y;
+        z = vector.z;
+        w = vector.w;
+    }
+
+    bool color4::operator == (float4& vector)
+    {
+        float tolerance = 1.0f / 255.0f;
+
+        if (   fabs(x - vector.x) >= tolerance 
+            || fabs(y - vector.y) >= tolerance
+            || fabs(z - vector.z) >= tolerance
+            || fabs(w - vector.w) >= tolerance
+            )
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+
+
+
+float2::float2()
+{
+  x = 0.0f;
+  y = 0.0f;
+    }
+
+    float2::float2(float X, float Y)
+    {
+        x = X;
+        y = Y;
+    }
+
+    float2::float2(float V)
+    {
+      x = V;
+        y = V;
+    }
+
+    float float2::length()
+    {
+        return sqrtf( (x * x) + (y * y) );
+    }
+
+    void float2::clampToOne()
+    {
+        if (x < 0.0f) { x = 0.0f; }
+        if (y < 0.0f) { y = 0.0f; }
+        if (x > 1.0f) { x = 1.0f; }
+        if (y > 1.0f) { y = 1.0f; }
+    }
+
+    void float2::floor()
+    {
+        x = floorf(x);
+        y = floorf(y);
+    }
+
+    void float2::ceil()
+    {
+        x = ceilf(x);
+        y = ceilf(y);
+    }
+
+    void float2::round()
+    {
+        x = jahstd::Roundf(x);
+        y = jahstd::Roundf(y);
+    }
+
+    float float2::max2()
+    {
+        return ( (x > y) ? x : y );
+    }
+
+    float float2::min2()
+    {
+        return ( (x < y) ? x : y );
+    }
+
+    float float2::aspect()
+    {
+        return x / y;
+    }
+
+    static float dot(float2& vector1, float2& vector2);
+
+    void float2::operator = (float scalar)
+    {
+        x = scalar;
+        y = scalar;
+    }
+
+    void float2::operator -= (float scalar)
+    {
+        x -= scalar;
+        y -= scalar;
+    }
+
+    void float2::operator += (float scalar)
+    {
+        x += scalar;
+        y += scalar;
+    }
+
+    void float2::operator += (float2& vector)
+    {
+        x += vector.x;
+        y += vector.y;
+    }
+
+    void float2::operator -= (float2& vector)
+    {
+        x -= vector.x;
+        y -= vector.y;
+    }
+
+    void float2::operator /= (float scalar)
+    {
+        x /= scalar;
+        y /= scalar;
+    }
+
+    void float2::operator *= (float2& vector)
+    {
+        x *= vector.x;
+        y *= vector.y;
+    }
+
+    void float2::operator *= (float scalar)
+    {
+        x *= scalar;
+        y *= scalar;
+    }
+
+    void float2::operator /= (float2& vector)
+    {
+        x /= vector.x;
+        y /= vector.y;
+    }
+
+    bool float2::operator == (float2& vector)
+    {
+        if (x == vector.x && y == vector.y)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    bool float2::operator != (float2& vector)
+{
+  if (x != vector.x || y != vector.y)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+ std::string&     Globals::getGlVendor() { return m_gl_vendor; }
+ void             Globals::setGlVendor(std::string& vendor) { m_gl_vendor = vendor; }
+ std::string&     Globals::getGlRenderer() { return m_gl_renderer; }
+ void             Globals::setGlRenderer(std::string& renderer) { m_gl_renderer = renderer; }
+ std::string&     Globals::getGlVersion() { return m_gl_version; }
+ void             Globals::setGlVersion(std::string& version) { m_gl_version = version; }
+ int              Globals::getGlMaxTextureSize() { return m_gl_max_texture_size; }
+ void             Globals::setGlMaxtextureSize(int size) { m_gl_max_texture_size = size; }
+  
+ bool             Globals::isWin32() { return m_is_win32; }
+ void             Globals::setisWin32(bool flag) { m_is_win32 = flag; }
+ void             Globals::setEnableScriptingButton(bool flag) { m_enable_scripting_button= flag; }
+ bool             Globals::getEnableScriptingButton() { return m_enable_scripting_button; }
+ void             Globals::setSuppressPopups(bool flag) { m_suppress_popups = flag; }
+ bool             Globals::getSuppressPopups() { return m_suppress_popups; }
+ void             Globals::setAutoSaveEnable(bool flag) { m_auto_save_enable = flag; }
+ bool             Globals::getAutoSaveEnable() { return m_auto_save_enable; }
+   void             Globals::setCameraDistance(float distance) { m_camera_distance = distance; }
+   float            Globals::getCameraDistance() { return m_camera_distance; }
+   void             Globals::setShowLights(bool flag) { m_show_lights = flag; }
+   bool             Globals::getShowLights() { return m_show_lights; }
+   void             Globals::setJahControl(JahControl* jah_control) { m_jah_control = jah_control; }
+ JahControl*      Globals::getJahControl() { return m_jah_control; }
+   void             Globals::setRendering(bool flag) { m_rendering = flag; }
+   bool             Globals::getRendering() { return m_rendering; }
+   float            Globals::getKeyframerZoomFactor() { return m_keyframer_zoom_factor; }
+   void             Globals::setKeyframerZoomFactor(float value) { m_keyframer_zoom_factor = value; }
+   int              Globals::getKeyframerYOffset() { return m_keyframer_y_offset; }
+   void             Globals::setKeyframerYOffset(int value) { m_keyframer_y_offset = value; }
+
+

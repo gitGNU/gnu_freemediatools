@@ -597,13 +597,6 @@ namespace VMFX
 
 using namespace VMFX::OpenAssetLib;
 
-int _tmain(int argc, _TCHAR* argv[])
-{
-	remove("C:/Jahshaka/Database/jahshaka.db");
-	Test::OpenAssetLibTest test;
-	if(test.Run() == false)
-		_asm int 3;
-	remove("C:/Jahshaka/Database/jahshaka.db");
-	return 0;
-}
+
+
 

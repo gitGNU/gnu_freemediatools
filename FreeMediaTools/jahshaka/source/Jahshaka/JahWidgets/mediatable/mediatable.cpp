@@ -173,7 +173,19 @@ void setupButton( QPushButton* b, QString active, QString disabled )
 
 JahDesktopSideTable::JahDesktopSideTable( int, QWidget* parent, const char* name) 
     : QWidget(parent,name)
-	, m_asset_tracking( true )
+    , m_asset_tracking( true )
+    , topspacer(0)
+    ,
+      thetable(0),
+      figure(0),
+      pbplay(0),
+      pbstop(0),
+      pbffwd(0),
+      pbfrev(0),
+      m_timecode(0),
+      lspacer1(0),
+      lspacer2(0),
+      m_assetDisplay(0)
 {
 	AssetTables::getInstance( )->registerTable( this );
 
@@ -306,10 +318,14 @@ JahDesktopSideTable::~JahDesktopSideTable( )
   delete m_timecode;
   delete lspacer1;
   delete lspacer2;
-  delete topspacer;
+  //  delete topspacer;
+  //==16764== Process terminating with default action of signal 11 (SIGSEGV)
+    //==16764==  Access not within mapped region at address 0x39
+    //==16764==    at 0x84171D7: JahDesktopSideTable::~JahDesktopSideTable() (mediatable.cpp:309)
   delete m_assetDisplay;
 
 }
+
 
 void JahDesktopSideTable::setAssetTracking( bool on ) 
 { 
@@ -628,3 +644,7 @@ void JahDesktopSideTable::onUpdateFrameOffset( assetData d )
     
     m_timecode->setText( fmt.convert( d.frameOffset ) );
 }
+
+void MediaTable::focusInEvent( QFocusEvent * ) { emit gotFocus( ); }
+QString JahDesktopSideTable::text( int row, int col ) { return thetable->text( row, col ); };
+MediaTable *JahDesktopSideTable::getTable( ) { return thetable; }

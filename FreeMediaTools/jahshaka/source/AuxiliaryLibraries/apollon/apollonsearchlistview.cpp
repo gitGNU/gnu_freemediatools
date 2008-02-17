@@ -14,11 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//#include <kiconloader.h>
-//#include <kicontheme.h>
-//#include <kaction.h>
-//#include <kdebug.h>
-//#include <klocale.h>
 #include <qpopupmenu.h>
 #include <qcursor.h>
 #include <qheader.h>
@@ -164,28 +159,6 @@ void ApollonSearchListView::maybeTip(const QPoint& p)
 	}
 	m_rect.setWidth(width());
 	
-//	KIconLoader *loader = KGlobal::iconLoader();
-	//QMimeSourceFactory::defaultFactory()->setPixmap( "mimetypeicon",  loader->loadIcon(item->mimeTypeIcon(), KIcon::MainToolbar));
-	/*
-	m_tipContent = "<big><img source=\"mimetypeicon\"> " + item->fileName() + "</big> <hr>" +
-		( item->title().isEmpty() ? "" :
-			"<b>"+"Title" + ": &nbsp;</b>" + item->title() + "<br>" ) +
-		( item->user().isEmpty() ? "" :
-			"<b>"+"User" + ": &nbsp;</b>" + item->user() + "<br>" ) +
-		( item->album().isEmpty() ? "" :
-			"<b>"+"Album" + ": &nbsp;</b>" + item->album() + "<br>" ) +
-		( item->artist().isEmpty() ? "" :
-			"<b>"+"Artist" + ": &nbsp;</b>" + item->artist() + "<br>"  ) +
-		( item->category().isEmpty() ? "" :
-			"<b>"+"Category" + ": &nbsp;</b>" + item->category() + "<br>" ) +
-		( item->size().isEmpty() ? "" :
-			"<b>"+"Size" + ": &nbsp;</b>" + item->text(ApollonSearchListView::columnSize) + "<br>" ) +
-		( item->duration().isEmpty() ?  "" :
-			"<b>"+"Duration" + ": &nbsp;</b>" + item->text(ApollonSearchListView::columnDuration) + "<br>" ) +
-		( item->bitrate().isEmpty() ? "" :
-			"<b>"+"Bitrate" + ": &nbsp;</b>" + item->text(ApollonSearchListView::columnBitrate) + "<br>" ) +
-		"<b>"+"File Type" + ": &nbsp;</b>" + item->mimeTypeComment() + "<br>";
-		*/
 	m_wakeUpTimer->start(m_wakeUpDelay);
 }
 

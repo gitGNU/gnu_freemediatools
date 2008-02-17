@@ -236,3 +236,13 @@ void InputLCD::formatAndDisplay( int v )
     
     m_lcd->display( s );
 }
+
+
+int	InputLCD::getMinInt ()	{	return minInt;	}
+int	InputLCD::getMaxInt ()	{	return maxInt;	}
+void InputLCD::contextMenuEvent(QContextMenuEvent * e)
+{
+  //dont want context menus poping up in lcd's
+  e->accept();		// Is this the correct way to
+}
+void InputLCD::setDefault( Default val ) { m_default = val; }

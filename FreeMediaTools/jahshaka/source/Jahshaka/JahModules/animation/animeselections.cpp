@@ -23,6 +23,7 @@
 #include <InputLCD.h>
 #include <openobjectlib.h>
 
+#include <FreeMediaTools.h>
 
 template < typename T > 
 QCheckListItem* 
@@ -132,7 +133,7 @@ GLAnime::createALayer(LAYER_TYPE type, JahLayer* parent_jah_layer)
             getLayerList()->append(new_layer_list_entry);
 
             new_layer->addTextObj();
-            new_layer->text->text = "jahshaka";
+            new_layer->text->text = FMT_PROGRAM_TITLE;
             new_layer->text->font = m_qsJahBasePath+"fonts/arial.ttf";
             new_layer->layernodes->m_node->extrude = DEFAULT_TEXT_EXTRUDE_DEPTH;
             new_layer->text->fontstyle = FontDrawstyle::FEXTRUDE; //or FSOLID

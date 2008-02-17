@@ -8,7 +8,7 @@
  *******************************************************************************/
 
 #include "jahshaka.h"
-#include "jahlogo.h"
+
 #include "jahheader.h"
 
 #include <qvariant.h>
@@ -37,21 +37,21 @@
 //void Jah::setupInterface( QWidget* parent, const char* name )
 void Jahshaka::setupInterface( QWidget* parent )
 {
-    QPixmap image1( (const char **) image0_data );
-
+    setAcceptDrops( TRUE );
+    setOpaqueMoving( TRUE );
+    JahPrefs& jprefs = JahPrefs::getInstance();
+    QString theJahVersion    = jprefs.getJahVersion().c_str();
+    //  JahPrefs& jprefs = JahPrefs::getInstance();
+    QString JahBasePath   = jprefs.getBasePath().c_str();
+    QPixmap image1( JahBasePath+ "Pixmaps/FMT_Icon.png" );
 #ifndef WIN32 // windows should set all icons via the res file.
     setIcon( image1 );
 #endif
-    setAcceptDrops( TRUE );
-    setOpaqueMoving( TRUE );
-    
-    JahPrefs& jprefs = JahPrefs::getInstance();
-    QString theJahVersion    = jprefs.getJahVersion().c_str();
     
 #ifndef JAHPLAYER 
-    setName( "Jahshaka "+theJahVersion );
+    setName( "FreeMediaTools "+theJahVersion );
 #else
-    setName( "Jahplayer "+theJahVersion );
+    setName( "FreeMediaTools:player "+theJahVersion );
 #endif
     
     

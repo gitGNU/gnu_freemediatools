@@ -62,7 +62,7 @@ bool GLWorld::LoadAll( std::string const& scene_file_string, bool clear_first, b
     SceneFileXml::KEYWORD keyword;
     bool use_relative_paths = false;
 
-    string_position = scene_file_xml.goToNextKnownKeywordPosition(SceneFileXml::JAHSHAKA);
+    string_position = scene_file_xml.goToNextKnownKeywordPosition(SceneFileXml::FREEMEDIATOOLS);
     scene_file_xml.parseJahshakaStructure( scene_file_xml.getJahshakaStructure() );
 
     //some error checking here
